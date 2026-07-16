@@ -1,0 +1,35 @@
+PROTECTED DIFF v17.11
+
+BASE: v17.10.2 AUDIT HEALTH WIDGET PERSISTENCE HOTFIX
+
+CAMBIOS INTENCIONALES
+- index.html: metadato de versión, inclusión de CSS/JS v17.11 y etiqueta “Ejecutor principal”.
+- service-worker.js: shell v17.11 y recursos nuevos.
+- system-health-center.js, production-certification.js y audit-health-integration.js: alineación de versión v17.11.
+- collaborative-workspace-v17-9.js: eventos aditivos posteriores a creación/entrega y textos “ejecutores”; no cambia RPC, Storage ni límites de archivos.
+- config/build-manifest.json: registro del nuevo módulo y SQL opcional.
+
+ARCHIVOS NUEVOS
+- assets/js/task-operations-ranking-v17-11.js
+- assets/css/task-operations-ranking-v17-11.css
+- SQL_OPCIONAL_v17_11.sql
+- config/rpc-manifest-v17_11-optional.json
+- docs/GUIA_TASK_OPERATIONS_RANKING_v17_11.txt
+
+PROTECCIONES CONFIRMADAS
+- Creative Arena JS/CSS sin cambios.
+- Home editorial, Member Wall Sync y Design System Studio sin cambios.
+- 14 scripts inline idénticos a v17.10.2.
+- loadAll, renderAll y bootstrap inline sin cambios.
+- config/rpc-manifest.json idéntico: 45 RPC productivas.
+- SQL v17.7, v17.8 y v17.9 idénticos.
+- Login y Supabase Auth sin cambios.
+
+ARCHIVOS DIFERENTES DETECTADOS
+- index.html
+- service-worker.js
+- assets/js/system-health-center.js
+- assets/js/production-certification.js
+- assets/js/audit-health-integration.js
+- assets/js/collaborative-workspace-v17-9.js
+- config/build-manifest.json

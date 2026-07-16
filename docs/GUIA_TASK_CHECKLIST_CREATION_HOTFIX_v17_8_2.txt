@@ -1,0 +1,26 @@
+INBESTIGA Marketing Cloud v17.8.2 · GUÍA DE VALIDACIÓN
+
+PRUEBA 1 · CHECKLIST VACÍO
+- Ingresar como Italo, Jhulio o Alejandro.
+- Abrir Trabajo > Tareas > Nueva tarea.
+- Completar título, responsable y fecha.
+- Dejar Checklist vacío.
+- Crear la tarea.
+RESULTADO ESPERADO: la tarea se crea y p_checklist recibe [].
+
+PRUEBA 2 · CHECKLIST POR COMAS
+- Escribir: Brief aprobado, Grabar video, Editar versión final
+RESULTADO ESPERADO: se crean tres elementos.
+
+PRUEBA 3 · CHECKLIST POR LÍNEAS
+- Escribir un punto por línea.
+RESULTADO ESPERADO: se crea un elemento por línea.
+
+PRUEBA 4 · PERSISTENCIA
+- Recargar la plataforma.
+- Abrir la tarea creada.
+RESULTADO ESPERADO: la tarea y su checklist permanecen visibles.
+
+PRUEBA 5 · PERMISOS
+- Confirmar que un miembro operativo no obtiene privilegios adicionales.
+- Confirmar que las reglas RLS y la RPC ibm_v30_create_task siguen determinando el alcance real.

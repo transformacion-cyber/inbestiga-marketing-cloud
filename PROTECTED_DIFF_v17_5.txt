@@ -1,0 +1,6 @@
+PROTECTED DIFF v17.5
+Inline scripts identical: True (14/14)
+assets/js/collaboration-campaign-os.js: same=True sha256=9a9ef56e9e1199714d123252647a216f4e9ead5881f68db532b8e98dd11dd4d7
+assets/js/productivity-realtime-core.js: same=True sha256=33bdfdcc23b5f3a58625c07574930261eafbab2db60b0e5c8f25dcf582fc3536
+Required 45-RPC manifest identical: True
+Creative Arena/Auth/loadAll/renderAll/bootstrap were not edited inline.

@@ -1,0 +1,10 @@
+GUIA — AUDIT COUNTER ACCURACY v17.5.3
+
+1. Abrir Auditoría Pro.
+2. Confirmar que Errores backend cuenta solo filas con severidad error.
+3. Confirmar que Advertencias backend aparece como tarjeta separada.
+4. Confirmar que Errores navegador conserva su historial independiente.
+5. Pulsar cada tarjeta para filtrar el detalle.
+6. Probar Exportar eventos, Exportar advertencias y Exportar errores.
+
+No requiere SQL ni cambios de Supabase.

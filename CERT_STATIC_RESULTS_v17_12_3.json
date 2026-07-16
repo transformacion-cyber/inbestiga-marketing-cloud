@@ -1,0 +1,28 @@
+{
+  "external_js_count": 22,
+  "external_js_ok": 22,
+  "id_count": 650,
+  "duplicate_ids": {},
+  "local_refs_count": 42,
+  "missing_refs": [],
+  "inline_js_count": 14,
+  "inline_js_ok": 14,
+  "inline_scripts_identical_to_v17_12_2": true,
+  "json_count": 38,
+  "json_bad": [],
+  "css_count": 19,
+  "css_bad": [],
+  "required_rpc_count": 45,
+  "required_rpc_unique": 45,
+  "hotfix_checks": {
+    "no_unbounded_observer": true,
+    "observer_added_nodes_only": true,
+    "text_update_idempotent": true,
+    "input_click_guard": true,
+    "version": true,
+    "sw_cache": true,
+    "sw_has_hotfix_assets": true
+  },
+  "protected_diffs": [],
+  "errors": []
+}

@@ -1,0 +1,50 @@
+{
+  "version": "17.12",
+  "engine": "jsdom 24 + Node.js",
+  "tests": [
+    {
+      "name": "manager_boot",
+      "passed": true,
+      "assertions": {
+        "visual_shell": true,
+        "hero": true,
+        "editable_cards": 3,
+        "gallery_images": 4,
+        "admin_visual_tab": true,
+        "admin_visual_pane": true,
+        "mode": "liquid",
+        "build": "v17.12"
+      }
+    },
+    {
+      "name": "member_permissions",
+      "passed": true,
+      "assertions": {
+        "visual_home_visible": true,
+        "admin_editor_hidden": true,
+        "edit_buttons_hidden": true
+      }
+    },
+    {
+      "name": "local_edit_save_navigation",
+      "passed": true,
+      "assertions": {
+        "edited_title_persisted": true,
+        "home_rerendered": true,
+        "navigation_action_reused": true
+      }
+    },
+    {
+      "name": "optional_cloud_load",
+      "passed": true,
+      "assertions": {
+        "rpc_payload_applied": true,
+        "cloud_status_displayed": true
+      }
+    }
+  ],
+  "limitations": [
+    "DOM simulation does not replace visual testing on real browsers.",
+    "No real Supabase project was modified during this test."
+  ]
+}

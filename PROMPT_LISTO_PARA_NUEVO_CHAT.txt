@@ -1,0 +1,22 @@
+Continuar INBESTIGA Marketing Cloud desde v17.10 DEADLINES & MEMBER GOVERNANCE.
+
+Única base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_10_DEADLINES_MEMBER_GOVERNANCE.zip
+
+Antes de modificar:
+1. Leer HANDOFF_CONTINUIDAD.txt.
+2. Leer RESUMEN_DECISIONES_TECNICAS.txt.
+3. Leer CHECKLIST_QA_ENTREGA.txt.
+4. Leer LISTA_DE_ARCHIVOS_Y_ORDEN_DE_INSTALACION.txt.
+5. Leer REVISION_TECNICA.txt.
+6. Revisar config/build-manifest.json, config/rpc-manifest.json y config/rpc-manifest-v17_10-optional.json.
+7. Revisar docs/GUIA_DEADLINES_MEMBER_GOVERNANCE_v17_10.txt.
+
+No tocar sin autorización:
+- Creative Arena.
+- Login y Supabase Auth.
+- loadAll, renderAll y bootstrap.
+- 45 RPC productivas, tablas y RLS existentes.
+- Home editorial aprobado.
+
+SQL_OPCIONAL_v17_10.sql es manual, opcional, idempotente y limitado a Marketing Cloud. No elimina Auth, Tickets ni Storage.

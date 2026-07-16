@@ -1,0 +1,13 @@
+PROTECTED DIFF v17.8.1
+
+{
+  "inline_scripts_count": 14,
+  "inline_scripts_identical_to_v17_8": true,
+  "index_changed_lines_only": [
+    2,
+    13
+  ],
+  "creative_arena_untouched": true,
+  "auth_inline_untouched": true,
+  "loadAll_renderAll_bootstrap_untouched": true
+}

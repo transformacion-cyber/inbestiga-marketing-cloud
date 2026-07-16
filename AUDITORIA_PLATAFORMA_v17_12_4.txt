@@ -1,0 +1,35 @@
+INBESTIGA MARKETING CLOUD v17.12.4
+AUDITORÍA DE HOTFIX: CONFLICTO DE OBSERVADORES Y BLOQUEO DE ARRANQUE
+
+CAUSA CONFIRMADA
+mobile-creative-navigation-v17-11-1.js imponía v17.12.1 sobre la etiqueta visible de versión y observaba todo el documento. liquid-glass-visual-content-v17-12.js imponía v17.12.3 sobre la misma etiqueta y también observaba todo el documento. Cada escritura de textContent generaba una mutación childList que activaba al otro módulo. El ciclo podía ocupar continuamente el hilo principal y dejar el arranque detenido visualmente en 12 %.
+
+PRUEBA CONTROLADA DEL CONFLICTO
+- Lógica anterior: alcanzó el límite de seguridad de 80 callbacks alternados.
+- Lógica corregida: 2 callbacks y estabilización definitiva en v17.12.4.
+
+CORRECCIONES
+- Los dos módulos usan v17.12.4.
+- Los observadores procesan únicamente nodos relevantes.
+- Las actualizaciones se agrupan mediante requestAnimationFrame.
+- La caché PWA se rotó a inbestiga-v17-12-4-shell.
+- El editor multimedia conserva biblioteca, carga local, arrastrar y soltar, URL y vista previa.
+
+VALIDACIÓN
+- JS externos válidos: 21/21.
+- Service Worker válido.
+- Scripts inline: 14/14 idénticos a v17.12.3.
+- IDs HTML: 650, duplicados: 0.
+- Referencias locales de index.html: 46, faltantes: 0.
+- Referencias del Service Worker: 50, faltantes: 0.
+- JSON válidos: 39.
+- SQL y manifiesto de 45 RPC productivas: idénticos a v17.12.3.
+
+ZONAS PROTEGIDAS
+No se modificaron los scripts inline que contienen Auth, loadAll, renderAll, bootstrap productivo y Creative Arena. Tampoco se modificaron SQL, RLS, tablas, Storage o RPC.
+
+INSTALACIÓN
+Publicar únicamente el ZIP v17.12.4. Cerrar las pestañas antiguas y recargar con Ctrl+Shift+R. No ejecutar SQL.
+
+LIMITACIÓN
+La validación real de sesión, RLS, Realtime y Storage debe realizarse en Netlify con Supabase conectado.

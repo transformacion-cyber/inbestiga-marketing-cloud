@@ -1,0 +1,28 @@
+{
+  "version": "16.1",
+  "mode": "guided-production-certification",
+  "automatic": [
+    "frontend_version",
+    "session",
+    "member_profile",
+    "lima_date",
+    "state_arrays",
+    "required_sections",
+    "required_globals",
+    "dom_integrity",
+    "runtime_errors",
+    "rpc_openapi",
+    "creative_arena_runtime",
+    "connectivity",
+    "backend_version",
+    "storage_read",
+    "realtime_channel",
+    "pwa_registration"
+  ],
+  "roles": {
+    "director": 8,
+    "supervisor": 8,
+    "collaborator": 8
+  },
+  "automatic_tests_are_non_destructive": true
+}

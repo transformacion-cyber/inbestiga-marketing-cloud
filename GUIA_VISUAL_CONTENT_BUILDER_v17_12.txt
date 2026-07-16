@@ -1,0 +1,60 @@
+GUÍA RÁPIDA · VISUAL CONTENT BUILDER v17.12
+
+ACCESO
+Administración > Contenido visual
+Disponible para Italo, Jhulio, Alejandro y roles administrativos autorizados.
+
+1. APARIENCIA GENERAL
+Selecciona:
+- Liquid Glass intenso: aspecto más cercano a la referencia.
+- Liquid Glass suave: menos transparencia y mejor rendimiento.
+- Clásico ligero: fallback para equipos antiguos.
+
+2. PORTADA
+Edita:
+- Etiqueta.
+- Título.
+- Descripción.
+- Imagen.
+- Texto y destino de dos botones.
+
+Las secciones se escriben con sus identificadores internos, por ejemplo:
+myday
+creativeRoomsClean
+workIntel
+campaigns
+wall
+profile
+
+3. PANELES VISUALES
+Usa Panel 1, Panel 2 y Panel 3 para cambiar:
+- Etiqueta superior.
+- Título.
+- Descripción.
+- Imagen.
+- Sección que se abre al pulsar.
+
+4. GALERÍA
+Permite cuatro imágenes con sus propias etiquetas.
+En móvil se convierte automáticamente en un carrusel horizontal.
+
+5. PANEL DESTACADO
+Edita el mensaje institucional, una imagen y un botón de acceso.
+
+6. BIBLIOTECA
+Primero pulsa “Elegir imagen” en el espacio que deseas cambiar.
+Después selecciona una de las ocho imágenes incluidas.
+También puedes subir JPG, PNG o WebP de hasta 12 MB.
+
+7. GUARDAR
+- “Actualizar vista previa” muestra los cambios sin publicarlos globalmente.
+- “Guardar y publicar” conserva los cambios localmente y, si el SQL v17.12 está instalado, los publica para todo el equipo.
+
+8. RESTAURAR
+“Restaurar propuesta” devuelve el contenido visual original de v17.12 antes de guardar.
+
+RECOMENDACIONES
+- Usa imágenes horizontales 16:9 o cercanas.
+- Mantén textos breves.
+- Evita imágenes con demasiado texto incorporado.
+- Usa Liquid Glass suave en celulares de bajo rendimiento.

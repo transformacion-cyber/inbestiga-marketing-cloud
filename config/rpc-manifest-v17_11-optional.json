@@ -1,0 +1,40 @@
+{
+  "version": "17.11",
+  "build": "TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING",
+  "optional": true,
+  "sql": "SQL_OPCIONAL_v17_11.sql",
+  "rpc": [
+    "ibm_v1711_capabilities",
+    "ibm_v1711_dashboard",
+    "ibm_v1711_upsert_task_plan",
+    "ibm_v1711_record_effort",
+    "ibm_v1711_review_task_performance",
+    "ibm_v1711_upsert_client",
+    "ibm_v1711_update_campaign",
+    "ibm_v1711_set_catalog_state",
+    "ibm_v1711_update_rank_tier",
+    "ibm_v1711_register_occurrence"
+  ],
+  "helper_rpc": [
+    "ibm_v1711_actor_member_id",
+    "ibm_v1711_actor_role",
+    "ibm_v1711_is_manager",
+    "ibm_v1711_is_director",
+    "ibm_v1711_can_access_task",
+    "ibm_v1711_points_for_level",
+    "ibm_v1711_level_from_points",
+    "ibm_v1711_rank_for_points"
+  ],
+  "tables": [
+    "marketing_app.task_operations_v1711",
+    "marketing_app.task_effort_v1711",
+    "marketing_app.task_dependencies_v1711",
+    "marketing_app.task_occurrences_v1711",
+    "marketing_app.task_performance_reviews_v1711",
+    "marketing_app.performance_points_ledger_v1711",
+    "marketing_app.rank_tiers_v1711",
+    "marketing_app.catalog_lifecycle_v1711",
+    "marketing_app.task_operations_audit_v1711"
+  ],
+  "notes": "Aditivo, transaccional e idempotente. Agrega planificación, horas manuales, dependencias, recurrencia, catálogos, calificación 1–10, puntos y ranking 1–1000. No modifica las 45 RPC productivas ni exige temporizador."
+}

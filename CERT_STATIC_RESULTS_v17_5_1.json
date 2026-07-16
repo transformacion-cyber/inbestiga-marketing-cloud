@@ -1,0 +1,284 @@
+{
+  "version": "v17.5.1",
+  "build": "DATABASE COMPATIBILITY HOTFIX",
+  "html": {
+    "id_count": 649,
+    "duplicate_ids": [],
+    "local_reference_count": 22,
+    "missing_local_references": []
+  },
+  "javascript": {
+    "external": [
+      {
+        "file": "assets/js/audit-health-integration.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/collaboration-campaign-os.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/home-editorial-core.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/operational-intelligence.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/platform-diagnostics.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/platform-quality-core.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/production-certification.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/productivity-realtime-core.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/record-lifecycle-controls.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/system-health-center.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "assets/js/work360-advanced.js",
+        "ok": true,
+        "stderr": ""
+      },
+      {
+        "file": "service-worker.js",
+        "ok": true,
+        "stderr": ""
+      }
+    ],
+    "inline": [
+      {
+        "index": 1,
+        "ok": true,
+        "stderr": "",
+        "sha256": "934825b0348d6791fbb0413775bf01ccca51fb22f8e81354d5c5b950ba2ea77e"
+      },
+      {
+        "index": 2,
+        "ok": true,
+        "stderr": "",
+        "sha256": "47ecbe7d635674f95616508b70a82a5a01feff9874135da74bcc366ae922e8c5"
+      },
+      {
+        "index": 3,
+        "ok": true,
+        "stderr": "",
+        "sha256": "e3d8a9262653680a613a378589154ac233840deb1815cb3be7a5b1079b7b79f4"
+      },
+      {
+        "index": 4,
+        "ok": true,
+        "stderr": "",
+        "sha256": "02fbceb43c068845b740326d4bcd0eb16cf91b65ada4ea45256b3a4d3071c8e5"
+      },
+      {
+        "index": 5,
+        "ok": true,
+        "stderr": "",
+        "sha256": "a13c85f8dad47a44cd6d7d2f56ae3ccb6a06ba76e99e189d9254b1bca7e2e061"
+      },
+      {
+        "index": 6,
+        "ok": true,
+        "stderr": "",
+        "sha256": "ff4a1b9dc8b2b7cf50c54d3371f758dabe0ca20477a68b5c41da098bffa0220a"
+      },
+      {
+        "index": 7,
+        "ok": true,
+        "stderr": "",
+        "sha256": "4b19d96db681251c251da3bb0a66c588e164eb2a2fd123391785e48995c41127"
+      },
+      {
+        "index": 8,
+        "ok": true,
+        "stderr": "",
+        "sha256": "01324527314a275f5f4ea4286ce3eea77ae8e79ec2dd6a831136c9401be12c23"
+      },
+      {
+        "index": 9,
+        "ok": true,
+        "stderr": "",
+        "sha256": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd"
+      },
+      {
+        "index": 10,
+        "ok": true,
+        "stderr": "",
+        "sha256": "4ad27b48aa41fa5379d7b07b2decf38c68712080904ecf1b382714424f082312"
+      },
+      {
+        "index": 11,
+        "ok": true,
+        "stderr": "",
+        "sha256": "55d83139502ef1ca8b8a49236021db1c51574cec0103bd11b6aa2a127e01b5d4"
+      },
+      {
+        "index": 12,
+        "ok": true,
+        "stderr": "",
+        "sha256": "b8a1b148c39977f21610da55cc78d461682ab92778970b3ba898e87c693e212b"
+      },
+      {
+        "index": 13,
+        "ok": true,
+        "stderr": "",
+        "sha256": "bc3f5f5648930add296793b99bc32e2ea8f38e685e5b5f9f9b42d04b69e9bfee"
+      },
+      {
+        "index": 14,
+        "ok": true,
+        "stderr": "",
+        "sha256": "26f61f9c0331a9420fb250a1cfbf7e74497fd4827cdecc1043406d6939a40a5c"
+      }
+    ],
+    "inline_identical_to_v17_5": true
+  },
+  "protected": {
+    "creative_arena_js": {
+      "identical": true,
+      "sha256": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd"
+    },
+    "creative_arena_css": {
+      "identical": true,
+      "sha256": "cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f"
+    },
+    "collaboration_campaign_os_identical": true,
+    "productivity_realtime_core_identical": true
+  },
+  "json": [
+    {
+      "file": "CERT_STATIC_RESULTS.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "CERT_STATIC_RESULTS_v17_5.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "CERT_STATIC_RESULTS_v17_5_1.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "config/build-manifest.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "config/rpc-manifest-v17_5_1-optional.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "config/rpc-manifest.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "docs/MATRIZ_CERTIFICACION_v16_1.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "docs/MATRIZ_CERTIFICACION_v17_3.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "docs/evidence/DOM_CERTIFICATION_RESULTS_v17_3.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "docs/evidence/DOM_RECORD_LIFECYCLE_RESULTS_v17_5.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "docs/evidence/HEALTH_SCORE_GUARD_v17_5.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "docs/evidence/PROTECTED_AND_SQL_REVIEW_v17_5.json",
+      "ok": true,
+      "error": ""
+    },
+    {
+      "file": "docs/evidence/STATIC_CERTIFICATION_v17_3.json",
+      "ok": true,
+      "error": ""
+    }
+  ],
+  "rpc": {
+    "required_count": 45,
+    "unique_count": 45,
+    "manifest_identical_to_v17_5": true
+  },
+  "pwa": {
+    "cache_name": "inbestiga-v17-5-1-shell",
+    "shell_count": 23,
+    "missing_shell_files": []
+  },
+  "sql": {
+    "file": "SQL_OPCIONAL_v17_5_1.sql",
+    "line_count": 633,
+    "dollar_tag_counts": {
+      "$function$": 8,
+      "$preflight$": 2
+    },
+    "all_dollar_tags_even": true,
+    "transactional": true,
+    "preflight_tables": [
+      "campaigns",
+      "tasks",
+      "briefs",
+      "editorial_items",
+      "assets",
+      "templates",
+      "incidents",
+      "report_snapshots",
+      "members"
+    ],
+    "deprecated_editorial_relation": false,
+    "physical_delete": false,
+    "drop_table": false,
+    "productive_table_alterations": [],
+    "optional_rpc_names": [
+      "ibm_v175_actor_scope",
+      "ibm_v175_patch_record",
+      "ibm_v175_set_record_state",
+      "ibm_v175_lifecycle_capabilities"
+    ],
+    "execution_against_supabase": "pending"
+  },
+  "service_role_secret_hits": [],
+  "ok": true
+}

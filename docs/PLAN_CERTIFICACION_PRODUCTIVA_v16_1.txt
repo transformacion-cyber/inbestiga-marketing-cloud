@@ -1,0 +1,27 @@
+PLAN DE CERTIFICACIÓN PRODUCTIVA v16.1
+
+CUENTAS REQUERIDAS
+- 1 cuenta de Dirección.
+- 1 cuenta de Supervisión.
+- 1 cuenta de Colaborador.
+- 2 navegadores o perfiles de navegador abiertos simultáneamente.
+
+ORDEN
+1. Ejecutar la pestaña Automática desde una sesión autenticada.
+2. Completar la matriz Dirección.
+3. Completar la matriz Supervisión.
+4. Completar la matriz Colaborador.
+5. Exportar el JSON final.
+6. Corregir únicamente los casos marcados como Falló.
+
+CRITERIO DE APROBACIÓN
+- Sin fallos automáticos de frontend, fecha, DOM, secciones o funciones.
+- RPC requeridas disponibles o justificadas.
+- Storage accesible cuando el módulo de archivos esté habilitado.
+- Realtime confirmado en canal temporal y entre dos sesiones reales.
+- Ninguna cuenta accede a acciones fuera de su rol.
+- Las tareas, campañas, entregas y mensajes persisten después de sincronizar.
+- Creative Arena conserva la pizarra después de cerrar y volver a abrir.
+
+NOTA
+No use datos sensibles para la prueba. Cree una campaña y tareas identificadas como CERTIFICACIÓN y elimínelas manualmente al finalizar si su política lo permite.

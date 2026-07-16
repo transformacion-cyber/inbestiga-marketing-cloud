@@ -1,0 +1,16 @@
+CREATIVE ARENA / PROTECTED HASHES v17.11
+Base comparada: v17.10.2
+
+9a9ef56e9e1199714d123252647a216f4e9ead5881f68db532b8e98dd11dd4d7  assets/js/collaboration-campaign-os.js  [IDÉNTICO]
+bab559d36df46e7a5c937a6df1abac5ccdae20d7010c330ea0b9181079e2a88d  assets/css/collaboration-campaign-os.css  [IDÉNTICO]
+76d31001fb4bf1b8deecc5dbbbbbc9e5afa9f94058b95bf382ce677cb8d7b38e  assets/js/home-editorial-core.js  [IDÉNTICO]
+3ccfde0fdab6aca669eb5ea5666a4cdf75ddcb66fd13350dd97d5d19e8cc0679  assets/js/member-wall-work-sync.js  [IDÉNTICO]
+7bfc6699ba486ec71b4ae5911ced49b2ed67ec352ae74803f14ac9e941b56229  assets/css/member-wall-work-sync.css  [IDÉNTICO]
+a05bebf3f2a6ec3287aaa996bbed40aa8b61fbf9b6c201a1b61b9de0df7bc904  assets/js/design-system-studio.js  [IDÉNTICO]
+5cf956275444f061920fba37d7ef5c6336d5cb8b6e637d8731a6d6676afde7fb  assets/css/design-system-studio.css  [IDÉNTICO]
+9ec981c798cefc130cc1ffa16332d70f4138c844113a8be02ecbe022017aa787  SQL_OPCIONAL_v17_7.sql  [IDÉNTICO]
+011e34b593a95d666c5f37b910569ac785bad9bbd9057d3281e5cb662e193a9b  SQL_OPCIONAL_v17_8.sql  [IDÉNTICO]
+400caa11c58414b6193bb8497c78b403183f33cb6b1dad045685fb27bf22d0fe  SQL_OPCIONAL_v17_9.sql  [IDÉNTICO]
+82587f7aa65e5f5652c7778674eb6c108f5bcfa569c10f57029dc8bad4574167  config/rpc-manifest.json  [IDÉNTICO]
+
+Resultado: todos los archivos protegidos son idénticos a v17.10.2.

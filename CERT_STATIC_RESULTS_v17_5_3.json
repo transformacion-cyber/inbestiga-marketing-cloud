@@ -1,0 +1,44 @@
+{
+  "version": "v17.5.3",
+  "build": "AUDIT COUNTER ACCURACY",
+  "external_js_count": 12,
+  "external_js_all_valid": true,
+  "inline_script_count": 14,
+  "inline_scripts_identical_to_v17_5_2": true,
+  "dom_id_count": 649,
+  "duplicate_ids": [],
+  "local_reference_count": 24,
+  "missing_local_references": [],
+  "service_worker_cache": "inbestiga-v17-5-3-shell",
+  "service_worker_shell_count": 25,
+  "service_worker_missing": [],
+  "required_rpc_count": 45,
+  "required_rpc_unique_count": 45,
+  "creative_arena_js_sha256": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd",
+  "creative_arena_css_sha256": "cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f",
+  "creative_arena_js_identical": true,
+  "creative_arena_css_identical": true,
+  "protected_files": {
+    "assets/js/home-editorial-core.js": true,
+    "assets/js/collaboration-campaign-os.js": true,
+    "assets/js/productivity-realtime-core.js": true,
+    "assets/js/work360-advanced.js": true,
+    "assets/js/record-lifecycle-controls.js": true,
+    "config/rpc-manifest.json": true,
+    "SQL_OPCIONAL_v16_1.sql": true,
+    "SQL_OPCIONAL_v17_0.sql": true,
+    "SQL_OPCIONAL_v17_5_1.sql": true
+  },
+  "controlled_counter_test": {
+    "backend_events": 35,
+    "backend_warnings": 1,
+    "backend_errors": 0,
+    "browser_errors": 100,
+    "session_events": 7,
+    "failed_renders": 0
+  },
+  "sql_required": false,
+  "limitations": [
+    "La visualización final y las descargas deben confirmarse después del despliegue HTTPS con la sesión real."
+  ]
+}

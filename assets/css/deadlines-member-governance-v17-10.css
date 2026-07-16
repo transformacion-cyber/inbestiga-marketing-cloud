@@ -1,0 +1,61 @@
+/* ===== INBESTIGA v17.10 · DEADLINES & MEMBER GOVERNANCE ===== */
+.v1710-deadline-label{position:relative}
+.v1710-deadline-label>span,.v1710-deadline-label>small{display:block}
+.v1710-deadline-label small{margin-top:6px;color:#6b7280;font-size:11px;line-height:1.35}
+.v1710-required{display:inline-flex;align-items:center;gap:6px;margin-left:7px;padding:3px 7px;border-radius:999px;background:#fff2f2;color:#b42318;font-size:10px;font-weight:900;letter-spacing:.02em;vertical-align:middle}
+.v1710-deadline-presets{grid-column:1/-1;display:flex;align-items:center;gap:8px;flex-wrap:wrap;padding:10px 12px;border:1px solid rgba(110,38,246,.13);border-radius:16px;background:linear-gradient(135deg,rgba(110,38,246,.055),rgba(255,255,255,.84))}
+.v1710-deadline-presets>span{font-size:11px;font-weight:900;color:#6e2fb2;text-transform:uppercase;letter-spacing:.08em}
+.v1710-deadline-presets button{border:1px solid rgba(110,38,246,.16);background:#fff;color:#3f2b57;border-radius:999px;padding:7px 11px;font-size:11px;font-weight:850;cursor:pointer}
+.v1710-deadline-presets button:hover{transform:translateY(-1px);border-color:rgba(110,38,246,.34);box-shadow:0 8px 22px rgba(110,38,246,.1)}
+.v1710-deadline-chip{display:inline-flex;align-items:center;gap:6px;max-width:100%;width:max-content;padding:6px 9px;border-radius:999px;border:1px solid rgba(100,116,139,.18);background:#f8fafc;color:#475569;font-size:10.5px;font-weight:900;line-height:1;white-space:nowrap}
+.v1710-deadline-chip::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.8}
+.v1710-deadline-chip.today{background:#fff7e6;border-color:#ffd28a;color:#9a5b00}
+.v1710-deadline-chip.soon{background:#f3efff;border-color:#d8c6ff;color:#6e2fb2}
+.v1710-deadline-chip.overdue{background:#fff0f0;border-color:#ffb6b6;color:#b42318}
+.v1710-deadline-chip.done{background:#edf9f2;border-color:#abe7c5;color:#067647}
+.v1710-deadline-chip.missing{background:#f8fafc;border-style:dashed;color:#64748b}
+.v1710-deadline-inline{margin-top:8px}
+.v1710-deadline-detail{margin:0 0 14px;padding:14px 16px;border-radius:18px;border:1px solid rgba(110,38,246,.16);background:linear-gradient(135deg,rgba(110,38,246,.07),rgba(255,255,255,.95));display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}
+.v1710-deadline-detail strong{display:block;font-size:15px;color:#20172c}
+.v1710-deadline-detail span{display:block;color:#6b7280;font-size:12px;margin-top:3px}
+.v1710-deadline-detail.overdue{border-color:#ffb6b6;background:#fff4f4}
+.v1710-deadline-detail.overdue strong{color:#b42318}
+.v1710-governance-panel{margin-top:18px;padding:0;overflow:hidden;border:1px solid rgba(110,38,246,.14);border-radius:26px;background:linear-gradient(145deg,#fff,#fbf9ff);box-shadow:0 18px 46px rgba(57,32,89,.07)}
+.v1710-governance-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:20px 22px;border-bottom:1px solid rgba(110,38,246,.1);background:radial-gradient(circle at 88% 0%,rgba(110,38,246,.12),transparent 36%)}
+.v1710-governance-head h3{margin:2px 0 5px;font-size:22px;letter-spacing:-.035em}
+.v1710-governance-head p{margin:0;color:#697386;line-height:1.5;max-width:760px}
+.v1710-governance-badge{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:999px;background:#f4efff;color:#6e2fb2;font-size:11px;font-weight:900;white-space:nowrap}
+.v1710-governance-badge.ready{background:#edf9f2;color:#067647}
+.v1710-governance-body{padding:20px 22px}
+.v1710-governance-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;margin-bottom:16px}
+.v1710-governance-metric{padding:13px 14px;border:1px solid #e8e4ef;border-radius:16px;background:#fff}
+.v1710-governance-metric span{display:block;color:#7a7282;font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.08em}
+.v1710-governance-metric strong{display:block;margin-top:5px;font-size:22px;color:#20172c}
+.v1710-governance-grid{display:grid;grid-template-columns:minmax(0,1.1fr) minmax(300px,.9fr);gap:16px}
+.v1710-governance-card{border:1px solid #e8e4ef;border-radius:20px;background:#fff;padding:16px}
+.v1710-governance-card h4{margin:0 0 4px;font-size:16px}
+.v1710-governance-card>p{margin:0 0 14px;color:#6b7280;font-size:12px;line-height:1.45}
+.v1710-field{display:grid;gap:6px;margin-bottom:11px;color:#3f3a46;font-size:12px;font-weight:800}
+.v1710-field select,.v1710-field input{width:100%;min-height:44px;border:1px solid #ded8e7;border-radius:13px;background:#fff;padding:0 12px;color:#20172c}
+.v1710-governance-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.v1710-governance-actions button{border-radius:13px;padding:10px 13px;font-weight:900;cursor:pointer}
+.v1710-danger{background:#b42318!important;color:#fff!important;border-color:#b42318!important}
+.v1710-danger:disabled{opacity:.45;cursor:not-allowed}
+.v1710-warning{background:#fff7e6!important;color:#8a5200!important;border-color:#ffd28a!important}
+.v1710-preview{margin-top:14px;border:1px solid #e8e4ef;border-radius:16px;background:#faf9fc;padding:13px;min-height:62px}
+.v1710-preview h5{margin:0 0 8px;font-size:13px}
+.v1710-preview p{margin:4px 0;color:#676071;font-size:12px;line-height:1.45}
+.v1710-dependency-list{display:grid;gap:6px;margin-top:8px}
+.v1710-dependency-row{display:flex;justify-content:space-between;gap:10px;padding:7px 9px;border-radius:10px;background:#fff;border:1px solid #ece8f0;font-size:11px}
+.v1710-hidden-list{display:grid;gap:8px;max-height:360px;overflow:auto;padding-right:3px}
+.v1710-hidden-member{display:grid;grid-template-columns:42px minmax(0,1fr) auto;gap:10px;align-items:center;padding:10px;border:1px solid #ece8f0;border-radius:15px;background:#fff}
+.v1710-hidden-avatar{width:42px;height:42px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#6e26f6,#c63fff);color:#fff;font-weight:1000}
+.v1710-hidden-member strong{display:block;font-size:12.5px;color:#211a28}
+.v1710-hidden-member span{display:block;margin-top:2px;color:#7b7381;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.v1710-hidden-member button{padding:7px 9px;border-radius:10px;font-size:10.5px;font-weight:900}
+.v1710-empty{padding:18px;border:1px dashed #d8d1e2;border-radius:14px;text-align:center;color:#7b7381;font-size:12px}
+.v1710-confirm-help{margin-top:5px;color:#8a3d3d;font-size:10.5px;line-height:1.4}
+.v1710-manager-note{margin:14px 0 0;padding:11px 13px;border-radius:14px;background:#f8fafc;border:1px solid #e7eaf0;color:#64748b;font-size:11px;line-height:1.5}
+@media(max-width:900px){.v1710-governance-grid{grid-template-columns:1fr}.v1710-governance-metrics{grid-template-columns:1fr}.v1710-governance-head{flex-direction:column}.v1710-deadline-detail{align-items:flex-start}}
+
+.v1710-dependency-action{display:inline-flex;margin-left:6px;padding:2px 7px;border-radius:999px;font-size:9px;font-style:normal;font-weight:800;letter-spacing:.04em;text-transform:uppercase;background:#eeeaf5;color:#5e4b72}.v1710-dependency-action.transfer{background:#efe8ff;color:#6e2fb2}.v1710-dependency-action.cleanup{background:#fff3df;color:#8b5b00}

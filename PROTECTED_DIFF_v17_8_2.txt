@@ -1,0 +1,17 @@
+PROTECTED DIFF v17.8.2
+
+{
+  "base": "v17.8.1",
+  "index_changed_only_for": [
+    "build metadata",
+    "parseTaskChecklist helper",
+    "saveTask checklist payload"
+  ],
+  "creative_arena_untouched": true,
+  "auth_untouched": true,
+  "loadAll_unchanged": true,
+  "renderAll_unchanged": true,
+  "bootstrap_untouched": true,
+  "rpc_manifest_sha256": "82587f7aa65e5f5652c7778674eb6c108f5bcfa569c10f57029dc8bad4574167",
+  "rpc_manifest_identical_to_base": true
+}

@@ -1,0 +1,19 @@
+INBESTIGA Marketing Cloud v17.8.2 · TASK CHECKLIST CREATION HOTFIX
+
+FALLO REPRODUCIBLE
+Dirección, Jefatura y Supervisión no podían crear tareas desde el formulario clásico.
+El navegador mostraba: checklist is not defined.
+
+CAUSA
+saveTask() intentaba ejecutar JSON.parse(checklist()), pero checklist no existía en ese alcance.
+
+SOLUCIÓN
+- Se agregó parseTaskChecklist(value).
+- Lee el valor real del campo #taskChecklist.
+- Acepta comas y saltos de línea.
+- Devuelve [] cuando el checklist está vacío.
+- Envía un arreglo válido a p_checklist.
+
+ALCANCE
+No se modificaron Auth, Supabase, RPC, RLS, Creative Arena, loadAll, renderAll, bootstrap, Home editorial ni el diseño general.
+No requiere SQL.

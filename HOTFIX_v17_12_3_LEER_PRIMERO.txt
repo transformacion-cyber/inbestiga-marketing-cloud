@@ -1,0 +1,22 @@
+INBESTIGA MARKETING CLOUD v17.12.3
+BOOT FREEZE + MEDIA EDITOR STABILITY HOTFIX
+
+CORRECCIONES
+- El editor visual ya no modifica repetidamente los mismos botones mediante MutationObserver.
+- Se elimina el ciclo de mutaciones que podía congelar el arranque en 12 %.
+- El selector de archivos ya no se activa dos veces ni entra en recursión.
+- El editor sigue permitiendo biblioteca, carga local, arrastrar y soltar y URL.
+- Salud, certificación, versión y caché PWA quedan alineadas en v17.12.3.
+
+NO SE MODIFICA
+- Supabase Auth, tablas, RLS, RPC o Storage.
+- Tareas, clientes, campañas, ranking ni datos.
+- Creative Arena y sus pizarras.
+- Los scripts inline de index.html, salvo metadatos y referencias externas.
+
+INSTALACIÓN
+1. Publicar únicamente este paquete en Netlify.
+2. Esperar Published.
+3. Cerrar pestañas y recargar con Ctrl+Shift+R.
+4. Confirmar v17.12.3 y Shell v17.12.3 activa.
+5. No ejecutar SQL.

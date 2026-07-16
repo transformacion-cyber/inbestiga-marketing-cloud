@@ -1,0 +1,14 @@
+AUDITORIA DE ENTREGA v13.0
+
+ALCANCE
+- Sintaxis de scripts internos.
+- IDs duplicados estaticos.
+- Integridad del empaquetado.
+- Inyeccion aislada del modulo operacional.
+- Conservacion de los archivos productivos existentes.
+
+PRUEBAS PRODUCTIVAS PENDIENTES
+- RLS por rol.
+- Storage con archivos reales.
+- Realtime entre dos sesiones.
+- Persistencia de acciones rapidas contra Supabase.

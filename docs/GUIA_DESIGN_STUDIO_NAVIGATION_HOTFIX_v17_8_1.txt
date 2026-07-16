@@ -1,0 +1,15 @@
+INBESTIGA Marketing Cloud v17.8.1 · DESIGN STUDIO NAVIGATION HOTFIX
+
+CORRECCIÓN
+- El buscador global consulta contenido productivo y no mostraba módulos del sistema.
+- El menú superior Apple no incluía la entrada del Design System Studio aunque el módulo estaba cargado.
+
+NUEVOS ACCESOS
+- Botón Diseño en la barra superior.
+- Enlace Diseño y apariencia dentro del menú Administración.
+- Resultado directo al buscar diseño, apariencia, tema, fotos, fondos, intro, colores o fuentes.
+
+SEGURIDAD
+- No modifica SQL, Auth, RPC, RLS, loadAll, renderAll ni Creative Arena.
+- El editor global conserva su control por rol; otros usuarios acceden únicamente a personalización del muro.
+- No requiere ejecutar nuevamente SQL_OPCIONAL_v17_8.sql.

@@ -1,0 +1,6 @@
+DOCUMENTO HISTORICO v17.5 — NO USAR PARA INSTALACION SQL
+
+El SQL v17.5 fue sustituido por SQL_OPCIONAL_v17_5_1.sql debido a una incompatibilidad con el nombre real marketing_app.editorial_items.
+
+Consultar docs/GUIA_DATABASE_COMPATIBILITY_HOTFIX_v17_5_1.txt.
+La guia original completa se conserva dentro de PLATAFORMA_BASE_ORIGINAL_v17_5.zip.

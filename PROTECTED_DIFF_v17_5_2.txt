@@ -1,0 +1,12 @@
+PROTECTED DIFF v17.5.2
+Inline scripts identical: True
+Creative Arena JavaScript identical: True
+Creative Arena CSS identical: True
+assets/js/home-editorial-core.js identical: True
+assets/js/collaboration-campaign-os.js identical: True
+assets/js/productivity-realtime-core.js identical: True
+assets/js/work360-advanced.js identical: True
+assets/js/record-lifecycle-controls.js identical: True
+Required 45-RPC manifest identical: True
+SQL v16.1, v17.0 y v17.5.1 identical: True
+Auth/loadAll/renderAll/bootstrap were not edited inline.

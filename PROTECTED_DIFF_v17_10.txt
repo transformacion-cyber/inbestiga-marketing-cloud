@@ -1,0 +1,20 @@
+PROTECTED DIFF v17.10
+
+BASE: v17.9 COLLABORATIVE WORKSPACE FILES & REVIEWS
+
+CAMBIOS EN INDEX.HTML LIMITADOS A
+- Metadato de build v17.10.
+- Inclusión de CSS y JavaScript externos v17.10.
+- Texto visible “Fecha límite” y “Hora límite” en el formulario de tareas.
+
+PROTECCIONES
+- Creative Arena sin cambios.
+- Login y Supabase Auth sin cambios.
+- 14 scripts inline idénticos a v17.9.
+- loadAll, renderAll y bootstrap contenidos en scripts inline sin cambios.
+- config/rpc-manifest.json idéntico a v17.9.
+- Las 45 RPC productivas permanecen intactas.
+- SQL v17.7, v17.8 y v17.9 idénticos a la base.
+- Home editorial, Member Wall Sync y Design System Studio idénticos a la base.
+
+Los hashes exactos se documentan en CREATIVE_ARENA_SHA256_v17_10.txt y CERT_STATIC_RESULTS_v17_10.json.

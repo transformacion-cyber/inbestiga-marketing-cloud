@@ -1,0 +1,16 @@
+INBESTIGA v17.11.1 · AUDITORÍA DEL HOTFIX MÓVIL
+
+Alcance: corrección frontend aditiva de navegación móvil y versión visible.
+Base: v17.11.
+Creative Arena: sin modificaciones.
+Auth / tablas / RPC / RLS / Storage: sin modificaciones.
+SQL requerido: no.
+
+Incidencia confirmada:
+- index.html contenía v4.23 de forma fija en la cabecera Apple móvil.
+- el botón móvil superior abría únicamente la categoría Principal.
+
+Solución:
+- módulo externo mobile-creative-navigation-v17-11-1.js.
+- hoja externa mobile-creative-navigation-v17-11-1.css.
+- ambos botones móviles abren un directorio completo con acceso destacado a Salas creativas.

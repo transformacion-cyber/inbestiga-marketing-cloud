@@ -1,0 +1,20 @@
+AUDITORÍA DE ENTREGA v16.0
+
+ALCANCE
+- Integridad estática del paquete.
+- Sintaxis de JavaScript.
+- Referencias locales de CSS, JS, manifest, service worker e iconos.
+- Ausencia de IDs estáticos duplicados.
+- Comparación de los bloques de Creative Arena.
+
+RESULTADO
+- El nuevo módulo está aislado y es compatible con la estructura v15.0.
+- Las mejoras reutilizan safeSync, loadAll y los flujos productivos existentes.
+- La certificación incorporada no crea, actualiza ni elimina registros.
+- El modo PWA almacena únicamente el shell local y no intercepta dominios de Supabase.
+
+PENDIENTE EN ENTORNO PRODUCTIVO
+- Confirmar esquema y publicación Realtime.
+- Confirmar RLS por rol.
+- Confirmar acceso al bucket inbestiga-media.
+- Probar mensajes y cambios simultáneos con dos cuentas reales.

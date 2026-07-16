@@ -1,0 +1,9 @@
+Creative Arena JavaScript SHA-256 v17.5.3: c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd
+Creative Arena JavaScript SHA-256 v17.6: c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd
+JavaScript status: IDENTICAL
+
+Creative Arena CSS SHA-256 v17.5.3: cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f
+Creative Arena CSS SHA-256 v17.6: cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f
+CSS status: IDENTICAL
+
+Method: exact SHA-256 comparison of the content of #v422-creative-arena-clean-js and #v422-creative-arena-clean-css.

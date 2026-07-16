@@ -1,0 +1,7 @@
+AUDITORÍA DE ENTREGA v17.11
+
+Resultado estático: consultar CERT_STATIC_RESULTS_v17_11.json.
+Base autorizada: v17.10.2.
+Cambios: módulo JS/CSS v17.11, SQL opcional, manifiesto opcional, integración aditiva de eventos v17.9 y metadatos de build/PWA.
+No certificado sin Supabase real: RLS, Realtime, persistencia multiusuario, recurrencias, puntos, catálogos y reportes con datos productivos.
+No se ejecutó SQL automáticamente.

@@ -1,0 +1,45 @@
+{
+  "version": "v17.5.2",
+  "build": "HEALTH SCORE ACCURACY HOTFIX",
+  "external_js_count": 12,
+  "json_count": 14,
+  "dom_ids": 649,
+  "duplicate_ids": 0,
+  "inline_scripts": 14,
+  "inline_identical": true,
+  "local_references": 22,
+  "missing_references": 0,
+  "service_worker_shell": 23,
+  "rpc_required": 45,
+  "rpc_manifest_identical": true,
+  "modules": 11,
+  "styles": 9,
+  "protected_files_identical": [
+    "assets/js/home-editorial-core.js",
+    "assets/js/collaboration-campaign-os.js",
+    "assets/js/productivity-realtime-core.js",
+    "assets/js/work360-advanced.js",
+    "assets/js/record-lifecycle-controls.js",
+    "SQL_OPCIONAL_v16_1.sql",
+    "SQL_OPCIONAL_v17_0.sql",
+    "SQL_OPCIONAL_v17_5_1.sql",
+    "config/rpc-manifest.json",
+    "config/rpc-manifest-v17_5_1-optional.json"
+  ],
+  "creative_js": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd",
+  "creative_css": "cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f",
+  "embedded_base_sha256": "70fb91bdbe20f5c87b1c9f026a7ea7fabf94a110cab0e2102ac135a8fa506909",
+  "health_logic": {
+    "empty_shell_status": "ok",
+    "empty_shell_value": "Sin pendientes detectados",
+    "meaningful_status": "warn",
+    "stale_report_ignored": true,
+    "neutral_score": 100
+  },
+  "version_alignment": {
+    "index_build": true,
+    "health_version": true,
+    "cert_version": true,
+    "audit_version": true
+  }
+}

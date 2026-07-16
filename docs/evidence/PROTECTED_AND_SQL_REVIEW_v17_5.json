@@ -1,0 +1,65 @@
+{
+  "inline_script_count_base": 14,
+  "inline_script_count_v175": 14,
+  "inline_scripts_byte_identical": true,
+  "protected_files": {
+    "assets/js/collaboration-campaign-os.js": {
+      "same": true,
+      "base_sha256": "9a9ef56e9e1199714d123252647a216f4e9ead5881f68db532b8e98dd11dd4d7",
+      "v175_sha256": "9a9ef56e9e1199714d123252647a216f4e9ead5881f68db532b8e98dd11dd4d7"
+    },
+    "assets/js/productivity-realtime-core.js": {
+      "same": true,
+      "base_sha256": "33bdfdcc23b5f3a58625c07574930261eafbab2db60b0e5c8f25dcf582fc3536",
+      "v175_sha256": "33bdfdcc23b5f3a58625c07574930261eafbab2db60b0e5c8f25dcf582fc3536"
+    }
+  },
+  "required_rpc_manifest_identical": true,
+  "required_rpc_count": 45,
+  "sql_static_checks": {
+    "dollar_delimiters_even": true,
+    "function_count": 4,
+    "security_definer_count": 4,
+    "physical_delete_absent": true,
+    "drop_table_absent": true,
+    "truncate_absent": true,
+    "service_role_absent": true,
+    "record_scope_guard": true,
+    "target_scope_guard": true,
+    "director_lifecycle_guard": true,
+    "change_log_write": true,
+    "postgrest_reload": true
+  },
+  "changed_files": [
+    "CHECKLIST_QA_ENTREGA.txt",
+    "HANDOFF_CONTINUIDAD.txt",
+    "LISTA_DE_ARCHIVOS_Y_ORDEN_DE_INSTALACION.txt",
+    "PROMPT_LISTO_PARA_NUEVO_CHAT.txt",
+    "README_INSTALACION.txt",
+    "RESUMEN_DECISIONES_TECNICAS.txt",
+    "REVISION_TECNICA.txt",
+    "assets/js/audit-health-integration.js",
+    "assets/js/production-certification.js",
+    "assets/js/system-health-center.js",
+    "config/build-manifest.json",
+    "index.html",
+    "service-worker.js"
+  ],
+  "added_files": [
+    "AUDITORIA_PLATAFORMA_v17_5.txt",
+    "CERT_STATIC_RESULTS_v17_5.json",
+    "CREATIVE_ARENA_SHA256_v17_5.txt",
+    "PLATAFORMA_BASE_ORIGINAL_v17_4.zip",
+    "PROTECTED_DIFF_v17_5.txt",
+    "SQL_OPCIONAL_v17_5.sql",
+    "assets/css/record-lifecycle-controls.css",
+    "assets/js/record-lifecycle-controls.js",
+    "config/rpc-manifest-v17_5-optional.json",
+    "docs/AUDITORIA_CICLO_DE_VIDA_v17_5.txt",
+    "docs/GUIA_RECORD_LIFECYCLE_CONTROLS_v17_5.txt",
+    "docs/evidence/DOM_RECORD_LIFECYCLE_RESULTS_v17_5.json",
+    "docs/evidence/HEALTH_SCORE_GUARD_v17_5.json",
+    "docs/evidence/PROTECTED_AND_SQL_REVIEW_v17_5.json"
+  ],
+  "removed_files": []
+}

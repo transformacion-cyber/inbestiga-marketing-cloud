@@ -1,0 +1,17 @@
+AUDITORIA PLATAFORMA v17.5.3 — AUDIT COUNTER ACCURACY
+
+VALIDACIONES
+- JS externos: 12 pasan node --check.
+- Scripts inline: 14 pasan node --check y son idénticos a v17.5.2.
+- IDs DOM: 649, duplicados: 0.
+- Referencias locales HTML: 24, faltantes: 0.
+- Service Worker: inbestiga-v17-5-3-shell con 25 recursos, faltantes: 0.
+- RPC productivas: 45 declaradas, 45 únicas, manifiesto intacto.
+- SQL v16.1, v17.0 y v17.5.1: intactos.
+- Creative Arena JS/CSS: idénticos a v17.5.2.
+- Prueba controlada de conteo: 35 eventos backend, 1 advertencia, 0 errores backend, 100 errores navegador, 7 eventos sesión y 0 renders fallidos.
+- Errores navegador agrupados por módulo, acción y mensaje.
+- Exportaciones separadas con protección básica contra fórmulas CSV.
+
+LIMITACION
+La interacción final, los CSV descargados y el puntaje de salud deben confirmarse después del despliegue HTTPS con la sesión real.

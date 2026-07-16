@@ -1,0 +1,20 @@
+GUIA — DATABASE COMPATIBILITY HOTFIX v17.5.1
+
+1. Desplegar el ZIP en Netlify.
+2. Confirmar que el encabezado y Salud indiquen v17.5.1.
+3. No ejecutar el SQL v17.5 anterior.
+4. En Supabase SQL Editor abrir una consulta nueva.
+5. Pegar SQL_OPCIONAL_v17_5_1.sql completo.
+6. Ejecutar una sola vez.
+7. El resultado debe mostrar:
+   - marketing_app.record_lifecycle
+   - marketing_app.record_change_log
+   - ibm_v175_actor_scope()
+   - ibm_v175_patch_record(text,text,jsonb)
+   - ibm_v175_set_record_state(text,text,text,text)
+   - ibm_v175_lifecycle_capabilities()
+8. Esperar 20 segundos y recargar la plataforma.
+9. Probar solo con CERTIFICACIÓN V17.4 - NO PUBLICAR.
+10. Validar editar, archivar, restaurar, papelera y restaurar.
+
+El SQL no borra datos, no altera tablas productivas y no modifica las 45 RPC existentes.

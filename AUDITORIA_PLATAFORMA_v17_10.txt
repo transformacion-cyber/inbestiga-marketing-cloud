@@ -1,0 +1,25 @@
+AUDITORÍA PLATAFORMA v17.10 — DEADLINES & MEMBER GOVERNANCE
+
+RESULTADO ESTÁTICO
+- 17 JavaScript externos y Service Worker válidos con node --check.
+- 14 scripts inline válidos e idénticos a v17.9.
+- 649 IDs HTML, sin duplicados.
+- 34 referencias locales completas.
+- 31 JSON y 15 CSS validados.
+- SQL_OPCIONAL_v17_10.sql analizado por parser PostgreSQL: 36 sentencias válidas.
+- 45 RPC productivas intactas y únicas.
+- 4 RPC funcionales v17.10 y 5 helpers en manifiesto opcional.
+- Creative Arena, Auth, loadAll, renderAll, bootstrap y SQL anteriores sin cambios.
+
+PRUEBAS CONTROLADAS
+- Miembros oficiales: conserva perfiles completos y vinculados.
+- Perfiles demo/inactivos/duplicados: quedan en cuarentena y fuera de listas operativas.
+- Jerarquía: Italo administra todos los niveles inferiores y demos; Jhulio administra Alejandro/member; Alejandro administra member.
+- Deadline: detecta sin fecha, futuro, hoy, próximo, vencido y completado.
+- Eliminación: exige preview, correo exacto, transferencia y no permite autoeliminación.
+- Último Italo activo protegido.
+- Perfil inactivo o demo autenticado: cierre de sesión controlado probado en VM.
+- Si la carga inicial terminó antes que el módulo v17.10, el directorio oficial se vuelve a renderizar una sola vez.
+
+NO CERTIFICADO SIN SUPABASE REAL
+La ejecución de SQL, RLS, transferencia dinámica, eliminación persistente, Realtime y comportamiento entre cuentas requieren prueba posterior en el proyecto productivo.

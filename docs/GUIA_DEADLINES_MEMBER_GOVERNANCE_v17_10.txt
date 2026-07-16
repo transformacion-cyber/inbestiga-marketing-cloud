@@ -1,0 +1,78 @@
+GUÍA DE USO — v17.10 DEADLINES & MEMBER GOVERNANCE
+
+1. DEADLINE DE LAS TAREAS
+- Dirección y Supervisión deben indicar una fecha límite al crear una tarea.
+- La hora límite es opcional. Si no se define, el plazo termina al final del día.
+- El formulario incluye atajos: Hoy 18:00, Mañana, +3 días y +7 días.
+- La tarea muestra su deadline en tarjetas y detalle.
+- Indicadores disponibles: hoy, próxima, vencida, completada y sin deadline.
+- El deadline utiliza las columnas productivas existentes due_date y due_time; no requiere una tabla nueva.
+
+2. MIEMBROS OFICIALES
+Las listas operativas muestran únicamente perfiles que cumplan estas condiciones:
+- Estado activo.
+- Vínculo real con Supabase Auth mediante auth_user_id.
+- Nombre completo, no un nombre demostrativo de una sola palabra.
+- Correo único, evitando duplicados antiguos.
+
+Los perfiles demostrativos member, Eleam, ITALO, Juan y Mayito se ocultan de Trabajo 360, carga, asignaciones, reportes, mensajes y demás listas operativas. El nombre completo oficial de Eleam, Italo y Juan no se oculta.
+
+3. PANEL DE GOBERNANZA
+Ruta: Administración > Usuarios > Miembros oficiales y eliminación segura.
+
+El panel permite:
+- Ver miembros oficiales.
+- Ver perfiles ocultos, inactivos, duplicados o de prueba.
+- Revisar dependencias antes de eliminar.
+- Desactivar un perfil.
+- Transferir trabajo a un miembro oficial.
+- Eliminar definitivamente el perfil dentro de Marketing Cloud.
+
+4. DIFERENCIA ENTRE DESACTIVAR Y ELIMINAR
+DESACTIVAR
+- Conserva el perfil y el historial.
+- Lo retira de listas operativas y nuevas asignaciones.
+- Es la opción recomendada para ausencias, pausas o revisiones.
+- La sesión del perfil inactivo se cierra de forma controlada al cargar v17.10.
+
+ELIMINAR DE MARKETING CLOUD
+- Elimina el registro de marketing_app.members.
+- Transfiere tareas y relaciones operativas al miembro seleccionado.
+- Retira configuraciones personales del perfil eliminado.
+- Exige escribir el correo exacto como confirmación.
+- Registra la acción en member_governance_log.
+- No puede deshacerse desde la interfaz.
+
+5. ALCANCE DE SEGURIDAD
+La eliminación v17.10 se limita a Marketing Cloud.
+NO elimina:
+- auth.users.
+- tickets."User".
+- Objetos de Supabase Storage.
+- Datos de otros sistemas de la empresa.
+
+Al quedar sin perfil en marketing_app.members, esa cuenta ya no puede ingresar a Marketing Cloud. Si una persona abandona completamente la empresa, el administrador deberá gestionar por separado sus accesos en los otros sistemas.
+
+6. JERARQUÍA DE PERMISOS
+- Italo puede gestionar perfiles inferiores y limpiar duplicados antiguos, incluso otro perfil heredado con rol italo. No puede eliminarse a sí mismo ni retirar al último Italo activo.
+- Jhulio puede gestionar Alejandro y miembros operativos, pero no Italo ni otro Jhulio.
+- Alejandro puede gestionar miembros operativos, pero no Jhulio, Italo ni otro supervisor del mismo nivel.
+- Los miembros no acceden al panel.
+
+7. PROCEDIMIENTO RECOMENDADO PARA LIMPIAR DEMOS
+Para cada perfil member, Eleam, ITALO, Juan y Mayito:
+1. Seleccionarlo en el panel.
+2. Pulsar Revisar dependencias.
+3. Si tiene trabajo real, seleccionar a quién transferirlo.
+4. Confirmar que el perfil oficial de destino sea correcto.
+5. Escribir el correo exacto del perfil antiguo.
+6. Pulsar Eliminar definitivamente.
+7. Sincronizar y confirmar que desapareció de todas las listas.
+
+No realices eliminaciones masivas sin revisar cada dependencia.
+
+8. FALLBACK
+Sin SQL_OPCIONAL_v17_10.sql:
+- Los perfiles demostrativos quedan ocultos de las listas operativas en el navegador.
+- El panel informa que la gobernanza remota está pendiente.
+- No permite ejecutar desactivación, transferencia ni eliminación persistente.

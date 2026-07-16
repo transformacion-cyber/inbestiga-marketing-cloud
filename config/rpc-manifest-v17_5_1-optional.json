@@ -1,0 +1,13 @@
+{
+  "version": "v17.5.1",
+  "mode": "optional-additive",
+  "required_for_base_operation": false,
+  "sql": "SQL_OPCIONAL_v17_5_1.sql",
+  "rpcs": [
+    "ibm_v175_actor_scope",
+    "ibm_v175_patch_record",
+    "ibm_v175_set_record_state",
+    "ibm_v175_lifecycle_capabilities"
+  ],
+  "note": "Hotfix atomico compatible con editorial_items. No sustituye ni modifica las 45 RPC productivas."
+}

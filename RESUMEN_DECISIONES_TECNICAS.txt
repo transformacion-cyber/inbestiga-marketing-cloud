@@ -1,0 +1,18 @@
+RESUMEN DE DECISIONES TÉCNICAS — v17.10
+
+1. Se mantiene v17.9 como base inmediata y no se mezclan ZIP.
+2. El módulo nuevo es aislado: deadlines-member-governance-v17-10.js y su CSS.
+3. El deadline reutiliza due_date y due_time ya existentes; no modifica la RPC productiva de creación.
+4. Para Dirección y Supervisión la fecha límite es obligatoria en formulario principal y creación rápida.
+5. state.members se normaliza antes de renderizar: solo activos, vinculados a Auth, con nombre completo y correo canónico.
+6. Los nombres demo exactos member, Eleam, ITALO, Juan y Mayito se ocultan; los nombres oficiales completos no se afectan.
+7. La lista se deduplica por correo, priorizando el perfil activo y vinculado a Auth.
+8. Los perfiles ocultos permanecen accesibles únicamente desde el panel de gobernanza para su limpieza controlada.
+9. Desactivar conserva historial; eliminar retira el perfil de Marketing Cloud.
+10. Antes de eliminar se exige preview de dependencias y transferencia cuando existe trabajo vinculado.
+11. Configuraciones personales y visitas se retiran; tareas e historial operativo se transfieren.
+12. Un conflicto único imprevisto detiene toda la transacción; no se borran relaciones silenciosamente.
+13. La jerarquía se valida tanto en frontend como en RPC: Italo > Jhulio > Alejandro > member.
+14. Nadie puede eliminarse a sí mismo y nunca se puede retirar al último Italo activo.
+15. Auth, Tickets y Storage no se eliminan desde el frontend ni desde SQL v17.10.
+16. No se modifica service_role, las 45 RPC productivas, loadAll, renderAll, bootstrap ni Creative Arena.

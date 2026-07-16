@@ -1,0 +1,151 @@
+{
+  "version": "v17.5",
+  "method": "Chromium DevTools Protocol with controlled DOM; no productive backend",
+  "record_rendering": {
+    "summary": {
+      "version": "v17.5",
+      "build": "v17.5",
+      "mode": "cloud",
+      "toolbarCount": 8,
+      "campaignActions": 3,
+      "taskActions": 3,
+      "briefToolbar": true,
+      "briefActions": 3,
+      "tableActions": 3,
+      "editorialActions": 3,
+      "assetActions": 3,
+      "templateActions": 3,
+      "incidentActions": 3,
+      "reportActions": 2,
+      "audit": true,
+      "errors": []
+    },
+    "detail": {
+      "title": "Proyecto Uno",
+      "edit": true,
+      "archive": true,
+      "trash": true,
+      "files": true
+    },
+    "edit": {
+      "title": "Editar proyecto",
+      "fields": 9,
+      "name": "Proyecto Uno"
+    },
+    "save": {
+      "name": "ibm_v175_patch_record",
+      "args": {
+        "p_entity_type": "campaign",
+        "p_entity_id": "c1",
+        "p_patch": {
+          "name": "Proyecto Editado",
+          "client_id": "cl1",
+          "area_id": "a1",
+          "status": "produccion",
+          "start_date": "2026-07-01",
+          "end_date": "2026-07-30",
+          "objective": "Objetivo",
+          "audience": "Público",
+          "main_message": "Mensaje"
+        }
+      }
+    }
+  },
+  "role_and_lifecycle": {
+    "archive": {
+      "last": {
+        "name": "ibm_v175_set_record_state",
+        "args": {
+          "p_entity_type": "campaign",
+          "p_entity_id": "c1",
+          "p_lifecycle_state": "archived",
+          "p_reason": null
+        }
+      },
+      "state": "archived"
+    },
+    "archived_view": {
+      "cards": 1,
+      "buttons": [
+        "Editar",
+        "Restaurar",
+        "Eliminar"
+      ]
+    },
+    "supervisor": {
+      "buttons": [
+        "Editar"
+      ]
+    },
+    "collaborator": {
+      "buttons": [],
+      "actions": 0
+    }
+  },
+  "local_fallback": {
+    "state": "active",
+    "mode": "local",
+    "pending": 1,
+    "health": {
+      "status": "info",
+      "value": "Fallback local disponible",
+      "detail": "Ejecuta SQL_OPCIONAL_v17_5.sql manualmente para sincronizar el ciclo de vida entre dispositivos. No se realiza borrado físico."
+    }
+  },
+  "supervisor_out_of_scope": {
+    "campaignButtons": [],
+    "templateButtons": []
+  },
+  "mobile_390_controlled": {
+    "viewport": 408,
+    "doc": 408,
+    "body": 400,
+    "toolbarWidths": [
+      {
+        "client": 372,
+        "scroll": 372
+      },
+      {
+        "client": 372,
+        "scroll": 372
+      },
+      {
+        "client": 372,
+        "scroll": 372
+      },
+      {
+        "client": 372,
+        "scroll": 372
+      },
+      {
+        "client": 372,
+        "scroll": 372
+      },
+      {
+        "client": 372,
+        "scroll": 372
+      },
+      {
+        "client": 372,
+        "scroll": 372
+      },
+      {
+        "client": 372,
+        "scroll": 372
+      }
+    ],
+    "modalGrid": "374px"
+  },
+  "security_notes": [
+    "Frontend hides structural actions from collaborators.",
+    "Supervisor edit actions are restricted to assigned/area-linked records and templates are reserved to Direction.",
+    "Persistent edits do not fall back to direct table updates when the optional RPC is absent.",
+    "Archive/delete/restore uses reversible lifecycle state; no physical DELETE is exposed.",
+    "Existing project detail access to files remains available."
+  ],
+  "limitations": [
+    "Uses simulated Supabase responses to validate UI wiring and role guards.",
+    "Does not certify RLS, EXECUTE privileges or persistence in the real Supabase project.",
+    "SQL_OPCIONAL_v17_5.sql must be reviewed and executed manually before productive persistence testing."
+  ]
+}

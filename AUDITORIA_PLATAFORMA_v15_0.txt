@@ -1,0 +1,15 @@
+AUDITORIA v15.0
+
+ESTADO
+- Archivos locales referenciados: revisados.
+- JavaScript externo nuevo: sintaxis válida.
+- IDs estáticos: sin duplicados detectados.
+- Módulo v15: no destructivo; reutiliza funciones productivas existentes.
+- Creative Arena: bloque preservado sin modificaciones funcionales.
+
+PRUEBAS PRODUCTIVAS PENDIENTES
+- Crear tarea desde campaña con usuario real.
+- Adjuntar y entregar evidencia contra Storage.
+- Verificar mensajes y marcado de lectura con dos cuentas.
+- Confirmar permisos RLS por rol.
+- Abrir una pizarra compartida vinculada a campaña.

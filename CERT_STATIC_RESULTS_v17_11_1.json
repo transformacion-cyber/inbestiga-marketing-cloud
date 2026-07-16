@@ -1,0 +1,87 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "17.11.1",
+  "build": "MOBILE CREATIVE NAVIGATION HOTFIX",
+  "base_version": "17.11",
+  "static_validation": {
+    "external_javascript_files": 19,
+    "external_javascript_node_check": "passed",
+    "service_worker_node_check": "passed",
+    "inline_scripts": 14,
+    "inline_scripts_node_check": "passed",
+    "inline_scripts_byte_identical_to_v17_11": true,
+    "html_ids": 650,
+    "duplicate_ids": 0,
+    "local_references": 38,
+    "missing_local_references": 0,
+    "json_files": 33,
+    "json_validation": "passed",
+    "css_files": 17,
+    "css_parser_validation": "passed",
+    "productive_rpc_manifest_unchanged": true,
+    "sql_files_unchanged": true,
+    "creative_arena_protected_content_unchanged": true,
+    "embedded_service_role_secret": false
+  },
+  "hotfix_checks": {
+    "visible_mobile_version_patch": "v17.11.1",
+    "top_mobile_hamburger_intercepted": true,
+    "bottom_more_intercepted": true,
+    "member_creative_rooms_entry_present": true,
+    "creative_rooms_route": "creativeRoomsClean",
+    "sql_required": false,
+    "backend_changes": false
+  },
+  "changed_files": [
+    {
+      "path": "AUDITORIA_PLATAFORMA_v17_11_1.txt",
+      "change": "added"
+    },
+    {
+      "path": "HOTFIX_v17_11_1_LEER_PRIMERO.txt",
+      "change": "added"
+    },
+    {
+      "path": "assets/css/mobile-creative-navigation-v17-11-1.css",
+      "change": "added"
+    },
+    {
+      "path": "assets/js/audit-health-integration.js",
+      "change": "modified"
+    },
+    {
+      "path": "assets/js/mobile-creative-navigation-v17-11-1.js",
+      "change": "added"
+    },
+    {
+      "path": "assets/js/production-certification.js",
+      "change": "modified"
+    },
+    {
+      "path": "assets/js/system-health-center.js",
+      "change": "modified"
+    },
+    {
+      "path": "config/build-manifest.json",
+      "change": "modified"
+    },
+    {
+      "path": "index.html",
+      "change": "modified"
+    },
+    {
+      "path": "service-worker.js",
+      "change": "modified"
+    }
+  ],
+  "limitations": [
+    "Real-device rendering and navigation must be confirmed after Netlify deployment."
+  ],
+  "functional_validation": {
+    "node_vm_mobile_navigation_test": "passed",
+    "legacy_visible_version_replaced": "v17.11.1",
+    "member_mobile_directory_opened": true,
+    "creative_rooms_entry_rendered": true,
+    "creative_rooms_route": "creativeRoomsClean"
+  }
+}

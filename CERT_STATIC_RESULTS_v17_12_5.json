@@ -1,0 +1,13 @@
+{
+  "version": "v17.12.5",
+  "base": "v17.12.4",
+  "fixes": [
+    "schema-aware RPC marketing_app for v17.9",
+    "schema-aware RPC marketing_app for v17.11",
+    "controlled retry after transient failure",
+    "truthful backend diagnostics",
+    "PWA cache rotation"
+  ],
+  "sql_required": false,
+  "protected_core_modified": false
+}

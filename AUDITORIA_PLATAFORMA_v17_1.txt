@@ -1,0 +1,46 @@
+AUDITORIA PLATAFORMA v17.1 - SYSTEM HEALTH CENTER
+Fecha: 2026-07-13
+
+BASE
+- Base unica utilizada: v17.0 WORK 360 ADVANCED del paquete de continuidad autorizado.
+- Nueva version: v17.1 SYSTEM HEALTH CENTER.
+- Cambio aditivo: assets/js/system-health-center.js y assets/css/system-health-center.css.
+
+CAMBIOS
+1. Centro de salud exclusivo para Direccion/administracion.
+2. Resumen ejecutivo de Supabase, RPC, Storage, Realtime, PWA y Work 360.
+3. Comparacion local/remota de Work 360 sin escrituras.
+4. Resumen de incidencias de Platform Quality Core.
+5. Exportacion JSON con reduccion de posibles tokens o claves en mensajes.
+6. Cache PWA actualizado a inbestiga-v17-1-shell.
+7. Compatibilidad de Production Certification corregida para aceptar v17.1 o superior.
+
+VALIDACION REALIZADA
+- 9 JS externos pasan node --check.
+- 14 scripts inline pasan node --check y permanecen byte a byte iguales a v17.0.
+- service-worker.js pasa node --check.
+- 0 IDs DOM duplicados.
+- 0 referencias locales faltantes.
+- build-manifest, rpc-manifest y webmanifest son JSON validos.
+- 45 RPC declaradas y unicas.
+- Work 360, Home editorial, Collaboration OS y Realtime Core conservan sus hashes.
+- Smoke test aislado en Chromium por CDP: modulo cargado, 13 checks ejecutados, 4 tabs renderizadas, cambio de tab y cierre sin excepciones.
+- Inspeccion visual de escritorio realizada sobre el panel renderizado.
+
+LIMITACION DEL ENTORNO
+El navegador administrado del contenedor bloquea navegacion a localhost y file://. Por ello no fue posible ejecutar el index completo dentro de Chromium desde HTTP, aunque el servidor local respondio HTTP 200. La prueba productiva debe repetirse en un navegador normal con Supabase real.
+
+NO CERTIFICADO
+- 45 RPC ejecutadas por rol.
+- RLS de lectura/escritura.
+- Storage con archivos reales.
+- Realtime entre dos cuentas.
+- PWA instalada en un origen HTTPS real.
+- Sincronizacion Work 360 entre dispositivos.
+
+ZONAS NO TOCADAS
+- Creative Arena, pizarras y avances.
+- Login y Supabase Auth.
+- loadAll, renderAll y bootstrap.
+- RPC, tablas y RLS productivas.
+- Home editorial, Perfil 360, Campanas y Mensajes.

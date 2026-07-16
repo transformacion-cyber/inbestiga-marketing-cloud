@@ -1,0 +1,27 @@
+CHECKLIST QA — v17.10 DEADLINES & MEMBER GOVERNANCE
+
+[OK] Base exclusiva v17.9 confirmada.
+[OK] 17 JavaScript externos validados con node --check.
+[OK] 14 scripts inline validados con node --check e idénticos a v17.9.
+[OK] Service Worker validado y alineado con inbestiga-v17-10-shell.
+[OK] 649 IDs HTML revisados sin duplicados.
+[OK] Referencias locales revisadas sin faltantes.
+[OK] JSON y CSS revisados.
+[OK] 45 RPC productivas intactas y únicas.
+[OK] RPC v17.10 declaradas en manifiesto opcional independiente.
+[OK] SQL v17.10 analizado con parser PostgreSQL.
+[OK] Filtro controlado de miembros oficiales probado con perfiles demo y duplicados.
+[OK] Jerarquía Italo > Jhulio > Alejandro > member probada en VM.
+[OK] Deadline sin fecha y fecha futura probados en VM.
+[OK] Creative Arena, Auth y módulos protegidos conservan hashes.
+[OK] loadAll, renderAll y bootstrap no fueron modificados.
+[OK] Conflictos únicos detienen la eliminación sin borrar relaciones silenciosamente.
+
+PENDIENTE EN SUPABASE REAL
+[ ] Ejecutar SQL_OPCIONAL_v17_10.sql una sola vez.
+[ ] Probar deadline con Italo, Jhulio y Alejandro.
+[ ] Probar preview de dependencias.
+[ ] Eliminar un demo sin dependencias.
+[ ] Transferir un demo con trabajo vinculado.
+[ ] Verificar que no pueda entrar a Marketing Cloud después de eliminar su perfil.
+[ ] Confirmar Salud, RLS y Realtime después de las operaciones.

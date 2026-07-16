@@ -1,0 +1,8 @@
+PROTECTED DIFF v17.5.1
+Inline scripts identical: True (14/14)
+assets/js/collaboration-campaign-os.js identical: True
+assets/js/productivity-realtime-core.js identical: True
+Required 45-RPC manifest identical: True
+Creative Arena JavaScript identical: True
+Creative Arena CSS identical: True
+Auth/loadAll/renderAll/bootstrap were not edited inline.

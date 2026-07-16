@@ -1,0 +1,24 @@
+INBESTIGA MARKETING CLOUD v17.0
+WORK 360 ADVANCED
+
+FUNCIONES NUEVAS
+- Vistas Kanban, Lista, Timeline y Carga.
+- Estimación de horas y tiempo registrado.
+- Temporizador por tarea.
+- Subtareas mediante tareas productivas existentes.
+- Dependencias y detección de bloqueos/ciclos.
+- Recurrencia manual segura para generar la siguiente tarea.
+- Plantillas personales.
+- Filtros guardados.
+- Selección múltiple, planificación masiva y exportación CSV.
+- Historial de planificación con restauración.
+
+ACCESO RAPIDO
+Ctrl/Cmd + Shift + W abre Tareas en vista Lista.
+
+PERSISTENCIA
+El módulo funciona localmente sin cambiar el backend.
+Para sincronizar la planificación entre dispositivos, ejecutar SQL_OPCIONAL_v17_0.sql.
+
+ALCANCE
+La planificación avanzada complementa las tareas existentes. No reemplaza ni modifica las RPC productivas de creación, actualización, entrega o revisión.

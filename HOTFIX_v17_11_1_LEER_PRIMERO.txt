@@ -1,0 +1,23 @@
+INBESTIGA MARKETING CLOUD v17.11.1
+MOBILE CREATIVE NAVIGATION HOTFIX
+
+CORRIGE
+- La etiqueta móvil fija v4.23 se sustituye en ejecución por v17.11.1.
+- El botón superior y el botón Más abren un directorio móvil completo.
+- Salas creativas queda visible para miembros autenticados.
+
+NO MODIFICA
+- Creative Arena, pizarras ni sus archivos.
+- Supabase Auth, tablas, RLS, RPC o Storage.
+- Datos operativos, miembros, clientes o campañas.
+- SQL v17.11.
+
+INSTALACIÓN
+1. Subir únicamente este ZIP al mismo proyecto de Netlify.
+2. Esperar estado Published.
+3. Cerrar las pestañas de la plataforma.
+4. Abrir de nuevo y recargar.
+5. En móvil, pulsar el botón de tres líneas o Más.
+6. Abrir Salas creativas.
+
+No ejecutar SQL.

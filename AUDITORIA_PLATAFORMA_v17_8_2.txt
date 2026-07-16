@@ -1,0 +1,29 @@
+AUDITORÍA PLATAFORMA v17.8.2 — TASK CHECKLIST CREATION HOTFIX
+
+FALLO OBSERVADO
+- Mensaje: checklist is not defined.
+- Ruta: formulario clásico de creación de tareas.
+- Roles afectados: Dirección, Jefatura y Supervisión.
+- Momento del fallo: antes de invocar la RPC.
+
+CAUSA TÉCNICA
+- saveTask() llamaba JSON.parse(checklist()).
+- No existía ninguna función o variable checklist en ese alcance.
+- El campo real del formulario es #taskChecklist.
+
+CORRECCIÓN
+- parseTaskChecklist(value) convierte texto por comas o líneas en arreglo.
+- Los valores vacíos se eliminan.
+- p_checklist recibe directamente un arreglo válido.
+
+VALIDACIÓN ESTÁTICA
+- Node check externo, inline y Service Worker: correcto.
+- Parser: 5 casos correctos.
+- Mock de saveTask y payload RPC: correcto.
+- 649 IDs sin duplicados.
+- 34 referencias locales, 0 faltantes.
+- 45 RPC intactas.
+- SQL intacto.
+
+LIMITACIÓN
+No se afirma persistencia productiva hasta desplegar en Netlify y crear una tarea real contra Supabase.

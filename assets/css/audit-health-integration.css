@@ -1,0 +1,50 @@
+/* ===== v17.3 PRODUCTIVE CERTIFICATION FIXES (v17.2 component namespace retained) ===== */
+#v172AuditHealthMount{margin:0 0 16px}
+#v172AuditHealthMount .v172-audit-health{--v172-ok:#16875a;--v172-warn:#d48a0b;--v172-fail:#c93640;--v172-info:#6e26f6;position:relative;overflow:hidden;padding:20px;border:1px solid rgba(29,29,31,.09);border-radius:24px;background:radial-gradient(circle at 92% -20%,rgba(110,38,246,.14),transparent 42%),linear-gradient(145deg,#fff,#fbfbfd);box-shadow:0 16px 45px rgba(15,23,42,.07)}
+#v172AuditHealthMount .v172-audit-health:before{content:"";position:absolute;inset:0 auto 0 0;width:4px;background:var(--v172-info)}
+#v172AuditHealthMount .v172-audit-health[data-status="ok"]:before{background:var(--v172-ok)}
+#v172AuditHealthMount .v172-audit-health[data-status="warn"]:before{background:var(--v172-warn)}
+#v172AuditHealthMount .v172-audit-health[data-status="fail"]:before{background:var(--v172-fail)}
+#v172AuditHealthMount .v172-health-top{display:grid;grid-template-columns:92px minmax(0,1fr) auto;gap:18px;align-items:center}
+#v172AuditHealthMount .v172-score{width:86px;height:86px;border-radius:25px;display:grid;place-content:center;text-align:center;background:#f1edff;color:#5220b8;border:1px solid #e4dafd}
+#v172AuditHealthMount .v172-score[data-status="ok"]{background:#eaf8f1;color:#106d46;border-color:#c7ead9}
+#v172AuditHealthMount .v172-score[data-status="warn"]{background:#fff7e7;color:#8a5900;border-color:#f4ddb0}
+#v172AuditHealthMount .v172-score[data-status="fail"]{background:#fff0f2;color:#a42631;border-color:#f3cbd0}
+#v172AuditHealthMount .v172-score strong{font-size:32px;line-height:1;letter-spacing:-.04em}
+#v172AuditHealthMount .v172-score span{margin-top:5px;font-size:9px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+#v172AuditHealthMount .v172-eyebrow{display:block;color:#777780;font-size:9px;font-weight:1000;letter-spacing:.13em;text-transform:uppercase}
+#v172AuditHealthMount .v172-title-row{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:5px}
+#v172AuditHealthMount .v172-title-row h3,#v172AuditHealthMount .v172-health-copy h3{margin:0;font-size:21px;letter-spacing:-.025em}
+#v172AuditHealthMount .v172-health-copy p{margin:7px 0 5px;color:#5f6068;font-size:12px;line-height:1.48}
+#v172AuditHealthMount .v172-health-copy small{color:#85858c;font-size:10px}
+#v172AuditHealthMount .v172-state{display:inline-flex;align-items:center;gap:6px;padding:6px 9px;border-radius:999px;background:#f2effb;color:#5e2ec4;font-size:9px;font-weight:900;text-transform:uppercase}
+#v172AuditHealthMount .v172-state i{width:7px;height:7px;border-radius:50%;background:currentColor}
+#v172AuditHealthMount .v172-state[data-status="ok"]{background:#eaf8f1;color:#106d46}
+#v172AuditHealthMount .v172-state[data-status="warn"]{background:#fff7e7;color:#8a5900}
+#v172AuditHealthMount .v172-state[data-status="fail"]{background:#fff0f2;color:#a42631}
+#v172AuditHealthMount .v172-health-actions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+#v172AuditHealthMount .v172-health-actions button{min-height:39px;padding:0 14px!important;font-size:10px!important;white-space:nowrap}
+#v172AuditHealthMount .v172-health-metrics{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px;margin:17px 0 10px}
+#v172AuditHealthMount .v172-health-metrics article{padding:13px 14px;border:1px solid rgba(29,29,31,.07);border-radius:16px;background:rgba(255,255,255,.86)}
+#v172AuditHealthMount .v172-health-metrics span,#v172AuditHealthMount .v172-health-metrics small{display:block;color:#777780;font-size:9px;font-weight:800}
+#v172AuditHealthMount .v172-health-metrics strong{display:block;margin:3px 0;font-size:22px;line-height:1.05}
+#v172AuditHealthMount .v172-services{display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:8px}
+#v172AuditHealthMount .v172-service{display:grid;grid-template-columns:8px minmax(0,1fr);gap:8px;align-items:start;padding:11px 10px;border:1px solid rgba(29,29,31,.07);border-radius:14px;background:#fff;min-width:0}
+#v172AuditHealthMount .v172-service i{width:8px;height:8px;margin-top:3px;border-radius:50%;background:#898991;box-shadow:0 0 0 4px rgba(137,137,145,.08)}
+#v172AuditHealthMount .v172-service[data-status="ok"] i{background:var(--v172-ok);box-shadow:0 0 0 4px rgba(22,135,90,.09)}
+#v172AuditHealthMount .v172-service[data-status="warn"] i{background:var(--v172-warn);box-shadow:0 0 0 4px rgba(212,138,11,.09)}
+#v172AuditHealthMount .v172-service[data-status="fail"] i{background:var(--v172-fail);box-shadow:0 0 0 4px rgba(201,54,64,.09)}
+#v172AuditHealthMount .v172-service span{display:block;color:#7b7b83;font-size:8px;font-weight:900;text-transform:uppercase;letter-spacing:.06em}
+#v172AuditHealthMount .v172-service strong{display:block;margin-top:3px;overflow:hidden;color:#303037;font-size:10px;text-overflow:ellipsis;white-space:nowrap}
+#v172AuditHealthMount .v172-health-footnote{margin-top:11px;padding-top:10px;border-top:1px solid rgba(29,29,31,.07);color:#75757d;font-size:10px;line-height:1.45}
+#v172AuditHealthMount .v172-restricted{display:flex;justify-content:space-between;gap:18px;align-items:center;padding:18px 20px}
+#v172AuditHealthMount .v172-restricted:before{background:#9a9aa2}
+#v172AuditHealthMount .v172-restricted-badge{flex:0 0 auto;padding:7px 10px;border-radius:999px;background:#f2f2f5;color:#686870;font-size:9px;font-weight:900;text-transform:uppercase}
+@media(max-width:1100px){#v172AuditHealthMount .v172-health-top{grid-template-columns:82px minmax(0,1fr)}#v172AuditHealthMount .v172-health-actions{grid-column:1/-1;justify-content:flex-start}#v172AuditHealthMount .v172-services{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:680px){#v172AuditHealthMount .v172-audit-health{padding:16px;border-radius:20px}#v172AuditHealthMount .v172-health-top{grid-template-columns:1fr}#v172AuditHealthMount .v172-score{width:100%;height:72px;border-radius:18px;display:flex;align-items:baseline;justify-content:center;gap:6px}#v172AuditHealthMount .v172-score strong{font-size:27px}#v172AuditHealthMount .v172-health-actions{display:grid;grid-template-columns:1fr}#v172AuditHealthMount .v172-health-actions button{width:100%}#v172AuditHealthMount .v172-health-metrics{grid-template-columns:1fr}#v172AuditHealthMount .v172-services{grid-template-columns:repeat(2,minmax(0,1fr))}#v172AuditHealthMount .v172-restricted{align-items:flex-start;flex-direction:column}}
+/* v17.3: contain Audit Pro min-content tables inside their own horizontal scroller. */
+@media(max-width:1100px){
+  #auditpro .grid2{grid-template-columns:minmax(0,1fr)!important;min-width:0}
+  #auditpro .grid2>*{min-width:0;max-width:100%}
+  #auditpro .table-wrap{width:100%;max-width:100%;overflow-x:auto;-webkit-overflow-scrolling:touch}
+}

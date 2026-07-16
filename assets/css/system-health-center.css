@@ -1,0 +1,82 @@
+/* ===== v17.1 SYSTEM HEALTH CENTER ===== */
+#v171HealthBackdrop{position:fixed;inset:0;z-index:2750;display:none;align-items:center;justify-content:center;padding:22px;background:rgba(10,14,22,.5);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+#v171HealthBackdrop.open{display:flex}
+#v171HealthPanel{width:min(1240px,100%);max-height:min(920px,calc(100dvh - 32px));display:grid;grid-template-rows:auto auto minmax(0,1fr) auto;overflow:hidden;border:1px solid rgba(255,255,255,.5);border-radius:28px;background:#f5f5f7;color:#1d1d1f;box-shadow:0 38px 130px rgba(0,0,0,.3)}
+.v171-health-head{display:flex;align-items:flex-start;justify-content:space-between;gap:24px;padding:24px 27px 19px;background:rgba(255,255,255,.9);border-bottom:1px solid rgba(29,29,31,.08)}
+.v171-health-head>div:first-child>span{display:block;font-size:10px;font-weight:900;letter-spacing:.15em;color:#6e6e73;text-transform:uppercase}
+.v171-health-head h2{margin:5px 0 0;font-size:31px;line-height:1.05;letter-spacing:-.045em}
+.v171-health-head p{max-width:760px;margin:8px 0 0;color:#6e6e73;font-size:13px;line-height:1.5}
+.v171-health-head-actions{display:flex;align-items:center;gap:10px;flex:0 0 auto}
+.v171-health-head-actions>button{display:grid;place-items:center;width:39px;height:39px;padding:0!important;border:0!important;border-radius:12px!important;background:#ececf0!important;color:#1d1d1f!important;font-size:23px!important;box-shadow:none!important}
+.v171-health-state{display:flex;align-items:center;gap:8px;min-height:38px;padding:0 13px;border:1px solid rgba(29,29,31,.09);border-radius:999px;background:#f5f5f7;color:#53535a;font-size:11px;font-weight:800}
+.v171-health-state i{width:9px;height:9px;border-radius:50%;background:#85858b;box-shadow:0 0 0 5px rgba(133,133,139,.1)}
+.v171-health-state[data-status="ok"] i{background:#16875a;box-shadow:0 0 0 5px rgba(22,135,90,.12)}
+.v171-health-state[data-status="warn"] i{background:#d48a0b;box-shadow:0 0 0 5px rgba(212,138,11,.13)}
+.v171-health-state[data-status="fail"] i{background:#c93640;box-shadow:0 0 0 5px rgba(201,54,64,.12)}
+.v171-health-tabs{display:flex;gap:8px;overflow:auto;padding:12px 27px;background:#fff;border-bottom:1px solid rgba(29,29,31,.08)}
+.v171-health-tabs button{flex:0 0 auto;min-height:39px;padding:0 16px!important;border:1px solid rgba(29,29,31,.1)!important;border-radius:12px!important;background:#f5f5f7!important;color:#3a3a3c!important;font-size:12px!important;font-weight:800!important;box-shadow:none!important}
+.v171-health-tabs button.active{background:#1d1d1f!important;color:#fff!important;border-color:#1d1d1f!important}
+.v171-health-body{overflow:auto;padding:24px 27px 30px}
+.v171-health-hero{display:grid;grid-template-columns:170px minmax(0,1fr) minmax(220px,310px);gap:16px;align-items:stretch;margin-bottom:18px}
+.v171-health-score,.v171-health-hero-copy,.v171-health-context{border-radius:22px}
+.v171-health-score{display:grid;place-items:center;min-height:154px;background:#15171b;color:#fff;text-align:center}
+.v171-health-score strong{display:block;font-size:55px;line-height:1;letter-spacing:-.065em}
+.v171-health-score span{display:block;margin-top:7px;color:#b9bec7;font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase}
+.v171-health-hero[data-status="warn"] .v171-health-score{background:#6f4c0e}
+.v171-health-hero[data-status="fail"] .v171-health-score{background:#741f27}
+.v171-health-hero-copy,.v171-health-context{padding:19px 20px;border:1px solid rgba(29,29,31,.08);background:#fff;box-shadow:0 8px 25px rgba(15,23,42,.045)}
+.v171-health-hero-copy>span,.v171-health-context>span{display:block;color:#6e6e73;font-size:10px;font-weight:900;letter-spacing:.12em;text-transform:uppercase}
+.v171-health-hero-copy h3{margin:7px 0 5px;font-size:26px;letter-spacing:-.04em}
+.v171-health-hero-copy p{margin:0;color:#55555c;font-size:13px;line-height:1.5}
+.v171-health-hero-copy small{display:block;margin-top:11px;color:#85858b;font-size:10px}
+.v171-health-context{display:flex;flex-direction:column;justify-content:center}
+.v171-health-context strong{display:block;margin-top:7px;font-size:22px;line-height:1.2;word-break:break-word}
+.v171-health-context small{display:block;margin-top:8px;color:#6e6e73;font-size:11px;line-height:1.45}
+.v171-health-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.v171-health-card{min-height:146px;padding:17px 18px;border:1px solid rgba(29,29,31,.08);border-top:4px solid #8b8b91;border-radius:18px;background:#fff;box-shadow:0 8px 24px rgba(15,23,42,.045)}
+.v171-health-card[data-status="ok"]{border-top-color:#16875a}
+.v171-health-card[data-status="warn"]{border-top-color:#d48a0b}
+.v171-health-card[data-status="fail"]{border-top-color:#c93640}
+.v171-health-card[data-status="info"]{border-top-color:#6e6e73}
+.v171-health-card-head{display:flex;justify-content:space-between;gap:10px;align-items:flex-start}
+.v171-health-card-head span{color:#6e6e73;font-size:10px;font-weight:900;letter-spacing:.11em;text-transform:uppercase}
+.v171-health-card-head b{font-size:9px;letter-spacing:.06em;text-transform:uppercase;color:#727279;text-align:right}
+.v171-health-card>strong{display:block;margin-top:10px;font-size:21px;line-height:1.15;letter-spacing:-.03em}
+.v171-health-card>p{margin:8px 0 0;color:#68686f;font-size:11px;line-height:1.48;word-break:break-word}
+.v171-health-section-head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin:27px 0 13px}
+.v171-health-section-head:first-child{margin-top:0}
+.v171-health-section-head h3{margin:0;font-size:22px;letter-spacing:-.035em}
+.v171-health-section-head p{margin:5px 0 0;color:#6e6e73;font-size:12px}
+.v171-health-section-head button{min-height:38px;padding:0 14px!important;border:1px solid rgba(29,29,31,.1)!important;border-radius:12px!important;background:#fff!important;color:#1d1d1f!important;font-size:11px!important;font-weight:800!important;box-shadow:none!important}
+.v171-health-list{display:grid;gap:9px}
+.v171-health-row{display:grid;grid-template-columns:10px minmax(0,1fr) minmax(120px,auto);gap:12px;align-items:start;padding:14px 16px;border:1px solid rgba(29,29,31,.08);border-radius:17px;background:#fff;box-shadow:0 7px 20px rgba(15,23,42,.035)}
+.v171-health-row>i{width:9px;height:9px;margin-top:5px;border-radius:50%;background:#85858b;box-shadow:0 0 0 5px rgba(133,133,139,.09)}
+.v171-health-row[data-status="ok"]>i{background:#16875a;box-shadow:0 0 0 5px rgba(22,135,90,.1)}
+.v171-health-row[data-status="warn"]>i{background:#d48a0b;box-shadow:0 0 0 5px rgba(212,138,11,.11)}
+.v171-health-row[data-status="fail"]>i{background:#c93640;box-shadow:0 0 0 5px rgba(201,54,64,.1)}
+.v171-health-row strong{display:block;font-size:13px}
+.v171-health-row p{margin:4px 0 0;color:#6e6e73;font-size:11px;line-height:1.45;word-break:break-word}
+.v171-health-row>span{font-size:11px;font-weight:800;color:#45454b;text-align:right;word-break:break-word}
+.v171-health-note{margin-top:17px;padding:14px 16px;border:1px solid #d9d9df;border-radius:16px;background:#fff;color:#606067;font-size:11px;line-height:1.55}
+.v171-health-sync-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:11px;margin-bottom:14px}
+.v171-health-sync-strip article{padding:15px;border:1px solid rgba(29,29,31,.08);border-radius:17px;background:#fff;box-shadow:0 7px 20px rgba(15,23,42,.035)}
+.v171-health-sync-strip span{display:block;color:#6e6e73;font-size:9px;font-weight:900;letter-spacing:.1em;text-transform:uppercase}
+.v171-health-sync-strip strong{display:block;margin-top:7px;font-size:15px;line-height:1.3;word-break:break-word}
+.v171-health-incidents{display:grid;gap:10px;margin-top:13px}
+.v171-health-incidents article{padding:15px 16px;border:1px solid rgba(29,29,31,.08);border-radius:17px;background:#fff}
+.v171-health-incidents article>div{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.v171-health-incidents article strong{font-size:12px;text-transform:uppercase;letter-spacing:.06em}
+.v171-health-incidents article span,.v171-health-incidents article small{color:#7a7a81;font-size:10px}
+.v171-health-incidents article p{margin:8px 0 0;color:#4f4f55;font-size:12px;line-height:1.45;word-break:break-word}
+.v171-health-incidents article small{display:block;margin-top:7px;word-break:break-word}
+.v171-health-empty{padding:24px;border:1px dashed #cfcfd6;border-radius:18px;background:#fff;text-align:center;color:#606067}
+.v171-health-empty strong{display:block;font-size:15px}
+.v171-health-empty p{margin:6px 0 0;font-size:11px}
+.v171-health-foot{display:flex;align-items:center;justify-content:space-between;gap:14px;padding:15px 27px;background:#fff;border-top:1px solid rgba(29,29,31,.08)}
+.v171-health-foot p{margin:0;color:#6e6e73;font-size:11px}
+.v171-health-foot>div{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+.v171-health-foot button{min-height:40px;padding:0 15px!important;border:1px solid rgba(29,29,31,.1)!important;border-radius:12px!important;background:#f5f5f7!important;color:#1d1d1f!important;font-size:11px!important;font-weight:800!important;box-shadow:none!important}
+.v171-health-foot button.primary{border-color:#1d1d1f!important;background:#1d1d1f!important;color:#fff!important}
+.v171-health-foot button:disabled{opacity:.55}
+@media(max-width:920px){#v171HealthBackdrop{padding:0}#v171HealthPanel{height:100dvh;max-height:100dvh;border-radius:0}.v171-health-hero{grid-template-columns:150px minmax(0,1fr)}.v171-health-context{grid-column:1/-1}.v171-health-grid{grid-template-columns:1fr 1fr}.v171-health-sync-strip{grid-template-columns:1fr 1fr}.v171-health-foot{align-items:flex-start;flex-direction:column}}
+@media(max-width:620px){.v171-health-head{padding:20px 18px 15px}.v171-health-head h2{font-size:25px}.v171-health-head p{font-size:11px}.v171-health-state{display:none}.v171-health-tabs{padding:10px 18px}.v171-health-body{padding:18px}.v171-health-hero{grid-template-columns:1fr}.v171-health-score{min-height:125px}.v171-health-context{grid-column:auto}.v171-health-grid,.v171-health-sync-strip{grid-template-columns:1fr}.v171-health-row{grid-template-columns:10px minmax(0,1fr)}.v171-health-row>span{grid-column:2;text-align:left}.v171-health-foot{padding:13px 18px}.v171-health-foot>div{width:100%;display:grid;grid-template-columns:1fr 1fr}.v171-health-foot button.primary{grid-column:1/-1}}

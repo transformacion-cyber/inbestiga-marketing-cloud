@@ -1,0 +1,24 @@
+AUDITORÍA PLATAFORMA v17.9 — COLLABORATIVE WORKSPACE FILES & REVIEWS
+
+RESULTADO ESTÁTICO
+- 16 JavaScript externos y Service Worker válidos con node --check.
+- 14 scripts inline válidos e idénticos a v17.8.2.
+- 623 IDs HTML estáticos, sin duplicados.
+- Referencias locales completas.
+- 29 JSON y 14 CSS validados.
+- SQL_OPCIONAL_v17_9.sql analizado por parser PostgreSQL: 68 sentencias válidas.
+- 45 RPC productivas intactas y únicas.
+- 7 RPC funcionales v17.9 y 6 helpers en manifiesto opcional independiente.
+- Creative Arena, Auth, loadAll, renderAll y SQL anteriores sin cambios.
+
+COBERTURA FUNCIONAL
+- 3 archivos de 25 MB y 5 enlaces por bloque.
+- Referencias en tareas, campañas/proyectos y briefs.
+- Entregas individuales por participante.
+- Asignación múltiple con responsable principal.
+- Panel de entregas en Inicio y Trabajo 360.
+- Aprobación productiva existente más puntaje opcional por miembro.
+- Bucket privado y URLs firmadas.
+
+NO CERTIFICADO SIN SUPABASE REAL
+RLS, Storage, Realtime, persistencia entre cuentas y carga real de 25 MB requieren pruebas productivas posteriores a la instalación manual del SQL.

@@ -1,0 +1,19 @@
+GUIA PRODUCTIVE CERTIFICATION FIXES v17.3
+
+OBJETIVO
+Eliminar falsos negativos del centro de certificacion y corregir el overflow movil de Auditoria sin alterar modulos productivos.
+
+COMPORTAMIENTO ESPERADO
+- Secciones: 15 esenciales presentes cuando existe #profile.
+- Backend: registros 16.x, 17.x o posteriores se consideran de familia compatible; una version menor a 16 o ilegible genera advertencia.
+- Auditoria: en <=1100 px la pagina no debe desplazarse horizontalmente; las tablas anchas usan su propio scroll.
+
+PRUEBA RAPIDA
+1. Abrir Centro de certificacion y ejecutar comprobacion automatica.
+2. Confirmar Secciones = Completas.
+3. Si system_versions devuelve 17.x, confirmar Compatibilidad backend = OK.
+4. Abrir Auditoria a 390 px y comprobar que el documento no supera el viewport.
+5. Desplazar horizontalmente solamente el contenedor de una tabla cuando sea necesario.
+
+LIMITES
+Estas comprobaciones no certifican RLS ni permisos de base de datos. Para ello usar docs/MATRIZ_CERTIFICACION_v17_3.json con las cuentas reales.

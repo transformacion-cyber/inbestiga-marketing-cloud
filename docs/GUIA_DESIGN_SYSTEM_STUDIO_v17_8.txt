@@ -1,0 +1,47 @@
+INBESTIGA Marketing Cloud v17.8 · DESIGN SYSTEM STUDIO
+
+OBJETIVO
+Permitir que Dirección administre colores, tipografías, tamaños, densidad, fondos, imágenes y versiones visuales sin modificar HTML, CSS o JavaScript productivo desde la interfaz.
+
+ACCESO
+- Dirección: Tema global, módulos, fotos y fondos, biblioteca, historial, publicación y restauración.
+- Todos los miembros: personalización avanzada de su propio muro y Salud visual.
+- Creative Arena queda excluida del tema global.
+
+FUNCIONES
+1. Temas globales con seis presets y variables controladas.
+2. Fuentes aprobadas: Inter, Montserrat, Cinzel, Rajdhani, System y Georgia.
+3. Editor por módulo para Inicio, Trabajo 360, Tareas, Campañas, Editorial, Muro, Reportes, Auditoría, Mi espacio y Mensajes.
+4. Banners por módulo desde la biblioteca multimedia.
+5. Espacios de imagen para portada principal, historia destacada, login, Trabajo 360, Campañas, Muro, Reportes y Perfil.
+6. Programación de fecha inicial/final, punto focal, overlay, zoom y saturación.
+7. Biblioteca multimedia con optimización y fallback local.
+8. Vista previa de escritorio, tablet y móvil.
+9. Borradores, publicación, historial y restauración.
+10. Exportación e importación JSON.
+11. Salud visual: contraste, accesibilidad, fuentes, peso, programación y seguridad.
+12. Editor personal del muro: tema, fondo, colores, fuente, distribución, escalas y widgets visibles.
+
+SEGURIDAD
+- No existe editor de CSS libre.
+- No existe editor de JavaScript ni ejecución dinámica.
+- URLs permitidas: HTTPS o imágenes inline optimizadas; blob URLs no se guardan.
+- Imágenes limitadas por peso, dimensiones y tamaño inline.
+- El tema predeterminado siempre permanece disponible.
+- La publicación se bloquea si Salud visual es menor de 95/100.
+- SQL_OPCIONAL_v17_8.sql no se ejecuta automáticamente.
+- Auth, loadAll, renderAll, RPC productivas, RLS existentes y Creative Arena no se modifican.
+
+INSTALACIÓN
+1. Publicar el ZIP v17.8 en Netlify.
+2. Confirmar v17.8 y Shell v17.8 en Salud del sistema.
+3. Probar Diseño y apariencia en modo local.
+4. Crear un borrador, revisar Salud visual y previsualizar PC/tablet/móvil.
+5. Revisar y ejecutar manualmente SQL_OPCIONAL_v17_8.sql para sincronización entre dispositivos.
+6. Recargar y confirmar que el editor indique Sincronización Supabase.
+
+ORDEN SI v17.7 AÚN NO TIENE BACKEND
+Ejecutar primero SQL_OPCIONAL_v17_7.sql y después SQL_OPCIONAL_v17_8.sql. Ambos son manuales y opcionales.
+
+RECOMENDACIÓN
+No publicar cambios globales durante una jornada crítica. Crear borrador, revisar las tres vistas, verificar Salud visual igual o superior a 95 y publicar en una ventana controlada. Si hay un problema, restaurar la versión anterior.

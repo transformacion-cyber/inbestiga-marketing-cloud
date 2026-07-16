@@ -1,0 +1,24 @@
+PLAN DE PRUEBAS v14.0
+
+PRUEBAS AUTOMATICAS DE SOLO LECTURA
+- IDs duplicados.
+- Codigo JavaScript/CSS visible en el DOM.
+- Funciones globales esenciales.
+- Presencia de secciones principales.
+- Carga de arreglos del estado.
+- Disponibilidad de Supabase, Konva y modulos.
+- Errores de ejecucion y promesas rechazadas.
+- OpenAPI y RPC requeridas cuando la red lo permite.
+
+PRUEBAS MANUALES RECOMENDADAS
+- Login con tres roles.
+- Crear, actualizar, entregar y revisar una tarea de prueba.
+- Crear campaña y brief de prueba.
+- Mensajes entre dos cuentas.
+- Carga y lectura de archivo en Storage.
+- Realtime en dos navegadores.
+- Apertura y guardado de una pizarra existente.
+- Reporte e impresion.
+
+CRITERIO DE APROBACION
+No debe existir ninguna falla estructural. Las advertencias de sesion, OpenAPI, RLS, Storage o Realtime se cierran solamente mediante pruebas productivas autenticadas.

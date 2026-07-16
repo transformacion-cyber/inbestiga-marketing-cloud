@@ -1,0 +1,15 @@
+INBESTIGA Marketing Cloud v17.10.1
+VERSION & PWA DIAGNOSTIC HOTFIX
+
+CAUSA CONFIRMADA
+El paquete v17.10 contenía el Service Worker correcto (inbestiga-v17-10-shell), pero system-health-center.js y production-certification.js seguían declarando v17.9. Además, esos módulos sobrescribían el marcador global de versión. Por eso Salud mostraba INBESTIGA v17.9 y consideraba la PWA pendiente aunque v17.10 ya estuviera desplegada.
+
+CORRECCIÓN
+- Marcador global actualizado a v17.10.1.
+- Centro de Salud y Production Certification actualizados.
+- Detección PWA actualizada a inbestiga-v17-10-1-shell.
+- El módulo final v17.10.1 conserva la propiedad del marcador global.
+- No requiere SQL.
+
+NO TOCADO
+Auth, Supabase, RLS, RPC, tablas, Creative Arena, Trabajo 360, archivos colaborativos, deadlines y gobernanza de miembros.

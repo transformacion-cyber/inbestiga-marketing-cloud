@@ -1,0 +1,42 @@
+INBESTIGA MARKETING CLOUD
+v17.11 — TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING
+
+BASE AUTORIZADA
+v17.11 fue construido exclusivamente sobre v17.10.2 AUDIT HEALTH WIDGET PERSISTENCE HOTFIX.
+Para cualquier continuidad futura usar únicamente este paquete completo.
+
+OBJETIVO v17.11
+- Separar ejecutores de responsable final.
+- Registrar estimación del jefe, estimación del ejecutor y horas reales manuales, sin temporizador obligatorio.
+- Incorporar aceptación, aclaración, bloqueo y propuesta de nueva estimación.
+- Incorporar dependencias y recurrencia con historial de ejecuciones.
+- Administrar clientes, campañas y rangos desde catálogos operativos.
+- Calificar por participante de 1 a 10 y sumar puntos automáticos por complejidad, evidencia, puntualidad, aprobación, recurrencia y colaboración.
+- Mostrar niveles 1–1000, rangos y cinco divisiones.
+- Exportar reportes por día, semana, mes, año o rango personalizado a CSV, Excel y PDF.
+
+BACKEND OPCIONAL
+SQL_OPCIONAL_v17_11.sql crea únicamente tablas y RPC aditivas v17.11.
+Requiere las tablas colaborativas de v17.9. Es transaccional, idempotente y no se ejecuta automáticamente.
+
+FALLBACK
+Sin SQL v17.11, la interfaz mantiene un fallback local por usuario para planificación y horas. Calificaciones, ranking compartido, catálogos sincronizados y recurrencias multiusuario requieren el SQL.
+
+ZONAS PROTEGIDAS NO MODIFICADAS
+- Creative Arena, pizarras y avances creativos.
+- Login y Supabase Auth.
+- loadAll, renderAll y bootstrap productivo.
+- Las 45 RPC productivas y config/rpc-manifest.json.
+- Home editorial y diseño general aprobado.
+
+CAMBIOS INTENCIONALES EN v17.9
+collaborative-workspace-v17-9.js recibió únicamente eventos aditivos de integración y textos que distinguen “ejecutores” de “responsable final”. No cambia sus RPC ni Storage.
+
+PRUEBAS PRODUCTIVAS PENDIENTES
+- Ejecutar SQL v17.11 en Supabase real.
+- Probar RLS con Italo, Jhulio, Alejandro y un miembro.
+- Probar horas individuales en tarea con varios ejecutores.
+- Probar recurrencia y prevención de duplicados.
+- Probar calificación/puntos/ranking y Realtime entre sesiones.
+- Confirmar creación de clientes con la estructura real de marketing_app.clients.
+- Confirmar Salud del sistema y PWA después del despliegue HTTPS.

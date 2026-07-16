@@ -1,0 +1,28 @@
+GUÍA — v17.7 MEMBER WALL WORK SYNC
+
+1. RESUMEN EN EL MURO
+Cada muro incorpora un bloque Trabajo 360 con foco actual, tareas activas, completadas de la semana, campañas y próxima entrega. La carga estimada solo se muestra al propietario y a Dirección/Supervisión.
+
+2. COMPARTIR AVANCE DESDE UNA TAREA
+Abrir una tarea > Compartir avance. Registrar resumen, avance aproximado, tipo, próximo paso y evidencia opcional. Se crea una publicación mediante la RPC productiva existente y se registra el vínculo.
+
+3. VINCULAR PUBLICACIÓN EXISTENTE
+En una publicación propia o, para jefaturas, en una publicación visible: Trabajo 360 > Vincular a tarea. La publicación no cambia; se añade una tarjeta de acceso directo.
+
+4. CONVERTIR PUBLICACIÓN EN TAREA
+Dirección/Supervisión pueden seleccionar Convertir en tarea, definir responsable, campaña, área, prioridad y fecha. La nueva tarea se crea mediante ibm_v30_create_task y queda vinculada con la publicación original.
+
+5. HITOS AUTOMÁTICOS
+En el muro propio > Preferencias. La opción está desactivada por defecto. Al activarla, solo comparte tareas nuevas aprobadas después de la activación. No comparte horas, retrasos, rechazos ni observaciones.
+
+6. FALLBACK Y NUBE
+Sin SQL v17.7 los vínculos se conservan localmente por usuario. SQL_OPCIONAL_v17_7.sql habilita sincronización entre dispositivos y Realtime. El frontend no ejecuta SQL automáticamente. La escritura remota ocurre exclusivamente mediante RPC controladas; la tabla nueva no concede INSERT/UPDATE/DELETE directo al frontend.
+
+7. PRUEBA RECOMENDADA
+- Crear o usar una tarea CERTIFICACIÓN.
+- Compartir un avance.
+- Abrir la tarea desde el muro.
+- Vincular otra publicación.
+- Con Dirección, convertir una publicación de prueba en tarea.
+- Recargar y comprobar persistencia.
+- Con SQL instalado, repetir en otra sesión/dispositivo.

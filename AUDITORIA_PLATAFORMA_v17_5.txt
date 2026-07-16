@@ -1,0 +1,12 @@
+AUDITORIA PLATAFORMA v17.5 — RECORD LIFECYCLE CONTROLS
+
+- Base: v17.4 LIVE CERTIFICATION HOTFIX.
+- Hallazgo corregido: ausencia de editar/archivar/eliminar/restaurar en registros operativos.
+- Modulos cubiertos: proyectos, tareas, briefs, editorial, archivos, plantillas, incidencias y snapshots.
+- Eliminacion: reversible; no fisica.
+- 45 RPC requeridas: intactas.
+- RPC v17.5: opcionales y separadas; edición con lista blanca y alcance de Supervisión validado en frontend y SQL.
+- Salud: OpenAPI 401 informativo; no penaliza el indice.
+- PWA: inbestiga-v17-5-shell.
+- Prueba controlada: interfaz, roles, fallback, móvil y cableado aprobados.
+- Pendiente productivo: ejecutar SQL opcional y certificar RLS/EXECUTE con tres cuentas reales.

@@ -1,0 +1,70 @@
+AUDITORÍA PLATAFORMA — v17.7 MEMBER WALL WORK SYNC
+
+BASE AUDITADA
+v17.6 WORK 360 TEAM REPORTS, única base de código.
+
+CAMBIO FUNCIONAL
+Se añadió una capa aditiva que conecta el muro de cada miembro con Trabajo 360 sin duplicar la fuente operativa de las tareas.
+
+RESULTADOS ESTÁTICOS
+- 14 JavaScript externos: sintaxis válida con node --check.
+- 14 scripts inline: sintaxis válida e idénticos byte por byte a v17.6.
+- 649 IDs DOM reales: sin duplicados.
+- Referencias locales: completas.
+- 20 archivos JSON: válidos.
+- 45 RPC productivas: únicas e intactas.
+- RPC productivas reutilizadas: ibm_v30_create_wall_post_inline e ibm_v30_create_task.
+- 3 RPC opcionales v17.7 en manifiesto separado.
+- Service Worker: inbestiga-v17-7-shell con 29 recursos existentes.
+- Creative Arena: JS y CSS idénticos a v17.6.
+- Auth, loadAll, renderAll y bootstrap: no editados inline.
+
+PRUEBAS CONTROLADAS EN NAVEGADOR
+La política del navegador administrado bloquea navegación HTTP local. Las pruebas se ejecutaron cargando el documento de control mediante Playwright set_content, sin afirmar certificación HTTPS/Supabase real.
+
+Dirección/Supervisión:
+- Resumen Trabajo 360 en muro: aprobado.
+- Resumen en perfil de miembro: aprobado.
+- Tarjeta de tarea vinculada: aprobado.
+- Vincular publicación: visible.
+- Convertir publicación en tarea: visible.
+- Compartir avance desde tarea: visible.
+- Realtime simulado: canal suscrito.
+- Errores de página: 0.
+
+Colaborador:
+- Resumen propio y de miembro: aprobado.
+- Vincular publicación propia: visible.
+- Compartir tarea asignada: visible.
+- Convertir publicación en tarea: oculto.
+- Errores de página: 0.
+
+Acciones productivas simuladas:
+- Compartir tarea creó una publicación y su vínculo.
+- Convertir publicación creó una tarea y su vínculo.
+- 1 publicación, 1 tarea y 2 vínculos de prueba creados correctamente.
+- Errores de página: 0.
+
+Fallback:
+- Sin tabla opcional, el módulo permanece funcional en modo local.
+- El estado es informativo y no debe reducir el índice de salud.
+
+Responsive:
+- Viewport 390 px: documento 390/390.
+- Resumen y tarjeta vinculada sin desbordamiento horizontal.
+
+SQL OPCIONAL v17.7
+- Transacción completa.
+- Preflight de esquema.
+- Tabla nueva: marketing_app.work_activity_links.
+- RLS para lectura interna autenticada.
+- Escritura directa revocada; RPC con guardas de sesión, rol, autoría/asignación y alcance de área.
+- Creación y eliminación de vínculos por su creador.
+- Realtime opcional para la nueva tabla.
+- No modifica ni elimina tareas o publicaciones.
+- No modifica las 45 RPC productivas.
+
+LIMITACIONES
+- SQL_OPCIONAL_v17_7.sql no fue ejecutado contra el Supabase productivo desde este entorno.
+- Persistencia entre dispositivos, RLS real y Realtime deben validarse después del despliegue.
+- Salud 100/100 debe confirmarse nuevamente en Netlify tras actualizar la PWA.

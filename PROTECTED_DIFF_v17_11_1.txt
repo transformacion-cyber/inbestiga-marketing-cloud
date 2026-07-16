@@ -1,0 +1,18 @@
+PROTECTED DIFF v17.11.1
+
+Base comparada: v17.11.
+
+SIN CAMBIOS
+- 14 scripts inline productivos: byte-identical.
+- Creative Arena y pizarras: byte-identical en sus secciones protegidas.
+- config/rpc-manifest.json: byte-identical.
+- Todos los archivos SQL: byte-identical.
+- Supabase Auth, RLS, tablas, Storage y Realtime: sin cambios.
+- Módulos v17.9, v17.10 y v17.11: sin cambios funcionales.
+
+CAMBIOS CONTROLADOS
+- index.html: metadata v17.11.1 y referencias a CSS/JS del hotfix.
+- service-worker.js: caché v17.11.1 y precache de los dos archivos nuevos.
+- system-health-center.js, production-certification.js y audit-health-integration.js: alineación visible de versión.
+- config/build-manifest.json: registro del hotfix.
+- Nuevo módulo externo móvil y su CSS.

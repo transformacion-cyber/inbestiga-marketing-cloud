@@ -1,0 +1,26 @@
+INBESTIGA MARKETING CLOUD — v17.12.8
+EDITOR LAYOUT RESPONSIVE HOTFIX
+
+BASE
+- Construida únicamente desde v17.12.7.
+- No mezclar con versiones anteriores.
+
+PROBLEMA CORREGIDO
+- La navegación superior ocultaba globalmente todas las etiquetas HTML <aside>.
+- El editor unificado usaba <aside> para el selector de paneles y para la vista previa.
+- Esos elementos desaparecían, pero la cuadrícula conservaba sus columnas.
+- El formulario quedaba comprimido en una franja estrecha, como en las capturas de Inicio y Muro.
+
+SOLUCIÓN
+- Los selectores de paneles ahora usan <nav>.
+- La vista previa ahora usa <section>.
+- Se añadieron defensas CSS de ancho, min-width y composición responsive.
+- Escritorio: selector + formulario + vista previa.
+- Pantalla media: selector + formulario, vista previa debajo.
+- Móvil: navegación horizontal, formulario a ancho completo y vista previa debajo.
+
+PROTECCIÓN
+- No se modificaron Supabase Auth, RLS, tablas, Storage, RPC, SQL, tareas, campañas, mensajes, Creative Arena, loadAll, renderAll ni bootstrap.
+- No requiere SQL adicional.
+- Conserva la clave local de v17.12.7 para no perder borradores o configuración visual.
+- Caché PWA: inbestiga-v17-12-8-shell.

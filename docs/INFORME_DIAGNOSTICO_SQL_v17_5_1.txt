@@ -1,0 +1,26 @@
+INFORME DE DIAGNOSTICO SQL — v17.5.1
+
+ERROR OBSERVADO
+42P01: relation marketing_app.editorial does not exist.
+
+INVENTARIO REAL OBSERVADO
+- assets
+- briefs
+- campaigns
+- editorial_items
+- incidents
+- report_snapshots
+- tasks
+- templates
+
+INSTALACION PARCIAL
+La consulta de diagnostico mostro NO CREADA para:
+- record_lifecycle
+- record_change_log
+- ibm_v175_actor_scope
+- ibm_v175_patch_record
+- ibm_v175_set_record_state
+- ibm_v175_lifecycle_capabilities
+
+CONCLUSION
+La transaccion fallida no dejo objetos v17.5 que limpiar. El hotfix puede instalarse desde cero con el SQL v17.5.1.

@@ -1,0 +1,42 @@
+AUDITORIA PLATAFORMA v17.3 - PRODUCTIVE CERTIFICATION FIXES
+Fecha: 2026-07-13
+
+BASE
+- Base unica: v17.2 AUDIT HEALTH INTEGRATION.
+- Copia inmutable: PLATAFORMA_BASE_ORIGINAL_v17_2.zip.
+- index.html sin cambios.
+
+HALLAZGOS
+1. Production Certification buscaba #profile360; el DOM usa #profile.
+2. La consulta de system_versions aceptaba solo versiones 16.x.
+3. Auditoria Pro desbordaba el viewport movil por min-content en .grid2.
+
+CORRECCIONES
+1. REQUIRED_SECTIONS alineado con #profile.
+2. Compatibilidad por major >= 16.
+3. Grid de Auditoria con minmax(0,1fr), items min-width:0 y tabla desplazable internamente.
+4. Cache inbestiga-v17-3-shell.
+
+VALIDACION
+- 10 JS externos y service-worker.js: node --check OK.
+- 14 scripts inline: node --check OK.
+- 649 IDs, 0 duplicados.
+- 18 referencias locales, 0 faltantes.
+- 45 RPC, coincidencia exacta entre manifiesto y frontend.
+- 21 rutas PWA, 0 faltantes.
+- Tres roles ejecutados en DOM controlado, sin errores de pagina/consola.
+- Production Certification: 93/100; advertencias restantes corresponden a Konva/CDN y Service Worker no disponible en about:blank.
+- 390 px: sin overflow global.
+- Work 360: fallback local y restauracion de estimacion 3.5 h.
+
+NO CERTIFICADO
+- Supabase Auth real.
+- Ejecucion real de 45 RPC.
+- RLS.
+- Storage real.
+- Realtime real.
+- PWA instalada por HTTPS.
+- Sincronizacion Work 360 multidispositivo.
+
+ZONAS NO TOCADAS
+Creative Arena, Auth, loadAll, renderAll, bootstrap, RPC/tablas/RLS, Home editorial, Perfil 360, Campanas, Mensajes y SQL opcional.

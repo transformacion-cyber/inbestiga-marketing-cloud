@@ -1,0 +1,30 @@
+{
+  "version": "17.10",
+  "build": "DEADLINES & MEMBER GOVERNANCE",
+  "optional": true,
+  "sql": "SQL_OPCIONAL_v17_10.sql",
+  "rpc": [
+    "ibm_v1710_capabilities",
+    "ibm_v1710_member_delete_preview",
+    "ibm_v1710_deactivate_member",
+    "ibm_v1710_delete_member"
+  ],
+  "helper_rpc": [
+    "ibm_v1710_actor_member_id",
+    "ibm_v1710_actor_role",
+    "ibm_v1710_is_manager",
+    "ibm_v1710_role_rank",
+    "ibm_v1710_can_manage_member"
+  ],
+  "tables": [
+    "marketing_app.member_governance_log"
+  ],
+  "scope": {
+    "member_deletion": "marketing_app only",
+    "auth_users": "untouched",
+    "tickets_users": "untouched",
+    "storage": "untouched",
+    "hierarchy": "Italo > Jhulio > Alejandro > member; no self-management; Italo may clean legacy peer profiles while preserving the last active Italo."
+  },
+  "notes": "Agrega preview, desactivación, transferencia y eliminación permanente de perfiles dentro de Marketing Cloud con alcance jerárquico. No modifica las 45 RPC productivas ni elimina cuentas de otros sistemas. El deadline reutiliza due_date y due_time existentes."
+}

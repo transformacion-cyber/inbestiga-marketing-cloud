@@ -1,0 +1,300 @@
+{
+  "version": "17.8",
+  "build": "DESIGN SYSTEM STUDIO",
+  "ids": 649,
+  "duplicate_ids": [],
+  "local_refs": 30,
+  "missing_refs": [],
+  "external_js": 15,
+  "js_checks": {
+    "assets/js/audit-counter-accuracy.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/audit-health-integration.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/collaboration-campaign-os.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/design-system-studio.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/home-editorial-core.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/member-wall-work-sync.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/operational-intelligence.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/platform-diagnostics.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/platform-quality-core.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/production-certification.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/productivity-realtime-core.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/record-lifecycle-controls.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/system-health-center.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/work360-advanced.js": {
+      "ok": true,
+      "error": ""
+    },
+    "assets/js/work360-team-reports.js": {
+      "ok": true,
+      "error": ""
+    },
+    "service-worker.js": {
+      "ok": true,
+      "error": ""
+    }
+  },
+  "inline_scripts": 14,
+  "inline_checks": [
+    {
+      "index": 0,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 1,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 2,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 3,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 4,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 5,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 6,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 7,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 8,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 9,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 10,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 11,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 12,
+      "ok": true,
+      "error": ""
+    },
+    {
+      "index": 13,
+      "ok": true,
+      "error": ""
+    }
+  ],
+  "inline_same_as_v17_7": true,
+  "creative_arena": {
+    "js_hash": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd",
+    "base_js_hash": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd",
+    "js_identical": true,
+    "css_hash": "cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f",
+    "base_css_hash": "cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f",
+    "css_identical": true
+  },
+  "json_files": 25,
+  "json_checks": {
+    "CERT_STATIC_RESULTS.json": "ok",
+    "CERT_STATIC_RESULTS_v17_5.json": "ok",
+    "CERT_STATIC_RESULTS_v17_5_1.json": "ok",
+    "CERT_STATIC_RESULTS_v17_5_2.json": "ok",
+    "CERT_STATIC_RESULTS_v17_5_3.json": "ok",
+    "CERT_STATIC_RESULTS_v17_6.json": "ok",
+    "CERT_STATIC_RESULTS_v17_7.json": "ok",
+    "CERT_STATIC_RESULTS_v17_8.json": "ok",
+    "config/build-manifest.json": "ok",
+    "config/rpc-manifest-v17_5_1-optional.json": "ok",
+    "config/rpc-manifest-v17_7-optional.json": "ok",
+    "config/rpc-manifest-v17_8-optional.json": "ok",
+    "config/rpc-manifest.json": "ok",
+    "docs/MATRIZ_CERTIFICACION_v16_1.json": "ok",
+    "docs/MATRIZ_CERTIFICACION_v17_3.json": "ok",
+    "docs/evidence/AUDIT_COUNTER_TESTS_v17_5_3.json": "ok",
+    "docs/evidence/DESIGN_SYSTEM_SQL_REVIEW_v17_8.json": "ok",
+    "docs/evidence/DESIGN_SYSTEM_STUDIO_TESTS_v17_8.json": "ok",
+    "docs/evidence/DOM_CERTIFICATION_RESULTS_v17_3.json": "ok",
+    "docs/evidence/DOM_RECORD_LIFECYCLE_RESULTS_v17_5.json": "ok",
+    "docs/evidence/HEALTH_SCORE_ACCURACY_TESTS_v17_5_2.json": "ok",
+    "docs/evidence/HEALTH_SCORE_GUARD_v17_5.json": "ok",
+    "docs/evidence/PROTECTED_AND_SQL_REVIEW_v17_5.json": "ok",
+    "docs/evidence/STATIC_CERTIFICATION_v17_3.json": "ok",
+    "docs/evidence/WORK360_TEAM_REPORTS_TESTS_v17_6.json": "ok"
+  },
+  "css": {
+    "audit-counter-accuracy.css": {
+      "open": 37,
+      "close": 37,
+      "balanced": true
+    },
+    "audit-health-integration.css": {
+      "open": 59,
+      "close": 59,
+      "balanced": true
+    },
+    "collaboration-campaign-os.css": {
+      "open": 116,
+      "close": 116,
+      "balanced": true
+    },
+    "design-system-studio.css": {
+      "open": 158,
+      "close": 158,
+      "balanced": true
+    },
+    "member-wall-work-sync.css": {
+      "open": 87,
+      "close": 87,
+      "balanced": true
+    },
+    "operational-intelligence.css": {
+      "open": 53,
+      "close": 53,
+      "balanced": true
+    },
+    "platform-quality-core.css": {
+      "open": 35,
+      "close": 35,
+      "balanced": true
+    },
+    "production-certification.css": {
+      "open": 67,
+      "close": 67,
+      "balanced": true
+    },
+    "productivity-realtime-core.css": {
+      "open": 76,
+      "close": 76,
+      "balanced": true
+    },
+    "record-lifecycle-controls.css": {
+      "open": 50,
+      "close": 50,
+      "balanced": true
+    },
+    "system-health-center.css": {
+      "open": 103,
+      "close": 103,
+      "balanced": true
+    },
+    "work360-advanced.css": {
+      "open": 127,
+      "close": 127,
+      "balanced": true
+    },
+    "work360-team-reports.css": {
+      "open": 126,
+      "close": 126,
+      "balanced": true
+    }
+  },
+  "rpc_count": 45,
+  "rpc_unique": 45,
+  "optional_rpc_count": 5,
+  "optional_rpc_unique": 5,
+  "build_version": "17.8",
+  "modules": 15,
+  "styles": 13,
+  "sw_resources": 31,
+  "sw_missing": [],
+  "sw_cache_v178": true,
+  "protected_files": {
+    "assets/js/home-editorial-core.js": true,
+    "assets/js/platform-diagnostics.js": true,
+    "assets/js/operational-intelligence.js": true,
+    "assets/js/platform-quality-core.js": true,
+    "assets/js/collaboration-campaign-os.js": true,
+    "assets/js/productivity-realtime-core.js": true,
+    "assets/js/work360-advanced.js": true,
+    "assets/js/audit-health-integration.js": true,
+    "assets/js/record-lifecycle-controls.js": true,
+    "assets/js/audit-counter-accuracy.js": true,
+    "assets/js/work360-team-reports.js": true,
+    "assets/js/member-wall-work-sync.js": true,
+    "config/rpc-manifest.json": true,
+    "SQL_OPCIONAL_v16_1.sql": true,
+    "SQL_OPCIONAL_v17_0.sql": true,
+    "SQL_OPCIONAL_v17_5_1.sql": true,
+    "SQL_OPCIONAL_v17_7.sql": true
+  },
+  "source_guards": {
+    "safe_key_whitelist": true,
+    "director_guard_save": true,
+    "director_guard_publish": true,
+    "publish_health_floor_95": true,
+    "no_eval": true,
+    "no_blob_persistence": true,
+    "creative_arena_css_excluded": true,
+    "creative_arena_banner_excluded": true,
+    "sql_transactional": true,
+    "sql_no_physical_delete": true,
+    "sql_revoke_direct_write": true,
+    "sql_safe_variable_validation": true,
+    "sql_active_or_own_draft_rls": true,
+    "module_banner_applied": true,
+    "local_fallback": true,
+    "realtime_optional": true
+  },
+  "passed": true
+}

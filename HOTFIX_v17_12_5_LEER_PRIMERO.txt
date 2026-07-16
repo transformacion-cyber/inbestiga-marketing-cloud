@@ -1,0 +1,17 @@
+INBESTIGA MARKETING CLOUD v17.12.5
+SCHEMA-AWARE RPC TASK HOTFIX
+
+Qué corrige:
+1. Falso aviso de SQL v17.9 pendiente al crear tareas con archivos o varios ejecutores.
+2. Operación 360+ apareciendo como Local aunque ibm_v1711_capabilities() exista.
+3. Resultado cloud=false retenido durante toda la sesión después de un fallo transitorio.
+4. Avisos engañosos y repetidos al volver a intentar.
+
+Publicación:
+- Subir este ZIP como nueva publicación en Netlify.
+- No ejecutar SQL.
+- Abrir en ventana de incógnito o limpiar una vez los datos del sitio.
+- Confirmar v17.12.5.
+
+Control de caché:
+- Los módulos corregidos usan nombres nuevos: collaborative-workspace-v17-9-1.js y task-operations-ranking-v17-11-1.js.

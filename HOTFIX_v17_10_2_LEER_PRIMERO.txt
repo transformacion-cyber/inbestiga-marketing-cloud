@@ -1,0 +1,18 @@
+INBESTIGA MARKETING CLOUD v17.10.2
+AUDIT HEALTH WIDGET PERSISTENCE HOTFIX
+
+CORRECCION
+- Restaura el resumen de Salud del sistema dentro de Auditoria Pro.
+- El contenedor de Salud ahora existe de forma permanente en index.html.
+- El modulo vuelve a montarlo automaticamente si otro render lo retira.
+- Alinea version, Production Certification y PWA con v17.10.2.
+
+NO REQUIERE SQL.
+NO MODIFICA AUTH, RLS, RPC, TABLAS, CREATIVE ARENA NI WORK 360.
+
+INSTALACION
+1. Subir solo este ZIP a Netlify.
+2. Esperar estado Publicado.
+3. Cerrar pestanas anteriores.
+4. Abrir la URL y usar Ctrl + Shift + R.
+5. Entrar a Auditoria Pro y comprobar que aparezca Salud del sistema.

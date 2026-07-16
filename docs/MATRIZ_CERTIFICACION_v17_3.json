@@ -1,0 +1,126 @@
+{
+  "version": "17.3",
+  "build": "PRODUCTIVE CERTIFICATION FIXES",
+  "date": "2026-07-13",
+  "status_legend": {
+    "pass": "Aprobado",
+    "controlled_pass": "Aprobado en entorno controlado",
+    "static_pass": "Aprobado estaticamente",
+    "not_certified": "No certificado",
+    "not_applicable": "No aplicable"
+  },
+  "environment": {
+    "frontend_base": "v17.2 AUDIT HEALTH INTEGRATION",
+    "productive_supabase_available": false,
+    "productive_accounts_available": false,
+    "local_http_navigation": "blocked_by_managed_browser",
+    "dom_execution": "about:blank with mocked public interfaces"
+  },
+  "results": [
+    {
+      "area": "Integridad de paquete",
+      "status": "pass",
+      "evidence": "SHA256SUMS y STATIC_CERTIFICATION_v17_3.json"
+    },
+    {
+      "area": "Sintaxis JavaScript",
+      "status": "pass",
+      "evidence": "10 externos + 14 inline + service-worker.js"
+    },
+    {
+      "area": "IDs y referencias locales",
+      "status": "pass",
+      "evidence": "649 IDs, 0 duplicados; 18 referencias, 0 faltantes"
+    },
+    {
+      "area": "Contrato RPC frontend",
+      "status": "static_pass",
+      "evidence": "45 declaradas y coincidencia exacta con llamadas"
+    },
+    {
+      "area": "Director - guardas de interfaz",
+      "status": "controlled_pass",
+      "evidence": "Rutas admin/audit/permissions/governance permitidas"
+    },
+    {
+      "area": "Supervisor - guardas de interfaz",
+      "status": "controlled_pass",
+      "evidence": "Permisos redirige a home; Auditoria accesible con detalle restringido"
+    },
+    {
+      "area": "Colaborador - guardas de interfaz",
+      "status": "controlled_pass",
+      "evidence": "Admin/Permisos/Auditoria/Gobernanza redirigen a home"
+    },
+    {
+      "area": "Work 360 fallback local",
+      "status": "controlled_pass",
+      "evidence": "Metadatos restaurados; estimateHours=3.5"
+    },
+    {
+      "area": "Auditoria responsive 390 px",
+      "status": "controlled_pass",
+      "evidence": "scrollWidth=390, clientWidth=390"
+    },
+    {
+      "area": "PWA shell y manifiesto",
+      "status": "static_pass",
+      "evidence": "cache v17.3; 21 rutas; iconos correctos"
+    },
+    {
+      "area": "Supabase Auth real",
+      "status": "not_certified",
+      "blocker": "Sin despliegue ni cuentas reales"
+    },
+    {
+      "area": "45 RPC reales",
+      "status": "not_certified",
+      "blocker": "Sin Supabase productivo"
+    },
+    {
+      "area": "RLS lectura/escritura",
+      "status": "not_certified",
+      "blocker": "Sin cuentas reales y datos de prueba"
+    },
+    {
+      "area": "Storage real",
+      "status": "not_certified",
+      "blocker": "Sin bucket/sesion productiva"
+    },
+    {
+      "area": "Realtime real",
+      "status": "not_certified",
+      "blocker": "Sin dos sesiones productivas"
+    },
+    {
+      "area": "PWA instalada/offline",
+      "status": "not_certified",
+      "blocker": "Navegacion local bloqueada y sin HTTPS desplegado"
+    },
+    {
+      "area": "Work 360 multidispositivo",
+      "status": "not_certified",
+      "blocker": "Sin backend real; estado de SQL v17 desconocido"
+    }
+  ],
+  "fixes": [
+    {
+      "id": "CERT-SECTION-001",
+      "file": "assets/js/production-certification.js",
+      "change": "profile360 -> profile",
+      "validated": true
+    },
+    {
+      "id": "CERT-VERSION-002",
+      "file": "assets/js/production-certification.js",
+      "change": "major >= 16",
+      "validated": true
+    },
+    {
+      "id": "AUDIT-MOBILE-003",
+      "file": "assets/css/audit-health-integration.css",
+      "change": "contain min-content and table scroll",
+      "validated": true
+    }
+  ]
+}

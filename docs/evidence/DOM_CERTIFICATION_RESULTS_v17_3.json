@@ -1,0 +1,1048 @@
+{
+  "generated_at": "2026-07-13T15:00:01Z",
+  "execution_mode": "DOM controlado en about:blank; sin HTTP ni Supabase real",
+  "setup": {
+    "setup_visible_without_config": true,
+    "page_errors": []
+  },
+  "roles": {
+    "director": {
+      "role": "director",
+      "role_state": {
+        "isDirector": true,
+        "isSupervisor": true,
+        "roleLabel": "Dirección",
+        "access": {
+          "home": true,
+          "tasks": true,
+          "approvals": true,
+          "admin": true,
+          "permissions": true,
+          "auditpro": true,
+          "governance": true
+        }
+      },
+      "route_results": {
+        "home": {
+          "requested": "home",
+          "current": "home",
+          "active": "home"
+        },
+        "myday": {
+          "requested": "myday",
+          "current": "myday",
+          "active": "myday"
+        },
+        "tasks": {
+          "requested": "tasks",
+          "current": "tasks",
+          "active": "tasks"
+        },
+        "campaigns": {
+          "requested": "campaigns",
+          "current": "campaigns",
+          "active": "campaigns"
+        },
+        "messages": {
+          "requested": "messages",
+          "current": "messages",
+          "active": "messages"
+        },
+        "workIntel": {
+          "requested": "workIntel",
+          "current": "workIntel",
+          "active": "workIntel"
+        },
+        "auditpro": {
+          "requested": "auditpro",
+          "current": "auditpro",
+          "active": "auditpro"
+        },
+        "admin": {
+          "requested": "admin",
+          "current": "admin",
+          "active": "admin"
+        },
+        "permissions": {
+          "requested": "permissions",
+          "current": "permissions",
+          "active": "permissions"
+        },
+        "governance": {
+          "requested": "governance",
+          "current": "governance",
+          "active": "governance"
+        }
+      },
+      "work360": {
+        "api": true,
+        "shell": true,
+        "views": [
+          "kanban",
+          "list",
+          "timeline",
+          "capacity"
+        ],
+        "before": {
+          "estimateHours": 0,
+          "trackedMinutes": 0,
+          "parentTaskId": "",
+          "dependencies": [],
+          "recurrence": {
+            "frequency": "none",
+            "interval": 1
+          },
+          "tags": [],
+          "notes": "",
+          "updatedAt": null
+        },
+        "after": {
+          "estimateHours": 3.5,
+          "trackedMinutes": 1,
+          "parentTaskId": "",
+          "dependencies": [],
+          "recurrence": {
+            "frequency": "none",
+            "interval": 1
+          },
+          "tags": [
+            "certificacion",
+            "local"
+          ],
+          "notes": "",
+          "updatedAt": "2026-07-13T15:00:11.030Z"
+        }
+      },
+      "work360_persisted": {
+        "estimateHours": 3.5,
+        "trackedMinutes": 1,
+        "parentTaskId": "",
+        "dependencies": [],
+        "recurrence": {
+          "frequency": "none",
+          "interval": 1
+        },
+        "tags": [
+          "certificacion",
+          "local"
+        ],
+        "notes": "",
+        "updatedAt": "2026-07-13T15:00:11.030Z"
+      },
+      "certification": {
+        "version": "v16.1",
+        "build": "PRODUCTION CERTIFICATION",
+        "generated_at": "2026-07-13T15:00:14.278Z",
+        "local_date": "2026-07-13",
+        "project_ref": "mockproject",
+        "account": {
+          "authenticated": true,
+          "member_id": "member-director",
+          "role_code": "director",
+          "role_detected": "director"
+        },
+        "score": 93,
+        "automatic": [
+          {
+            "name": "Versión frontend",
+            "status": "ok",
+            "value": "v17.3",
+            "meta": "Compatible: v16.1 o superior."
+          },
+          {
+            "name": "Sesión autenticada",
+            "status": "ok",
+            "value": "Activa",
+            "meta": "Supabase Auth devolvió un usuario."
+          },
+          {
+            "name": "Perfil de miembro",
+            "status": "ok",
+            "value": "Director Certificación",
+            "meta": "Rol detectado: director."
+          },
+          {
+            "name": "Fecha local Perú",
+            "status": "ok",
+            "value": "2026-07-13",
+            "meta": "Fecha Lima esperada: 2026-07-13."
+          },
+          {
+            "name": "Estado inicial",
+            "status": "ok",
+            "value": "Completo",
+            "meta": "Las colecciones principales existen."
+          },
+          {
+            "name": "Secciones",
+            "status": "ok",
+            "value": "Completas",
+            "meta": "15 secciones esenciales presentes."
+          },
+          {
+            "name": "Funciones globales",
+            "status": "ok",
+            "value": "Disponibles",
+            "meta": "Navegación, render y modales listos."
+          },
+          {
+            "name": "Integridad DOM",
+            "status": "ok",
+            "value": "Limpio",
+            "meta": "Sin IDs duplicados ni código técnico visible."
+          },
+          {
+            "name": "Errores recientes",
+            "status": "ok",
+            "value": "Sin errores",
+            "meta": "No hay errores persistidos por el monitor."
+          },
+          {
+            "name": "RPC requeridas",
+            "status": "ok",
+            "value": "Verificadas",
+            "meta": "45 funciones requeridas."
+          },
+          {
+            "name": "Creative Arena",
+            "status": "warn",
+            "value": "Módulo disponible",
+            "meta": "Konva no está cargado; revisa internet o CDN."
+          },
+          {
+            "name": "Conectividad",
+            "status": "ok",
+            "value": "En línea",
+            "meta": "Estado actual del navegador."
+          },
+          {
+            "name": "Compatibilidad backend",
+            "status": "ok",
+            "value": "DB 17.3",
+            "meta": "El registro de versión es compatible con v16.1 o una familia posterior."
+          },
+          {
+            "name": "Storage",
+            "status": "ok",
+            "value": "Lectura permitida",
+            "meta": "Bucket inbestiga-media accesible para la sesión actual."
+          },
+          {
+            "name": "Realtime",
+            "status": "ok",
+            "value": "Canal activo",
+            "meta": "El servicio confirmó una suscripción temporal de solo lectura."
+          },
+          {
+            "name": "PWA",
+            "status": "warn",
+            "value": "No compatible",
+            "meta": "Este navegador no admite Service Worker."
+          }
+        ],
+        "diagnostics": {
+          "openapi": {
+            "available": true,
+            "reason": ""
+          },
+          "required_rpcs": 45,
+          "missing_rpcs": []
+        },
+        "manual": {}
+      },
+      "health": {
+        "version": "v17.2",
+        "build": "AUDIT HEALTH INTEGRATION",
+        "generated_at": "2026-07-13T15:00:14.309Z",
+        "project_ref": "mockproject",
+        "account": {
+          "member_id": "member-director",
+          "auth_user_id": "user-director",
+          "name": "Director Certificación",
+          "role": "Dirección",
+          "authorized": true
+        },
+        "overall": {
+          "status": "warn",
+          "title": "Operativo con advertencias",
+          "message": "4 comprobaciónes necesitan validación o configuración.",
+          "score": 83
+        },
+        "checks": [
+          {
+            "id": "build",
+            "category": "summary",
+            "label": "Versión instalada",
+            "status": "ok",
+            "value": "v17.3",
+            "detail": "PRODUCTIVE CERTIFICATION FIXES · 8 módulos registrados."
+          },
+          {
+            "id": "supabase",
+            "category": "summary",
+            "label": "Supabase",
+            "status": "ok",
+            "value": "Sesión activa",
+            "detail": "librería cargada · cliente creado · proyecto mockproject · usuario autenticado"
+          },
+          {
+            "id": "connectivity",
+            "category": "summary",
+            "label": "Conectividad",
+            "status": "warn",
+            "value": "Online sin HTTPS",
+            "detail": "about://archivo local"
+          },
+          {
+            "id": "rpc-manifest",
+            "category": "services",
+            "label": "Manifiesto RPC",
+            "status": "ok",
+            "value": "45/45",
+            "detail": "Las funciones requeridas están declaradas una sola vez."
+          },
+          {
+            "id": "rpc-openapi",
+            "category": "services",
+            "label": "RPC en Supabase",
+            "status": "ok",
+            "value": "45/45",
+            "detail": "OpenAPI expone las 45 RPC requeridas. Esto confirma presencia, no permisos ni persistencia."
+          },
+          {
+            "id": "storage",
+            "category": "services",
+            "label": "Storage",
+            "status": "ok",
+            "value": "Lectura permitida",
+            "detail": "Bucket inbestiga-media accesible para la sesión actual. No se subió ni eliminó ningún archivo."
+          },
+          {
+            "id": "realtime",
+            "category": "services",
+            "label": "Realtime",
+            "status": "ok",
+            "value": "Canal activo",
+            "detail": "Supabase confirmó una suscripción temporal. La sincronización entre dos cuentas aún requiere prueba manual."
+          },
+          {
+            "id": "pwa",
+            "category": "services",
+            "label": "PWA",
+            "status": "warn",
+            "value": "No compatible",
+            "detail": "Este navegador no admite Service Worker."
+          },
+          {
+            "id": "work360-local",
+            "category": "sync",
+            "label": "Work 360 local",
+            "status": "ok",
+            "value": "1 tareas planificadas",
+            "detail": "Último cambio 13 jul. 2026, 10:00 a. m. · 1.5 KB en este navegador."
+          },
+          {
+            "id": "work360-cloud",
+            "category": "sync",
+            "label": "Work 360 en Supabase",
+            "status": "warn",
+            "value": "Fallback local",
+            "detail": "relation work360_preferences does not exist. SQL_OPCIONAL_v17_0.sql permanece opcional y no fue ejecutado por este centro."
+          },
+          {
+            "id": "work360-pending",
+            "category": "sync",
+            "label": "Cambios por sincronizar",
+            "status": "warn",
+            "value": "Solo local",
+            "detail": "La planificación está protegida en este navegador, pero no se confirmó copia en Supabase."
+          },
+          {
+            "id": "browser-storage",
+            "category": "sync",
+            "label": "Almacenamiento del navegador",
+            "status": "info",
+            "value": "No disponible",
+            "detail": "El navegador no expone estimación de cuota."
+          },
+          {
+            "id": "runtime-errors",
+            "category": "incidents",
+            "label": "Errores recientes",
+            "status": "ok",
+            "value": "Sin errores",
+            "detail": "No se encontraron errores persistidos por Platform Quality Core."
+          }
+        ],
+        "rpc": {
+          "required_count": 45,
+          "verified": true,
+          "available_count": 45,
+          "missing": []
+        },
+        "work360": {
+          "local": {
+            "id": "work360-local",
+            "category": "sync",
+            "label": "Work 360 local",
+            "status": "ok",
+            "value": "1 tareas planificadas",
+            "detail": "Último cambio 13 jul. 2026, 10:00 a. m. · 1.5 KB en este navegador."
+          },
+          "cloud": {
+            "id": "work360-cloud",
+            "category": "sync",
+            "label": "Work 360 en Supabase",
+            "status": "warn",
+            "value": "Fallback local",
+            "detail": "relation work360_preferences does not exist. SQL_OPCIONAL_v17_0.sql permanece opcional y no fue ejecutado por este centro."
+          },
+          "pending": {
+            "id": "work360-pending",
+            "category": "sync",
+            "label": "Cambios por sincronizar",
+            "status": "warn",
+            "value": "Solo local",
+            "detail": "La planificación está protegida en este navegador, pero no se confirmó copia en Supabase."
+          },
+          "mode": "local",
+          "localUpdated": "2026-07-13T15:00:11.031Z",
+          "remoteUpdated": null,
+          "metadataCount": 1,
+          "error": "relation work360_preferences does not exist"
+        },
+        "incidents": [],
+        "limitations": [
+          "Las pruebas automáticas son de lectura y no certifican RLS de escritura.",
+          "Realtime entre dos usuarios, carga real de archivos y persistencia cruzada requieren pruebas manuales.",
+          "SQL_OPCIONAL_v16_1.sql y SQL_OPCIONAL_v17_0.sql no se ejecutan automáticamente."
+        ]
+      },
+      "audit": {
+        "current": "auditpro",
+        "text": true,
+        "buttons": [
+          "Exportar auditoría CSV",
+          "Ver diagnóstico completo",
+          "Comprobar salud"
+        ]
+      },
+      "mobile": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflow": false
+      },
+      "mock_rpc_calls": [
+        {
+          "name": "ibm_v375_bootstrap",
+          "args": null
+        },
+        {
+          "name": "ibm_v33_touch_presence",
+          "args": {
+            "p_status": "online",
+            "p_current_section": "home"
+          }
+        },
+        {
+          "name": "ibm_v33_touch_presence",
+          "args": {
+            "p_status": "online",
+            "p_current_section": "home"
+          }
+        },
+        {
+          "name": "ibm_v33_touch_presence",
+          "args": {
+            "p_status": "online",
+            "p_current_section": "auditpro"
+          }
+        }
+      ],
+      "page_errors": [],
+      "console_errors": []
+    },
+    "supervisor": {
+      "role": "supervisor",
+      "role_state": {
+        "isDirector": false,
+        "isSupervisor": true,
+        "roleLabel": "Supervisión",
+        "access": {
+          "home": true,
+          "tasks": true,
+          "approvals": true,
+          "admin": true,
+          "permissions": false,
+          "auditpro": true,
+          "governance": true
+        }
+      },
+      "route_results": {
+        "home": {
+          "requested": "home",
+          "current": "home",
+          "active": "home"
+        },
+        "myday": {
+          "requested": "myday",
+          "current": "myday",
+          "active": "myday"
+        },
+        "tasks": {
+          "requested": "tasks",
+          "current": "tasks",
+          "active": "tasks"
+        },
+        "campaigns": {
+          "requested": "campaigns",
+          "current": "campaigns",
+          "active": "campaigns"
+        },
+        "messages": {
+          "requested": "messages",
+          "current": "messages",
+          "active": "messages"
+        },
+        "workIntel": {
+          "requested": "workIntel",
+          "current": "workIntel",
+          "active": "workIntel"
+        },
+        "auditpro": {
+          "requested": "auditpro",
+          "current": "auditpro",
+          "active": "auditpro"
+        },
+        "admin": {
+          "requested": "admin",
+          "current": "admin",
+          "active": "admin"
+        },
+        "permissions": {
+          "requested": "permissions",
+          "current": "home",
+          "active": "home"
+        },
+        "governance": {
+          "requested": "governance",
+          "current": "governance",
+          "active": "governance"
+        }
+      },
+      "work360": {
+        "api": true,
+        "shell": true,
+        "views": [
+          "kanban",
+          "list",
+          "timeline",
+          "capacity"
+        ],
+        "before": {
+          "estimateHours": 0,
+          "trackedMinutes": 0,
+          "parentTaskId": "",
+          "dependencies": [],
+          "recurrence": {
+            "frequency": "none",
+            "interval": 1
+          },
+          "tags": [],
+          "notes": "",
+          "updatedAt": null
+        },
+        "after": {
+          "estimateHours": 3.5,
+          "trackedMinutes": 1,
+          "parentTaskId": "",
+          "dependencies": [],
+          "recurrence": {
+            "frequency": "none",
+            "interval": 1
+          },
+          "tags": [
+            "certificacion",
+            "local"
+          ],
+          "notes": "",
+          "updatedAt": "2026-07-13T15:00:19.461Z"
+        }
+      },
+      "work360_persisted": {
+        "estimateHours": 3.5,
+        "trackedMinutes": 1,
+        "parentTaskId": "",
+        "dependencies": [],
+        "recurrence": {
+          "frequency": "none",
+          "interval": 1
+        },
+        "tags": [
+          "certificacion",
+          "local"
+        ],
+        "notes": "",
+        "updatedAt": "2026-07-13T15:00:19.461Z"
+      },
+      "certification": {
+        "version": "v16.1",
+        "build": "PRODUCTION CERTIFICATION",
+        "generated_at": "2026-07-13T15:00:22.732Z",
+        "local_date": "2026-07-13",
+        "project_ref": "mockproject",
+        "account": {
+          "authenticated": true,
+          "member_id": "member-supervisor",
+          "role_code": "supervisor",
+          "role_detected": "supervisor"
+        },
+        "score": 93,
+        "automatic": [
+          {
+            "name": "Versión frontend",
+            "status": "ok",
+            "value": "v17.3",
+            "meta": "Compatible: v16.1 o superior."
+          },
+          {
+            "name": "Sesión autenticada",
+            "status": "ok",
+            "value": "Activa",
+            "meta": "Supabase Auth devolvió un usuario."
+          },
+          {
+            "name": "Perfil de miembro",
+            "status": "ok",
+            "value": "Supervisor Certificación",
+            "meta": "Rol detectado: supervisor."
+          },
+          {
+            "name": "Fecha local Perú",
+            "status": "ok",
+            "value": "2026-07-13",
+            "meta": "Fecha Lima esperada: 2026-07-13."
+          },
+          {
+            "name": "Estado inicial",
+            "status": "ok",
+            "value": "Completo",
+            "meta": "Las colecciones principales existen."
+          },
+          {
+            "name": "Secciones",
+            "status": "ok",
+            "value": "Completas",
+            "meta": "15 secciones esenciales presentes."
+          },
+          {
+            "name": "Funciones globales",
+            "status": "ok",
+            "value": "Disponibles",
+            "meta": "Navegación, render y modales listos."
+          },
+          {
+            "name": "Integridad DOM",
+            "status": "ok",
+            "value": "Limpio",
+            "meta": "Sin IDs duplicados ni código técnico visible."
+          },
+          {
+            "name": "Errores recientes",
+            "status": "ok",
+            "value": "Sin errores",
+            "meta": "No hay errores persistidos por el monitor."
+          },
+          {
+            "name": "RPC requeridas",
+            "status": "ok",
+            "value": "Verificadas",
+            "meta": "45 funciones requeridas."
+          },
+          {
+            "name": "Creative Arena",
+            "status": "warn",
+            "value": "Módulo disponible",
+            "meta": "Konva no está cargado; revisa internet o CDN."
+          },
+          {
+            "name": "Conectividad",
+            "status": "ok",
+            "value": "En línea",
+            "meta": "Estado actual del navegador."
+          },
+          {
+            "name": "Compatibilidad backend",
+            "status": "ok",
+            "value": "DB 17.3",
+            "meta": "El registro de versión es compatible con v16.1 o una familia posterior."
+          },
+          {
+            "name": "Storage",
+            "status": "ok",
+            "value": "Lectura permitida",
+            "meta": "Bucket inbestiga-media accesible para la sesión actual."
+          },
+          {
+            "name": "Realtime",
+            "status": "ok",
+            "value": "Canal activo",
+            "meta": "El servicio confirmó una suscripción temporal de solo lectura."
+          },
+          {
+            "name": "PWA",
+            "status": "warn",
+            "value": "No compatible",
+            "meta": "Este navegador no admite Service Worker."
+          }
+        ],
+        "diagnostics": {
+          "openapi": {
+            "available": true,
+            "reason": ""
+          },
+          "required_rpcs": 45,
+          "missing_rpcs": []
+        },
+        "manual": {}
+      },
+      "health": {
+        "denied": true,
+        "version": "v17.2",
+        "generated_at": "2026-07-13T15:00:22.741Z"
+      },
+      "audit": {
+        "current": "auditpro",
+        "text": true,
+        "buttons": [
+          "Exportar auditoría CSV"
+        ]
+      },
+      "mobile": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflow": false
+      },
+      "mock_rpc_calls": [
+        {
+          "name": "ibm_v375_bootstrap",
+          "args": null
+        },
+        {
+          "name": "ibm_v33_touch_presence",
+          "args": {
+            "p_status": "online",
+            "p_current_section": "home"
+          }
+        },
+        {
+          "name": "ibm_v33_touch_presence",
+          "args": {
+            "p_status": "online",
+            "p_current_section": "home"
+          }
+        },
+        {
+          "name": "ibm_v33_touch_presence",
+          "args": {
+            "p_status": "online",
+            "p_current_section": "auditpro"
+          }
+        }
+      ],
+      "page_errors": [],
+      "console_errors": []
+    },
+    "collaborator": {
+      "role": "collaborator",
+      "role_state": {
+        "isDirector": false,
+        "isSupervisor": false,
+        "roleLabel": "Colaborador",
+        "access": {
+          "home": true,
+          "tasks": true,
+          "approvals": false,
+          "admin": false,
+          "permissions": false,
+          "auditpro": false,
+          "governance": false
+        }
+      },
+      "route_results": {
+        "home": {
+          "requested": "home",
+          "current": "home",
+          "active": "home"
+        },
+        "myday": {
+          "requested": "myday",
+          "current": "myday",
+          "active": "myday"
+        },
+        "tasks": {
+          "requested": "tasks",
+          "current": "tasks",
+          "active": "tasks"
+        },
+        "campaigns": {
+          "requested": "campaigns",
+          "current": "campaigns",
+          "active": "campaigns"
+        },
+        "messages": {
+          "requested": "messages",
+          "current": "messages",
+          "active": "messages"
+        },
+        "workIntel": {
+          "requested": "workIntel",
+          "current": "workIntel",
+          "active": "workIntel"
+        },
+        "auditpro": {
+          "requested": "auditpro",
+          "current": "home",
+          "active": "home"
+        },
+        "admin": {
+          "requested": "admin",
+          "current": "home",
+          "active": "home"
+        },
+        "permissions": {
+          "requested": "permissions",
+          "current": "home",
+          "active": "home"
+        },
+        "governance": {
+          "requested": "governance",
+          "current": "home",
+          "active": "home"
+        }
+      },
+      "work360": {
+        "api": true,
+        "shell": true,
+        "views": [
+          "kanban",
+          "list",
+          "timeline",
+          "capacity"
+        ],
+        "before": {
+          "estimateHours": 0,
+          "trackedMinutes": 0,
+          "parentTaskId": "",
+          "dependencies": [],
+          "recurrence": {
+            "frequency": "none",
+            "interval": 1
+          },
+          "tags": [],
+          "notes": "",
+          "updatedAt": null
+        },
+        "after": {
+          "estimateHours": 3.5,
+          "trackedMinutes": 1,
+          "parentTaskId": "",
+          "dependencies": [],
+          "recurrence": {
+            "frequency": "none",
+            "interval": 1
+          },
+          "tags": [
+            "certificacion",
+            "local"
+          ],
+          "notes": "",
+          "updatedAt": "2026-07-13T15:00:27.944Z"
+        }
+      },
+      "work360_persisted": {
+        "estimateHours": 3.5,
+        "trackedMinutes": 1,
+        "parentTaskId": "",
+        "dependencies": [],
+        "recurrence": {
+          "frequency": "none",
+          "interval": 1
+        },
+        "tags": [
+          "certificacion",
+          "local"
+        ],
+        "notes": "",
+        "updatedAt": "2026-07-13T15:00:27.944Z"
+      },
+      "certification": {
+        "version": "v16.1",
+        "build": "PRODUCTION CERTIFICATION",
+        "generated_at": "2026-07-13T15:00:31.284Z",
+        "local_date": "2026-07-13",
+        "project_ref": "mockproject",
+        "account": {
+          "authenticated": true,
+          "member_id": "member-collaborator",
+          "role_code": "collaborator",
+          "role_detected": "collaborator"
+        },
+        "score": 93,
+        "automatic": [
+          {
+            "name": "Versión frontend",
+            "status": "ok",
+            "value": "v17.3",
+            "meta": "Compatible: v16.1 o superior."
+          },
+          {
+            "name": "Sesión autenticada",
+            "status": "ok",
+            "value": "Activa",
+            "meta": "Supabase Auth devolvió un usuario."
+          },
+          {
+            "name": "Perfil de miembro",
+            "status": "ok",
+            "value": "Colaborador Certificación",
+            "meta": "Rol detectado: collaborator."
+          },
+          {
+            "name": "Fecha local Perú",
+            "status": "ok",
+            "value": "2026-07-13",
+            "meta": "Fecha Lima esperada: 2026-07-13."
+          },
+          {
+            "name": "Estado inicial",
+            "status": "ok",
+            "value": "Completo",
+            "meta": "Las colecciones principales existen."
+          },
+          {
+            "name": "Secciones",
+            "status": "ok",
+            "value": "Completas",
+            "meta": "15 secciones esenciales presentes."
+          },
+          {
+            "name": "Funciones globales",
+            "status": "ok",
+            "value": "Disponibles",
+            "meta": "Navegación, render y modales listos."
+          },
+          {
+            "name": "Integridad DOM",
+            "status": "ok",
+            "value": "Limpio",
+            "meta": "Sin IDs duplicados ni código técnico visible."
+          },
+          {
+            "name": "Errores recientes",
+            "status": "ok",
+            "value": "Sin errores",
+            "meta": "No hay errores persistidos por el monitor."
+          },
+          {
+            "name": "RPC requeridas",
+            "status": "ok",
+            "value": "Verificadas",
+            "meta": "45 funciones requeridas."
+          },
+          {
+            "name": "Creative Arena",
+            "status": "warn",
+            "value": "Módulo disponible",
+            "meta": "Konva no está cargado; revisa internet o CDN."
+          },
+          {
+            "name": "Conectividad",
+            "status": "ok",
+            "value": "En línea",
+            "meta": "Estado actual del navegador."
+          },
+          {
+            "name": "Compatibilidad backend",
+            "status": "ok",
+            "value": "DB 17.3",
+            "meta": "El registro de versión es compatible con v16.1 o una familia posterior."
+          },
+          {
+            "name": "Storage",
+            "status": "ok",
+            "value": "Lectura permitida",
+            "meta": "Bucket inbestiga-media accesible para la sesión actual."
+          },
+          {
+            "name": "Realtime",
+            "status": "ok",
+            "value": "Canal activo",
+            "meta": "El servicio confirmó una suscripción temporal de solo lectura."
+          },
+          {
+            "name": "PWA",
+            "status": "warn",
+            "value": "No compatible",
+            "meta": "Este navegador no admite Service Worker."
+          }
+        ],
+        "diagnostics": {
+          "openapi": {
+            "available": true,
+            "reason": ""
+          },
+          "required_rpcs": 45,
+          "missing_rpcs": []
+        },
+        "manual": {}
+      },
+      "health": {
+        "denied": true,
+        "version": "v17.2",
+        "generated_at": "2026-07-13T15:00:31.293Z"
+      },
+      "audit": {
+        "current": "home",
+        "text": true,
+        "buttons": [
+          "Exportar auditoría CSV"
+        ]
+      },
+      "mobile": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "overflow": false
+      },
+      "mock_rpc_calls": [
+        {
+          "name": "ibm_v375_bootstrap",
+          "args": null
+        },
+        {
+          "name": "ibm_v33_touch_presence",
+          "args": {
+            "p_status": "online",
+            "p_current_section": "home"
+          }
+        },
+        {
+          "name": "ibm_v33_touch_presence",
+          "args": {
+            "p_status": "online",
+            "p_current_section": "home"
+          }
+        },
+        {
+          "name": "ibm_v33_touch_presence",
+          "args": {
+            "p_status": "online",
+            "p_current_section": "home"
+          }
+        }
+      ],
+      "page_errors": [],
+      "console_errors": []
+    }
+  }
+}

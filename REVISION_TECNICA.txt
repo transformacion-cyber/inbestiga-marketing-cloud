@@ -1,0 +1,31 @@
+REVISION TÉCNICA — INBESTIGA MARKETING CLOUD v17.11
+Fecha: 2026-07-14
+Base: v17.10.2 AUDIT HEALTH WIDGET PERSISTENCE HOTFIX
+
+ALCANCE
+Módulo aditivo para planificación operativa, horas manuales, responsable final, ejecutores múltiples, dependencias, recurrencias, catálogos, calificaciones, puntos, ranking 1–1000 y reportes externos.
+
+ARQUITECTURA
+- Frontend aislado: task-operations-ranking-v17-11.js/.css.
+- Integración con la creación/entrega v17.9 mediante CustomEvent; no reemplaza la RPC productiva de tareas.
+- Backend opcional y transaccional: SQL_OPCIONAL_v17_11.sql.
+- Fallback local por usuario cuando el SQL no está instalado.
+- La fuente productiva de tareas, miembros, clientes y campañas permanece en las tablas existentes.
+
+SEGURIDAD
+- No service_role ni secretos en frontend.
+- Escritura nueva mediante RPC security definer con validación de sesión/rol/participación.
+- Escritura directa revocada en tablas v17.11.
+- RLS de lectura para alcance de tarea y datos personales; managers ven el equipo.
+- Nota menor de 7 exige mejoras.
+- Ranking y calificaciones mantienen ledger e historial auditado.
+- Catálogos archivan/restauran sin borrar historial.
+
+LIMITACIONES HONESTAS
+- No se certifica RLS, Realtime, sincronización o persistencia hasta ejecutar el SQL en Supabase real.
+- La generación de recurrencias es controlada por un jefe; no existe un cron automático en frontend.
+- Google Sheets se soporta mediante importación CSV/Excel; no se almacenan credenciales de Google.
+- El nivel 1000 usa la curva progresiva configurada, pero cualquier regla laboral debe revisarse humanamente.
+
+ZONAS NO TOCADAS
+Creative Arena, Auth, 45 RPC productivas, loadAll, renderAll, bootstrap, Home editorial, tablas/RLS productivas existentes.

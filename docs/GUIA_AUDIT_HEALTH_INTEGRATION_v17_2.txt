@@ -1,0 +1,28 @@
+GUIA AUDIT HEALTH INTEGRATION v17.2
+INBESTIGA Marketing Cloud
+
+1. ACCESO
+- Iniciar sesion y abrir Auditoria Pro.
+- El resumen Salud del sistema aparece despues de los cuatro indicadores de Auditoria.
+- Direccion/administracion ve el diagnostico. Otros roles ven un aviso de acceso restringido.
+
+2. INFORMACION MOSTRADA
+- Indice y estado general de salud.
+- Ultima comprobacion.
+- RPC publicadas en OpenAPI.
+- Fallas y advertencias.
+- Supabase, Storage, Realtime, PWA y Work 360.
+
+3. ACCIONES
+- Comprobar salud: ejecuta las mismas pruebas no destructivas del Centro de salud.
+- Ver diagnostico completo: abre el panel con Resumen, Servicios, Sincronizacion e Incidencias.
+
+4. ACTUALIZACION
+- Al abrir Auditoria se usa el ultimo informe disponible.
+- Si no existe o tiene mas de 10 minutos, se ejecuta una lectura automatica una sola vez.
+- Al terminar una comprobacion, la tarjeta se actualiza mediante un evento local.
+
+5. LIMITES
+- RPC en OpenAPI confirma presencia, no permisos ni persistencia.
+- RLS, Storage real, Realtime entre cuentas y sincronizacion entre dispositivos requieren certificacion productiva manual.
+- SQL_OPCIONAL_v16_1.sql y SQL_OPCIONAL_v17_0.sql no se ejecutan automaticamente.

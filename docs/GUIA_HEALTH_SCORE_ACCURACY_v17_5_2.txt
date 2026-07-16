@@ -1,0 +1,16 @@
+GUIA — HEALTH SCORE ACCURACY v17.5.2
+
+La advertencia de 1 bloque local era incorrecta cuando el objeto Work 360 contenía únicamente updatedAt y valores base.
+
+Después del despliegue:
+1. Cerrar todas las pestañas.
+2. Abrir la URL de Netlify.
+3. Ctrl+Shift+R.
+4. Auditoría > Salud del sistema > Comprobar ahora.
+
+Resultado esperado bajo las mismas condiciones de v17.5.1:
+- Cambios por sincronizar: Sin pendientes detectados.
+- Estado general: Operación estable.
+- Salud: 100/100.
+
+No requiere SQL adicional.

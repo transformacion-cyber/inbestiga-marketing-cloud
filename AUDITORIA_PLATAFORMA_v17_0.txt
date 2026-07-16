@@ -1,0 +1,30 @@
+AUDITORIA v17.0 - WORK 360 ADVANCED
+
+BASE
+INBESTIGA Marketing Cloud v16.1 Production Certification.
+
+CAMBIOS ADITIVOS
+1. Nuevo módulo aislado assets/js/work360-advanced.js.
+2. Nuevo stylesheet assets/css/work360-advanced.css.
+3. Vista avanzada integrada únicamente en el apartado Tareas.
+4. Persistencia local por usuario y sincronización opcional con Supabase.
+5. SQL opcional no destructivo para metadatos, preferencias y entradas de tiempo.
+
+FUNCIONES PRODUCTIVAS REUTILIZADAS
+- ibm_v30_create_task para subtareas y siguientes ocurrencias.
+- loadAll y renderAll para refrescar datos reales.
+- v412OpenTask para abrir el detalle productivo.
+
+NO MODIFICADO
+- Creative Arena y sus pizarras.
+- Supabase Auth.
+- RPC existentes.
+- Tablas productivas existentes.
+- Home editorial.
+- Perfil 360.
+- Campañas y mensajes.
+
+LIMITES
+- La recurrencia es manual: el usuario confirma la creación de la siguiente tarea.
+- Las dependencias, estimaciones y etiquetas son metadatos complementarios.
+- La sincronización entre dispositivos requiere ejecutar SQL_OPCIONAL_v17_0.sql.

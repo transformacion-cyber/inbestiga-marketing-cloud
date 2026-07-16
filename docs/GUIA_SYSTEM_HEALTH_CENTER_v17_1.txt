@@ -1,0 +1,46 @@
+GUIA SYSTEM HEALTH CENTER v17.1
+INBESTIGA Marketing Cloud
+
+1. OBJETIVO
+El Centro de salud ofrece a Direccion una lectura operativa de solo lectura. No reemplaza la certificacion productiva ni ejecuta SQL.
+
+2. ACCESO
+- Abrir la paleta de comandos de la plataforma.
+- Buscar: Centro de salud del sistema.
+- El acceso se muestra unicamente cuando el rol actual es reconocido como Direccion o administracion.
+- API tecnica disponible: window.INBESTIGA_SYSTEM_HEALTH.open().
+
+3. AREAS
+- Resumen: indice operativo, alertas y estado de servicios principales.
+- Servicios: manifiesto y presencia OpenAPI de las 45 RPC, Storage, Realtime y PWA.
+- Sincronizacion: fallback local, tablas opcionales Work 360, fechas local/remota y posibles cambios pendientes.
+- Incidencias: errores persistidos localmente por Platform Quality Core.
+
+4. COMPROBACIONES
+- Version y modulos instalados.
+- Libreria, cliente, configuracion y sesion Supabase.
+- 45 RPC unicas en config/rpc-manifest.json.
+- Presencia de RPC en OpenAPI cuando Supabase esta configurado.
+- Lectura no destructiva del bucket configurado.
+- Suscripcion Realtime temporal sin tablas ni escrituras.
+- Manifest, Service Worker y cache de shell v17.1.
+- Disponibilidad de task_extensions y work360_preferences.
+- Comparacion entre updatedAt local y remoto de Work 360.
+- Cuota aproximada del almacenamiento del navegador.
+- Incidencias locales recientes.
+
+5. INTERPRETACION
+- Operativo: la comprobacion automatica termino correctamente.
+- Advertencia: falta configuracion, prueba manual o un componente opcional.
+- Requiere atencion: falta un componente estructural o una validacion esencial.
+- Informativo: no hay datos suficientes o no aplica en la sesion actual.
+
+6. LIMITES
+- La presencia de una RPC en OpenAPI no certifica permisos ni persistencia.
+- La lectura de Storage no certifica subida, descarga o eliminacion.
+- Una suscripcion temporal no certifica sincronizacion entre dos cuentas.
+- RLS de escritura requiere pruebas reales de Director, Supervisor y Colaborador.
+- SQL_OPCIONAL_v16_1.sql y SQL_OPCIONAL_v17_0.sql nunca se ejecutan desde el centro.
+
+7. EXPORTACION
+El boton Exportar JSON genera un informe local sin incluir la clave anon ni tokens de sesion. Los mensajes tecnicos se reducen y ocultan patrones de credenciales.

@@ -1,0 +1,16 @@
+INBESTIGA v17.12 · PROTECTED DIFF
+Base: v17.11.1
+
+Inline scripts: IDENTICAL
+Protected files checked: 23
+Protected changed: 0
+- None
+
+Intentional version-only updates:
+- assets/js/system-health-center.js (VERSION and expected PWA cache)
+- assets/js/production-certification.js (VERSION)
+- assets/js/mobile-creative-navigation-v17-11-1.js (visible VERSION)
+- index.html metadata and new CSS/JS references
+- service-worker.js cache name and new shell assets
+
+Creative Arena logic, Auth, productive RPC manifest, task/campaign logic and previous optional SQL remain unchanged.

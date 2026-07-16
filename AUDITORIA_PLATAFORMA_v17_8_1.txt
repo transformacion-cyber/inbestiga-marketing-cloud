@@ -1,0 +1,9 @@
+INBESTIGA MARKETING CLOUD v17.8.1 · AUDITORÍA DE ENTREGA
+
+Fallo reproducible corregido:
+- Design System Studio no era descubrible desde la navegación superior moderna.
+- Ctrl+K abría el buscador de contenido, que no indexaba módulos.
+
+Cambio aditivo:
+- Entrada directa superior, enlace contextual en Administración y atajo de búsqueda.
+- Sin cambios de backend ni zonas protegidas.

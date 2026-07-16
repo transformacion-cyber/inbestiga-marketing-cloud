@@ -1,0 +1,120 @@
+{
+  "version": "17.3",
+  "build": "PRODUCTIVE CERTIFICATION FIXES",
+  "external_js_count": 10,
+  "inline_script_count": 14,
+  "inline_all_ok": true,
+  "inline_checks": [
+    {
+      "index": 1,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 2,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 3,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 4,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 5,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 6,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 7,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 8,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 9,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 10,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 11,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 12,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 13,
+      "ok": true,
+      "stderr": ""
+    },
+    {
+      "index": 14,
+      "ok": true,
+      "stderr": ""
+    }
+  ],
+  "html_id_count": 649,
+  "duplicate_ids": [],
+  "local_reference_count": 18,
+  "missing_local_references": [],
+  "build_manifest_valid": true,
+  "rpc_manifest_count": 45,
+  "rpc_manifest_unique": true,
+  "rpc_calls_unique_count": 45,
+  "rpc_calls_exact_match": true,
+  "rpc_missing_from_code": [],
+  "rpc_extra_in_code": [],
+  "service_worker_cache": "inbestiga-v17-3-shell",
+  "service_worker_shell_count": 21,
+  "service_worker_shell_missing": [],
+  "manifest_icons": [
+    {
+      "src": "assets/icons/icon-192.png",
+      "declared": "192x192",
+      "actual": "192x192",
+      "ok": true
+    },
+    {
+      "src": "assets/icons/icon-512.png",
+      "declared": "512x512",
+      "actual": "512x512",
+      "ok": true
+    }
+  ],
+  "protected": {
+    "index_identical": true,
+    "index_v17_2": "bee15ff1f5230e82725dfdc5efebc77d28cc8adbbc254e305d3855831f4eac58",
+    "index_v17_3": "bee15ff1f5230e82725dfdc5efebc77d28cc8adbbc254e305d3855831f4eac58",
+    "creative_js_found": true,
+    "creative_js_v17_2": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd",
+    "creative_js_v17_3": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd",
+    "creative_js_identical": true,
+    "creative_css_found": true,
+    "creative_css_v17_2": "cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f",
+    "creative_css_v17_3": "cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f",
+    "creative_css_identical": true
+  }
+}

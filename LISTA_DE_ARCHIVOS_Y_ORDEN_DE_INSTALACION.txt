@@ -1,0 +1,39 @@
+LISTA Y ORDEN — v17.11 TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING
+
+DESPLIEGUE NETLIFY
+1. Subir únicamente el ZIP v17.11 al mismo proyecto.
+2. Esperar estado Publicado.
+3. Cerrar pestañas anteriores y recargar con Ctrl + Shift + R.
+4. Confirmar INBESTIGA v17.11 y Shell v17.11 activa.
+5. Confirmar Salud del sistema sin regresiones.
+
+ARCHIVOS NUEVOS PRINCIPALES
+- assets/js/task-operations-ranking-v17-11.js
+- assets/css/task-operations-ranking-v17-11.css
+- SQL_OPCIONAL_v17_11.sql
+- config/rpc-manifest-v17_11-optional.json
+- docs/GUIA_TASK_OPERATIONS_RANKING_v17_11.txt
+
+ARCHIVO AJUSTADO DE FORMA ADITIVA
+- assets/js/collaborative-workspace-v17-9.js: emite eventos después de crear tareas/entregas y usa el término ejecutores.
+
+BACKEND MANUAL
+6. Verificar que SQL_OPCIONAL_v17_9.sql esté instalado.
+7. Mantener SQL_OPCIONAL_v17_10.sql ya instalado si se usa gobierno de miembros.
+8. Ejecutar SQL_OPCIONAL_v17_11.sql completo una sola vez.
+9. No ejecutar fragmentos ni permisos manuales.
+10. Esperar 20–30 segundos y recargar.
+
+ORDEN DE PRUEBA
+11. Tarea de certificación: ejecutores, responsable final, estimación, deadline y dependencia.
+12. Aceptación y estimación manual por ejecutor.
+13. Entrega y horas reales manuales.
+14. Calificación individual 1–10 y puntos.
+15. Ranking y progreso de nivel.
+16. Recurrencia y generación de una ejecución.
+17. Clientes/campañas: crear o editar, archivar y restaurar.
+18. Reportes: día, semana, mes, año y rango personalizado.
+
+NO VOLVER A EJECUTAR
+- SQL anteriores que ya estén instalados.
+- SQL_OPCIONAL_v17_11.sql cuando ibm_v1711_capabilities ya responda correctamente.

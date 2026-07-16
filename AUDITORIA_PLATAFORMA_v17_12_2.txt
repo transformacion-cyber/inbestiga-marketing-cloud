@@ -1,0 +1,14 @@
+INBESTIGA MARKETING CLOUD v17.12.2
+REAL CRYSTAL + INTUITIVE MEDIA EDITOR
+
+Cambios aditivos:
+- Selector visual real para portada, paneles, galería y destacado.
+- Biblioteca visual, carga desde dispositivo, arrastrar/soltar y URL.
+- Vista previa antes de publicar.
+- Reflejos especulares agresivos, borde refractivo y profundidad de cristal en paneles generales.
+- Creative Arena excluida de la capa global.
+- Sin cambios en Auth, tablas, RLS, RPC productivas, tareas o datos.
+
+Validación pendiente en entorno real:
+- Persistencia Supabase del contenido visual depende de SQL_OPCIONAL_v17_12.sql.
+- Subida compartida depende del helper de Storage existente; fallback local usa data URL.

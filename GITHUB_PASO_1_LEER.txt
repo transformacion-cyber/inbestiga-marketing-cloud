@@ -1,0 +1,16 @@
+CARPETA LISTA PARA GITHUB
+
+Nombre recomendado del repositorio:
+inbestiga-marketing-cloud
+
+Visibilidad recomendada:
+PRIVATE / PRIVADO
+
+Primer commit recomendado:
+Versión base v17.12.8 — Editor visual responsive
+
+IMPORTANTE
+- Sube el contenido completo de esta carpeta.
+- index.html debe quedar en la raíz del repositorio.
+- No subas el ZIP original dentro del repositorio.
+- No agregues service_role, contraseñas ni tokens privados.

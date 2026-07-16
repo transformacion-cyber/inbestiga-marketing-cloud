@@ -1,0 +1,51 @@
+AUDITORIA PLATAFORMA v17.2 - AUDIT HEALTH INTEGRATION
+Fecha: 2026-07-13
+
+BASE
+- Base unica utilizada: v17.1 SYSTEM HEALTH CENTER.
+- Nueva version: v17.2 AUDIT HEALTH INTEGRATION.
+- Cambio aditivo: assets/js/audit-health-integration.js y assets/css/audit-health-integration.css.
+
+CAMBIOS
+1. Resumen de Salud del sistema integrado dentro de Auditoria Pro.
+2. Estado general, indice de salud, ultima comprobacion y conteo de fallas/advertencias.
+3. Resumen de Supabase, 45 RPC, Storage, Realtime, PWA y Work 360.
+4. Botones para comprobar salud y abrir el diagnostico completo.
+5. Actualizacion automatica al entrar a Auditoria cuando el informe no existe o tiene mas de 10 minutos.
+6. Vista restringida sin datos tecnicos para roles no autorizados.
+7. Evento local de actualizacion para mantener Auditoria sincronizada con el Centro de salud.
+8. Cache PWA actualizado a inbestiga-v17-2-shell.
+
+SEGURIDAD Y ALCANCE
+- Integracion de solo lectura.
+- No ejecuta SQL ni crea RPC.
+- No escribe tablas, Storage, RLS ni Auth.
+- El detalle tecnico sigue reservado a Direccion/administracion.
+- No se afirma certificacion productiva sin Supabase real.
+
+ZONAS NO TOCADAS
+- Creative Arena, pizarras y avances.
+- Login y Supabase Auth.
+- loadAll, renderAll y bootstrap.
+- RPC, tablas y RLS productivas.
+- Home editorial, Perfil 360, Campanas y Mensajes.
+
+VALIDACION REALIZADA
+- 10 JS externos pasan node --check.
+- 14 scripts inline pasan node --check y son identicos a v17.1.
+- service-worker.js pasa node --check.
+- 0 IDs duplicados y 0 referencias locales faltantes.
+- 45 RPC declaradas y unicas.
+- build-manifest, rpc-manifest y webmanifest validos.
+- Smoke test Chromium/CDP: tarjeta renderizada, 45/45 visible, apertura del diagnostico, comprobacion y bloqueo por rol; resultado PASS.
+- Centro de salud inyectado: version v17.2, 13 checks y un evento de actualizacion.
+- Revision visual en escritorio y responsive.
+- Scripts inline, Creative Arena y modulos productivos protegidos no se modificaron.
+
+NO CERTIFICADO
+- Ejecucion real de las 45 RPC por rol.
+- RLS de lectura/escritura.
+- Storage con archivos reales.
+- Realtime entre dos cuentas.
+- PWA instalada en HTTPS real.
+- Sincronizacion Work 360 entre dispositivos.

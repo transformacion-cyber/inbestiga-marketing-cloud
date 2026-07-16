@@ -1,0 +1,9 @@
+Creative Arena JavaScript SHA-256 before: c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd
+Creative Arena JavaScript SHA-256 after:  c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd
+JavaScript status: IDENTICAL
+
+Creative Arena CSS SHA-256 before: cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f
+Creative Arena CSS SHA-256 after:  cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f
+CSS status: IDENTICAL
+
+Method: exact comparison of the script containing window.CreativeArenaClean and the style block v422-creative-arena-clean-css between v14.0 and v15.0.

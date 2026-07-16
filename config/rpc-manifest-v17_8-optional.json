@@ -1,0 +1,18 @@
+{
+  "version": "17.8",
+  "build": "DESIGN SYSTEM STUDIO",
+  "optional": true,
+  "sql": "SQL_OPCIONAL_v17_8.sql",
+  "rpc": [
+    "ibm_v178_design_bootstrap",
+    "ibm_v178_save_design_draft",
+    "ibm_v178_publish_design",
+    "ibm_v178_upsert_design_asset",
+    "ibm_v178_archive_design_asset"
+  ],
+  "tables": [
+    "marketing_app.ui_theme_versions",
+    "marketing_app.ui_asset_library"
+  ],
+  "notes": "Persistencia opcional para temas globales, historial reversible y biblioteca multimedia. No habilita CSS o JavaScript libre."
+}

@@ -1,0 +1,63 @@
+{
+  "version": "v17.6",
+  "build": "WORK 360 TEAM REPORTS",
+  "executed_at": "2026-07-13",
+  "environment": "controlled Node.js test harness; no productive Supabase write",
+  "tests": {
+    "report_engine": {
+      "status": "passed",
+      "tasks": 3,
+      "members": 2,
+      "completion_rate": 33,
+      "on_time_rate": 100,
+      "overdue": 1,
+      "blocked": 1
+    },
+    "capacity_from_schedule": {
+      "status": "passed",
+      "source": "Horario Pro · cuadrícula"
+    },
+    "monthly_comparison": {
+      "status": "passed",
+      "current": "2026-07-01/2026-07-31",
+      "previous": "2026-06-01/2026-06-30"
+    },
+    "custom_range_comparison": {
+      "status": "passed",
+      "method": "same duration immediately preceding"
+    },
+    "role_guard": {
+      "director_supervisor": "passed",
+      "collaborator": "blocked"
+    },
+    "button_visibility": {
+      "director_supervisor": "visible",
+      "collaborator": "hidden"
+    },
+    "csv_export": {
+      "status": "passed",
+      "formula_injection_mitigation": true
+    },
+    "excel_export": {
+      "status": "passed",
+      "sheets": [
+        "Resumen ejecutivo",
+        "Por colaborador",
+        "Detalle de tareas",
+        "Riesgos y alertas",
+        "Calidad de datos"
+      ]
+    },
+    "snapshot": {
+      "status": "passed_controlled",
+      "rpc": "ibm_v32_create_report_snapshot",
+      "report_type": "work360_team"
+    }
+  },
+  "not_certified_here": [
+    "render visual en navegador productivo",
+    "descarga real en Netlify",
+    "snapshot contra Supabase productivo",
+    "salud 100/100 después del despliegue"
+  ]
+}

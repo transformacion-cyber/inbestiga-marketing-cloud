@@ -1,0 +1,8 @@
+INBESTIGA MARKETING CLOUD v17.12.5
+
+AUDITORÍA DEL HOTFIX
+- Base: v17.12.4.
+- Causa: RPC de módulos v17.9/v17.11 invocadas sin seleccionar explícitamente marketing_app; un fallo inicial quedaba cacheado como no disponible.
+- Corrección: cliente schema-aware con fallback, reintentos limitados y diagnóstico real.
+- No se modificaron SQL, Auth, RLS, tablas, Storage, bootstrap, loadAll, renderAll ni Creative Arena.
+- No requiere SQL adicional.

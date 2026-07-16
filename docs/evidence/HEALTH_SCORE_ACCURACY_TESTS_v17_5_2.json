@@ -1,0 +1,78 @@
+{
+  "version": "v17.5.2",
+  "build": "HEALTH SCORE ACCURACY HOTFIX",
+  "json_files_valid": 13,
+  "external_js_node_check": [
+    "service-worker.js",
+    "assets/js/operational-intelligence.js",
+    "assets/js/platform-quality-core.js",
+    "assets/js/home-editorial-core.js",
+    "assets/js/platform-diagnostics.js",
+    "assets/js/collaboration-campaign-os.js",
+    "assets/js/productivity-realtime-core.js",
+    "assets/js/production-certification.js",
+    "assets/js/work360-advanced.js",
+    "assets/js/system-health-center.js",
+    "assets/js/audit-health-integration.js",
+    "assets/js/record-lifecycle-controls.js"
+  ],
+  "dom_ids_total": 649,
+  "duplicate_ids": [],
+  "inline_scripts_node_check": 14,
+  "inline_scripts_identical_to_v17_5_1": true,
+  "local_references_checked": 22,
+  "missing_local_references": [],
+  "service_worker_cache": true,
+  "service_worker_shell_count": 23,
+  "service_worker_missing": [],
+  "required_rpc_count": 45,
+  "required_rpc_unique": 45,
+  "required_rpc_manifest_identical": true,
+  "protected_files_identical": {
+    "assets/js/home-editorial-core.js": true,
+    "assets/js/collaboration-campaign-os.js": true,
+    "assets/js/productivity-realtime-core.js": true,
+    "assets/js/work360-advanced.js": true,
+    "assets/js/record-lifecycle-controls.js": true,
+    "SQL_OPCIONAL_v16_1.sql": true,
+    "SQL_OPCIONAL_v17_0.sql": true,
+    "SQL_OPCIONAL_v17_5_1.sql": true
+  },
+  "creative_arena_javascript_sha256": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd",
+  "creative_arena_css_sha256": "cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f",
+  "changed_existing_files": [
+    "CHECKLIST_QA_ENTREGA.txt",
+    "HANDOFF_CONTINUIDAD.txt",
+    "LISTA_DE_ARCHIVOS_Y_ORDEN_DE_INSTALACION.txt",
+    "PROMPT_LISTO_PARA_NUEVO_CHAT.txt",
+    "README_INSTALACION.txt",
+    "RESUMEN_DECISIONES_TECNICAS.txt",
+    "REVISION_TECNICA.txt",
+    "assets/js/audit-health-integration.js",
+    "assets/js/production-certification.js",
+    "assets/js/system-health-center.js",
+    "config/build-manifest.json",
+    "index.html",
+    "service-worker.js"
+  ],
+  "health_logic_tests": {
+    "empty_shell_status": "ok",
+    "empty_shell_value": "Sin pendientes detectados",
+    "meaningful_status": "warn",
+    "stale_report_ignored": true,
+    "neutral_score": 100
+  },
+  "build_manifest": {
+    "frontend_version": "17.5.2",
+    "build": "HEALTH SCORE ACCURACY HOTFIX",
+    "modules": 11,
+    "styles": 9,
+    "empty_shell_guard": true,
+    "stale_report_guard": true,
+    "base": {
+      "version": "17.5.1",
+      "build": "DATABASE COMPATIBILITY HOTFIX",
+      "package": "PLATAFORMA_BASE_ORIGINAL_v17_5_1.zip"
+    }
+  }
+}

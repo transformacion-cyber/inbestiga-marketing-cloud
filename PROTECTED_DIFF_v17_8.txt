@@ -1,0 +1,24 @@
+PROTECTED DIFF v17.8
+Inline scripts identical: True
+Creative Arena JavaScript identical: True
+Creative Arena CSS identical: True
+assets/js/home-editorial-core.js identical: True
+assets/js/platform-diagnostics.js identical: True
+assets/js/operational-intelligence.js identical: True
+assets/js/platform-quality-core.js identical: True
+assets/js/collaboration-campaign-os.js identical: True
+assets/js/productivity-realtime-core.js identical: True
+assets/js/work360-advanced.js identical: True
+assets/js/audit-health-integration.js identical: True
+assets/js/record-lifecycle-controls.js identical: True
+assets/js/audit-counter-accuracy.js identical: True
+assets/js/work360-team-reports.js identical: True
+assets/js/member-wall-work-sync.js identical: True
+config/rpc-manifest.json identical: True
+SQL_OPCIONAL_v16_1.sql identical: True
+SQL_OPCIONAL_v17_0.sql identical: True
+SQL_OPCIONAL_v17_5_1.sql identical: True
+SQL_OPCIONAL_v17_7.sql identical: True
+Auth/loadAll/renderAll/bootstrap were not edited inline.
+index.html changed only in build metadata, approved font loading, and external CSS/JS references; all 14 inline scripts remain byte-identical.
+The new external CSS excludes Creative Arena and the new JavaScript never calls Auth or modifies productive RPC definitions.

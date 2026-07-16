@@ -1,0 +1,73 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.12.4",
+  "base": "v17.12.3",
+  "cause": "Cross-module version-label ping-pong between two document-wide MutationObservers",
+  "validation": {
+    "external_js_node_check": 21,
+    "service_worker_node_check": true,
+    "json_valid": 39,
+    "inline_scripts": 14,
+    "inline_scripts_identical_to_v17_12_3": true,
+    "html_ids": 650,
+    "duplicate_ids": [],
+    "index_local_refs": 46,
+    "service_worker_refs": 50,
+    "missing_refs": [],
+    "observer_runtime_microtest": {
+      "old_callback_limit_reached": 80,
+      "fixed_callbacks": 2,
+      "fixed_visible_version": "v17.12.4"
+    },
+    "protected_sql_and_rpc": [
+      {
+        "path": "config/rpc-manifest.json",
+        "identical": true
+      },
+      {
+        "path": "SQL_OPCIONAL_v16_1.sql",
+        "identical": true
+      },
+      {
+        "path": "SQL_OPCIONAL_v17_0.sql",
+        "identical": true
+      },
+      {
+        "path": "SQL_OPCIONAL_v17_10.sql",
+        "identical": true
+      },
+      {
+        "path": "SQL_OPCIONAL_v17_11.sql",
+        "identical": true
+      },
+      {
+        "path": "SQL_OPCIONAL_v17_12.sql",
+        "identical": true
+      },
+      {
+        "path": "SQL_OPCIONAL_v17_5_1.sql",
+        "identical": true
+      },
+      {
+        "path": "SQL_OPCIONAL_v17_7.sql",
+        "identical": true
+      },
+      {
+        "path": "SQL_OPCIONAL_v17_8.sql",
+        "identical": true
+      },
+      {
+        "path": "SQL_OPCIONAL_v17_9.sql",
+        "identical": true
+      }
+    ]
+  },
+  "changes": [
+    "Aligned mobile navigation and Liquid Glass visible version to v17.12.4",
+    "Replaced document-wide unconditional observer callbacks with relevant-node filtering and requestAnimationFrame batching",
+    "Rotated PWA cache to inbestiga-v17-12-4-shell",
+    "Preserved media editor features and renamed its versioned assets to v17.12.4"
+  ],
+  "sql_required": false,
+  "limitations": "Requires a real published Supabase session test; no claim of production RLS, Storage or Realtime certification."
+}

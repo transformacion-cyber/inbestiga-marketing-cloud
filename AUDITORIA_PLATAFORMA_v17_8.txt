@@ -1,0 +1,37 @@
+INBESTIGA MARKETING CLOUD v17.8 · AUDITORÍA DE ENTREGA
+
+BASE: v17.7 MEMBER WALL WORK SYNC.
+
+CAMBIOS ADITIVOS
+- assets/js/design-system-studio.js
+- assets/css/design-system-studio.css
+- SQL_OPCIONAL_v17_8.sql
+- config/rpc-manifest-v17_8-optional.json
+- docs/GUIA_DESIGN_SYSTEM_STUDIO_v17_8.txt
+- Integración de lectura en Centro de Salud y Production Certification.
+
+ALCANCE FUNCIONAL
+- Tema global y presets.
+- Colores, tipografías, escalas, densidad, radios, sombras, movimiento y ancho de navegación.
+- Apariencia por módulo y banners visuales.
+- Fotos del intro, login y secciones principales.
+- Biblioteca multimedia y programación de recursos.
+- Editor del muro de cada miembro.
+- Vista previa multidispositivo, borradores, historial, restauración e importación/exportación.
+- Salud visual y umbral mínimo 95/100 para publicar.
+
+ZONAS PROTEGIDAS
+- Creative Arena: JS/CSS inline idénticos a v17.7 y exclusión explícita de la capa visual.
+- Supabase Auth: sin cambios.
+- loadAll, renderAll y bootstrap: sin cambios.
+- 45 RPC productivas: intactas.
+- Tablas y RLS existentes: intactas.
+
+CONTROLES DE SEGURIDAD
+- Lista blanca de variables visuales.
+- CSS y JavaScript libre deshabilitados.
+- Validación de colores, fuentes, rangos, URLs, peso, contraste y programación.
+- URLs blob efímeras no se persisten.
+- Fallback local si el SQL opcional no está instalado.
+- Historial reversible y publicación exclusiva de Dirección.
+- SQL opcional transaccional, escritura directa revocada y borradores limitados por RLS.

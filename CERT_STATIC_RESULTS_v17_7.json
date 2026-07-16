@@ -1,0 +1,121 @@
+{
+  "version": "17.7",
+  "build": "MEMBER WALL WORK SYNC",
+  "html_ids": 649,
+  "duplicate_ids": [],
+  "missing_local_references": [],
+  "external_js_checked": 14,
+  "external_js_failures": [],
+  "inline_scripts_checked": 14,
+  "inline_script_failures": [],
+  "inline_scripts_unchanged_from_v17_6": true,
+  "json_files_checked": 21,
+  "json_failures": [],
+  "build_modules": 14,
+  "build_styles": 12,
+  "required_rpc_count": 45,
+  "unique_rpc_count": 45,
+  "new_module_rpc_calls": [
+    "ibm_v177_create_work_activity_link",
+    "ibm_v177_remove_work_activity_link",
+    "ibm_v30_create_task",
+    "ibm_v30_create_wall_post_inline"
+  ],
+  "optional_rpc_count": 3,
+  "service_worker_shell_resources": 29,
+  "service_worker_missing_resources": [],
+  "protected_files_unchanged": {
+    "assets/js/home-editorial-core.js": true,
+    "assets/js/collaboration-campaign-os.js": true,
+    "assets/js/productivity-realtime-core.js": true,
+    "assets/js/work360-advanced.js": true,
+    "assets/js/record-lifecycle-controls.js": true,
+    "config/rpc-manifest.json": true,
+    "SQL_OPCIONAL_v16_1.sql": true,
+    "SQL_OPCIONAL_v17_0.sql": true,
+    "SQL_OPCIONAL_v17_5_1.sql": true
+  },
+  "creative_arena_js_identical": true,
+  "creative_arena_css_identical": true,
+  "creative_arena_js_sha256": "c39f88491cf6ce583928dd890e8d6701a51d9943f40f451d7160f31c7aa3e4bd",
+  "creative_arena_css_sha256": "cc5408d2f00c7a61617bb19a215893eb0d283564c4204b8f86cc5a30c356741f",
+  "version_alignment": {
+    "html_data": "v17.7",
+    "title": "INBESTIGA Marketing Cloud · v17.7 MEMBER WALL WORK SYNC",
+    "sw_cache": "inbestiga-v17-7-shell",
+    "build_manifest": "17.7"
+  },
+  "controlled_ui_tests": {
+    "director_supervisor": {
+      "wall_summary": "passed",
+      "member_summary": "passed",
+      "linked_card": "passed",
+      "link_existing_post": "visible",
+      "convert_post_to_task": "visible",
+      "share_task_progress": "visible",
+      "realtime_mock": "subscribed",
+      "page_errors": 0
+    },
+    "collaborator": {
+      "wall_summary": "passed",
+      "member_summary": "passed",
+      "link_own_post": "visible",
+      "convert_post_to_task": "hidden",
+      "share_assigned_task": "visible",
+      "page_errors": 0
+    },
+    "productive_actions_mock": {
+      "share_task_created_post_and_link": "passed",
+      "convert_post_created_task_and_link": "passed",
+      "created_posts": 1,
+      "created_tasks": 1,
+      "created_links": 2,
+      "page_errors": 0
+    },
+    "local_fallback": {
+      "mode": "local",
+      "summary_available": true,
+      "link_action_available": true,
+      "conversion_guard_available": true,
+      "health_status": "info_neutral",
+      "page_errors": 0
+    },
+    "responsive_390px": {
+      "document_width": "390/390",
+      "summary_width": 390,
+      "linked_card_width": 390,
+      "horizontal_overflow": false,
+      "page_errors": 0
+    }
+  },
+  "new_sql": {
+    "file": "SQL_OPCIONAL_v17_7.sql",
+    "optional": true,
+    "idempotent": true,
+    "transactional": true,
+    "new_table": "marketing_app.work_activity_links",
+    "physical_delete_of_tasks_or_posts": false,
+    "existing_productive_rpc_modified": false,
+    "atomic": true,
+    "preflight_tables": [
+      "marketing_app.members",
+      "marketing_app.wall_posts",
+      "marketing_app.tasks"
+    ],
+    "direct_table_writes_for_frontend": false,
+    "rpc_role_guard": true,
+    "rpc_scope_guard": "director; supervisor in own area; collaborator on own post and assigned task",
+    "existing_rls_modified": false
+  },
+  "health_expectation": "No regression: optional local fallback is informational and the PWA cache is aligned to v17.7. Productive 100/100 must be confirmed after HTTPS deployment.",
+  "sql_static_checks": {
+    "begin_commit_pair": true,
+    "dollar_quote_pairs_balanced": true,
+    "no_drop_table": true,
+    "no_truncate": true,
+    "no_delete_from_tasks_or_posts": true,
+    "anon_revoked": true,
+    "authenticated_direct_write_revoked": true,
+    "productive_execution_pending": true
+  }
+}

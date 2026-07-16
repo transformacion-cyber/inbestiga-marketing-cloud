@@ -1,0 +1,12 @@
+INBESTIGA Marketing Cloud v17.8.1 · DESIGN STUDIO NAVIGATION HOTFIX
+
+MOTIVO
+El Design System Studio estaba cargado, pero la navegación superior moderna no mostraba una entrada visible. Además, Ctrl+K abre el buscador de contenido y este no indexaba módulos del sistema.
+
+CORRECCIÓN
+- Botón Diseño permanente en la barra superior.
+- Enlace Diseño y apariencia dentro del menú Administración.
+- Resultado directo en los dos buscadores al escribir diseño, apariencia, tema, fotos, fondos, intro, colores o fuentes.
+
+INSTALACIÓN
+Publicar este ZIP completo en Netlify. No ejecutar nuevamente SQL_OPCIONAL_v17_8.sql. La base de datos no cambia.

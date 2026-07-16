@@ -1,0 +1,12 @@
+LIMITACIONES DE PRUEBA EN NAVEGADOR — v17.11
+
+La validación estática completa fue ejecutada. El entorno administrado disponible no permitió completar una navegación Chromium local confiable (el proceso headless no devolvió DOM antes del límite del entorno). Por ello no se afirma certificación productiva de interacción, RLS, Realtime, persistencia ni PWA.
+
+Validar después del despliegue HTTPS:
+- creación de tarea con varios ejecutores y responsable final;
+- estimaciones y horas reales manuales;
+- dependencia y recurrencia;
+- calificación 1–10, puntos y ranking;
+- catálogos de clientes/campañas;
+- exportaciones CSV/Excel/PDF;
+- Salud del sistema y Shell v17.11 activa.

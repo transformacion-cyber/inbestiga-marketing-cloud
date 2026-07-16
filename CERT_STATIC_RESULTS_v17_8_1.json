@@ -1,0 +1,35 @@
+{
+  "version": "v17.8.1",
+  "build": "DESIGN SYSTEM STUDIO NAVIGATION HOTFIX",
+  "base": "v17.8 DESIGN SYSTEM STUDIO",
+  "ids": 649,
+  "duplicate_ids": 0,
+  "local_references": 30,
+  "missing_local_references": 0,
+  "external_javascript_files": 15,
+  "inline_javascript_files": 14,
+  "json_files_validated": 25,
+  "required_rpc_count": 45,
+  "required_rpc_modified": false,
+  "optional_sql_modified": false,
+  "navigation_source_checks": {
+    "top_navigation_button": true,
+    "admin_mega_menu_entry": true,
+    "global_search_shortcut": true,
+    "top_search_shortcut": true,
+    "legacy_sidebar_entry_preserved": true
+  },
+  "protected_zones": {
+    "inline_scripts_count": 14,
+    "inline_scripts_identical_to_v17_8": true,
+    "index_changed_lines_only": [
+      2,
+      13
+    ],
+    "creative_arena_untouched": true,
+    "auth_inline_untouched": true,
+    "loadAll_renderAll_bootstrap_untouched": true
+  },
+  "browser_runtime_note": "La ejecución Chromium local no estuvo disponible por restricciones del contenedor; se requiere confirmar la interacción final tras el despliegue HTTPS.",
+  "status": "static_validation_passed"
+}

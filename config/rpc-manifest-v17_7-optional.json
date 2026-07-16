@@ -1,0 +1,14 @@
+{
+  "version": "17.7",
+  "build": "MEMBER WALL WORK SYNC",
+  "schema": "marketing_app",
+  "optional": true,
+  "count": 3,
+  "rpcs": [
+    "ibm_v177_create_work_activity_link",
+    "ibm_v177_remove_work_activity_link",
+    "ibm_v177_work_activity_capabilities"
+  ],
+  "installer": "SQL_OPCIONAL_v17_7.sql",
+  "notes": "Aditivo, atómico e idempotente. No modifica las 45 RPC productivas ni elimina publicaciones o tareas. La escritura directa queda revocada y las RPC validan sesión, rol, autoría/asignación y alcance de área. Sin instalar, v17.7 conserva fallback local por usuario."
+}

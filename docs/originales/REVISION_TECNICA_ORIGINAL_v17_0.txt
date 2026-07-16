@@ -1,0 +1,20 @@
+REVISION TECNICA v17.0
+
+IMPLEMENTACION
+- Modulo externo aislado: assets/js/work360-advanced.js.
+- Estilos aislados: assets/css/work360-advanced.css.
+- Puente aditivo sobre renderTasks; el render productivo original se conserva.
+- Persistencia local por usuario y sincronizacion cloud opcional.
+- No se agregaron RPC obligatorias.
+
+VALIDACIONES REQUERIDAS EN PRODUCCION
+- Crear una subtarea con una cuenta autorizada.
+- Generar la siguiente ocurrencia de una tarea recurrente.
+- Confirmar politicas RLS si se ejecuta SQL_OPCIONAL_v17_0.sql.
+- Verificar sincronizacion entre dos dispositivos.
+
+PROTECCIONES
+- Deteccion de ciclos en dependencias.
+- Prevencion de ciclos en jerarquia padre-hijo.
+- Recurrencia manual con confirmacion.
+- Fallback local cuando las tablas opcionales no existen.

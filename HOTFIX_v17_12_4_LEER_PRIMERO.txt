@@ -1,0 +1,32 @@
+INBESTIGA MARKETING CLOUD v17.12.4
+OBSERVER CONFLICT + BOOT STABILITY HOTFIX
+
+CAUSA CORREGIDA
+- v17.12.3 todavía podía congelarse porque dos MutationObserver escribían versiones distintas sobre el mismo texto visible.
+- mobile-creative-navigation imponía v17.12.1.
+- liquid-glass-visual-content imponía v17.12.3.
+- Cada escritura activaba al otro observador y producía un ciclo continuo en el hilo principal.
+
+CORRECCIONES
+- Ambos módulos quedan alineados en v17.12.4.
+- Los observadores ya no reaccionan a cada mutación del documento.
+- Solo se procesan nodos relevantes de navegación, Home, Administración y etiquetas de versión.
+- Las actualizaciones se agrupan con requestAnimationFrame.
+- Se conserva el hotfix del selector multimedia y se alinea como v17.12.4.
+- La caché PWA cambia a inbestiga-v17-12-4-shell.
+
+NO SE MODIFICA
+- Supabase Auth, tablas, RLS, RPC o Storage.
+- loadAll, renderAll y bootstrap productivo.
+- Tareas, clientes, campañas, ranking ni datos.
+- Creative Arena y sus pizarras.
+- Scripts inline productivos de index.html.
+
+INSTALACIÓN
+1. Publicar únicamente este ZIP en Netlify.
+2. Esperar estado Published.
+3. Cerrar todas las pestañas anteriores de la plataforma.
+4. Abrir el sitio y hacer Ctrl+Shift+R.
+5. Si el navegador conserva la instalación antigua, borrar los datos del sitio una sola vez y volver a abrir.
+6. Confirmar v17.12.4.
+7. No ejecutar SQL.

@@ -1,0 +1,45 @@
+{
+  "passed": true,
+  "director": {
+    "role": "director",
+    "api": true,
+    "version": "v17.8",
+    "build_version": "v17.8",
+    "nav_added": true,
+    "contains_wall": false,
+    "contains_global_tab": true,
+    "contains_publish": true,
+    "health": {
+      "version": "v17.8",
+      "mode": "local",
+      "status": "ok",
+      "value": "Salud visual 100/100",
+      "detail": "Editor seguro en fallback local; SQL v17.8 es opcional.",
+      "score": 100,
+      "issues": 0,
+      "realtime": "inactive",
+      "last_error": ""
+    }
+  },
+  "collaborator": {
+    "role": "collaborator",
+    "api": true,
+    "version": "v17.8",
+    "build_version": "v17.8",
+    "nav_added": true,
+    "contains_wall": true,
+    "contains_global_tab": false,
+    "contains_publish": false,
+    "health": {
+      "version": "v17.8",
+      "mode": "local",
+      "status": "ok",
+      "value": "Salud visual 100/100",
+      "detail": "Editor seguro en fallback local; SQL v17.8 es opcional.",
+      "score": 100,
+      "issues": 0,
+      "realtime": "inactive",
+      "last_error": ""
+    }
+  }
+}

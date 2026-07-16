@@ -1,0 +1,8 @@
+CHANGED FILES ONLY
+index.html
+service-worker.js
+HOTFIX_v17_10_1_LEER_PRIMERO.txt
+config/build-manifest.json
+assets/js/production-certification.js
+assets/js/system-health-center.js
+assets/js/deadlines-member-governance-v17-10.js

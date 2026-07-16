@@ -1,0 +1,33 @@
+AUDITORÍA PLATAFORMA — v17.6 WORK 360 TEAM REPORTS
+
+BASE AUDITADA
+v17.5.3 AUDIT COUNTER ACCURACY.
+
+CAMBIO FUNCIONAL
+Se añadió una capa de reportes para Dirección y Supervisión dentro de Trabajo 360.
+
+RESULTADOS ESTÁTICOS
+- JavaScript externo y scripts inline: sintaxis válida.
+- IDs reales del HTML: sin duplicados.
+- Referencias locales: completas.
+- Manifiestos JSON: válidos.
+- RPC requeridas: 45, únicas e intactas.
+- RPC usadas por el módulo nuevo: ibm_v32_create_report_snapshot, ya existente.
+- SQL nuevo: ninguno.
+- Service Worker: caché v17.6 con recursos completos.
+- Scripts inline: idénticos a v17.5.3.
+- Creative Arena: no modificada.
+
+PRUEBAS CONTROLADAS DEL MOTOR DE REPORTE
+- Reporte de 3 tareas y 2 colaboradores generado correctamente.
+- Cumplimiento, puntualidad, vencimiento, bloqueo, estimación, tiempo y capacidad calculados.
+- Dependencia abierta detectada como bloqueo.
+- Capacidad obtenida desde Horario Pro.
+- Comparación del periodo anterior generada.
+- Mes actual comparado con el mes calendario anterior completo (julio → 1 al 30 de junio) en prueba controlada.
+- Rol Colaborador rechazado por el motor de reporte.
+
+LIMITACIONES
+- No se ejecutó una sesión real con los datos productivos desde este entorno.
+- Excel, CSV, PDF y snapshot deben validarse tras el despliegue en Netlify.
+- La salud 100/100 debe confirmarse nuevamente en la URL HTTPS después de actualizar la PWA.

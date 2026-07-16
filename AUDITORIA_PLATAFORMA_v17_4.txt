@@ -1,0 +1,19 @@
+INBESTIGA Marketing Cloud v17.4 — AUDITORÍA DE HOTFIX
+
+Base autorizada: v17.3 PRODUCTIVE CERTIFICATION FIXES.
+Naturaleza: corrección aditiva y no destructiva.
+
+FALLOS REPRODUCIDOS EN HTTPS
+- El documento no enlazaba manifest.webmanifest.
+- El Centro de Salud esperaba una caché v17.2 mientras el Service Worker era v17.3.
+- La lectura OpenAPI utilizaba una referencia de sesión potencialmente desactualizada.
+- La lectura OpenAPI no seleccionaba explícitamente marketing_app.
+
+CAMBIOS
+- Dos enlaces PWA añadidos al head de index.html.
+- system-health-center.js actualizado a v17.4 y sonda RPC corregida.
+- service-worker.js actualizado a caché v17.4.
+- build-manifest.json actualizado.
+
+LÍMITES
+Este hotfix no certifica por sí mismo la ejecución de las 45 RPC, RLS, Storage, Realtime ni Work 360 remoto. Esas pruebas requieren el entorno Supabase y cuentas reales.

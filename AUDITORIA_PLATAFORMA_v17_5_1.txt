@@ -1,0 +1,21 @@
+AUDITORIA PLATAFORMA v17.5.1 — DATABASE COMPATIBILITY HOTFIX
+
+RESULTADO ESTATICO: APROBADO
+- JavaScript externo: 12/12 valido con node --check.
+- JavaScript inline: 14/14 valido e identico a v17.5.
+- IDs HTML: 649, duplicados: 0.
+- Referencias locales: 22, faltantes: 0.
+- RPC productivas: 45 unicas e identicas a v17.5.
+- PWA: inbestiga-v17-5-1-shell, 23 recursos presentes.
+- SQL: transaccion atomica, validacion previa, sin DELETE fisico, sin DROP TABLE y sin ALTER de tablas productivas.
+- Mapeo editorial: marketing_app.editorial_items.
+
+PROTEGIDO
+- Creative Arena JS/CSS: identicos.
+- 14 scripts inline: identicos.
+- collaboration-campaign-os.js: identico.
+- productivity-realtime-core.js: identico.
+- Auth, loadAll, renderAll y bootstrap no fueron editados.
+
+LIMITACION
+El SQL v17.5.1 no fue ejecutado desde este entorno contra Supabase. RLS, EXECUTE y persistencia remota quedan pendientes de prueba real.

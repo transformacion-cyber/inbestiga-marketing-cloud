@@ -1,0 +1,39 @@
+GUÍA FUNCIONAL v17.11 — TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING
+
+1. CREAR UNA TAREA
+Dirección/Supervisión selecciona uno o varios ejecutores. Después define un responsable final, horas estimadas, complejidad, deadline, dependencia y recurrencia. El ejecutor hace el trabajo; el responsable garantiza seguimiento y resultado.
+
+2. ACEPTAR Y REGISTRAR HORAS
+Cada ejecutor puede aceptar, solicitar aclaración, reportar bloqueo o proponer una estimación. Puede registrar horas reales manualmente al entregar o después. No necesita temporizador.
+
+3. DEPENDENCIAS
+- No iniciar hasta que termine otra tarea.
+- No finalizar hasta que termine otra tarea.
+- Relacionada, no bloqueante.
+El backend impide autorreferencias y ciclos simples.
+
+4. RECURRENCIA
+Frecuencias: diaria, lunes a viernes, semanal, quincenal, mensual, anual o intervalo personalizado. Cada ejecución genera una tarea independiente y queda registrada en task_occurrences_v1711.
+
+5. CALIFICACIÓN
+El jefe elige participante, decisión, nota 1–10, fortalezas, mejoras y horas validadas. Nota menor de 7 exige mejoras. Cada participante recibe su propia evaluación.
+
+6. PUNTOS AUTOMÁTICOS
+La aprobación combina complejidad, evidencia, puntualidad, aprobación, recurrencia, colaboración y nota del jefe. Una tarea observada no suma puntos de aprobación. El historial queda en performance_points_ledger_v1711.
+
+7. RANKING 1–1000
+Rangos iniciales: Brote Creativo, Explorador, Creador, Artesano, Especialista, Estratega, Vanguardista, Dominador, Titán Creativo, Leyenda Ejecutiva, Inmortal INBESTIGA y Arquitecto del Éxito. Cada rango tiene divisiones I–V cuando corresponde. Dirección puede renombrar rangos sin alterar puntos históricos.
+
+8. CLIENTES Y CAMPAÑAS
+Administración > Catálogos operativos permite crear/renombrar clientes, editar campañas, archivar y restaurar. Las campañas nuevas reutilizan el flujo productivo existente; no se duplican RPC de creación.
+
+9. REPORTES
+Reporte operativo 360+ exporta día, semana, mes, año o rango personalizado a CSV, Excel o impresión/PDF. Incluye ejecutores, responsable, horas, variación, deadline, recurrencia, dependencias, nota y puntos. CSV/Excel se importan a Google Sheets.
+
+10. PERMISOS
+- Italo/Dirección: configuración global, rangos y todo el equipo.
+- Jhulio/Alejandro/Supervisión: planificación, horas del equipo, catálogos, revisión y reportes de su alcance.
+- Miembro: sus tareas, estimación, horas reales, entrega, nota y ranking personal.
+
+11. REGLA DE USO
+El ranking apoya reconocimiento y mejora; no debe ser el único criterio de sanción o decisión laboral. Revisar complejidad, bloqueos, dependencias y cambios de deadline.

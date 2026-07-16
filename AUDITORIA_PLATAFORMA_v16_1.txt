@@ -1,0 +1,31 @@
+AUDITORÍA DE ENTREGA v16.1 — PRODUCTION CERTIFICATION
+
+ALCANCE VERIFICADO EN ESTA ENTREGA
+- Integridad estática del paquete.
+- Sintaxis de 22 scripts JavaScript internos y modulares.
+- Referencias locales de CSS, JavaScript, manifest, Service Worker e iconos.
+- Ausencia de IDs estáticos duplicados.
+- Ausencia de código técnico visible como texto directo en el documento.
+- Ausencia de setInterval permanente, MutationObserver y window.sb.rpc en el módulo nuevo.
+- Manifiesto de build v16.1 y caché PWA v16.1.
+- Comparación exacta del JavaScript y CSS de Creative Arena contra v16.0.
+
+RESULTADOS
+- PASS: IDs estáticos únicos.
+- PASS: referencias locales completas.
+- PASS: sintaxis JavaScript correcta.
+- PASS: Creative Arena JavaScript idéntico.
+- PASS: Creative Arena CSS idéntico.
+- PASS: módulo de certificación aislado y no destructivo.
+- PASS: Service Worker actualizado para evitar recursos obsoletos después de instalar una nueva versión.
+- PASS: puente Realtime evita crear un segundo canal productivo cuando el canal existente ya está activo.
+
+NO CERTIFICADO SIN EL SUPABASE PRODUCTIVO
+- Escrituras reales de tareas, campañas, mensajes y entregas.
+- Políticas RLS por Dirección, Supervisión y Colaborador.
+- Subida y descarga real de archivos en Storage.
+- Eventos Realtime entre dos sesiones autenticadas.
+- Persistencia de una pizarra después de editarla con una cuenta real.
+
+HERRAMIENTA INCORPORADA
+El Production Certification Center permite ejecutar pruebas automáticas de solo lectura y registrar la matriz manual de las tres cuentas reales. El informe puede exportarse en JSON sin incluir la clave anon ni el token de sesión.

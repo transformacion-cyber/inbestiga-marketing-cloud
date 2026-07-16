@@ -1,0 +1,30 @@
+INBESTIGA MARKETING CLOUD v17.12.3
+AUDITORÍA DE HOTFIX: BOOT FREEZE + MEDIA EDITOR
+
+CAUSA CONFIRMADA
+El módulo v17.12.2 instalaba un MutationObserver sobre todo el documento. Cada notificación ejecutaba enhanceBuilder(), que volvía a asignar textContent a los mismos botones aunque el contenido no hubiera cambiado. Esa escritura generaba una nueva mutación y podía mantener ocupado el hilo principal durante el arranque, dejando el overlay en 12 %.
+
+SEGUNDA CORRECCIÓN
+El área de carga activaba input.click() desde el contenedor. El clic del input podía propagarse otra vez al contenedor. v17.12.3 ignora los clics cuyo target ya es el input y añade activación por teclado.
+
+CAMBIOS
+- Observer limitado a nodos añadidos relevantes.
+- Actualización de botones idempotente.
+- Programación agrupada mediante requestAnimationFrame.
+- Selector de archivos protegido contra doble activación.
+- Biblioteca visual disponible como fallback.
+- Salud, certificación, frontend y caché PWA alineados en v17.12.3.
+
+VALIDACIÓN ESTÁTICA
+- JS externos y Service Worker: 22/22 válidos.
+- Scripts inline: 14/14 válidos e idénticos a v17.12.2.
+- IDs: 650, duplicados: 0.
+- Referencias locales: 42, faltantes: 0.
+- JSON: 38 válidos.
+- CSS: 19 archivos con estructura válida.
+- RPC productivas: 45 únicas e intactas.
+- Referencias del Service Worker: 52, faltantes: 0.
+- Archivos protegidos comparados: sin diferencias.
+
+LIMITACIÓN
+La prueba productiva con una sesión real de Supabase debe realizarse después del despliegue. No se declara certificación real de RLS, Storage o Realtime desde esta auditoría estática.

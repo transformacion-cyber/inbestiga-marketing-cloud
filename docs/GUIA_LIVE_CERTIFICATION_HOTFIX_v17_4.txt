@@ -1,0 +1,22 @@
+INBESTIGA Marketing Cloud v17.4 — LIVE CERTIFICATION HOTFIX
+
+OBJETIVO
+Corregir únicamente fallos reproducibles observados durante la certificación HTTPS real de v17.3.
+
+CORRECCIONES
+1. index.html enlaza manifest.webmanifest para que el navegador pueda detectar la PWA.
+2. El diagnóstico PWA espera la caché inbestiga-v17-4-shell y muestra la versión v17.4.
+3. La comprobación OpenAPI obtiene la sesión actual mediante Supabase Auth antes de consultar.
+4. La comprobación OpenAPI selecciona explícitamente el esquema marketing_app mediante Accept-Profile.
+5. Se actualiza el título de la aplicación y el manifiesto de build a v17.4.
+
+NO MODIFICADO
+- Creative Arena, pizarras y avances creativos.
+- Login y Supabase Auth productivo.
+- loadAll, renderAll y bootstrap.
+- RPC, tablas, RLS, Storage o Realtime.
+- Home editorial, Perfil 360, Campañas y Mensajes.
+- SQL opcional v16.1 o v17.0.
+
+INSTALACIÓN
+Desplegar la carpeta completa con index.html en la raíz. En Netlify puede arrastrarse la carpeta o el ZIP. Después del despliegue, cerrar todas las pestañas del sitio y abrirlo nuevamente para que el nuevo Service Worker tome control.

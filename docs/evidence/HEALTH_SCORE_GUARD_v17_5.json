@@ -1,0 +1,14 @@
+{
+  "version": "v17.5",
+  "type": "static health-score regression guard",
+  "checks": {
+    "restricted_openapi_is_informational": true,
+    "informational_checks_excluded_from_score": true,
+    "lifecycle_local_is_informational": true,
+    "pwa_cache_v175_expected": true,
+    "health_version_v175": true
+  },
+  "simulated_same_environment_score": 100,
+  "interpretation": "HTTP 401/403/404 de introspección OpenAPI y fallback local opcional se muestran como informativos y no reducen el índice. El resultado real debe confirmarse tras desplegar v17.5.",
+  "live_baseline_observed_by_user": "v17.4 = 95/100 before neutralizing the restricted OpenAPI catalog check"
+}

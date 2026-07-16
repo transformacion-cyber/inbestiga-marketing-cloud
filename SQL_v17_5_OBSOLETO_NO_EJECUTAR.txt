@@ -1,0 +1,5 @@
+NO EJECUTAR SQL_OPCIONAL_v17_5.sql.
+
+El instalador v17.5 asumía la relación marketing_app.editorial, pero la tabla productiva real es marketing_app.editorial_items. La ejecución falló y Supabase confirmó que no quedó ninguna tabla ni RPC v17.5 creada.
+
+Usar exclusivamente SQL_OPCIONAL_v17_5_1.sql, que incluye validación previa, transacción atómica y mapeo de tablas reales.

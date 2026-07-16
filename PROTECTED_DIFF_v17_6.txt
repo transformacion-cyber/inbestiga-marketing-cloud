@@ -1,0 +1,15 @@
+PROTECTED DIFF v17.6
+Inline scripts identical: True
+Creative Arena JavaScript identical: True
+Creative Arena CSS identical: True
+assets/js/home-editorial-core.js identical: True
+assets/js/collaboration-campaign-os.js identical: True
+assets/js/productivity-realtime-core.js identical: True
+assets/js/work360-advanced.js identical: True
+assets/js/record-lifecycle-controls.js identical: True
+config/rpc-manifest.json identical: True
+SQL_OPCIONAL_v16_1.sql identical: True
+SQL_OPCIONAL_v17_0.sql identical: True
+SQL_OPCIONAL_v17_5_1.sql identical: True
+Auth/loadAll/renderAll/bootstrap were not edited inline.
+index.html changed only in build metadata and external CSS/JS references; all 14 inline scripts remain byte-identical.

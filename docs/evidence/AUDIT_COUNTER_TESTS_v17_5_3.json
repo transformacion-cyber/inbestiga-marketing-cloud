@@ -1,0 +1,20 @@
+{
+  "version": "v17.5.3",
+  "fixture": {
+    "audit_logs": 35,
+    "warning_rows": 1,
+    "error_rows": 0,
+    "client_errors": 100,
+    "session_events": 7,
+    "session_errors": 0
+  },
+  "expected": {
+    "backend_events": 35,
+    "backend_warnings": 1,
+    "backend_errors": 0,
+    "browser_errors": 100,
+    "session_events": 7,
+    "failed_renders": 0
+  },
+  "result": "PASS"
+}

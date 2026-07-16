@@ -1,0 +1,78 @@
+GUÍA WORK 360 TEAM REPORTS — v17.6
+
+1. OBJETIVO
+Convertir los datos operativos de Trabajo 360 en un reporte ejecutivo útil para Dirección y Supervisión, sin crear un sistema de vigilancia ni modificar el backend productivo.
+
+2. ACCESO
+Ruta: Trabajo 360 > Reporte del equipo.
+Roles habilitados: Dirección y Supervisión.
+El reporte solo utiliza información que la sesión ya recibió mediante Supabase y RLS. No amplía permisos.
+
+3. FILTROS
+- Periodo: hoy, semana actual, semana anterior, mes actual, mes anterior, últimos 30 días, últimos 90 días, rango personalizado o historial visible.
+- Criterio de fecha: fecha de entrega, creación, última actualización o cierre.
+- Área, colaborador, campaña, estado y prioridad.
+- Incluir tareas sin fecha.
+- Incluir tareas archivadas; la papelera se excluye siempre.
+- Comparar con el periodo anterior: mes calendario anterior para vistas mensuales; semana/día equivalente para vistas cortas; misma duración para rangos móviles o personalizados.
+
+4. INDICADORES
+Tareas incluidas: tareas que cumplen los filtros y el criterio de fecha.
+Cumplimiento: tareas completadas / tareas incluidas.
+A tiempo: cierres medibles realizados hasta la fecha de entrega.
+Vencidas: tareas abiertas cuya fecha de entrega ya pasó.
+Bloqueadas: tareas con dependencias abiertas en Work 360.
+Carga planificada: suma de horas estimadas / capacidad disponible del periodo.
+Tiempo registrado: minutos de Work 360 convertidos a horas.
+Calidad de datos: nivel de integridad de responsable, fecha, estimación, campaña, evidencia y fecha de cierre.
+
+5. CAPACIDAD
+Orden de fuentes:
+1) Horario Pro por cuadrícula.
+2) Horario Pro por bloques.
+3) Perfil laboral con horas semanales.
+4) Referencia de 40 horas semanales, señalada como referencial.
+
+Las excepciones aprobadas de vacaciones, permisos, faltas o feriados reducen capacidad; las horas extra aprobadas la incrementan cuando están disponibles.
+
+6. EXPORTACIONES
+Excel (.xls compatible con SpreadsheetML):
+- Resumen ejecutivo.
+- Por colaborador.
+- Detalle de tareas.
+- Riesgos y alertas.
+- Calidad de datos.
+
+CSV:
+- Detalle completo de tareas según los filtros.
+- Codificación UTF-8 con BOM.
+- Mitigación de fórmulas para valores que comienzan con =, +, - o @.
+
+Imprimir / PDF:
+- Abre una vista limpia para imprimir o guardar como PDF desde el navegador.
+
+7. SNAPSHOT
+El botón Guardar snapshot reutiliza ibm_v32_create_report_snapshot.
+Guarda resumen, filtros, métricas, calidad y consolidado por colaborador.
+No guarda el detalle completo de cada tarea para evitar payloads innecesarios.
+
+8. CALIDAD DE DATOS
+El reporte advierte:
+- Tareas sin responsable.
+- Tareas sin fecha.
+- Tareas sin estimación.
+- Tareas sin campaña.
+- Completadas sin evidencia.
+- Cierres con fecha inferida.
+- Capacidad con horario referencial.
+
+9. INTERPRETACIÓN RESPONSABLE
+No comparar personas solo por cantidad de tareas: las tareas pueden tener complejidades distintas.
+Revisar siempre estimaciones, contexto, bloqueos, devoluciones y calidad del dato.
+No usar tiempos registrados como mecanismo aislado de vigilancia.
+
+10. LIMITACIONES
+- El reporte refleja el estado cargado en la sesión actual.
+- RLS determina el alcance real.
+- Las fechas de cierre pueden inferirse desde updated_at cuando no existe una aprobación o cierre explícito; esto queda señalado en Integridad.
+- No modifica datos productivos, salvo el snapshot cuando el usuario lo solicita expresamente.

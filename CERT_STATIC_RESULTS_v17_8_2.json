@@ -1,0 +1,29 @@
+{
+  "version": "17.8.2",
+  "build": "TASK CHECKLIST CREATION HOTFIX",
+  "base": "17.8.1",
+  "external_js_count": 15,
+  "inline_scripts_count": 14,
+  "dom_ids": 649,
+  "duplicate_ids": 0,
+  "local_references": 34,
+  "missing_local_references": 0,
+  "json_files_validated": 27,
+  "required_rpc_count": 45,
+  "parser_cases_passed": 5,
+  "save_task_mock_passed": true,
+  "node_check_external_and_inline": true,
+  "service_worker_cache": "inbestiga-v17-8-2-shell",
+  "sql_changed": false,
+  "rpc_manifest_changed": false,
+  "creative_arena_untouched": true,
+  "auth_untouched": true,
+  "loadAll_unchanged": true,
+  "renderAll_unchanged": true,
+  "productive_test_pending": [
+    "Netlify task creation with Italo",
+    "Netlify task creation with Jhulio",
+    "Netlify task creation with Alejandro",
+    "Reload and checklist persistence"
+  ]
+}

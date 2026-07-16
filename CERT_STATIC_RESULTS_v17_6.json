@@ -1,0 +1,51 @@
+{
+  "version": "17.6",
+  "build": "WORK 360 TEAM REPORTS",
+  "html_ids": 649,
+  "duplicate_ids": [],
+  "missing_local_references": [],
+  "external_js_checked": 14,
+  "external_js_failures": [],
+  "inline_scripts_checked": 14,
+  "inline_script_failures": [],
+  "inline_scripts_unchanged_from_v17_5_3": true,
+  "json_files_checked": 19,
+  "json_failures": [],
+  "build_modules": 13,
+  "build_styles": 11,
+  "missing_build_modules": [],
+  "missing_build_styles": [],
+  "required_rpc_count": 45,
+  "unique_rpc_count": 45,
+  "new_module_rpc_calls": [
+    "ibm_v32_create_report_snapshot"
+  ],
+  "new_sql_required": false,
+  "forbidden_patterns": [],
+  "service_worker_shell_resources": 27,
+  "service_worker_missing_resources": [],
+  "css_balance_issues": [],
+  "version_alignment": {
+    "html_data": "v17.6",
+    "title": "INBESTIGA Marketing Cloud · v17.6 WORK 360 TEAM REPORTS",
+    "sw_cache": "inbestiga-v17-6-shell",
+    "build_manifest": "17.6"
+  },
+  "controlled_engine_tests": {
+    "report_tasks": 3,
+    "report_members": 2,
+    "completion_rate": 33,
+    "on_time_rate": 100,
+    "overdue": 1,
+    "blocked": 1,
+    "role_guard_collaborator": "passed",
+    "report_button_director_supervisor": "passed",
+    "report_button_collaborator_hidden": "passed",
+    "excel_multisheet": "passed_5_sheets",
+    "csv_formula_mitigation": "passed",
+    "snapshot_existing_rpc": "passed_ibm_v32_create_report_snapshot",
+    "snapshot_report_type": "work360_team",
+    "monthly_comparison_calendar_period": "passed_2026-07_to_2026-06-01_2026-06-30",
+    "custom_range_comparison_same_duration": "passed"
+  }
+}

@@ -1,0 +1,121 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "17.12",
+  "build": "LIQUID GLASS VISUAL CONTENT BUILDER",
+  "checks": {
+    "external_js_node_check": {
+      "count": 20,
+      "failed": [],
+      "passed": true
+    },
+    "service_worker_node_check": true,
+    "inline_js_node_check": {
+      "count": 14,
+      "failed": [],
+      "passed": true,
+      "byte_identical_to_v17_11_1": true
+    },
+    "static_ids": {
+      "count": 650,
+      "duplicates": []
+    },
+    "html_local_references": {
+      "count": 40,
+      "missing": []
+    },
+    "service_worker_resources": {
+      "count": 50,
+      "missing": []
+    },
+    "json_files": {
+      "count": 38,
+      "invalid": []
+    },
+    "css_files": {
+      "count": 18,
+      "unbalanced": []
+    },
+    "sql_v17_12": {
+      "statements": 24,
+      "parsed_with": "pglast",
+      "optional": true,
+      "executed_against_real_supabase": false
+    },
+    "runtime_dom_tests": {
+      "count": 4,
+      "passed": 4,
+      "report": "VISUAL_CONTENT_RUNTIME_TEST_v17_12.json"
+    },
+    "protected_files": {
+      "checked": 23,
+      "changed": []
+    },
+    "creative_arena_runtime_inline_unchanged": true,
+    "health_version": "v17.12",
+    "pwa_cache": "inbestiga-v17-12-shell"
+  },
+  "media_library": [
+    {
+      "file": "assets/media/liquid-glass/aurora-fluid.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 29548,
+      "sha256": "70bbcb3917c536cb1c83a3ccd379501d3305ef9924cfc7f5e24f8aad4f04b911"
+    },
+    {
+      "file": "assets/media/liquid-glass/blue-clouds.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 55406,
+      "sha256": "307872ada1eef7627a5531700d4727ae5d0e62b98f0f86755c0f42c9eb965cd8"
+    },
+    {
+      "file": "assets/media/liquid-glass/cloud-platforms.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 37230,
+      "sha256": "ffd328fe5281095f7afef75b2b8613de248f8c74d4172c83e0cacf2ef9505df3"
+    },
+    {
+      "file": "assets/media/liquid-glass/crystal-future.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 36628,
+      "sha256": "3bdcba08da645d363a8b70d8dbbde49ad8cb499ba38a12c2c28c185fa4dd73db"
+    },
+    {
+      "file": "assets/media/liquid-glass/future-landscape.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 36244,
+      "sha256": "7b1a802182366b8544540cd412fb7a9545af60d31ba430710a9cb876ecdb578a"
+    },
+    {
+      "file": "assets/media/liquid-glass/liquid-orbit.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 36054,
+      "sha256": "12399ed5ac787606f4317aeda346e3abe64643de50f6d696a9eba3da2664c7c0"
+    },
+    {
+      "file": "assets/media/liquid-glass/serene-clouds.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 41302,
+      "sha256": "ec410dd7e7718591ba2cf218120b746604df97be3f1dd4bcdb84f6c6e3d4340e"
+    },
+    {
+      "file": "assets/media/liquid-glass/soft-sky.webp",
+      "width": 1600,
+      "height": 900,
+      "bytes": 36054,
+      "sha256": "12399ed5ac787606f4317aeda346e3abe64643de50f6d696a9eba3da2664c7c0"
+    }
+  ],
+  "limitations": [
+    "No se ejecutó el SQL opcional contra el Supabase real.",
+    "No se certificó persistencia multi-dispositivo hasta ejecutar SQL_OPCIONAL_v17_12.sql.",
+    "La apariencia final y el rendimiento deben verificarse en navegadores y teléfonos reales.",
+    "El entorno de validación bloqueó la captura headless de Chromium; se realizaron pruebas DOM, sintácticas y estructurales."
+  ]
+}

@@ -1,0 +1,21 @@
+INBESTIGA MARKETING CLOUD v17.12.1
+ULTRA TRANSPARENT GLASS HOTFIX
+
+OBJETIVO
+- Reducir de forma marcada el velo blanco translúcido de paneles, tarjetas, navegación, tablas, formularios y editor visual.
+- Mantener el desenfoque, los reflejos, bordes y contraste del estilo Liquid Glass.
+
+ALCANCE
+- Cambio visual únicamente en modo Liquid Glass.
+- Los modos Soft y Classic conservan su comportamiento.
+- Creative Arena permanece excluida.
+- No modifica Supabase, usuarios, tareas, campañas, ranking, SQL, RPC, RLS, Storage ni datos.
+
+INSTALACIÓN
+1. Subir únicamente este ZIP al mismo proyecto de Netlify.
+2. Esperar Published.
+3. Cerrar las pestañas abiertas.
+4. Abrir nuevamente y usar Ctrl+Shift+R.
+5. Confirmar INBESTIGA v17.12.1 y Shell v17.12.1 activa.
+
+NO EJECUTAR SQL.

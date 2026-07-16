@@ -1,0 +1,16 @@
+AUDITORIA PLATAFORMA v17.5.2 — HEALTH SCORE ACCURACY HOTFIX
+
+VALIDACIONES
+- JS externos: 12 pasan node --check.
+- Scripts inline: 14 pasan node --check y son idénticos a v17.5.1.
+- IDs DOM: 649, duplicados: 0.
+- Referencias locales: 22, faltantes: 0.
+- Service Worker: inbestiga-v17-5-2-shell con 23 recursos.
+- RPC productivas: 45 declaradas, 45 únicas, manifiesto intacto.
+- SQL v16.1, v17.0 y v17.5.1: intactos.
+- Test de shell Work 360 vacío: estado OK y sin pendientes.
+- Test con metadata real: conserva advertencia.
+- Reporte v17.5.1 almacenado: ignorado por versión.
+
+LIMITACION
+El 100/100 debe confirmarse después del despliegue HTTPS con la sesión real.

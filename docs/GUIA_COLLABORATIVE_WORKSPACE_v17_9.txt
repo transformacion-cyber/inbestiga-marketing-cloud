@@ -1,0 +1,30 @@
+GUÍA DE USO — v17.9 COLLABORATIVE WORKSPACE
+
+CREAR TAREA
+- Selecciona uno o varios responsables.
+- Agrega hasta 3 referencias de 25 MB y hasta 5 links.
+- El primer integrante seleccionado queda como responsable principal.
+- Todos los seleccionados reciben la tarea en Trabajo 360.
+
+PROYECTOS / CAMPAÑAS Y BRIEFS
+- Dirección y Supervisión pueden adjuntar referencias desde el formulario o el detalle.
+- Los miembros vinculados por una tarea de la campaña pueden abrir los recursos autorizados.
+
+PRESENTAR TRABAJO
+- Abre la tarea y pulsa Presentar entrega.
+- Adjunta hasta 3 archivos y 5 enlaces.
+- Escribe un comentario que indique qué se realizó y qué debe revisar el jefe.
+- Cada integrante puede presentar su propia entrega y queda registrada la fecha y hora.
+
+REVISAR Y PUNTUAR
+- El jefe abre la tarea desde Inicio, Trabajo 360 o Aprobaciones.
+- Revisa cada archivo o link mediante URL firmada.
+- Valida u observa con la RPC productiva existente.
+- Al validar puede asignar de 1 a 5 en calidad, plazo, colaboración y comunicación a cada miembro.
+- El sistema calcula un puntaje general sobre 100.
+
+SEGURIDAD
+- El bucket es privado.
+- Los archivos se guardan bajo la carpeta del usuario que los subió.
+- Solo cuentas autorizadas por la tarea/campaña/brief pueden solicitar lectura.
+- No se admiten ejecutables ni scripts.

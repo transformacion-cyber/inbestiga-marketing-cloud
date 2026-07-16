@@ -1,0 +1,39 @@
+{
+  "version": "17.8",
+  "executed_against_productive_supabase": false,
+  "tables": [
+    "marketing_app.ui_theme_versions",
+    "marketing_app.ui_asset_library"
+  ],
+  "rpc_signatures": {
+    "ibm_v178_design_bootstrap": true,
+    "ibm_v178_save_design_draft": true,
+    "ibm_v178_publish_design": true,
+    "ibm_v178_upsert_design_asset": true,
+    "ibm_v178_archive_design_asset": true
+  },
+  "checks": {
+    "transaction_begin": true,
+    "transaction_commit": true,
+    "preflight_schema": true,
+    "preflight_members": true,
+    "no_drop_table": true,
+    "no_truncate_table": true,
+    "no_delete_from": true,
+    "no_existing_table_mutation": true,
+    "direct_write_revoked": true,
+    "anon_revoked": true,
+    "rls_enabled_both": true,
+    "draft_rls_active_or_owner": true,
+    "safe_keys_server_validation": true,
+    "active_content_server_validation": true,
+    "https_or_data_image_only": true,
+    "realtime_only_theme_table": true,
+    "postgrest_reload": true
+  },
+  "passed": true,
+  "limitations": [
+    "Static review only. SQL_OPCIONAL_v17_8.sql was not executed against the user Supabase project.",
+    "RLS and RPC permissions require real Director and Collaborator sessions after manual installation."
+  ]
+}

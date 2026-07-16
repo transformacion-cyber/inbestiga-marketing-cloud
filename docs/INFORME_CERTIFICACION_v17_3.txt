@@ -1,0 +1,47 @@
+INFORME DE CERTIFICACION v17.3
+INBESTIGA Marketing Cloud - PRODUCTIVE CERTIFICATION FIXES
+Fecha: 2026-07-13
+
+1. ALCANCE EJECUTADO
+- Auditoria estatica completa del paquete.
+- Prueba DOM controlada con perfiles simulados de Director, Supervisor y Colaborador.
+- Comprobacion de guardas de rutas, render, Centro de salud, Auditoria, Work 360 local y responsive.
+- Correccion y revalidacion de tres fallos reproducibles.
+
+2. RESULTADOS APROBADOS
+- Integridad del frontend y referencias locales.
+- Sintaxis de JS externo, inline y Service Worker.
+- Correspondencia exacta de 45 RPC entre manifiesto y llamadas del frontend.
+- Guardas visuales/rutas en entorno controlado.
+- Fallback local Work 360 y restauracion de metadatos.
+- Auditoria sin overflow global a 390 px.
+- Secciones esenciales y compatibilidad de version corregidas.
+- Index y Creative Arena intactos.
+
+3. RESULTADOS NO PRODUCTIVOS
+Las respuestas de Auth, OpenAPI, Storage y Realtime dentro de la prueba DOM fueron simuladas. Solo prueban que el frontend consume las interfaces esperadas. No demuestran seguridad, autorizacion o persistencia de Supabase.
+
+4. BLOQUEOS DEL ENTORNO
+- No se proporcionaron URL/despliegue productivo, clave anon ni cuentas reales.
+- El navegador administrado bloqueo localhost, IP privada, file:// y navegacion local.
+- Por lo anterior, no fue posible instalar la PWA ni abrir dos sesiones contra el backend real.
+
+5. ESTADO POR AREA
+- Codigo y paquete: APROBADO.
+- Guardas de interfaz por rol: APROBADO EN ENTORNO CONTROLADO.
+- Work 360 fallback local: APROBADO EN ENTORNO CONTROLADO.
+- PWA shell/manifiesto: APROBADO ESTATICAMENTE.
+- Supabase Auth real: NO CERTIFICADO.
+- 45 RPC reales: NO CERTIFICADO.
+- RLS: NO CERTIFICADO.
+- Storage real: NO CERTIFICADO.
+- Realtime real: NO CERTIFICADO.
+- Sincronizacion Work 360 entre dispositivos: NO CERTIFICADO.
+
+6. CORRECCIONES APLICADAS
+- profile360 -> profile en la lista de secciones.
+- Compatibilidad backend por major >= 16.
+- Contencion responsive de #auditpro .grid2 y .table-wrap.
+
+7. CONCLUSION
+v17.3 queda lista como base limpia para desplegar y ejecutar la certificacion productiva real. No debe declararse totalmente certificada hasta cerrar los items NO CERTIFICADOS de la matriz.

@@ -1,0 +1,58 @@
+INBESTIGA MARKETING CLOUD v17.12
+LIQUID GLASS VISUAL CONTENT BUILDER
+
+OBJETIVO
+Aplicar una estética Liquid Glass muy cercana a la referencia visual compartida y añadir más presencia de imágenes mediante paneles editables, sin modificar la estructura funcional, Auth, tareas, campañas, Creative Arena ni las 45 RPC productivas.
+
+QUÉ CAMBIA VISUALMENTE
+- Fondo ambiental en tonos cian, violeta y rosa.
+- Paneles translúcidos con desenfoque, reflejos internos y bordes luminosos.
+- Navegación, botones, tarjetas, formularios, tablas y modales con acabado de vidrio.
+- Nueva portada visual en Inicio.
+- Tres paneles visuales editables.
+- Galería editorial editable de cuatro imágenes.
+- Panel destacado editable.
+- Biblioteca de ocho imágenes optimizadas incluida.
+- Adaptación móvil con carrusel horizontal y tarjetas de alto impacto.
+- Modos Liquid Glass intenso, Liquid Glass suave y Clásico ligero.
+
+EDITOR DE CONTENIDO VISUAL
+Dirección y Supervisión encuentran el editor en:
+Administración > Contenido visual
+
+Desde ahí pueden cambiar:
+- Imagen, título, descripción y botones de la portada.
+- Imágenes, nombres, textos y accesos de los tres paneles.
+- Título, etiquetas e imágenes de la galería.
+- Contenido e imagen del panel destacado.
+- Intensidad del efecto de vidrio.
+- Imágenes de la biblioteca incluida o nuevas imágenes subidas.
+
+PERSISTENCIA
+- El aspecto visual funciona inmediatamente sin SQL mediante fallback local seguro.
+- Para que las ediciones se sincronicen entre todos los dispositivos, ejecutar manualmente SQL_OPCIONAL_v17_12.sql una sola vez.
+- Las imágenes nuevas utilizan el bucket existente inbestiga-media cuando está disponible.
+- Si Storage no está disponible, se utiliza fallback inline dentro de límites seguros.
+
+INSTALACIÓN
+1. Subir únicamente este paquete v17.12 al mismo proyecto de Netlify.
+2. Esperar estado Published.
+3. Cerrar todas las pestañas de la plataforma.
+4. Abrir la URL y presionar Ctrl+Shift+R en escritorio.
+5. En móvil, cerrar la PWA y abrirla nuevamente.
+6. Confirmar INBESTIGA v17.12 y Shell v17.12 activa.
+7. Revisar Auditoría > Salud del sistema.
+8. Ejecutar SQL_OPCIONAL_v17_12.sql solo si se requiere sincronización global del editor.
+
+NO EJECUTAR NUEVAMENTE
+- SQL anteriores que ya estén instalados.
+- SQL de reinicio productivo.
+
+PROTECCIONES
+- Creative Arena permanece fuera de la capa visual global durante su modo de trabajo.
+- Los 14 scripts inline siguen idénticos a v17.11.1.
+- Auth, tablas productivas, RLS y RPC productivas no fueron modificados.
+- No se incluyó service_role en el frontend.
+
+LIMITACIONES HONESTAS
+La validación estática está aprobada. La persistencia global del editor, las políticas reales de Supabase y la apariencia final deben verificarse después del despliegue en los navegadores y teléfonos reales del equipo.

@@ -1,0 +1,48 @@
+INBESTIGA MARKETING CLOUD v17.12
+AUDITORÍA ESTÁTICA · LIQUID GLASS VISUAL CONTENT BUILDER
+
+BASE AUTORIZADA
+v17.11.1 MOBILE CREATIVE NAVIGATION HOTFIX
+
+CAMBIOS ADITIVOS
+- assets/css/liquid-glass-visual-content-v17-12.css
+- assets/js/liquid-glass-visual-content-v17-12.js
+- assets/media/liquid-glass/*.webp
+- SQL_OPCIONAL_v17_12.sql
+- config/rpc-manifest-v17_12-optional.json
+- documentación y reportes v17.12
+
+CAMBIOS MÍNIMOS DE ALINEACIÓN
+- index.html: metadata v17.12 y referencias a los nuevos recursos.
+- system-health-center.js: versión y caché esperada v17.12.
+- production-certification.js: versión v17.12.
+- mobile-creative-navigation-v17-11-1.js: versión visible v17.12.
+- service-worker.js: caché inbestiga-v17-12-shell y nuevos recursos.
+- manifest.webmanifest: colores visuales v17.12.
+
+RESULTADOS
+- 20 archivos JavaScript externos válidos con node --check.
+- Service Worker válido con node --check.
+- 14 scripts inline válidos y byte-identical respecto de v17.11.1.
+- 650 IDs HTML estáticos, 0 duplicados.
+- 40 referencias locales del HTML, 0 faltantes.
+- 50 recursos del Service Worker, 0 faltantes.
+- 38 JSON válidos.
+- 18 CSS con estructura de llaves equilibrada.
+- SQL opcional v17.12 analizado con pglast: 24 sentencias.
+- 23 archivos protegidos comparados: 0 cambios.
+- Ocho imágenes WebP optimizadas incluidas.
+
+PROTECCIONES CONFIRMADAS
+- Creative Arena: lógica intacta y excluida del tema durante ca-arena-mode.
+- Supabase Auth: intacto.
+- loadAll/renderAll/bootstrap: scripts inline intactos.
+- Las 45 RPC productivas: manifiesto intacto.
+- SQL v17.9, v17.10 y v17.11: intactos.
+- Trabajo 360, ranking, horas, recurrencia, catálogos y gobierno de miembros: intactos.
+
+NO CERTIFICADO TODAVÍA
+- Ejecución real de SQL_OPCIONAL_v17_12.sql.
+- RLS real de las nuevas tablas.
+- Sincronización multi-dispositivo del Visual Content Builder.
+- Evaluación final de rendimiento en cada teléfono real.

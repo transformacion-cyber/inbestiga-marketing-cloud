@@ -1,0 +1,34 @@
+{
+  "version": "17.9",
+  "build": "COLLABORATIVE WORKSPACE FILES & REVIEWS",
+  "optional": true,
+  "sql": "SQL_OPCIONAL_v17_9.sql",
+  "rpc": [
+    "ibm_v179_capabilities",
+    "ibm_v179_workspace",
+    "ibm_v179_set_task_participants",
+    "ibm_v179_create_attachment",
+    "ibm_v179_create_submission",
+    "ibm_v179_update_task_status",
+    "ibm_v179_review_submission"
+  ],
+  "helper_rpc": [
+    "ibm_v179_actor_member_id",
+    "ibm_v179_is_manager",
+    "ibm_v179_can_access_task",
+    "ibm_v179_can_access_campaign",
+    "ibm_v179_can_access_brief",
+    "ibm_v179_can_read_storage_object"
+  ],
+  "tables": [
+    "marketing_app.task_participants",
+    "marketing_app.task_submissions",
+    "marketing_app.work_item_attachments",
+    "marketing_app.task_reviews"
+  ],
+  "storage_bucket": "inbestiga-work-files",
+  "max_file_size_bytes": 26214400,
+  "max_files_per_block": 3,
+  "max_links_per_block": 5,
+  "notes": "Persistencia opcional para referencias, entregas, tareas con varios responsables y puntajes. Bucket privado; no modifica las 45 RPC productivas."
+}

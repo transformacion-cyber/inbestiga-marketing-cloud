@@ -1,0 +1,2 @@
+Este ZIP contiene una sola versión acumulativa v17.11 lista para Netlify.
+Los ZIP históricos anidados PLATAFORMA_BASE_ORIGINAL_*.zip se excluyen del paquete final para reducir tamaño y evitar mezclar bases. Los archivos de ejecución, configuración, SQL y documentación vigentes sí están incluidos.

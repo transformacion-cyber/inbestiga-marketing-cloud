@@ -1,0 +1,73 @@
+AUDITORIA DE CICLO DE VIDA — v17.5
+Fecha: 2026-07-13
+
+CRITERIO
+Se revisó cada modulo para determinar si crear, editar, archivar, eliminar y restaurar son operaciones pertinentes. “Falta” no significa que toda entidad deba ser editable: mensajes, logs y snapshots historicos requieren inmutabilidad.
+
+MATRIZ
+1. Proyectos/campañas
+- Antes: crear y consultar.
+- Hallazgo: sin editar, archivar, papelera ni restaurar.
+- v17.5: cobertura completa reversible.
+
+2. Tareas
+- Antes: crear y cambiar progreso/evidencia.
+- Hallazgo: sin editar datos estructurales ni retirar tareas obsoletas de la vista activa.
+- v17.5: editar datos permitidos + ciclo de vida reversible.
+
+3. Briefs
+- Antes: crear y consultar dentro de campaña.
+- Hallazgo: sin editar ni organizar versiones retiradas.
+- v17.5: editar + Activos/Archivados/Papelera dentro de la pestaña Brief.
+
+4. Editorial
+- Antes: crear y consultar.
+- Hallazgo: sin editar datos ni ciclo de vida.
+- v17.5: editar + ciclo de vida reversible.
+
+5. Archivos/entregables
+- Antes: subir, vincular, aprobar u observar.
+- Hallazgo: sin corregir metadatos ni retirar de la vista activa.
+- v17.5: editar metadatos + ciclo de vida. No elimina objetos de Storage.
+
+6. Plantillas
+- Antes: crear y consultar.
+- Hallazgo: sin editar, archivar ni restaurar.
+- v17.5: cobertura completa reversible para Direccion; Supervisión no edita plantillas estructurales.
+
+7. Incidencias
+- Antes: crear y consultar.
+- Hallazgo: sin editar asignacion/severidad/estado ni ciclo de vida.
+- v17.5: editar + ciclo de vida reversible.
+
+8. Reportes/snapshots
+- Antes: crear y consultar.
+- Decision: el contenido historico no debe editarse.
+- v17.5: inmutable; permite archivar/papelera/restaurar.
+
+9. Usuarios
+- Antes: crear/editar mediante upsert.
+- Decision: no se agrega borrado de Auth ni usuarios porque Auth/RLS son zonas protegidas.
+
+10. Publicaciones del muro
+- Antes: papelera y restauracion propias ya disponibles.
+- Decision: no duplicar controles.
+
+11. Horarios
+- Antes: editar y eliminar bloques propios.
+- Decision: no duplicar controles.
+
+12. Mensajes, comentarios, notificaciones, aprobaciones y logs
+- Decision: preservar como evidencia operativa; no agregar edicion destructiva.
+
+13. Clientes y áreas
+- Hallazgo: se consumen como datos maestros, pero no existe contrato RPC/RLS de CRUD en esta base.
+- Decision: no inventar operaciones backend sin autorizacion.
+
+14. Creative Arena
+- Zona protegida. Sin cambios.
+
+SEGURIDAD DE SUPERVISION
+- La interfaz y la RPC opcional limitan la edicion a registros del area, asignados al supervisor o vinculados a campañas/tareas de su alcance.
+- Se valida tambien que nuevas áreas, campañas, responsables y tareas relacionadas permanezcan dentro del alcance.
+- No se usa update directo como fallback cuando falta la RPC de edicion.
