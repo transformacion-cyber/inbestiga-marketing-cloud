@@ -465,7 +465,7 @@
     const c = findRecord("campaign", id); if (!c) return;
     const tasks = recordsFor("task", "active").filter((item) => sameId(item.campaign_id, id));
     const done = tasks.filter((item) => typeof window.v412TaskDone === "function" && window.v412TaskDone(item));
-    const late = tasks.filter((item) => item.due_date && typeof today === "function" && item.due_date < today() && !(typeof window.v412TaskDone === "function" && window.v412TaskDone(item)));
+    const late = tasks.filter((item) => typeof window.v412TaskOverdue === "function" ? window.v412TaskOverdue(item) : (item.due_date && typeof today === "function" && item.due_date < today() && !(typeof window.v412TaskDone === "function" && window.v412TaskDone(item))));
     const briefs = recordsFor("brief", "active").filter((item) => sameId(item.campaign_id, id));
     const editorial = recordsFor("editorial", "active").filter((item) => sameId(item.campaign_id, id));
     const assets = recordsFor("asset", "active").filter((item) => sameId(item.campaign_id, id));

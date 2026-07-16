@@ -1,0 +1,19 @@
+INBESTIGA MARKETING CLOUD — AUDITORÍA v17.12.9
+
+CAUSA REPRODUCIDA
+La lógica anterior marcaba como vencida toda tarea no completada con due_date anterior a hoy. Los estados en_revision y corregido no se consideraban completados, por lo que una entrega correcta seguía apareciendo como vencida.
+
+CORRECCIÓN
+- en_revision y corregido = esperando revisión, no vencida y no accionable para el ejecutor.
+- observado = vuelve a requerir acción/corrección; puede figurar vencida si la fecha pasó.
+- aprobado/publicado/completado/finalizado = cerrado.
+- Colas operativas: Mi trabajo, En riesgo y Para revisar dejan de duplicar entregas en revisión.
+
+VALIDACIONES
+- 23 JavaScript externos: sintaxis válida.
+- 14 scripts inline: sintaxis válida.
+- 650 IDs: sin duplicados.
+- 44 referencias locales: sin archivos faltantes.
+- JSON: válido.
+- SQL, Auth, RLS, RPC, Storage, Creative Arena, loadAll y bootstrap: sin cambios.
+- No requiere SQL adicional.

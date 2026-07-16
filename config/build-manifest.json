@@ -131,9 +131,9 @@
       "mode": "frontend-media-editor-observer-conflict-hotfix"
     },
     {
-      "name": "unified-visual-editor-v17-12-8",
-      "path": "assets/js/unified-visual-editor-v17-12-8.js",
-      "origin": "v17.12.8",
+      "name": "unified-visual-editor-v17-12-9",
+      "path": "assets/js/unified-visual-editor-v17-12-9.js",
+      "origin": "v17.12.9",
       "mode": "visual-only-unified-editor"
     }
   ],
@@ -157,7 +157,7 @@
     "assets/css/mobile-creative-navigation-v17-11-1.css",
     "assets/css/liquid-glass-visual-content-v17-12.css",
     "assets/css/real-crystal-media-editor-v17-12-4.css",
-    "assets/css/unified-visual-editor-v17-12-8.css"
+    "assets/css/unified-visual-editor-v17-12-9.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -421,5 +421,5 @@
     "scoped_mutation_observers_only": true
   },
   "base": "v17.12.5 schema-aware RPC task hotfix",
-  "hotfix": "v17.12.8 fixes the unified editor layout hidden by the global top-navigation aside rule; no SQL and no operational changes."
+  "hotfix": "v17.12.9 corrects task lifecycle classification: delivered tasks awaiting review are no longer shown as overdue or actionable; no SQL required."
 }

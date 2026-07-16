@@ -19,8 +19,8 @@
     const stale=campaigns.filter(campaignStale).sort((a,b)=>daysSince(b.updated_at||b.created_at)-daysSince(a.updated_at||a.created_at));
     const loads=memberLoads(tasks),overloaded=loads.filter(x=>x.count>=6),quality=dataQuality(tasks,campaigns);
     const todayKey=typeof today==="function"?today():"";
-    const late=scope.filter(t=>t.due_date&&t.due_date<todayKey);
-    const due=scope.filter(t=>t.due_date===todayKey);
+    const late=scope.filter(t=>typeof v412TaskOverdue==="function"?v412TaskOverdue(t,todayKey):(t.due_date&&t.due_date<todayKey));
+    const due=scope.filter(t=>typeof v412TaskDueToday==="function"?v412TaskDueToday(t,todayKey):t.due_date===todayKey);
     const unreadMessages=(state.messages||[]).filter(m=>sameId(m.recipient_id||m.receiver_id,member?.id)&&!m.read_at).length;
     const unreadNotifications=(state.notifications||[]).filter(n=>!n.read_at&&(!n.member_id||sameId(n.member_id,member?.id))).length;
     const execution=uniqueById([...(signals.observed||[]),...(signals.review||[]),...late,...due,...scope].filter(Boolean)).slice(0,4);

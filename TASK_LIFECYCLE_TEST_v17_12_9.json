@@ -1,0 +1,61 @@
+{
+  "version": "v17.12.9",
+  "passed": true,
+  "cases": [
+    {
+      "status": "pendiente",
+      "due_date": "2026-07-15",
+      "reference": "2026-07-16",
+      "expected": {
+        "overdue": true,
+        "awaiting_review": false,
+        "actionable": true,
+        "queue": "En riesgo"
+      }
+    },
+    {
+      "status": "en_revision",
+      "due_date": "2026-07-15",
+      "reference": "2026-07-16",
+      "expected": {
+        "overdue": false,
+        "awaiting_review": true,
+        "actionable": false,
+        "queue": "Para revisar"
+      }
+    },
+    {
+      "status": "corregido",
+      "due_date": "2026-07-15",
+      "reference": "2026-07-16",
+      "expected": {
+        "overdue": false,
+        "awaiting_review": true,
+        "actionable": false,
+        "queue": "Para revisar"
+      }
+    },
+    {
+      "status": "observado",
+      "due_date": "2026-07-15",
+      "reference": "2026-07-16",
+      "expected": {
+        "overdue": true,
+        "awaiting_review": false,
+        "actionable": true,
+        "queue": "En riesgo / corrección"
+      }
+    },
+    {
+      "status": "aprobado",
+      "due_date": "2026-07-15",
+      "reference": "2026-07-16",
+      "expected": {
+        "overdue": false,
+        "awaiting_review": false,
+        "actionable": false,
+        "queue": "Completado"
+      }
+    }
+  ]
+}

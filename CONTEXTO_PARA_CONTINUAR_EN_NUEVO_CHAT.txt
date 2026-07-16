@@ -1,7 +1,8 @@
 INBESTIGA MARKETING CLOUD — CONTEXTO DE CONTINUIDAD
-Versión base autorizada: v17.12.8
-Fecha: 15 de julio de 2026
+Versión base autorizada: v17.12.9
+Fecha: 16 de julio de 2026
 
-Trabajar únicamente sobre INBESTIGA_MARKETING_CLOUD_v17_12_8_EDITOR_LAYOUT_RESPONSIVE_HOTFIX.zip.
-La versión corrige la compresión visual de las pestañas Inicio y Muro del editor unificado causada por una regla global que ocultaba etiquetas <aside>.
-No requiere SQL. Mantener protegidos Auth, loadAll, renderAll, bootstrap, Creative Arena, RPC, RLS, tablas y Storage.
+Trabajar únicamente sobre INBESTIGA_MARKETING_CLOUD_v17_12_9_TASK_LIFECYCLE_FALSE_OVERDUE_HOTFIX.zip.
+No mezclar archivos ni código de versiones anteriores.
+
+Última corrección: una tarea entregada y en revisión ya no se clasifica como vencida ni como trabajo pendiente del ejecutor. No requiere SQL.

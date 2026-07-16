@@ -13,6 +13,7 @@
 .v1710-deadline-chip.soon{background:#f3efff;border-color:#d8c6ff;color:#6e2fb2}
 .v1710-deadline-chip.overdue{background:#fff0f0;border-color:#ffb6b6;color:#b42318}
 .v1710-deadline-chip.done{background:#edf9f2;border-color:#abe7c5;color:#067647}
+.v1710-deadline-chip.review{background:#eef4ff;border-color:#b9ccff;color:#3156a3}
 .v1710-deadline-chip.missing{background:#f8fafc;border-style:dashed;color:#64748b}
 .v1710-deadline-inline{margin-top:8px}
 .v1710-deadline-detail{margin:0 0 14px;padding:14px 16px;border-radius:18px;border:1px solid rgba(110,38,246,.16);background:linear-gradient(135deg,rgba(110,38,246,.07),rgba(255,255,255,.95));display:flex;justify-content:space-between;gap:14px;align-items:center;flex-wrap:wrap}

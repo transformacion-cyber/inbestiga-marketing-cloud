@@ -124,6 +124,10 @@
     try { if (typeof window.v412TaskDone === "function") return !!window.v412TaskDone(task); } catch (_) {}
     return ["aprobado", "publicado", "completado", "finalizado", "done", "hecho"].includes(lower(task?.status));
   }
+  function taskAwaitingReview(task) {
+    try { if (typeof window.v412TaskAwaitingReview === "function") return !!window.v412TaskAwaitingReview(task); } catch (_) {}
+    return ["en_revision", "corregido"].includes(lower(task?.status).replaceAll(" ", "_"));
+  }
 
   function localDateKey(date = new Date()) {
     const y = date.getFullYear();
@@ -148,7 +152,8 @@
     const diff = due.getTime() - now.getTime();
     const dateLabel = due.toLocaleDateString("es-PE", { day: "2-digit", month: "short", year: due.getFullYear() !== now.getFullYear() ? "numeric" : undefined });
     const timeLabel = /^\d{2}:\d{2}/.test(str(task.due_time)) ? ` · ${str(task.due_time).slice(0, 5)}` : "";
-    if (done) return { className: "done", label: `Deadline ${dateLabel}${timeLabel}`, detail: "Tarea entregada o aprobada.", due };
+    if (done) return { className: "done", label: `Deadline ${dateLabel}${timeLabel}`, detail: "Tarea aprobada o completada.", due };
+    if (taskAwaitingReview(task)) return { className: "review", label: "En revisión", detail: `Entrega enviada. Deadline original: ${dateLabel}${timeLabel}`, due };
     if (diff < 0) {
       const hours = Math.max(1, Math.ceil(Math.abs(diff) / 3600000));
       const relative = hours < 24 ? `${hours} h` : `${Math.ceil(hours / 24)} d`;

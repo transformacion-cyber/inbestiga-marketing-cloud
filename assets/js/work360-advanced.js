@@ -78,6 +78,16 @@
     return DONE.has(statusKey(task?.status));
   }
 
+  function isAwaitingReview(task) {
+    if (typeof v412TaskAwaitingReview === "function") return v412TaskAwaitingReview(task);
+    return ["en_revision", "corregido"].includes(statusKey(task?.status));
+  }
+
+  function isOverdue(task) {
+    if (typeof v412TaskOverdue === "function") return v412TaskOverdue(task, dateKey());
+    return !!(task?.due_date && task.due_date < dateKey() && !isDone(task) && !isAwaitingReview(task));
+  }
+
   function taskList() {
     try {
       return Array.isArray(state?.tasks) ? state.tasks : [];
@@ -373,7 +383,7 @@
       if (filters.assignee && !sameId(task.assigned_to, filters.assignee)) return false;
       if (filters.priority && String(task.priority || "").toLowerCase() !== String(filters.priority).toLowerCase()) return false;
       if (filters.scope === "mine" && !sameId(task.assigned_to, userId())) return false;
-      if (filters.scope === "late" && !(task.due_date && task.due_date < dateKey() && !isDone(task))) return false;
+      if (filters.scope === "late" && !isOverdue(task)) return false;
       if (filters.scope === "today" && task.due_date !== dateKey()) return false;
       if (filters.scope === "review" && !["en_revision", "observado", "corregido"].includes(statusKey(task.status))) return false;
       return true;
@@ -510,7 +520,7 @@
     if (!host) return;
     const open = tasks.filter((task) => !isDone(task));
     const blocked = open.filter((task) => isBlocked(task.id));
-    const overdue = open.filter((task) => task.due_date && task.due_date < dateKey());
+    const overdue = open.filter(isOverdue);
     const estimate = totalEstimate(open);
     const tracked = totalTracked(tasks);
     host.innerHTML = [
@@ -588,7 +598,7 @@
   }
 
   function taskTone(task) {
-    if (task.due_date && task.due_date < dateKey() && !isDone(task)) return "overdue";
+    if (isOverdue(task)) return "overdue";
     if (isBlocked(task.id)) return "blocked";
     return "";
   }

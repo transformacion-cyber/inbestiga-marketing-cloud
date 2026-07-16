@@ -73,6 +73,16 @@
     return DONE.has(statusKey(task?.status));
   }
 
+  function isAwaitingReview(task) {
+    try { if (typeof v412TaskAwaitingReview === "function") return v412TaskAwaitingReview(task); } catch { /* fallback */ }
+    return ["en_revision", "corregido"].includes(statusKey(task?.status));
+  }
+
+  function isOverdue(task) {
+    try { if (typeof v412TaskOverdue === "function") return v412TaskOverdue(task, peruToday()); } catch { /* fallback */ }
+    return !!task?.due_date && dateKey(task.due_date) < peruToday() && !isDone(task) && !isAwaitingReview(task);
+  }
+
   function lifecycleStateFor(entity, id) {
     try { return window.INBESTIGA_RECORD_LIFECYCLE?.state?.(entity, id) || "active"; } catch { return "active"; }
   }
@@ -423,7 +433,7 @@
     if (filters.priority && statusKey(task?.priority) !== statusKey(filters.priority)) return false;
 
     const done = isDone(task);
-    const overdue = !!task?.due_date && dateKey(task.due_date) < peruToday() && !done;
+    const overdue = isOverdue(task);
     const blocked = isBlocked(task);
     const status = filters.status;
     if (status === "open" && done) return false;
@@ -507,7 +517,7 @@
       createdAt: task?.created_at || "",
       updatedAt: task?.updated_at || "",
       done,
-      overdue: !!due && due < peruToday() && !done,
+      overdue: isOverdue(task),
       review: REVIEW.has(statusKey(task?.status))
     };
   }

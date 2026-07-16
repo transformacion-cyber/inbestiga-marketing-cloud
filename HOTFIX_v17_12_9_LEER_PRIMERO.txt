@@ -1,0 +1,11 @@
+INBESTIGA MARKETING CLOUD — v17.12.9
+TASK LIFECYCLE / FALSE OVERDUE HOTFIX
+
+- Las tareas en_revision o corregido ya no se marcan como vencidas.
+- Salen de Mi trabajo y En riesgo mientras esperan revisión.
+- Permanecen en Para revisar.
+- Las tareas observadas vuelven a ser accionables y pueden figurar vencidas si siguen fuera de fecha.
+- Columnas alineadas: Observada en ejecución/corrección; Corregida en revisión.
+- No requiere SQL.
+- No modifica Auth, RLS, RPC, Storage, tablas ni Creative Arena.
+- Caché PWA: inbestiga-v17-12-9-shell.

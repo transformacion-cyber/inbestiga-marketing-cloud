@@ -479,10 +479,9 @@
         const capacity = memberCapacity(row);
         const utilization = Math.round((hours / capacity) * 100);
         const late = tasks.filter(
-          (task) =>
-            task.due_date &&
-            typeof today === "function" &&
-            task.due_date < today(),
+          (task) => typeof v412TaskOverdue === "function"
+            ? v412TaskOverdue(task)
+            : (task.due_date && typeof today === "function" && task.due_date < today() && !isDone(task)),
         ).length;
         return { member: row, tasks, week, hours, capacity, utilization, late };
       })
