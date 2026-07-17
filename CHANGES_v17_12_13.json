@@ -1,0 +1,53 @@
+{
+  "base": "v17.12.12",
+  "version": "v17.12.13",
+  "new_files": [
+    ".gitignore",
+    ".vercelignore",
+    "ACTION_PERMISSION_TEST_v17_12_13.json",
+    "AUDITORIA_v17_12_13_SAKURA_NATIVE_PILOT.txt",
+    "BRIDGE_RUNTIME_TEST_v17_12_13.json",
+    "CHANGES_v17_12_13.json",
+    "FUNCTIONAL_TESTS_v17_12_13.json",
+    "HEALTH_COMPARISON_v17_12_13.json",
+    "LAZY_LOAD_TEST_v17_12_13.json",
+    "LEER_PRIMERO_v17_12_13.txt",
+    "PROTECTED_DIFF_v17_12_13.txt",
+    "RUNTIME_TEST_v17_12_13.json",
+    "SAKURA_LOCAL_BRIDGE/DESCARGAR_MODELOS_SAKURA.bat",
+    "SAKURA_LOCAL_BRIDGE/INICIAR_SAKURA_LOCAL.bat",
+    "SAKURA_LOCAL_BRIDGE/INSTALAR_SAKURA_LOCAL.bat",
+    "SAKURA_LOCAL_BRIDGE/README_SAKURA_LOCAL.txt",
+    "SAKURA_LOCAL_BRIDGE/SAKURA_DATA/acciones/.gitkeep",
+    "SAKURA_LOCAL_BRIDGE/SAKURA_DATA/conocimiento/.gitkeep",
+    "SAKURA_LOCAL_BRIDGE/SAKURA_DATA/conversaciones/.gitkeep",
+    "SAKURA_LOCAL_BRIDGE/SAKURA_DATA/correcciones/.gitkeep",
+    "SAKURA_LOCAL_BRIDGE/SAKURA_DATA/embeddings/.gitkeep",
+    "SAKURA_LOCAL_BRIDGE/SAKURA_DATA/personalidad/.gitkeep",
+    "SAKURA_LOCAL_BRIDGE/SAKURA_DATA/preferencias/.gitkeep",
+    "SAKURA_LOCAL_BRIDGE/SAKURA_DATA/respaldos/.gitkeep",
+    "SAKURA_LOCAL_BRIDGE/sakura_bridge.py",
+    "STATIC_VALIDATION_v17_12_13.json",
+    "assets/css/sakura-native-pilot-v17-12-13.css",
+    "assets/js/sakura-native-loader-v17-12-13.js",
+    "assets/js/sakura-native-pilot-v17-12-13.js",
+    "docs/GUIA_INSTALACION_SAKURA_LOCAL_v17_12_13.txt",
+    "docs/MANUAL_ESTUDIO_SAKURA_ADMIN_v17_12_13.txt",
+    "docs/MANUAL_SAKURA_MIEMBROS_v17_12_13.txt",
+    "sql/ROLLBACK_SAKURA_NATIVE_PILOT_v17_12_13.sql",
+    "sql/SAKURA_NATIVE_PILOT_v17_12_13.sql"
+  ],
+  "modified_files": [
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "removed_files": [],
+  "summary": {
+    "new": 34,
+    "modified": 5,
+    "removed": 0
+  }
+}

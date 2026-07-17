@@ -1,0 +1,5 @@
+SAKURA_LOCAL_BRIDGE/
+SAKURA_DATA/
+*.bat
+*.pyc
+__pycache__/

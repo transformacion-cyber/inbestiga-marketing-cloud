@@ -1,0 +1,74 @@
+{
+  "version": "v17.12.13",
+  "external_javascript": {
+    "total": 30,
+    "valid": 30,
+    "errors": []
+  },
+  "python": {
+    "total": 1,
+    "valid": 1,
+    "errors": []
+  },
+  "json": {
+    "total": 57,
+    "valid": 57,
+    "errors": []
+  },
+  "inline_javascript": {
+    "total": 14,
+    "valid": 14,
+    "errors": []
+  },
+  "html_ids": {
+    "total": 646,
+    "duplicates": []
+  },
+  "html_local_references": {
+    "checked": 50,
+    "missing": []
+  },
+  "service_worker": {
+    "cache_name": "inbestiga-v17-12-13-shell",
+    "resources": 59,
+    "missing": [],
+    "main_sakura_precached": false,
+    "sakura_css_precached": false,
+    "loader_precached": true
+  },
+  "css": {
+    "total": 23,
+    "balanced": 23,
+    "errors": []
+  },
+  "sakura_guards": {
+    "setInterval_count": 0,
+    "MutationObserver_count": 0,
+    "realtime_channel_count": 0,
+    "service_role_in_code": false,
+    "bridge_loopback_only": true,
+    "bridge_subprocess_usage": false,
+    "bridge_os_system_usage": false,
+    "vercel_excludes_bridge": true,
+    "vercel_excludes_bat": true
+  },
+  "private_runtime_files_in_package": [],
+  "version_alignment": {
+    "index_has_v17_12_13": true,
+    "runtime_config": true,
+    "build_manifest_version": "v17.12.13",
+    "build_manifest_frontend_version": "17.12.13",
+    "manifest_description_has_sakura": true,
+    "cache": true
+  },
+  "sql_optional": {
+    "begin_commit": true,
+    "only_sakura_create_tables": true,
+    "rls_enabled_count": 4,
+    "rollback_exists": true
+  },
+  "overall": {
+    "passed": true,
+    "failures": []
+  }
+}

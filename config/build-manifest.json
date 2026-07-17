@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.12.12",
-  "build": "OPERATIONAL COMMAND CENTER · MY DAY · APPROVALS · NOTIFICATIONS · SEARCH · CALENDAR · CAPACITY · FILES · RECOVERY",
+  "frontend_version": "17.12.13",
+  "build": "SAKURA NATIVE PILOT · CONTEXTUAL CHAT · LOCAL OLLAMA · SUPERVISED LEARNING · AUTHORIZED ACTIONS",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -153,6 +153,18 @@
       "path": "assets/js/operational-command-center-v17-12-12.js",
       "origin": "v17.12.12",
       "mode": "lazy-local-first-no-polling"
+    },
+    {
+      "name": "sakura-native-loader-v17-12-13",
+      "path": "assets/js/sakura-native-loader-v17-12-13.js",
+      "origin": "v17.12.13",
+      "mode": "lazy-launcher-no-polling"
+    },
+    {
+      "name": "sakura-native-pilot-v17-12-13",
+      "path": "assets/js/sakura-native-pilot-v17-12-13.js",
+      "origin": "v17.12.13",
+      "mode": "lazy-contextual-local-bridge-permission-gated"
     }
   ],
   "styles": [
@@ -177,7 +189,8 @@
     "assets/css/real-crystal-media-editor-v17-12-4.css",
     "assets/css/unified-visual-editor-v17-12-9.css",
     "assets/css/navigation-operational-ux-v17-12-10.css",
-    "assets/css/operational-command-center-v17-12-12.css"
+    "assets/css/operational-command-center-v17-12-12.css",
+    "assets/css/sakura-native-pilot-v17-12-13.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -198,13 +211,17 @@
     "optional_task_operations_sql": "SQL_OPCIONAL_v17_11.sql",
     "optional_task_operations_rpc_manifest": "config/rpc-manifest-v17_11-optional.json",
     "optional_visual_content_sql": "SQL_OPCIONAL_v17_12.sql",
-    "optional_visual_content_rpc_manifest": "config/rpc-manifest-v17_12-optional.json"
+    "optional_visual_content_rpc_manifest": "config/rpc-manifest-v17_12-optional.json",
+    "optional_sakura_sql": "sql/SAKURA_NATIVE_PILOT_v17_12_13.sql",
+    "optional_sakura_rollback": "sql/ROLLBACK_SAKURA_NATIVE_PILOT_v17_12_13.sql"
   },
   "constraints": {
     "creative_arena_untouched": true,
     "supabase_auth_untouched": true,
     "productive_tables_untouched": true,
-    "productive_rpc_untouched": true
+    "productive_rpc_untouched": true,
+    "sakura_models_excluded_from_web_build": true,
+    "sakura_local_bridge_excluded_from_vercel": true
   },
   "features": {
     "campaign_workspace": true,
@@ -463,8 +480,28 @@
     "supabase_degraded_read_only_banner": true,
     "no_new_realtime_channels_v171212": true,
     "no_polling_v171212": true,
-    "lazy_operational_modules_v171212": true
+    "lazy_operational_modules_v171212": true,
+    "sakura_native_pilot": true,
+    "sakura_lazy_loader": true,
+    "sakura_contextual_chat": true,
+    "sakura_local_bridge_loopback_only": true,
+    "sakura_ollama_optional": true,
+    "sakura_basic_offline_mode": true,
+    "sakura_permission_gated_actions": true,
+    "sakura_action_confirmation": true,
+    "sakura_action_idempotency_guard": true,
+    "sakura_local_vault": true,
+    "sakura_supervised_learning": true,
+    "sakura_personal_area_enterprise_scopes": true,
+    "sakura_reports_html_print_csv": true,
+    "sakura_friendly_device_voice": true,
+    "sakura_no_service_role": true,
+    "sakura_no_polling": true,
+    "sakura_no_realtime_channels": true,
+    "sakura_vercel_bridge_exclusion": true
   },
-  "base": "v17.12.11 managed Supabase access and PWA health",
-  "hotfix": "v17.12.12 adds a lazy operational command center using existing state and RPCs: simplified My Day, task timeline, approval inbox, notification drawer, debounced global search, calendar modes, capacity, file library, recovery center and degraded-connection UX. No SQL required."
+  "base": "v17.12.12 Operational Command Center Health Safe",
+  "hotfix": "v17.12.13 integrates SAKURA as a lazy native assistant with a loopback-only local bridge, Ollama chat, contextual reports, supervised local learning and permission-gated confirmed actions. The platform remains functional without the bridge or Ollama.",
+  "version": "v17.12.13",
+  "name": "SAKURA NATIVE PILOT"
 }

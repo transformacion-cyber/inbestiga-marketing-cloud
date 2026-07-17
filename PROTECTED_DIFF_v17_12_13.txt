@@ -1,0 +1,37 @@
+PROTECTED DIFF v17.12.13
+========================
+
+BASE: v17.12.12
+
+ZONAS PRODUCTIVAS NO REEMPLAZADAS
+- Supabase Auth y login administrado.
+- RLS, tablas y Storage productivos.
+- RPC productivas existentes.
+- loadAll, renderAll y bootstrap productivo.
+- Trabajo 360 y corrección de estados v17.12.9.
+- Flujo oficial de entrega y aprobación.
+- Campañas, Creative Arena, Muro y Mensajes.
+- Editor visual unificado.
+- Puntos, ranking y niveles.
+
+CAMBIOS CONTROLADOS
+- index.html: versión y un único loader diferido.
+- service-worker.js: nueva caché y precache únicamente del loader ligero.
+- config/public-runtime-config.js: banderas públicas de SAKURA y URL loopback.
+- config/build-manifest.json: versión, módulos y capacidades de SAKURA.
+- manifest.webmanifest: descripción.
+
+NUEVOS MÓDULOS
+- assets/js/sakura-native-loader-v17-12-13.js
+- assets/js/sakura-native-pilot-v17-12-13.js
+- assets/css/sakura-native-pilot-v17-12-13.css
+- SAKURA_LOCAL_BRIDGE/
+- SQL opcional sakura_* y rollback.
+
+NO SE AÑADIÓ
+- service_role.
+- Polling.
+- MutationObserver global.
+- Canal Realtime permanente.
+- Modelo de Ollama en el ZIP web o Service Worker.
+- Automatización de clics sobre el DOM para ejecutar acciones.

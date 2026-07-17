@@ -1,0 +1,22 @@
+{
+  "status": {
+    "ok": true,
+    "version": "0.6-native-pilot",
+    "ollama": false,
+    "paired": false,
+    "origin": "https://inbestiga-test.vercel.app"
+  },
+  "pair_ok": true,
+  "models_status": {
+    "error": "Ollama no está disponible.",
+    "detail": "[Errno 111] Connection refused"
+  },
+  "vault_add_list_delete": true,
+  "backup": {
+    "ok": true,
+    "file": "SAKURA_BACKUP_20260717_231156.zip",
+    "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85"
+  },
+  "listen_host": "127.0.0.1",
+  "origin_bound": "https://inbestiga-test.vercel.app"
+}

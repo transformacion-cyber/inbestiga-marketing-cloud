@@ -1,0 +1,54 @@
+INBESTIGA MARKETING CLOUD v17.12.13 — SAKURA NATIVE PILOT
+==========================================================
+
+BASE AUTORIZADA
+- Construida exclusivamente desde v17.12.12 Operational Command Center Health Safe.
+- El prototipo SAKURA v0.5 se utilizó solo como referencia funcional.
+- No se sustituyeron módulos productivos por archivos del prototipo.
+
+QUÉ INCLUYE
+- Interfaz nativa de SAKURA dentro de Marketing Cloud.
+- Carga diferida: el panel completo se carga solo al abrir SAKURA.
+- Chat contextual con datos ya autorizados y cargados.
+- Modo básico cuando Ollama o el conector local están apagados.
+- Conector local restringido a 127.0.0.1 y emparejamiento por código.
+- Ollama opcional con gemma3:4b y embeddinggemma.
+- Voz del dispositivo, memoria de conversación y correcciones supervisadas.
+- Entrenamiento personal local; conocimiento compartido opcional mediante SQL.
+- Acciones autorizadas con vista previa, confirmación y protección contra doble envío.
+- Reportes personales o de equipo en vista HTML, impresión/PDF y CSV.
+
+INSTALACIÓN WEB
+1. Copia todos los archivos en el repositorio de GitHub y reemplaza los anteriores.
+2. No borres la carpeta oculta .git.
+3. Commit sugerido: Actualización v17.12.13 — SAKURA Native Pilot.
+4. Push origin. Vercel desplegará la parte web.
+5. La carpeta SAKURA_LOCAL_BRIDGE y los .bat están excluidos por .vercelignore.
+
+INSTALACIÓN LOCAL POR COMPUTADORA
+1. Conserva la carpeta SAKURA_LOCAL_BRIDGE fuera del despliegue web.
+2. Ejecuta INSTALAR_SAKURA_LOCAL.bat una sola vez.
+3. Abre Ollama.
+4. Ejecuta DESCARGAR_MODELOS_SAKURA.bat si faltan los modelos.
+5. Ejecuta INICIAR_SAKURA_LOCAL.bat.
+6. En Marketing Cloud abre SAKURA > Ajustes.
+7. Pega el código de seis dígitos y pulsa Emparejar.
+
+SQL
+- NO es necesario para conversar, generar reportes, entrenar preferencias personales o ejecutar las acciones oficiales incluidas.
+- Solo es necesario si deseas compartir conocimientos de área o empresa y conservar auditoría compartida en Supabase.
+- El archivo es sql/SAKURA_NATIVE_PILOT_v17_12_13.sql.
+- No se ejecuta automáticamente. Revisa primero nombres de campos y roles en el proyecto productivo.
+- Rollback: sql/ROLLBACK_SAKURA_NATIVE_PILOT_v17_12_13.sql.
+
+SEGURIDAD
+- No contiene service_role, secret keys, contraseñas de base de datos ni JWT secret.
+- Ollama interpreta; Marketing Cloud valida permisos y ejecuta.
+- Toda escritura requiere confirmación.
+- El puente no acepta conexiones de red externa ni ejecuta comandos del sistema.
+- La bóveda local no se publica en Vercel ni debe subirse a GitHub.
+
+SALUD
+- Línea base informada: 96 puntos, 0 fallas y 1 advertencia.
+- La validación estática y aislada no detectó fallas nuevas.
+- La puntuación real debe verificarse después de desplegar en Vercel con la sesión productiva.

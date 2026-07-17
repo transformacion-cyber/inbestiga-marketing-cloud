@@ -1,0 +1,37 @@
+MANUAL PARA MIEMBROS — SAKURA v17.12.13
+========================================
+
+ABRIR SAKURA
+Pulsa el botón flotante SAKURA. La primera apertura carga su panel. Si el conector local no está encendido, funcionará en modo básico.
+
+CONSULTAS ÚTILES
+- Sakura, organiza mi día.
+- ¿Qué debo hacer primero?
+- Explícame esta tarea.
+- Convierte esta tarea en pasos.
+- Busca la tarea de la landing.
+- Resume la campaña Estado CEO.
+- Genera mi reporte de hoy.
+- Genera mi reporte semanal.
+
+ACCIONES
+Las acciones que cambian datos muestran una vista previa. Nada se ejecuta hasta pulsar Confirmar.
+Cada usuario conserva los mismos permisos que tiene fuera de SAKURA.
+
+ENTRENAMIENTO PERSONAL
+En Estudio puedes pegar conocimientos, conversaciones o procedimientos.
+Selecciona Solo para mí. El aprendizaje se guarda en la bóveda local si el conector está emparejado; de lo contrario se usa una memoria pequeña del navegador.
+También puedes corregir respuestas desde el chat.
+
+VOZ
+En Ajustes selecciona una voz española y un estilo. La voz está apagada por defecto.
+El micrófono solo se activa al pulsar el botón correspondiente; no escucha permanentemente.
+
+DOCUMENTOS
+En Documentos puedes crear reportes diarios o semanales.
+Los números se calculan con datos reales cargados por Marketing Cloud.
+Puedes imprimir/guardar como PDF o descargar CSV.
+
+PRIVACIDAD
+No pegues contraseñas, claves, datos financieros sensibles ni conversaciones privadas sin autorización.
+Revisa siempre el alcance antes de incorporar un aprendizaje.

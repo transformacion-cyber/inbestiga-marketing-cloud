@@ -1,35 +1,10 @@
-# Variables, credenciales y configuraciones locales
-.env
-.env.*
-!.env.example
-*.pem
-*.key
-*.p12
-*.pfx
+# SAKURA Local: memoria privada y archivos temporales
+SAKURA_LOCAL_BRIDGE/SAKURA_DATA/*
+!SAKURA_LOCAL_BRIDGE/SAKURA_DATA/**/
+!SAKURA_LOCAL_BRIDGE/SAKURA_DATA/**/.gitkeep
+SAKURA_LOCAL_BRIDGE/__pycache__/
+*.pyc
 
-# Paquetes y copias locales
-*.zip
-*.7z
-*.rar
-*.bak
-*.backup
-*.tmp
-*.log
-
-# Dependencias y compilaciones futuras
-node_modules/
-dist/
-build/
-.cache/
-
-# Editores y sistema operativo
-.vscode/
-.idea/
+# Archivos locales del sistema
 .DS_Store
 Thumbs.db
-desktop.ini
-
-# Datos locales de pruebas
-.local/
-tmp/
-temp/

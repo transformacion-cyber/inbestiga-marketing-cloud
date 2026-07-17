@@ -1,0 +1,35 @@
+MANUAL ADMINISTRATIVO — ESTUDIO DE SAKURA v17.12.13
+===================================================
+
+TIPOS DE APRENDIZAJE
+- Conocimiento: hechos, manuales y procedimientos.
+- Conversación humana: ejemplos de cómo dialogar.
+- Procedimiento: pasos operativos.
+- Estilo: tono, extensión y forma de responder.
+- Evitar: respuestas o comportamientos que no debe reproducir.
+
+ALCANCES
+- Personal: únicamente el miembro actual.
+- Área: disponible para el área cuando el SQL opcional esté instalado y el usuario tenga permiso.
+- Empresa: disponible para todos cuando el SQL opcional esté instalado y lo publique un director autorizado.
+
+APRENDIZAJE SUPERVISADO
+SAKURA no convierte un documento en una instrucción del sistema. El texto se trata como conocimiento no ejecutable.
+Los patrones detectados en tareas requieren al menos tres repeticiones y siempre deben aprobarse o descartarse.
+
+CONOCIMIENTO COMPARTIDO
+Sin SQL, los contenidos de área o empresa permanecen en la bóveda local del equipo donde se enseñaron.
+Con SQL, SAKURA intenta publicar en las tablas sakura_* aplicando RLS.
+El SQL debe revisarse y ejecutarse manualmente en Supabase.
+
+ACCIONES Y TRAZABILIDAD
+- El modelo solo devuelve una intención de un catálogo cerrado.
+- La plataforma comprueba permisos, datos y campos obligatorios.
+- El usuario revisa y confirma.
+- Se registra el actor real; SAKURA no figura como autora independiente.
+- La creación de tareas incorpora una marca de trazabilidad en la descripción.
+- Con SQL opcional, también se conserva auditoría sakura_action_audit.
+
+RESPALDOS
+En Estudio pulsa Crear respaldo. La bóveda conserva hasta ocho respaldos rotativos en SAKURA_DATA/respaldos.
+No publiques esa carpeta en GitHub ni Vercel.

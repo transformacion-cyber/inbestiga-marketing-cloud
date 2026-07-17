@@ -1,0 +1,35 @@
+{
+  "manager_calls": [
+    {
+      "name": "ibm_v30_create_task",
+      "args": {
+        "p_title": "Corregir la landing de Estado CEO",
+        "p_description": "Ajustar el encabezado principal y revisar el botón de registro.\n\n[Creada por Karen Cajahuaringa mediante SAKURA v17.12.13]",
+        "p_assigned_to": "u2",
+        "p_client_id": "cl1",
+        "p_area_id": "a1",
+        "p_campaign_id": "c1",
+        "p_due_date": "2026-07-24",
+        "p_due_time": null,
+        "p_priority": "media",
+        "p_impact": 3,
+        "p_checklist": []
+      }
+    }
+  ],
+  "success_message": "Tarea “Corregir la landing de Estado CEO” creada y asignada a Alejandro Angulo.",
+  "manager_rpc_count": 1,
+  "report_preview": [
+    "Reporte diario · Personal",
+    "",
+    "Se registran 1 tareas en el periodo. 0 están completadas, 0 vencidas, 0 esperan revisión y 0 requieren corrección. El cumplimiento observado es 0%.",
+    "",
+    "TAREAS",
+    "1",
+    "CUMPLIMIENTO",
+    "0%"
+  ],
+  "collab_action_cards": 0,
+  "collab_last": "Esa acción no está habilitada para tu perfil. Puedo ayudarte a preparar una alternativa dentro de tus permisos.",
+  "collab_calls": []
+}

@@ -1,0 +1,122 @@
+{
+  "version": "v17.12.13",
+  "base": "v17.12.12",
+  "lazy_load": {
+    "launcher_visible": true,
+    "main_before_click": false,
+    "main_after_click": true,
+    "panel_visible": true,
+    "errors": []
+  },
+  "isolated_runtime": {
+    "priority": "Empezaría por “Corregir landing Estado CEO”. Es la siguiente por fecha y prioridad. Después revisaría el resto de tu agenda.",
+    "search": "Encontré 1 tarea(s):",
+    "campaign": "La campaña “Estado CEO” está activa. Tiene 4 tarea(s): 4 abiertas, 0 vencidas y 0 en revisión. Objetivo: Lanzamiento",
+    "capacity": "Capacidad observada con los datos cargados:",
+    "action_card": {
+      "count": 1,
+      "title": "Corregir la landing de Estado CEO",
+      "assignee": "u2",
+      "campaign": "c1",
+      "due": "2026-07-24"
+    },
+    "proposals": 2,
+    "shared_fallback_visible": true,
+    "responsive": {
+      "390": {
+        "scrollWidth": 390,
+        "clientWidth": 390,
+        "panel": {
+          "x": 8,
+          "y": 8,
+          "width": 374,
+          "height": 884
+        }
+      },
+      "768": {
+        "scrollWidth": 768,
+        "clientWidth": 768,
+        "panel": {
+          "x": 282,
+          "y": 14,
+          "width": 472,
+          "height": 872
+        }
+      },
+      "1440": {
+        "scrollWidth": 1440,
+        "clientWidth": 1440,
+        "panel": {
+          "x": 954,
+          "y": 14,
+          "width": 472,
+          "height": 872
+        }
+      }
+    },
+    "page_errors": [],
+    "unexpected_console_errors": []
+  },
+  "actions_and_permissions": {
+    "manager_calls": [
+      {
+        "name": "ibm_v30_create_task",
+        "args": {
+          "p_title": "Corregir la landing de Estado CEO",
+          "p_description": "Ajustar el encabezado principal y revisar el botón de registro.\n\n[Creada por Karen Cajahuaringa mediante SAKURA v17.12.13]",
+          "p_assigned_to": "u2",
+          "p_client_id": "cl1",
+          "p_area_id": "a1",
+          "p_campaign_id": "c1",
+          "p_due_date": "2026-07-24",
+          "p_due_time": null,
+          "p_priority": "media",
+          "p_impact": 3,
+          "p_checklist": []
+        }
+      }
+    ],
+    "success_message": "Tarea “Corregir la landing de Estado CEO” creada y asignada a Alejandro Angulo.",
+    "manager_rpc_count": 1,
+    "report_preview": [
+      "Reporte diario · Personal",
+      "",
+      "Se registran 1 tareas en el periodo. 0 están completadas, 0 vencidas, 0 esperan revisión y 0 requieren corrección. El cumplimiento observado es 0%.",
+      "",
+      "TAREAS",
+      "1",
+      "CUMPLIMIENTO",
+      "0%"
+    ],
+    "collab_action_cards": 0,
+    "collab_last": "Esa acción no está habilitada para tu perfil. Puedo ayudarte a preparar una alternativa dentro de tus permisos.",
+    "collab_calls": []
+  },
+  "local_bridge": {
+    "status": {
+      "ok": true,
+      "version": "0.6-native-pilot",
+      "ollama": false,
+      "paired": false,
+      "origin": "https://inbestiga-test.vercel.app"
+    },
+    "pair_ok": true,
+    "models_status": {
+      "error": "Ollama no está disponible.",
+      "detail": "[Errno 111] Connection refused"
+    },
+    "vault_add_list_delete": true,
+    "backup": {
+      "ok": true,
+      "file": "SAKURA_BACKUP_20260717_231156.zip",
+      "sha256": "8739c76e681f900923b900c9df0ef75cf421d39cabb54650c4b9ad19b6a76d85"
+    },
+    "listen_host": "127.0.0.1",
+    "origin_bound": "https://inbestiga-test.vercel.app"
+  },
+  "limitations": [
+    "Ollama was not available in the container; /models correctly returned controlled 503 and fallback remained operational.",
+    "Supabase and Vercel were not contacted; productive RLS and live audit score require post-deployment verification.",
+    "Optional SQL was statically reviewed but not executed against the productive schema."
+  ]
+}

@@ -1,0 +1,32 @@
+GUÍA DE INSTALACIÓN LOCAL DE SAKURA
+====================================
+
+REQUISITOS
+- Windows 10 o superior.
+- Python 3.10 o superior.
+- Ollama instalado para conversación avanzada.
+- Espacio disponible para los modelos.
+
+PASOS
+1. Copia SAKURA_LOCAL_BRIDGE a una carpeta estable del equipo.
+2. Ejecuta INSTALAR_SAKURA_LOCAL.bat.
+3. Abre Ollama.
+4. Ejecuta DESCARGAR_MODELOS_SAKURA.bat.
+5. Ejecuta INICIAR_SAKURA_LOCAL.bat.
+6. Mantén la ventana negra abierta.
+7. Copia el código de emparejamiento.
+8. Abre Marketing Cloud > SAKURA > Ajustes.
+9. Pega el código y pulsa Emparejar.
+
+MODELOS SUGERIDOS
+- gemma3:4b: conversación.
+- embeddinggemma: comprensión semántica.
+
+SOLUCIÓN DE PROBLEMAS
+- “Cerebro básico”: abre Ollama y el puente local, luego pulsa Comprobar.
+- Código incorrecto: utiliza el código más reciente mostrado por la ventana local.
+- Modelo no aparece: ejecuta DESCARGAR_MODELOS_SAKURA.bat y vuelve a comprobar.
+- Equipo lento: cierra el modelo con Liberar modelo y utiliza modo básico.
+
+SEGURIDAD
+El servidor escucha únicamente en 127.0.0.1:8765. No abras ese puerto en el router ni cambies el host a 0.0.0.0.

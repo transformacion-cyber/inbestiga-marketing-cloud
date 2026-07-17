@@ -1,0 +1,39 @@
+AUDITORÍA v17.12.13 — SAKURA NATIVE PILOT
+==========================================
+
+ALCANCE
+Integración nativa y diferida de SAKURA sobre v17.12.12, con puente local loopback, Ollama opcional, aprendizaje supervisado, reportes y catálogo de acciones con permisos y confirmación.
+
+LÍNEA BASE INFORMADA
+- Salud: 96.
+- Fallas: 0.
+- Advertencias: 1.
+
+RESULTADOS AISLADOS
+- Loader: el módulo principal no existe antes del primer clic y se carga al abrir SAKURA.
+- Modo básico: prioridades, búsqueda, campaña, capacidad y reportes operaron sin Ollama.
+- Orden de tarea: se resolvieron responsable, campaña y fecha; se mostró vista previa.
+- Confirmación: una única llamada a ibm_v30_create_task.
+- Permisos: un colaborador sin permiso no pudo asignar a otra persona.
+- Responsive: sin desbordamiento horizontal a 390, 768 y 1440 px.
+- Puente local: status, emparejamiento, token, bóveda, eliminación y respaldo correctos.
+- Ollama apagado: error controlado y modo básico disponible.
+
+PROTECCIÓN DE SALUD
+- Carga del panel completo bajo demanda.
+- 0 setInterval en los módulos nuevos.
+- 0 MutationObserver en los módulos nuevos.
+- 0 canales Realtime añadidos por SAKURA.
+- El Service Worker solo precarga el loader ligero; no precarga el panel, el puente, modelos, bóveda ni embeddings.
+- La carpeta local está excluida por .vercelignore.
+- SAKURA puede desactivarse mediante banderas públicas sin afectar módulos productivos.
+
+LIMITACIONES DE CERTIFICACIÓN
+- No se probó el proyecto productivo de Supabase.
+- No se ejecutó el SQL opcional.
+- No se publicó en Vercel desde este entorno.
+- No había un modelo real de Ollama activo durante la prueba; el puente se verificó con Ollama ausente y su integración previa con simulador local.
+- La puntuación real de Auditoría Pro debe compararse después del despliegue.
+
+CONCLUSIÓN ESTÁTICA
+No se detectaron fallas nuevas atribuibles a SAKURA en las pruebas estáticas y aisladas. La versión puede pasar a una prueba controlada publicada, comenzando con administradores y conservando SAKURA_ACTIONS_ENABLED desactivable.

@@ -1,0 +1,49 @@
+{
+  "priority": "Empezaría por “Corregir landing Estado CEO”. Es la siguiente por fecha y prioridad. Después revisaría el resto de tu agenda.",
+  "search": "Encontré 1 tarea(s):",
+  "campaign": "La campaña “Estado CEO” está activa. Tiene 4 tarea(s): 4 abiertas, 0 vencidas y 0 en revisión. Objetivo: Lanzamiento",
+  "capacity": "Capacidad observada con los datos cargados:",
+  "action_card": {
+    "count": 1,
+    "title": "Corregir la landing de Estado CEO",
+    "assignee": "u2",
+    "campaign": "c1",
+    "due": "2026-07-24"
+  },
+  "proposals": 2,
+  "shared_fallback_visible": true,
+  "responsive": {
+    "390": {
+      "scrollWidth": 390,
+      "clientWidth": 390,
+      "panel": {
+        "x": 8,
+        "y": 8,
+        "width": 374,
+        "height": 884
+      }
+    },
+    "768": {
+      "scrollWidth": 768,
+      "clientWidth": 768,
+      "panel": {
+        "x": 282,
+        "y": 14,
+        "width": 472,
+        "height": 872
+      }
+    },
+    "1440": {
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "panel": {
+        "x": 954,
+        "y": 14,
+        "width": 472,
+        "height": 872
+      }
+    }
+  },
+  "page_errors": [],
+  "unexpected_console_errors": []
+}
