@@ -1,0 +1,37 @@
+{
+  "version": "v17.12.12",
+  "base": "v17.12.11",
+  "added": [
+    "AUDITORIA_v17_12_12_OPERATIONAL_COMMAND_CENTER.txt",
+    "FUNCTIONAL_TESTS_v17_12_12.json",
+    "HOTFIX_v17_12_12_LEER_PRIMERO.txt",
+    "PROTECTED_DIFF_v17_12_12.txt",
+    "STATIC_VALIDATION_v17_12_12.json",
+    "assets/css/operational-command-center-v17-12-12.css",
+    "assets/js/operational-command-center-v17-12-12.js"
+  ],
+  "modified": [
+    "CONTEXTO_PARA_CONTINUAR_EN_NUEVO_CHAT.txt",
+    "README_INSTALACION.txt",
+    "assets/js/audit-health-integration.js",
+    "assets/js/liquid-glass-visual-content-v17-12.js",
+    "assets/js/mobile-creative-navigation-v17-11-1.js",
+    "assets/js/navigation-operational-ux-v17-12-10.js",
+    "assets/js/production-certification.js",
+    "assets/js/real-crystal-media-editor-v17-12-4.js",
+    "assets/js/system-health-center.js",
+    "assets/js/task-operations-ranking-v17-11-2.js",
+    "assets/js/unified-visual-editor-v17-12-9.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "removed": [],
+  "summary": {
+    "added": 7,
+    "modified": 16,
+    "removed": 0
+  }
+}

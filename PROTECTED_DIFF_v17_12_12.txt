@@ -1,0 +1,38 @@
+PROTECTED DIFF v17.12.12
+Base: v17.12.11
+
+ARCHIVOS NUEVOS DE PRODUCTO
+- assets/css/operational-command-center-v17-12-12.css
+- assets/js/operational-command-center-v17-12-12.js
+
+INDEX.HTML
+- Versión visible v17.12.12.
+- X-Client-Info v17.12.12.
+- Inclusión del nuevo CSS y JS.
+- No se modificó la implementación de Auth, create/login, loadAll, renderAll, bootstrap, tareas, campañas, Muro o Creative Arena.
+
+ALINEACIÓN DE VERSIÓN, SIN CAMBIO LÓGICO
+- audit-health-integration.js
+- liquid-glass-visual-content-v17-12.js
+- mobile-creative-navigation-v17-11-1.js
+- navigation-operational-ux-v17-12-10.js
+- production-certification.js
+- real-crystal-media-editor-v17-12-4.js
+- system-health-center.js
+- task-operations-ranking-v17-11-2.js
+- unified-visual-editor-v17-12-9.js
+- config/public-runtime-config.js
+
+PWA Y METADATOS
+- service-worker.js: caché v17.12.12 y dos recursos nuevos.
+- manifest.webmanifest: descripción alineada.
+- config/build-manifest.json: versión, módulos y funciones de v17.12.12.
+
+NO MODIFICADO
+- SQL.
+- RLS.
+- Tablas.
+- Storage.
+- RPC productivas.
+- Creative Arena.
+- Código de loadAll/renderAll/bootstrap.

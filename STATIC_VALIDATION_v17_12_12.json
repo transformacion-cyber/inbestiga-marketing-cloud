@@ -1,0 +1,48 @@
+{
+  "external_js": {
+    "count": 25,
+    "valid": 25,
+    "invalid": []
+  },
+  "inline_js": {
+    "count": 14,
+    "valid": 14,
+    "invalid": []
+  },
+  "css": {
+    "count": 22,
+    "valid": 22,
+    "invalid": []
+  },
+  "json": {
+    "count": 48,
+    "valid": 48,
+    "invalid": []
+  },
+  "ids": {
+    "count": 646,
+    "unique": 646,
+    "duplicates": []
+  },
+  "local_references": {
+    "count": 49,
+    "unique": 49,
+    "missing": []
+  },
+  "service_worker": {
+    "cache_v171212": true,
+    "references": 57,
+    "missing": []
+  },
+  "new_module_safety": {
+    "setInterval": 0,
+    "mutationObserver": 0,
+    "realtime_channel": 0,
+    "localStorage": 0,
+    "sessionStorage": 0,
+    "aside_elements": 0
+  },
+  "vercel_json_exists": true,
+  "manifest_exists": true,
+  "ok": true
+}

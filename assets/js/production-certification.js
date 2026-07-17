@@ -1,10 +1,10 @@
-/* ===== v17.12.11 PRODUCTION CERTIFICATION ===== */
+/* ===== v17.12.12 PRODUCTION CERTIFICATION ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_PRODUCTION_CERTIFICATION) return;
 
-  const VERSION = "v17.12.11";
+  const VERSION = "v17.12.12";
   const BUILD = "PRODUCTION CERTIFICATION · TASK OPERATIONS & RANKING";
   const STORE_KEY = "inbestiga:v161:production-certification";
   const REQUIRED_SECTIONS = [

@@ -1,0 +1,79 @@
+{
+  "version": "v17.12.12",
+  "date": "2026-07-17",
+  "base": "v17.12.11",
+  "runtime_method": "Chromium headless with full DOM and classic scripts injected into about:blank; Supabase/network replaced by deterministic non-destructive stubs because the validation environment blocks all browsed HTTP/HTTPS sites by organization policy.",
+  "runtime": {
+    "document_title": "INBESTIGA Marketing Cloud · v17.12.12 CENTRO OPERATIVO",
+    "visible_build": "v17.12.12",
+    "module_loaded": true,
+    "module_health": {
+      "status": "ok",
+      "value": "Centro operativo v17.12.12",
+      "detail": "Módulos locales bajo demanda, sin polling ni canales Realtime adicionales."
+    },
+    "runtime_exceptions": 0,
+    "console_errors": 0,
+    "connection_banner_instances": 1,
+    "notification_drawer_tag": "SECTION",
+    "calendar_agenda_tag": "SECTION"
+  },
+  "scenarios": {
+    "my_day_mutually_exclusive": {
+      "passed": true,
+      "rendered_tasks": 4,
+      "in_review_only": ["Tarea revisión"],
+      "correction_only": ["Tarea observada"],
+      "description": "Una tarea en_revision no apareció como vencida o accionable y una tarea observada apareció únicamente como corrección."
+    },
+    "notifications": {
+      "passed": true,
+      "rendered": 1,
+      "bell_present": true,
+      "drawer_present": true
+    },
+    "approvals": {
+      "passed": true,
+      "rendered": 2,
+      "double_click_guard": true,
+      "mandatory_correction_comment_reused": true
+    },
+    "calendar": {
+      "passed": true,
+      "month_week_agenda_shell": true,
+      "no_initial_extra_query": true
+    },
+    "team_capacity": {
+      "passed": true,
+      "member_cards": 2,
+      "calculation": "local aggregate"
+    },
+    "central_file_library": {
+      "passed": true,
+      "lazy_thumbnails": true,
+      "base64_storage_added": false
+    },
+    "recovery": {
+      "passed": true,
+      "reversible_restore": true,
+      "permanent_purge": false,
+      "reason": "No safe productive purge RPC exists in the authorized base; permanent deletion remains disabled to preserve recovery and health."
+    }
+  },
+  "safety": {
+    "new_setInterval": 0,
+    "new_mutation_observers": 0,
+    "new_realtime_channels": 0,
+    "new_local_storage_usage": 0,
+    "new_session_storage_usage": 0,
+    "new_aside_elements": 0,
+    "sql_required": false
+  },
+  "production_validation_pending": [
+    "Supabase session and live RPC behavior",
+    "RLS permissions by real role",
+    "Storage downloads with real files",
+    "Vercel deployment and PWA replacement",
+    "Auditoría Pro score in the published environment"
+  ]
+}

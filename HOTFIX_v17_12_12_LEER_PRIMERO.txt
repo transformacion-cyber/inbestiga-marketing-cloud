@@ -1,0 +1,30 @@
+INBESTIGA MARKETING CLOUD v17.12.12
+CENTRO OPERATIVO · SALUD PROTEGIDA
+Fecha: 17 de julio de 2026
+
+Esta versión es acumulativa y parte únicamente de v17.12.11.
+
+NOVEDADES
+- Mi día con categorías excluyentes y una siguiente acción recomendada.
+- Historial visual de tarea usando eventos ya existentes.
+- Bandeja de aprobaciones con evidencia, horas, correcciones y calificación 1–10.
+- Campana de notificaciones, contador, agrupación y lectura.
+- Búsqueda global local con debounce de 360 ms.
+- Calendario mensual, semanal y agenda usando solo el rango visible.
+- Capacidad del equipo calculada de forma agregada.
+- Biblioteca central de archivos sin duplicar archivos ni Base64.
+- Papelera con recuperación reversible.
+- Alerta de conexión degradada y reintento manual.
+
+PROTECCIÓN
+- Sin polling nuevo.
+- Sin canales Realtime nuevos.
+- Sin MutationObserver global.
+- Sin localStorage/sessionStorage en el nuevo módulo.
+- Sin SQL adicional.
+- Sin modificación de Auth, RLS, tablas, Storage, RPC, loadAll, renderAll, bootstrap o Creative Arena.
+
+SALUD
+- Línea base productiva informada: 96, 0 fallas, 1 advertencia.
+- Validación estática v17.12.12: sin scripts inválidos, referencias faltantes, IDs duplicados ni errores del runtime aislado.
+- La puntuación real debe comprobarse nuevamente en Vercel con sesión productiva.

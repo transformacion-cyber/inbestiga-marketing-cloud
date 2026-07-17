@@ -1,38 +1,37 @@
-INBESTIGA MARKETING CLOUD v17.12.11
-ACCESO AUTOMÁTICO A SUPABASE + SALUD PWA
+INBESTIGA MARKETING CLOUD v17.12.12
+CENTRO OPERATIVO · SALUD PROTEGIDA
 
-BASE AUTORIZADA
-v17.12.10 MINIMAL NAVIGATION + FLEXIBLE DELIVERY.
-Este paquete es acumulativo: publicar o subir únicamente v17.12.11.
+BASE ÚNICA
+- Construida exclusivamente desde v17.12.11.
+- No mezclar con archivos de versiones anteriores.
+- No requiere ejecutar SQL adicional.
 
-ACTUALIZACIÓN MEDIANTE GITHUB + VERCEL
-1. Descomprimir el ZIP v17.12.11.
-2. En GitHub Desktop abrir Repository → Show in Explorer.
-3. Copiar todo el contenido descomprimido dentro del repositorio y reemplazar los archivos existentes.
-4. No borrar la carpeta oculta .git.
-5. En GitHub Desktop crear un único commit:
-   Actualización v17.12.11 — Acceso automático y salud PWA
-6. Pulsar Push origin.
-7. Esperar el despliegue automático de Vercel conectado a la rama main.
-8. Abrir el enlace publicado en incógnito o recargar con Ctrl + Shift + R.
-9. Confirmar v17.12.11 y caché inbestiga-v17-12-11-shell.
+ACTUALIZACIÓN MEDIANTE GITHUB DESKTOP
+1. Descomprime este ZIP.
+2. Abre GitHub Desktop y el repositorio inbestiga-marketing-cloud.
+3. Pulsa Repository > Show in Explorer.
+4. Copia TODO el contenido descomprimido dentro de la carpeta del repositorio.
+5. Reemplaza los archivos existentes.
+6. No borres la carpeta oculta .git.
+7. Regresa a GitHub Desktop.
+8. Escribe el commit:
+   Actualización v17.12.12 — Centro operativo y salud protegida
+9. Pulsa Commit to main.
+10. Pulsa Push origin.
+11. Espera el despliegue automático de Vercel.
+
+COMPROBACIÓN DESPUÉS DEL DESPLIEGUE
+- Abre el enlace de Vercel en incógnito.
+- Confirma v17.12.12 y caché inbestiga-v17-12-12-shell.
+- Inicia sesión con un miembro y revisa Mi día.
+- Inicia sesión con un jefe y revisa Aprobaciones y Capacidad.
+- Ejecuta Auditoría Pro y compara con la línea base: 96 de salud, 0 fallas, 1 advertencia externa o de validación pendiente.
+- No declarar 100 ni certificación real hasta probar con la sesión productiva.
 
 SQL
-- No ejecutar SQL adicional.
-- No volver a ejecutar SQL anteriores ya instalados.
+- No ejecutar SQL para esta versión.
+- La versión reutiliza tareas, approval_history, live_events, notifications, assets y controles de ciclo de vida ya existentes.
 
-PRUEBA RECOMENDADA
-1. Abrir el enlace de Vercel en una ventana de incógnito.
-2. Confirmar que el login muestra solo correo, contraseña e Ingresar.
-3. Iniciar sesión con una cuenta real.
-4. Entrar a Ajustes → Conexión del sistema y pulsar Comprobar conexión.
-5. Abrir Auditoría Pro y pulsar Comprobar salud.
-6. Confirmar que PWA muestra Shell v17.12.11 activa tras una recarga.
-7. Si existe una advertencia, confirmar que ahora se muestra su nombre concreto.
-8. Verificar una tarea y una entrega para confirmar que la lógica operativa permanece intacta.
-
-PROTECCIONES
-- No se modifican RLS, tablas, Storage, RPC productivas, loadAll, renderAll, bootstrap productivo ni Creative Arena.
-- La conexión utiliza únicamente configuración pública de cliente.
-- Nunca usar service_role ni secret keys en el frontend.
-- No afirmar certificación real de Supabase o Vercel hasta completar la prueba publicada.
+NOTA SOBRE PAPELERA
+- La restauración reversible está disponible.
+- La eliminación definitiva permanece deliberadamente deshabilitada porque la base actual no expone una operación de purga segura y reversible. Esto protege los datos y evita cambios destructivos en RLS/tablas.

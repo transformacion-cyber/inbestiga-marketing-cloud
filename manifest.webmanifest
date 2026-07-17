@@ -1,7 +1,7 @@
 {
   "name": "INBESTIGA Marketing Cloud",
   "short_name": "INBESTIGA",
-  "description": "Plataforma editorial, creativa y operativa Liquid Glass para equipos de marketing.",
+  "description": "Plataforma operativa Liquid Glass para tareas, aprobaciones, campañas, creatividad y colaboración de equipos de marketing.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",

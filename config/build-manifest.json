@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.12.11",
-  "build": "MANAGED SUPABASE ACCESS · CLEAN LOGIN · PWA HEALTH ALIGNMENT",
+  "frontend_version": "17.12.12",
+  "build": "OPERATIONAL COMMAND CENTER · MY DAY · APPROVALS · NOTIFICATIONS · SEARCH · CALENDAR · CAPACITY · FILES · RECOVERY",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -147,6 +147,12 @@
       "path": "assets/js/navigation-operational-ux-v17-12-10.js",
       "origin": "v17.12.10",
       "mode": "navigation-visual-only"
+    },
+    {
+      "name": "operational-command-center-v17-12-12",
+      "path": "assets/js/operational-command-center-v17-12-12.js",
+      "origin": "v17.12.12",
+      "mode": "lazy-local-first-no-polling"
     }
   ],
   "styles": [
@@ -170,7 +176,8 @@
     "assets/css/liquid-glass-visual-content-v17-12.css",
     "assets/css/real-crystal-media-editor-v17-12-4.css",
     "assets/css/unified-visual-editor-v17-12-9.css",
-    "assets/css/navigation-operational-ux-v17-12-10.css"
+    "assets/css/navigation-operational-ux-v17-12-10.css",
+    "assets/css/operational-command-center-v17-12-12.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -437,8 +444,27 @@
     "login_url_hidden": true,
     "friendly_network_auth_errors": true,
     "pwa_service_worker_update_v171211": true,
-    "audit_first_warning_label": true
+    "audit_first_warning_label": true,
+    "my_day_exclusive_action_groups": true,
+    "next_action_recommendation_local_data": true,
+    "task_history_enhanced_timeline": true,
+    "unified_approval_inbox": true,
+    "approval_score_integration_v1711": true,
+    "notification_bell_and_deduplication": true,
+    "notification_focus_refresh_without_polling": true,
+    "global_search_debounce_360ms": true,
+    "global_search_grouped_results": true,
+    "calendar_month_week_agenda": true,
+    "calendar_visible_range_only": true,
+    "calendar_confirmed_deadline_drag": true,
+    "team_capacity_aggregate_local": true,
+    "central_file_library_filters": true,
+    "central_recovery_center": true,
+    "supabase_degraded_read_only_banner": true,
+    "no_new_realtime_channels_v171212": true,
+    "no_polling_v171212": true,
+    "lazy_operational_modules_v171212": true
   },
-  "base": "v17.12.10 minimal navigation and flexible delivery",
-  "hotfix": "v17.12.11 configures the public Supabase connection automatically, removes technical credentials from login, adds a protected connection check, aligns Service Worker/cache health, and identifies the first active warning; no SQL required."
+  "base": "v17.12.11 managed Supabase access and PWA health",
+  "hotfix": "v17.12.12 adds a lazy operational command center using existing state and RPCs: simplified My Day, task timeline, approval inbox, notification drawer, debounced global search, calendar modes, capacity, file library, recovery center and degraded-connection UX. No SQL required."
 }

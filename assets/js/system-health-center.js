@@ -1,10 +1,10 @@
-/* ===== v17.12.11 SYSTEM HEALTH CENTER ===== */
+/* ===== v17.12.12 SYSTEM HEALTH CENTER ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = "v17.12.11";
+  const VERSION = "v17.12.12";
   const BUILD = "TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING · SYSTEM HEALTH";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";

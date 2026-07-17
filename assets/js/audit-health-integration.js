@@ -1,10 +1,10 @@
-/* ===== v17.12.11 AUDIT HEALTH INTEGRATION ===== */
+/* ===== v17.12.12 AUDIT HEALTH INTEGRATION ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_AUDIT_HEALTH) return;
 
-  const VERSION = "v17.12.11";
+  const VERSION = "v17.12.12";
   const BUILD = "AUDIT HEALTH · MANAGED ACCESS & PWA ALIGNMENT";
   const MOUNT_ID = "v172AuditHealthMount";
   const STALE_MS = 10 * 60 * 1000;

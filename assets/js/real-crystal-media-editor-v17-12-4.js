@@ -1,10 +1,10 @@
-/* INBESTIGA v17.12.11 · Real Crystal Media Editor · Observer Conflict + Boot Stability Hotfix */
+/* INBESTIGA v17.12.12 · Real Crystal Media Editor · Observer Conflict + Boot Stability Hotfix */
 (() => {
   "use strict";
   if (window.__INBESTIGA_V17124_MEDIA_EDITOR__) return;
   window.__INBESTIGA_V17124_MEDIA_EDITOR__ = true;
 
-  const VERSION = "v17.12.11";
+  const VERSION = "v17.12.12";
   const FALLBACK_LIBRARY = [
     ["Aurora líquida", "assets/media/liquid-glass/aurora-fluid.webp"],
     ["Cristal futuro", "assets/media/liquid-glass/crystal-future.webp"],

@@ -1,7 +1,7 @@
-/* ===== INBESTIGA v17.12.11 · MINIMAL NAVIGATION + CONTEXTUAL ACTIONS ===== */
+/* ===== INBESTIGA v17.12.12 · MINIMAL NAVIGATION + CONTEXTUAL ACTIONS ===== */
 (() => {
   "use strict";
-  const VERSION="v17.12.11";
+  const VERSION="v17.12.12";
   let initialized=false;
   const routeMeta={
     home:["⌂","Inicio","Resumen, prioridades y accesos rápidos."],myday:["✓","Mi día","Tu siguiente acción y entregas pendientes."],search:["⌕","Buscador","Encuentra tareas, campañas, archivos y personas."],notifications:["◉","Notificaciones","Alertas y cambios que requieren atención."],schedulePro:["◷","Horario Pro","Disponibilidad y planificación semanal."],

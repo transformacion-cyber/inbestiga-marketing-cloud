@@ -1,0 +1,46 @@
+AUDITORÍA TÉCNICA v17.12.12
+Fecha: 17 de julio de 2026
+Base comparada: v17.12.11
+
+LÍNEA BASE PUBLICADA INFORMADA POR EL USUARIO
+- Salud: 96
+- Fallas: 0
+- Advertencias: 1
+- Errores de navegador: 0
+- Renders fallidos: 0
+
+VALIDACIÓN ESTÁTICA v17.12.12
+- JavaScript externo enlazado: 25/25 válido.
+- JavaScript inline: 14/14 válido.
+- CSS enlazado: 22/22 estructuralmente válido.
+- JSON existente antes de este reporte: 45/45 válido.
+- IDs HTML: 646, sin duplicados.
+- Referencias locales HTML: 49, ninguna faltante.
+- Service Worker: inbestiga-v17-12-12-shell; 57 recursos, ninguno faltante.
+- ZIP: pendiente de comprobación final al empaquetar.
+
+PRUEBA DE RUNTIME AISLADA EN CHROMIUM
+- Página completa y scripts inyectados en about:blank debido a una política del navegador de validación que bloquea todos los sitios HTTP/HTTPS.
+- Módulo v17.12.12 cargado correctamente.
+- Build visible: v17.12.12.
+- Errores y excepciones: 0.
+- Mi día: categorías exclusivas comprobadas.
+- Tarea en_revision: solo en revisión, no como vencida.
+- Tarea observado: solo en corrección.
+- Notificaciones, aprobaciones, calendario, capacidad, campana y recuperación: render sin excepción.
+- Desplegable de notificaciones y agenda usan SECTION, no ASIDE, para evitar la regla global que ocultaba paneles.
+
+PRESUPUESTO DE RENDIMIENTO DEL NUEVO MÓDULO
+- setInterval: 0.
+- MutationObserver: 0.
+- canales Realtime: 0.
+- localStorage/sessionStorage: 0.
+- Consultas por tecla: 0; búsqueda local con debounce de 360 ms.
+- Cálculo de capacidad: datos cargados, sin N+1.
+- Imágenes de biblioteca: loading=lazy.
+
+COMPARACIÓN DE SALUD
+- No se detectaron fallas nuevas en validación estática o runtime aislado.
+- No se manipularon contadores ni se ocultaron advertencias.
+- La puntuación real de Auditoría Pro depende de Supabase, sesión, RPC y entorno publicado; debe verificarse después del despliegue.
+- Criterio de aceptación productivo: 0 fallas nuevas y advertencias no superiores a la línea base por causas de esta versión.

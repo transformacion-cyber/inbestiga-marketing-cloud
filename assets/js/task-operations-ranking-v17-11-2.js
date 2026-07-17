@@ -1,10 +1,10 @@
-/* ===== INBESTIGA v17.11.2 · TASK OPERATIONS · FOCUS REFRESH HOTFIX (v17.12.11) ===== */
+/* ===== INBESTIGA v17.11.2 · TASK OPERATIONS · FOCUS REFRESH HOTFIX (v17.12.12) ===== */
 (() => {
   "use strict";
 
   if (window.INBESTIGA_V1711) return;
 
-  const VERSION = "v17.12.11";
+  const VERSION = "v17.12.12";
   const BUILD = "TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING";
   const MANAGER_ROLES = new Set(["italo", "jhulio", "alejandro", "director", "admin", "administrator", "supervisor"]);
   const DIRECTOR_ROLES = new Set(["italo", "director", "admin", "administrator"]);
