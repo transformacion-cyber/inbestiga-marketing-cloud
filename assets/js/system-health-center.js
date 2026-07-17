@@ -1,10 +1,10 @@
-/* ===== v17.12.10 SYSTEM HEALTH CENTER ===== */
+/* ===== v17.12.11 SYSTEM HEALTH CENTER ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = "v17.12.10";
+  const VERSION = "v17.12.11";
   const BUILD = "TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING · SYSTEM HEALTH";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";
@@ -284,9 +284,9 @@
       let cacheName = "";
       try {
         const names = typeof caches !== "undefined" ? await caches.keys() : [];
-        cacheName = names.find((name) => name.includes("inbestiga-v17-12-10")) || names.find((name) => name.includes("inbestiga")) || "";
+        cacheName = names.find((name) => name.includes("inbestiga-v17-12-11")) || names.find((name) => name.includes("inbestiga")) || "";
       } catch { /* CacheStorage puede estar restringido */ }
-      const expectedCache = cacheName.includes("inbestiga-v17-12-10");
+      const expectedCache = cacheName.includes("inbestiga-v17-12-11");
       const ready = !!registration && manifest && expectedCache;
       return check(
         "pwa", "services", "PWA", ready ? "ok" : "warn",

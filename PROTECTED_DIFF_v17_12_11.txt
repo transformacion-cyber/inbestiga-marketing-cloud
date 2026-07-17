@@ -1,0 +1,37 @@
+PROTECTED DIFF v17.12.11
+
+BASE EXCLUSIVA
+- v17.12.10 MINIMAL NAVIGATION + FLEXIBLE DELIVERY.
+
+ARCHIVOS MODIFICADOS
+- index.html: login limpio, conexión administrada, mensajes de red y ajustes sin credenciales.
+- service-worker.js: caché v17.12.11 y configuración pública en shell.
+- config/build-manifest.json: versión y capacidades nuevas.
+- assets/js/productivity-realtime-core.js: actualización explícita y sin caché del Service Worker.
+- assets/js/system-health-center.js: versión y caché PWA alineadas.
+- assets/js/audit-health-integration.js: muestra el nombre de la primera advertencia activa.
+- assets/js/navigation-operational-ux-v17-12-10.js: solo alineación visible de versión a v17.12.11.
+- assets/js/unified-visual-editor-v17-12-9.js: solo alineación visible de versión a v17.12.11.
+- assets/js/liquid-glass-visual-content-v17-12.js: solo alineación visible de versión a v17.12.11.
+- assets/js/mobile-creative-navigation-v17-11-1.js: solo alineación visible de versión a v17.12.11.
+- assets/js/real-crystal-media-editor-v17-12-4.js: solo alineación visible de versión a v17.12.11.
+- assets/js/task-operations-ranking-v17-11-2.js: solo alineación visible de versión a v17.12.11.
+- assets/js/collaborative-workspace-v17-9-2.js: solo alineación del encabezado de integración.
+- assets/js/production-certification.js: alineación de versión de la certificación a v17.12.11.
+- CONTEXTO_PARA_CONTINUAR_EN_NUEVO_CHAT.txt y README_INSTALACION.txt: continuidad e instalación.
+
+ARCHIVOS NUEVOS
+- config/public-runtime-config.js
+- vercel.json
+- HOTFIX_v17_12_11_LEER_PRIMERO.txt
+- AUDITORIA_v17_12_11_MANAGED_ACCESS_PWA.txt
+- FUNCTIONAL_TESTS_v17_12_11.json
+- PROTECTED_DIFF_v17_12_11.txt
+- SHA256SUMS_v17_12_11.txt
+
+SIN CAMBIOS OPERATIVOS
+- SQL y manifiestos RPC productivos.
+- RLS, tablas, Storage y Edge Functions.
+- Creative Arena.
+- Lógica de tareas, entregas, campañas, Muro y editor visual.
+- loadAll, renderAll y bootstrap productivo.

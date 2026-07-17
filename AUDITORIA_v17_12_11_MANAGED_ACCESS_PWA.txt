@@ -1,0 +1,7 @@
+AUDITORÍA v17.12.11
+
+Base exclusiva: v17.12.10.
+Cambios: configuración pública administrada, login limpio, comprobación manual de conexión, mensajes amigables y PWA v17.12.11.
+Sin cambios: Auth, RLS, tablas, Storage, RPC, loadAll, renderAll, bootstrap productivo, Creative Arena, tareas, campañas, Muro y editor visual.
+SQL: no requerido.
+Validación productiva final: requiere publicación real en Vercel y sesión real.

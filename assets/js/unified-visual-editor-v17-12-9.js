@@ -1,10 +1,10 @@
-/* ===== INBESTIGA v17.12.10 · UNIFIED VISUAL EDITOR · RESPONSIVE LAYOUT HOTFIX ===== */
+/* ===== INBESTIGA v17.12.11 · UNIFIED VISUAL EDITOR · RESPONSIVE LAYOUT HOTFIX ===== */
 (() => {
   "use strict";
   if (window.__INBESTIGA_UNIFIED_VISUAL_EDITOR_V17128__) return;
   window.__INBESTIGA_UNIFIED_VISUAL_EDITOR_V17128__ = true;
 
-  const VERSION = "v17.12.10";
+  const VERSION = "v17.12.11";
   const LOCAL_KEY = "inbestiga:v17127:unified-editor";
   const MAX_HISTORY = 24;
   const MAX_AUDIT = 80;

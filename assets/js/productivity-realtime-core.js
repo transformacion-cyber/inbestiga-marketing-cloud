@@ -960,9 +960,10 @@
   function registerServiceWorker() {
     if (!("serviceWorker" in navigator) || location.protocol === "file:") return;
     navigator.serviceWorker
-      .register("service-worker.js")
+      .register("service-worker.js?v=17.12.11", { updateViaCache: "none" })
+      .then((registration) => registration.update().catch(() => null))
       .catch((error) =>
-        console.info("[v16] service worker opcional", error?.message || error),
+        console.info("[v17.12.11] service worker opcional", error?.message || error),
       );
   }
 

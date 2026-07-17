@@ -1,11 +1,11 @@
-/* ===== v17.11.1 AUDIT HEALTH INTEGRATION ===== */
+/* ===== v17.12.11 AUDIT HEALTH INTEGRATION ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_AUDIT_HEALTH) return;
 
-  const VERSION = "v17.11.1";
-  const BUILD = "AUDIT HEALTH · TASK OPERATIONS & RANKING";
+  const VERSION = "v17.12.11";
+  const BUILD = "AUDIT HEALTH · MANAGED ACCESS & PWA ALIGNMENT";
   const MOUNT_ID = "v172AuditHealthMount";
   const STALE_MS = 10 * 60 * 1000;
   const ESSENTIAL_CHECKS = [
@@ -108,6 +108,7 @@
   function dashboardHtml(currentReport) {
     const overall = currentReport?.overall || { status: "info", title: "Aún no comprobado", score: 0, message: "Ejecuta la primera lectura de salud." };
     const counts = issueCounts(currentReport);
+    const firstWarning = (currentReport?.checks || []).find((item) => item?.status === "warn");
     const rpc = currentReport?.rpc || {};
     const rpcValue = rpc.verified ? `${rpc.available_count ?? 0}/${rpc.required_count || 45}` : "Pendiente";
     const lastCheck = formatDate(currentReport?.generated_at);
@@ -129,7 +130,7 @@
       <div class="v172-health-metrics">
         <article><span>RPC publicadas</span><strong>${esc(rpcValue)}</strong><small>${rpc.verified ? "Presencia OpenAPI" : "No certificadas"}</small></article>
         <article><span>Fallas</span><strong>${esc(counts.fail)}</strong><small>${counts.fail ? "Requieren atención" : "Sin fallas detectadas"}</small></article>
-        <article><span>Advertencias</span><strong>${esc(counts.warn)}</strong><small>${counts.warn ? "Validación pendiente" : "Sin advertencias"}</small></article>
+        <article><span>Advertencias</span><strong>${esc(counts.warn)}</strong><small>${counts.warn ? esc(firstWarning?.label || "Validación pendiente") : "Sin advertencias"}</small></article>
       </div>
       <div class="v172-services">${ESSENTIAL_CHECKS.map(([id, label]) => serviceHtml(currentReport, id, label)).join("")}</div>
       <div class="v172-health-footnote"><strong>Alcance:</strong> esta lectura confirma disponibilidad técnica de forma no destructiva; no certifica RLS de escritura, persistencia entre cuentas ni operaciones reales de Storage.</div>

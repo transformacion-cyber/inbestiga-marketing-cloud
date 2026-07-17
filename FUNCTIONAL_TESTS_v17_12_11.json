@@ -1,0 +1,43 @@
+{
+  "external_js": {
+    "count": 27,
+    "valid": true,
+    "errors": []
+  },
+  "inline_js": {
+    "count": 14,
+    "valid": true,
+    "errors": []
+  },
+  "html_ids": {
+    "count": 646,
+    "duplicates": [],
+    "valid": true
+  },
+  "local_references": {
+    "count": 104,
+    "missing": [],
+    "valid": true
+  },
+  "json": {
+    "count": 45,
+    "valid": true,
+    "errors": []
+  },
+  "css": {
+    "count": 21,
+    "valid": true,
+    "errors": []
+  },
+  "managed_config": {
+    "url_ref": "vbdtdihxmapezhkfmugi",
+    "jwt_ref": "vbdtdihxmapezhkfmugi",
+    "jwt_role": "anon",
+    "valid": true
+  },
+  "clean_login": {
+    "forbidden_found": [],
+    "valid": true
+  },
+  "summary_valid": true
+}

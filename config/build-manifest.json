@@ -1,9 +1,15 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.12.10",
-  "build": "MINIMAL NAVIGATION · FLEXIBLE DELIVERY · CONTEXTUAL ACTIONS",
+  "frontend_version": "17.12.11",
+  "build": "MANAGED SUPABASE ACCESS · CLEAN LOGIN · PWA HEALTH ALIGNMENT",
   "entrypoint": "index.html",
   "modules": [
+    {
+      "name": "managed-public-runtime-config",
+      "path": "config/public-runtime-config.js",
+      "origin": "v17.12.11",
+      "mode": "public-client-config"
+    },
     {
       "name": "home-editorial-core",
       "path": "assets/js/home-editorial-core.js",
@@ -425,8 +431,14 @@
     "visual_json_export_import": true,
     "single_netlify_deploy_v17127": true,
     "no_additional_sql_v17127": true,
-    "scoped_mutation_observers_only": true
+    "scoped_mutation_observers_only": true,
+    "managed_public_supabase_runtime_config": true,
+    "login_without_connection_fields": true,
+    "login_url_hidden": true,
+    "friendly_network_auth_errors": true,
+    "pwa_service_worker_update_v171211": true,
+    "audit_first_warning_label": true
   },
-  "base": "v17.12.9 task lifecycle false-overdue hotfix",
-  "hotfix": "v17.12.10 adds flexible one-step task delivery, optional evidence rules, minimal capsule navigation, floating contextual primary actions, responsive dropdowns, and removes continuous polling from collaboration/operations modules; no SQL required."
+  "base": "v17.12.10 minimal navigation and flexible delivery",
+  "hotfix": "v17.12.11 configures the public Supabase connection automatically, removes technical credentials from login, adds a protected connection check, aligns Service Worker/cache health, and identifies the first active warning; no SQL required."
 }

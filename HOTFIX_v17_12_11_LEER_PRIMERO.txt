@@ -1,0 +1,25 @@
+INBESTIGA MARKETING CLOUD v17.12.11
+
+OBJETIVO
+- Acceso directo mediante correo y contraseña.
+- La URL y la clave pública de Supabase se cargan automáticamente.
+- Ya no se muestran ni solicitan códigos técnicos en el login.
+- La pantalla de ajustes no permite borrar accidentalmente la conexión.
+- La caché PWA queda alineada en v17.12.11.
+- Auditoría Pro identifica el nombre de la primera advertencia activa.
+
+SEGURIDAD
+- Se usa exclusivamente la clave pública anon del frontend.
+- No contiene service_role, secret key, contraseña de base de datos ni JWT secret.
+- RLS sigue siendo la barrera de autorización del backend.
+
+INSTALACIÓN
+- Reemplazar los archivos del repositorio GitHub.
+- Commit y Push origin.
+- Vercel desplegará la nueva versión.
+- No ejecutar SQL.
+
+SALUD 96
+- La puntuación observada correspondía a una advertencia de validación, no a una falla.
+- El panel anterior seguía mostrando un shell v17.12.8, señal de una caché PWA antigua.
+- v17.12.11 fuerza la comprobación del Service Worker y alinea el shell nuevo.
