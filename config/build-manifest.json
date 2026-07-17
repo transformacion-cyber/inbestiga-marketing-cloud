@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.12.7",
-  "build": "UNIFIED VISUAL EDITOR · SINGLE DEPLOY",
+  "frontend_version": "17.12.10",
+  "build": "MINIMAL NAVIGATION · FLEXIBLE DELIVERY · CONTEXTUAL ACTIONS",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -95,10 +95,10 @@
       "mode": "productive-optional-sync"
     },
     {
-      "name": "collaborative-workspace-v17-9-1",
-      "path": "assets/js/collaborative-workspace-v17-9-1.js",
-      "origin": "v17.12.5",
-      "mode": "productive-optional-sync"
+      "name": "collaborative-workspace-v17-9-2",
+      "path": "assets/js/collaborative-workspace-v17-9-2.js",
+      "origin": "v17.12.10",
+      "mode": "productive-flexible-delivery"
     },
     {
       "name": "deadlines-member-governance-v17-10",
@@ -107,10 +107,10 @@
       "mode": "productive-optional-member-governance"
     },
     {
-      "name": "task-operations-ranking-v17-11-1",
-      "path": "assets/js/task-operations-ranking-v17-11-1.js",
-      "origin": "v17.12.5",
-      "mode": "productive-optional-sync"
+      "name": "task-operations-ranking-v17-11-2",
+      "path": "assets/js/task-operations-ranking-v17-11-2.js",
+      "origin": "v17.12.10",
+      "mode": "productive-focus-refresh"
     },
     {
       "name": "mobile-creative-navigation-v17-11-1",
@@ -135,6 +135,12 @@
       "path": "assets/js/unified-visual-editor-v17-12-9.js",
       "origin": "v17.12.9",
       "mode": "visual-only-unified-editor"
+    },
+    {
+      "name": "navigation-operational-ux-v17-12-10",
+      "path": "assets/js/navigation-operational-ux-v17-12-10.js",
+      "origin": "v17.12.10",
+      "mode": "navigation-visual-only"
     }
   ],
   "styles": [
@@ -157,7 +163,8 @@
     "assets/css/mobile-creative-navigation-v17-11-1.css",
     "assets/css/liquid-glass-visual-content-v17-12.css",
     "assets/css/real-crystal-media-editor-v17-12-4.css",
-    "assets/css/unified-visual-editor-v17-12-9.css"
+    "assets/css/unified-visual-editor-v17-12-9.css",
+    "assets/css/navigation-operational-ux-v17-12-10.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -420,6 +427,6 @@
     "no_additional_sql_v17127": true,
     "scoped_mutation_observers_only": true
   },
-  "base": "v17.12.5 schema-aware RPC task hotfix",
-  "hotfix": "v17.12.9 corrects task lifecycle classification: delivered tasks awaiting review are no longer shown as overdue or actionable; no SQL required."
+  "base": "v17.12.9 task lifecycle false-overdue hotfix",
+  "hotfix": "v17.12.10 adds flexible one-step task delivery, optional evidence rules, minimal capsule navigation, floating contextual primary actions, responsive dropdowns, and removes continuous polling from collaboration/operations modules; no SQL required."
 }

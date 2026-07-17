@@ -1,0 +1,44 @@
+INBESTIGA MARKETING CLOUD — AUDITORÍA v17.12.10
+
+BASE
+- Base única: v17.12.9 TASK LIFECYCLE FALSE OVERDUE HOTFIX.
+- Cambios acumulativos y aditivos.
+
+VALIDACIÓN ESTÁTICA
+- 25 JavaScript externos y Service Worker: sintaxis válida.
+- 14 scripts inline: sintaxis válida.
+- 650 IDs HTML: sin duplicados.
+- 43 archivos JSON: válidos.
+- 55 referencias locales de index.html y Service Worker: sin archivos faltantes.
+- Service Worker alineado con inbestiga-v17-12-10-shell.
+- 21 hojas CSS: estructura analizada sin errores de parseo.
+- ZIP validado después del empaquetado.
+
+PRUEBAS FUNCIONALES AISLADAS EN CHROMIUM
+- Navegación: botón + Crear insertado correctamente.
+- Menú desplegable: opciones decoradas con icono y descripción.
+- Contaminación de estilos: los botones del menú no reciben estilos operativos secundarios.
+- Acción principal de Inicio: detectada y destacada.
+- Radio visual comprobado: navegación y + Crear con 17 px en el arnés de prueba.
+- Acceso rápido “Nueva tarea”: invoca la acción correcta.
+- Modal de entrega: “Confirmar entrega” recibe jerarquía principal morada/azul.
+- Revisión: “Aprobar tarea” recibe jerarquía principal flotante y color verde.
+- Entrega con comentario y sin archivo: aceptada.
+- Regla “Sin evidencia obligatoria”: acepta entrega sin archivo, enlace ni comentario.
+- Regla “Cualquier evidencia”: bloquea una entrega completamente vacía.
+- Regla “Archivo o captura obligatoria”: bloquea si no existe archivo/captura.
+- Regla “Enlace obligatorio”: bloquea sin enlace y acepta un enlace HTTPS válido.
+- Estado en revisión: bloquea una segunda entrega.
+- Estado observado: muestra “Corregir entrega”.
+- Estado en revisión: oculta/deshabilita “Entregar tarea” y muestra la confirmación de espera.
+- Revisión: botones renombrados a “Aprobar tarea” y “Solicitar corrección”.
+
+PROTECCIONES
+- Sin setInterval nuevo en los tres módulos modificados.
+- Sin MutationObserver nuevo en los tres módulos modificados.
+- Sin SQL nuevo.
+- Sin cambios en loadAll, renderAll, bootstrap, login, Auth, RLS, tablas, Storage o Creative Arena.
+
+LÍMITE DE LA VALIDACIÓN
+- No se certificó una sesión real de Supabase ni un despliegue real de Vercel desde este entorno.
+- La prueba final debe realizarse en el enlace publicado con un usuario ejecutor y un responsable revisor.

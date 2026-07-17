@@ -1,10 +1,10 @@
-/* ===== v17.12.9 PRODUCTION CERTIFICATION ===== */
+/* ===== v17.12.10 PRODUCTION CERTIFICATION ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_PRODUCTION_CERTIFICATION) return;
 
-  const VERSION = "v17.12.9";
+  const VERSION = "v17.12.10";
   const BUILD = "PRODUCTION CERTIFICATION · TASK OPERATIONS & RANKING";
   const STORE_KEY = "inbestiga:v161:production-certification";
   const REQUIRED_SECTIONS = [
@@ -46,7 +46,7 @@
       ["c-login", "Ingresar como Colaborador", "El Home muestra sus tareas y prioridades personales.", "home"],
       ["c-scope", "Comprobar alcance de tareas", "No puede editar tareas ajenas ni ver información restringida.", "tasks"],
       ["c-progress", "Actualizar progreso", "El nuevo estado persiste después de sincronizar.", "tasks"],
-      ["c-deliver", "Entregar enlace o archivo", "La evidencia queda vinculada a la tarea correcta.", "tasks"],
+      ["c-deliver", "Entregar tarea", "La evidencia queda vinculada a la tarea correcta.", "tasks"],
       ["c-observation", "Corregir una observación", "La tarea vuelve a revisión conservando el historial.", "tasks"],
       ["c-message", "Enviar y recibir mensajes", "El destinatario recibe la conversación y la notificación.", "messages"],
       ["c-arena", "Abrir la pizarra asignada", "Puede trabajar solo en la pizarra correspondiente y guardar avances.", "creativeRoomsClean"],

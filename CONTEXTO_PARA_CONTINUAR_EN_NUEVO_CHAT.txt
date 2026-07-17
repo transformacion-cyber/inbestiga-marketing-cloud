@@ -1,8 +1,41 @@
 INBESTIGA MARKETING CLOUD — CONTEXTO DE CONTINUIDAD
-Versión base autorizada: v17.12.9
+Versión base autorizada: v17.12.10
 Fecha: 16 de julio de 2026
 
-Trabajar únicamente sobre INBESTIGA_MARKETING_CLOUD_v17_12_9_TASK_LIFECYCLE_FALSE_OVERDUE_HOTFIX.zip.
-No mezclar archivos ni código de versiones anteriores.
+ARCHIVO BASE
+- Trabajar únicamente sobre:
+  INBESTIGA_MARKETING_CLOUD_v17_12_10_MINIMAL_NAV_FLEXIBLE_DELIVERY.zip
+- No mezclar archivos ni código de versiones anteriores.
 
-Última corrección: una tarea entregada y en revisión ya no se clasifica como vencida ni como trabajo pendiente del ejecutor. No requiere SQL.
+CAMBIOS PRINCIPALES
+- Entrega unificada mediante “Entregar tarea”.
+- Archivo opcional por defecto.
+- Reglas de evidencia configurables por el jefe: ninguna, cualquiera, archivo/captura o enlace.
+- Resumen y confirmación antes de enviar.
+- Entregas en revisión bloqueadas y sin falso vencimiento.
+- Tareas observadas muestran “Corregir entrega”.
+- Actualizar progreso queda separado del proceso de entrega.
+- Menú superior minimalista tipo Apple con cápsulas Liquid Glass.
+- Menús desplegables flotantes con iconos y descripciones.
+- Acceso rápido + Crear.
+- Botones principales contextuales y ligeramente flotantes.
+- Polling continuo retirado de colaboración y Operación 360+.
+
+SQL
+- No requiere SQL adicional.
+- No volver a ejecutar SQL anteriores.
+
+ZONAS PROTEGIDAS
+- Supabase Auth y login.
+- loadAll, renderAll y bootstrap.
+- RPC, RLS, tablas y Storage productivos.
+- Creative Arena y sus pizarras.
+- Editor visual unificado.
+- Nunca colocar service_role en el frontend.
+
+PWA
+- Caché: inbestiga-v17-12-10-shell.
+
+VALIDACIÓN
+- La validación estática y las pruebas funcionales aisladas están documentadas en AUDITORIA_v17_12_10_MINIMAL_NAV_FLEXIBLE_DELIVERY.txt.
+- No afirmar certificación real de Supabase o Vercel sin prueba en el entorno publicado.

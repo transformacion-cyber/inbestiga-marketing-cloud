@@ -1,35 +1,36 @@
-INBESTIGA MARKETING CLOUD v17.11
-TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING
+INBESTIGA MARKETING CLOUD v17.12.10
+MINIMAL NAVIGATION + FLEXIBLE DELIVERY
 
 BASE AUTORIZADA
-v17.10.2 AUDIT HEALTH WIDGET PERSISTENCE HOTFIX.
-Este paquete es acumulativo: para Netlify se publica únicamente v17.11.
+v17.12.9 TASK LIFECYCLE FALSE OVERDUE HOTFIX.
+Este paquete es acumulativo: publicar o subir únicamente v17.12.10.
 
-DESPLIEGUE FRONTEND
-1. Subir el ZIP completo v17.11 al mismo proyecto de Netlify.
-2. Esperar el estado Publicado.
-3. Cerrar todas las pestañas anteriores y recargar con Ctrl + Shift + R.
-4. Confirmar INBESTIGA v17.11 y Shell v17.11 activa.
-5. Comprobar Salud del sistema antes de instalar el backend opcional.
+ACTUALIZACIÓN MEDIANTE GITHUB + VERCEL
+1. Descomprimir el ZIP v17.12.10.
+2. En GitHub Desktop abrir Repository → Show in Explorer.
+3. Copiar todo el contenido descomprimido dentro del repositorio y reemplazar los archivos existentes.
+4. No borrar la carpeta oculta .git.
+5. En GitHub Desktop crear un único commit:
+   Actualización v17.12.10 — Entrega flexible y navegación minimalista
+6. Pulsar Push origin.
+7. Esperar el despliegue automático de Vercel conectado a la rama main.
+8. Abrir el enlace publicado en incógnito o recargar con Ctrl + Shift + R.
+9. Confirmar v17.12.10 y caché inbestiga-v17-12-10-shell.
 
-BACKEND OPCIONAL
-6. SQL_OPCIONAL_v17_9.sql debe estar instalado si se usan ejecutores múltiples, referencias y entregas.
-7. SQL_OPCIONAL_v17_10.sql debe permanecer instalado para deadlines y gobierno de miembros.
-8. Ejecutar SQL_OPCIONAL_v17_11.sql completo una sola vez en Supabase SQL Editor.
-9. No ejecutar fragmentos, no agregar GRANT manuales y nunca usar service_role en el frontend.
-10. Esperar 20–30 segundos, cerrar las pestañas y volver a cargar.
+SQL
+- No ejecutar SQL adicional.
+- No volver a ejecutar SQL anteriores ya instalados.
 
 PRUEBA RECOMENDADA
-11. Crear una tarea de certificación con dos ejecutores y un responsable final diferente.
-12. Definir horas estimadas, dependencia y recurrencia.
-13. Aceptar la tarea con un ejecutor y registrar su estimación manual.
-14. Entregar con archivos y horas reales manuales.
-15. Calificar 1–10 desde Jhulio/Alejandro y comprobar puntos/rango.
-16. Exportar el reporte del día y del mes a CSV, Excel y PDF.
-17. Crear/renombrar/archivar/restaurar un cliente y editar una campaña de prueba.
+1. Crear una tarea con “Cualquier tipo de evidencia”.
+2. Entregar únicamente con comentario y confirmar que pasa a En revisión.
+3. Confirmar que deja de aparecer como vencida y que no permite una segunda entrega.
+4. Solicitar corrección desde el responsable y comprobar “Corregir entrega”.
+5. Volver a entregar y aprobar.
+6. Crear tareas de prueba con requisito de archivo y requisito de enlace para comprobar las validaciones.
+7. Revisar menú superior, desplegables y + Crear en escritorio y móvil.
 
-IMPORTANTE
-- El temporizador no es obligatorio para las horas reales.
-- Las tareas anteriores siguen funcionando; los campos nuevos aparecerán como “sin información registrada”.
-- La sincronización, RLS, Realtime, recurrencias y puntajes deben certificarse con Supabase real después de ejecutar el SQL.
-- Creative Arena, Auth, las 45 RPC productivas, loadAll, renderAll y bootstrap no se modifican.
+PROTECCIONES
+- No se modifican Auth, RLS, tablas, Storage, RPC productivas, loadAll, renderAll, bootstrap ni Creative Arena.
+- Nunca usar service_role en el frontend.
+- No afirmar certificación real de Supabase o Vercel hasta completar la prueba publicada.

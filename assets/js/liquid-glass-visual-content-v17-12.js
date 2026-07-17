@@ -1,10 +1,10 @@
-/* ===== INBESTIGA v17.12.9 · LIQUID GLASS VISUAL CONTENT BUILDER · UNIFIED EDITOR BRIDGE ===== */
+/* ===== INBESTIGA v17.12.10 · LIQUID GLASS VISUAL CONTENT BUILDER · UNIFIED EDITOR BRIDGE ===== */
 (() => {
   "use strict";
   if (window.__INBESTIGA_V1712_VISUAL_CONTENT__) return;
   window.__INBESTIGA_V1712_VISUAL_CONTENT__ = true;
 
-  const VERSION = "v17.12.9";
+  const VERSION = "v17.12.10";
   const LOCAL_KEY = "inbestiga:v1712:visual-content";
   const LOCAL_MODE_KEY = "inbestiga:v1712:glass-mode";
   const MANAGER_ROLES = new Set(["italo","jhulio","alejandro","admin","director","owner","ceo","gerente","supervisor","marketing_lead"]);

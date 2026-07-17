@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-inbestiga-build="v17.12.9">
+<html lang="es" data-inbestiga-build="v17.12.10">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-<title>INBESTIGA Marketing Cloud · v17.12.9 TASK LIFECYCLE HOTFIX</title>
+<title>INBESTIGA Marketing Cloud · v17.12.10 MINIMAL NAV + FLEXIBLE DELIVERY</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>if(!window.supabase){document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>')}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -3619,6 +3619,7 @@ body.v12-palette-open{overflow:hidden}
 <link rel="stylesheet" href="assets/css/liquid-glass-visual-content-v17-12.css" data-inbestiga-module="liquid-glass-visual-content-v17-12">
 <link rel="stylesheet" href="assets/css/real-crystal-media-editor-v17-12-4.css" data-inbestiga-module="real-crystal-media-editor-v17-12-4">
 <link rel="stylesheet" href="assets/css/unified-visual-editor-v17-12-9.css" data-inbestiga-module="unified-visual-editor-v17-12-9">
+<link rel="stylesheet" href="assets/css/navigation-operational-ux-v17-12-10.css" data-inbestiga-module="navigation-operational-ux-v17-12-10">
 </head>
 <body>
 
@@ -9586,7 +9587,7 @@ function v11RenderRoleBrief(){const s=v11OperationalSignals(),root=$("home"),bri
 homeOpenRoleCommand=function(){const role=v11RoleExperience();navTo(role==="director"?"control":role==="supervisor"?"approvals":"myday")};
 
 homeQuickTaskAction=function(id,action){if(action==="open")return homeOpenTask(id);if(action==="progress"&&typeof v66OpenProgressModal==="function")return v66OpenProgressModal(id);if(action==="deliver"&&typeof v66OpenDeliveryModal==="function")return v66OpenDeliveryModal(id);return homeOpenTask(id)};
-homeTaskListItem=function(t,index){const late=v412TaskOverdue(t),client=nameOf(state.clients,t.client_id)||"Sin cliente",meta=`${client} · ${memberName(t.assigned_to)} · ${homeShortDate(t.due_date)}`,own=v66SameId(t.assigned_to,member.id),status=late?"Vencida":v66StatusLabel(t.status||"Pendiente");return`<article class="mz-task-row v11-task-row"><span class="mz-task-index">${String(index+1).padStart(2,"0")}</span><span class="mz-task-copy"><strong>${esc(t.title||"Tarea")}</strong><span>${esc(meta)}</span></span><div class="v11-task-actions"><span class="mz-task-status ${late?"late":""}">${esc(status)}</span><button type="button" onclick="homeQuickTaskAction('${esc(t.id)}','open')">Abrir</button>${own&&v412TaskNeedsAction(t)?`<button type="button" onclick="homeQuickTaskAction('${esc(t.id)}','progress')">Progreso</button><button type="button" class="primary" onclick="homeQuickTaskAction('${esc(t.id)}','deliver')">Entregar</button>`:""}</div></article>`};
+homeTaskListItem=function(t,index){const late=v412TaskOverdue(t),client=nameOf(state.clients,t.client_id)||"Sin cliente",meta=`${client} · ${memberName(t.assigned_to)} · ${homeShortDate(t.due_date)}`,own=v66SameId(t.assigned_to,member.id),status=late?"Vencida":v66StatusLabel(t.status||"Pendiente");return`<article class="mz-task-row v11-task-row"><span class="mz-task-index">${String(index+1).padStart(2,"0")}</span><span class="mz-task-copy"><strong>${esc(t.title||"Tarea")}</strong><span>${esc(meta)}</span></span><div class="v11-task-actions"><span class="mz-task-status ${late?"late":""}">${esc(status)}</span><button type="button" onclick="homeQuickTaskAction('${esc(t.id)}','open')">Abrir</button>${own&&v412TaskNeedsAction(t)?`<button type="button" onclick="homeQuickTaskAction('${esc(t.id)}','progress')">Progreso</button><button type="button" class="primary" onclick="homeQuickTaskAction('${esc(t.id)}','deliver')">Entregar tarea</button>`:""}</div></article>`};
 
 function v11EnhanceCampaignCards(){const data=typeof v10CampaignData==="function"?v10CampaignData():[];document.querySelectorAll("#homeCampaignGrid .mz-campaign-card").forEach((card,index)=>{if(card.querySelector(".v11-campaign-actions"))return;const item=data[index];if(!item)return;const existing=card.querySelector(".mz-card-open");existing?.remove();const actions=document.createElement("div");actions.className="v11-campaign-actions";actions.innerHTML=`<button type="button" class="primary">Abrir campaña</button><button type="button">Ver tareas</button><button type="button">Creative Arena</button>`;const buttons=actions.querySelectorAll("button");buttons[0].addEventListener("click",()=>homeOpenCampaign(item.campaign.id));buttons[1].addEventListener("click",()=>navTo("tasks"));buttons[2].addEventListener("click",()=>navTo("creativeRoomsClean"));card.querySelector(".mz-campaign-footer")?.appendChild(actions)})}
 
@@ -9612,12 +9613,13 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <script src="assets/js/work360-team-reports.js" data-inbestiga-module="work360-team-reports"></script>
 <script src="assets/js/member-wall-work-sync.js" data-inbestiga-module="member-wall-work-sync"></script>
 <script src="assets/js/design-system-studio.js" data-inbestiga-module="design-system-studio"></script>
-<script src="assets/js/collaborative-workspace-v17-9-1.js" data-inbestiga-module="collaborative-workspace-v17-9"></script>
+<script src="assets/js/collaborative-workspace-v17-9-2.js" data-inbestiga-module="collaborative-workspace-v17-9-2"></script>
 <script src="assets/js/deadlines-member-governance-v17-10.js" data-inbestiga-module="deadlines-member-governance-v17-10"></script>
-<script src="assets/js/task-operations-ranking-v17-11-1.js" data-inbestiga-module="task-operations-ranking-v17-11"></script>
+<script src="assets/js/task-operations-ranking-v17-11-2.js" data-inbestiga-module="task-operations-ranking-v17-11-2"></script>
 <script src="assets/js/mobile-creative-navigation-v17-11-1.js" data-inbestiga-module="mobile-creative-navigation-v17-11-1"></script>
 <script src="assets/js/liquid-glass-visual-content-v17-12.js" data-inbestiga-module="liquid-glass-visual-content-v17-12"></script>
 <script src="assets/js/real-crystal-media-editor-v17-12-4.js" data-inbestiga-module="real-crystal-media-editor-v17-12-4"></script>
 <script src="assets/js/unified-visual-editor-v17-12-9.js" data-inbestiga-module="unified-visual-editor-v17-12-9"></script>
+<script src="assets/js/navigation-operational-ux-v17-12-10.js" data-inbestiga-module="navigation-operational-ux-v17-12-10"></script>
 </body>
 </html>

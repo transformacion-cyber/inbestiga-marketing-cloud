@@ -1,0 +1,34 @@
+{
+  "version": "v17.12.10",
+  "date": "2026-07-16",
+  "base": "v17.12.9",
+  "static_validation": {
+    "external_javascript": 25,
+    "inline_javascript": 14,
+    "html_ids": 650,
+    "duplicate_ids": 0,
+    "json_files": 43,
+    "missing_local_references": 0,
+    "css_files": 21,
+    "local_references": 55
+  },
+  "functional_checks": {
+    "quick_create_present": true,
+    "minimal_navigation_applied": true,
+    "menu_buttons_excluded_from_operational_styles": true,
+    "comment_only_delivery": true,
+    "no_evidence_rule": true,
+    "any_evidence_rule_validation": true,
+    "file_rule_validation": true,
+    "link_rule_validation": true,
+    "review_lock": true,
+    "correction_label": true,
+    "approval_labels": true,
+    "continuous_polling_removed": true,
+    "global_observers_added": false,
+    "approval_primary_green": true
+  },
+  "sql_required": false,
+  "live_supabase_certified": false,
+  "live_vercel_certified": false
+}

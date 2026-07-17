@@ -1,0 +1,42 @@
+INBESTIGA MARKETING CLOUD — v17.12.10
+MINIMAL NAVIGATION + FLEXIBLE DELIVERY
+Fecha: 16 de julio de 2026
+
+BASE ÚNICA
+- Construida exclusivamente desde v17.12.9.
+- No mezcla archivos ni código de otras bases.
+
+ENTREGA DE TAREAS
+- Un único flujo principal: “Entregar tarea”.
+- Comentario, enlace, archivo, captura y horas reales son campos independientes.
+- El archivo no es obligatorio salvo que el jefe seleccione “Archivo o captura obligatoria”.
+- Reglas disponibles al crear la tarea: sin evidencia obligatoria, cualquier evidencia, archivo/captura obligatoria o enlace obligatorio.
+- Antes de enviar se muestra un resumen y se exige confirmar que la tarea está lista.
+- Una entrega pasa a revisión, deja de figurar como vencida y queda bloqueada para una segunda entrega mientras espera revisión.
+- Una tarea observada muestra “Corregir entrega”.
+- El formulario “Actualizar progreso” ya no funciona como un segundo canal de entrega.
+
+NAVEGACIÓN Y BOTONES
+- Menú superior rediseñado con cápsulas Liquid Glass, sin divisiones cuadradas rígidas.
+- Desplegables flotantes, redondeados, con iconos, descripciones y cierre al hacer clic fuera.
+- Menú + Crear con accesos rápidos a tarea, campaña, publicación, pizarra, mensaje y archivo.
+- Una acción principal contextual por pantalla, con jerarquía de color y flotación moderada.
+- Responsive para escritorio, laptop, tablet y móvil.
+
+RENDIMIENTO
+- Se retiró el polling continuo de los módulos colaborativo y Operación 360+.
+- La actualización pasiva ocurre únicamente al recuperar foco/visibilidad y con enfriamiento de 2 minutos.
+- No se añadieron MutationObserver globales, intervalos, canales Realtime duplicados ni llamadas nuevas repetitivas.
+
+BACKEND
+- No requiere SQL adicional.
+- No modifica Auth, RLS, tablas, Storage, RPC productivas ni Creative Arena.
+- No contiene service_role en el frontend.
+- La regla de evidencia se guarda de forma compatible dentro de la descripción de la tarea mediante un marcador invisible; el texto visible no cambia.
+
+PWA
+- Caché: inbestiga-v17-12-10-shell.
+
+PUBLICACIÓN
+- Reemplazar los archivos del repositorio, hacer un solo commit y un solo Push origin.
+- Vercel publicará automáticamente si está conectado a la rama main.

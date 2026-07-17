@@ -1,8 +1,8 @@
-/* ===== INBESTIGA v17.12.9 · MOBILE CREATIVE NAVIGATION · OBSERVER CONFLICT HOTFIX ===== */
+/* ===== INBESTIGA v17.12.10 · MOBILE CREATIVE NAVIGATION · OBSERVER CONFLICT HOTFIX ===== */
 (() => {
   "use strict";
 
-  const VERSION = "v17.12.9";
+  const VERSION = "v17.12.10";
   const MOBILE_QUERY = "(max-width: 980px)";
   const MANAGER_ROLES = new Set([
     "italo", "jhulio", "alejandro", "admin", "director", "owner", "ceo",

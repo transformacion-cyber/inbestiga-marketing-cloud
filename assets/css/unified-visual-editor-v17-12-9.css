@@ -1,4 +1,4 @@
-/* ===== INBESTIGA v17.12.9 · UNIFIED VISUAL EDITOR · RESPONSIVE LAYOUT HOTFIX ===== */
+/* ===== INBESTIGA v17.12.10 · UNIFIED VISUAL EDITOR · RESPONSIVE LAYOUT HOTFIX ===== */
 :root{--uve-font-heading:"Space Grotesk",Inter,sans-serif;--uve-font-body:Inter,sans-serif;--uve-primary:#7557ff;--uve-secondary:#68d9ff;--uve-accent:#ff90d3;--uve-text:#142033;--uve-muted:#62708a;--uve-radius:30px;--uve-glass-blur:32px}
 #admin .admin-tabs [data-admin="visual"],#admin_visual{display:none!important}
 .uve-root{display:grid;gap:18px;color:#172033;font-family:var(--uve-font-body);padding-bottom:60px}
@@ -27,7 +27,7 @@
 .uve-library-card .uve-asset small{line-height:1.45}.uve-library-card .uve-asset-actions{flex-wrap:wrap}.uve-library-card .uve-asset-actions button{flex:1 1 auto}
 .uve-warning{display:flex;align-items:center;justify-content:space-between;gap:12px}.uve-warning button{min-height:32px;padding:0 12px;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;font-size:10px;font-weight:800;white-space:nowrap}
 
-/* v17.12.9 · Fix de composición: la navegación superior oculta los <aside> globales.
+/* v17.12.10 · Fix de composición: la navegación superior oculta los <aside> globales.
    El editor usa contenedores semánticos propios y fuerza una cuadrícula estable. */
 #designStudio,#v178StudioRoot,#uveRoot,.uve-content,.uve-workspace,.uve-editor-card{min-width:0;width:100%}
 #designStudio .uve-targets{display:block!important}
