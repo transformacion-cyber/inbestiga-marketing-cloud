@@ -1,0 +1,14 @@
+AUDITORIA_v17_12_13_6_SAKURA_PERSONAL_STUDIO.txt
+CHANGES_v17_12_13_6.json
+FUNCTIONAL_TESTS_v17_12_13_6.json
+GUIA_MENSAJES_SAKURA_v17_12_13_6.txt
+GUIA_SAKURA_PERSONAL_STUDIO_v17_12_13_6.txt
+HEALTH_COMPARISON_v17_12_13_6.json
+LEER_PRIMERO_v17_12_13_6.txt
+STATIC_VALIDATION_v17_12_13_6.json
+assets/css/sakura-personal-studio-v17-12-13-6.css
+assets/css/sakura-personal-workspace-base-v17-12-13-6.css
+assets/js/sakura-personal-studio-v17-12-13-6.js
+assets/js/sakura-personal-workspace-v17-12-13-6.js
+assets/js/sakura-presence-loader-v17-12-13-6.js
+assets/js/unified-visual-editor-v17-12-13-6.js

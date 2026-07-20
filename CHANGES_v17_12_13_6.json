@@ -1,0 +1,26 @@
+{
+  "version": "v17.12.13.6",
+  "name": "SAKURA Personal Studio & Team Messaging",
+  "base": "v17.12.13.5",
+  "sql_required": false,
+  "phases": [
+    "Editor, legibilidad y estructura",
+    "Personalización completa",
+    "Esferas tecnológicas",
+    "Temas preconfigurados",
+    "Panel adaptativo",
+    "Mensajería real",
+    "Estilo personal y global",
+    "Optimización y salud"
+  ],
+  "key_changes": [
+    "Pestaña SAKURA real en Diseño · Plataforma",
+    "10 temas completos",
+    "8 esferas tecnológicas originales",
+    "Personalización por usuario",
+    "Panel adaptativo",
+    "Mensajería real reutilizando backend existente",
+    "Mensajes independientes de Ollama",
+    "Protección de contraste y modo de bajo consumo"
+  ]
+}

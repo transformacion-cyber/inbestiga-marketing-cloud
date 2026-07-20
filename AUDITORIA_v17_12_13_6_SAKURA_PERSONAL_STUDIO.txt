@@ -1,0 +1,33 @@
+AUDITORÍA v17.12.13.6 — SAKURA PERSONAL STUDIO & TEAM MESSAGING
+
+Línea base informada
+- Salud: 96
+- Fallas: 0
+- Advertencias: 1 (Work 360 pendiente de sincronización)
+
+Protecciones verificadas
+- Sin service_role.
+- Sin SQL nuevo.
+- Sin nuevas tablas de mensajería.
+- Sin nuevos canales Realtime.
+- Sin polling continuo.
+- Sin MutationObserver añadido por los módulos v17.12.13.6.
+- Sin desenfoque global de Marketing Cloud.
+- Sin modelos, embeddings, audios o fondos personales en el precache PWA.
+- Sin cambios en Auth, RLS, Storage, tablas o RPC productivas.
+- Mensajería reutiliza ibm_v33_send_message.
+- El panel completo de SAKURA continúa cargándose bajo demanda.
+
+Resultados estáticos
+- JavaScript externo y Service Worker: sintaxis válida.
+- Scripts inline de index.html: sintaxis válida.
+- JSON: válido.
+- CSS: llaves equilibradas.
+- Referencias estáticas HTML: sin faltantes.
+- Recursos del Service Worker: sin faltantes.
+- IDs estáticos duplicados: exactamente los mismos preexistentes de v17.12.13.5; la versión no añade nuevos duplicados.
+- BAT del conector local: CRLF correcto.
+- Python del puente local: compilación válida.
+
+Limitación honesta
+No se certifica la puntuación real de Auditoría Pro, Supabase, Vercel, RLS, Realtime ni envío productivo de mensajes sin ejecutar la versión publicada con las cuentas reales.

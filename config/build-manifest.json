@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.12.13.5",
-  "build": "SAKURA READABLE UI · CUSTOM APPEARANCE · VERIFIED TASK CREATION · FLAT APPLE NAV",
+  "frontend_version": "17.12.13.6",
+  "build": "SAKURA PERSONAL STUDIO · ADAPTIVE PANEL · TEAM MESSAGING · HEALTH SAFE",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -137,10 +137,10 @@
       "mode": "frontend-media-editor-observer-conflict-hotfix"
     },
     {
-      "name": "unified-visual-editor-v17-12-9",
-      "path": "assets/js/unified-visual-editor-v17-12-9.js",
-      "origin": "v17.12.9",
-      "mode": "visual-only-unified-editor"
+      "name": "unified-visual-editor-v17-12-13-6",
+      "path": "assets/js/unified-visual-editor-v17-12-13-6.js",
+      "origin": "v17.12.13.6",
+      "mode": "productive-safe-ui"
     },
     {
       "name": "navigation-operational-ux-v17-12-10",
@@ -155,22 +155,34 @@
       "mode": "lazy-local-first-no-polling"
     },
     {
-      "name": "sakura-presence-loader-v17-12-13-5",
-      "path": "assets/js/sakura-presence-loader-v17-12-13-5.js",
-      "origin": "v17.12.13.5",
-      "mode": "lazy"
+      "name": "sakura-presence-loader-v17-12-13-6",
+      "path": "assets/js/sakura-presence-loader-v17-12-13-6.js",
+      "origin": "v17.12.13.6",
+      "mode": "lazy-permanent-entry"
     },
     {
-      "name": "sakura-apple-workspace-v17-12-13-5",
-      "path": "assets/js/sakura-apple-workspace-v17-12-13-5.js",
-      "origin": "v17.12.13.5",
-      "mode": "lazy"
+      "name": "sakura-personal-workspace-v17-12-13-6",
+      "path": "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+      "origin": "v17.12.13.6",
+      "mode": "lazy-chat-messaging"
     },
     {
-      "name": "sakura-appearance-editor-v17-12-13-5",
-      "path": "assets/js/sakura-appearance-editor-v17-12-13-5.js",
-      "origin": "v17.12.13.5",
-      "mode": "eager-light"
+      "name": "sakura-personal-studio-v17-12-13-6",
+      "path": "assets/js/sakura-personal-studio-v17-12-13-6.js",
+      "origin": "v17.12.13.6",
+      "mode": "personal-studio"
+    },
+    {
+      "name": "sakura-personal-studio-css-v17-12-13-6",
+      "path": "assets/css/sakura-personal-studio-v17-12-13-6.css",
+      "origin": "v17.12.13.6",
+      "mode": "visual-personalization"
+    },
+    {
+      "name": "sakura-personal-workspace-base-css-v17-12-13-6",
+      "path": "assets/css/sakura-personal-workspace-base-v17-12-13-6.css",
+      "origin": "v17.12.13.6",
+      "mode": "visual-base"
     }
   ],
   "styles": [
@@ -197,7 +209,8 @@
     "assets/css/navigation-operational-ux-v17-12-10.css",
     "assets/css/navigation-apple-flat-v17-12-13-4.css",
     "assets/css/operational-command-center-v17-12-12.css",
-    "assets/css/sakura-apple-workspace-v17-12-13-5.css"
+    "assets/css/sakura-personal-workspace-base-v17-12-13-6.css",
+    "assets/css/sakura-personal-studio-v17-12-13-6.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -513,10 +526,31 @@
     "sakura_schema_aware_rpc": true,
     "sakura_false_success_guard": true,
     "flat_apple_top_navigation_without_liquid_glass": true,
-    "health_safe_v1712134": true
+    "health_safe_v1712134": true,
+    "sakura_personal_studio_real_tab": true,
+    "sakura_full_panel_customization": true,
+    "sakura_ten_complete_themes": true,
+    "sakura_eight_original_animated_orbs": true,
+    "sakura_japan_theme": true,
+    "sakura_user_scoped_styles": true,
+    "sakura_global_admin_style_optional": true,
+    "sakura_indexeddb_webp_backgrounds": true,
+    "sakura_contrast_guard": true,
+    "sakura_restore_legibility": true,
+    "sakura_adaptive_panel_controls": true,
+    "sakura_team_messaging_existing_backend": true,
+    "sakura_messages_without_ollama": true,
+    "sakura_message_optional_rewrite": true,
+    "sakura_no_new_message_tables": true,
+    "sakura_no_new_realtime_channels_v1712136": true,
+    "sakura_low_power_animation_mode": true,
+    "health_safe_v1712136": true
   },
-  "base": "v17.12.13.3 SAKURA Presence & Health Hotfix",
-  "hotfix": "v17.12.13.5 isolates SAKURA typography and controls from global glass styles, restores readable Apple-style controls, and adds a reversible SAKURA appearance editor inside Diseño y apariencia with presets, colors, full-panel background upload and preview. No SQL, Auth, RLS, productive table, RPC, Realtime, loadAll or bootstrap changes.",
-  "version": "v17.12.13.5",
-  "name": "SAKURA READABLE UI & CUSTOM APPEARANCE"
+  "base": "v17.12.13.5 SAKURA Readable UI & Custom Appearance",
+  "hotfix": "v17.12.13.6 adds a real SAKURA tab inside Diseño · Plataforma, full per-user customization, ten themes, eight original animated orb styles, adaptive panel controls, real team messaging through the existing ibm_v33_send_message workflow, accessibility safeguards, low-power animation controls and lazy loading. No new SQL, message tables, Realtime channels, polling, service_role, Auth/RLS or productive RPC changes.",
+  "version": "v17.12.13.6",
+  "name": "SAKURA PERSONAL STUDIO & TEAM MESSAGING",
+  "assets": [
+    "assets/css/sakura-personal-studio-v17-12-13-6.css"
+  ]
 }

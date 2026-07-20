@@ -1,0 +1,32 @@
+GUÍA RÁPIDA — SAKURA PERSONAL STUDIO
+
+Abrir editor
+1. Entra en Diseño · Plataforma.
+2. Pulsa la pestaña SAKURA.
+
+Acciones principales
+- Guardar borrador: conserva cambios sin aplicarlos.
+- Aplicar a mi SAKURA: modifica solo tu perfil en este navegador.
+- Publicar como estilo global: solo Dirección; usa Diseño v17.8 cuando esté disponible y mantiene fallback local.
+- Duplicar tema: crea una copia personal editable.
+- Exportar/Importar: intercambia temas JSON seguros; no acepta código ejecutable.
+- Restaurar apariencia: vuelve al estilo predeterminado.
+- Restaurar legibilidad: recupera tamaños y contrastes seguros.
+
+Fondos
+- Colores, degradados, patrones, textura, animación ligera e imagen.
+- Las imágenes se reducen, comprimen a WebP y guardan en IndexedDB.
+- El desenfoque solo afecta el interior del panel de SAKURA.
+
+Esferas
+- Sakura Japón
+- Núcleo orbital
+- Holograma táctico
+- Pulso de neón
+- Prisma cuántico
+- Aurora digital
+- Minimal Apple
+- Red neuronal
+
+Modo de bajo consumo
+Desactiva o reduce las animaciones cuando el equipo lo necesite. También se respetan las preferencias del sistema para reducir movimiento.

@@ -1,0 +1,6 @@
+SAKURA_LOCAL_BRIDGE/__pycache__/sakura_bridge.cpython-313.pyc
+assets/css/sakura-apple-workspace-v17-12-13-5.css
+assets/js/sakura-appearance-editor-v17-12-13-5.js
+assets/js/sakura-apple-workspace-v17-12-13-5.js
+assets/js/sakura-presence-loader-v17-12-13-5.js
+assets/js/unified-visual-editor-v17-12-9.js

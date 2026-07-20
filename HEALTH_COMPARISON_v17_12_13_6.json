@@ -1,0 +1,18 @@
+{
+  "version": "v17.12.13.6",
+  "before": {
+    "score": 96,
+    "failures": 0,
+    "warnings": 1
+  },
+  "after_static": {
+    "new_failures": 0,
+    "new_warnings": 0,
+    "missing_references": 0,
+    "invalid_scripts": 0,
+    "new_realtime_channels": 0,
+    "polling_intervals": 0
+  },
+  "expected_productive": "96 si permanece la advertencia real de Work 360",
+  "requires_live_audit": true
+}

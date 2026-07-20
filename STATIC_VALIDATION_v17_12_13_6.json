@@ -1,0 +1,93 @@
+{
+  "version": "v17.12.13.6",
+  "baseline_health": {
+    "score": 96,
+    "failures": 0,
+    "warnings": 1,
+    "warning": "Work 360 pendiente de sincronización"
+  },
+  "external_js": {
+    "count": 37,
+    "failures": []
+  },
+  "inline_js": {
+    "count": 14,
+    "failures": []
+  },
+  "css": {
+    "count": 28,
+    "failures": []
+  },
+  "json": {
+    "count": 74,
+    "failures": []
+  },
+  "static_html_references": {
+    "count": 60,
+    "missing": []
+  },
+  "service_worker": {
+    "cache": "inbestiga-v17-12-13-6-shell",
+    "resources": 64,
+    "missing": [],
+    "workspace_precached": false
+  },
+  "ids": {
+    "base_duplicates": {
+      "home": 3,
+      "caContextSize": 2,
+      "caContextSizeValue": 2
+    },
+    "new_duplicates": {
+      "home": 3,
+      "caContextSize": 2,
+      "caContextSizeValue": 2
+    },
+    "new_duplicate_ids": []
+  },
+  "forbidden_in_new_modules": {
+    "setInterval": [],
+    "MutationObserver": [],
+    ".channel(": [],
+    "service_role": []
+  },
+  "bat": {
+    "DESCARGAR_MODELOS_SAKURA.bat": {
+      "crlf": true,
+      "bare_lf": false
+    },
+    "INICIAR_SAKURA_LOCAL.bat": {
+      "crlf": true,
+      "bare_lf": false
+    },
+    "INSTALAR_SAKURA_LOCAL.bat": {
+      "crlf": true,
+      "bare_lf": false
+    },
+    "VERIFICAR_REQUISITOS_SAKURA.bat": {
+      "crlf": true,
+      "bare_lf": false
+    }
+  },
+  "functional_contracts": {
+    "real_sakura_tab": true,
+    "studio_api": true,
+    "themes_count": 11,
+    "orb_designs_count": 8,
+    "messages_tab": true,
+    "existing_message_rpc": true,
+    "messages_without_ollama": true,
+    "indexeddb_backgrounds": true,
+    "contrast_guard": true,
+    "restore_legibility": true,
+    "adaptive_modes": true,
+    "no_new_message_tables": true
+  },
+  "sql_required": false,
+  "live_certification": false,
+  "limitations": [
+    "Auditoría Pro debe ejecutarse tras publicar en Vercel.",
+    "El envío productivo de mensajes debe verificarse con dos cuentas reales.",
+    "Los adjuntos no se añadieron a la RPC de mensajes; se abre el módulo existente para no crear backend paralelo."
+  ]
+}

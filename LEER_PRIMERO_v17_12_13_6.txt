@@ -1,0 +1,40 @@
+INBESTIGA MARKETING CLOUD v17.12.13.6
+SAKURA PERSONAL STUDIO & TEAM MESSAGING
+
+BASE ÚNICA
+- Creada exclusivamente desde v17.12.13.5.
+- No requiere SQL.
+- No requiere reinstalar Python, Ollama ni los modelos.
+- El conector local se conserva sin cambios funcionales.
+
+NOVEDADES
+1. Diseño · Plataforma incluye una pestaña SAKURA real.
+2. Centro completo de personalización por usuario.
+3. Diez temas preconfigurados y ocho esferas tecnológicas originales.
+4. Fondo, marco, encabezado, chat, burbujas, caja de escritura, botones, fuentes y animaciones configurables.
+5. Imágenes de fondo comprimidas a WebP y guardadas en IndexedDB, no en localStorage.
+6. Protección de contraste y botón Restaurar legibilidad.
+7. Panel adaptativo, acoplable, redimensionable, compacto o reducido a esfera.
+8. Controles mover, minimizar y cerrar visibles en los modos compactos.
+9. Nueva pestaña Mensajes dentro de SAKURA, reutilizando ibm_v33_send_message y la mensajería real de Marketing Cloud.
+10. Mensajes funciona con Ollama apagado. Ollama solo ayuda opcionalmente a redactar o resumir.
+
+ACTUALIZACIÓN
+1. Reemplaza los archivos del repositorio con el contenido de este paquete.
+2. No borres la carpeta .git.
+3. Commit sugerido:
+   Actualización v17.12.13.6 — SAKURA Personal Studio y Mensajería
+4. Push origin.
+5. Espera el despliegue de Vercel.
+6. Cierra las pestañas antiguas y abre nuevamente con Ctrl + F5.
+
+PERSONALIZACIÓN
+Diseño · Plataforma → SAKURA
+
+MENSAJES
+SAKURA → Mensajes
+La mensajería no depende de Ollama. Los adjuntos continúan gestionándose desde el módulo Mensajes existente porque la RPC actual de mensajes no incluye archivos.
+
+SALUD
+Línea base informada: 96, 0 fallas, 1 advertencia real de Work 360.
+Las validaciones estáticas no detectaron fallas nuevas. La puntuación productiva debe verificarse después del despliegue real.

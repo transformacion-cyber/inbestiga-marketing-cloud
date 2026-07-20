@@ -1,0 +1,19 @@
+GUÍA RÁPIDA — MENSAJES DESDE SAKURA
+
+1. Abre SAKURA.
+2. Entra en Mensajes.
+3. Busca o selecciona un miembro.
+4. Escribe el mensaje.
+5. Pulsa Enviar.
+6. Confirma el destinatario.
+
+La pestaña Mensajes usa la sesión real y la RPC productiva ibm_v33_send_message.
+Funciona con Ollama y el puente local apagados.
+
+Con Ollama conectado puedes pedir:
+- Más cálido.
+- Más breve.
+- Corregir ortografía y claridad.
+
+Adjuntos
+La RPC productiva actual de mensajes solo acepta texto y urgencia. Para no crear una mensajería paralela, el botón Adjuntar abre el módulo Mensajes existente, donde se conserva el flujo autorizado disponible.

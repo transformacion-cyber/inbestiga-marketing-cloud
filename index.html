@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-inbestiga-build="v17.12.13.5">
+<html lang="es" data-inbestiga-build="v17.12.13.6">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-<title>INBESTIGA Marketing Cloud · v17.12.13.5 SAKURA READABLE UI & CUSTOM APPEARANCE</title>
+<title>INBESTIGA Marketing Cloud · v17.12.13.6 SAKURA PERSONAL STUDIO & TEAM MESSAGING</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>if(!window.supabase){document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>')}</script>
 <script src="config/public-runtime-config.js" data-inbestiga-module="managed-public-runtime-config"></script>
@@ -3623,7 +3623,8 @@ body.v12-palette-open{overflow:hidden}
 <link rel="stylesheet" href="assets/css/unified-visual-editor-v17-12-9.css" data-inbestiga-module="unified-visual-editor-v17-12-9">
 <link rel="stylesheet" href="assets/css/navigation-operational-ux-v17-12-10.css" data-inbestiga-module="navigation-operational-ux-v17-12-10">
 <link rel="stylesheet" href="assets/css/navigation-apple-flat-v17-12-13-4.css" data-inbestiga-module="navigation-apple-flat-v17-12-13-4">
-<link rel="stylesheet" href="assets/css/sakura-apple-workspace-v17-12-13-5.css" data-inbestiga-module="sakura-apple-workspace-v17-12-13-5" data-sakura-native-css="1">
+<link rel="stylesheet" href="assets/css/sakura-personal-workspace-base-v17-12-13-6.css" data-inbestiga-module="sakura-personal-workspace-base-v17-12-13-6" data-sakura-native-css="1" data-sakura-css="base">
+<link rel="stylesheet" href="assets/css/sakura-personal-studio-v17-12-13-6.css" data-inbestiga-module="sakura-personal-studio-v17-12-13-6" data-sakura-css="personal-studio">
 <link rel="stylesheet" href="assets/css/operational-command-center-v17-12-12.css" data-inbestiga-module="operational-command-center-v17-12-12">
 </head>
 <body>
@@ -5679,6 +5680,7 @@ async function safeSync(reason="sync"){
     fillSelects();
     updateBadges();
     renderMessages();
+    try{window.INBESTIGA_SAKURA_NATIVE?.refreshMessages?.()}catch(_){}
     renderNotifications();
     renderPresence();
     renderLiveFeed();
@@ -9616,7 +9618,7 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <script src="assets/js/audit-counter-accuracy.js" data-inbestiga-module="audit-counter-accuracy"></script>
 <script src="assets/js/work360-team-reports.js" data-inbestiga-module="work360-team-reports"></script>
 <script src="assets/js/member-wall-work-sync.js" data-inbestiga-module="member-wall-work-sync"></script>
-<script src="assets/js/sakura-appearance-editor-v17-12-13-5.js" data-inbestiga-module="sakura-appearance-editor-v17-12-13-5"></script>
+<script src="assets/js/sakura-personal-studio-v17-12-13-6.js" data-inbestiga-module="sakura-personal-studio-v17-12-13-6"></script>
 <script src="assets/js/design-system-studio.js" data-inbestiga-module="design-system-studio"></script>
 <script src="assets/js/collaborative-workspace-v17-9-2.js" data-inbestiga-module="collaborative-workspace-v17-9-2"></script>
 <script src="assets/js/deadlines-member-governance-v17-10.js" data-inbestiga-module="deadlines-member-governance-v17-10"></script>
@@ -9624,9 +9626,9 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <script src="assets/js/mobile-creative-navigation-v17-11-1.js" data-inbestiga-module="mobile-creative-navigation-v17-11-1"></script>
 <script src="assets/js/liquid-glass-visual-content-v17-12.js" data-inbestiga-module="liquid-glass-visual-content-v17-12"></script>
 <script src="assets/js/real-crystal-media-editor-v17-12-4.js" data-inbestiga-module="real-crystal-media-editor-v17-12-4"></script>
-<script src="assets/js/unified-visual-editor-v17-12-9.js" data-inbestiga-module="unified-visual-editor-v17-12-9"></script>
+<script src="assets/js/unified-visual-editor-v17-12-13-6.js" data-inbestiga-module="unified-visual-editor-v17-12-13-6"></script>
 <script src="assets/js/navigation-operational-ux-v17-12-10.js" data-inbestiga-module="navigation-operational-ux-v17-12-10"></script>
 <script src="assets/js/operational-command-center-v17-12-12.js" data-inbestiga-module="operational-command-center-v17-12-12"></script>
-<script src="assets/js/sakura-presence-loader-v17-12-13-5.js" data-inbestiga-module="sakura-presence-loader-v17-12-13-5"></script>
+<script src="assets/js/sakura-presence-loader-v17-12-13-6.js" data-inbestiga-module="sakura-presence-loader-v17-12-13-6"></script>
 </body>
 </html>
