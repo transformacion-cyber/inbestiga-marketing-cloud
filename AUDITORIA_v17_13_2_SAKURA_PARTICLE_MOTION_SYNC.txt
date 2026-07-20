@@ -1,0 +1,43 @@
+AUDITORÍA DE ENTREGA — INBESTIGA MARKETING CLOUD v17.13.2
+
+BASE: v17.13.1
+ALCANCE: corrección real de partículas estáticas y sincronización de movimiento de SAKURA.
+
+REPRODUCCIÓN DEL FALLO
+- Evidencia visual: grabación H.264, 502 × 878, 30 fps, duración 7.914646 s.
+- Resultado visual: partículas sin desplazamiento perceptible durante la secuencia observada.
+- Prueba comparativa de v17.13.1: una preferencia antigua reaplicada devuelve la política a off.
+- Prueba comparativa de v17.13.1: con .tc-particles sin animación, Probar movimiento devuelve ok=true al medir otro elemento.
+
+RESULTADO v17.13.2
+- Personal Studio queda sincronizado con motionMode, orbAnimation y lowPower.
+- La política seleccionada resiste una reaplicación de preferencias antiguas.
+- La prueba de movimiento exige avance temporal y cambio visual en núcleo, anillo, escáner, ondas y partículas visibles.
+- Partículas CSS activas en Completa y Moderada.
+- Partículas ocultas intencionalmente en Bajo consumo.
+- Todas las capas pausadas intencionalmente en Sin animación.
+- Respaldo WAAPI activa partículas incluso si una regla externa deja animation:none.
+- Estados available, thinking, speaking y executing aprobados en prueba sintética.
+
+VALIDACIÓN ESTÁTICA
+- JavaScript externo comprobado: 42 archivos; fallas: 0.
+- JSON comprobado: 85 archivos; fallas: 0.
+- CSS nuevo: sin errores de parseo; llaves equilibradas.
+- Referencias locales de index.html: sin faltantes.
+- Recursos del Service Worker: sin faltantes.
+- Rutas del build manifest: sin faltantes.
+- Archivos SQL nuevos: 0.
+- setInterval nuevo: 0.
+- MutationObserver nuevo: 0.
+- Canales Realtime nuevos: 0.
+- service_role nuevo: 0.
+- eval o Function dinámica: 0.
+
+DIFERENCIA CONTROLADA
+Archivos existentes modificados: index.html, loader de presencia, metadatos de build/runtime,
+manifest.webmanifest y service-worker.js. Archivos funcionales nuevos: un CSS y un JavaScript
+exclusivos del hotfix v17.13.2. Ningún archivo fue eliminado.
+
+SALUD PRODUCTIVA
+Línea base informada: Salud 96, Fallas 0, Advertencias 1, advertencia conocida Work 360.
+Resultado posterior al despliegue: pendiente de Auditoría Pro en Vercel.

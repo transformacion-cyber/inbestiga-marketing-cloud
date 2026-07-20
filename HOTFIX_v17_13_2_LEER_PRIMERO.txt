@@ -1,0 +1,47 @@
+INBESTIGA MARKETING CLOUD v17.13.2
+SAKURA PARTICLE MOTION SYNC HOTFIX
+
+BASE AUTORIZADA
+- Creada exclusivamente desde INBESTIGA Marketing Cloud v17.13.1.
+- No se mezclaron archivos ni módulos de versiones anteriores.
+
+FALLO REAL REPRODUCIDO
+1. La grabación entregada muestra la esfera visible, pero sus partículas conservan la misma posición.
+2. v17.13.1 migraba el modo a Completa solamente en la capa visual; Personal Studio podía conservar motionMode=off, orbAnimation=false o lowPower=true y reaplicarlos después.
+3. La prueba de v17.13.1 observaba un anillo, el núcleo o el escáner, pero no comprobaba específicamente las partículas; por ello podía informar éxito aunque .tc-particles no tuviera animación.
+
+CORRECCIÓN LIMITADA
+- Una sola política de movimiento sincronizada con Personal Studio y persistida en su preferencia canónica.
+- Reaplicación segura después de cambios de estilo, retorno de visibilidad y restauración de página.
+- Nombre de animación explícito para cada capa tecnológica.
+- Partículas con tres trayectorias independientes para que el movimiento sea perceptible.
+- Verificación separada de núcleo, anillo, escáner, ondas y partículas.
+- Respaldo con Web Animations API cuando la animación CSS de partículas esté ausente o sea anulada.
+- Los modos Completa, Moderada, Bajo consumo y Sin animación se conservan.
+
+ALCANCE PROTEGIDO
+No se modificaron Auth, login, RLS, tablas, Storage, RPC, loadAll, renderAll, Bootstrap,
+Trabajo 360, tareas, entregas, campañas, Creative Arena, Muro, mensajería, puntos, ranking,
+puente local, Ollama, Director Visual ni Explorador Web.
+
+NO REQUIERE
+- SQL nuevo.
+- service_role.
+- Polling.
+- MutationObserver.
+- Canales Realtime.
+- eval ni Function dinámica.
+
+VALIDACIÓN REALIZADA
+- Reproducción sintética de la carrera de preferencias de v17.13.1: confirmada.
+- Reproducción del falso positivo de partículas en v17.13.1: confirmada.
+- Migración y persistencia v17.13.2: aprobadas en Chromium.
+- Modos Completa, Moderada, Bajo consumo y Sin animación: aprobados.
+- Estados disponible, pensando, hablando y ejecutando: aprobados.
+- Los ocho diseños de núcleo: aprobados; las capas ocultas intencionalmente no generan falsos fallos.
+- Respaldo WAAPI ante animation:none de partículas: aprobado.
+- Sintaxis, JSON, CSS, referencias HTML/PWA y restricciones: aprobados.
+
+VALIDACIÓN PENDIENTE
+La certificación productiva final sigue pendiente del despliegue en Vercel y de Auditoría Pro.
+No se afirma una nueva puntuación de salud sin ejecutar esa prueba en la URL publicada.

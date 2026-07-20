@@ -1,0 +1,11 @@
+ARCHIVOS EXISTENTES MODIFICADOS — v17.13.2
+
+- index.html
+- assets/js/sakura-presence-loader-v17-13-0.js
+- config/build-manifest.json
+- config/public-runtime-config.js
+- manifest.webmanifest
+- service-worker.js
+
+Todos los cambios anteriores son referencias, versión, carga del hotfix o metadatos PWA/build.
+Los módulos productivos protegidos permanecen idénticos a v17.13.1.

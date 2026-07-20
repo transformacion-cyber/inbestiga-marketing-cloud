@@ -1,0 +1,25 @@
+{
+  "version": "17.13.2",
+  "reported_production_baseline": {
+    "health": 96,
+    "failures": 0,
+    "warnings": 1,
+    "known_warning": "Work 360"
+  },
+  "static_and_synthetic_result": {
+    "new_javascript_errors": 0,
+    "new_css_parse_errors": 0,
+    "new_json_errors": 0,
+    "missing_html_references": 0,
+    "missing_service_worker_resources": 0,
+    "protected_scope_unchanged": true,
+    "new_polling": 0,
+    "new_mutation_observers": 0,
+    "new_realtime_channels": 0,
+    "motion_runtime_tests_passed": true,
+    "particle_specific_test_passed": true,
+    "eight_orb_designs_passed": true
+  },
+  "production_health_after_deploy": "pending_live_verification",
+  "note": "No se afirma certificación productiva ni una puntuación nueva sin ejecutar Auditoría Pro en Vercel."
+}

@@ -1,0 +1,38 @@
+{
+  "version": "17.13.2",
+  "base": "17.13.1",
+  "passed": true,
+  "modified_existing_files": [
+    "assets/js/sakura-presence-loader-v17-13-0.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "new_functional_files": [
+    "assets/css/sakura-live-motion-background-fusion-v17-13-2.css",
+    "assets/js/sakura-live-motion-background-fusion-v17-13-2.js"
+  ],
+  "removed_files": [],
+  "protected_modules": {
+    "supabase_auth_login": "unchanged",
+    "rls_tables_storage_rpc": "unchanged",
+    "loadAll_renderAll_bootstrap": "unchanged",
+    "work360_tasks_deliveries": "unchanged",
+    "campaigns_creative_arena_wall": "unchanged",
+    "production_messaging": "unchanged",
+    "points_ranking": "unchanged",
+    "local_bridge_ollama": "unchanged",
+    "visual_director_web_explorer": "unchanged"
+  },
+  "restrictions": {
+    "service_role": false,
+    "new_sql": false,
+    "polling": false,
+    "mutation_observer": false,
+    "new_realtime_channels": 0,
+    "eval": false,
+    "dynamic_function": false
+  }
+}

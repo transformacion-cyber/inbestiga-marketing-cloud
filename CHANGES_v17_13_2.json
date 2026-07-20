@@ -1,0 +1,27 @@
+{
+  "version": "17.13.2",
+  "name": "SAKURA Particle Motion Sync Hotfix",
+  "base": "17.13.1",
+  "scope": "Corrección enfocada del fallo reproducido; sin nuevas funciones de producto ni cambios de backend",
+  "failure_reproduced": [
+    "Personal Studio podía reaplicar preferencias antiguas y apagar el movimiento después de la migración visual",
+    "La verificación de v17.13.1 no inspeccionaba específicamente .tc-particles y podía producir un falso positivo",
+    "La capa de partículas usaba una trayectoria visual demasiado simétrica y podía parecer inmóvil"
+  ],
+  "changes": [
+    "Persistencia canónica de motionMode, orbAnimation y lowPower en Personal Studio",
+    "Sincronización después de style-applied, visibilitychange y pageshow",
+    "Nombres de keyframes explícitos para las capas reales del núcleo",
+    "Tres trazas de partículas con órbitas y deriva independientes",
+    "Verificación independiente de núcleo, anillo, escáner y partículas",
+    "Respaldo WAAPI para partículas cuando la animación CSS falta o es anulada",
+    "Registro visible y metadatos actualizados a v17.13.2"
+  ],
+  "backend_changes": false,
+  "sql_required": false,
+  "protected_modules_modified": false,
+  "new_polling": false,
+  "new_mutation_observer": false,
+  "new_realtime_channels": 0,
+  "new_features": false
+}

@@ -1,0 +1,10 @@
+{
+  "source_recording": "Grabación 2026-07-20 122958(1).mp4",
+  "sha256": "9ddd788a9e741691deb30d975ddb3f37d6dec7d076c43c0e5482902490d29ec0",
+  "codec": "h264",
+  "dimensions": "502x878",
+  "fps": 30,
+  "duration_seconds": 7.914646,
+  "finding": "La esfera permanece visible, pero las partículas mantienen una disposición visual estática durante la secuencia revisada.",
+  "confirmed_failure": true
+}

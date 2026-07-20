@@ -1,0 +1,872 @@
+{
+  "version": "17.13.2",
+  "engine": "Chromium /usr/bin/chromium",
+  "reduced_motion_emulation": "reduce",
+  "v17131_reproduction": {
+    "initial": {
+      "state": {
+        "motionMode": "full",
+        "explicitMotionChoice": false,
+        "lastBackgroundAssetId": "",
+        "lastBackgroundStatus": "pending"
+      },
+      "root": "full",
+      "studio": {
+        "motionMode": "off",
+        "orbAnimation": false,
+        "lowPower": true,
+        "backgroundType": "gradient",
+        "backgroundAssetId": "",
+        "orbDesign": "orbital"
+      }
+    },
+    "legacy_style_race": {
+      "state": {
+        "motionMode": "off",
+        "explicitMotionChoice": false,
+        "lastBackgroundAssetId": "",
+        "lastBackgroundStatus": "pending"
+      },
+      "root": "off",
+      "result": {
+        "ok": false,
+        "reason": "Las animaciones están desactivadas por el usuario."
+      }
+    },
+    "particle_validation_gap": {
+      "particle": {
+        "name": "none",
+        "count": 0
+      },
+      "result": {
+        "ok": true,
+        "reason": "Movimiento real confirmado."
+      }
+    },
+    "errors": []
+  },
+  "v17132_validation": {
+    "initial_migration": {
+      "state": {
+        "motionMode": "full",
+        "explicitMotionChoice": false,
+        "lastBackgroundAssetId": "",
+        "lastBackgroundStatus": "pending"
+      },
+      "studio": {
+        "motionMode": "full",
+        "orbAnimation": true,
+        "lowPower": false,
+        "backgroundType": "gradient",
+        "backgroundAssetId": "",
+        "orbDesign": "orbital"
+      },
+      "applyCount": 1,
+      "root": {
+        "policy": "full",
+        "orb": "on",
+        "low": "false",
+        "build": "v17.13.2"
+      },
+      "result": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcOrbitTilt"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcParticleOrbit"
+          }
+        ]
+      }
+    },
+    "modes": {
+      "full": {
+        "state": {
+          "motionMode": "full",
+          "explicitMotionChoice": true,
+          "lastBackgroundAssetId": "",
+          "lastBackgroundStatus": "pending"
+        },
+        "studio": {
+          "motionMode": "full",
+          "orbAnimation": true,
+          "lowPower": false,
+          "backgroundType": "gradient",
+          "backgroundAssetId": "",
+          "orbDesign": "orbital"
+        },
+        "root": {
+          "policy": "full",
+          "orb": "on",
+          "low": "false"
+        },
+        "css": {
+          "particleDisplay": "block",
+          "particleName": "tcParticleOrbit",
+          "particleState": "running",
+          "coreDisplay": "block",
+          "coreState": "running",
+          "ringDisplay": "block",
+          "ringState": "running"
+        },
+        "result": {
+          "ok": true,
+          "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+          "layers": [
+            {
+              "layer": "núcleo",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcCorePulse"
+            },
+            {
+              "layer": "anillo",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcOrbitTilt"
+            },
+            {
+              "layer": "escáner",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcScan"
+            },
+            {
+              "layer": "ondas",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcWave"
+            },
+            {
+              "layer": "partículas",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcParticleOrbit"
+            }
+          ]
+        }
+      },
+      "moderate": {
+        "state": {
+          "motionMode": "moderate",
+          "explicitMotionChoice": true,
+          "lastBackgroundAssetId": "",
+          "lastBackgroundStatus": "pending"
+        },
+        "studio": {
+          "motionMode": "moderate",
+          "orbAnimation": true,
+          "lowPower": false,
+          "backgroundType": "gradient",
+          "backgroundAssetId": "",
+          "orbDesign": "orbital"
+        },
+        "root": {
+          "policy": "moderate",
+          "orb": "on",
+          "low": "false"
+        },
+        "css": {
+          "particleDisplay": "block",
+          "particleName": "tcParticleOrbit",
+          "particleState": "running",
+          "coreDisplay": "block",
+          "coreState": "running",
+          "ringDisplay": "block",
+          "ringState": "running"
+        },
+        "result": {
+          "ok": true,
+          "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+          "layers": [
+            {
+              "layer": "núcleo",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcCorePulse"
+            },
+            {
+              "layer": "anillo",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcOrbitTilt"
+            },
+            {
+              "layer": "escáner",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcScan"
+            },
+            {
+              "layer": "ondas",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcWave"
+            },
+            {
+              "layer": "partículas",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcParticleOrbit"
+            }
+          ]
+        }
+      },
+      "low": {
+        "state": {
+          "motionMode": "low",
+          "explicitMotionChoice": true,
+          "lastBackgroundAssetId": "",
+          "lastBackgroundStatus": "pending"
+        },
+        "studio": {
+          "motionMode": "low",
+          "orbAnimation": true,
+          "lowPower": true,
+          "backgroundType": "gradient",
+          "backgroundAssetId": "",
+          "orbDesign": "orbital"
+        },
+        "root": {
+          "policy": "low",
+          "orb": "on",
+          "low": "true"
+        },
+        "css": {
+          "particleDisplay": "none",
+          "particleName": "tcParticleOrbit",
+          "particleState": "paused",
+          "coreDisplay": "block",
+          "coreState": "running",
+          "ringDisplay": "block",
+          "ringState": "running"
+        },
+        "result": {
+          "ok": true,
+          "reason": "Movimiento real confirmado en núcleo, anillo.",
+          "layers": [
+            {
+              "layer": "núcleo",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcCorePulse"
+            },
+            {
+              "layer": "anillo",
+              "ok": true,
+              "playState": "running",
+              "animationName": "tcOrbitTilt"
+            }
+          ]
+        }
+      },
+      "off": {
+        "state": {
+          "motionMode": "off",
+          "explicitMotionChoice": true,
+          "lastBackgroundAssetId": "",
+          "lastBackgroundStatus": "pending"
+        },
+        "studio": {
+          "motionMode": "off",
+          "orbAnimation": false,
+          "lowPower": false,
+          "backgroundType": "gradient",
+          "backgroundAssetId": "",
+          "orbDesign": "orbital"
+        },
+        "root": {
+          "policy": "off",
+          "orb": "off",
+          "low": "false"
+        },
+        "css": {
+          "particleDisplay": "block",
+          "particleName": "tcParticleOrbit",
+          "particleState": "paused",
+          "coreDisplay": "block",
+          "coreState": "paused",
+          "ringDisplay": "block",
+          "ringState": "paused"
+        },
+        "result": {
+          "ok": false,
+          "reason": "Las animaciones están desactivadas por el usuario."
+        }
+      }
+    },
+    "legacy_race": {
+      "state": {
+        "motionMode": "full",
+        "explicitMotionChoice": true,
+        "lastBackgroundAssetId": "",
+        "lastBackgroundStatus": "pending"
+      },
+      "studio": {
+        "motionMode": "full",
+        "orbAnimation": true,
+        "lowPower": false,
+        "backgroundType": "gradient",
+        "backgroundAssetId": "",
+        "orbDesign": "orbital"
+      },
+      "root": {
+        "policy": "full",
+        "orb": "on",
+        "low": "false"
+      },
+      "applyCount": 7,
+      "result": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcOrbitTilt"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcParticleOrbit"
+          }
+        ]
+      }
+    },
+    "particle_fallback": {
+      "before": {
+        "name": "none",
+        "count": 1
+      },
+      "result": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcOrbitTilt"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      },
+      "after": {
+        "name": "none",
+        "count": 1,
+        "fallback": true,
+        "animations": [
+          {
+            "id": "sakura-particle-fallback-v17-13-2",
+            "state": "running",
+            "time": 533.2800000000643
+          }
+        ]
+      }
+    },
+    "states": {
+      "available": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcOrbitTilt"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      },
+      "thinking": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcOrbitTilt"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      },
+      "speaking": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcOrbitTilt"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      },
+      "executing": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcOrbitTilt"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      }
+    },
+    "orb_designs": {
+      "sakura-japan": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, ondas, partículas. Capas ocultas por el diseño: escáner.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcSpin"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "skipped": "hidden-by-design"
+          }
+        ]
+      },
+      "orbital": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcOrbitTilt"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      },
+      "tactical": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcSpin"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      },
+      "neon-pulse": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcSpin"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      },
+      "quantum-prism": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcSpin"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      },
+      "digital-aurora": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcAurora"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcSpin"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      },
+      "minimal-apple": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, ondas. Capas ocultas por el diseño: escáner, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcSpin"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "skipped": "hidden-by-design"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "skipped": "hidden-by-design"
+          }
+        ]
+      },
+      "neural-network": {
+        "ok": true,
+        "reason": "Movimiento real confirmado en núcleo, anillo, escáner, ondas, partículas.",
+        "layers": [
+          {
+            "layer": "núcleo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcCorePulse"
+          },
+          {
+            "layer": "anillo",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcSpin"
+          },
+          {
+            "layer": "escáner",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcScan"
+          },
+          {
+            "layer": "ondas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "tcWave"
+          },
+          {
+            "layer": "partículas",
+            "ok": true,
+            "playState": "running",
+            "animationName": "none"
+          }
+        ]
+      }
+    },
+    "errors": []
+  },
+  "note": "Prueba aislada del runtime real de movimiento. No sustituye la validación completa en Vercel."
+}

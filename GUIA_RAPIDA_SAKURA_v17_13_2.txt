@@ -1,0 +1,32 @@
+GUÍA RÁPIDA — VALIDACIÓN SAKURA v17.13.2
+
+ANTES DE PROBAR
+1. Despliega este ZIP completo en GitHub/Vercel.
+2. Cierra pestañas antiguas y abre nuevamente la URL publicada.
+3. Pulsa Ctrl + F5.
+4. Confirma que la plataforma indique v17.13.2.
+
+PARTÍCULAS Y NÚCLEO
+1. Abre SAKURA.
+2. Ve a Ajustes → Movimiento y fondo · v17.13.2.
+3. Selecciona Completa.
+4. Pulsa Activar animaciones ahora.
+5. Pulsa Probar movimiento.
+6. Debe indicar movimiento confirmado en núcleo, anillo, escáner, ondas y partículas visibles.
+7. Observa que los puntos orbitan y derivan; ya no deben conservar una posición fija.
+8. Cambia entre disponible, pensando, hablando y ejecutando.
+9. Prueba Moderada, Bajo consumo y Sin animación.
+
+COMPORTAMIENTO ESPERADO
+- Completa: todas las capas se mueven y las partículas son claramente visibles.
+- Moderada: todas las capas principales se mueven más despacio y con menor intensidad.
+- Bajo consumo: núcleo y primer anillo se mueven; partículas, escáner y capas secundarias se ocultan.
+- Sin animación: todas las animaciones se pausan por decisión del usuario.
+
+FONDO Y PANEL
+El código de fondo de v17.13.1 se conserva. Repite la validación de fotografía, persistencia,
+fusión de colores, pestañas, movimiento del panel, zona segura y controles visibles.
+
+SALUD
+Ejecuta Auditoría Pro. Compara con la línea base informada: Salud 96, Fallas 0,
+Advertencias 1, Work 360. No declares certificación hasta completar esta prueba.

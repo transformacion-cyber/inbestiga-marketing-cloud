@@ -1,9 +1,9 @@
-/* INBESTIGA Marketing Cloud v17.13.1 · SAKURA Live Motion & Background Fusion permanent presence */
+/* INBESTIGA Marketing Cloud v17.13.2 · SAKURA Live Motion & Background Fusion permanent presence */
 (() => {
   "use strict";
-  if (window.INBESTIGA_SAKURA_LOADER?.version === "v17.13.1") return;
-  const VERSION = "v17.13.1";
-  const MODULE = "sakura-presence-loader-v17-13-1";
+  if (window.INBESTIGA_SAKURA_LOADER?.version === "v17.13.2") return;
+  const VERSION = "v17.13.2";
+  const MODULE = "sakura-presence-loader-v17-13-2";
   const runtime = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG || {};
   const flags = Object.assign({enabled:true,chat:true,actions:true,learning:true,voice:true,reports:true,visualDirector:true,web:false,workspaceLayout:true,bridgeUrl:"http://127.0.0.1:8765"}, runtime.sakura || {});
   let loading = null;
@@ -35,10 +35,10 @@
     if(window.INBESTIGA_SAKURA_NATIVE?.open){window.INBESTIGA_SAKURA_ADAPTIVE_INTELLIGENCE?.attach?.();return window.INBESTIGA_SAKURA_NATIVE.open()}
     if(loading)return loading;
     loading=(async()=>{
-      addCss("assets/css/sakura-personal-workspace-base-v17-12-13-6.css","base");addCss("assets/css/sakura-personal-studio-v17-12-13-6.css","personal-studio");addCss("assets/css/sakura-adaptive-intelligence-v17-13-0.css","adaptive-intelligence");addCss("assets/css/sakura-live-motion-background-fusion-v17-13-1.css","live-motion-background-fusion");
+      addCss("assets/css/sakura-personal-workspace-base-v17-12-13-6.css","base");addCss("assets/css/sakura-personal-studio-v17-12-13-6.css","personal-studio");addCss("assets/css/sakura-adaptive-intelligence-v17-13-0.css","adaptive-intelligence");addCss("assets/css/sakura-live-motion-background-fusion-v17-13-2.css","live-motion-background-fusion");
       await loadScript("assets/js/sakura-personal-workspace-v17-12-13-6.js","workspace-v17-12-13-6");
       await loadScript("assets/js/sakura-adaptive-intelligence-v17-13-0.js","adaptive-intelligence-v17-13-1");
-      await loadScript("assets/js/sakura-live-motion-background-fusion-v17-13-1.js","live-motion-background-fusion-v17-13-1");
+      await loadScript("assets/js/sakura-live-motion-background-fusion-v17-13-2.js","live-motion-background-fusion-v17-13-2");
       if(!window.INBESTIGA_SAKURA_NATIVE?.open)throw new Error("SAKURA no pudo iniciar.");
       window.INBESTIGA_SAKURA_NATIVE.open();requestAnimationFrame(()=>{window.INBESTIGA_SAKURA_ADAPTIVE_INTELLIGENCE?.attach?.();window.INBESTIGA_SAKURA_LIVE_VISUALS?.attach?.()});return true
     })().catch(error=>{notifyError(error);throw error}).finally(()=>{loading=null});

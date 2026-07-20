@@ -1,0 +1,68 @@
+{
+  "version": "17.13.2",
+  "base": "17.13.1",
+  "overall_static_ok": true,
+  "file_diff": {
+    "modified": [
+      "assets/js/sakura-presence-loader-v17-13-0.js",
+      "config/build-manifest.json",
+      "config/public-runtime-config.js",
+      "index.html",
+      "manifest.webmanifest",
+      "service-worker.js"
+    ],
+    "new": [
+      "AUDITORIA_v17_13_2_SAKURA_PARTICLE_MOTION_SYNC.txt",
+      "BROWSER_SYNTHETIC_TEST_v17_13_2.json",
+      "CHANGES_v17_13_2.json",
+      "FUNCTIONAL_TESTS_v17_13_2.json",
+      "GUIA_RAPIDA_SAKURA_v17_13_2.txt",
+      "HEALTH_COMPARISON_v17_13_2.json",
+      "HOTFIX_v17_13_2_LEER_PRIMERO.txt",
+      "LISTA_ARCHIVOS_MODIFICADOS_v17_13_2.txt",
+      "LISTA_ARCHIVOS_NUEVOS_v17_13_2.txt",
+      "PROTECTED_SCOPE_VALIDATION_v17_13_2.json",
+      "STATIC_VALIDATION_v17_13_2.json",
+      "VISUAL_REPRODUCTION_v17_13_2.json",
+      "assets/css/sakura-live-motion-background-fusion-v17-13-2.css",
+      "assets/js/sakura-live-motion-background-fusion-v17-13-2.js"
+    ],
+    "removed": [],
+    "protected_scope_unchanged": true
+  },
+  "syntax": {
+    "javascript_external_checked": 42,
+    "javascript_external_failures": [],
+    "json_checked": 92,
+    "json_failures": [],
+    "css_new_or_modified": [
+      {
+        "file": "assets/css/sakura-live-motion-background-fusion-v17-13-2.css",
+        "parse_errors": [],
+        "brace_balance": 0
+      }
+    ]
+  },
+  "integrity": {
+    "html_local_checked": 57,
+    "html_missing": [],
+    "service_worker_checked": 66,
+    "service_worker_missing": [],
+    "build_manifest_missing": []
+  },
+  "prohibited_in_changed_files": {
+    "forbidden_hits": {},
+    "new_sql_files": []
+  },
+  "browser_runtime": {
+    "v17131_failure_reproduced": true,
+    "v17132_motion_modes_passed": true,
+    "v17132_off_mode_expected_pause": true,
+    "v17132_legacy_race_repaired": true,
+    "v17132_particle_fallback_passed": true,
+    "v17132_state_tests_passed": true,
+    "v17132_orb_designs_passed": true,
+    "browser_errors": []
+  },
+  "production_certification": "pending_live_vercel_auditoria_pro"
+}
