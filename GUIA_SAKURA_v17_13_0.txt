@@ -1,0 +1,30 @@
+GUÍA DE SAKURA v17.13.0
+
+1. ABRIR SAKURA
+- Usa el lanzador persistente o el acceso superior de SAKURA.
+- El chat y el borrador se conservan al cambiar de módulo.
+
+2. NAVEGACIÓN
+- Chat: conversación privada con SAKURA.
+- Mensajes: comunicación real con miembros del equipo.
+- Documentos/Reportes: entregables basados en datos disponibles.
+- Estudio: conocimientos y entrenamiento.
+- Ajustes: autonomía, módulos y organización.
+- Director: personalización visual segura.
+- Memoria: aprendizajes y correcciones supervisadas.
+- Web: aparece cuando el Explorador Web está activado.
+
+3. AUTONOMÍA
+- Nivel personal: puede corregir contraste, paneles fuera de pantalla y preferencias visuales autorizadas.
+- Acciones operativas: siempre requieren vista previa y confirmación.
+- Cambios de área o empresa: requieren permisos y confirmación.
+- SAKURA no cambia roles, RLS, SQL, código, Vercel ni Service Worker.
+
+4. CONVERSACIÓN NATURAL
+- Conserva contexto reciente, entidades y borradores.
+- Normaliza errores comunes sin ejecutar silenciosamente una interpretación incierta.
+- Usa “No entendió” para registrar una corrección personal y reversible.
+
+5. FUNCIONAMIENTO SIN OLLAMA
+- Mensajería, organización del panel, estilos, memoria local, referencias web guardadas y reportes calculados por código siguen disponibles.
+- Las funciones de redacción o resumen inteligente que dependen del modelo mostrarán el estado real de desconexión.

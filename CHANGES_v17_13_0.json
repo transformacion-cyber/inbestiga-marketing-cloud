@@ -1,0 +1,48 @@
+{
+  "version": "v17.13.0",
+  "name": "SAKURA Adaptive Intelligence, Visual Director & Controlled Web Explorer",
+  "base": "v17.12.13.6",
+  "sql_required": false,
+  "cache": "inbestiga-v17-13-0-shell",
+  "phases": [
+    "Auditoría y banderas",
+    "Presencia y organización de paneles",
+    "Núcleos tecnológicos",
+    "Fusión visual",
+    "Comprensión y memoria",
+    "Aprendizaje supervisado",
+    "Director Visual",
+    "Explorador Web",
+    "Acciones verificadas",
+    "Autonomía segura",
+    "Optimización y accesibilidad"
+  ],
+  "key_changes": [
+    "Zona segura y layouts por usuario/módulo",
+    "8 núcleos tecnológicos multicapa y estados animados",
+    "Fusión real de fotografías con paleta automática",
+    "Contexto, borradores y correcciones supervisadas",
+    "Director Visual mediante tokens cerrados y rollback",
+    "Explorador Web server-side desactivado por defecto",
+    "Banderas independientes para desactivar módulos",
+    "Estados visuales para acciones verificadas",
+    "Director Visual puede aplicar la misma propuesta segura a la plataforma y a SAKURA",
+    "Modo de espacio de trabajo en dos columnas"
+  ],
+  "protected_areas_unchanged": [
+    "Auth",
+    "RLS",
+    "Storage",
+    "tablas productivas",
+    "RPC productivas",
+    "loadAll",
+    "renderAll",
+    "bootstrap",
+    "Work 360",
+    "campañas",
+    "Creative Arena",
+    "Muro",
+    "puntos y ranking",
+    "puente local"
+  ]
+}

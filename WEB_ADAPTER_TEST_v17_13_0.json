@@ -1,0 +1,46 @@
+{
+  "version": "v17.13.0",
+  "method": "Invocación directa del handler api/sakura-web.js con fetch simulado.",
+  "cases": [
+    {
+      "name": "provider_disabled",
+      "status": 503,
+      "passed": true,
+      "result": "Informa que el explorador no está configurado; Cache-Control no-store."
+    },
+    {
+      "name": "sensitive_query",
+      "status": 400,
+      "passed": true,
+      "result": "Bloquea consultas con indicios de credenciales."
+    },
+    {
+      "name": "news",
+      "status": 200,
+      "passed": true,
+      "result": "Normaliza título, fuente, fecha y URL; no envía country porque topic=news."
+    },
+    {
+      "name": "images",
+      "status": 200,
+      "passed": true,
+      "result": "Solicita imágenes y descripciones; marca la licencia como no confirmada."
+    },
+    {
+      "name": "key_exposure",
+      "passed": true,
+      "result": "La clave no aparece en la respuesta al navegador."
+    }
+  ],
+  "provider_request": {
+    "endpoint": "Tavily Search API",
+    "search_depth": "basic",
+    "include_raw_content": false,
+    "include_answer": false,
+    "country_only_for_general": true
+  },
+  "limitations": [
+    "No se realizaron consultas reales porque no se dispone de la clave privada del usuario.",
+    "Videos dependen de los resultados compatibles devueltos por el proveedor configurado."
+  ]
+}

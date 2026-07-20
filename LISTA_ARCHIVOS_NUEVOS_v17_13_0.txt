@@ -1,0 +1,21 @@
+ARCHIVOS NUEVOS v17.13.0
+
+- api/sakura-web.js
+- assets/css/sakura-adaptive-intelligence-v17-13-0.css
+- assets/js/sakura-adaptive-intelligence-v17-13-0.js
+- assets/js/sakura-presence-loader-v17-13-0.js
+- AUDITORIA_v17_13_0_SAKURA_ADAPTIVE_INTELLIGENCE.txt
+- BROWSER_SYNTHETIC_TEST_v17_13_0.json
+- CHANGES_v17_13_0.json
+- FUNCTIONAL_TESTS_v17_13_0.json
+- HEALTH_COMPARISON_v17_13_0.json
+- GUIA_SAKURA_v17_13_0.txt
+- GUIA_ORGANIZADOR_PANELES_v17_13_0.txt
+- GUIA_DIRECTOR_VISUAL_v17_13_0.txt
+- GUIA_EXPLORADOR_WEB_v17_13_0.txt
+- GUIA_PRIVACIDAD_SAKURA_v17_13_0.txt
+- LEER_PRIMERO_v17_13_0.txt
+- STATIC_VALIDATION_v17_13_0.json
+- WEB_ADAPTER_TEST_v17_13_0.json
+- PROTECTED_SCOPE_VALIDATION_v17_13_0.json
+- SHA256SUMS_v17_13_0.txt

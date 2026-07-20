@@ -1,0 +1,59 @@
+{
+  "version": "v17.13.0",
+  "method": "Playwright sintético con DOM equivalente e inyección local de scripts; la navegación file/http del entorno estuvo bloqueada por política administrativa.",
+  "desktop": {
+    "viewport": "1440x900",
+    "panel": true,
+    "header": "SAKURA",
+    "panel_top": 74,
+    "menu_bottom": 64,
+    "safe_zone_ok": true,
+    "layout_initial": "right",
+    "floating_top": 74,
+    "director": true,
+    "layout_popover": true,
+    "settings": true,
+    "console_errors": [],
+    "two_columns": {
+      "layout": "columns",
+      "dock_width_px": 662,
+      "passed": true
+    }
+  },
+  "mobile": {
+    "viewport": "390x844",
+    "panel": true,
+    "header": "SAKURA",
+    "panel_top": 243.203125,
+    "menu_bottom": 64,
+    "safe_zone_ok": true,
+    "layout_tested": "bottom",
+    "console_errors": []
+  },
+  "tabs": {
+    "chat": true,
+    "messages": true,
+    "documents_reports": true,
+    "study": true,
+    "settings": true,
+    "director": true,
+    "memory": true,
+    "web_hidden_by_default": true
+  },
+  "technology_core": {
+    "instances": 1,
+    "tested_multilayer_elements": 5
+  },
+  "limitations": [
+    "No equivale a una prueba del despliegue real de Vercel.",
+    "IndexedDB no pudo probarse dentro del origen sintético about:blank; se verificó el flujo de código y los eventos.",
+    "Supabase, RLS, Ollama y datos productivos requieren prueba publicada."
+  ],
+  "visual_director_self_adaptation": {
+    "command": "Haz la plataforma futurista, tecnológica y oscura con botones visibles",
+    "platform_background": "#061018",
+    "sakura_background": "#061018",
+    "apply_to_sakura": true,
+    "passed": true
+  }
+}

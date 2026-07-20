@@ -1,0 +1,38 @@
+GUÍA — EXPLORADOR WEB CONTROLADO v17.13.0
+
+ESTADO PREDETERMINADO
+- Desactivado.
+- Modo de privacidad recomendado: Preguntar antes de buscar.
+
+CONFIGURACIÓN EN VERCEL
+1. Abre el proyecto en Vercel → Settings → Environment Variables.
+2. Agrega SAKURA_WEB_ENABLED=true.
+3. Agrega TAVILY_API_KEY con la clave privada del proveedor.
+4. Vuelve a desplegar.
+5. Activa SAKURA_WEB_ENABLED desde los ajustes de SAKURA si estaba deshabilitado para el usuario.
+
+FUNCIONES
+- Información general.
+- Noticias.
+- Imágenes con miniatura y procedencia.
+- Videos con procedencia cuando el proveedor devuelve resultados compatibles.
+- Filtro por dominios autorizados.
+- Mostrar consulta exacta antes de enviarla.
+- Guardar referencias en un cuaderno local, reporte, conocimiento pendiente o vínculo hacia una campaña, tarea, Biblioteca Visual o Creative Arena.
+
+PRIVACIDAD
+- La clave permanece en la función servidor api/sakura-web.js.
+- No se envía al proveedor el historial completo del chat.
+- Las consultas con indicios de credenciales se bloquean.
+- No se descarga ni ejecuta contenido encontrado.
+- La licencia de las imágenes se muestra como no confirmada cuando el proveedor no aporta una licencia verificable.
+
+SIN PROVEEDOR
+- SAKURA no inventa resultados.
+- Muestra “Explorador web no configurado”.
+- Permite abrir una búsqueda manual en el navegador.
+
+GUARDADO EN ELEMENTOS PRODUCTIVOS
+- Esta versión guarda la referencia y su destino seleccionado sin alterar silenciosamente registros productivos.
+- Abre el módulo de destino para completar la incorporación mediante las funciones existentes.
+- No se creó una RPC ni una tabla paralela para forzar adjuntos o referencias.

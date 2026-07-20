@@ -1,0 +1,8 @@
+ARCHIVOS DE CÓDIGO MODIFICADOS
+
+- assets/js/sakura-personal-studio-v17-12-13-6.js
+- assets/js/sakura-personal-workspace-v17-12-13-6.js
+- config/public-runtime-config.js
+- index.html
+- manifest.webmanifest
+- service-worker.js

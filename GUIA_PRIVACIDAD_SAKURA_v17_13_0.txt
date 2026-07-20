@@ -1,0 +1,34 @@
+GUÍA DE PRIVACIDAD Y AUTONOMÍA — SAKURA v17.13.0
+
+PRINCIPIOS
+- La sesión y los permisos reales del usuario gobiernan todas las acciones.
+- Los cambios operativos requieren vista previa y confirmación.
+- El aprendizaje es visible, editable y eliminable.
+- Los datos personales no se convierten automáticamente en conocimiento de área o empresa.
+
+SAKURA NO PUEDE
+- Usar service_role o secretos en el navegador.
+- Ejecutar SQL libre.
+- Modificar Auth, RLS, roles o permisos.
+- Ejecutar código generado por el modelo.
+- Instalar programas o ejecutar comandos del sistema.
+- Desplegar en Vercel o modificar el repositorio.
+- Escuchar permanentemente el micrófono.
+- Enviar conversaciones privadas completas a internet.
+- Descargar archivos encontrados sin acción explícita del usuario.
+
+MEMORIA SUPERVISADA
+- Cada aprendizaje muestra alcance, origen y fecha.
+- El usuario puede editar, exportar o eliminar recuerdos y correcciones.
+- Las propuestas para área o empresa no se publican automáticamente.
+
+EXPLORADOR WEB
+- Desactivado por defecto.
+- Muestra la consulta exacta.
+- Bloquea patrones de credenciales.
+- Usa una clave del servidor y no del frontend.
+- Puede desactivarse sin afectar Marketing Cloud.
+
+RECUPERACIÓN
+- Apariencia, distribución y memoria personal pueden restaurarse o eliminarse desde SAKURA.
+- Los cambios visuales guardan historial para deshacer.

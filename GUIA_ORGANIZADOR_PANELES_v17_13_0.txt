@@ -1,0 +1,33 @@
+GUÍA — ORGANIZADOR DE PANELES SAKURA v17.13.0
+
+ACCESO
+- Abre SAKURA y pulsa el botón de organizar paneles.
+- También está disponible en Ajustes → Organizar paneles.
+
+MODOS
+- Derecha.
+- Izquierda.
+- Dos columnas.
+- Flotante.
+- Inferior.
+- Vista completa.
+- Barra compacta.
+- Solo núcleo.
+
+CONTROLES
+- Arrastra desde el control Mover.
+- Redimensiona el panel desde sus bordes cuando el modo lo permite.
+- Al arrastrar aparecen zonas de acoplamiento.
+- Reubicar en zona segura corrige paneles detrás del menú o fuera de pantalla.
+- Deshacer recupera el último movimiento.
+- Restablecer elimina distribuciones guardadas y vuelve a la posición segura.
+
+GUARDADO
+- La distribución se guarda por usuario y por módulo en el navegador.
+- El borrador de escritura también se conserva por módulo.
+- La conversación no se reinicia al cambiar de distribución.
+
+SEGURIDAD VISUAL
+- El nombre, el estado y los controles de SAKURA permanecen visibles.
+- El panel respeta el límite inferior del menú superior y el tamaño de la ventana.
+- En móvil usa automáticamente una disposición inferior segura.

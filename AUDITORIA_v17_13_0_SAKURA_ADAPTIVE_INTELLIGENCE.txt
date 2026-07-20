@@ -1,0 +1,56 @@
+AUDITORÍA v17.13.0 — SAKURA ADAPTIVE INTELLIGENCE
+
+LÍNEA BASE INFORMADA
+- Salud: 96.
+- Fallas: 0.
+- Advertencias: 1, relacionada con Work 360.
+- La línea base proviene de la plataforma productiva informada por el usuario; no fue recalculada dentro del contenedor.
+
+FASE 0
+- Base v17.12.13.6 verificada.
+- Respaldo conservado fuera del árbol de trabajo.
+- Interruptor general y ocho banderas independientes incorporadas.
+
+PROTECCIONES
+- Sin service_role.
+- Sin SQL nuevo.
+- Sin nuevas tablas.
+- Sin nuevas RPC.
+- Sin canales Realtime nuevos.
+- Sin polling nuevo.
+- Sin observador global nuevo.
+- Sin eval ni new Function.
+- Sin secretos en el frontend.
+- Sin modelos, embeddings, fondos personales, resultados web ni adjuntos en el precache.
+- Sin cambios en Auth, RLS, Storage, tablas productivas, loadAll, renderAll o bootstrap.
+
+VALIDACIÓN ESTÁTICA
+- Todos los JavaScript externos y scripts inline tienen sintaxis válida.
+- CSS con estructura válida.
+- JSON válido.
+- Referencias de index.html sin faltantes.
+- Recursos del Service Worker sin faltantes.
+- Caché PWA: inbestiga-v17-13-0-shell.
+- Sin IDs duplicados nuevos.
+- Puente Python válido y BAT conservados.
+
+VALIDACIÓN SINTÉTICA DE NAVEGADOR
+- Escritorio 1440 × 900: encabezado visible, panel por debajo del menú, Director Visual y organizador operativos, sin errores de consola.
+- Móvil 390 × 844: panel inferior dentro de la pantalla, encabezado visible, sin errores de consola.
+- Se verificó la existencia del núcleo multicapa, navegación y controles.
+
+ADAPTADOR WEB
+- Pruebas simuladas correctas para proveedor desactivado, bloqueo de credenciales, noticias, imágenes y no exposición de la clave.
+- El proveedor permanece desactivado por defecto.
+
+LIMITACIONES HONESTAS
+- No se certifica la salud real posterior al despliegue.
+- No se certifican Vercel, Supabase, RLS, Ollama, internet real ni RPC productivas sin pruebas en la URL publicada.
+- La navegación completa de archivos o servidor local fue bloqueada por la política administrativa del navegador de pruebas; se utilizó una prueba sintética equivalente.
+- IndexedDB no pudo probarse en el origen sintético; el flujo de código, almacenamiento y eventos sí fue revisado.
+- El guardado de una referencia web en campaña o tarea mantiene un vínculo local con procedencia y abre el módulo de destino; no altera silenciosamente un registro productivo sin una RPC autorizada.
+
+RESULTADO
+- Fallas nuevas detectadas en validación estática: 0.
+- Advertencias nuevas detectadas en validación estática: 0.
+- Salud productiva posterior: pendiente de comprobar tras el despliegue.

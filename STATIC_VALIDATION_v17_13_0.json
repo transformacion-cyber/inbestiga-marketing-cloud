@@ -1,0 +1,126 @@
+{
+  "javascript": {
+    "total": 40,
+    "valid": 40,
+    "invalid": []
+  },
+  "inline_javascript": {
+    "total": 14,
+    "valid": 14,
+    "invalid": []
+  },
+  "json": {
+    "total": 82,
+    "valid": 82,
+    "invalid": []
+  },
+  "css": {
+    "total": 29,
+    "valid": 29,
+    "invalid": []
+  },
+  "html_references": {
+    "total": 55,
+    "missing": []
+  },
+  "service_worker": {
+    "cache": "inbestiga-v17-13-0-shell",
+    "resources": 62,
+    "missing": []
+  },
+  "duplicate_ids": {
+    "base": [],
+    "new": [],
+    "added": []
+  },
+  "new_module_metrics": {
+    "assets/js/sakura-adaptive-intelligence-v17-13-0.js": {
+      "setInterval": 0,
+      "MutationObserver": 0,
+      "supabase_channel": 0,
+      "service_role_literals": 0,
+      "eval": 0,
+      "new_Function": 0
+    },
+    "assets/js/sakura-presence-loader-v17-13-0.js": {
+      "setInterval": 0,
+      "MutationObserver": 0,
+      "supabase_channel": 0,
+      "service_role_literals": 0,
+      "eval": 0,
+      "new_Function": 0
+    },
+    "api/sakura-web.js": {
+      "setInterval": 0,
+      "MutationObserver": 0,
+      "supabase_channel": 0,
+      "service_role_literals": 0,
+      "eval": 0,
+      "new_Function": 0
+    }
+  },
+  "python": {
+    "total": 1,
+    "valid": 1,
+    "invalid": []
+  },
+  "bat": [
+    {
+      "file": "SAKURA_LOCAL_BRIDGE/DESCARGAR_MODELOS_SAKURA.bat",
+      "crlf": true,
+      "bare_lf": false
+    },
+    {
+      "file": "SAKURA_LOCAL_BRIDGE/INICIAR_SAKURA_LOCAL.bat",
+      "crlf": true,
+      "bare_lf": false
+    },
+    {
+      "file": "SAKURA_LOCAL_BRIDGE/INSTALAR_SAKURA_LOCAL.bat",
+      "crlf": true,
+      "bare_lf": false
+    },
+    {
+      "file": "SAKURA_LOCAL_BRIDGE/VERIFICAR_REQUISITOS_SAKURA.bat",
+      "crlf": true,
+      "bare_lf": false
+    }
+  ],
+  "diff": {
+    "changed": [
+      "assets/js/sakura-personal-studio-v17-12-13-6.js",
+      "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+      "config/public-runtime-config.js",
+      "index.html",
+      "manifest.webmanifest",
+      "service-worker.js"
+    ],
+    "new": [
+      "AUDITORIA_v17_13_0_SAKURA_ADAPTIVE_INTELLIGENCE.txt",
+      "BROWSER_SYNTHETIC_TEST_v17_13_0.json",
+      "CHANGES_v17_13_0.json",
+      "FUNCTIONAL_TESTS_v17_13_0.json",
+      "GUIA_DIRECTOR_VISUAL_v17_13_0.txt",
+      "GUIA_EXPLORADOR_WEB_v17_13_0.txt",
+      "GUIA_ORGANIZADOR_PANELES_v17_13_0.txt",
+      "GUIA_PRIVACIDAD_SAKURA_v17_13_0.txt",
+      "GUIA_SAKURA_v17_13_0.txt",
+      "HEALTH_COMPARISON_v17_13_0.json",
+      "LEER_PRIMERO_v17_13_0.txt",
+      "LISTA_ARCHIVOS_MODIFICADOS_v17_13_0.txt",
+      "LISTA_ARCHIVOS_NUEVOS_v17_13_0.txt",
+      "PROTECTED_SCOPE_VALIDATION_v17_13_0.json",
+      "STATIC_VALIDATION_v17_13_0.json",
+      "WEB_ADAPTER_TEST_v17_13_0.json",
+      "api/sakura-web.js",
+      "assets/css/sakura-adaptive-intelligence-v17-13-0.css",
+      "assets/js/sakura-adaptive-intelligence-v17-13-0.js",
+      "assets/js/sakura-presence-loader-v17-13-0.js"
+    ],
+    "removed": []
+  },
+  "package": {
+    "files": 362,
+    "bytes": 4366546
+  }
+}

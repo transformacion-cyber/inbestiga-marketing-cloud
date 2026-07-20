@@ -1,0 +1,39 @@
+GUÍA — SAKURA DIRECTOR VISUAL v17.13.0
+
+OBJETIVO
+Transformar órdenes naturales en propuestas visuales seguras sin ejecutar CSS o JavaScript generado libremente.
+
+FLUJO
+1. Abre SAKURA → Director.
+2. Escribe una instrucción, por ejemplo: “Haz la plataforma más ejecutiva y reduce los reflejos”.
+3. SAKURA convierte la solicitud en tokens autorizados.
+4. Revisa las tres propuestas y su validación de contraste.
+5. Elige el alcance: mi perfil, propuesta para mi área o toda la empresa.
+6. Mantén activado “Aplicar también a SAKURA” para que la asistente adopte el mismo lenguaje visual.
+7. Confirma y aplica.
+8. Usa Deshacer o Restaurar para recuperar la versión anterior.
+
+TOKENS PERMITIDOS
+- Fondos y superficies.
+- Texto y contraste.
+- Colores principal y secundario.
+- Botones, bordes, redondeado y sombras.
+- Tipografía, tamaño, espaciado y densidad.
+- Intensidad de reflejos y animaciones.
+- Distribución autorizada.
+
+FUSIÓN CON FOTOGRAFÍAS
+- Sube una imagen desde Diseño · Plataforma → SAKURA.
+- La imagen se comprime a WebP y se guarda en IndexedDB.
+- SAKURA detecta colores y crea tres propuestas: cristal fusionado, integración profunda e imagen limpia.
+- La fotografía se aplica al panel real y adapta encabezado, superficies, chat, burbujas, botones, marco y núcleo.
+- Puedes regular zoom, posición, cobertura, intensidad, oscurecimiento, saturación, contraste y desenfoque interno.
+
+ALCANCES
+- Mi perfil: aplicación personal y reversible.
+- Mi área: propuesta; requiere responsable autorizado.
+- Toda la empresa: publicación mediante el sistema de Diseño existente y permisos administrativos.
+
+LÍMITES
+- No modifica código fuente, SQL, RLS, RPC, Auth ni despliegues.
+- No aplica diseños globales sin confirmación y permisos.

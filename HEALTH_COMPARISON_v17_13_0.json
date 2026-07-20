@@ -1,0 +1,31 @@
+{
+  "version": "v17.13.0",
+  "baseline": {
+    "source": "informada por el usuario",
+    "score": 96,
+    "failures": 0,
+    "warnings": 1,
+    "warning": "Work 360 pendiente de sincronización"
+  },
+  "post_build": {
+    "live_score": null,
+    "failures_introduced_static": 0,
+    "warnings_introduced_static": 0,
+    "status": "pending_live_deployment"
+  },
+  "validated": {
+    "external_js_valid": "40/40",
+    "inline_js_valid": "14/14",
+    "css_valid": "29/29",
+    "json_valid": "82/82",
+    "html_missing_references": 0,
+    "pwa_missing_resources": 0,
+    "new_duplicate_ids": 0,
+    "new_polling": 0,
+    "new_global_observers": 0,
+    "new_realtime_channels": 0,
+    "python_bridge_valid": "1/1",
+    "package_files_before_hash_manifest": 362
+  },
+  "honest_limit": "No es posible confirmar la puntuación real de Auditoría Pro sin desplegar la versión y probar el entorno productivo."
+}

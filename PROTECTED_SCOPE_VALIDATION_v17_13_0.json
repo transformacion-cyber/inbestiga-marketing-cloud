@@ -1,0 +1,16 @@
+{
+  "version": "v17.13.0",
+  "base": "v17.12.13.6",
+  "common_files_compared": 342,
+  "unchanged_common_files": 336,
+  "changed_existing_files": [
+    "assets/js/sakura-personal-studio-v17-12-13-6.js",
+    "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "protected_backend_changes": [],
+  "statement": "No se modificaron archivos productivos de Auth, RLS, tablas, Storage, RPC, Work 360, campañas, Creative Arena, Muro, puntos o ranking. index.html cambió solo para versión y carga de módulos; los dos módulos SAKURA v17.12.13.6 recibieron correcciones de integración."
+}
