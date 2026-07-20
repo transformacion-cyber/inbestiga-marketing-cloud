@@ -1,10 +1,10 @@
-/* INBESTIGA Marketing Cloud v17.12.13.6 · SAKURA Personal Studio */
+/* INBESTIGA Marketing Cloud v17.13.1 · SAKURA Personal Studio · Live Motion & Background Fusion Hotfix */
 (() => {
   "use strict";
   if (window.INBESTIGA_SAKURA_STUDIO) return;
 
-  const VERSION = "v17.12.13.6";
-  const MODULE = "sakura-personal-studio-v17-12-13-6";
+  const VERSION = "v17.13.1";
+  const MODULE = "sakura-personal-studio-v17-13-1";
   const PERSONAL_KEY = "inbestiga_sakura_style_v2";
   const DRAFT_KEY = "inbestiga_sakura_style_draft_v2";
   const THEMES_KEY = "inbestiga_sakura_custom_themes_v2";
@@ -63,7 +63,7 @@
     userBubble:"#a84df2",userText:"#ffffff",assistantBubble:"#30243a",assistantText:"#ffffff",bubbleRadius:18,bubbleWidth:94,messageGap:13,showTimes:true,
     inputBg:"#241b2b",inputText:"#ffffff",inputBorder:"rgba(255,255,255,.20)",inputRadius:15,inputHeight:50,buttonBg:"#8c4df2",buttonText:"#ffffff",
     mainFont:"SF Pro / Sistema",nameFont:"SF Pro / Sistema",messageFont:"SF Pro / Sistema",buttonFont:"SF Pro / Sistema",fontSize:14,nameSize:20,fontWeight:500,lineHeight:1.55,letterSpacing:0,uppercaseName:true,textAlign:"left",
-    orbDesign:"orbital",orbPrimary:"#9158ff",orbSecondary:"#ef61b9",orbTertiary:"#6dc9ff",orbGlow:"#9b5cff",orbSize:56,orbBrightness:100,orbSpeed:100,orbParticles:70,orbRingWidth:1,orbAnimation:true,voiceReactive:true,lowPower:false,
+    orbDesign:"orbital",orbPrimary:"#9158ff",orbSecondary:"#ef61b9",orbTertiary:"#6dc9ff",orbGlow:"#9b5cff",orbSize:56,orbBrightness:100,orbSpeed:100,orbParticles:70,orbRingWidth:1,orbAnimation:true,voiceReactive:true,lowPower:false,motionMode:"full",
     messageAccent:"#2f7cf6",teamIncoming:"#eef3fb",teamOutgoing:"#dfeaff",teamText:"#172033",panelMode:"normal",mobileHeight:"70"
   };
 
@@ -73,6 +73,8 @@
   let previewDevice = "desktop";
   let previewMode = "expanded";
   let assetUrl = "";
+  let assetUrlId = "";
+  let lastBackgroundVerification = {ok:false,reason:"Sin verificar",at:""};
   let mountedRoot = null;
 
   const rows = v => Array.isArray(v) ? v : [];
@@ -109,6 +111,7 @@
     s.mobileHeight=["35","70","100"].includes(String(s.mobileHeight))?String(s.mobileHeight):"70";
     s.mainFont=FONTS[s.mainFont]?s.mainFont:"SF Pro / Sistema";s.nameFont=FONTS[s.nameFont]?s.nameFont:s.mainFont;s.messageFont=FONTS[s.messageFont]?s.messageFont:s.mainFont;s.buttonFont=FONTS[s.buttonFont]?s.buttonFont:s.mainFont;
     s.orbDesign=ORBS[s.orbDesign]?s.orbDesign:"orbital";
+    s.motionMode=["full","moderate","low","off"].includes(s.motionMode)?s.motionMode:"full";
     ["gradientAngle","overlay","brightness","saturation","blur","panelOpacity","frameWidth","frameOpacity","panelRadius","shadowStrength","glowStrength","headerHeight","bubbleRadius","bubbleWidth","messageGap","inputRadius","inputHeight","fontSize","nameSize","fontWeight","lineHeight","letterSpacing","orbSize","orbBrightness","orbSpeed","orbParticles","orbRingWidth"].forEach(k=>s[k]=Number(s[k]));
     s.gradientAngle=clamp(s.gradientAngle,0,360,155);s.overlay=clamp(s.overlay,0,80,22);s.brightness=clamp(s.brightness,60,140,100);s.saturation=clamp(s.saturation,0,180,100);s.blur=clamp(s.blur,0,18,0);s.panelOpacity=clamp(s.panelOpacity,70,100,100);s.frameWidth=clamp(s.frameWidth,0,5,1);s.frameOpacity=clamp(s.frameOpacity,0,100,25);s.panelRadius=clamp(s.panelRadius,10,42,24);s.shadowStrength=clamp(s.shadowStrength,0,80,34);s.glowStrength=clamp(s.glowStrength,0,60,0);s.headerHeight=clamp(s.headerHeight,72,150,92);s.bubbleRadius=clamp(s.bubbleRadius,6,32,18);s.bubbleWidth=clamp(s.bubbleWidth,60,100,94);s.messageGap=clamp(s.messageGap,4,28,13);s.inputRadius=clamp(s.inputRadius,5,30,15);s.inputHeight=clamp(s.inputHeight,42,90,50);s.fontSize=clamp(s.fontSize,13,20,14);s.nameSize=clamp(s.nameSize,16,34,20);s.fontWeight=clamp(s.fontWeight,400,800,500);s.lineHeight=clamp(s.lineHeight,1.3,2,1.55);s.letterSpacing=clamp(s.letterSpacing,-.2,2,0);s.orbSize=clamp(s.orbSize,38,92,56);s.orbBrightness=clamp(s.orbBrightness,60,160,100);s.orbSpeed=clamp(s.orbSpeed,35,220,100);s.orbParticles=clamp(s.orbParticles,0,100,70);s.orbRingWidth=clamp(s.orbRingWidth,0,4,1);
     ["showStatus","showModel","showTimes","uppercaseName","orbAnimation","voiceReactive","lowPower"].forEach(k=>s[k]=s[k]!==false);
@@ -144,10 +147,67 @@
     return "none";
   }
 
-  async function resolveAssetUrl(style){
-    if(assetUrl){URL.revokeObjectURL(assetUrl);assetUrl=""}
-    if(!style.backgroundAssetId)return "none";
-    try{const row=await getAsset(style.backgroundAssetId);if(!row?.blob)return "none";assetUrl=URL.createObjectURL(row.blob);return `url("${assetUrl.replace(/["\\]/g,"")}")`}catch{return "none"}
+  function clearAssetUrl(){if(assetUrl){try{URL.revokeObjectURL(assetUrl)}catch{}}assetUrl="";assetUrlId=""}
+  async function resolveAssetUrl(style,{force=false}={}){
+    const id=String(style?.backgroundAssetId||"");
+    if(!id){clearAssetUrl();return "none"}
+    if(!force&&assetUrl&&assetUrlId===id)return `url("${assetUrl.replace(/["\\]/g,"")}")`;
+    try{
+      const row=await getAsset(id);if(!row?.blob){clearAssetUrl();return "none"}
+      const next=URL.createObjectURL(row.blob);clearAssetUrl();assetUrl=next;assetUrlId=id;
+      return `url("${assetUrl.replace(/["\\]/g,"")}")`;
+    }catch(error){clearAssetUrl();console.warn("[SAKURA Background] No se pudo recuperar el recurso",error);return "none"}
+  }
+  async function verifyBlobDecodes(blob){
+    if(!blob)throw new Error("La imagen guardada está vacía.");
+    const url=URL.createObjectURL(blob);
+    try{await new Promise((resolve,reject)=>{const img=new Image();const timer=setTimeout(()=>reject(new Error("La imagen tardó demasiado en cargar.")),8000);img.onload=()=>{clearTimeout(timer);resolve()};img.onerror=()=>{clearTimeout(timer);reject(new Error("El archivo WebP no pudo decodificarse."))};img.src=url})}
+    finally{URL.revokeObjectURL(url)}
+  }
+  async function verifyBackgroundApplied(style=applied){
+    const s=normalize(style||{});
+    if(s.backgroundType!=="image"||!s.backgroundAssetId){lastBackgroundVerification={ok:false,reason:"No hay una imagen aplicada.",at:new Date().toISOString()};return lastBackgroundVerification}
+    let panel=document.getElementById("sakuraNativePanel");
+    if(!panel&&window.INBESTIGA_SAKURA_LOADER?.load){
+      try{await window.INBESTIGA_SAKURA_LOADER.load();await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));panel=document.getElementById("sakuraNativePanel")}catch(error){console.info("[SAKURA Background] El panel se verificará al abrirse",error?.message||error)}
+    }
+    const row=await getAsset(s.backgroundAssetId).catch(()=>null);
+    if(!row?.blob){lastBackgroundVerification={ok:false,reason:"La imagen no existe en IndexedDB.",at:new Date().toISOString()};return lastBackgroundVerification}
+    await verifyBlobDecodes(row.blob);
+    const image=await resolveAssetUrl(s);
+    if(image==="none"){lastBackgroundVerification={ok:false,reason:"No se pudo crear la URL visual.",at:new Date().toISOString()};return lastBackgroundVerification}
+    rootApplyBackgroundVariables(s,image);
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    const cssVar=getComputedStyle(document.documentElement).getPropertyValue("--sk-panel-image").trim();
+    const panelBg=panel?getComputedStyle(panel).backgroundImage:"";
+    const layerBg=panel?.querySelector(":scope > .sk-live-background-layer")?getComputedStyle(panel.querySelector(":scope > .sk-live-background-layer")).backgroundImage:"";
+    const ok=cssVar.includes("blob:")&&(!panel||panelBg.includes("blob:")||layerBg.includes("blob:"));
+    lastBackgroundVerification={ok,reason:ok?"Imagen visible en el panel real.":"La imagen está guardada, pero una regla visual todavía la oculta.",at:new Date().toISOString(),assetId:s.backgroundAssetId,size:row.blob.size};
+    document.dispatchEvent(new CustomEvent("sakura:background-verified",{detail:{...lastBackgroundVerification}}));
+    return lastBackgroundVerification;
+  }
+  function rootApplyBackgroundVariables(s,image){
+    const root=document.documentElement;
+    root.style.setProperty("--sk-panel-image",image);
+    root.style.setProperty("--sk-panel-image-position",s.backgroundPosition);
+    root.style.setProperty("--sk-panel-image-size",s.backgroundSize);
+    root.style.setProperty("--sk-panel-image-repeat",s.backgroundRepeat);
+    /* Compatibilidad con el workspace base: el mismo recurso alimenta la capa nueva y el fondo histórico. */
+    root.style.setProperty("--sk-custom-background-image",image);
+    root.style.setProperty("--sk-custom-background-position",s.backgroundPosition);
+    root.style.setProperty("--sk-custom-overlay",rgba("#08060c",s.overlay/100));
+    root.style.setProperty("--sk-custom-panel",s.panelColor1);
+    root.style.setProperty("--sk-custom-surface",s.surface);
+    root.style.setProperty("--sk-custom-surface-2",s.surface2);
+    root.style.setProperty("--sk-custom-text",s.text);
+    root.style.setProperty("--sk-custom-muted",s.muted);
+    root.style.setProperty("--sk-custom-accent",s.accent);
+    root.style.setProperty("--sk-custom-user-bubble",s.userBubble);
+    root.style.setProperty("--sk-custom-assistant-bubble",s.assistantBubble);
+    root.style.setProperty("--sk-custom-radius",`${s.panelRadius}px`);
+    root.dataset.sakuraBgType=s.backgroundType;
+    const panel=document.getElementById("sakuraNativePanel");
+    if(panel){panel.classList.toggle("sk-has-user-image",s.backgroundType==="image"&&image!=="none");panel.dataset.backgroundAssetId=s.backgroundAssetId||""}
   }
 
   async function apply(style,{persist=false}={}){
@@ -163,7 +223,8 @@
       "--sk-orb-primary":s.orbPrimary,"--sk-orb-secondary":s.orbSecondary,"--sk-orb-tertiary":s.orbTertiary,"--sk-orb-glow":s.orbGlow,"--sk-orb-size":`${s.orbSize}px`,"--sk-orb-brightness":String(s.orbBrightness/100),"--sk-orb-speed":String(s.orbSpeed/100),"--sk-orb-particles":String(s.orbParticles/100),"--sk-orb-ring-width":`${s.orbRingWidth}px`,"--sk-message-accent":s.messageAccent,"--sk-team-in":s.teamIncoming,"--sk-team-out":s.teamOutgoing,"--sk-team-text":s.teamText
     };
     Object.entries(vars).forEach(([k,v])=>root.style.setProperty(k,v));
-    root.dataset.sakuraOrb=s.orbDesign;root.dataset.sakuraOrbAnimation=s.orbAnimation?"on":"off";root.dataset.sakuraLowPower=s.lowPower?"true":"false";root.dataset.sakuraBackgroundMotion=s.backgroundMotion;root.dataset.sakuraPattern=s.backgroundPattern;root.dataset.sakuraBgType=s.backgroundType;
+    rootApplyBackgroundVariables(s,image);
+    root.dataset.sakuraMotionPolicy=s.motionMode;root.dataset.sakuraOrb=s.orbDesign;root.dataset.sakuraOrbAnimation=(s.orbAnimation&&s.motionMode!=="off")?"on":"off";root.dataset.sakuraLowPower=(s.lowPower||s.motionMode==="low")?"true":"false";root.dataset.sakuraBackgroundMotion=s.backgroundMotion;root.dataset.sakuraPattern=s.backgroundPattern;root.dataset.sakuraBgType=s.backgroundType;if(!document.hidden)root.dataset.sakuraVisible="true";
     const panel=document.getElementById("sakuraNativePanel");if(panel){panel.dataset.panelMode=s.panelMode;panel.dataset.mobileHeight=s.mobileHeight;panel.dataset.frameStyle=s.frameStyle;panel.dataset.headerAlign=s.headerAlign;panel.dataset.orbPosition=s.orbPosition;panel.classList.toggle("sk-hide-status",!s.showStatus);panel.classList.toggle("sk-hide-model",!s.showModel);panel.classList.toggle("sk-hide-times",!s.showTimes)}
     document.dispatchEvent(new CustomEvent("sakura:style-applied",{detail:clone(s)}));return s;
   }
@@ -186,12 +247,12 @@
     const fontOptions=Object.keys(FONTS).map(x=>[x,x]);
     const sections={
       general:`<h3>Apariencia general</h3><p>Define la identidad completa de tu SAKURA. Los cambios permanecen como borrador hasta que pulses “Aplicar a mi SAKURA”.</p><div class="skstudio-grid cols3">${selectField("Tema base","theme",s.theme,Object.entries(THEMES).map(([id,t])=>[id,t.name]))}${selectField("Modo de panel","panelMode",s.panelMode,[["normal","Panel normal"],["compact","Barra compacta"],["orb","Solo presencia"]])}${selectField("Altura móvil","mobileHeight",s.mobileHeight,[["35","35 %"],["70","70 %"],["100","Pantalla completa"]])}${rangeField("Opacidad","panelOpacity",s.panelOpacity,70,100,1,"%")}${rangeField("Redondeado","panelRadius",s.panelRadius,10,42,1,"px")}${rangeField("Sombra","shadowStrength",s.shadowStrength,0,80,1,"%")}${rangeField("Resplandor","glowStrength",s.glowStrength,0,60,1,"%")}${selectField("Estilo de marco","frameStyle",s.frameStyle,[["minimal","Minimalista"],["flat","Plano"],["technology","Tecnológico"],["holographic","Holográfico"]])}${switchField("Modo de bajo consumo", "lowPower", s.lowPower)}</div>`,
-      background:`<h3>Fondo completo</h3><p>El fondo solo afecta a SAKURA. Nunca desenfoca el resto de Marketing Cloud.</p><div class="skstudio-grid cols3">${selectField("Tipo de fondo","backgroundType",s.backgroundType,[["solid","Color sólido"],["gradient","Degradado"],["image","Imagen"],["texture","Textura"],["pattern","Patrón tecnológico"],["animated","Animado ligero"]])}${colorField("Color principal","panelColor1",s.panelColor1)}${colorField("Color secundario","panelColor2",s.panelColor2)}${colorField("Color terciario","panelColor3",s.panelColor3)}${rangeField("Dirección","gradientAngle",s.gradientAngle,0,360,1,"°")}${selectField("Patrón","backgroundPattern",s.backgroundPattern,[["none","Ninguno"],["petals","Pétalos"],["grid","Cuadrícula"],["dots","Puntos"],["aurora","Aurora"],["soft","Luz suave"],["glass","Reflejo cristal"]])}${selectField("Movimiento","backgroundMotion",s.backgroundMotion,[["none","Sin movimiento"],["subtle","Movimiento suave"]])}${selectField("Posición","backgroundPosition",s.backgroundPosition,[["center","Centro"],["top","Arriba"],["bottom","Abajo"],["left","Izquierda"],["right","Derecha"]])}${selectField("Ajuste","backgroundSize",s.backgroundSize,[["cover","Cubrir"],["contain","Contener"],["auto","Tamaño real"]])}${selectField("Repetición","backgroundRepeat",s.backgroundRepeat,[["no-repeat","No repetir"],["repeat","Repetir"],["repeat-x","Horizontal"],["repeat-y","Vertical"]])}${rangeField("Oscurecimiento","overlay",s.overlay,0,80,1,"%")}${rangeField("Brillo","brightness",s.brightness,60,140,1,"%")}${rangeField("Saturación","saturation",s.saturation,0,180,1,"%")}${rangeField("Desenfoque interno","blur",s.blur,0,18,1,"px")}<div class="skstudio-field wide"><span>Imagen personal</span><div class="skstudio-safe"><button type="button" data-skstudio-upload>Subir y comprimir imagen</button><button type="button" data-skstudio-remove-image ${s.backgroundAssetId?"":"disabled"}>Quitar imagen</button><small>${s.backgroundAssetId?"Imagen almacenada en IndexedDB, fuera de localStorage.":"JPG, PNG o WebP. Máximo 10 MB; se comprime a WebP."}</small></div></div></div>`,
+      background:`<h3>Fondo completo</h3><p>El fondo solo afecta a SAKURA. Nunca desenfoca el resto de Marketing Cloud.</p><div class="skstudio-grid cols3">${selectField("Tipo de fondo","backgroundType",s.backgroundType,[["solid","Color sólido"],["gradient","Degradado"],["image","Imagen"],["texture","Textura"],["pattern","Patrón tecnológico"],["animated","Animado ligero"]])}${colorField("Color principal","panelColor1",s.panelColor1)}${colorField("Color secundario","panelColor2",s.panelColor2)}${colorField("Color terciario","panelColor3",s.panelColor3)}${rangeField("Dirección","gradientAngle",s.gradientAngle,0,360,1,"°")}${selectField("Patrón","backgroundPattern",s.backgroundPattern,[["none","Ninguno"],["petals","Pétalos"],["grid","Cuadrícula"],["dots","Puntos"],["aurora","Aurora"],["soft","Luz suave"],["glass","Reflejo cristal"]])}${selectField("Movimiento","backgroundMotion",s.backgroundMotion,[["none","Sin movimiento"],["subtle","Movimiento suave"]])}${selectField("Posición","backgroundPosition",s.backgroundPosition,[["center","Centro"],["top","Arriba"],["bottom","Abajo"],["left","Izquierda"],["right","Derecha"]])}${selectField("Ajuste","backgroundSize",s.backgroundSize,[["cover","Cubrir"],["contain","Contener"],["auto","Tamaño real"]])}${selectField("Repetición","backgroundRepeat",s.backgroundRepeat,[["no-repeat","No repetir"],["repeat","Repetir"],["repeat-x","Horizontal"],["repeat-y","Vertical"]])}${rangeField("Oscurecimiento","overlay",s.overlay,0,80,1,"%")}${rangeField("Brillo","brightness",s.brightness,60,140,1,"%")}${rangeField("Saturación","saturation",s.saturation,0,180,1,"%")}${rangeField("Desenfoque interno","blur",s.blur,0,18,1,"px")}<div class="skstudio-field wide"><span>Imagen personal</span><div class="skstudio-safe"><button type="button" data-skstudio-upload>Subir y comprimir imagen</button><button type="button" data-skstudio-remove-image ${s.backgroundAssetId?"":"disabled"}>Quitar imagen</button><small>${s.backgroundAssetId?"Imagen almacenada en IndexedDB, fuera de localStorage.":"JPG, PNG o WebP. Máximo 10 MB; se comprime a WebP."}</small></div><div class="skstudio-safe"><button type="button" data-skstudio-test-background ${s.backgroundAssetId?"":"disabled"}>Probar fondo en SAKURA</button><button type="button" data-skstudio-repair-background ${s.backgroundAssetId?"":"disabled"}>Reparar fondo</button><small>${lastBackgroundVerification.ok?"✓ "+esc(lastBackgroundVerification.reason):esc(lastBackgroundVerification.reason)}</small></div></div></div>`,
       frame:`<h3>Marco y encabezado</h3><p>Personaliza el contorno, la cabecera y los indicadores sin perder legibilidad.</p><div class="skstudio-grid cols3">${colorField("Color del marco","frameColor",s.frameColor)}${rangeField("Grosor","frameWidth",s.frameWidth,0,5,1,"px")}${rangeField("Opacidad","frameOpacity",s.frameOpacity,0,100,1,"%")}${colorField("Encabezado A","headerColor1",s.headerColor1)}${colorField("Encabezado B","headerColor2",s.headerColor2)}${colorField("Nombre","headerText",s.headerText)}${colorField("Estado y contexto","headerMuted",s.headerMuted)}${rangeField("Altura","headerHeight",s.headerHeight,72,150,1,"px")}${selectField("Alineación","headerAlign",s.headerAlign,[["left","Izquierda"],["center","Centro"],["right","Derecha"]])}${selectField("Posición de esfera","orbPosition",s.orbPosition,[["left","Izquierda"],["center","Centro"],["right","Derecha"]])}${switchField("Mostrar estado de conexión","showStatus",s.showStatus)}${switchField("Mostrar modelo activo","showModel",s.showModel)}</div>`,
       chat:`<h3>Chat y mensajes</h3><p>Configura el fondo, las burbujas, los metadatos y la diferencia visual entre SAKURA y el usuario.</p><div class="skstudio-grid cols3">${colorField("Superficie principal","surface",hex(s.surface,"#2a2031"))}${colorField("Superficie secundaria","surface2",hex(s.surface2,"#35283e"))}${colorField("Texto principal","text",s.text)}${colorField("Texto secundario","muted",s.muted)}${colorField("Acento","accent",s.accent)}${colorField("Acento secundario","accent2",s.accent2)}${colorField("Burbuja del usuario","userBubble",s.userBubble)}${colorField("Texto del usuario","userText",s.userText)}${colorField("Burbuja de SAKURA","assistantBubble",s.assistantBubble)}${colorField("Texto de SAKURA","assistantText",s.assistantText)}${rangeField("Redondeado de burbuja","bubbleRadius",s.bubbleRadius,6,32,1,"px")}${rangeField("Ancho máximo","bubbleWidth",s.bubbleWidth,60,100,1,"%")}${rangeField("Separación","messageGap",s.messageGap,4,28,1,"px")}${switchField("Mostrar hora y metadatos","showTimes",s.showTimes)}<label class="skstudio-field wide"><span>Fondo del área de conversación</span><input type="text" data-skstudio-input="chatBg" value="${esc(s.chatBg)}" placeholder="rgba(...) o #RRGGBB"></label></div>`,
       input:`<h3>Caja de escritura y botones</h3><p>Personaliza el compositor, los botones de voz, adjuntos, envío y limpieza.</p><div class="skstudio-grid cols3">${colorField("Fondo de escritura","inputBg",s.inputBg)}${colorField("Texto","inputText",s.inputText)}<label class="skstudio-field"><span>Borde</span><input type="text" data-skstudio-input="inputBorder" value="${esc(s.inputBorder)}"></label>${rangeField("Redondeado","inputRadius",s.inputRadius,5,30,1,"px")}${rangeField("Altura","inputHeight",s.inputHeight,42,90,1,"px")}${colorField("Color de botones","buttonBg",s.buttonBg)}${colorField("Texto de botones","buttonText",s.buttonText)}</div>`,
       typography:`<h3>Tipografía</h3><p>Utiliza fuentes seguras de la plataforma. Los tamaños mínimos impiden que el chat vuelva a quedar ilegible.</p><div class="skstudio-grid cols3">${selectField("Fuente general","mainFont",s.mainFont,fontOptions)}${selectField("Nombre SAKURA","nameFont",s.nameFont,fontOptions)}${selectField("Mensajes","messageFont",s.messageFont,fontOptions)}${selectField("Botones","buttonFont",s.buttonFont,fontOptions)}${rangeField("Tamaño de mensaje","fontSize",s.fontSize,13,20,1,"px")}${rangeField("Tamaño del nombre","nameSize",s.nameSize,16,34,1,"px")}${selectField("Peso","fontWeight",s.fontWeight,[[400,"Regular"],[500,"Medio"],[600,"Semibold"],[700,"Negrita"],[800,"Extra negrita"]])}${rangeField("Interlineado","lineHeight",s.lineHeight,1.3,2,.05,"")}${rangeField("Espaciado","letterSpacing",s.letterSpacing,-.2,2,.1,"px")}${selectField("Alineación de mensajes","textAlign",s.textAlign,[["left","Izquierda"],["center","Centrada"]])}${switchField("Nombre en mayúsculas","uppercaseName",s.uppercaseName)}</div>`,
-      orb:`<h3>Esfera y animaciones</h3><p>Ocho diseños tecnológicos originales. No utilizan librerías externas ni bucles de JavaScript.</p><div class="skstudio-orb-grid">${Object.entries(ORBS).map(([id,o])=>`<button type="button" class="skstudio-orb-card ${s.orbDesign===id?"active":""}" data-skstudio-orb="${id}"><span class="skstudio-orb-preview"><i class="skstudio-orb-sample" style="--orb-preview:${orbPreview(o)};--orb-color:${o.colors[0]}"></i></span><strong>${esc(o.name)}</strong><small>${esc(o.desc)}</small></button>`).join("")}</div><div class="skstudio-grid cols3" style="margin-top:14px">${colorField("Color principal","orbPrimary",s.orbPrimary)}${colorField("Color secundario","orbSecondary",s.orbSecondary)}${colorField("Color terciario","orbTertiary",s.orbTertiary)}${colorField("Resplandor","orbGlow",s.orbGlow)}${rangeField("Tamaño","orbSize",s.orbSize,38,92,1,"px")}${rangeField("Brillo","orbBrightness",s.orbBrightness,60,160,1,"%")}${rangeField("Velocidad","orbSpeed",s.orbSpeed,35,220,1,"%")}${rangeField("Partículas","orbParticles",s.orbParticles,0,100,1,"%")}${rangeField("Anillos","orbRingWidth",s.orbRingWidth,0,4,1,"px")}${switchField("Animación activa","orbAnimation",s.orbAnimation)}${switchField("Reacción a la voz","voiceReactive",s.voiceReactive)}</div>`,
+      orb:`<h3>Esfera y animaciones</h3><p>Ocho diseños tecnológicos originales. No utilizan librerías externas ni bucles de JavaScript.</p><div class="skstudio-orb-grid">${Object.entries(ORBS).map(([id,o])=>`<button type="button" class="skstudio-orb-card ${s.orbDesign===id?"active":""}" data-skstudio-orb="${id}"><span class="skstudio-orb-preview"><i class="skstudio-orb-sample" style="--orb-preview:${orbPreview(o)};--orb-color:${o.colors[0]}"></i></span><strong>${esc(o.name)}</strong><small>${esc(o.desc)}</small></button>`).join("")}</div><div class="skstudio-grid cols3" style="margin-top:14px">${colorField("Color principal","orbPrimary",s.orbPrimary)}${colorField("Color secundario","orbSecondary",s.orbSecondary)}${colorField("Color terciario","orbTertiary",s.orbTertiary)}${colorField("Resplandor","orbGlow",s.orbGlow)}${rangeField("Tamaño","orbSize",s.orbSize,38,92,1,"px")}${rangeField("Brillo","orbBrightness",s.orbBrightness,60,160,1,"%")}${rangeField("Velocidad","orbSpeed",s.orbSpeed,35,220,1,"%")}${rangeField("Partículas","orbParticles",s.orbParticles,0,100,1,"%")}${rangeField("Anillos","orbRingWidth",s.orbRingWidth,0,4,1,"px")}${selectField("Nivel de animación","motionMode",s.motionMode,[["full","Completa"],["moderate","Moderada"],["low","Bajo consumo"],["off","Sin animación"]])}${switchField("Animación activa","orbAnimation",s.orbAnimation)}${switchField("Reacción a la voz","voiceReactive",s.voiceReactive)}<div class="skstudio-safe wide"><button type="button" data-skstudio-force-motion>Activar animaciones ahora</button><small>Fuerza el modo completo incluso si Windows usa reducción de movimiento. Puedes volver a cambiarlo aquí.</small></div></div>`,
       themes:`<h3>Temas completos</h3><p>Aplica un tema integral y después modifica cualquier detalle. El tema Sakura Japón incluye pétalos ligeros y una esfera floral tecnológica.</p><div class="skstudio-theme-grid">${Object.entries(THEMES).map(([id,t])=>`<button type="button" class="skstudio-theme ${s.theme===id?"active":""}" data-skstudio-theme="${id}"><span class="skstudio-theme-preview" style="--theme-preview:${themePreview(t)}"></span><strong>${esc(t.name)}</strong><small>Panel, chat, fuentes, esfera y controles</small></button>`).join("")}${customThemes().map(t=>`<button type="button" class="skstudio-theme" data-skstudio-custom-theme="${esc(t.id)}"><span class="skstudio-theme-preview" style="--theme-preview:${themePreview(t.style)}"></span><strong>${esc(t.name)}</strong><small>Tema personal</small></button>`).join("")}</div>`,
       messaging:`<h3>Mensajería integrada</h3><p>Personaliza la pestaña Mensajes. La mensajería real funciona aunque Ollama o el puente local estén apagados.</p><div class="skstudio-grid cols3">${colorField("Acento de mensajería","messageAccent",s.messageAccent)}${colorField("Mensaje recibido","teamIncoming",s.teamIncoming)}${colorField("Mensaje enviado","teamOutgoing",s.teamOutgoing)}${colorField("Texto de mensajes","teamText",s.teamText)}</div>`,
       responsive:`<h3>Responsive y accesibilidad</h3><p>Controla el comportamiento en laptop, tablet y celular, y verifica que las configuraciones sean legibles.</p><div class="skstudio-grid cols3">${selectField("Modo inicial","panelMode",s.panelMode,[["normal","Panel normal"],["compact","Compacto"],["orb","Solo esfera"]])}${selectField("Hoja móvil","mobileHeight",s.mobileHeight,[["35","35 %"],["70","70 %"],["100","100 %"]])}${switchField("Bajo consumo","lowPower",s.lowPower)}${switchField("Mostrar estado","showStatus",s.showStatus)}${switchField("Mostrar modelo","showModel",s.showModel)}${switchField("Mostrar horas","showTimes",s.showTimes)}</div><div class="skstudio-safe"><button type="button" data-skstudio-auto-contrast>Corregir contraste automáticamente</button><button type="button" data-skstudio-restore-legibility>Restaurar legibilidad</button></div>`
@@ -247,22 +308,47 @@
     if(target.hasAttribute("data-skstudio-reset")){const old=draft.backgroundAssetId;draft=normalize(loadJson(GLOBAL_FALLBACK_KEY,DEFAULTS));saveJson(storageKey(DRAFT_KEY),draft);saveJson(storageKey(PERSONAL_KEY),draft);if(old&&!draft.backgroundAssetId)await deleteAsset(old);await apply(draft,{persist:true});notify("Apariencia restaurada","SAKURA volvió al estilo predeterminado.");rerender();return true}
     if(target.hasAttribute("data-skstudio-restore-legibility")){draft=normalize({...draft,fontSize:14,nameSize:20,lineHeight:1.55,letterSpacing:0,text:"#ffffff",muted:"#c8bfce",userText:"#ffffff",assistantText:"#ffffff",inputText:"#ffffff",headerText:"#ffffff",buttonText:"#ffffff",panelColor1:"#17131d",userBubble:"#a84df2",assistantBubble:"#30243a",inputBg:"#241b2b",buttonBg:"#8c4df2"});refreshPreview();notify("Legibilidad restaurada","Revisa y aplica los cambios.");return true}
     if(target.hasAttribute("data-skstudio-auto-contrast")){draft=autoContrast(draft);refreshPreview();notify("Contraste corregido","Los textos se ajustaron para mejorar la lectura.");return true}
+    if(target.hasAttribute("data-skstudio-force-motion")){draft=normalize({...draft,motionMode:"full",orbAnimation:true,lowPower:false});saveJson(storageKey(DRAFT_KEY),draft);saveJson(storageKey(PERSONAL_KEY),draft);await apply(draft,{persist:true});window.INBESTIGA_SAKURA_LIVE_VISUALS?.setMotionMode?.("full");notify("Animaciones activadas","Anillos, escáner, pulsos y partículas están en modo completo.");rerender();return true}
+    if(target.hasAttribute("data-skstudio-test-background")){const result=await verifyBackgroundApplied(draft).catch(error=>({ok:false,reason:error.message||String(error)}));notify(result.ok?"Fondo verificado":"Fondo no visible",result.reason,result.ok?"success":"error");return true}
+    if(target.hasAttribute("data-skstudio-repair-background")){await apply(draft,{persist:true});const result=await verifyBackgroundApplied(draft).catch(error=>({ok:false,reason:error.message||String(error)}));window.INBESTIGA_SAKURA_LIVE_VISUALS?.repairBackground?.();notify(result.ok?"Fondo reparado":"No se pudo reparar",result.reason,result.ok?"success":"error");rerender();return true}
     if(target.hasAttribute("data-skstudio-open-sakura")){window.INBESTIGA_SAKURA_LOADER?.load?.();return true}
     return false;
   }
 
   function handleInput(event){const el=event.target;if(!el.matches("[data-skstudio-input]"))return false;const k=el.dataset.skstudioInput;let value=el.type==="checkbox"?el.checked:el.value;if(el.type==="range"||el.type==="number")value=Number(value);draft=normalize({...draft,[k]:value});refreshPreview();return true}
-  async function handleChange(event){const el=event.target;if(el.id==="skstudioBackgroundFile"&&el.files?.[0]){try{const blob=await compressImage(el.files[0]),old=draft.backgroundAssetId,id=await putAsset(blob);draft=normalize({...draft,backgroundAssetId:id,backgroundType:"image"});if(old)await deleteAsset(old);await resolveAssetUrl(draft);await apply(draft,{persist:true});notify("Fondo aplicado",`${Math.round(blob.size/1024)} KB en WebP. SAKURA adaptará automáticamente su panel a esta fotografía.`);rerender()}catch(error){notify("No se pudo preparar el fondo",error.message||String(error),"error")}finally{el.value=""}return true}if(el.id==="skstudioImportFile"&&el.files?.[0]){try{await importTheme(el.files[0])}catch(error){notify("No se pudo importar",error.message||String(error),"error")}finally{el.value=""}return true}return false}
+  async function handleChange(event){
+    const el=event.target;
+    if(el.id==="skstudioBackgroundFile"&&el.files?.[0]){
+      try{
+        const blob=await compressImage(el.files[0]),old=draft.backgroundAssetId,id=await putAsset(blob);
+        const stored=await getAsset(id);if(!stored?.blob||stored.blob.size!==blob.size)throw new Error("La imagen no pudo confirmarse después de guardarla.");
+        await verifyBlobDecodes(stored.blob);
+        draft=normalize({...draft,backgroundAssetId:id,backgroundType:"image"});
+        if(old&&old!==id)await deleteAsset(old);
+        await apply(draft,{persist:true});
+        const fusionApi=window.INBESTIGA_SAKURA_ADAPTIVE_INTELLIGENCE?.fusion;
+        if(fusionApi?.analyze){try{await fusionApi.analyze();await fusionApi.applyProposal?.(0,true);draft=loadEffective()}catch(error){console.info("[SAKURA Background] La paleta automática continuará con el tema actual",error?.message||error)}}
+        const result=await verifyBackgroundApplied(draft);
+        if(!result.ok)throw new Error(result.reason);
+        notify("Fondo aplicado y verificado",`${Math.round(blob.size/1024)} KB en WebP. La fotografía ya está visible y SAKURA adaptó su interfaz.`);
+        rerender();
+      }catch(error){notify("No se pudo aplicar el fondo",error.message||String(error),"error")}
+      finally{el.value=""}
+      return true;
+    }
+    if(el.id==="skstudioImportFile"&&el.files?.[0]){try{await importTheme(el.files[0])}catch(error){notify("No se pudo importar",error.message||String(error),"error")}finally{el.value=""}return true}
+    return false;
+  }
 
   function mount(root){mountedRoot=root;draft=loadDraft();resolveAssetUrl(draft).then(refreshPreview);if(root&&root.dataset.skstudioBound!=="1"){root.dataset.skstudioBound="1";root.addEventListener("click",handleClick);root.addEventListener("input",handleInput);root.addEventListener("change",handleChange)}refreshPreview()}
   function rerender(){if(!mountedRoot)return;const content=mountedRoot.closest(".uve-content")||mountedRoot;content.innerHTML=markup();mount(content)}
   function refreshUser(){draft=loadDraft();applied=loadEffective();return apply(applied)}
-  function health(){return{status:"ok",value:"SAKURA Personal Studio",detail:"Editor por usuario, 10 temas, 8 esferas, imagen en IndexedDB, contraste protegido y sin polling ni Realtime."}}
+  function health(){return{status:"ok",value:"SAKURA Personal Studio v17.13.1",detail:`Movimiento ${document.documentElement.dataset.sakuraMotionPolicy||"full"}; fondo ${lastBackgroundVerification.ok?"verificado":"pendiente"}; sin polling ni Realtime.`}}
 
   document.addEventListener("visibilitychange",()=>{document.documentElement.dataset.sakuraVisible=document.hidden?"false":"true"},{passive:true});document.documentElement.dataset.sakuraVisible=document.hidden?"false":"true";
   applied=loadEffective();draft=loadDraft();apply(applied);
   try{window.INBESTIGA_QUALITY_CORE?.register?.(MODULE,{version:VERSION,mode:"local-personal-studio",polling:false,realtimeChannels:0,mutations:false})}catch{}
-  const api={version:VERSION,markup,mount,handleClick,handleInput,handleChange,apply,load:loadEffective,loadDraft,refreshUser,health,themes:THEMES,orbs:ORBS};
+  const api={version:VERSION,markup,mount,handleClick,handleInput,handleChange,apply,load:loadEffective,loadDraft,refreshUser,health,themes:THEMES,orbs:ORBS,verifyBackground:verifyBackgroundApplied,resolveAssetUrl,backgroundStatus:()=>({...lastBackgroundVerification})};
   window.INBESTIGA_SAKURA_STUDIO=api;
   window.INBESTIGA_SAKURA_APPEARANCE=api;
 })();

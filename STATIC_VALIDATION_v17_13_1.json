@@ -1,0 +1,60 @@
+{
+  "version": "17.13.1",
+  "base": "17.13.0",
+  "overall_static_ok": true,
+  "file_counts": {
+    "total": 376,
+    "js": 41,
+    "inline_scripts_checked": 14,
+    "css": 30,
+    "json": 85,
+    "service_worker_shell": 66,
+    "bat": 4
+  },
+  "syntax": {
+    "javascript_external_ok": true,
+    "javascript_external_failures": [],
+    "javascript_inline_ok": true,
+    "javascript_inline_failures": [],
+    "json_ok": true,
+    "json_failures": [],
+    "css_new_or_modified_ok": true,
+    "css_preexisting_failures": [
+      "assets/css/audit-counter-accuracy.css"
+    ],
+    "css_new_failures": []
+  },
+  "integrity": {
+    "missing_html_refs": [],
+    "missing_sw_refs": [],
+    "duplicate_ids": {},
+    "base_duplicate_ids": {},
+    "new_duplicate_ids": {},
+    "bat_crlf_failures": []
+  },
+  "prohibited_in_changed_files": {
+    "setInterval": [],
+    "MutationObserver": [],
+    "realtime_channel": [],
+    "service_role": [],
+    "eval": [],
+    "new_Function": []
+  },
+  "logic_assertions": {
+    "stable_blob_url_cache": true,
+    "indexeddb_readback_after_save": true,
+    "blob_decode_verification": true,
+    "background_visual_verification": true,
+    "success_after_verification": true,
+    "background_layer_uses_image_var": true,
+    "motion_explicit_modes": true,
+    "motion_runtime_verification": true,
+    "no_polling_registration": true,
+    "repair_button": true,
+    "activate_animation_button": true,
+    "version_index": true,
+    "sw_cache": true
+  },
+  "browser_runtime": "pending_live_vercel_due_to_local_chromium_policy",
+  "note": "El único fallo CSS del paquete completo es preexistente e idéntico a v17.13.0: assets/css/audit-counter-accuracy.css."
+}

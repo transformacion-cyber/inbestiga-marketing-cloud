@@ -1,0 +1,39 @@
+INBESTIGA MARKETING CLOUD v17.13.1
+SAKURA LIVE MOTION & INTELLIGENT BACKGROUND FUSION HOTFIX
+
+BASE AUTORIZADA
+- v17.13.0 SAKURA Adaptive Intelligence, Visual Director & Controlled Web Explorer.
+- Esta entrega no mezcla archivos de versiones anteriores.
+
+OBJETIVO DEL HOTFIX
+1. Corregir los núcleos tecnológicos que podían verse estáticos.
+2. Corregir la fotografía de fondo que podía desaparecer o quedar cubierta.
+3. Verificar el recurso guardado antes de anunciar que el fondo se aplicó.
+4. Mantener el panel, Ollama, la mensajería, tareas y módulos productivos sin cambios de backend.
+
+CAMBIOS PRINCIPALES
+- Control explícito de movimiento: Completa, Moderada, Bajo consumo y Sin animación.
+- Migra preferencias antiguas que podían dejar el núcleo detenido; el primer inicio usa movimiento completo.
+- Botones Activar animaciones ahora y Probar movimiento.
+- Comprobación del tiempo real de una animación CSS mediante Web Animations API.
+- Previsualizaciones animadas en el editor de esferas.
+- La URL blob de la imagen ya no se revoca durante cada renderizado del editor.
+- La imagen se vuelve a leer de IndexedDB y se decodifica antes de confirmar éxito.
+- Capa de fondo persistente dentro del panel real de SAKURA.
+- Compatibilidad con las variables visuales históricas del workspace.
+- Superficies internas translúcidas para que la fotografía permanezca visible.
+- Botones Probar fondo en SAKURA, Reparar fondo y Fusionar y adaptar colores.
+- Apertura del panel real durante la verificación cuando todavía no estaba cargado.
+
+NO REQUIERE
+- SQL.
+- Nuevas tablas.
+- Cambios en Auth o RLS.
+- Reinstalar Ollama, Python o modelos.
+- Cambiar claves de Supabase.
+
+VALIDACIÓN
+La validación estática comprueba JavaScript, scripts internos, JSON, CSS nuevo/modificado,
+referencias HTML, recursos PWA, IDs y patrones prohibidos. La comprobación definitiva de
+IndexedDB, animaciones y renderizado debe realizarse en la URL desplegada de Vercel, ya que
+el navegador del entorno de construcción bloqueó por política las URL locales de prueba.

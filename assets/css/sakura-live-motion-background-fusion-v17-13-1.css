@@ -1,0 +1,86 @@
+/* INBESTIGA Marketing Cloud v17.13.1 · SAKURA Live Motion & Intelligent Background Fusion Hotfix */
+
+/* ---------- Explicit motion controller ---------- */
+html[data-sakura-motion-policy="full"] .sk-tech-core .tc-halo{animation-duration:calc(3.8s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .tc-core{animation-duration:calc(2.7s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .r1{animation-duration:calc(5.5s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .r2{animation-duration:calc(8s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .r3{animation-duration:calc(12s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .tc-segments{animation-duration:calc(7.3s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .tc-scanner{animation-duration:calc(3.6s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .tc-wave{animation-duration:calc(2.3s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .tc-particles{animation-duration:calc(10s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .tc-petals{animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .tc-prism{animation-duration:calc(5s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+html[data-sakura-motion-policy="full"] .sk-tech-core .tc-network{animation-duration:calc(3.8s / var(--sk-tech-speed,1))!important;animation-iteration-count:infinite!important;animation-play-state:running!important}
+
+html[data-sakura-motion-policy="moderate"] .sk-tech-core *{animation-play-state:running!important;animation-iteration-count:infinite!important}
+html[data-sakura-motion-policy="moderate"] .sk-tech-core .r1{animation-duration:8s!important}
+html[data-sakura-motion-policy="moderate"] .sk-tech-core .r2{animation-duration:12s!important}
+html[data-sakura-motion-policy="moderate"] .sk-tech-core .r3{animation-duration:18s!important}
+html[data-sakura-motion-policy="moderate"] .sk-tech-core .tc-scanner{animation-duration:5.5s!important;opacity:.52}
+html[data-sakura-motion-policy="moderate"] .sk-tech-core .tc-particles{animation-duration:16s!important;opacity:.48}
+html[data-sakura-motion-policy="moderate"] .sk-tech-core .tc-halo,html[data-sakura-motion-policy="moderate"] .sk-tech-core .tc-core{animation-duration:4.4s!important}
+
+html[data-sakura-motion-policy="low"] .sk-tech-core .tc-halo,
+html[data-sakura-motion-policy="low"] .sk-tech-core .tc-core,
+html[data-sakura-motion-policy="low"] .sk-tech-core .r1{display:block!important;animation-play-state:running!important;animation-iteration-count:infinite!important;animation-duration:8s!important}
+html[data-sakura-motion-policy="low"] .sk-tech-core .r2,
+html[data-sakura-motion-policy="low"] .sk-tech-core .r3,
+html[data-sakura-motion-policy="low"] .sk-tech-core .tc-segments,
+html[data-sakura-motion-policy="low"] .sk-tech-core .tc-scanner,
+html[data-sakura-motion-policy="low"] .sk-tech-core .tc-particles,
+html[data-sakura-motion-policy="low"] .sk-tech-core .tc-wave{display:none!important}
+html[data-sakura-motion-policy="off"] .sk-tech-core *{animation-play-state:paused!important}
+html[data-sakura-visible="false"] .sk-tech-core *{animation-play-state:paused!important}
+
+/* ---------- Animated previews inside Personal Studio ---------- */
+.skstudio-orb-sample{position:relative;isolation:isolate;animation:skPreviewPulse 2.6s ease-in-out infinite!important}
+.skstudio-orb-sample::before,.skstudio-orb-sample::after{content:"";position:absolute;border-radius:50%;pointer-events:none}
+.skstudio-orb-sample::before{inset:-9px;border:1px dashed color-mix(in srgb,var(--orb-color) 82%,#fff 18%);box-shadow:0 0 13px color-mix(in srgb,var(--orb-color) 62%,transparent);animation:skPreviewOrbit 4.2s linear infinite!important}
+.skstudio-orb-sample::after{inset:-16px;border:1px solid color-mix(in srgb,var(--orb-color) 40%,transparent);border-left-color:transparent;border-bottom-color:transparent;animation:skPreviewOrbitReverse 6.8s linear infinite!important}
+.skstudio-orb-card[data-skstudio-orb="sakura-japan"] .skstudio-orb-sample::before{border-style:dotted;animation-duration:7s!important}
+.skstudio-orb-card[data-skstudio-orb="tactical"] .skstudio-orb-sample{border-radius:16%;clip-path:polygon(50% 0,82% 18%,100% 50%,82% 82%,50% 100%,18% 82%,0 50%,18% 18%)}
+.skstudio-orb-card[data-skstudio-orb="quantum-prism"] .skstudio-orb-sample{border-radius:0;clip-path:polygon(50% 0,95% 30%,82% 88%,50% 100%,17% 88%,5% 30%);animation-name:skPreviewPrism!important}
+.skstudio-orb-card[data-skstudio-orb="digital-aurora"] .skstudio-orb-sample{animation-name:skPreviewAurora!important}
+.skstudio-orb-card[data-skstudio-orb="minimal-apple"] .skstudio-orb-sample::after{display:none}
+.skstudio-orb-card[data-skstudio-orb="neural-network"] .skstudio-orb-sample{box-shadow:0 0 25px var(--orb-color),15px 4px 0 -18px #fff,-15px 6px 0 -18px var(--orb-color),6px -16px 0 -18px #fff}
+html[data-sakura-motion-policy="off"] .skstudio-orb-sample,html[data-sakura-motion-policy="off"] .skstudio-orb-sample::before,html[data-sakura-motion-policy="off"] .skstudio-orb-sample::after{animation-play-state:paused!important}
+
+/* ---------- Persistent, guaranteed background layer ---------- */
+.sakura-native-panel{isolation:isolate!important}
+.sakura-native-panel>.sk-live-background-layer{position:absolute;inset:0;z-index:0;display:none;pointer-events:none;border-radius:inherit;overflow:hidden;background-color:var(--sk-panel-color-1);background-image:linear-gradient(var(--sk-panel-overlay),var(--sk-panel-overlay)),var(--sk-panel-image),linear-gradient(var(--sk-panel-gradient-angle),var(--sk-panel-color-2),var(--sk-panel-color-1) 58%,var(--sk-panel-color-3));background-size:cover,var(--sk-panel-image-size,cover),cover;background-position:center,var(--sk-panel-image-position,center),center;background-repeat:no-repeat,var(--sk-panel-image-repeat,no-repeat),no-repeat;filter:brightness(var(--sk-panel-brightness,1)) saturate(var(--sk-panel-saturation,1));transform:scale(1.015)}
+html[data-sakura-bg-type="image"] .sakura-native-panel>.sk-live-background-layer{display:block!important}
+.sakura-native-panel>.sk-live-background-layer~*{z-index:1}
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image{background:transparent!important;background-color:transparent!important}
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-header{background:color-mix(in srgb,var(--sk-panel-color-1) 34%,transparent)!important;backdrop-filter:blur(13px) saturate(1.18)!important;-webkit-backdrop-filter:blur(13px) saturate(1.18)!important}
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-tabs{background:color-mix(in srgb,var(--sk-panel-color-1) 28%,transparent)!important;backdrop-filter:blur(10px) saturate(1.12)!important;-webkit-backdrop-filter:blur(10px) saturate(1.12)!important}
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-body{background:color-mix(in srgb,var(--sk-chat-bg) 26%,transparent)!important;backdrop-filter:blur(4px) saturate(1.08)!important;-webkit-backdrop-filter:blur(4px) saturate(1.08)!important}
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-composer{background:color-mix(in srgb,var(--sk-input-bg) 42%,transparent)!important;backdrop-filter:blur(11px) saturate(1.12)!important;-webkit-backdrop-filter:blur(11px) saturate(1.12)!important}
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-section,
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-context,
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-ai-card,
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-action-card{background:color-mix(in srgb,var(--sk-surface) 54%,transparent)!important;backdrop-filter:blur(12px) saturate(1.1)!important;-webkit-backdrop-filter:blur(12px) saturate(1.1)!important}
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-message.assistant{background:color-mix(in srgb,var(--sk-assistant-bubble) 68%,transparent)!important;backdrop-filter:blur(7px)!important;-webkit-backdrop-filter:blur(7px)!important}
+html[data-sakura-bg-type="image"] .sakura-native-panel.sk-has-user-image .sk-message.user{background:color-mix(in srgb,var(--sk-user-bubble) 82%,transparent)!important}
+html[data-sakura-background-live="true"] .sakura-native-panel{box-shadow:var(--sk-panel-shadow),var(--sk-panel-glow),inset 0 1px 0 rgba(255,255,255,.22)!important}
+
+/* ---------- Diagnostics ---------- */
+.sk-live-diagnostics{display:grid;gap:10px}
+.sk-live-field{display:grid;gap:6px}.sk-live-field span{font-size:10px;font-weight:700;color:var(--sk-muted)}
+.sk-live-field select{width:100%;border:1px solid rgba(255,255,255,.14);border-radius:10px;padding:9px 10px;background:color-mix(in srgb,var(--sk-surface-2) 88%,#000 12%);color:var(--sk-text)}
+.sk-live-status{display:grid;grid-template-columns:92px minmax(0,1fr);gap:8px;align-items:center;padding:9px 10px;border:1px solid rgba(255,255,255,.1);border-radius:11px;background:rgba(255,255,255,.04);font-size:10px}
+.sk-live-status strong{color:var(--sk-text)}.sk-live-status span{color:var(--sk-muted)}.sk-live-status span[data-ok="true"]{color:#8ff0b2}.sk-live-status span[data-ok="false"]{color:#ffb1b1}
+.sk-live-actions{display:flex;gap:8px;flex-wrap:wrap}.sk-live-actions button{border:1px solid rgba(255,255,255,.13);border-radius:10px;padding:8px 10px;background:rgba(255,255,255,.07);color:var(--sk-text);font:inherit;font-size:10px;cursor:pointer}.sk-live-actions button:first-child{background:var(--sk-button-bg);color:var(--sk-button-text);border-color:transparent}
+
+@keyframes skPreviewOrbit{to{transform:rotate(360deg)}}
+@keyframes skPreviewOrbitReverse{to{transform:rotate(-360deg)}}
+@keyframes skPreviewPulse{0%,100%{transform:scale(.93);filter:brightness(.92)}50%{transform:scale(1.07);filter:brightness(1.25)}}
+@keyframes skPreviewPrism{to{transform:rotate(360deg) scale(.96)}}
+@keyframes skPreviewAurora{0%,100%{transform:rotate(0) scale(.92);border-radius:42% 58% 51% 49%}50%{transform:rotate(180deg) scale(1.08);border-radius:58% 42% 46% 54%}}
+
+@media(prefers-reduced-motion:reduce){
+  html:not([data-sakura-motion-policy="full"]):not([data-sakura-motion-policy="moderate"]) .skstudio-orb-sample,
+  html:not([data-sakura-motion-policy="full"]):not([data-sakura-motion-policy="moderate"]) .skstudio-orb-sample::before,
+  html:not([data-sakura-motion-policy="full"]):not([data-sakura-motion-policy="moderate"]) .skstudio-orb-sample::after{animation-duration:.001ms!important;animation-iteration-count:1!important}
+}

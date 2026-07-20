@@ -1,9 +1,9 @@
-/* INBESTIGA Marketing Cloud v17.13.0 · SAKURA Adaptive Intelligence permanent presence */
+/* INBESTIGA Marketing Cloud v17.13.1 · SAKURA Live Motion & Background Fusion permanent presence */
 (() => {
   "use strict";
-  if (window.INBESTIGA_SAKURA_LOADER?.version === "v17.13.0") return;
-  const VERSION = "v17.13.0";
-  const MODULE = "sakura-presence-loader-v17-13-0";
+  if (window.INBESTIGA_SAKURA_LOADER?.version === "v17.13.1") return;
+  const VERSION = "v17.13.1";
+  const MODULE = "sakura-presence-loader-v17-13-1";
   const runtime = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG || {};
   const flags = Object.assign({enabled:true,chat:true,actions:true,learning:true,voice:true,reports:true,visualDirector:true,web:false,workspaceLayout:true,bridgeUrl:"http://127.0.0.1:8765"}, runtime.sakura || {});
   let loading = null;
@@ -35,18 +35,19 @@
     if(window.INBESTIGA_SAKURA_NATIVE?.open){window.INBESTIGA_SAKURA_ADAPTIVE_INTELLIGENCE?.attach?.();return window.INBESTIGA_SAKURA_NATIVE.open()}
     if(loading)return loading;
     loading=(async()=>{
-      addCss("assets/css/sakura-personal-workspace-base-v17-12-13-6.css","base");addCss("assets/css/sakura-personal-studio-v17-12-13-6.css","personal-studio");addCss("assets/css/sakura-adaptive-intelligence-v17-13-0.css","adaptive-intelligence");
+      addCss("assets/css/sakura-personal-workspace-base-v17-12-13-6.css","base");addCss("assets/css/sakura-personal-studio-v17-12-13-6.css","personal-studio");addCss("assets/css/sakura-adaptive-intelligence-v17-13-0.css","adaptive-intelligence");addCss("assets/css/sakura-live-motion-background-fusion-v17-13-1.css","live-motion-background-fusion");
       await loadScript("assets/js/sakura-personal-workspace-v17-12-13-6.js","workspace-v17-12-13-6");
-      await loadScript("assets/js/sakura-adaptive-intelligence-v17-13-0.js","adaptive-intelligence-v17-13-0");
+      await loadScript("assets/js/sakura-adaptive-intelligence-v17-13-0.js","adaptive-intelligence-v17-13-1");
+      await loadScript("assets/js/sakura-live-motion-background-fusion-v17-13-1.js","live-motion-background-fusion-v17-13-1");
       if(!window.INBESTIGA_SAKURA_NATIVE?.open)throw new Error("SAKURA no pudo iniciar.");
-      window.INBESTIGA_SAKURA_NATIVE.open();requestAnimationFrame(()=>window.INBESTIGA_SAKURA_ADAPTIVE_INTELLIGENCE?.attach?.());return true
+      window.INBESTIGA_SAKURA_NATIVE.open();requestAnimationFrame(()=>{window.INBESTIGA_SAKURA_ADAPTIVE_INTELLIGENCE?.attach?.();window.INBESTIGA_SAKURA_LIVE_VISUALS?.attach?.()});return true
     })().catch(error=>{notifyError(error);throw error}).finally(()=>{loading=null});
     return loading
   }
   function createLauncher(){ensureLauncherStyle();let button=document.getElementById("sakuraNativeLauncher");if(!button){button=document.createElement("button");button.id="sakuraNativeLauncher";button.className="sakura-native-launcher-shell";button.type="button";button.setAttribute("aria-label","Abrir SAKURA");button.innerHTML='<span class="sakura-native-launcher-orb" aria-hidden="true"><i></i></span><span class="sakura-native-launcher-copy"><strong>SAKURA</strong><small>Compañera de trabajo</small></span>';button.addEventListener("click",()=>loadWorkspace().catch(notifyError))}if(button.parentElement!==document.body)document.body.appendChild(button);button.hidden=flags.enabled===false}
   function injectTopNavigationButton(){const right=document.querySelector("#v472AppleTopNav .v472-right");if(!right||document.getElementById("sakuraTopNavButton"))return false;const button=document.createElement("button");button.id="sakuraTopNavButton";button.type="button";button.setAttribute("aria-label","Abrir SAKURA");button.innerHTML='<span class="sk-top-orb" aria-hidden="true"></span><span>SAKURA</span>';button.addEventListener("click",()=>loadWorkspace().catch(notifyError));const create=document.getElementById("v171210QuickCreateButton");if(create?.parentElement===right)right.insertBefore(button,create);else right.insertBefore(button,right.firstChild);return true}
   function ensurePresence(){if(flags.enabled===false)return;createLauncher();injectTopNavigationButton()}
-  function registerBuild(){try{window.INBESTIGA_QUALITY_CORE?.register?.(MODULE,{version:VERSION,mode:"permanent-lazy-adaptive-intelligence",polling:false,realtimeChannels:0})}catch(_){}const build=window.INBESTIGA_BUILD||{};window.INBESTIGA_BUILD={...build,version:VERSION,name:"SAKURA ADAPTIVE INTELLIGENCE & VISUAL DIRECTOR",modules:[...new Set([...(Array.isArray(build.modules)?build.modules:[]),MODULE]) ]};document.documentElement.dataset.inbestigaBuild=VERSION}
-  function init(){ensurePresence();registerBuild();requestAnimationFrame(ensurePresence);setTimeout(ensurePresence,350);setTimeout(ensurePresence,1200)}
+  function registerBuild(){try{window.INBESTIGA_QUALITY_CORE?.register?.(MODULE,{version:VERSION,mode:"permanent-lazy-adaptive-intelligence",polling:false,realtimeChannels:0})}catch(_){}const build=window.INBESTIGA_BUILD||{};window.INBESTIGA_BUILD={...build,version:VERSION,name:"SAKURA LIVE MOTION & INTELLIGENT BACKGROUND FUSION",modules:[...new Set([...(Array.isArray(build.modules)?build.modules:[]),MODULE]) ]};document.documentElement.dataset.inbestigaBuild=VERSION}
+  function init(){ensurePresence();registerBuild();window.INBESTIGA_SAKURA_LIVE_VISUALS?.attach?.();requestAnimationFrame(ensurePresence);setTimeout(ensurePresence,350);setTimeout(ensurePresence,1200)}
   window.INBESTIGA_SAKURA_LOADER={version:VERSION,flags,load:loadWorkspace,attach:ensurePresence};if(document.readyState==="loading")document.addEventListener("DOMContentLoaded",init,{once:true});else init();window.addEventListener("pageshow",ensurePresence,{passive:true});
 })();

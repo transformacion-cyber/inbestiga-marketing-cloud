@@ -1,0 +1,50 @@
+{
+  "version": "17.13.1",
+  "test_scope": "Pruebas estáticas y comprobaciones sintéticas de implementación",
+  "results": [
+    {
+      "test": "La URL blob permanece estable para el mismo ID de imagen",
+      "status": "passed_static"
+    },
+    {
+      "test": "La imagen se vuelve a leer de IndexedDB después de guardarse",
+      "status": "passed_static"
+    },
+    {
+      "test": "El WebP se decodifica antes de notificar éxito",
+      "status": "passed_static"
+    },
+    {
+      "test": "El panel real se abre o recupera antes de verificar visualmente el fondo",
+      "status": "passed_static"
+    },
+    {
+      "test": "La capa persistente consume --sk-panel-image",
+      "status": "passed_static"
+    },
+    {
+      "test": "Los cuatro niveles de movimiento están implementados",
+      "status": "passed_static"
+    },
+    {
+      "test": "La verificación de movimiento compara currentTime de una animación real",
+      "status": "passed_static"
+    },
+    {
+      "test": "No se añadieron setInterval, MutationObserver, canales Realtime, service_role, eval ni Function dinámica",
+      "status": "passed_static"
+    },
+    {
+      "test": "Movimiento y persistencia real tras desplegar",
+      "status": "pending_live_vercel",
+      "reason": "El Chromium del entorno de construcción bloqueó por política las URL locales y file://; IndexedDB no puede validarse en un origen opaco."
+    }
+  ],
+  "live_checks_required": [
+    "Abrir SAKURA y pulsar Probar movimiento",
+    "Subir una fotografía y confirmar que aparece en el panel abierto",
+    "Recargar y confirmar que la fotografía persiste",
+    "Cambiar entre Chat, Mensajes y Ajustes",
+    "Ejecutar Auditoría Pro en el despliegue publicado"
+  ]
+}

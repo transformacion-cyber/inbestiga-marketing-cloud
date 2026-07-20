@@ -1,0 +1,22 @@
+{
+  "version": "17.13.1",
+  "reported_production_baseline": {
+    "health": 96,
+    "failures": 0,
+    "warnings": 1,
+    "known_warning": "Work 360"
+  },
+  "static_build_result": {
+    "new_javascript_errors": 0,
+    "new_css_parse_errors": 0,
+    "new_json_errors": 0,
+    "missing_html_references": 0,
+    "missing_service_worker_resources": 0,
+    "new_duplicate_ids": 0,
+    "new_polling": 0,
+    "new_mutation_observers": 0,
+    "new_realtime_channels": 0
+  },
+  "production_health_after_deploy": "pending_live_verification",
+  "note": "No se afirma una puntuación productiva nueva sin ejecutar Auditoría Pro en Vercel. El único error CSS detectado en el paquete completo pertenece a audit-counter-accuracy.css y ya estaba presente, sin cambios, en v17.13.0."
+}

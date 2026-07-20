@@ -1,0 +1,27 @@
+AUDITORÍA DE ENTREGA — INBESTIGA MARKETING CLOUD v17.13.1
+
+BASE: v17.13.0
+ALCANCE: Hotfix visual de SAKURA
+
+RESULTADO ESTÁTICO
+- JavaScript externo: válido.
+- Scripts internos de index.html: válidos.
+- JSON: válido.
+- CSS nuevo y modificado: válido.
+- Referencias locales HTML: sin faltantes.
+- Recursos de Service Worker: sin faltantes.
+- IDs duplicados nuevos: 0.
+- Polling nuevo: 0.
+- MutationObserver nuevo: 0.
+- Canales Realtime nuevos: 0.
+- service_role nuevo: 0.
+- SQL: no requerido.
+
+OBSERVACIÓN HISTÓRICA
+El analizador CSS encuentra un error de sintaxis en assets/css/audit-counter-accuracy.css.
+El archivo es idéntico al de v17.13.0 y no fue modificado por este hotfix. No se alteró para
+evitar ampliar el alcance hacia un módulo protegido y ajeno al problema solicitado.
+
+SALUD PRODUCTIVA
+Línea base informada: 96 puntos, 0 fallas y 1 advertencia de Work 360.
+Resultado después del despliegue: pendiente de Auditoría Pro en Vercel.

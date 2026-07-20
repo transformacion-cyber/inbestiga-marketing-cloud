@@ -1,0 +1,24 @@
+{
+  "version": "17.13.1",
+  "name": "SAKURA Live Motion & Intelligent Background Fusion Hotfix",
+  "base": "17.13.0",
+  "scope": "Corrección visual enfocada; sin cambios de backend",
+  "changes": [
+    "Control explícito de animación completa, moderada, bajo consumo y apagada",
+    "Migración segura de preferencias antiguas estáticas hacia movimiento completo en el primer inicio",
+    "Verificación de movimiento mediante Web Animations API",
+    "Previsualizaciones animadas en Personal Studio",
+    "Caché estable de URL blob por ID de fondo",
+    "Lectura posterior desde IndexedDB y decodificación antes de confirmar el fondo",
+    "Capa persistente de fondo dentro del panel real",
+    "Compatibilidad con variables visuales históricas de SAKURA",
+    "Fusión automática de paleta y superficies translúcidas",
+    "Botones para probar, reparar y fusionar el fondo"
+  ],
+  "backend_changes": false,
+  "sql_required": false,
+  "protected_modules_modified": false,
+  "new_polling": false,
+  "new_mutation_observer": false,
+  "new_realtime_channels": 0
+}

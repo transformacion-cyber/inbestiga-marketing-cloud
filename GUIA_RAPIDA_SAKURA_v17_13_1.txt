@@ -1,0 +1,23 @@
+GUÍA RÁPIDA — SAKURA v17.13.1
+
+ANIMACIONES
+1. Abre SAKURA.
+2. Entra en Ajustes.
+3. Busca Movimiento y fondo · v17.13.1.
+4. Selecciona Completa.
+5. Pulsa Activar animaciones ahora.
+6. Pulsa Probar movimiento. Debe indicar Movimiento real confirmado.
+
+FONDO
+1. Ve a Diseño · Plataforma → SAKURA → Fondo completo.
+2. Pulsa Subir y comprimir imagen.
+3. Espera el mensaje Fondo aplicado y verificado.
+4. Pulsa Probar fondo en SAKURA.
+5. Para adaptar toda la interfaz, pulsa Fusionar y adaptar colores en Ajustes de SAKURA.
+6. Si la foto no aparece, pulsa Reparar fondo.
+
+DESPUÉS DEL DESPLIEGUE
+- Cierra las pestañas antiguas.
+- Abre nuevamente Marketing Cloud.
+- Pulsa Ctrl + F5.
+- Confirma que el título o build indique v17.13.1.

@@ -1,10 +1,10 @@
-/* INBESTIGA Marketing Cloud v17.13.0 · SAKURA Adaptive Intelligence, Visual Director & Controlled Web Explorer */
+/* INBESTIGA Marketing Cloud v17.13.1 · SAKURA Adaptive Intelligence, Visual Director & Controlled Web Explorer */
 (() => {
   "use strict";
   if (window.INBESTIGA_SAKURA_ADAPTIVE_INTELLIGENCE) return;
 
-  const VERSION = "v17.13.0";
-  const MODULE = "sakura-adaptive-intelligence-v17-13-0";
+  const VERSION = "v17.13.1";
+  const MODULE = "sakura-adaptive-intelligence-v17-13-1";
   const runtime = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG || {};
   const runtimeSakura = runtime.sakura || {};
   const rows = value => Array.isArray(value) ? value : [];
@@ -314,9 +314,11 @@
   }
   function syncCoreSettings(style={}){
     const root = document.documentElement;
+    const motion=["full","moderate","low","off"].includes(style.motionMode)?style.motionMode:(root.dataset.sakuraMotionPolicy||"full");
+    root.dataset.sakuraMotionPolicy=motion;
     root.dataset.sakuraOrb = style.orbDesign || root.dataset.sakuraOrb || "orbital";
-    root.dataset.sakuraOrbAnimation = style.orbAnimation === false ? "off" : "on";
-    root.dataset.sakuraLowPower = style.lowPower ? "true" : "false";
+    root.dataset.sakuraOrbAnimation = (style.orbAnimation === false || motion === "off") ? "off" : "on";
+    root.dataset.sakuraLowPower = (style.lowPower || motion === "low") ? "true" : "false";
     root.style.setProperty("--sk-tech-speed", String(clamp((style.orbSpeed || 100)/100,.35,2.2)));
   }
 
@@ -608,7 +610,7 @@
   }
   function registerBuild(){
     try{window.INBESTIGA_QUALITY_CORE?.register?.(MODULE,{version:VERSION,mode:"adaptive-safe-controller",polling:false,realtimeChannels:0,mutations:false,webProvider:"server-only"})}catch(_){}
-    const build=window.INBESTIGA_BUILD||{};window.INBESTIGA_BUILD={...build,version:VERSION,name:"SAKURA ADAPTIVE INTELLIGENCE, VISUAL DIRECTOR & CONTROLLED WEB EXPLORER",modules:[...new Set([...(rows(build.modules)),MODULE])]};document.documentElement.dataset.inbestigaBuild=VERSION;
+    const build=window.INBESTIGA_BUILD||{};window.INBESTIGA_BUILD={...build,version:VERSION,name:"SAKURA LIVE MOTION & INTELLIGENT BACKGROUND FUSION",modules:[...new Set([...(rows(build.modules)),MODULE])]};document.documentElement.dataset.inbestigaBuild=VERSION;
   }
   function health(){return{status:"ok",value:"SAKURA Adaptive Intelligence",detail:"Zona segura, layouts por módulo, 8 núcleos multicapa, fusión de imagen, memoria supervisada, Director Visual por tokens y Explorador Web controlado; sin consultas repetitivas, observadores globales ni canales de sincronización nuevos."}}
 

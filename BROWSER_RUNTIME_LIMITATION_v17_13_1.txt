@@ -1,0 +1,11 @@
+LIMITACIÓN DE PRUEBA EN NAVEGADOR — v17.13.1
+
+El navegador Chromium disponible en el entorno de construcción está sujeto a una política
+que bloquea URL locales, hosts de prueba y archivos file://. También impide probar IndexedDB
+en un documento de origen opaco creado con about:blank.
+
+Por esa razón:
+- Sí se validaron sintaxis, referencias, recursos PWA, selectores y lógica de implementación.
+- No se declara certificación de renderizado real, IndexedDB ni animaciones en Vercel.
+- La verificación final debe hacerse después del despliegue mediante los controles incorporados:
+  Activar animaciones ahora, Probar movimiento, Probar fondo en SAKURA y Reparar fondo.
