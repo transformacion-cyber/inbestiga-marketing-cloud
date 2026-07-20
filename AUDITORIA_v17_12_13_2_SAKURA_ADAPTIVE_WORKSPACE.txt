@@ -1,0 +1,49 @@
+AUDITORÍA v17.12.13.2 — SAKURA ADAPTIVE WORKSPACE & NATURAL INTENT
+===================================================================
+
+ALCANCE
+Hotfix funcional y visual sobre v17.12.13.1. Corrige la convivencia del panel con Marketing Cloud y fortalece la interpretación acumulativa de órdenes naturales.
+
+LÍNEA BASE INFORMADA
+- Salud productiva: 96.
+- Fallas: 0.
+- Advertencias: 1.
+
+RESULTADOS ESTÁTICOS
+- JavaScript externo: válido.
+- JavaScript inline: válido.
+- Python del puente: válido.
+- CSS y JSON: válidos.
+- IDs HTML: sin duplicados.
+- Referencias locales y recursos PWA: completos.
+- Archivos BAT: CRLF compatible con Windows.
+- Cache PWA: inbestiga-v17-12-13-2-shell.
+
+RESULTADOS FUNCIONALES AISLADOS
+- Panel acoplado a la derecha sin fondo global ni desenfoque.
+- Plataforma visible y utilizable junto al panel en escritorio.
+- Panel móvil como hoja inferior sin desbordamiento horizontal.
+- Conversación conservada al cambiar el contexto del módulo.
+- Orden de tarea acumulada correctamente en tres mensajes.
+- Blynder resuelto como miembro real.
+- INBESTIGA Titulación resuelto como cliente real.
+- “vcl” interpretado como VSL y “cleinte” normalizado como cliente.
+- Velocidad 1.5x, fecha del día siguiente y 15:00 incorporadas al mismo borrador.
+- Tarjeta de confirmación creada sin ejecutar automáticamente.
+
+PROTECCIÓN DE SALUD
+- 0 setInterval en los módulos nuevos.
+- 0 MutationObserver globales en los módulos nuevos.
+- 0 canales Realtime añadidos.
+- 0 service_role o secretos.
+- El panel completo no se precarga en el Service Worker.
+- El puente continúa restringido a 127.0.0.1.
+- No se añadió SQL ni se modificaron tablas productivas.
+
+LIMITACIONES
+- La prueba aislada no certifica el proyecto productivo de Supabase, RLS ni Vercel.
+- La calidad final de comprensión depende también del modelo local activo en Ollama.
+- Auditoría Pro debe ejecutarse nuevamente en el entorno publicado.
+
+CONCLUSIÓN
+No se detectaron fallas nuevas atribuibles a este hotfix en la validación estática y funcional aislada. La versión está lista para una prueba controlada en Vercel.

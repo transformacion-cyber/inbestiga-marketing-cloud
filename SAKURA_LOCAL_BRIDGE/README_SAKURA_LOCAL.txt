@@ -1,4 +1,4 @@
-SAKURA LOCAL BRIDGE v0.6
+SAKURA LOCAL BRIDGE v0.7 — ADAPTIVE WORKSPACE
 ========================
 
 1. Ejecuta INSTALAR_SAKURA_LOCAL.bat una sola vez.
@@ -19,3 +19,18 @@ SEGURIDAD
 RESPALDO
 Desde Estudio de SAKURA puedes crear respaldos. Se guardan en:
 SAKURA_DATA\respaldos
+
+
+HOTFIX WINDOWS v1
+=================
+- Los archivos BAT usan formato CRLF compatible con Windows.
+- Se detecta primero el lanzador py y luego python.
+- Se agrego VERIFICAR_REQUISITOS_SAKURA.bat.
+- Si Python no esta instalado, el instalador abre la pagina oficial.
+
+
+ACTUALIZACIÓN v17.12.13.2
+=======================
+- Mantiene la conversación y el borrador de orden al navegar entre módulos.
+- Recibe entidades reales y el borrador acumulado para comprender nombres, clientes, campañas, errores de escritura y datos agregados en varios mensajes.
+- No cambia la instalación: conserva 127.0.0.1:8765, Ollama local y el mismo emparejamiento.

@@ -1,0 +1,20 @@
+{
+  "version": "v17.12.13.2",
+  "baseline": {
+    "source": "puntuación productiva informada antes del hotfix",
+    "score": 96,
+    "failures": 0,
+    "warnings": 1
+  },
+  "after_static_and_isolated_tests": {
+    "new_failures_detected": 0,
+    "new_console_exceptions_in_isolated_runtime": 0,
+    "polling_intervals_added": 0,
+    "global_mutation_observers_added": 0,
+    "realtime_channels_added": 0,
+    "missing_local_references": 0,
+    "score": null,
+    "reason_score_null": "Auditoría Pro requiere el entorno publicado de Vercel y una sesión productiva real de Supabase."
+  },
+  "delivery_rule": "No se manipula la puntuación. Comparar nuevamente después del despliegue."
+}

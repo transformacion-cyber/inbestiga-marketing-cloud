@@ -345,8 +345,8 @@ class Handler(BaseHTTPRequestHandler):
         prompt = {
             "model": model, "stream": False, "format": "json",
             "messages": [
-                {"role": "system", "content": "Clasifica una orden para Marketing Cloud. Solo puedes usar una intent incluida en allowed_actions o chat. Nunca decidas permisos. Devuelve JSON con intent, parameters, missing_fields, requires_confirmation, summary y reason."},
-                {"role": "user", "content": json.dumps({"text": str(body.get("text", ""))[:6000], "context": body.get("context", {}), "allowed_actions": allowed}, ensure_ascii=False)}
+                {"role": "system", "content": "Interpreta órdenes naturales para Marketing Cloud. Corrige mentalmente errores ortográficos y frases incompletas. Conserva y completa el borrador previo; nunca olvides datos ya confirmados. Resuelve nombres únicamente contra el catálogo entities: una persona real debe priorizarse sobre una supuesta aplicación o herramienta. Pregunta solo por datos imprescindibles. Solo puedes usar una intent incluida en allowed_actions o chat. Nunca decidas permisos ni ejecutes acciones. Devuelve JSON estricto con intent, parameters, missing_fields, requires_confirmation, summary y reason."},
+                {"role": "user", "content": json.dumps({"text": str(body.get("text", ""))[:6000], "context": body.get("context", {}), "draft": body.get("draft", {}), "entities": body.get("entities", {}), "allowed_actions": allowed}, ensure_ascii=False)}
             ], "options": {"temperature": 0.1, "num_predict": 400}
         }
         conn, response = ollama_request("/api/chat", prompt, 120)
@@ -401,7 +401,7 @@ def main() -> None:
     ensure_data()
     server = ThreadingHTTPServer((HOST, PORT), Handler)
     print("=" * 72)
-    print("SAKURA LOCAL BRIDGE v0.6 · INBESTIGA Marketing Cloud v17.12.13")
+    print("SAKURA LOCAL BRIDGE v0.7 · INBESTIGA Marketing Cloud v17.12.13.2")
     print(f"Dirección local: http://{HOST}:{PORT}")
     print(f"Código de emparejamiento: {CONFIG['pair_code']}")
     print("Ollama esperado en: http://127.0.0.1:11434")

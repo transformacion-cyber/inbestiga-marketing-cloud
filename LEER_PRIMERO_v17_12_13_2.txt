@@ -1,0 +1,51 @@
+INBESTIGA MARKETING CLOUD v17.12.13.2 — SAKURA ADAPTIVE WORKSPACE & NATURAL INTENT
+====================================================================================
+
+BASE AUTORIZADA
+- Construida exclusivamente desde v17.12.13.1 SAKURA Bridge Windows Hotfix.
+- No se mezclaron archivos de versiones anteriores.
+- No se modificaron Auth, RLS, tablas productivas, Storage, RPC existentes, loadAll, renderAll ni bootstrap.
+
+CAMBIOS PRINCIPALES
+1. SAKURA permanece disponible en todos los módulos de Marketing Cloud.
+2. El panel se acopla a la derecha o izquierda y puede redimensionarse.
+3. En escritorio, el contenido principal se ajusta para convivir con SAKURA.
+4. No se oscurece ni se desenfoca el resto de la plataforma.
+5. En móvil, el panel se convierte en una hoja inferior adaptativa.
+6. Se restauró la identidad visual morada, lila y rosada de los prototipos anteriores.
+7. Se corrigió la cabecera superior para que no quede tapada.
+8. La conversación y el borrador de una orden se conservan al navegar.
+9. SAKURA normaliza errores comunes de escritura y abreviaturas, por ejemplo VCL como posible VSL.
+10. Resuelve primero nombres reales de miembros, clientes y campañas antes de inventar herramientas.
+11. Reúne datos entregados en varios mensajes y pregunta solo lo indispensable.
+12. Antes de ejecutar, muestra una tarjeta editable con su interpretación completa.
+
+EJEMPLO VALIDADO
+- Mensaje 1: “Sakura, asígnale una tarea a Blynder”.
+- Mensaje 2: “Aumentarle la velocidad al video del vcl del cleinte inbestiga titulacion para mañana a las 3pm”.
+- Mensaje 3: “La velocidad de x 1.5”.
+- Resultado: responsable Blynder, cliente INBESTIGA Titulación, VSL, velocidad 1.5x, fecha del día siguiente y hora 15:00, listo para confirmación.
+
+OLLAMA Y CONECTOR LOCAL
+- La conexión existente se conserva.
+- Reemplaza la carpeta SAKURA_LOCAL_BRIDGE por la de esta versión para obtener la comprensión acumulativa mejorada.
+- No es necesario reinstalar Python ni Ollama.
+- Reinicia INICIAR_SAKURA_LOCAL.bat después de reemplazar la carpeta.
+
+SQL
+- No se agregó ni se requiere SQL para este hotfix.
+- Los SQL opcionales de v17.12.13 permanecen sin cambios y no deben ejecutarse para probar esta versión.
+
+SALUD
+- No se añadieron setInterval, MutationObserver globales ni canales Realtime.
+- El módulo principal sigue cargándose bajo demanda.
+- El Service Worker solo precarga el loader ligero de SAKURA.
+- Línea base informada: 96 de salud, 0 fallas y 1 advertencia.
+- La puntuación real debe verificarse después de publicar en Vercel con la sesión productiva.
+
+DESPLIEGUE
+1. Copia los archivos en el repositorio de GitHub y reemplaza los anteriores.
+2. No borres la carpeta oculta .git.
+3. Commit sugerido: Actualización v17.12.13.2 — SAKURA Adaptive Workspace.
+4. Pulsa Push origin.
+5. Vercel desplegará la parte web; SAKURA_LOCAL_BRIDGE permanece excluida.

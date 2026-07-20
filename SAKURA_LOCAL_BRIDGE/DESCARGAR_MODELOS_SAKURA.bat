@@ -1,23 +1,35 @@
 @echo off
-chcp 65001 >nul
+setlocal EnableExtensions
+cd /d "%~dp0"
 title Modelos locales de SAKURA
-where ollama >nul 2>&1
-if %errorlevel% neq 0 (
-  echo No se encontró Ollama. Abre o instala Ollama y vuelve a intentarlo.
-  pause
-  exit /b 1
-)
+
+where ollama >nul 2>nul
+if errorlevel 1 goto no_ollama
+
 echo Descargando modelo conversacional gemma3:4b...
 ollama pull gemma3:4b
-if %errorlevel% neq 0 goto error
-echo Descargando modelo semántico embeddinggemma...
+if errorlevel 1 goto download_error
+
+echo.
+echo Descargando modelo semantico embeddinggemma...
 ollama pull embeddinggemma
-if %errorlevel% neq 0 goto error
+if errorlevel 1 goto download_error
+
 echo.
 echo Modelos listos. Ya puedes iniciar SAKURA Local.
 pause
 exit /b 0
-:error
+
+:no_ollama
 echo.
-echo No se pudo completar una descarga. Revisa Ollama y la conexión.
+echo No se encontro Ollama en este equipo.
+echo Abre Ollama o reinicia Windows despues de instalarlo y vuelve a intentarlo.
 pause
+exit /b 1
+
+:download_error
+echo.
+echo No se pudo completar una descarga.
+echo Comprueba que Ollama este abierto y que tengas conexion a Internet.
+pause
+exit /b 1

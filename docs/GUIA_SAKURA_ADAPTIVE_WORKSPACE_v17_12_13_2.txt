@@ -1,0 +1,29 @@
+GUÍA RÁPIDA — SAKURA ADAPTIVE WORKSPACE v17.12.13.2
+====================================================
+
+PANEL
+- Abre SAKURA desde su esfera flotante.
+- Usa el botón de posición para moverla entre derecha e izquierda.
+- Arrastra el borde interior para cambiar el ancho en escritorio.
+- Minimiza para dejar solo su presencia flotante.
+- En celular se abre como hoja inferior.
+
+CONVERSACIÓN ACUMULATIVA
+SAKURA conserva los datos confirmados durante una orden. Puedes completar una tarea en varios mensajes sin repetir responsable, cliente o fecha.
+
+Ejemplo:
+1. “Asígnale una tarea a Blynder”.
+2. “Aumentar la velocidad del video del cliente INBESTIGA Titulación para mañana a las 3”.
+3. “A 1.5x”.
+
+SAKURA debe mostrar una vista previa completa y pedir confirmación, no reiniciar la conversación.
+
+ERRORES DE ESCRITURA
+- Normaliza errores comunes y nombres aproximados.
+- Busca primero en miembros, clientes y campañas reales.
+- Una deducción dudosa aparece indicada en la vista previa para que pueda corregirse.
+
+OLLAMA
+- Mantén Ollama y SAKURA_LOCAL_BRIDGE abiertos.
+- La interfaz funciona en modo básico cuando Ollama no está disponible.
+- Los detalles técnicos quedan en Ajustes, no en la cabecera principal.

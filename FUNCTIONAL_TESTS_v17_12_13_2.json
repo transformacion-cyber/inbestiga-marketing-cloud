@@ -1,0 +1,41 @@
+{
+  "version": "v17.12.13.2",
+  "base": "v17.12.13.1",
+  "isolated_harness": {
+    "adaptive_panel": {
+      "desktop_docked": true,
+      "platform_remains_visible": true,
+      "global_backdrop_display": "none",
+      "movable_left_right": true,
+      "resizable_desktop": true,
+      "mobile_bottom_sheet": true
+    },
+    "natural_intent": {
+      "messages": [
+        "Sakura, asígnale una tarea a Blynder",
+        "quiero que le asignes la tarea de aumentarle la velocidad al video del vcl de el cleinte inbestiga titulacion para mañana a las 3pm",
+        "la velocidad de x 1.5 de INBESTIGA titulación, así se llama el cliente"
+      ],
+      "retained_responsible": "Blynder Salazar",
+      "resolved_client": "INBESTIGA Titulación",
+      "normalized_work_type": "VSL",
+      "speed": "1.5x",
+      "due_date": "día siguiente",
+      "due_time": "15:00",
+      "action_card_count": 1,
+      "automatic_execution": false
+    },
+    "responsive": {
+      "390": {"horizontal_overflow": false, "mode": "bottom-sheet"},
+      "768": {"horizontal_overflow": false, "mode": "overlay-adaptive"},
+      "1440": {"horizontal_overflow": false, "mode": "docked"}
+    },
+    "page_errors": [],
+    "unexpected_console_errors": []
+  },
+  "limitations": [
+    "Prueba aislada con datos controlados; no contactó Supabase productivo.",
+    "La puntuación real de Auditoría Pro requiere despliegue en Vercel.",
+    "La calidad final del lenguaje natural debe comprobarse con el modelo real seleccionado en Ollama."
+  ]
+}

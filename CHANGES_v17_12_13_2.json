@@ -1,0 +1,22 @@
+{
+  "version": "v17.12.13.2",
+  "base": "v17.12.13.1",
+  "name": "SAKURA Adaptive Workspace & Natural Intent",
+  "changes": [
+    "Panel acoplable, redimensionable y posicionable sin desenfoque global",
+    "Identidad visual morada, lila y rosada restaurada",
+    "Cabecera segura sin recorte superior",
+    "Presencia y conversación persistentes al navegar entre módulos",
+    "Borrador acumulativo de acciones en varios mensajes",
+    "Normalización de errores, abreviaturas y lenguaje informal",
+    "Resolución aproximada de miembros, clientes y campañas reales",
+    "Interpretación visible y editable antes de confirmar",
+    "Contexto y catálogo de entidades enviados al puente local",
+    "Prompt local fortalecido para preguntar solo datos indispensables"
+  ],
+  "database_changes": false,
+  "sql_required": false,
+  "new_realtime_channels": 0,
+  "new_polling_intervals": 0,
+  "new_global_mutation_observers": 0
+}

@@ -1,0 +1,98 @@
+{
+  "version": "v17.12.13.2",
+  "external_javascript": {
+    "total": 32,
+    "valid": 32,
+    "errors": []
+  },
+  "inline_javascript": {
+    "total": 14,
+    "valid": 14,
+    "errors": []
+  },
+  "python": {
+    "total": 1,
+    "valid": 1,
+    "errors": []
+  },
+  "json": {
+    "total": 60,
+    "valid": 60,
+    "errors": []
+  },
+  "css": {
+    "total": 24,
+    "valid": 24,
+    "errors": []
+  },
+  "html_ids": {
+    "total": 646,
+    "unique": 646,
+    "duplicates": []
+  },
+  "html_local_references": {
+    "checked": 50,
+    "missing": []
+  },
+  "service_worker": {
+    "cache_name": "inbestiga-v17-12-13-2-shell",
+    "resources": 59,
+    "missing": [],
+    "adaptive_loader_precached": true,
+    "adaptive_workspace_precached": false,
+    "adaptive_css_precached": false
+  },
+  "sakura_guards": {
+    "setInterval_count": 0,
+    "MutationObserver_count": 0,
+    "realtime_channel_count": 0,
+    "service_role_in_new_code": false,
+    "bridge_loopback_only": true,
+    "bridge_subprocess_usage": false,
+    "bridge_os_system_usage": false,
+    "vercel_excludes_bridge": true,
+    "vercel_excludes_bat": true,
+    "global_backdrop_disabled": true
+  },
+  "windows_batch_files": [
+    {
+      "file": "DESCARGAR_MODELOS_SAKURA.bat",
+      "crlf": true,
+      "lf_without_cr": false
+    },
+    {
+      "file": "INICIAR_SAKURA_LOCAL.bat",
+      "crlf": true,
+      "lf_without_cr": false
+    },
+    {
+      "file": "INSTALAR_SAKURA_LOCAL.bat",
+      "crlf": true,
+      "lf_without_cr": false
+    },
+    {
+      "file": "VERIFICAR_REQUISITOS_SAKURA.bat",
+      "crlf": true,
+      "lf_without_cr": false
+    }
+  ],
+  "version_alignment": {
+    "index_has_v17_12_13_2": true,
+    "runtime_config": true,
+    "build_manifest_version": "v17.12.13.2",
+    "build_manifest_frontend_version": "17.12.13.2",
+    "cache": true,
+    "bridge_v07": true
+  },
+  "lazy_loading": {
+    "index_references_loader": true,
+    "index_references_main_directly": false,
+    "loader_references_main": true,
+    "service_worker_precaches_only_loader": true
+  },
+  "private_runtime_files_in_package": [],
+  "overall": {
+    "passed": true,
+    "failures": []
+  }
+}

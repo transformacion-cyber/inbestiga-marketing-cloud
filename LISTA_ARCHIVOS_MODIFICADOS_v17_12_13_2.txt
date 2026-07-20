@@ -1,0 +1,31 @@
+LISTA DE ARCHIVOS v17.12.13.2
+=============================
+
+MODIFICADOS
+- config/build-manifest.json
+- config/public-runtime-config.js
+- index.html
+- service-worker.js
+- SAKURA_LOCAL_BRIDGE/sakura_bridge.py
+- SAKURA_LOCAL_BRIDGE/README_SAKURA_LOCAL.txt
+
+NUEVOS
+- assets/css/sakura-adaptive-workspace-v17-12-13-2.css
+- assets/js/sakura-adaptive-loader-v17-12-13-2.js
+- assets/js/sakura-adaptive-workspace-v17-12-13-2.js
+- AUDITORIA_v17_12_13_2_SAKURA_ADAPTIVE_WORKSPACE.txt
+- CHANGES_v17_12_13_2.json
+- FUNCTIONAL_TESTS_v17_12_13_2.json
+- HEALTH_COMPARISON_v17_12_13_2.json
+- LEER_PRIMERO_v17_12_13_2.txt
+- LISTA_ARCHIVOS_MODIFICADOS_v17_12_13_2.txt
+- STATIC_VALIDATION_v17_12_13_2.json
+- docs/GUIA_SAKURA_ADAPTIVE_WORKSPACE_v17_12_13_2.txt
+
+CONSERVADOS PARA COMPATIBILIDAD Y ROLLBACK
+- assets/css/sakura-native-pilot-v17-12-13.css
+- assets/js/sakura-native-loader-v17-12-13.js
+- assets/js/sakura-native-pilot-v17-12-13.js
+
+ELIMINADOS
+- Ningún módulo productivo.

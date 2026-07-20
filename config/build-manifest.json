@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.12.13",
-  "build": "SAKURA NATIVE PILOT · CONTEXTUAL CHAT · LOCAL OLLAMA · SUPERVISED LEARNING · AUTHORIZED ACTIONS",
+  "frontend_version": "17.12.13.2",
+  "build": "SAKURA ADAPTIVE WORKSPACE · NATURAL INTENT · PERSISTENT CONTEXT · HEALTH SAFE",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -155,16 +155,16 @@
       "mode": "lazy-local-first-no-polling"
     },
     {
-      "name": "sakura-native-loader-v17-12-13",
-      "path": "assets/js/sakura-native-loader-v17-12-13.js",
-      "origin": "v17.12.13",
-      "mode": "lazy-launcher-no-polling"
+      "name": "sakura-adaptive-loader-v17-12-13-2",
+      "path": "assets/js/sakura-adaptive-loader-v17-12-13-2.js",
+      "origin": "v17.12.13.2",
+      "mode": "lazy-always-present-adaptive-launcher"
     },
     {
-      "name": "sakura-native-pilot-v17-12-13",
-      "path": "assets/js/sakura-native-pilot-v17-12-13.js",
-      "origin": "v17.12.13",
-      "mode": "lazy-contextual-local-bridge-permission-gated"
+      "name": "sakura-adaptive-workspace-v17-12-13-2",
+      "path": "assets/js/sakura-adaptive-workspace-v17-12-13-2.js",
+      "origin": "v17.12.13.2",
+      "mode": "lazy-dockable-natural-intent-permission-gated"
     }
   ],
   "styles": [
@@ -190,7 +190,7 @@
     "assets/css/unified-visual-editor-v17-12-9.css",
     "assets/css/navigation-operational-ux-v17-12-10.css",
     "assets/css/operational-command-center-v17-12-12.css",
-    "assets/css/sakura-native-pilot-v17-12-13.css"
+    "assets/css/sakura-adaptive-workspace-v17-12-13-2.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -501,7 +501,7 @@
     "sakura_vercel_bridge_exclusion": true
   },
   "base": "v17.12.12 Operational Command Center Health Safe",
-  "hotfix": "v17.12.13 integrates SAKURA as a lazy native assistant with a loopback-only local bridge, Ollama chat, contextual reports, supervised local learning and permission-gated confirmed actions. The platform remains functional without the bridge or Ollama.",
-  "version": "v17.12.13",
-  "name": "SAKURA NATIVE PILOT"
+  "hotfix": "v17.12.13.2 keeps SAKURA present across every Marketing Cloud module with a dockable, resizable panel that does not blur or block the platform. Natural intent now normalizes typos, resolves real members/clients/campaigns, preserves a multi-turn task draft, asks only for indispensable missing data and shows the complete interpretation before confirmation. No new polling, Realtime channels or Supabase privileges.",
+  "version": "v17.12.13.2",
+  "name": "SAKURA ADAPTIVE WORKSPACE"
 }
