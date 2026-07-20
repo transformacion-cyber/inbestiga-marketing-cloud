@@ -1,10 +1,10 @@
-/* ===== v17.12.12 AUDIT HEALTH INTEGRATION ===== */
+/* ===== RUNTIME-AWARE AUDIT HEALTH INTEGRATION · v17.12.13.3 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_AUDIT_HEALTH) return;
 
-  const VERSION = "v17.12.12";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.12.13.3";
   const BUILD = "AUDIT HEALTH · MANAGED ACCESS & PWA ALIGNMENT";
   const MOUNT_ID = "v172AuditHealthMount";
   const STALE_MS = 10 * 60 * 1000;

@@ -1,0 +1,53 @@
+{
+  "version": "v17.12.13.3",
+  "base": "v17.12.13.2",
+  "purpose": "SAKURA launcher presence and runtime-aware health hotfix",
+  "diagnosis": {
+    "sakura_missing": "The launcher was created on document.body and then hidden when appScreen was still hidden during asynchronous login. The visibility check could run before the app became visible and was not guaranteed to run again.",
+    "pwa_false_warning": "The health module still searched for cache inbestiga-v17-12-11 instead of the current runtime cache, so v17.12.13.2 was reported as pending even when present and controlling the page.",
+    "remaining_real_warning": "Work 360 local preferences are newer than the remote copy. This warning is intentionally preserved until the user synchronizes."
+  },
+  "fixes": [
+    "Launcher mounted directly inside appScreen, so it appears automatically when the authenticated application appears.",
+    "Removed timing-dependent wrappers around navTo and renderAll.",
+    "Loader registers v17.12.13.3 immediately, before the full SAKURA panel is opened.",
+    "Auditoría Pro derives its version from public runtime configuration.",
+    "PWA health validates exact cache inbestiga-v17-12-13-3-shell.",
+    "New loader/workspace asset filenames bypass stale browser and CDN caches."
+  ],
+  "static_validation": {
+    "external_js_valid": 32,
+    "python_valid": 1,
+    "json_valid": 60,
+    "static_html_ids": 646,
+    "duplicate_static_ids": 0,
+    "static_local_refs": 54,
+    "missing_static_refs": 0,
+    "service_worker_resources": 59,
+    "missing_service_worker_resources": 0,
+    "launcher_stub_test": {
+      "created": true,
+      "parent": "appScreen",
+      "hidden": false,
+      "build_version": "v17.12.13.3"
+    }
+  },
+  "health_expectation": {
+    "reported_before": {
+      "score": 93,
+      "warnings": [
+        "PWA update pending (false due to stale cache check)",
+        "Work 360 one local block pending"
+      ]
+    },
+    "expected_after_deploy_and_reload": {
+      "score": 96,
+      "warnings": [
+        "Work 360 one local block pending"
+      ]
+    },
+    "note": "The real production score must be verified after Vercel deploy. Synchronizing Work 360 may clear the remaining warning."
+  },
+  "sql_required": false,
+  "protected_areas_changed": []
+}

@@ -1,0 +1,12 @@
+{
+  "version": "v17.12.13.3",
+  "changes": [
+    "Launcher mounted directly inside appScreen, so it appears automatically when the authenticated application appears.",
+    "Removed timing-dependent wrappers around navTo and renderAll.",
+    "Loader registers v17.12.13.3 immediately, before the full SAKURA panel is opened.",
+    "Auditoría Pro derives its version from public runtime configuration.",
+    "PWA health validates exact cache inbestiga-v17-12-13-3-shell.",
+    "New loader/workspace asset filenames bypass stale browser and CDN caches."
+  ],
+  "sql_required": false
+}

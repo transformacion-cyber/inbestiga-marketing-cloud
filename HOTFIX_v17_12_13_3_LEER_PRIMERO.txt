@@ -1,0 +1,11 @@
+INBESTIGA MARKETING CLOUD v17.12.13.3
+
+CORRECCIONES
+1. SAKURA vuelve a estar siempre visible dentro de appScreen.
+2. Se elimina la dependencia de tiempos de login y los wrappers de navTo/renderAll.
+3. Auditoría Pro usa la versión real del runtime.
+4. La comprobación PWA valida la caché actual v17.12.13.3, no la antigua v17.12.11.
+5. La advertencia Work 360 no se oculta: indica una preferencia local más reciente que Supabase y se resuelve sincronizando.
+
+NO REQUIERE SQL.
+NO CAMBIA AUTH, RLS, RPC, STORAGE, REALTIME NI TAREAS.

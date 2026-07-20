@@ -1,10 +1,10 @@
-/* ===== v17.12.12 SYSTEM HEALTH CENTER ===== */
+/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.12.13.3 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = "v17.12.12";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.12.13.3";
   const BUILD = "TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING · SYSTEM HEALTH";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";
@@ -284,10 +284,12 @@
       let cacheName = "";
       try {
         const names = typeof caches !== "undefined" ? await caches.keys() : [];
-        cacheName = names.find((name) => name.includes("inbestiga-v17-12-11")) || names.find((name) => name.includes("inbestiga")) || "";
+        const expectedCacheName = `inbestiga-${String(VERSION).replaceAll(".", "-")}-shell`;
+        cacheName = names.find((name) => name === expectedCacheName) || names.find((name) => name.includes("inbestiga")) || "";
       } catch { /* CacheStorage puede estar restringido */ }
-      const expectedCache = cacheName.includes("inbestiga-v17-12-11");
-      const ready = !!registration && manifest && expectedCache;
+      const expectedCacheName = `inbestiga-${String(VERSION).replaceAll(".", "-")}-shell`;
+      const expectedCache = cacheName === expectedCacheName;
+      const ready = !!registration && manifest && expectedCache && !!navigator.serviceWorker.controller;
       return check(
         "pwa", "services", "PWA", ready ? "ok" : "warn",
         ready ? `Shell ${VERSION} activa` : registration ? "Actualización pendiente" : "Registro pendiente",
