@@ -1,0 +1,35 @@
+{
+  "version": "v17.12.13.5",
+  "tests": [
+    {
+      "name": "Aislamiento tipográfico de botones SAKURA",
+      "status": "passed",
+      "detail": "Reglas específicas eliminan pseudoelementos, filtros, text-shadow y estilos globales sobre controles."
+    },
+    {
+      "name": "Pestaña SAKURA en Diseño y apariencia",
+      "status": "passed",
+      "detail": "La pestaña se renderiza para perfiles autorizados y personales."
+    },
+    {
+      "name": "Aplicación de presets y colores",
+      "status": "passed",
+      "detail": "Variables CSS se aplican sin recargar la plataforma."
+    },
+    {
+      "name": "Fondo completo personalizado",
+      "status": "passed",
+      "detail": "Carga JPG/PNG/WebP, comprime a WebP y limita el tamaño antes de guardar."
+    },
+    {
+      "name": "Restauración reversible",
+      "status": "passed",
+      "detail": "El usuario puede volver al estilo predeterminado."
+    },
+    {
+      "name": "Carga diferida del chat",
+      "status": "passed",
+      "detail": "El panel JS continúa cargándose solo al abrir SAKURA."
+    }
+  ]
+}

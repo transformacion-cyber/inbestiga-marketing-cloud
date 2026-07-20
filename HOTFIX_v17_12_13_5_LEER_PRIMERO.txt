@@ -1,0 +1,13 @@
+INBESTIGA MARKETING CLOUD v17.12.13.5
+SAKURA READABLE UI & CUSTOM APPEARANCE
+
+BASE EXCLUSIVA: v17.12.13.4
+
+CORRIGE:
+- Textos y botones de SAKURA afectados por estilos visuales globales.
+- Contraste, tamaños, pseudoelementos y reflejos que impedían leer algunas acciones.
+- Añade Diseño y apariencia > SAKURA para cambiar el fondo completo del panel.
+
+NO REQUIERE SQL.
+NO REQUIERE REINSTALAR OLLAMA NI EL PUENTE LOCAL.
+La imagen personalizada se comprime y se guarda solo para el perfil actual en ese navegador.

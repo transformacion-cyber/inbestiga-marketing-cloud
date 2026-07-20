@@ -375,9 +375,9 @@
   async function renderStudio() {
     ensureSection(); const root = $("v178StudioRoot"); if (!root) return;
     const prefs = await memberPrefs();
-    if (!isGlobalManager() && !["wall","health"].includes(currentTab)) currentTab = "wall";
-    const content = currentTab === "global" ? globalMarkup() : currentTab === "modules" ? modulesMarkup() : currentTab === "media" ? mediaMarkup() : currentTab === "wall" ? wallMarkup(prefs) : currentTab === "history" ? historyMarkup() : healthMarkup();
-    root.innerHTML = `<div class="v178-studio-shell">${heroMarkup()}<nav class="v178-studio-tabs">${tabButton("global","Tema global",true)}${tabButton("modules","Módulos",true)}${tabButton("media","Fotos y fondos",true)}${tabButton("wall","Mi muro")}${tabButton("history","Historial",true)}${tabButton("health","Salud visual")}</nav><div class="v178-studio-view active">${content}</div></div>`;
+    if (!isGlobalManager() && !["wall","sakura","health"].includes(currentTab)) currentTab = "wall";
+    const content = currentTab === "global" ? globalMarkup() : currentTab === "modules" ? modulesMarkup() : currentTab === "media" ? mediaMarkup() : currentTab === "wall" ? wallMarkup(prefs) : currentTab === "sakura" ? (window.INBESTIGA_SAKURA_APPEARANCE?.markup?.() || `<div class="v178-studio-card"><h3>Personalizar SAKURA</h3><p>El editor de apariencia no está disponible en este navegador.</p></div>`) : currentTab === "history" ? historyMarkup() : healthMarkup();
+    root.innerHTML = `<div class="v178-studio-shell">${heroMarkup()}<nav class="v178-studio-tabs">${tabButton("global","Tema global",true)}${tabButton("modules","Módulos",true)}${tabButton("media","Fotos y fondos",true)}${tabButton("wall","Mi muro")}${tabButton("sakura","SAKURA")}${tabButton("history","Historial",true)}${tabButton("health","Salud visual")}</nav><div class="v178-studio-view active">${content}</div></div>`;
     updatePreview();
   }
   function updatePreview() {
@@ -440,6 +440,7 @@
   async function importDesign(file) { const data=JSON.parse(await file.text()); const model=normalizeDesign(data.design||data); draft=model; healthCache=null; applyTheme(draft,{preview:true}); renderStudio(); notify("Diseño importado","Revísalo antes de guardarlo o publicarlo.","success"); }
 
   async function handleClick(event) {
+    if (await window.INBESTIGA_SAKURA_APPEARANCE?.handleClick?.(event)) return;
     const tab=event.target.closest("[data-v178-tab]"); if(tab){currentTab=tab.dataset.v178Tab;await renderStudio();return;}
     const preset=event.target.closest("[data-v178-preset]"); if(preset){applyPreset(preset.dataset.v178Preset);return;}
     const device=event.target.closest("[data-v178-device]"); if(device){previewDevice=device.dataset.v178Device;renderStudio();return;}
@@ -458,6 +459,7 @@
     if(event.target.closest("[data-v178-open-legacy-wall]")){try{navTo("profile");setTimeout(()=>v418OpenCustomizer?.(),100)}catch{}return;}
   }
   async function handleInput(event) {
+    if (window.INBESTIGA_SAKURA_APPEARANCE?.handleInput?.(event)) return;
     const el=event.target;
     if(el.matches("[data-v178-name]")){draft.name=text(el.value).slice(0,90);return;}
     if(el.matches("[data-v178-setting]")){updateDraftSetting(el.dataset.v178Setting,el.value);return;}
@@ -465,6 +467,7 @@
     if(el.matches("[data-v178-slot]")){const id=el.dataset.v178Slot,key=el.dataset.v178SlotKey;if(!draft.slots[id])return;draft.slots[id][key]=el.type==="checkbox"?el.checked:["overlay","zoom","saturation"].includes(key)?Number(el.value):el.value;draft=normalizeDesign(draft);healthCache=null;applyTheme(draft,{preview:true});updatePreview();return;}
   }
   async function handleChange(event) {
+    if (await window.INBESTIGA_SAKURA_APPEARANCE?.handleChange?.(event)) return;
     const el=event.target;
     if(el.id==="v178SlotFile"&&el.files?.[0]){try{await uploadImage(el.files[0],el.dataset.slot)}catch(error){notify("No se pudo subir",error?.message||text(error),"error")}el.value="";return;}
     if(el.id==="v178LibraryFile"&&el.files?.[0]){try{await uploadImage(el.files[0])}catch(error){notify("No se pudo subir",error?.message||text(error),"error")}el.value="";return;}

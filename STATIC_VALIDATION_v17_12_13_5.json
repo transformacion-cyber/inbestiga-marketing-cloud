@@ -1,0 +1,31 @@
+{
+  "version": "v17.12.13.5",
+  "base": "v17.12.13.4",
+  "external_js": 37,
+  "external_js_errors": 0,
+  "inline_scripts": 14,
+  "inline_errors": 0,
+  "css_files": 27,
+  "json_files": 67,
+  "json_errors": 0,
+  "html_refs": 58,
+  "missing_html_refs": [],
+  "service_worker_resources": 62,
+  "missing_service_worker_resources": [],
+  "manifest_missing_paths": [],
+  "static_ids": 799,
+  "duplicate_static_ids": {
+    "home": 3,
+    "caContextSize": 2,
+    "caContextSizeValue": 2
+  },
+  "cache": "inbestiga-v17-12-13-5-shell",
+  "sql_required": false,
+  "polling_added": false,
+  "realtime_channels_added": 0,
+  "global_mutation_observer_added": false,
+  "notes": [
+    "No se pudo certificar la puntuación productiva de Auditoría Pro sin desplegar en Vercel.",
+    "La imagen de fondo de SAKURA se comprime y se guarda localmente por perfil."
+  ]
+}

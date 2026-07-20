@@ -1,0 +1,20 @@
+{
+  "version": "v17.12.13.5",
+  "baseline": {
+    "score": 96,
+    "failures": 0,
+    "warnings": 1,
+    "source": "reported by user on v17.12.13.4"
+  },
+  "expected": {
+    "new_failures": 0,
+    "new_warnings_from_hotfix": 0
+  },
+  "not_certified_until_deploy": true,
+  "changes": [
+    "No backend calls added",
+    "No polling or Realtime added",
+    "No SQL required",
+    "Only UI isolation and local appearance preferences"
+  ]
+}

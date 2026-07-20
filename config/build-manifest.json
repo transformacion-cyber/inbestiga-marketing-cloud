@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.12.13.4",
-  "build": "SAKURA RELIABLE ACTIONS · APPLE WORKSPACE · VERIFIED TASK CREATION · FLAT APPLE NAV",
+  "frontend_version": "17.12.13.5",
+  "build": "SAKURA READABLE UI · CUSTOM APPEARANCE · VERIFIED TASK CREATION · FLAT APPLE NAV",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -155,16 +155,22 @@
       "mode": "lazy-local-first-no-polling"
     },
     {
-      "name": "sakura-presence-loader-v17-12-13-4",
-      "path": "assets/js/sakura-presence-loader-v17-12-13-4.js",
-      "origin": "v17.12.13.4",
-      "mode": "lazy-always-present-dual-entry"
+      "name": "sakura-presence-loader-v17-12-13-5",
+      "path": "assets/js/sakura-presence-loader-v17-12-13-5.js",
+      "origin": "v17.12.13.5",
+      "mode": "lazy"
     },
     {
-      "name": "sakura-apple-workspace-v17-12-13-4",
-      "path": "assets/js/sakura-apple-workspace-v17-12-13-4.js",
-      "origin": "v17.12.13.4",
-      "mode": "lazy-apple-ui-persistent-conversation-verified-actions"
+      "name": "sakura-apple-workspace-v17-12-13-5",
+      "path": "assets/js/sakura-apple-workspace-v17-12-13-5.js",
+      "origin": "v17.12.13.5",
+      "mode": "lazy"
+    },
+    {
+      "name": "sakura-appearance-editor-v17-12-13-5",
+      "path": "assets/js/sakura-appearance-editor-v17-12-13-5.js",
+      "origin": "v17.12.13.5",
+      "mode": "eager-light"
     }
   ],
   "styles": [
@@ -191,7 +197,7 @@
     "assets/css/navigation-operational-ux-v17-12-10.css",
     "assets/css/navigation-apple-flat-v17-12-13-4.css",
     "assets/css/operational-command-center-v17-12-12.css",
-    "assets/css/sakura-apple-workspace-v17-12-13-4.css"
+    "assets/css/sakura-apple-workspace-v17-12-13-5.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -510,7 +516,7 @@
     "health_safe_v1712134": true
   },
   "base": "v17.12.13.3 SAKURA Presence & Health Hotfix",
-  "hotfix": "v17.12.13.4 restores readable Apple-style SAKURA UI, adds permanent launcher and top navigation entry, persists recent conversations locally per member, strengthens natural conversation prompts, and verifies every task creation after schema-aware RPC execution before reporting success. The top menu uses a flat Apple surface without Liquid Glass. No SQL, Auth, RLS, productive table, existing RPC, Realtime, loadAll or bootstrap changes.",
-  "version": "v17.12.13.4",
-  "name": "SAKURA RELIABLE ACTIONS & APPLE WORKSPACE"
+  "hotfix": "v17.12.13.5 isolates SAKURA typography and controls from global glass styles, restores readable Apple-style controls, and adds a reversible SAKURA appearance editor inside Diseño y apariencia with presets, colors, full-panel background upload and preview. No SQL, Auth, RLS, productive table, RPC, Realtime, loadAll or bootstrap changes.",
+  "version": "v17.12.13.5",
+  "name": "SAKURA READABLE UI & CUSTOM APPEARANCE"
 }

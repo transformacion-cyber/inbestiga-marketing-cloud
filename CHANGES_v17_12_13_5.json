@@ -1,0 +1,13 @@
+{
+  "version": "v17.12.13.5",
+  "name": "SAKURA READABLE UI & CUSTOM APPEARANCE",
+  "base": "v17.12.13.4",
+  "changes": [
+    "Aislamiento tipográfico y visual de todos los controles de SAKURA para impedir que estilos Liquid Glass globales oculten o deformen textos.",
+    "Botones, pestañas, feedback, controles de cabecera y compositor con contraste Apple legible.",
+    "Nueva pestaña SAKURA dentro de Diseño y apariencia.",
+    "Fondos completos de panel mediante estilos predefinidos, colores o imagen local comprimida.",
+    "Vista previa, restauración reversible y guardado por perfil en el navegador.",
+    "Sin SQL, polling, Realtime ni modificaciones productivas."
+  ]
+}
