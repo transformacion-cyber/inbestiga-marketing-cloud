@@ -1,10 +1,10 @@
-/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.12.13.3 ===== */
+/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.12.13.4 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.12.13.3";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.12.13.4";
   const BUILD = "TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING · SYSTEM HEALTH";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";

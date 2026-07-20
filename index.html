@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-inbestiga-build="v17.12.13.3">
+<html lang="es" data-inbestiga-build="v17.12.13.4">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-<title>INBESTIGA Marketing Cloud · v17.12.13.3 SAKURA PRESENCE & HEALTH HOTFIX</title>
+<title>INBESTIGA Marketing Cloud · v17.12.13.4 SAKURA RELIABLE ACTIONS & APPLE WORKSPACE</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>if(!window.supabase){document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>')}</script>
 <script src="config/public-runtime-config.js" data-inbestiga-module="managed-public-runtime-config"></script>
@@ -3622,6 +3622,7 @@ body.v12-palette-open{overflow:hidden}
 <link rel="stylesheet" href="assets/css/real-crystal-media-editor-v17-12-4.css" data-inbestiga-module="real-crystal-media-editor-v17-12-4">
 <link rel="stylesheet" href="assets/css/unified-visual-editor-v17-12-9.css" data-inbestiga-module="unified-visual-editor-v17-12-9">
 <link rel="stylesheet" href="assets/css/navigation-operational-ux-v17-12-10.css" data-inbestiga-module="navigation-operational-ux-v17-12-10">
+<link rel="stylesheet" href="assets/css/navigation-apple-flat-v17-12-13-4.css" data-inbestiga-module="navigation-apple-flat-v17-12-13-4">
 <link rel="stylesheet" href="assets/css/operational-command-center-v17-12-12.css" data-inbestiga-module="operational-command-center-v17-12-12">
 </head>
 <body>
@@ -5025,7 +5026,7 @@ function toast(title,body=""){premiumToast(title,body,"info")}
 function setBox(id,text,type="ok"){const b=$(id);if(!b)return;b.className="status-box "+type;b.textContent=text}
 function hideBox(id){const b=$(id);if(!b)return;b.className="status-box";b.textContent=""}
 function show(screen){["setupScreen","loginScreen","appScreen"].forEach(id=>$(id)?.classList.add("hidden"));$(screen)?.classList.remove("hidden")}
-function createClient(){syncManagedRuntimeConfig();const c=cfg();if(!c.url||!c.key||!window.supabase?.createClient)return null;return window.supabase.createClient(c.url,c.key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true},global:{headers:{"X-Client-Info":"inbestiga-marketing-cloud/17.12.12"}}})}
+function createClient(){syncManagedRuntimeConfig();const c=cfg();if(!c.url||!c.key||!window.supabase?.createClient)return null;return window.supabase.createClient(c.url,c.key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true},global:{headers:{"X-Client-Info":"inbestiga-marketing-cloud/17.12.13.4"}}})}
 function by(arr,id){return (arr||[]).find(x=>x.id===id)||{}}
 function nameOf(arr,id,key="name"){return by(arr,id)[key]||""}
 function memberName(id){return by(state.members,id).full_name||"Usuario"}
@@ -9624,6 +9625,6 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <script src="assets/js/unified-visual-editor-v17-12-9.js" data-inbestiga-module="unified-visual-editor-v17-12-9"></script>
 <script src="assets/js/navigation-operational-ux-v17-12-10.js" data-inbestiga-module="navigation-operational-ux-v17-12-10"></script>
 <script src="assets/js/operational-command-center-v17-12-12.js" data-inbestiga-module="operational-command-center-v17-12-12"></script>
-<script src="assets/js/sakura-presence-loader-v17-12-13-3.js" data-inbestiga-module="sakura-presence-loader-v17-12-13-3"></script>
+<script src="assets/js/sakura-presence-loader-v17-12-13-4.js" data-inbestiga-module="sakura-presence-loader-v17-12-13-4"></script>
 </body>
 </html>

@@ -1,0 +1,19 @@
+{
+  "version": "v17.12.13.4",
+  "name": "SAKURA Reliable Actions & Apple Workspace",
+  "base": "v17.12.13.3 SAKURA Presence & Health Hotfix",
+  "date": "2026-07-20",
+  "changes": [
+    "Rediseño de SAKURA con tipografía legible, contraste alto, controles amplios y panel Apple oscuro sin desenfoque global.",
+    "Lanzador flotante permanente montado en document.body y acceso adicional SAKURA en la navegación superior.",
+    "Conversación reciente persistente por miembro y disponible al cambiar de módulo o recargar la plataforma.",
+    "Prompt conversacional reforzado para distinguir conversación normal, búsqueda y acciones de plataforma.",
+    "Creación de tareas mediante RPC compatible con esquema y verificación posterior contra los datos recargados.",
+    "SAKURA no comunica éxito si la tarea no aparece realmente en Marketing Cloud.",
+    "Después de crear una tarea, se limpian filtros, se abre Tareas y se resalta el registro verificado.",
+    "Menú superior plano tipo Apple sin Liquid Glass, brillos ni desenfoque.",
+    "Puente local actualizado a v0.8 sin cambiar puerto, emparejamiento ni modelos."
+  ],
+  "sql_required": false,
+  "protected_areas_modified": false
+}

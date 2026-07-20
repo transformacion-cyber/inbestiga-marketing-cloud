@@ -34,3 +34,10 @@ ACTUALIZACIÓN v17.12.13.2
 - Mantiene la conversación y el borrador de orden al navegar entre módulos.
 - Recibe entidades reales y el borrador acumulado para comprender nombres, clientes, campañas, errores de escritura y datos agregados en varios mensajes.
 - No cambia la instalación: conserva 127.0.0.1:8765, Ollama local y el mismo emparejamiento.
+
+ACTUALIZACIÓN v17.12.13.4 · PUENTE v0.8
+======================================
+- Mejora la conversación natural y diferencia una charla de una orden sobre la plataforma.
+- Nunca debe afirmar que una acción se ejecutó: Marketing Cloud es quien valida y confirma el resultado real.
+- Conserva el mismo puerto, emparejamiento, Ollama y modelos; no necesita reinstalar Python.
+- Para aplicar el cambio, reemplaza la carpeta SAKURA_LOCAL_BRIDGE y reinicia INICIAR_SAKURA_LOCAL.bat.

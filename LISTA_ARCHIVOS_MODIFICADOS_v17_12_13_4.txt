@@ -1,0 +1,28 @@
+ARCHIVOS NUEVOS
+- assets/css/navigation-apple-flat-v17-12-13-4.css
+- assets/css/sakura-apple-workspace-v17-12-13-4.css
+- assets/js/sakura-presence-loader-v17-12-13-4.js
+- assets/js/sakura-apple-workspace-v17-12-13-4.js
+- CHANGES_v17_12_13_4.json
+- HOTFIX_v17_12_13_4_LEER_PRIMERO.txt
+- AUDITORIA_v17_12_13_4_SAKURA_RELIABLE_ACTIONS_APPLE_UI.txt
+- FUNCTIONAL_TESTS_v17_12_13_4.json
+- HEALTH_COMPARISON_v17_12_13_4.json
+
+ARCHIVOS ACTUALIZADOS
+- index.html
+- service-worker.js
+- config/build-manifest.json
+- config/public-runtime-config.js
+- assets/js/system-health-center.js
+- assets/js/audit-health-integration.js
+- SAKURA_LOCAL_BRIDGE/sakura_bridge.py
+- SAKURA_LOCAL_BRIDGE/README_SAKURA_LOCAL.txt
+
+NO MODIFICADOS
+- Supabase Auth y login.
+- RLS y tablas productivas.
+- Storage.
+- RPC productivas.
+- loadAll, renderAll y bootstrap productivo.
+- Creative Arena, campañas, Muro y editor visual.

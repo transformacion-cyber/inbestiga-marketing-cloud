@@ -1,0 +1,19 @@
+{
+  "version": "v17.12.13.4",
+  "baseline_reported": {
+    "score": 96,
+    "failures": 0,
+    "warnings": 1,
+    "warning_detail": "Work 360 local más reciente que Supabase"
+  },
+  "static_after": {
+    "new_failures_detected": 0,
+    "new_warning_sources_detected": 0,
+    "polling_added": false,
+    "realtime_channels_added": 0,
+    "global_mutation_observers_added": 0,
+    "service_role_present": false
+  },
+  "production_score": "pending_vercel_validation",
+  "note": "No se manipula la puntuación. Auditoría Pro debe ejecutarse tras el despliegue y la recarga del Service Worker."
+}

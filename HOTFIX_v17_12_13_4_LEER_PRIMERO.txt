@@ -1,0 +1,20 @@
+INBESTIGA MARKETING CLOUD v17.12.13.4
+SAKURA RELIABLE ACTIONS & APPLE WORKSPACE
+========================================
+
+BASE ÚNICA
+- v17.12.13.3 SAKURA Presence & Health Hotfix.
+
+CORRIGE
+1. Panel de SAKURA pequeño, oscuro y difícil de leer.
+2. Mensajes de éxito de creación de tareas sin comprobar que el registro existía.
+3. Conversación que se perdía al recargar y respuestas demasiado orientadas a buscar.
+4. Acceso poco visible a SAKURA desde Inicio.
+5. Menú superior con exceso de Liquid Glass y apariencia poco limpia.
+
+IMPORTANTE
+- No requiere SQL.
+- No modifica Auth, RLS, tablas, Storage ni RPC productivas.
+- No añade polling, MutationObserver global ni canales Realtime.
+- Para aplicar el ajuste conversacional del puente, reemplaza SAKURA_LOCAL_BRIDGE y reinicia INICIAR_SAKURA_LOCAL.bat.
+- La salud productiva debe comprobarse tras desplegar. La línea base informada es 96 con una advertencia real de sincronización Work 360.

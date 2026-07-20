@@ -1,0 +1,41 @@
+{
+  "version": "v17.12.13.4",
+  "tests": [
+    {
+      "name": "Comprensión acumulativa de orden con errores",
+      "status": "passed",
+      "input": [
+        "quiero que le asignes una tarea a Blynder",
+        "aumentarle la velocidad al video del vcl de el cleinte inbestiga titulacion para mañana a las 3pm",
+        "la velocidad de x 1.5"
+      ],
+      "resolved": {
+        "member": "Blynder Haro C.",
+        "client": "INBESTIGA Titulación",
+        "content": "VSL",
+        "speed": "1.5x",
+        "time": "15:00"
+      }
+    },
+    {
+      "name": "Creación de tarea y recarga verificada",
+      "status": "passed",
+      "detail": "El RPC creó el registro, loadAll actualizó el estado y SAKURA devolvió el ID encontrado."
+    },
+    {
+      "name": "Bloqueo de falso éxito",
+      "status": "passed",
+      "detail": "Cuando el RPC respondió sin que la tarea apareciera tras la recarga, SAKURA devolvió error y no anunció creación."
+    },
+    {
+      "name": "Persistencia conversacional",
+      "status": "passed_static",
+      "detail": "La conversación se guarda por miembro con límite de mensajes y tamaño; los mensajes enriquecidos o en streaming no se persisten."
+    },
+    {
+      "name": "Acceso permanente",
+      "status": "passed_static",
+      "detail": "El lanzador se monta en document.body y se añade un acceso SAKURA a la barra superior."
+    }
+  ]
+}

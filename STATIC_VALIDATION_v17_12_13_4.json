@@ -1,0 +1,55 @@
+{
+  "json": {
+    "total": 66,
+    "errors": []
+  },
+  "external_js": {
+    "total": 36,
+    "errors": []
+  },
+  "inline_js": {
+    "total": 14,
+    "errors": []
+  },
+  "css": {
+    "total": 27,
+    "errors": []
+  },
+  "ids": {
+    "total": 646,
+    "duplicates": []
+  },
+  "index_refs": {
+    "total": 51,
+    "missing": []
+  },
+  "sw_refs": {
+    "total": 60,
+    "missing": [],
+    "cache": "inbestiga-v17-12-13-4-shell"
+  },
+  "forbidden": {
+    "setInterval": [],
+    "MutationObserver": [],
+    "Realtime channel": [],
+    "service_role": []
+  },
+  "bat": {
+    "total": 4,
+    "bare_lf": []
+  },
+  "python": {
+    "total": 1,
+    "errors": []
+  },
+  "assertions": {
+    "task_verification": true,
+    "schema_aware_rpc": true,
+    "conversation_persistence": true,
+    "no_product_function_wrap": true,
+    "body_launcher": true,
+    "top_nav_button": true,
+    "flat_menu_no_blur": true,
+    "lazy_workspace": true
+  }
+}

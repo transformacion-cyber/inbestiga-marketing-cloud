@@ -1,0 +1,50 @@
+/* INBESTIGA v17.12.13.4 · flat Apple navigation (no Liquid Glass on menu) */
+#v472AppleTopNav{
+  background:rgba(250,250,252,.98)!important;
+  border:1px solid rgba(20,20,24,.10)!important;
+  border-radius:16px!important;
+  box-shadow:0 8px 24px rgba(24,24,28,.10)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.v472-nav-inner{gap:8px!important}
+.v472-brand{background:transparent!important;border:0!important;box-shadow:none!important}
+.v472-brand:hover{background:#f0eff3!important;transform:none!important}
+.v472-brand-mark{box-shadow:0 4px 12px rgba(90,48,170,.18)!important}
+.v472-menu{gap:2px!important}
+.v472-menu-item{
+  height:34px!important;
+  padding:0 12px!important;
+  border:0!important;
+  border-radius:10px!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  color:#4b4a50!important;
+  font-size:12px!important;
+  font-weight:600!important;
+  transform:none!important;
+}
+.v472-menu-item:hover{background:#efeff2!important;color:#17171a!important;box-shadow:none!important;transform:none!important}
+.v472-menu-item.active,.v472-menu-item.current{background:#e6e4ea!important;color:#17171a!important;box-shadow:none!important}
+.v472-right{gap:4px!important}
+.v472-icon-btn,.v171210-create-button{
+  border:0!important;
+  border-radius:10px!important;
+  box-shadow:none!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.v472-icon-btn{background:transparent!important;color:#4a4950!important}
+.v472-icon-btn:hover{background:#ecebef!important;transform:none!important;box-shadow:none!important}
+.v171210-create-button{background:#232228!important;color:#fff!important}
+.v171210-create-button:hover{background:#111014!important;transform:none!important;box-shadow:none!important}
+.v472-mega,.v171210-create-popover,.v472-search-panel{
+  background:#fff!important;
+  border:1px solid rgba(20,20,24,.10)!important;
+  box-shadow:0 20px 55px rgba(20,20,24,.16)!important;
+  backdrop-filter:none!important;
+  -webkit-backdrop-filter:none!important;
+}
+.v472-mega-link,.v472-mega-small button,.v171210-create-option{background:#f7f7f9!important;border-color:transparent!important;box-shadow:none!important}
+.v472-mega-link:hover,.v472-mega-small button:hover,.v171210-create-option:hover{background:#eeeeF2!important;transform:none!important;box-shadow:none!important}
+.v472-dim{background:rgba(20,20,24,.12)!important;backdrop-filter:none!important;-webkit-backdrop-filter:none!important}

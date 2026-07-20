@@ -1,0 +1,30 @@
+AUDITORÍA TÉCNICA · v17.12.13.4
+==============================
+
+ALCANCE
+- Interfaz y presencia de SAKURA.
+- Creación verificada de tareas.
+- Memoria conversacional local por miembro.
+- Navegación superior plana tipo Apple.
+- Puente local v0.8.
+
+PROTECCIONES
+- Sin service_role.
+- Sin SQL obligatorio.
+- Sin cambios en Auth, RLS, tablas, Storage ni RPC existentes.
+- Sin polling.
+- Sin MutationObserver global.
+- Sin canales Realtime nuevos.
+- Sin envoltura o reemplazo de navTo, renderAll o funciones productivas.
+- El panel completo se carga bajo demanda.
+
+CREACIÓN DE TAREAS
+- Reutiliza ibm_v30_create_task.
+- Intenta el esquema marketing_app y la llamada productiva por defecto.
+- Recarga la información y busca la tarea hasta cuatro veces con espera limitada.
+- Solo comunica éxito después de encontrar el registro real.
+- Un resultado RPC sin registro visible se considera error, no éxito.
+
+SALUD
+Línea base informada: 96, 0 fallas y 1 advertencia de Work 360 pendiente de sincronización.
+La validación estática no detectó nuevas fallas. La puntuación real debe revisarse en Vercel con la sesión productiva.

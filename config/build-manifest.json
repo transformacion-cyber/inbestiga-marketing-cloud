@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.12.13.2",
-  "build": "SAKURA ADAPTIVE WORKSPACE · NATURAL INTENT · PERSISTENT CONTEXT · HEALTH SAFE",
+  "frontend_version": "17.12.13.4",
+  "build": "SAKURA RELIABLE ACTIONS · APPLE WORKSPACE · VERIFIED TASK CREATION · FLAT APPLE NAV",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -155,16 +155,16 @@
       "mode": "lazy-local-first-no-polling"
     },
     {
-      "name": "sakura-presence-loader-v17-12-13-3",
-      "path": "assets/js/sakura-presence-loader-v17-12-13-3.js",
-      "origin": "v17.12.13.3",
-      "mode": "lazy-always-present-adaptive-launcher"
+      "name": "sakura-presence-loader-v17-12-13-4",
+      "path": "assets/js/sakura-presence-loader-v17-12-13-4.js",
+      "origin": "v17.12.13.4",
+      "mode": "lazy-always-present-dual-entry"
     },
     {
-      "name": "sakura-adaptive-workspace-v17-12-13-3",
-      "path": "assets/js/sakura-adaptive-workspace-v17-12-13-3.js",
-      "origin": "v17.12.13.3",
-      "mode": "lazy-dockable-natural-intent-permission-gated"
+      "name": "sakura-apple-workspace-v17-12-13-4",
+      "path": "assets/js/sakura-apple-workspace-v17-12-13-4.js",
+      "origin": "v17.12.13.4",
+      "mode": "lazy-apple-ui-persistent-conversation-verified-actions"
     }
   ],
   "styles": [
@@ -189,8 +189,9 @@
     "assets/css/real-crystal-media-editor-v17-12-4.css",
     "assets/css/unified-visual-editor-v17-12-9.css",
     "assets/css/navigation-operational-ux-v17-12-10.css",
+    "assets/css/navigation-apple-flat-v17-12-13-4.css",
     "assets/css/operational-command-center-v17-12-12.css",
-    "assets/css/sakura-adaptive-workspace-v17-12-13-3.css"
+    "assets/css/sakura-apple-workspace-v17-12-13-4.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -498,10 +499,18 @@
     "sakura_no_service_role": true,
     "sakura_no_polling": true,
     "sakura_no_realtime_channels": true,
-    "sakura_vercel_bridge_exclusion": true
+    "sakura_vercel_bridge_exclusion": true,
+    "sakura_permanent_launcher_and_top_nav_entry": true,
+    "sakura_apple_legibility_ui": true,
+    "sakura_persistent_local_conversation": true,
+    "sakura_verified_task_creation": true,
+    "sakura_schema_aware_rpc": true,
+    "sakura_false_success_guard": true,
+    "flat_apple_top_navigation_without_liquid_glass": true,
+    "health_safe_v1712134": true
   },
-  "base": "v17.12.12 Operational Command Center Health Safe",
-  "hotfix": "v17.12.13.3 fixes SAKURA launcher presence by mounting it inside appScreen without timing-dependent visibility wrappers. It also makes Auditoría Pro runtime-aware and validates the exact current PWA cache instead of the obsolete v17.12.11 cache. No product logic, Supabase schema or Realtime changes.",
-  "version": "v17.12.13.3",
-  "name": "SAKURA ADAPTIVE WORKSPACE"
+  "base": "v17.12.13.3 SAKURA Presence & Health Hotfix",
+  "hotfix": "v17.12.13.4 restores readable Apple-style SAKURA UI, adds permanent launcher and top navigation entry, persists recent conversations locally per member, strengthens natural conversation prompts, and verifies every task creation after schema-aware RPC execution before reporting success. The top menu uses a flat Apple surface without Liquid Glass. No SQL, Auth, RLS, productive table, existing RPC, Realtime, loadAll or bootstrap changes.",
+  "version": "v17.12.13.4",
+  "name": "SAKURA RELIABLE ACTIONS & APPLE WORKSPACE"
 }
