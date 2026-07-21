@@ -1,0 +1,32 @@
+{
+  "version": "v17.15.1",
+  "base": "v17.15.0",
+  "title": "SAKURA ACADEMY INTERACTION & SUPERVISED SELF-IMPROVEMENT HOTFIX",
+  "confirmed_failure": "The Academy shell and its tab buttons shared data-ska-pane. A click changed pane and then bubbled to the shell, which restored the previous pane and re-rendered the UI.",
+  "fixes": [
+    "Replaces the shell attribute with data-ska-active-pane.",
+    "Binds navigation only to .ska-tabs button[data-ska-pane].",
+    "Stops propagation after a valid Academy tab selection.",
+    "Adds resilient Academy remount after the native Estudio renderer.",
+    "Loads the new Academy runtime through a cache-safe v17.15.1 loader.",
+    "Keeps approved formulas connected to the native SAKURA chat and Ollama knowledge payload.",
+    "Adds Mejora de SAKURA with a live formula test and connection diagnostics.",
+    "Mirrors approved cards after every Academy refresh when supervised sync is enabled."
+  ],
+  "new_files": [
+    "assets/js/sakura-academy-v17-15-1.js",
+    "assets/js/sakura-presence-loader-v17-15-1.js",
+    "assets/js/release-marker-v17-15-1.js",
+    "FUNCTIONAL_TESTS_v17_15_1.json",
+    "ACADEMY_UI_TESTS_v17_15_1.json"
+  ],
+  "restrictions": {
+    "sql": false,
+    "polling": false,
+    "mutation_observer": false,
+    "new_realtime_channels": false,
+    "eval": false,
+    "dynamic_function": false,
+    "backend_changes": false
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "tested_at": "2026-07-21T22:41:56.781433Z",
+  "old": "v17.15.0 / Academy v17.14.0",
+  "new": "v17.15.1",
+  "tests": {
+    "old": {
+      "initial_pane": "library",
+      "after_calculator_click": "library",
+      "page_errors": []
+    },
+    "new": {
+      "initial_pane": "library",
+      "after_calculator_click": "calculator",
+      "page_errors": [],
+      "calculation_result": "14\n2+3*4",
+      "after_improve_click": "improve",
+      "academy_answer": {
+        "handled": true,
+        "text": "Usé Segunda ley de Newton: F = m*a.\nSustitución: m=5, a=3.\nResultado: F = 15 N.\nFuente: SAKURA Academy Core."
+      }
+    }
+  },
+  "confirmed_bug": true,
+  "fixed": true
+}

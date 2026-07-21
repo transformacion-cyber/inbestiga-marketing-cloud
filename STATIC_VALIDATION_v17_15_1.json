@@ -1,0 +1,53 @@
+{
+  "version": "v17.15.1",
+  "validated_at": "2026-07-21T22:47:34.235922+00:00",
+  "file_count": 445,
+  "javascript": {
+    "count": 48,
+    "errors": []
+  },
+  "inline_javascript": {
+    "count": 14,
+    "errors": []
+  },
+  "json": {
+    "count": 111,
+    "errors": []
+  },
+  "html_static_refs": {
+    "count": 61,
+    "missing": []
+  },
+  "service_worker_shell": {
+    "count": 72,
+    "missing": []
+  },
+  "forbidden_patterns_new_code": {
+    "eval": [],
+    "dynamic_function": [],
+    "mutation_observer": [],
+    "polling_interval": [],
+    "realtime_channel": []
+  },
+  "functional_regression": {
+    "confirmed_bug": true,
+    "fixed": true
+  },
+  "academy_ui": {
+    "passed": true,
+    "panes": [
+      "library",
+      "import",
+      "calculator",
+      "practice",
+      "improve",
+      "settings"
+    ],
+    "calculation": "14\n2+3*4",
+    "conversion": "1,000 m\nLongitud",
+    "molar_mass": "18.015 g/mol\nH×2, O",
+    "academy_test": "SAKURA utilizó su Academia.\nUsé Segunda ley de Newton: F = m*a. Sustitución: m=5, a=3. Resultado: F = 15 N. Fuente: SAKURA Academy Core."
+  },
+  "protected_modules_unchanged": true,
+  "passed": true
+}

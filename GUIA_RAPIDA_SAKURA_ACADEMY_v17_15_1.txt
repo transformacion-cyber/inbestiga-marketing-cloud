@@ -1,0 +1,24 @@
+INBESTIGA MARKETING CLOUD v17.15.1
+SAKURA ACADEMY INTERACTION & SUPERVISED SELF-IMPROVEMENT HOTFIX
+
+1. Abre SAKURA.
+2. Entra en Estudio.
+3. Dentro de SAKURA Academy prueba estas pestañas:
+   - Biblioteca
+   - Subir archivos
+   - Calcular
+   - Practicar
+   - Mejora de SAKURA
+   - Control
+4. En Calcular prueba: 2+3*4. El resultado debe ser 14.
+5. Prueba convertir 1 km a m. Debe devolver 1,000 m.
+6. Prueba masa molar H2O. Debe devolver aproximadamente 18.015 g/mol.
+7. En Mejora de SAKURA pulsa “Probar en SAKURA”. Debe resolver fuerza con masa 5 y aceleración 3 como 15 N.
+8. Pulsa “Comprobar conexión”. Con IndexedDB disponible y SAKURA abierta debe mostrar fórmulas y fichas activas.
+9. Sube un archivo TXT, Markdown, CSV o JSON. Revisa y aprueba sus fichas.
+10. Pregunta en el chat de SAKURA por una fórmula aprobada. SAKURA debe utilizarla y mostrar su fuente.
+
+IMPORTANTE
+SAKURA no reescribe su propio código ni cambia permisos. Se mejora de forma supervisada: aprende conocimiento aprobado, practica con motores exactos, usa correcciones humanas y recupera mejores fuentes al responder.
+
+Después de desplegar en Vercel realiza Ctrl + Shift + R y ejecuta Auditoría Pro.

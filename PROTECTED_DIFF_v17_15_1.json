@@ -1,0 +1,34 @@
+{
+  "base": "v17.15.0",
+  "changed_common_files": [
+    [
+      "index.html",
+      "modified"
+    ],
+    [
+      "manifest.webmanifest",
+      "modified"
+    ],
+    [
+      "service-worker.js",
+      "modified"
+    ],
+    [
+      "config/build-manifest.json",
+      "modified"
+    ],
+    [
+      "config/public-runtime-config.js",
+      "modified"
+    ]
+  ],
+  "allowed_modified": [
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "unexpected_common_changes": [],
+  "protected_modules_unchanged": true
+}

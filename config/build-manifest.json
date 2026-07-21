@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.15.0",
-  "build": "UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS · LOCAL SAFE",
+  "frontend_version": "17.15.1",
+  "build": "SAKURA ACADEMY INTERACTION & SUPERVISED SELF-IMPROVEMENT HOTFIX · LOCAL SAFE",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -191,10 +191,10 @@
       "mode": "adaptive-safe-controller-motion-aware"
     },
     {
-      "name": "sakura-presence-loader-v17-14-1",
-      "path": "assets/js/sakura-presence-loader-v17-13-0.js",
-      "origin": "v17.14.1",
-      "mode": "lazy-permanent-entry-button-contrast-hotfix"
+      "name": "sakura-presence-loader-v17-15-1",
+      "path": "assets/js/sakura-presence-loader-v17-15-1.js",
+      "origin": "v17.15.1",
+      "mode": "permanent-lazy-academy-self-improvement"
     },
     {
       "name": "sakura-live-motion-background-fusion-v17-13-2",
@@ -209,10 +209,10 @@
       "mode": "particle-motion-sync-visual-hotfix"
     },
     {
-      "name": "sakura-academy-v17-14-0",
-      "path": "assets/js/sakura-academy-v17-14-0.js",
-      "origin": "v17.14.0",
-      "mode": "local-supervised-academy-no-polling"
+      "name": "sakura-academy-v17-15-1",
+      "path": "assets/js/sakura-academy-v17-15-1.js",
+      "origin": "v17.15.1",
+      "mode": "local-academy-interaction-supervised-learning"
     },
     {
       "name": "sakura-academy-css-v17-14-0",
@@ -231,6 +231,12 @@
       "path": "assets/js/unified-command-center-v17-15-0.js",
       "origin": "v17.15.0",
       "mode": "role-aware-local-intelligence-no-polling"
+    },
+    {
+      "name": "release-marker-v17-15-1",
+      "path": "assets/js/release-marker-v17-15-1.js",
+      "origin": "v17.15.1",
+      "mode": "release-marker"
     }
   ],
   "styles": [
@@ -617,16 +623,18 @@
     "sakura_academy_no_polling": true,
     "sakura_academy_no_new_realtime": true
   },
-  "base": "v17.14.1 SAKURA Button Text Contrast & Studio Color Sync Hotfix",
-  "hotfix": "v17.14.1 fixes the real CSS cascade that prevented inactive tabs, feedback chips, Copy and secondary controls from following Personal Studio colors. Adds explicit primary, tab and secondary text variables with automatic contrast. No SQL, polling, Realtime, backend or productive-module changes.",
-  "version": "v17.15.0",
-  "name": "UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS",
+  "base": "v17.15.0 UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS",
+  "hotfix": "v17.15.1 fixes the confirmed SAKURA Academy interaction failure caused by click propagation from tab buttons to the Academy shell. It restores every Academy pane, confirms deterministic calculations, reconnects approved formulas to SAKURA chat and adds supervised self-improvement diagnostics. No SQL, polling, MutationObserver, Realtime or protected backend changes.",
+  "version": "v17.15.1",
+  "name": "SAKURA ACADEMY INTERACTION & SUPERVISED SELF-IMPROVEMENT HOTFIX",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
     "assets/js/unified-command-center-v17-15-0.js",
     "assets/css/sakura-button-text-contrast-v17-14-1.css",
     "assets/js/sakura-personal-studio-v17-14-1.js",
-    "assets/js/sakura-academy-v17-14-0.js"
+    "assets/js/sakura-academy-v17-15-1.js",
+    "assets/js/release-marker-v17-15-1.js",
+    "assets/js/sakura-presence-loader-v17-15-1.js"
   ],
   "feature_flags": {
     "sakura_academy_v17140": true,
@@ -651,7 +659,18 @@
     "no_polling_v17150": true,
     "no_mutation_observer_v17150": true,
     "no_new_realtime_channels_v17150": true,
-    "no_dynamic_code_v17150": true
+    "no_dynamic_code_v17150": true,
+    "sakura_academy_click_propagation_fix_v17151": true,
+    "sakura_academy_all_panes_operational_v17151": true,
+    "sakura_academy_chat_formula_connection_v17151": true,
+    "sakura_supervised_self_improvement_panel_v17151": true,
+    "sakura_academy_internal_diagnostics_v17151": true,
+    "sakura_academy_live_test_v17151": true,
+    "no_sql_v17151": true,
+    "no_polling_v17151": true,
+    "no_mutation_observer_v17151": true,
+    "no_new_realtime_channels_v17151": true,
+    "no_dynamic_code_v17151": true
   },
-  "release": "v17.15.0 adds a role-aware unified command center, operational next action, universal Ctrl+K entity search, approval intelligence, workload capacity, grouped notifications, local action history and initial SAKURA operational context. No SQL, polling, MutationObserver, new Realtime channels or protected backend changes."
+  "release": "v17.15.1 fixes all SAKURA Academy controls, removes the pane propagation collision, reconnects approved formulas to SAKURA chat, adds an internal connection test and supervised self-improvement diagnostics. No SQL, polling, MutationObserver, Realtime or protected backend changes."
 }

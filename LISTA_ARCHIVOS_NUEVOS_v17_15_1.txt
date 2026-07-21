@@ -1,0 +1,15 @@
+ARCHIVOS NUEVOS v17.15.1
+
+- assets/js/sakura-academy-v17-15-1.js
+- assets/js/sakura-presence-loader-v17-15-1.js
+- assets/js/release-marker-v17-15-1.js
+- ACADEMY_UI_TESTS_v17_15_1.json
+- FUNCTIONAL_TESTS_v17_15_1.json
+- STATIC_VALIDATION_v17_15_1.json
+- PROTECTED_DIFF_v17_15_1.json
+- CHANGES_v17_15_1.json
+- HOTFIX_v17_15_1_LEER_PRIMERO.txt
+- GUIA_RAPIDA_SAKURA_ACADEMY_v17_15_1.txt
+- AUDITORIA_v17_15_1_SAKURA_ACADEMY_INTERACTION.txt
+- LISTA_ARCHIVOS_MODIFICADOS_v17_15_1.txt
+- LISTA_ARCHIVOS_NUEVOS_v17_15_1.txt

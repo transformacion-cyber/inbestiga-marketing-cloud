@@ -1,0 +1,62 @@
+AUDITORÍA TÉCNICA
+INBESTIGA MARKETING CLOUD v17.15.1
+SAKURA ACADEMY INTERACTION & SUPERVISED SELF-IMPROVEMENT HOTFIX
+
+BASE AUTORIZADA
+v17.15.0 UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS
+
+FALLO REAL REPRODUCIDO
+La interfaz de SAKURA Academy utilizaba el atributo data-ska-pane tanto en el contenedor principal como en los botones de navegación. Al pulsar una pestaña, el botón cambiaba el estado, pero el mismo clic continuaba propagándose hasta el contenedor, cuya escucha restauraba la pestaña anterior y volvía a renderizar la interfaz. Resultado: Biblioteca, Subir archivos, Calcular, Practicar y Control parecían no responder.
+
+PRUEBA COMPARATIVA
+- v17.15.0 / Academy v17.14.0: al pulsar Calcular, la vista permaneció en Biblioteca.
+- v17.15.1: al pulsar Calcular, la vista cambió correctamente a Calculadora.
+- Estado de la regresión: confirmado=True · corregido=True.
+
+CORRECCIONES
+1. El contenedor usa data-ska-active-pane y deja de competir con los botones.
+2. Los eventos se enlazan exclusivamente a .ska-tabs button[data-ska-pane].
+3. El clic válido detiene su propagación antes de re-renderizar.
+4. Academia se vuelve a montar después del render nativo de Estudio mediante comprobaciones diferidas controladas, sin MutationObserver.
+5. Se incorpora un cargador v17.15.1 para evitar reutilizar el runtime académico anterior desde caché.
+6. Cada actualización de la biblioteca sincroniza las fichas aprobadas cuando la opción de aprendizaje está activada.
+7. Se añade la sección Mejora de SAKURA con prueba académica real y diagnóstico de conexión.
+8. Las fórmulas aprobadas continúan entrando en dos rutas: respuesta determinista local y contexto académico enviado a Ollama.
+
+MEJORA SUPERVISADA
+SAKURA no modifica su código ni se reentrena sin control. Mejora mediante:
+- fichas aprobadas por una persona;
+- recuperación de fórmulas y fuentes;
+- cálculos deterministas;
+- ejercicios y comprobaciones;
+- correcciones del chat guardadas como aprendizaje personal;
+- diagnóstico visible de la conexión académica.
+
+RESULTADOS DE VALIDACIÓN
+- Archivos totales incluidos en la carpeta final: 445
+- JavaScript externos: 48 · errores: 0
+- Bloques JavaScript internos: 14 · errores: 0
+- JSON: 111 · errores: 0
+- Referencias HTML estáticas: 61 · faltantes: 0
+- Recursos PWA: 72 · faltantes: 0
+- Pestañas verificadas: Biblioteca, Subir archivos, Calcular, Practicar, Mejora de SAKURA y Control.
+- Cálculo: 2+3*4 = 14.
+- Conversión: 1 km = 1,000 m.
+- Masa molar: H2O ≈ 18.015 g/mol.
+- Prueba de SAKURA: F = m*a con m=5 y a=3 devuelve 15 N y cita SAKURA Academy Core.
+- Módulos protegidos sin cambios inesperados: True.
+
+RESTRICCIONES VERIFICADAS EN CÓDIGO NUEVO
+- Sin eval.
+- Sin Function dinámica.
+- Sin polling por setInterval.
+- Sin MutationObserver.
+- Sin canales Realtime.
+- Sin SQL nuevo.
+- Sin cambios de backend.
+
+LIMITACIONES DE ESTA AUDITORÍA
+La validación confirma la regresión y la corrección en un navegador controlado. La persistencia IndexedDB con una cuenta real, la lectura de archivos reales, la interacción completa dentro del despliegue Vercel y la puntuación Auditoría Pro deben comprobarse después de desplegar. No se declara certificación productiva hasta completar esa prueba.
+
+RESULTADO ESTÁTICO Y FUNCIONAL CONTROLADO
+APROBADO: True

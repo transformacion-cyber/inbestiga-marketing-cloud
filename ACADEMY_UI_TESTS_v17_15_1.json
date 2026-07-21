@@ -1,0 +1,25 @@
+{
+  "pane_library": "library",
+  "pane_import": "import",
+  "pane_calculator": "calculator",
+  "pane_practice": "practice",
+  "pane_improve": "improve",
+  "pane_settings": "settings",
+  "calculate": "14\n2+3*4",
+  "convert": "1,000 m\nLongitud",
+  "molar": "18.015 g/mol\nH×2, O",
+  "academy_test": "SAKURA utilizó su Academia.\nUsé Segunda ley de Newton: F = m*a. Sustitución: m=5, a=3. Resultado: F = 15 N. Fuente: SAKURA Academy Core.",
+  "diagnostics": "Conexión incompleta\nVersión v17.15.1 · 0 fórmulas · 0 fichas aprobadas · 0 sincronizadas · chat pendiente de abrir.",
+  "toasts": [
+    [
+      null
+    ],
+    [
+      "Selecciona archivos",
+      "Todavía no hay archivos para analizar.",
+      "warning"
+    ]
+  ],
+  "page_errors": [],
+  "passed": true
+}

@@ -1,0 +1,21 @@
+INBESTIGA MARKETING CLOUD v17.15.1
+
+BASE AUTORIZADA: v17.15.0
+
+FALLO REPRODUCIDO
+Las pestañas de SAKURA Academy parecían no responder. El contenedor principal y sus botones compartían data-ska-pane. El clic del botón cambiaba la sección y luego se propagaba al contenedor, que restauraba la sección anterior.
+
+CORRECCIÓN
+- Contenedor separado mediante data-ska-active-pane.
+- Eventos limitados a botones reales de navegación.
+- Propagación detenida tras seleccionar una pestaña.
+- Remontaje resistente después del render nativo de Estudio.
+- Nuevo cargador v17.15.1 para evitar caché antigua.
+- Fórmulas aprobadas verificadas en el flujo de respuesta de SAKURA.
+- Nueva sección Mejora de SAKURA con prueba y diagnóstico.
+
+NO SE MODIFICÓ
+Supabase Auth, RLS, tablas, Storage, RPC, Trabajo 360, tareas, entregas, campañas, Creative Arena, Muro, mensajería productiva, ranking, puente local, Ollama, Director Visual ni Explorador Web.
+
+VALIDACIÓN PRODUCTIVA
+Todavía requiere despliegue en Vercel, prueba visual con usuario real y Auditoría Pro.

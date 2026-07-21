@@ -1,0 +1,9 @@
+ARCHIVOS MODIFICADOS DESDE v17.15.0
+
+- index.html
+- manifest.webmanifest
+- service-worker.js
+- config/build-manifest.json
+- config/public-runtime-config.js
+
+No se modificaron archivos productivos protegidos.
