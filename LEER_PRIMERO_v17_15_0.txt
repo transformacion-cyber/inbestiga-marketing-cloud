@@ -1,0 +1,48 @@
+INBESTIGA MARKETING CLOUD v17.15.0
+UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS
+
+BASE AUTORIZADA
+- Construida exclusivamente desde v17.14.1.
+- No mezcla módulos de versiones anteriores.
+- Es un ZIP acumulativo para reemplazar el contenido del repositorio y desplegar en Vercel.
+
+NOVEDADES PRINCIPALES
+1. Centro de mando unificado según el rol real del usuario.
+2. Siguiente acción recomendada con motivo, estado y datos verificables.
+3. Alertas de bloqueos, decisiones pendientes, carga alta, vencimientos y campañas en riesgo.
+4. Buscador universal Ctrl/Command + K para módulos, tareas, campañas, personas y archivos.
+5. Inteligencia de aprobaciones: espera, evidencias, observaciones y cola priorizada.
+6. Capacidad del equipo basada en tareas, horas estimadas y vencimientos.
+7. Notificaciones agrupadas en críticas, importantes e informativas.
+8. Historial local de navegación y aperturas, sin crear tablas.
+9. Contexto operativo inicial para SAKURA y acceso “Preguntar a SAKURA”.
+10. Variables visuales unificadas para los nuevos componentes y responsive móvil.
+
+SEGURIDAD Y ALCANCE
+- Sin SQL nuevo.
+- Sin service_role.
+- Sin polling.
+- Sin MutationObserver.
+- Sin canales Realtime nuevos.
+- Sin eval ni Function dinámica.
+- No modifica Auth, RLS, RPC, Storage, Trabajo 360, tareas productivas, campañas productivas, Creative Arena, mensajería, puente local ni Ollama.
+- Las recomendaciones no ejecutan acciones importantes automáticamente.
+
+DESPLIEGUE
+1. Descomprime el ZIP.
+2. Reemplaza el contenido del repositorio con esta versión.
+3. Ejecuta git add ., commit y push a main.
+4. Espera el despliegue de Vercel.
+5. Realiza una recarga forzada con Ctrl + Shift + R.
+6. Confirma que la plataforma muestre v17.15.0.
+7. Ejecuta Auditoría Pro.
+
+VALIDACIÓN PRODUCTIVA PENDIENTE
+La validación estática fue completada, pero no se declara certificación productiva hasta probar en Vercel:
+- Datos reales por rol.
+- Ctrl/Command + K.
+- Aprobaciones.
+- Carga del equipo.
+- Historial local.
+- Apertura contextual de SAKURA.
+- Auditoría Pro y advertencia conocida de Work 360.

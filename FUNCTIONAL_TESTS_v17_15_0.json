@@ -1,0 +1,75 @@
+{
+  "version": "v17.15.0",
+  "tests": [
+    {
+      "id": "build-version",
+      "status": "pass",
+      "detail": "index, runtime config, build manifest, manifest and service worker aligned to v17.15.0"
+    },
+    {
+      "id": "command-center-mount",
+      "status": "static-pass",
+      "detail": "module contains guarded mount after existing operational anchors"
+    },
+    {
+      "id": "role-model",
+      "status": "static-pass",
+      "detail": "director, supervisor and member scopes implemented with permission-aware fallbacks"
+    },
+    {
+      "id": "deterministic-operational-model",
+      "status": "pass",
+      "detail": "Node VM fixture confirmed supervisor role, 1 overdue task, 1 review, 1 blocked task and review-first next action"
+    },
+    {
+      "id": "next-action",
+      "status": "static-pass",
+      "detail": "priority model considers review, overdue, observation, dependency, campaign risk and capacity"
+    },
+    {
+      "id": "universal-search",
+      "status": "static-pass",
+      "detail": "palette refresh includes modules, tasks, campaigns, members and assets"
+    },
+    {
+      "id": "approval-intelligence",
+      "status": "static-pass",
+      "detail": "waiting, observed, missing evidence and oldest delivery implemented"
+    },
+    {
+      "id": "capacity",
+      "status": "static-pass",
+      "detail": "task count, estimated hours and overdue load implemented without personnel scoring"
+    },
+    {
+      "id": "notifications",
+      "status": "static-pass",
+      "detail": "local critical, important and informational grouping implemented"
+    },
+    {
+      "id": "history",
+      "status": "static-pass",
+      "detail": "user-scoped localStorage history with clear action implemented"
+    },
+    {
+      "id": "sakura-context",
+      "status": "static-pass",
+      "detail": "operational context export and guided prompt implemented"
+    },
+    {
+      "id": "pwa-cache",
+      "status": "pass",
+      "detail": "new CSS and JS included; no missing shell assets"
+    },
+    {
+      "id": "vercel-real-data",
+      "status": "pending",
+      "detail": "requires authenticated productive deployment"
+    },
+    {
+      "id": "auditoria-pro",
+      "status": "pending",
+      "detail": "do not certify 96/0/1 until executed in Vercel"
+    }
+  ]
+}

@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.14.1",
-  "build": "SAKURA BUTTON TEXT CONTRAST & STUDIO COLOR SYNC HOTFIX · LOCAL SAFE",
+  "frontend_version": "17.15.0",
+  "build": "UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS · LOCAL SAFE",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -225,6 +225,12 @@
       "path": "assets/css/sakura-button-text-contrast-v17-14-1.css",
       "origin": "v17.14.1",
       "mode": "visual-cascade-hotfix"
+    },
+    {
+      "name": "unified-command-center-v17-15-0",
+      "path": "assets/js/unified-command-center-v17-15-0.js",
+      "origin": "v17.15.0",
+      "mode": "role-aware-local-intelligence-no-polling"
     }
   ],
   "styles": [
@@ -256,7 +262,8 @@
     "assets/css/sakura-adaptive-intelligence-v17-13-0.css",
     "assets/css/sakura-live-motion-background-fusion-v17-13-2.css",
     "assets/css/sakura-academy-v17-14-0.css",
-    "assets/css/sakura-button-text-contrast-v17-14-1.css"
+    "assets/css/sakura-button-text-contrast-v17-14-1.css",
+    "assets/css/unified-command-center-v17-15-0.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -610,12 +617,13 @@
     "sakura_academy_no_polling": true,
     "sakura_academy_no_new_realtime": true
   },
-  "base": "v17.14.0 SAKURA Academy & Scientific Calculation Engine",
+  "base": "v17.14.1 SAKURA Button Text Contrast & Studio Color Sync Hotfix",
   "hotfix": "v17.14.1 fixes the real CSS cascade that prevented inactive tabs, feedback chips, Copy and secondary controls from following Personal Studio colors. Adds explicit primary, tab and secondary text variables with automatic contrast. No SQL, polling, Realtime, backend or productive-module changes.",
-  "version": "v17.14.1",
-  "name": "SAKURA BUTTON TEXT CONTRAST & STUDIO COLOR SYNC HOTFIX",
+  "version": "v17.15.0",
+  "name": "UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS",
   "assets": [
-    "assets/css/sakura-personal-studio-v17-12-13-6.css",
+    "assets/css/unified-command-center-v17-15-0.css",
+    "assets/js/unified-command-center-v17-15-0.js",
     "assets/css/sakura-button-text-contrast-v17-14-1.css",
     "assets/js/sakura-personal-studio-v17-14-1.js",
     "assets/js/sakura-academy-v17-14-0.js"
@@ -628,6 +636,22 @@
     "sakura_button_text_contrast_v17141": true,
     "sakura_tab_text_color_sync_v17141": true,
     "sakura_secondary_button_text_color_sync_v17141": true,
-    "sakura_button_auto_contrast_v17141": true
-  }
+    "sakura_button_auto_contrast_v17141": true,
+    "unified_command_center_v17150": true,
+    "role_aware_operational_brief_v17150": true,
+    "next_action_explainable_v17150": true,
+    "universal_ctrl_k_entity_search_v17150": true,
+    "approval_intelligence_v17150": true,
+    "capacity_observation_v17150": true,
+    "grouped_notifications_v17150": true,
+    "local_action_history_v17150": true,
+    "sakura_operational_context_v17150": true,
+    "unified_design_tokens_v17150": true,
+    "no_sql_v17150": true,
+    "no_polling_v17150": true,
+    "no_mutation_observer_v17150": true,
+    "no_new_realtime_channels_v17150": true,
+    "no_dynamic_code_v17150": true
+  },
+  "release": "v17.15.0 adds a role-aware unified command center, operational next action, universal Ctrl+K entity search, approval intelligence, workload capacity, grouped notifications, local action history and initial SAKURA operational context. No SQL, polling, MutationObserver, new Realtime channels or protected backend changes."
 }

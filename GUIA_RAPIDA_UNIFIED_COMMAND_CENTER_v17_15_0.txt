@@ -1,0 +1,43 @@
+GUÍA RÁPIDA · INBESTIGA v17.15.0
+
+CENTRO DE MANDO
+- Abre Inicio.
+- Busca la sección “Centro de mando unificado”.
+- La lectura cambia entre Dirección, Supervisión y Personal.
+- El botón principal abre la siguiente acción recomendada.
+- “Preguntar a SAKURA” prepara el contexto, pero no ejecuta cambios.
+
+BUSCADOR UNIVERSAL
+- Presiona Ctrl + K en Windows o Command + K en macOS.
+- Busca módulos, tareas, campañas, personas o archivos.
+- También acepta frases como:
+  “tareas vencidas de Alejandro”
+  “abrir campaña Estado CEO”
+  “revisar aprobaciones”
+  “capacidad del equipo”
+
+APROBACIONES
+- Abre Aprobaciones.
+- Revisa el panel “Inteligencia de aprobación”.
+- Verifica cantidad por revisar, observadas, sin evidencia y mayor tiempo de espera.
+- Las decisiones finales continúan usando el flujo productivo existente.
+
+CARGA DEL EQUIPO
+- Abre Carga del equipo.
+- La lectura usa cantidad de tareas, horas estimadas y vencimientos.
+- No califica personas y no reasigna trabajo automáticamente.
+
+NOTIFICACIONES
+- Abre Notificaciones.
+- Las alertas se agrupan localmente en críticas, importantes e informativas.
+- Los registros originales no se eliminan ni modifican.
+
+HISTORIAL
+- Pulsa Historial dentro del Centro de mando.
+- Guarda localmente aperturas y navegación reciente de ese dispositivo.
+- Puede limpiarse sin afectar Supabase.
+
+SAKURA
+- Desde el Centro de mando pulsa “Preguntar a SAKURA”.
+- También aparece “Revisar prioridades” dentro de sus acciones rápidas.
+- SAKURA recibe un resumen operativo inicial y debe pedir confirmación antes de acciones importantes.

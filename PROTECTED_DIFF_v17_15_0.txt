@@ -1,0 +1,31 @@
+PROTECTED DIFF · INBESTIGA v17.15.0 VS v17.14.1
+
+RESULTADO: SIN CAMBIOS EN MÓDULOS PRODUCTIVOS PROTEGIDOS.
+
+Modificados únicamente:
+- index.html: versión y carga del módulo v17.15.0.
+- config/build-manifest.json: manifiesto acumulativo.
+- config/public-runtime-config.js: alineación de versión pública.
+- manifest.webmanifest: descripción e ID PWA.
+- service-worker.js: nueva caché y recursos v17.15.0.
+
+Nuevos:
+- assets/css/unified-command-center-v17-15-0.css
+- assets/js/unified-command-center-v17-15-0.js
+- documentación y pruebas de v17.15.0.
+
+No modificados:
+- Supabase Auth y login.
+- RLS.
+- Tablas, Storage y RPC productivas.
+- loadAll y renderAll originales; solo se usa un wrapper no destructivo para refrescar lectura local.
+- Trabajo 360.
+- Tareas y entregas.
+- Campañas.
+- Creative Arena.
+- Muro.
+- Mensajería productiva.
+- Puntos y ranking.
+- Puente local y Ollama.
+- Director Visual.
+- Explorador Web.

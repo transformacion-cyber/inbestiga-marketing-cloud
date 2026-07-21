@@ -1,0 +1,24 @@
+{
+  "version": "v17.15.0",
+  "name": "UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS",
+  "base": "v17.14.1",
+  "changes": [
+    "Centro de mando unificado sensible al rol",
+    "Siguiente acción explicable y no automática",
+    "Alertas de bloqueos y campañas en riesgo",
+    "Buscador universal Ctrl/Command + K con entidades",
+    "Inteligencia de aprobaciones",
+    "Capacidad observada del equipo",
+    "Notificaciones agrupadas localmente",
+    "Historial local reversible",
+    "Contexto operativo inicial para SAKURA",
+    "Variables visuales unificadas para componentes nuevos"
+  ],
+  "backend_changes": false,
+  "sql_required": false,
+  "polling": false,
+  "mutation_observer": false,
+  "new_realtime_channels": false,
+  "dynamic_code": false,
+  "productive_validation": "pending_vercel"
+}

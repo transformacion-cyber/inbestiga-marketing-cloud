@@ -1,0 +1,15 @@
+NEW	AUDITORIA_v17_15_0_UNIFIED_COMMAND_CENTER.txt
+NEW	CHANGES_v17_15_0.json
+NEW	FUNCTIONAL_TESTS_v17_15_0.json
+NEW	GUIA_RAPIDA_UNIFIED_COMMAND_CENTER_v17_15_0.txt
+NEW	LEER_PRIMERO_v17_15_0.txt
+NEW	PROTECTED_DIFF_v17_15_0.txt
+NEW	RUNTIME_MODEL_TEST_v17_15_0.json
+NEW	STATIC_VALIDATION_v17_15_0.json
+NEW	assets/css/unified-command-center-v17-15-0.css
+NEW	assets/js/unified-command-center-v17-15-0.js
+MODIFIED	config/build-manifest.json
+MODIFIED	config/public-runtime-config.js
+MODIFIED	index.html
+MODIFIED	manifest.webmanifest
+MODIFIED	service-worker.js

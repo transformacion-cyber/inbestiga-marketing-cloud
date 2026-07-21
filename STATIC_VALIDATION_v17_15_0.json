@@ -1,0 +1,125 @@
+{
+  "version": "v17.15.0",
+  "base": "v17.14.1",
+  "generated_at": "2026-07-21",
+  "syntax": {
+    "external_javascript_files": 45,
+    "external_javascript_errors": 0,
+    "inline_script_blocks": 14,
+    "inline_script_errors": 0,
+    "json_files": 106,
+    "json_errors": []
+  },
+  "html": {
+    "parsed": true,
+    "local_references": 60,
+    "missing_local_references": [],
+    "duplicate_ids": []
+  },
+  "pwa": {
+    "cache_name": "inbestiga-v17-15-0-shell",
+    "shell_entries": 71,
+    "missing_shell_assets": [],
+    "new_module_cached": true
+  },
+  "functional": {
+    "deterministic_operational_model": "pass",
+    "fixture_result_file": "RUNTIME_MODEL_TEST_v17_15_0.json"
+  },
+  "scope": {
+    "changed_files": [
+      {
+        "status": "new",
+        "path": "AUDITORIA_v17_15_0_UNIFIED_COMMAND_CENTER.txt"
+      },
+      {
+        "status": "new",
+        "path": "CHANGES_v17_15_0.json"
+      },
+      {
+        "status": "new",
+        "path": "FUNCTIONAL_TESTS_v17_15_0.json"
+      },
+      {
+        "status": "new",
+        "path": "GUIA_RAPIDA_UNIFIED_COMMAND_CENTER_v17_15_0.txt"
+      },
+      {
+        "status": "new",
+        "path": "LEER_PRIMERO_v17_15_0.txt"
+      },
+      {
+        "status": "new",
+        "path": "LISTA_ARCHIVOS_CAMBIADOS_v17_15_0.txt"
+      },
+      {
+        "status": "new",
+        "path": "LISTA_ARCHIVOS_MODIFICADOS_v17_15_0.txt"
+      },
+      {
+        "status": "new",
+        "path": "LISTA_ARCHIVOS_NUEVOS_v17_15_0.txt"
+      },
+      {
+        "status": "new",
+        "path": "PROTECTED_DIFF_v17_15_0.txt"
+      },
+      {
+        "status": "new",
+        "path": "RUNTIME_MODEL_TEST_v17_15_0.json"
+      },
+      {
+        "status": "new",
+        "path": "STATIC_VALIDATION_v17_15_0.json"
+      },
+      {
+        "status": "new",
+        "path": "assets/css/unified-command-center-v17-15-0.css"
+      },
+      {
+        "status": "new",
+        "path": "assets/js/unified-command-center-v17-15-0.js"
+      },
+      {
+        "status": "modified",
+        "path": "config/build-manifest.json"
+      },
+      {
+        "status": "modified",
+        "path": "config/public-runtime-config.js"
+      },
+      {
+        "status": "modified",
+        "path": "index.html"
+      },
+      {
+        "status": "modified",
+        "path": "manifest.webmanifest"
+      },
+      {
+        "status": "modified",
+        "path": "service-worker.js"
+      }
+    ],
+    "protected_modules_changed": []
+  },
+  "restrictions": {
+    "new_sql": false,
+    "polling": false,
+    "mutation_observer": false,
+    "new_realtime_channels": false,
+    "dynamic_code_eval_function": false,
+    "service_role": false
+  },
+  "runtime": {
+    "productive_vercel_validation": "pending",
+    "auditoria_pro": "pending",
+    "expected_baseline": {
+      "health": 96,
+      "failures": 0,
+      "warnings": 1,
+      "known_warning": "Work 360"
+    },
+    "certified_for_production": false
+  }
+}

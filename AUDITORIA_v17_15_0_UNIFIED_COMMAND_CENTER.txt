@@ -1,0 +1,40 @@
+AUDITORÍA TÉCNICA · v17.15.0
+
+Base comparada: INBESTIGA Marketing Cloud v17.14.1
+Fecha: 21 de julio de 2026
+
+ARCHIVOS NUEVOS DE RUNTIME
+- assets/css/unified-command-center-v17-15-0.css
+- assets/js/unified-command-center-v17-15-0.js
+
+ARCHIVOS DE EMPAQUETADO ACTUALIZADOS
+- index.html
+- config/build-manifest.json
+- config/public-runtime-config.js
+- manifest.webmanifest
+- service-worker.js
+
+RESULTADOS ESTÁTICOS
+- JavaScript externo: 45 archivos con sintaxis válida.
+- Scripts inline de index.html: 14 bloques con sintaxis válida.
+- JSON: 103 archivos válidos antes de documentos finales adicionales.
+- Referencias locales del HTML: 60, sin faltantes.
+- Recursos PWA: 71, sin faltantes.
+- IDs duplicados en index.html: 0.
+- Nuevo CSS y JS incluidos en la caché PWA.
+- ZIP productivo todavía pendiente de generación al momento de esta auditoría.
+
+RESTRICCIONES VERIFICADAS EN EL NUEVO MÓDULO
+- Sin eval.
+- Sin Function dinámica.
+- Sin polling.
+- Sin MutationObserver.
+- Sin canales Realtime nuevos.
+- Sin SQL.
+- Sin service_role.
+
+MÓDULOS PROTEGIDOS
+La comparación SHA-256 con v17.14.1 no detectó cambios en los módulos productivos protegidos. Los únicos cambios corresponden al nuevo módulo y a archivos de versión/empaquetado.
+
+LIMITACIÓN
+No se afirma salud 96 / fallas 0 / advertencias 1 hasta ejecutar Auditoría Pro después del despliegue real en Vercel.
