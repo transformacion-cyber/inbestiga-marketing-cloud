@@ -1,0 +1,37 @@
+{
+  "version": "v17.15.2",
+  "base": "v17.15.1",
+  "ok": true,
+  "modified_existing": [
+    {
+      "file": "index.html",
+      "status": "modified"
+    },
+    {
+      "file": "manifest.webmanifest",
+      "status": "modified"
+    },
+    {
+      "file": "service-worker.js",
+      "status": "modified"
+    },
+    {
+      "file": "config/build-manifest.json",
+      "status": "modified"
+    },
+    {
+      "file": "config/public-runtime-config.js",
+      "status": "modified"
+    }
+  ],
+  "allowed_assembly_files": [
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "unexpected_changes": [],
+  "protected_product_javascript_css_modified": false,
+  "statement": "No existing product JavaScript or CSS module was modified. Only the HTML assembly, version manifests and PWA shell changed."
+}

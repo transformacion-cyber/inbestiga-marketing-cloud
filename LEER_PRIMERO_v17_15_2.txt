@@ -1,0 +1,16 @@
+INBESTIGA MARKETING CLOUD v17.15.2
+PLATFORM INTERACTION INTEGRITY & AUTOMATIC DIAGNOSTICS
+
+1. Esta entrega es acumulativa y fue creada exclusivamente desde v17.15.1.
+2. Sustituye el contenido del repositorio por esta carpeta completa.
+3. No mezcles archivos de otras versiones.
+4. Realiza commit y push a main.
+5. Espera el despliegue de Vercel.
+6. Abre la plataforma y realiza Ctrl + Shift + R.
+7. Entra a Auditoría Pro → Integridad de interacción.
+8. Pulsa Ejecutar ahora.
+9. Abre SAKURA, Academia y los demás paneles dinámicos que quieras revisar; vuelve a ejecutar la auditoría después de abrirlos.
+10. No declares certificación productiva hasta ejecutar Auditoría Pro con datos y roles reales.
+
+SUMMARY RECOMENDADO
+feat(platform): añade integridad de interacción y diagnóstico automático en v17.15.2

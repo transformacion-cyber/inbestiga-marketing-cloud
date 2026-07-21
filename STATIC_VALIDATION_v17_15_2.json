@@ -1,0 +1,115 @@
+{
+  "version": "v17.15.2",
+  "base": "v17.15.1",
+  "checks": {
+    "javascript_syntax": {
+      "ok": true,
+      "files": 51,
+      "failures": []
+    },
+    "inline_javascript_syntax": {
+      "ok": true,
+      "blocks": 14,
+      "failures": []
+    },
+    "json_parse": {
+      "ok": true,
+      "files": 117,
+      "failures": []
+    },
+    "duplicate_html_ids": {
+      "ok": true,
+      "duplicates": {},
+      "unique_ids": 646
+    },
+    "index_local_references": {
+      "ok": true,
+      "references": 64,
+      "missing": []
+    },
+    "service_worker_shell": {
+      "ok": true,
+      "resources": 76,
+      "missing": [],
+      "cache_name": "inbestiga-v17-15-2-shell"
+    },
+    "new_module_restrictions": {
+      "ok": true,
+      "violations": {},
+      "polling": false,
+      "backend_changes": false
+    },
+    "protected_existing_modules": {
+      "ok": true,
+      "allowed_changed": [
+        "config/build-manifest.json",
+        "config/public-runtime-config.js",
+        "index.html",
+        "manifest.webmanifest",
+        "service-worker.js"
+      ],
+      "unexpected": [],
+      "existing_modules_unchanged": 440
+    },
+    "version_alignment": {
+      "ok": true,
+      "values": {
+        "html": "v17.15.2",
+        "runtime": "v17.15.2",
+        "manifest": "inbestiga-marketing-cloud-v17-15-2",
+        "service_worker": "v17.15.2",
+        "release_marker": "v17.15.2"
+      }
+    }
+  },
+  "counts": {
+    "files": 461,
+    "javascript": 51,
+    "json": 117,
+    "inline_scripts": 14,
+    "pwa_shell_resources": 76,
+    "new_files": 16,
+    "changed_existing": 5
+  },
+  "changed_existing": [
+    {
+      "file": "index.html",
+      "status": "modified"
+    },
+    {
+      "file": "manifest.webmanifest",
+      "status": "modified"
+    },
+    {
+      "file": "service-worker.js",
+      "status": "modified"
+    },
+    {
+      "file": "config/build-manifest.json",
+      "status": "modified"
+    },
+    {
+      "file": "config/public-runtime-config.js",
+      "status": "modified"
+    }
+  ],
+  "new_files": [
+    "AUDITORIA_v17_15_2_PLATFORM_INTERACTION_INTEGRITY.txt",
+    "CHANGES_v17_15_2.json",
+    "FUNCTIONAL_TESTS_v17_15_2.json",
+    "GUIA_RAPIDA_PLATFORM_INTERACTION_INTEGRITY_v17_15_2.txt",
+    "HEALTH_COMPARISON_v17_15_2.json",
+    "INTERACTION_INTEGRITY_TESTS_v17_15_2.json",
+    "LEER_PRIMERO_v17_15_2.txt",
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_15_2.txt",
+    "LISTA_ARCHIVOS_NUEVOS_v17_15_2.txt",
+    "PROTECTED_DIFF_v17_15_2.json",
+    "SHA256SUMS_v17_15_2.txt",
+    "STATIC_VALIDATION_v17_15_2.json",
+    "assets/css/interaction-integrity-v17-15-2.css",
+    "assets/js/interaction-integrity-bootstrap-v17-15-2.js",
+    "assets/js/interaction-integrity-v17-15-2.js",
+    "assets/js/release-marker-v17-15-2.js"
+  ],
+  "ok": true
+}

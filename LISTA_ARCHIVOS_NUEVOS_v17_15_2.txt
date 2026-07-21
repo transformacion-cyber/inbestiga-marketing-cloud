@@ -1,0 +1,16 @@
+assets/js/interaction-integrity-bootstrap-v17-15-2.js
+assets/js/interaction-integrity-v17-15-2.js
+assets/css/interaction-integrity-v17-15-2.css
+assets/js/release-marker-v17-15-2.js
+CHANGES_v17_15_2.json
+FUNCTIONAL_TESTS_v17_15_2.json
+INTERACTION_INTEGRITY_TESTS_v17_15_2.json
+HEALTH_COMPARISON_v17_15_2.json
+GUIA_RAPIDA_PLATFORM_INTERACTION_INTEGRITY_v17_15_2.txt
+AUDITORIA_v17_15_2_PLATFORM_INTERACTION_INTEGRITY.txt
+LEER_PRIMERO_v17_15_2.txt
+LISTA_ARCHIVOS_NUEVOS_v17_15_2.txt
+LISTA_ARCHIVOS_MODIFICADOS_v17_15_2.txt
+PROTECTED_DIFF_v17_15_2.json
+STATIC_VALIDATION_v17_15_2.json
+SHA256SUMS_v17_15_2.txt

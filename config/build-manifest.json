@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.15.1",
-  "build": "SAKURA ACADEMY INTERACTION & SUPERVISED SELF-IMPROVEMENT HOTFIX · LOCAL SAFE",
+  "frontend_version": "17.15.2",
+  "build": "PLATFORM INTERACTION INTEGRITY & AUTOMATIC DIAGNOSTICS · LOCAL SAFE",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -237,6 +237,24 @@
       "path": "assets/js/release-marker-v17-15-1.js",
       "origin": "v17.15.1",
       "mode": "release-marker"
+    },
+    {
+      "name": "interaction-integrity-bootstrap-v17-15-2",
+      "path": "assets/js/interaction-integrity-bootstrap-v17-15-2.js",
+      "origin": "v17.15.2",
+      "mode": "early-listener-error-storage-instrumentation"
+    },
+    {
+      "name": "interaction-integrity-v17-15-2",
+      "path": "assets/js/interaction-integrity-v17-15-2.js",
+      "origin": "v17.15.2",
+      "mode": "read-only-automatic-interaction-diagnostics"
+    },
+    {
+      "name": "release-marker-v17-15-2",
+      "path": "assets/js/release-marker-v17-15-2.js",
+      "origin": "v17.15.2",
+      "mode": "release-marker"
     }
   ],
   "styles": [
@@ -269,7 +287,8 @@
     "assets/css/sakura-live-motion-background-fusion-v17-13-2.css",
     "assets/css/sakura-academy-v17-14-0.css",
     "assets/css/sakura-button-text-contrast-v17-14-1.css",
-    "assets/css/unified-command-center-v17-15-0.css"
+    "assets/css/unified-command-center-v17-15-0.css",
+    "assets/css/interaction-integrity-v17-15-2.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -623,10 +642,10 @@
     "sakura_academy_no_polling": true,
     "sakura_academy_no_new_realtime": true
   },
-  "base": "v17.15.0 UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS",
-  "hotfix": "v17.15.1 fixes the confirmed SAKURA Academy interaction failure caused by click propagation from tab buttons to the Academy shell. It restores every Academy pane, confirms deterministic calculations, reconnects approved formulas to SAKURA chat and adds supervised self-improvement diagnostics. No SQL, polling, MutationObserver, Realtime or protected backend changes.",
-  "version": "v17.15.1",
-  "name": "SAKURA ACADEMY INTERACTION & SUPERVISED SELF-IMPROVEMENT HOTFIX",
+  "base": "v17.15.1 SAKURA ACADEMY INTERACTION & SUPERVISED SELF-IMPROVEMENT HOTFIX",
+  "hotfix": "v17.15.2 adds a non-destructive interaction integrity layer that inventories control wiring, detects blocked layers, contrast and mobile issues, captures runtime errors, records reversible local preference changes, aligns caches and integrates with the existing productive lifecycle trash. No SQL, polling, MutationObserver, Realtime or protected backend changes.",
+  "version": "v17.15.2",
+  "name": "PLATFORM INTERACTION INTEGRITY & AUTOMATIC DIAGNOSTICS",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
     "assets/js/unified-command-center-v17-15-0.js",
@@ -634,7 +653,11 @@
     "assets/js/sakura-personal-studio-v17-14-1.js",
     "assets/js/sakura-academy-v17-15-1.js",
     "assets/js/release-marker-v17-15-1.js",
-    "assets/js/sakura-presence-loader-v17-15-1.js"
+    "assets/js/sakura-presence-loader-v17-15-1.js",
+    "assets/js/interaction-integrity-bootstrap-v17-15-2.js",
+    "assets/css/interaction-integrity-v17-15-2.css",
+    "assets/js/interaction-integrity-v17-15-2.js",
+    "assets/js/release-marker-v17-15-2.js"
   ],
   "feature_flags": {
     "sakura_academy_v17140": true,
@@ -670,7 +693,23 @@
     "no_polling_v17151": true,
     "no_mutation_observer_v17151": true,
     "no_new_realtime_channels_v17151": true,
-    "no_dynamic_code_v17151": true
+    "no_dynamic_code_v17151": true,
+    "platform_interaction_integrity_v17152": true,
+    "automatic_non_destructive_button_audit_v17152": true,
+    "listener_registry_v17152": true,
+    "blocked_layer_detection_v17152": true,
+    "button_text_contrast_audit_v17152": true,
+    "mobile_touch_target_audit_v17152": true,
+    "runtime_error_capture_v17152": true,
+    "local_preference_undo_v17152": true,
+    "diagnostic_report_trash_restore_v17152": true,
+    "pwa_cache_alignment_repair_v17152": true,
+    "productive_lifecycle_trash_integration_v17152": true,
+    "no_sql_v17152": true,
+    "no_polling_v17152": true,
+    "no_mutation_observer_v17152": true,
+    "no_new_realtime_channels_v17152": true,
+    "no_dynamic_code_v17152": true
   },
-  "release": "v17.15.1 fixes all SAKURA Academy controls, removes the pane propagation collision, reconnects approved formulas to SAKURA chat, adds an internal connection test and supervised self-improvement diagnostics. No SQL, polling, MutationObserver, Realtime or protected backend changes."
+  "release": "v17.15.2 adds Platform Interaction Integrity & Automatic Diagnostics: safe control wiring inventory, blocked-layer and contrast checks, mobile target checks, runtime error capture, local preference undo, diagnostic trash and PWA cache repair. No SQL, polling, MutationObserver, Realtime or protected backend changes."
 }

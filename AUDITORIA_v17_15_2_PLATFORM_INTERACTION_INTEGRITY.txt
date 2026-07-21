@@ -1,0 +1,56 @@
+AUDITORÍA TÉCNICA — INBESTIGA MARKETING CLOUD v17.15.2
+
+BASE AUTORIZADA
+INBESTIGA_MARKETING_CLOUD_v17_15_1_SAKURA_ACADEMY_INTERACTION_SELF_IMPROVEMENT_HOTFIX
+
+ALCANCE IMPLEMENTADO
+- Registro temprano y pasivo de listeners de interfaz.
+- Inventario no destructivo de botones, pestañas, enlaces, campos y formularios.
+- Diagnóstico de eventos, capas, contraste, accesibilidad, móvil, caché y errores de ejecución.
+- Historial local de navegación sin contenido de campos.
+- Deshacer limitado a preferencias locales permitidas.
+- Papelera de informes de diagnóstico.
+- Lectura de la papelera productiva ya existente.
+- Reparación guiada de caché PWA.
+
+VALIDACIÓN TÉCNICA
+- Todos los archivos JavaScript pasan node --check.
+- Todos los bloques JavaScript internos de index.html pasan node --check.
+- Todos los JSON son válidos.
+- No existen IDs HTML duplicados.
+- Todas las referencias locales del index existen.
+- Todos los recursos declarados por el Service Worker existen.
+- HTML, runtime config, manifest, Service Worker y release marker están alineados en v17.15.2.
+- El navegador sintético detectó correctamente controles sin acción, bajo contraste, capa superpuesta, campo sin etiqueta y objetivo táctil pequeño.
+- La restauración local devolvió una preferencia de “after” a “before”.
+- No se detectaron errores de consola en la prueba sintética.
+
+DIFERENCIA CON v17.15.1
+Solo se modificaron cinco archivos existentes de ensamblaje/versionado:
+- index.html
+- manifest.webmanifest
+- service-worker.js
+- config/build-manifest.json
+- config/public-runtime-config.js
+
+No se modificó ningún JavaScript o CSS productivo existente. Los módulos de tareas, campañas, Trabajo 360, mensajería, SAKURA Academy, Auth, RLS, RPC, Storage, Ollama y puente local permanecen intactos.
+
+RESTRICCIONES CUMPLIDAS
+- Sin SQL nuevo.
+- Sin service_role.
+- Sin polling ni setInterval.
+- Sin MutationObserver.
+- Sin canales Realtime nuevos.
+- Sin eval ni Function dinámica.
+- Sin cambios de backend.
+- Sin clics automáticos sobre acciones productivas.
+
+VALIDACIÓN PENDIENTE
+- Despliegue en Vercel.
+- Inicio de sesión con rol real.
+- Apertura de paneles dinámicos y nueva ejecución de auditoría.
+- Prueba real del Service Worker y limpieza de caché.
+- Auditoría Pro final y comparación con 96 / 0 / 1 Work 360.
+
+CONCLUSIÓN
+La versión está validada estáticamente y en un arnés sintético de navegador. No se declara certificación productiva hasta completar la prueba real en Vercel.

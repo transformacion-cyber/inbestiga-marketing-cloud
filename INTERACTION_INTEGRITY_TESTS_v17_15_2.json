@@ -1,0 +1,28 @@
+{
+  "version": "v17.15.2",
+  "environment": "Chromium headless synthetic DOM harness",
+  "interaction_report": {
+    "controls": 7,
+    "wired": 3,
+    "unwired": 4,
+    "failures": 6,
+    "warnings": 8,
+    "detected_categories": ["accessibility", "contrast", "events", "layout", "mobile"],
+    "expected_unwired_detected": true,
+    "expected_low_contrast_detected": true,
+    "expected_covered_control_detected": true,
+    "expected_missing_label_detected": true,
+    "audit_tabs_rendered": 6,
+    "recovery_view_rendered": true,
+    "console_errors": 0
+  },
+  "undo_test": {
+    "safe_key": "inbestiga:test:theme-preference",
+    "previous_value": "before",
+    "new_value": "after",
+    "captured_changes": 2,
+    "undo_result": "pass",
+    "restored_value": "before"
+  },
+  "interpretation": "The synthetic harness intentionally contains defective controls. Detection of those defects is the pass condition; the score is not a production health score."
+}

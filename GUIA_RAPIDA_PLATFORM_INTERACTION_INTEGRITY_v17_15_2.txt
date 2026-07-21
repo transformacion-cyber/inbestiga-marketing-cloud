@@ -1,0 +1,47 @@
+INBESTIGA MARKETING CLOUD v17.15.2
+PLATFORM INTERACTION INTEGRITY & AUTOMATIC DIAGNOSTICS
+
+DÓNDE ENCONTRARLO
+1. Abre la plataforma.
+2. Entra a Administración o Seguridad, según tu menú.
+3. Abre Auditoría Pro.
+4. Busca el bloque “Integridad de interacción”.
+
+QUÉ COMPRUEBA
+- Botones y pestañas con una acción verificable.
+- Formularios con envío conectado.
+- Controles bloqueados por pointer-events.
+- Elementos cubiertos por capas superiores.
+- Texto con contraste insuficiente.
+- Botones demasiado pequeños para móvil.
+- Campos sin etiqueta accesible.
+- Desbordamiento horizontal.
+- Errores JavaScript y promesas rechazadas.
+- Diferencias entre build, runtime, manifest y caché PWA.
+
+CÓMO USARLO
+- Pulsa “Ejecutar ahora”.
+- En Resumen revisa la puntuación y las señales prioritarias.
+- En Hallazgos filtra por gravedad o categoría.
+- Pulsa “Ubicar” para abrir y resaltar el elemento afectado.
+- Después de abrir un panel dinámico, ejecuta nuevamente la auditoría.
+
+HISTORIAL Y DESHACER
+- Registra navegación y controles utilizados, pero no guarda contraseñas ni texto escrito.
+- Solo determinadas preferencias locales de diseño, navegación y apariencia son reversibles.
+- Al pulsar “Deshacer”, se restaura el valor local anterior y la página se recarga.
+- No se revierten escrituras productivas de Supabase desde esta función.
+
+RECUPERACIÓN
+- Permite detectar cachés anteriores.
+- “Limpiar caché de la plataforma y recargar” elimina solo cachés INBESTIGA y registros del Service Worker.
+- No elimina tareas, campañas, archivos ni datos de Supabase.
+- Los registros productivos siguen usando la papelera existente de la plataforma.
+- Los informes de diagnóstico tienen su propia papelera local y pueden restaurarse.
+
+PRUEBA MÓVIL
+- La pestaña Móvil muestra áreas táctiles pequeñas y desbordamientos.
+- “Abrir ventana 390 × 844” permite revisar visualmente la plataforma en un tamaño de teléfono.
+
+IMPORTANTE
+La auditoría no pulsa botones productivos automáticamente. Detecta evidencia técnica de conexión y permite localizar el elemento. La certificación final requiere probar los flujos reales después del despliegue en Vercel.

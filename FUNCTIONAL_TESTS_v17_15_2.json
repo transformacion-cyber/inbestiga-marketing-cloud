@@ -1,0 +1,24 @@
+{
+  "version": "v17.15.2",
+  "suite": "Platform Interaction Integrity",
+  "tests": [
+    {"id":"II-001","name":"Listener registry","status":"pass","evidence":"A button with addEventListener is classified as wired."},
+    {"id":"II-002","name":"Unwired control detection","status":"pass","evidence":"A visible button without handler, listener, navigation or native behavior is reported."},
+    {"id":"II-003","name":"Contrast detection","status":"pass","evidence":"Low-contrast control text creates a contrast finding with a calculated ratio."},
+    {"id":"II-004","name":"Covered-control detection","status":"pass","evidence":"elementFromPoint identifies a layer covering the center of a button."},
+    {"id":"II-005","name":"Accessible label detection","status":"pass","evidence":"An input without label or ARIA name is reported."},
+    {"id":"II-006","name":"Touch-target detection","status":"pass","evidence":"A 28 x 28 px button is reported as too small for comfortable touch use."},
+    {"id":"II-007","name":"Audit Pro mount","status":"pass","evidence":"The new interface mounts in #auditpro and renders five diagnostic tabs plus the summary."},
+    {"id":"II-008","name":"Recovery interface","status":"pass","evidence":"Cache/version, productive trash, diagnostic trash and restoration scope render correctly."},
+    {"id":"II-009","name":"Local preference undo","status":"pass","evidence":"A second local preference write is captured and restored to its previous value."},
+    {"id":"II-010","name":"Non-destructive restrictions","status":"pass","evidence":"New modules contain no setInterval, MutationObserver, eval, dynamic Function or Realtime channel creation."},
+    {"id":"II-011","name":"Version alignment","status":"pass","evidence":"HTML, runtime config, manifest, PWA cache and release marker identify v17.15.2."},
+    {"id":"II-012","name":"Protected modules","status":"pass","evidence":"No existing product JavaScript or CSS module was modified."}
+  ],
+  "pending_after_vercel": [
+    "Open each dynamic panel and rerun the audit so controls created on demand are included.",
+    "Validate cache reset using the deployed Service Worker.",
+    "Run Auditoría Pro with a productive authenticated role.",
+    "Compare the final health line against 96 health, 0 failures and the known Work 360 warning."
+  ]
+}

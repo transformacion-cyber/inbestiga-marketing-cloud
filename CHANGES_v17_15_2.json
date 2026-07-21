@@ -1,0 +1,43 @@
+{
+  "version": "v17.15.2",
+  "base": "v17.15.1",
+  "title": "PLATFORM INTERACTION INTEGRITY & AUTOMATIC DIAGNOSTICS",
+  "purpose": "Add a non-destructive integrity layer that helps find controls that are not wired, are covered by another layer, have insufficient contrast, create horizontal overflow, are too small for touch, or fail because of runtime/cache problems.",
+  "features": [
+    "Early listener registry for click, change, input, submit and delegated interface events.",
+    "Automatic read-only inventory of buttons, tabs, links, fields and forms.",
+    "Detection of controls without verifiable actions.",
+    "Detection of pointer-events blocks and elements covered at their visual center.",
+    "Contrast-ratio checks for visible control text.",
+    "Accessible-name and associated-label checks.",
+    "Mobile touch-target and horizontal-overflow checks.",
+    "Runtime error, rejected promise and resource-load history.",
+    "Audit Pro interface with Summary, Findings, History and Undo, Recovery, and Mobile tabs.",
+    "Safe location/highlight of the element associated with a finding.",
+    "Reversible history for selected local visual and navigation preferences.",
+    "Diagnostic-report trash with restore.",
+    "PWA cache/version alignment and guided INBESTIGA cache reset.",
+    "Read-only integration with the existing productive record lifecycle trash.",
+    "JSON export for technical support and deployment validation."
+  ],
+  "safety_boundaries": [
+    "The auditor never clicks save, send, approve, delete or other productive actions.",
+    "Undo only restores allow-listed local preferences; it does not reverse Supabase writes.",
+    "Productive records continue to use the existing record-lifecycle module and permissions.",
+    "No SQL, service_role, polling, MutationObserver, new Realtime channels, eval or dynamic Function."
+  ],
+  "new_files": [
+    "assets/js/interaction-integrity-bootstrap-v17-15-2.js",
+    "assets/js/interaction-integrity-v17-15-2.js",
+    "assets/css/interaction-integrity-v17-15-2.css",
+    "assets/js/release-marker-v17-15-2.js"
+  ],
+  "modified_existing_files": [
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js"
+  ],
+  "backend_changes": false
+}
