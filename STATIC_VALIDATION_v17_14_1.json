@@ -1,0 +1,65 @@
+{
+  "version": "v17.14.1",
+  "base_file_count": 404,
+  "new_file_count_before_docs": 406,
+  "modified_files": [
+    "assets/js/sakura-presence-loader-v17-13-0.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "added_files": [
+    "assets/css/sakura-button-text-contrast-v17-14-1.css",
+    "assets/js/sakura-personal-studio-v17-14-1.js",
+    "AUDITORIA_v17_14_1_SAKURA_BUTTON_TEXT_CONTRAST.txt",
+    "CHANGES_v17_14_1.json",
+    "FUNCTIONAL_TESTS_v17_14_1.json",
+    "GUIA_RAPIDA_SAKURA_BUTTON_TEXT_v17_14_1.txt",
+    "HEALTH_COMPARISON_v17_14_1.json",
+    "LEER_PRIMERO_v17_14_1.txt",
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_14_1.txt",
+    "LISTA_ARCHIVOS_NUEVOS_v17_14_1.txt",
+    "PROTECTED_SCOPE_VALIDATION_v17_14_1.json",
+    "STATIC_VALIDATION_v17_14_1.json",
+    "SHA256SUMS_v17_14_1.txt"
+  ],
+  "removed_files": [],
+  "checks": {
+    "all_javascript_syntax": "pass",
+    "all_json_valid": "pass",
+    "service_worker_references": "pass",
+    "build_manifest": "pass",
+    "manifest_webmanifest": "pass",
+    "runtime_version_alignment": "pass",
+    "loader_version_alignment": "pass",
+    "css_contract": "pass",
+    "css_load_order": "pass",
+    "studio_variable_application": "pass",
+    "legacy_preference_migration": "pass",
+    "no_removed_base_files": true,
+    "no_eval_or_dynamic_function": "pass",
+    "no_global_mutation_observer": "pass",
+    "no_polling_or_set_interval": "pass"
+  },
+  "protected_scope": {
+    "sql": {
+      "files": 11,
+      "unchanged": true
+    },
+    "local_bridge": {
+      "files": 14,
+      "unchanged": true
+    },
+    "api": {
+      "files": 1,
+      "unchanged": true
+    },
+    "other_existing_javascript": {
+      "unchanged": true,
+      "exception": "assets/js/sakura-presence-loader-v17-13-0.js"
+    }
+  },
+  "final_file_count": 417
+}

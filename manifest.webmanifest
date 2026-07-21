@@ -1,7 +1,7 @@
 {
   "name": "INBESTIGA Marketing Cloud",
   "short_name": "INBESTIGA",
-  "description": "Plataforma operativa con SAKURA Academy, motor científico local, conocimiento supervisado, movimiento real, fondo inteligente, mensajería, tareas y campañas.",
+  "description": "Plataforma operativa con SAKURA Academy, motor científico local y controles de texto legibles sincronizados con Personal Studio.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -21,5 +21,5 @@
       "purpose": "any maskable"
     }
   ],
-  "id": "inbestiga-marketing-cloud-v17-14-0"
+  "id": "inbestiga-marketing-cloud-v17-14-1"
 }

@@ -1,0 +1,55 @@
+{
+  "version": "v17.14.1",
+  "base": "v17.14.0",
+  "name": "SAKURA Button Text Contrast & Studio Color Sync Hotfix",
+  "fixed_issues": [
+    "El color Texto de botones no afectaba pestañas inactivas, Copiar ni chips de feedback",
+    "Las reglas heredadas con !important podían conservar colores oscuros",
+    "El editor no diferenciaba texto principal, pestañas y controles secundarios",
+    "La vista previa no mostraba el color real del texto de pestañas y del botón principal"
+  ],
+  "changes": [
+    "Variables --sk-tab-text y --sk-secondary-button-text",
+    "Color explícito y -webkit-text-fill-color en todos los grupos de controles",
+    "Controles Texto de pestañas y Texto de botones secundarios en Personal Studio",
+    "Botón Corregir contraste de botones",
+    "Migración de preferencias antiguas",
+    "Vista previa sincronizada",
+    "Actualización de versión, build manifest, PWA y caché"
+  ],
+  "restrictions": [
+    "No SQL",
+    "No service_role",
+    "No polling",
+    "No setInterval",
+    "No MutationObserver global",
+    "No nuevos canales Realtime",
+    "No eval",
+    "No Function dinámica",
+    "No cambios de backend"
+  ],
+  "modified_files": [
+    "assets/js/sakura-presence-loader-v17-13-0.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "new_files": [
+    "assets/css/sakura-button-text-contrast-v17-14-1.css",
+    "assets/js/sakura-personal-studio-v17-14-1.js",
+    "AUDITORIA_v17_14_1_SAKURA_BUTTON_TEXT_CONTRAST.txt",
+    "CHANGES_v17_14_1.json",
+    "FUNCTIONAL_TESTS_v17_14_1.json",
+    "GUIA_RAPIDA_SAKURA_BUTTON_TEXT_v17_14_1.txt",
+    "HEALTH_COMPARISON_v17_14_1.json",
+    "LEER_PRIMERO_v17_14_1.txt",
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_14_1.txt",
+    "LISTA_ARCHIVOS_NUEVOS_v17_14_1.txt",
+    "PROTECTED_SCOPE_VALIDATION_v17_14_1.json",
+    "STATIC_VALIDATION_v17_14_1.json",
+    "SHA256SUMS_v17_14_1.txt"
+  ],
+  "removed_files": []
+}

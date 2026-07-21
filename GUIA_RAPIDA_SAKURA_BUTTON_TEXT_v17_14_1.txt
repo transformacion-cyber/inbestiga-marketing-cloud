@@ -1,0 +1,45 @@
+GUÍA RÁPIDA — TEXTO DE BOTONES SAKURA v17.14.1
+
+RUTA
+Diseño · Plataforma → SAKURA → Escritura
+
+CONTROLES NUEVOS Y CORREGIDOS
+- Color de botones principales
+- Texto de botones principales
+- Texto de pestañas
+- Texto de botones secundarios
+- Corregir contraste de botones
+
+QUÉ MODIFICA CADA CONTROL
+Texto de botones principales:
+- Pestaña activa
+- Botón Enviar
+- Botones primarios
+
+Texto de pestañas:
+- Chat
+- Mensajes
+- Documentos
+- Estudio
+- Ajustes
+- Director
+- Academia
+
+Texto de botones secundarios:
+- Copiar
+- Me gustó
+- Más cálida
+- Más breve
+- No entendió
+- Corregir
+- Accesos rápidos
+- Botones secundarios e iconos
+
+PRUEBA RECOMENDADA
+1. Selecciona blanco en Texto de pestañas.
+2. Selecciona blanco en Texto de botones secundarios.
+3. Pulsa Aplicar a mi SAKURA.
+4. Abre SAKURA y cambia entre todas las pestañas.
+5. Recarga la página.
+
+Si la combinación elegida pierde contraste, pulsa Corregir contraste de botones.

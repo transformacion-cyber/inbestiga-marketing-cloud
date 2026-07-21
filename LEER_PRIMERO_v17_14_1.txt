@@ -1,0 +1,31 @@
+INBESTIGA MARKETING CLOUD v17.14.1
+SAKURA BUTTON TEXT CONTRAST & STUDIO COLOR SYNC HOTFIX
+
+BASE AUTORIZADA
+Esta entrega fue creada exclusivamente desde v17.14.0 SAKURA Academy & Scientific Calculation Engine.
+
+FALLO CORREGIDO
+Personal Studio guardaba el color de texto de los botones principales, pero las pestañas inactivas, los chips de respuesta, Copiar y otros controles secundarios continuaban leyendo el color general del panel. Por eso podían conservar un azul/gris oscuro y quedar ilegibles sobre fotografías o superficies oscuras.
+
+CAMBIO
+- Texto de botones principales: pestaña activa, Enviar y acciones primarias.
+- Texto de pestañas: pestañas inactivas de Chat, Mensajes, Documentos, Estudio, Ajustes, Director y Academia.
+- Texto de botones secundarios: Copiar, chips de feedback, accesos rápidos, iconos, herramientas y acciones secundarias.
+- Aplicación explícita de color y -webkit-text-fill-color.
+- Botón Corregir contraste de botones dentro de Estudio de SAKURA → Escritura.
+- Migración de estilos anteriores sin borrar las personalizaciones del usuario.
+
+DESPLIEGUE
+Sube el contenido completo de este paquete a GitHub y Vercel. Después realiza una recarga forzada para sustituir la caché PWA v17.14.0.
+
+VALIDACIÓN OBLIGATORIA EN VERCEL
+1. Confirma que la plataforma muestre v17.14.1.
+2. Abre Diseño · Plataforma → SAKURA → Escritura.
+3. Cambia Texto de pestañas a blanco y Texto de botones secundarios a blanco.
+4. Pulsa Aplicar a mi SAKURA.
+5. Abre SAKURA y revisa Chat, Mensajes, Documentos, Estudio, Ajustes, Director y Academia.
+6. Comprueba Copiar, Me gustó, Más cálida, Más breve, No entendió y Corregir.
+7. Recarga la página y confirma persistencia.
+8. Ejecuta Auditoría Pro.
+
+No se afirma certificación productiva hasta completar la prueba visual y Auditoría Pro en Vercel.

@@ -1,0 +1,128 @@
+{
+  "version": "v17.14.1",
+  "scope": "Pruebas deterministas de Personal Studio, contrato CSS, migración y validación estática",
+  "tests": [
+    {
+      "id": "studio-01",
+      "name": "API de Personal Studio registra v17.14.1",
+      "status": "pass",
+      "expected": "v17.14.1"
+    },
+    {
+      "id": "studio-02",
+      "name": "Aplicación de --sk-button-text",
+      "status": "pass",
+      "expected": "#111111"
+    },
+    {
+      "id": "studio-03",
+      "name": "Aplicación de --sk-tab-text",
+      "status": "pass",
+      "expected": "#ffffff"
+    },
+    {
+      "id": "studio-04",
+      "name": "Aplicación de --sk-secondary-button-text",
+      "status": "pass",
+      "expected": "#fff8fc"
+    },
+    {
+      "id": "studio-05",
+      "name": "Editor expone Texto de pestañas",
+      "status": "pass"
+    },
+    {
+      "id": "studio-06",
+      "name": "Editor expone Texto de botones secundarios",
+      "status": "pass"
+    },
+    {
+      "id": "studio-07",
+      "name": "Editor expone Corregir contraste de botones",
+      "status": "pass"
+    },
+    {
+      "id": "migration-01",
+      "name": "Preferencia antigua sin tabText migra desde muted",
+      "status": "pass",
+      "expected": "#335577"
+    },
+    {
+      "id": "migration-02",
+      "name": "Preferencia antigua sin secondaryButtonText migra desde text",
+      "status": "pass",
+      "expected": "#224466"
+    },
+    {
+      "id": "css-01",
+      "name": "Pestañas activas usan --sk-button-text",
+      "status": "pass"
+    },
+    {
+      "id": "css-02",
+      "name": "Pestañas inactivas usan --sk-tab-text",
+      "status": "pass"
+    },
+    {
+      "id": "css-03",
+      "name": "Feedback, Copiar y secundarios usan --sk-secondary-button-text",
+      "status": "pass"
+    },
+    {
+      "id": "css-04",
+      "name": "Se fuerza -webkit-text-fill-color junto a color",
+      "status": "pass"
+    },
+    {
+      "id": "load-01",
+      "name": "Hotfix CSS carga después de Personal Studio CSS",
+      "status": "pass"
+    },
+    {
+      "id": "syntax-01",
+      "name": "Sintaxis de todos los JavaScript",
+      "status": "pass",
+      "result": "44 archivos"
+    },
+    {
+      "id": "json-01",
+      "name": "JSON existentes antes de documentación",
+      "status": "pass",
+      "result": "97 archivos"
+    },
+    {
+      "id": "pwa-01",
+      "name": "Todos los recursos del Service Worker existen",
+      "status": "pass",
+      "resource_count": 69
+    },
+    {
+      "id": "security-01",
+      "name": "Ausencia de eval y Function dinámica en archivos nuevos",
+      "status": "pass"
+    },
+    {
+      "id": "security-02",
+      "name": "Ausencia de polling, setInterval y MutationObserver en archivos nuevos",
+      "status": "pass"
+    },
+    {
+      "id": "security-03",
+      "name": "Ausencia de nuevos canales Realtime",
+      "status": "pass"
+    }
+  ],
+  "browser_runtime": {
+    "status": "pending_vercel_validation",
+    "reason": "La lectura visual con la fotografía real, persistencia del navegador y Auditoría Pro deben comprobarse en el origen publicado."
+  },
+  "productive_health": {
+    "status": "not_claimed",
+    "baseline": {
+      "health": 96,
+      "failures": 0,
+      "warnings": 1,
+      "known_warning": "Work 360"
+    }
+  }
+}

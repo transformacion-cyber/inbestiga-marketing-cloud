@@ -1,0 +1,357 @@
+/* INBESTIGA Marketing Cloud v17.14.1 · SAKURA Personal Studio · Button Text Contrast & Color Sync Hotfix */
+(() => {
+  "use strict";
+  if (window.INBESTIGA_SAKURA_STUDIO) return;
+
+  const VERSION = "v17.14.1";
+  const MODULE = "sakura-personal-studio-v17-14-1";
+  const PERSONAL_KEY = "inbestiga_sakura_style_v2";
+  const DRAFT_KEY = "inbestiga_sakura_style_draft_v2";
+  const THEMES_KEY = "inbestiga_sakura_custom_themes_v2";
+  const GLOBAL_FALLBACK_KEY = "inbestiga_sakura_global_style_v2";
+  const DB_NAME = "inbestiga_sakura_style_assets_v1";
+  const DB_STORE = "backgrounds";
+  const MAX_THEME_BYTES = 120000;
+  const MAX_IMAGE_BYTES = 900000;
+  const FONTS = {
+    "SF Pro / Sistema": '-apple-system,BlinkMacSystemFont,"Segoe UI",Inter,Arial,sans-serif',
+    "Inter": 'Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif',
+    "Montserrat": 'Montserrat,Inter,-apple-system,sans-serif',
+    "Poppins": 'Poppins,Inter,-apple-system,sans-serif',
+    "Manrope": 'Manrope,Inter,-apple-system,sans-serif',
+    "DM Sans": '"DM Sans",Inter,-apple-system,sans-serif',
+    "Space Grotesk": '"Space Grotesk",Inter,-apple-system,sans-serif',
+    "Outfit": 'Outfit,Inter,-apple-system,sans-serif',
+    "Georgia": 'Georgia,"Times New Roman",serif',
+    "Courier New": '"Courier New",monospace'
+  };
+  const ORBS = {
+    "sakura-japan": { name:"Sakura Japón", desc:"Flor digital y pétalos suaves", colors:["#ff8fbd","#f6d7ea","#7b49d9"] },
+    "orbital": { name:"Núcleo orbital", desc:"Anillos y partículas configurables", colors:["#9158ff","#ef61b9","#6dc9ff"] },
+    "tactical": { name:"Holograma táctico", desc:"Círculos técnicos azul cian", colors:["#2dd4ff","#5b8cff","#131c34"] },
+    "neon-pulse": { name:"Pulso de neón", desc:"Respira y reacciona al estado", colors:["#a855f7","#ec4899","#312e81"] },
+    "quantum-prism": { name:"Prisma cuántico", desc:"Facetas geométricas en rotación", colors:["#8b5cf6","#22d3ee","#f472b6"] },
+    "digital-aurora": { name:"Aurora digital", desc:"Luz fluida y movimiento elegante", colors:["#06b6d4","#7c3aed","#ec4899"] },
+    "minimal-apple": { name:"Minimal Apple", desc:"Limpio, sobrio y de bajo consumo", colors:["#f5f5f7","#7c5cff","#1d1d1f"] },
+    "neural-network": { name:"Red neuronal", desc:"Nodos luminosos interconectados", colors:["#7c3aed","#38bdf8","#f472b6"] }
+  };
+  const THEMES = {
+    "sakura-japan": {
+      name:"Sakura Japón", backgroundType:"animated",panelColor1:"#2a1725",panelColor2:"#6a304d",panelColor3:"#1b101b",gradientAngle:145,
+      frameColor:"#f39cbc",frameWidth:1,frameOpacity:.38,panelRadius:27,headerColor1:"#4a2037",headerColor2:"#21111d",headerText:"#fff8fb",headerMuted:"#f2cfdd",
+      chatBg:"rgba(39,20,33,.78)",surface:"#4a2a3e",surface2:"#5b314a",text:"#fff8fc",muted:"#e6c8d4",accent:"#e85cae",accent2:"#ff9fc4",
+      userBubble:"#d74f9c",userText:"#ffffff",assistantBubble:"#4c2b40",assistantText:"#fff9fc",inputBg:"#351e2e",inputText:"#fff9fc",inputBorder:"rgba(255,194,219,.28)",buttonBg:"#e85cae",
+      mainFont:"SF Pro / Sistema",nameFont:"Georgia",messageFont:"SF Pro / Sistema",buttonFont:"SF Pro / Sistema",orbDesign:"sakura-japan",orbPrimary:"#ff8fbd",orbSecondary:"#f4c1d7",orbTertiary:"#8856d8",orbGlow:"#ff8fbd",backgroundPattern:"petals",backgroundMotion:"subtle"
+    },
+    midnight:{name:"Noche violeta",panelColor1:"#17131d",panelColor2:"#31233d",panelColor3:"#20162a",gradientAngle:155,frameColor:"#c69bff",frameWidth:1,frameOpacity:.25,panelRadius:24,headerColor1:"#271b30",headerColor2:"#110d15",headerText:"#ffffff",headerMuted:"#d1c6d8",chatBg:"rgba(17,12,22,.74)",surface:"#2a2031",surface2:"#35283e",text:"#ffffff",muted:"#c8bfce",accent:"#9b5cff",accent2:"#e95cad",userBubble:"#a84df2",userText:"#ffffff",assistantBubble:"#30243a",assistantText:"#ffffff",inputBg:"#241b2b",inputText:"#ffffff",inputBorder:"rgba(255,255,255,.20)",buttonBg:"#8c4df2",mainFont:"SF Pro / Sistema",nameFont:"SF Pro / Sistema",messageFont:"SF Pro / Sistema",buttonFont:"SF Pro / Sistema",orbDesign:"orbital",orbPrimary:"#9158ff",orbSecondary:"#ef61b9",orbTertiary:"#6dc9ff",orbGlow:"#9b5cff",backgroundPattern:"none",backgroundMotion:"none"},
+    graphite:{name:"Grafito Apple",panelColor1:"#161618",panelColor2:"#2a2a2d",panelColor3:"#101012",gradientAngle:145,frameColor:"#ffffff",frameWidth:1,frameOpacity:.16,panelRadius:22,headerColor1:"#242426",headerColor2:"#151517",headerText:"#f5f5f7",headerMuted:"#b9b9bf",chatBg:"rgba(20,20,22,.88)",surface:"#27272a",surface2:"#323236",text:"#f5f5f7",muted:"#b6b6bb",accent:"#7c5cff",accent2:"#9d8aff",userBubble:"#7257ed",userText:"#ffffff",assistantBubble:"#29292c",assistantText:"#f5f5f7",inputBg:"#242426",inputText:"#f5f5f7",inputBorder:"rgba(255,255,255,.16)",buttonBg:"#f5f5f7",buttonText:"#151517",mainFont:"SF Pro / Sistema",nameFont:"SF Pro / Sistema",messageFont:"SF Pro / Sistema",buttonFont:"SF Pro / Sistema",orbDesign:"minimal-apple",orbPrimary:"#8b7cff",orbSecondary:"#f5f5f7",orbTertiary:"#6e6e73",orbGlow:"#7c5cff",backgroundPattern:"none",backgroundMotion:"none"},
+    aurora:{name:"Aurora",backgroundType:"animated",panelColor1:"#101827",panelColor2:"#263c5a",panelColor3:"#241438",gradientAngle:155,frameColor:"#8ddcff",frameWidth:1,frameOpacity:.28,panelRadius:26,headerColor1:"#1c3150",headerColor2:"#141326",headerText:"#f8fbff",headerMuted:"#c7d8ed",chatBg:"rgba(13,24,41,.82)",surface:"#1b2b45",surface2:"#253b5b",text:"#f8fbff",muted:"#c4d2e6",accent:"#6d7cff",accent2:"#ef62be",userBubble:"#7868ee",userText:"#ffffff",assistantBubble:"#24324a",assistantText:"#f8fbff",inputBg:"#18263c",inputText:"#f8fbff",inputBorder:"rgba(137,217,255,.24)",buttonBg:"#6d7cff",mainFont:"Manrope",nameFont:"Space Grotesk",messageFont:"Manrope",buttonFont:"Manrope",orbDesign:"digital-aurora",orbPrimary:"#6d7cff",orbSecondary:"#ef62be",orbTertiary:"#4bd0ff",orbGlow:"#4bd0ff",backgroundPattern:"aurora",backgroundMotion:"subtle"},
+    rose:{name:"Sakura rosa",backgroundType:"texture",panelColor1:"#221522",panelColor2:"#4b2945",panelColor3:"#180f18",gradientAngle:155,frameColor:"#ff9ccc",frameWidth:1,frameOpacity:.3,panelRadius:26,headerColor1:"#4b2945",headerColor2:"#21111e",headerText:"#fff9fd",headerMuted:"#e7cedd",chatBg:"rgba(34,18,31,.84)",surface:"#321f32",surface2:"#4b2945",text:"#fff9fd",muted:"#e2c9d8",accent:"#e85cae",accent2:"#ff8bc5",userBubble:"#df58b0",userText:"#ffffff",assistantBubble:"#3b2839",assistantText:"#fff9fd",inputBg:"#321f2f",inputText:"#fff9fd",inputBorder:"rgba(255,155,207,.24)",buttonBg:"#e85cae",mainFont:"Poppins",nameFont:"Poppins",messageFont:"Poppins",buttonFont:"Poppins",orbDesign:"neon-pulse",orbPrimary:"#e85cae",orbSecondary:"#ff8bc5",orbTertiary:"#8f62e8",orbGlow:"#ff8bc5",backgroundPattern:"soft",backgroundMotion:"subtle"},
+    hologram:{name:"Holograma azul",backgroundType:"pattern",panelColor1:"#07121c",panelColor2:"#0d3850",panelColor3:"#050a10",gradientAngle:145,frameColor:"#30d7ff",frameWidth:1,frameOpacity:.4,panelRadius:20,headerColor1:"#0b2d40",headerColor2:"#061019",headerText:"#ebfbff",headerMuted:"#a6dce9",chatBg:"rgba(5,17,25,.9)",surface:"#0d2634",surface2:"#103b51",text:"#ebfbff",muted:"#a6dce9",accent:"#21c9f3",accent2:"#5b8cff",userBubble:"#166c9a",userText:"#ffffff",assistantBubble:"#0e2b3a",assistantText:"#effcff",inputBg:"#09212e",inputText:"#effcff",inputBorder:"rgba(48,215,255,.32)",buttonBg:"#21c9f3",buttonText:"#05202b",mainFont:"Space Grotesk",nameFont:"Space Grotesk",messageFont:"Inter",buttonFont:"Space Grotesk",orbDesign:"tactical",orbPrimary:"#2dd4ff",orbSecondary:"#5b8cff",orbTertiary:"#19f0d2",orbGlow:"#2dd4ff",backgroundPattern:"grid",backgroundMotion:"subtle"},
+    minimal:{name:"Minimal blanco",panelColor1:"#f7f7f9",panelColor2:"#ffffff",panelColor3:"#eef0f4",gradientAngle:145,frameColor:"#1d1d1f",frameWidth:1,frameOpacity:.12,panelRadius:22,headerColor1:"#ffffff",headerColor2:"#f4f4f6",headerText:"#161617",headerMuted:"#6e6e73",chatBg:"rgba(248,248,250,.94)",surface:"#ffffff",surface2:"#f1f2f5",text:"#161617",muted:"#6e6e73",accent:"#0071e3",accent2:"#7c6cff",userBubble:"#0071e3",userText:"#ffffff",assistantBubble:"#e9ecf2",assistantText:"#161617",inputBg:"#ffffff",inputText:"#161617",inputBorder:"rgba(0,0,0,.16)",buttonBg:"#0071e3",mainFont:"SF Pro / Sistema",nameFont:"SF Pro / Sistema",messageFont:"SF Pro / Sistema",buttonFont:"SF Pro / Sistema",orbDesign:"minimal-apple",orbPrimary:"#0071e3",orbSecondary:"#7c6cff",orbTertiary:"#34c759",orbGlow:"#0071e3",backgroundPattern:"none",backgroundMotion:"none"},
+    executive:{name:"Negro ejecutivo",panelColor1:"#0b0b0d",panelColor2:"#202024",panelColor3:"#050506",gradientAngle:165,frameColor:"#d9b86c",frameWidth:1,frameOpacity:.25,panelRadius:18,headerColor1:"#1b1b1f",headerColor2:"#09090b",headerText:"#f7f3e8",headerMuted:"#c8c1b1",chatBg:"rgba(9,9,11,.92)",surface:"#1c1c20",surface2:"#27272c",text:"#f7f3e8",muted:"#bcb5a8",accent:"#d9b86c",accent2:"#a78bfa",userBubble:"#6f55c5",userText:"#ffffff",assistantBubble:"#222226",assistantText:"#f7f3e8",inputBg:"#18181b",inputText:"#f7f3e8",inputBorder:"rgba(217,184,108,.25)",buttonBg:"#d9b86c",buttonText:"#121214",mainFont:"Montserrat",nameFont:"Montserrat",messageFont:"DM Sans",buttonFont:"Montserrat",orbDesign:"quantum-prism",orbPrimary:"#d9b86c",orbSecondary:"#a78bfa",orbTertiary:"#f5f5f7",orbGlow:"#d9b86c",backgroundPattern:"none",backgroundMotion:"none"},
+    crystal:{name:"Cristal futurista",backgroundType:"texture",panelColor1:"#152037",panelColor2:"#415175",panelColor3:"#15152e",gradientAngle:135,frameColor:"#b6d9ff",frameWidth:1,frameOpacity:.32,panelRadius:30,headerColor1:"#344564",headerColor2:"#171a30",headerText:"#f7fbff",headerMuted:"#d2ddef",chatBg:"rgba(22,31,54,.72)",surface:"#2b3855",surface2:"#3d4b6a",text:"#f7fbff",muted:"#ced9e8",accent:"#8b7cff",accent2:"#6bdcff",userBubble:"#7b64e8",userText:"#ffffff",assistantBubble:"#30405c",assistantText:"#f7fbff",inputBg:"#29364f",inputText:"#f7fbff",inputBorder:"rgba(182,217,255,.27)",buttonBg:"#8b7cff",mainFont:"Outfit",nameFont:"Space Grotesk",messageFont:"Outfit",buttonFont:"Outfit",orbDesign:"orbital",orbPrimary:"#8b7cff",orbSecondary:"#6bdcff",orbTertiary:"#f472b6",orbGlow:"#6bdcff",backgroundPattern:"glass",backgroundMotion:"subtle"},
+    contrast:{name:"Alto contraste",panelColor1:"#000000",panelColor2:"#101010",panelColor3:"#000000",gradientAngle:180,frameColor:"#ffffff",frameWidth:2,frameOpacity:.8,panelRadius:16,headerColor1:"#000000",headerColor2:"#000000",headerText:"#ffffff",headerMuted:"#ffffff",chatBg:"#000000",surface:"#111111",surface2:"#1a1a1a",text:"#ffffff",muted:"#f0f0f0",accent:"#ffd400",accent2:"#00d9ff",userBubble:"#004d99",userText:"#ffffff",assistantBubble:"#191919",assistantText:"#ffffff",inputBg:"#000000",inputText:"#ffffff",inputBorder:"#ffffff",buttonBg:"#ffd400",buttonText:"#000000",mainFont:"SF Pro / Sistema",nameFont:"SF Pro / Sistema",messageFont:"SF Pro / Sistema",buttonFont:"SF Pro / Sistema",orbDesign:"neural-network",orbPrimary:"#ffd400",orbSecondary:"#00d9ff",orbTertiary:"#ffffff",orbGlow:"#ffd400",backgroundPattern:"none",backgroundMotion:"none"}
+  };
+
+  const DEFAULTS = {
+    theme:"midnight",backgroundType:"gradient",backgroundAssetId:"",backgroundPosition:"center",backgroundSize:"cover",backgroundRepeat:"no-repeat",backgroundPattern:"none",backgroundMotion:"none",
+    panelColor1:"#17131d",panelColor2:"#31233d",panelColor3:"#20162a",gradientAngle:155,overlay:22,brightness:100,saturation:100,blur:0,panelOpacity:100,
+    frameColor:"#c69bff",frameWidth:1,frameOpacity:25,panelRadius:24,frameStyle:"minimal",shadowStrength:34,glowStrength:0,
+    headerColor1:"#271b30",headerColor2:"#110d15",headerText:"#ffffff",headerMuted:"#d1c6d8",headerHeight:92,headerAlign:"left",showStatus:true,showModel:true,orbPosition:"left",
+    chatBg:"rgba(17,12,22,.74)",surface:"#2a2031",surface2:"#35283e",text:"#ffffff",muted:"#c8bfce",accent:"#9b5cff",accent2:"#e95cad",
+    userBubble:"#a84df2",userText:"#ffffff",assistantBubble:"#30243a",assistantText:"#ffffff",bubbleRadius:18,bubbleWidth:94,messageGap:13,showTimes:true,
+    inputBg:"#241b2b",inputText:"#ffffff",inputBorder:"rgba(255,255,255,.20)",inputRadius:15,inputHeight:50,buttonBg:"#8c4df2",buttonText:"#ffffff",tabText:"#c8bfce",secondaryButtonText:"#ffffff",
+    mainFont:"SF Pro / Sistema",nameFont:"SF Pro / Sistema",messageFont:"SF Pro / Sistema",buttonFont:"SF Pro / Sistema",fontSize:14,nameSize:20,fontWeight:500,lineHeight:1.55,letterSpacing:0,uppercaseName:true,textAlign:"left",
+    orbDesign:"orbital",orbPrimary:"#9158ff",orbSecondary:"#ef61b9",orbTertiary:"#6dc9ff",orbGlow:"#9b5cff",orbSize:56,orbBrightness:100,orbSpeed:100,orbParticles:70,orbRingWidth:1,orbAnimation:true,voiceReactive:true,lowPower:false,motionMode:"full",
+    messageAccent:"#2f7cf6",teamIncoming:"#eef3fb",teamOutgoing:"#dfeaff",teamText:"#172033",panelMode:"normal",mobileHeight:"70"
+  };
+
+  let draft = null;
+  let applied = null;
+  let activeSection = "general";
+  let previewDevice = "desktop";
+  let previewMode = "expanded";
+  let assetUrl = "";
+  let assetUrlId = "";
+  let lastBackgroundVerification = {ok:false,reason:"Sin verificar",at:""};
+  let mountedRoot = null;
+
+  const rows = v => Array.isArray(v) ? v : [];
+  const esc = v => String(v ?? "").replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+  const clamp = (v,min,max,fallback) => { const n=Number(v); return Number.isFinite(n)?Math.min(max,Math.max(min,n)):fallback; };
+  const hex = (v,fallback) => /^#[0-9a-f]{6}$/i.test(String(v||"")) ? String(v).toLowerCase() : fallback;
+  const cssColor = (v,fallback) => { const s=String(v||"").trim(); return /^#[0-9a-f]{6}$/i.test(s)||/^rgba?\([\d\s,.%]+\)$/i.test(s) ? s : fallback; };
+  const me = () => { try{return window.member || member || {}}catch{return window.member||{}} };
+  const userId = () => String(me()?.id||me()?.auth_user_id||"guest").replace(/[^a-zA-Z0-9_-]/g,"").slice(0,80)||"guest";
+  const isManager = () => { try{return !!(window.isDirector?.()||window.isSupervisor?.())}catch{return false} };
+  const storageKey = base => `${base}:${userId()}`;
+  const clone = v => JSON.parse(JSON.stringify(v));
+  const fontCss = name => FONTS[name] || FONTS["SF Pro / Sistema"];
+  const notify = (title,detail="",type="success") => { try{window.premiumToast?.(title,detail,type)}catch{console.info(title,detail)} };
+
+  function normalize(raw){
+    const r=raw&&typeof raw==="object"?raw:{};
+    const theme=THEMES[r.theme]||{};
+    const s={...DEFAULTS,...theme,...r};
+    ["panelColor1","panelColor2","panelColor3","frameColor","headerColor1","headerColor2","headerText","headerMuted","text","muted","accent","accent2","userBubble","userText","assistantBubble","assistantText","inputBg","inputText","buttonBg","buttonText","tabText","secondaryButtonText","orbPrimary","orbSecondary","orbTertiary","orbGlow","messageAccent","teamIncoming","teamOutgoing","teamText"].forEach(k=>s[k]=hex(s[k],DEFAULTS[k]||"#ffffff"));
+    ["chatBg","surface","surface2","inputBorder"].forEach(k=>s[k]=cssColor(s[k],DEFAULTS[k]));
+    s.tabText=hex(r.tabText,s.muted||DEFAULTS.tabText);
+    s.secondaryButtonText=hex(r.secondaryButtonText,s.text||DEFAULTS.secondaryButtonText);
+    s.theme=THEMES[s.theme]?s.theme:"midnight";
+    s.backgroundType=["solid","gradient","image","texture","pattern","animated"].includes(s.backgroundType)?s.backgroundType:"gradient";
+    s.backgroundPosition=["center","top","bottom","left","right"].includes(s.backgroundPosition)?s.backgroundPosition:"center";
+    s.backgroundSize=["cover","contain","auto"].includes(s.backgroundSize)?s.backgroundSize:"cover";
+    s.backgroundRepeat=["no-repeat","repeat","repeat-x","repeat-y"].includes(s.backgroundRepeat)?s.backgroundRepeat:"no-repeat";
+    s.backgroundPattern=["none","petals","grid","dots","aurora","soft","glass"].includes(s.backgroundPattern)?s.backgroundPattern:"none";
+    s.backgroundMotion=["none","subtle"].includes(s.backgroundMotion)?s.backgroundMotion:"none";
+    s.frameStyle=["minimal","flat","technology","holographic"].includes(s.frameStyle)?s.frameStyle:"minimal";
+    s.headerAlign=["left","center","right"].includes(s.headerAlign)?s.headerAlign:"left";
+    s.orbPosition=["left","center","right"].includes(s.orbPosition)?s.orbPosition:"left";
+    s.textAlign=["left","center"].includes(s.textAlign)?s.textAlign:"left";
+    s.panelMode=["normal","compact","orb"].includes(s.panelMode)?s.panelMode:"normal";
+    s.mobileHeight=["35","70","100"].includes(String(s.mobileHeight))?String(s.mobileHeight):"70";
+    s.mainFont=FONTS[s.mainFont]?s.mainFont:"SF Pro / Sistema";s.nameFont=FONTS[s.nameFont]?s.nameFont:s.mainFont;s.messageFont=FONTS[s.messageFont]?s.messageFont:s.mainFont;s.buttonFont=FONTS[s.buttonFont]?s.buttonFont:s.mainFont;
+    s.orbDesign=ORBS[s.orbDesign]?s.orbDesign:"orbital";
+    s.motionMode=["full","moderate","low","off"].includes(s.motionMode)?s.motionMode:"full";
+    ["gradientAngle","overlay","brightness","saturation","blur","panelOpacity","frameWidth","frameOpacity","panelRadius","shadowStrength","glowStrength","headerHeight","bubbleRadius","bubbleWidth","messageGap","inputRadius","inputHeight","fontSize","nameSize","fontWeight","lineHeight","letterSpacing","orbSize","orbBrightness","orbSpeed","orbParticles","orbRingWidth"].forEach(k=>s[k]=Number(s[k]));
+    s.gradientAngle=clamp(s.gradientAngle,0,360,155);s.overlay=clamp(s.overlay,0,80,22);s.brightness=clamp(s.brightness,60,140,100);s.saturation=clamp(s.saturation,0,180,100);s.blur=clamp(s.blur,0,18,0);s.panelOpacity=clamp(s.panelOpacity,70,100,100);s.frameWidth=clamp(s.frameWidth,0,5,1);s.frameOpacity=clamp(s.frameOpacity,0,100,25);s.panelRadius=clamp(s.panelRadius,10,42,24);s.shadowStrength=clamp(s.shadowStrength,0,80,34);s.glowStrength=clamp(s.glowStrength,0,60,0);s.headerHeight=clamp(s.headerHeight,72,150,92);s.bubbleRadius=clamp(s.bubbleRadius,6,32,18);s.bubbleWidth=clamp(s.bubbleWidth,60,100,94);s.messageGap=clamp(s.messageGap,4,28,13);s.inputRadius=clamp(s.inputRadius,5,30,15);s.inputHeight=clamp(s.inputHeight,42,90,50);s.fontSize=clamp(s.fontSize,13,20,14);s.nameSize=clamp(s.nameSize,16,34,20);s.fontWeight=clamp(s.fontWeight,400,800,500);s.lineHeight=clamp(s.lineHeight,1.3,2,1.55);s.letterSpacing=clamp(s.letterSpacing,-.2,2,0);s.orbSize=clamp(s.orbSize,38,92,56);s.orbBrightness=clamp(s.orbBrightness,60,160,100);s.orbSpeed=clamp(s.orbSpeed,35,220,100);s.orbParticles=clamp(s.orbParticles,0,100,70);s.orbRingWidth=clamp(s.orbRingWidth,0,4,1);
+    ["showStatus","showModel","showTimes","uppercaseName","orbAnimation","voiceReactive","lowPower"].forEach(k=>s[k]=s[k]!==false);
+    s.backgroundAssetId=String(s.backgroundAssetId||"").replace(/[^a-zA-Z0-9_-]/g,"").slice(0,120);
+    return s;
+  }
+
+  function openDb(){return new Promise((resolve,reject)=>{const req=indexedDB.open(DB_NAME,1);req.onupgradeneeded=()=>{if(!req.result.objectStoreNames.contains(DB_STORE))req.result.createObjectStore(DB_STORE,{keyPath:"id"})};req.onsuccess=()=>resolve(req.result);req.onerror=()=>reject(req.error)})}
+  async function putAsset(blob){const db=await openDb(),id=`bg_${Date.now()}_${Math.random().toString(36).slice(2,8)}`;await new Promise((resolve,reject)=>{const tx=db.transaction(DB_STORE,"readwrite");tx.objectStore(DB_STORE).put({id,blob,createdAt:new Date().toISOString(),size:blob.size,type:blob.type});tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close();return id}
+  async function getAsset(id){if(!id)return null;const db=await openDb();const row=await new Promise((resolve,reject)=>{const tx=db.transaction(DB_STORE,"readonly");const req=tx.objectStore(DB_STORE).get(id);req.onsuccess=()=>resolve(req.result||null);req.onerror=()=>reject(req.error)});db.close();return row}
+  async function deleteAsset(id){if(!id)return;const db=await openDb();await new Promise((resolve,reject)=>{const tx=db.transaction(DB_STORE,"readwrite");tx.objectStore(DB_STORE).delete(id);tx.oncomplete=resolve;tx.onerror=()=>reject(tx.error)});db.close()}
+
+  function loadJson(key,fallback){try{return JSON.parse(localStorage.getItem(key)||"null")??fallback}catch{return fallback}}
+  function saveJson(key,value){try{localStorage.setItem(key,JSON.stringify(value));return true}catch{return false}}
+  function loadEffective(){const personal=loadJson(storageKey(PERSONAL_KEY),null);const global=loadJson(GLOBAL_FALLBACK_KEY,null);return normalize(personal||global||DEFAULTS)}
+  function loadDraft(){return normalize(loadJson(storageKey(DRAFT_KEY),loadEffective()))}
+  function customThemes(){return rows(loadJson(storageKey(THEMES_KEY),[])).map(x=>({id:String(x.id||""),name:String(x.name||"Tema personalizado"),style:normalize(x.style)})).slice(-20)}
+  function saveCustomThemes(list){return saveJson(storageKey(THEMES_KEY),list.slice(-20))}
+
+  function rgba(hexValue,alpha){const h=hex(hexValue,"#000000").slice(1),n=parseInt(h,16);return `rgba(${(n>>16)&255},${(n>>8)&255},${n&255},${alpha})`}
+  function luminance(color){const h=hex(color,"#000000").slice(1),rgb=[0,2,4].map(i=>parseInt(h.slice(i,i+2),16)/255).map(v=>v<=.03928?v/12.92:Math.pow((v+.055)/1.055,2.4));return .2126*rgb[0]+.7152*rgb[1]+.0722*rgb[2]}
+  function contrast(a,b){const l1=luminance(a),l2=luminance(b);return (Math.max(l1,l2)+.05)/(Math.min(l1,l2)+.05)}
+  function legibilityIssues(s){const issues=[];if(contrast(s.text,s.panelColor1)<4.5)issues.push("Texto principal");if(contrast(s.userText,s.userBubble)<4.5)issues.push("Mensajes del usuario");if(contrast(s.assistantText,s.assistantBubble)<4.5)issues.push("Mensajes de SAKURA");if(contrast(s.inputText,s.inputBg)<4.5)issues.push("Caja de escritura");if(contrast(s.buttonText,s.buttonBg)<4.5)issues.push("Botones principales");if(contrast(s.tabText,s.panelColor1)<4.5)issues.push("Pestañas");if(contrast(s.secondaryButtonText,s.surface)<4.5)issues.push("Botones secundarios");if(s.fontSize<13)issues.push("Tamaño de mensajes");return issues}
+  function autoContrast(s){const choose=bg=>contrast("#ffffff",bg)>=contrast("#111111",bg)?"#ffffff":"#111111";return normalize({...s,text:choose(s.panelColor1),userText:choose(s.userBubble),assistantText:choose(s.assistantBubble),inputText:choose(s.inputBg),headerText:choose(s.headerColor1),buttonText:choose(s.buttonBg),tabText:choose(s.panelColor1),secondaryButtonText:choose(s.surface),fontSize:Math.max(14,s.fontSize),lineHeight:Math.max(1.5,s.lineHeight)})}
+
+  function patternLayer(s){
+    if(s.backgroundPattern==="petals")return "radial-gradient(ellipse at 18% 20%,rgba(255,184,215,.24) 0 2%,transparent 3%),radial-gradient(ellipse at 78% 32%,rgba(255,230,240,.18) 0 1.6%,transparent 2.7%)";
+    if(s.backgroundPattern==="grid")return "linear-gradient(rgba(48,215,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(48,215,255,.08) 1px,transparent 1px)";
+    if(s.backgroundPattern==="dots")return "radial-gradient(circle,rgba(255,255,255,.12) 1px,transparent 1.8px)";
+    if(s.backgroundPattern==="aurora")return "radial-gradient(circle at 5% 0%,rgba(75,208,255,.26),transparent 35%),radial-gradient(circle at 95% 15%,rgba(237,98,190,.22),transparent 33%)";
+    if(s.backgroundPattern==="soft")return "radial-gradient(circle at 85% 5%,rgba(255,142,203,.28),transparent 34%)";
+    if(s.backgroundPattern==="glass")return "linear-gradient(115deg,rgba(255,255,255,.12),transparent 36%,rgba(255,255,255,.07) 64%,transparent)";
+    return "none";
+  }
+
+  function clearAssetUrl(){if(assetUrl){try{URL.revokeObjectURL(assetUrl)}catch{}}assetUrl="";assetUrlId=""}
+  async function resolveAssetUrl(style,{force=false}={}){
+    const id=String(style?.backgroundAssetId||"");
+    if(!id){clearAssetUrl();return "none"}
+    if(!force&&assetUrl&&assetUrlId===id)return `url("${assetUrl.replace(/["\\]/g,"")}")`;
+    try{
+      const row=await getAsset(id);if(!row?.blob){clearAssetUrl();return "none"}
+      const next=URL.createObjectURL(row.blob);clearAssetUrl();assetUrl=next;assetUrlId=id;
+      return `url("${assetUrl.replace(/["\\]/g,"")}")`;
+    }catch(error){clearAssetUrl();console.warn("[SAKURA Background] No se pudo recuperar el recurso",error);return "none"}
+  }
+  async function verifyBlobDecodes(blob){
+    if(!blob)throw new Error("La imagen guardada está vacía.");
+    const url=URL.createObjectURL(blob);
+    try{await new Promise((resolve,reject)=>{const img=new Image();const timer=setTimeout(()=>reject(new Error("La imagen tardó demasiado en cargar.")),8000);img.onload=()=>{clearTimeout(timer);resolve()};img.onerror=()=>{clearTimeout(timer);reject(new Error("El archivo WebP no pudo decodificarse."))};img.src=url})}
+    finally{URL.revokeObjectURL(url)}
+  }
+  async function verifyBackgroundApplied(style=applied){
+    const s=normalize(style||{});
+    if(s.backgroundType!=="image"||!s.backgroundAssetId){lastBackgroundVerification={ok:false,reason:"No hay una imagen aplicada.",at:new Date().toISOString()};return lastBackgroundVerification}
+    let panel=document.getElementById("sakuraNativePanel");
+    if(!panel&&window.INBESTIGA_SAKURA_LOADER?.load){
+      try{await window.INBESTIGA_SAKURA_LOADER.load();await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));panel=document.getElementById("sakuraNativePanel")}catch(error){console.info("[SAKURA Background] El panel se verificará al abrirse",error?.message||error)}
+    }
+    const row=await getAsset(s.backgroundAssetId).catch(()=>null);
+    if(!row?.blob){lastBackgroundVerification={ok:false,reason:"La imagen no existe en IndexedDB.",at:new Date().toISOString()};return lastBackgroundVerification}
+    await verifyBlobDecodes(row.blob);
+    const image=await resolveAssetUrl(s);
+    if(image==="none"){lastBackgroundVerification={ok:false,reason:"No se pudo crear la URL visual.",at:new Date().toISOString()};return lastBackgroundVerification}
+    rootApplyBackgroundVariables(s,image);
+    await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
+    const cssVar=getComputedStyle(document.documentElement).getPropertyValue("--sk-panel-image").trim();
+    const panelBg=panel?getComputedStyle(panel).backgroundImage:"";
+    const layerBg=panel?.querySelector(":scope > .sk-live-background-layer")?getComputedStyle(panel.querySelector(":scope > .sk-live-background-layer")).backgroundImage:"";
+    const ok=cssVar.includes("blob:")&&(!panel||panelBg.includes("blob:")||layerBg.includes("blob:"));
+    lastBackgroundVerification={ok,reason:ok?"Imagen visible en el panel real.":"La imagen está guardada, pero una regla visual todavía la oculta.",at:new Date().toISOString(),assetId:s.backgroundAssetId,size:row.blob.size};
+    document.dispatchEvent(new CustomEvent("sakura:background-verified",{detail:{...lastBackgroundVerification}}));
+    return lastBackgroundVerification;
+  }
+  function rootApplyBackgroundVariables(s,image){
+    const root=document.documentElement;
+    root.style.setProperty("--sk-panel-image",image);
+    root.style.setProperty("--sk-panel-image-position",s.backgroundPosition);
+    root.style.setProperty("--sk-panel-image-size",s.backgroundSize);
+    root.style.setProperty("--sk-panel-image-repeat",s.backgroundRepeat);
+    /* Compatibilidad con el workspace base: el mismo recurso alimenta la capa nueva y el fondo histórico. */
+    root.style.setProperty("--sk-custom-background-image",image);
+    root.style.setProperty("--sk-custom-background-position",s.backgroundPosition);
+    root.style.setProperty("--sk-custom-overlay",rgba("#08060c",s.overlay/100));
+    root.style.setProperty("--sk-custom-panel",s.panelColor1);
+    root.style.setProperty("--sk-custom-surface",s.surface);
+    root.style.setProperty("--sk-custom-surface-2",s.surface2);
+    root.style.setProperty("--sk-custom-text",s.text);
+    root.style.setProperty("--sk-custom-muted",s.muted);
+    root.style.setProperty("--sk-custom-accent",s.accent);
+    root.style.setProperty("--sk-custom-user-bubble",s.userBubble);
+    root.style.setProperty("--sk-custom-assistant-bubble",s.assistantBubble);
+    root.style.setProperty("--sk-custom-radius",`${s.panelRadius}px`);
+    root.dataset.sakuraBgType=s.backgroundType;
+    const panel=document.getElementById("sakuraNativePanel");
+    if(panel){panel.classList.toggle("sk-has-user-image",s.backgroundType==="image"&&image!=="none");panel.dataset.backgroundAssetId=s.backgroundAssetId||""}
+  }
+
+  async function apply(style,{persist=false}={}){
+    const s=normalize(style||applied||loadEffective());applied=s;
+    if(persist)saveJson(storageKey(PERSONAL_KEY),s);
+    const root=document.documentElement,resolvedImage=await resolveAssetUrl(s),image=s.backgroundType==="image"?resolvedImage:"none",pattern=["texture","pattern","animated"].includes(s.backgroundType)?patternLayer(s):"none";
+    const shadowAlpha=s.shadowStrength/100*.55,glowAlpha=s.glowStrength/100*.65;
+    const vars={
+      "--sk-font-main":fontCss(s.mainFont),"--sk-font-name":fontCss(s.nameFont),"--sk-font-message":fontCss(s.messageFont),"--sk-font-button":fontCss(s.buttonFont),"--sk-font-size":`${s.fontSize}px`,"--sk-name-size":`${s.nameSize}px`,"--sk-line-height":String(s.lineHeight),"--sk-letter-spacing":`${s.letterSpacing}px`,
+      "--sk-panel-color-1":s.panelColor1,"--sk-panel-color-2":s.backgroundType==="solid"?s.panelColor1:s.panelColor2,"--sk-panel-color-3":s.backgroundType==="solid"?s.panelColor1:s.panelColor3,"--sk-panel-gradient-angle":`${s.gradientAngle}deg`,"--sk-panel-image":image,"--sk-panel-pattern":pattern,"--sk-panel-image-position":s.backgroundPosition,"--sk-panel-image-size":s.backgroundSize,"--sk-panel-image-repeat":s.backgroundRepeat,"--sk-panel-overlay":rgba("#08060c",s.overlay/100),"--sk-panel-brightness":String(s.brightness/100),"--sk-panel-saturation":String(s.saturation/100),"--sk-panel-blur":`${s.blur}px`,"--sk-panel-opacity":String(s.panelOpacity/100),
+      "--sk-frame-color":s.frameColor,"--sk-frame-width":`${s.frameWidth}px`,"--sk-frame-opacity":String(s.frameOpacity/100),"--sk-panel-radius":`${s.panelRadius}px`,"--sk-panel-shadow":`0 22px 70px ${rgba("#140a1c",shadowAlpha)}`,"--sk-panel-glow":`0 0 ${Math.round(s.glowStrength*.7)}px ${rgba(s.frameColor,glowAlpha)}`,
+      "--sk-header-bg":`linear-gradient(145deg,${s.headerColor1},${s.headerColor2})`,"--sk-header-text":s.headerText,"--sk-header-muted":s.headerMuted,"--sk-header-height":`${s.headerHeight}px`,"--sk-chat-bg":s.chatBg,"--sk-surface":s.surface,"--sk-surface-2":s.surface2,"--sk-text":s.text,"--sk-muted":s.muted,"--sk-accent":s.accent,"--sk-accent-2":s.accent2,"--sk-user-bubble":s.userBubble,"--sk-user-text":s.userText,"--sk-assistant-bubble":s.assistantBubble,"--sk-assistant-text":s.assistantText,"--sk-bubble-radius":`${s.bubbleRadius}px`,"--sk-bubble-width":`${s.bubbleWidth}%`,"--sk-message-gap":`${s.messageGap}px`,"--sk-input-bg":s.inputBg,"--sk-input-text":s.inputText,"--sk-input-border":s.inputBorder,"--sk-input-radius":`${s.inputRadius}px`,"--sk-input-height":`${s.inputHeight}px`,"--sk-button-bg":s.buttonBg,"--sk-button-text":s.buttonText,"--sk-tab-text":s.tabText,"--sk-secondary-button-text":s.secondaryButtonText,
+      "--sk-orb-primary":s.orbPrimary,"--sk-orb-secondary":s.orbSecondary,"--sk-orb-tertiary":s.orbTertiary,"--sk-orb-glow":s.orbGlow,"--sk-orb-size":`${s.orbSize}px`,"--sk-orb-brightness":String(s.orbBrightness/100),"--sk-orb-speed":String(s.orbSpeed/100),"--sk-orb-particles":String(s.orbParticles/100),"--sk-orb-ring-width":`${s.orbRingWidth}px`,"--sk-message-accent":s.messageAccent,"--sk-team-in":s.teamIncoming,"--sk-team-out":s.teamOutgoing,"--sk-team-text":s.teamText
+    };
+    Object.entries(vars).forEach(([k,v])=>root.style.setProperty(k,v));
+    rootApplyBackgroundVariables(s,image);
+    root.dataset.sakuraMotionPolicy=s.motionMode;root.dataset.sakuraOrb=s.orbDesign;root.dataset.sakuraOrbAnimation=(s.orbAnimation&&s.motionMode!=="off")?"on":"off";root.dataset.sakuraLowPower=(s.lowPower||s.motionMode==="low")?"true":"false";root.dataset.sakuraBackgroundMotion=s.backgroundMotion;root.dataset.sakuraPattern=s.backgroundPattern;root.dataset.sakuraBgType=s.backgroundType;if(!document.hidden)root.dataset.sakuraVisible="true";
+    const panel=document.getElementById("sakuraNativePanel");if(panel){panel.dataset.panelMode=s.panelMode;panel.dataset.mobileHeight=s.mobileHeight;panel.dataset.frameStyle=s.frameStyle;panel.dataset.headerAlign=s.headerAlign;panel.dataset.orbPosition=s.orbPosition;panel.classList.toggle("sk-hide-status",!s.showStatus);panel.classList.toggle("sk-hide-model",!s.showModel);panel.classList.toggle("sk-hide-times",!s.showTimes)}
+    document.dispatchEvent(new CustomEvent("sakura:style-applied",{detail:clone(s)}));return s;
+  }
+
+  function themePreview(s){return `linear-gradient(${s.gradientAngle||145}deg,${s.panelColor2},${s.panelColor1} 62%,${s.panelColor3})`}
+  function orbPreview(o){return `radial-gradient(circle at 34% 28%,#fff 0 8%,${o.colors[1]} 12%,${o.colors[0]} 48%,${o.colors[2]} 78%,#11051f 100%)`}
+  function selectOptions(values,current){return values.map(v=>`<option value="${esc(v)}" ${String(v)===String(current)?"selected":""}>${esc(v)}</option>`).join("")}
+  function colorField(label,key,value,wide=false){return `<label class="skstudio-field ${wide?"wide":""}"><span>${esc(label)}</span><input type="color" data-skstudio-input="${key}" value="${esc(value)}"></label>`}
+  function rangeField(label,key,value,min,max,step=1,suffix=""){return `<label class="skstudio-field"><span>${esc(label)} · <b data-skstudio-value="${key}">${esc(value)}${esc(suffix)}</b></span><input type="range" min="${min}" max="${max}" step="${step}" data-skstudio-input="${key}" value="${esc(value)}"></label>`}
+  function selectField(label,key,value,options){return `<label class="skstudio-field"><span>${esc(label)}</span><select data-skstudio-input="${key}">${options.map(([id,name])=>`<option value="${esc(id)}" ${String(id)===String(value)?"selected":""}>${esc(name)}</option>`).join("")}</select></label>`}
+  function switchField(label,key,value){return `<label class="skstudio-switch"><strong>${esc(label)}</strong><input type="checkbox" data-skstudio-input="${key}" ${value?"checked":""}></label>`}
+
+  function previewStyle(s){
+    const pattern=patternLayer(s),asset=s.backgroundAssetId&&assetUrl?`url("${assetUrl.replace(/["\\]/g,"")}")`:"none";
+    const bg=`linear-gradient(${rgba("#08060c",s.overlay/100)},${rgba("#08060c",s.overlay/100)}),${pattern},${asset},linear-gradient(${s.gradientAngle}deg,${s.panelColor2},${s.panelColor1} 58%,${s.panelColor3})`;
+    return `--preview-bg:${bg};--preview-radius:${s.panelRadius}px;--preview-text:${s.text};--preview-header:linear-gradient(145deg,${s.headerColor1},${s.headerColor2});--preview-name-font:${fontCss(s.nameFont)};--preview-name-size:${s.nameSize}px;--preview-chat:${s.chatBg};--preview-font-size:${s.fontSize}px;--preview-line-height:${s.lineHeight};--preview-message-font:${fontCss(s.messageFont)};--preview-bubble-radius:${s.bubbleRadius}px;--preview-assistant:${s.assistantBubble};--preview-assistant-text:${s.assistantText};--preview-user:${s.userBubble};--preview-user-text:${s.userText};--preview-button:${s.buttonBg};--preview-button-text:${s.buttonText};--preview-tab-text:${s.tabText};--preview-secondary-button-text:${s.secondaryButtonText};--preview-orb:${orbPreview(ORBS[s.orbDesign])};--preview-orb-glow:${rgba(s.orbGlow,.65)}`;
+  }
+
+  function sectionMarkup(s){
+    const fontOptions=Object.keys(FONTS).map(x=>[x,x]);
+    const sections={
+      general:`<h3>Apariencia general</h3><p>Define la identidad completa de tu SAKURA. Los cambios permanecen como borrador hasta que pulses “Aplicar a mi SAKURA”.</p><div class="skstudio-grid cols3">${selectField("Tema base","theme",s.theme,Object.entries(THEMES).map(([id,t])=>[id,t.name]))}${selectField("Modo de panel","panelMode",s.panelMode,[["normal","Panel normal"],["compact","Barra compacta"],["orb","Solo presencia"]])}${selectField("Altura móvil","mobileHeight",s.mobileHeight,[["35","35 %"],["70","70 %"],["100","Pantalla completa"]])}${rangeField("Opacidad","panelOpacity",s.panelOpacity,70,100,1,"%")}${rangeField("Redondeado","panelRadius",s.panelRadius,10,42,1,"px")}${rangeField("Sombra","shadowStrength",s.shadowStrength,0,80,1,"%")}${rangeField("Resplandor","glowStrength",s.glowStrength,0,60,1,"%")}${selectField("Estilo de marco","frameStyle",s.frameStyle,[["minimal","Minimalista"],["flat","Plano"],["technology","Tecnológico"],["holographic","Holográfico"]])}${switchField("Modo de bajo consumo", "lowPower", s.lowPower)}</div>`,
+      background:`<h3>Fondo completo</h3><p>El fondo solo afecta a SAKURA. Nunca desenfoca el resto de Marketing Cloud.</p><div class="skstudio-grid cols3">${selectField("Tipo de fondo","backgroundType",s.backgroundType,[["solid","Color sólido"],["gradient","Degradado"],["image","Imagen"],["texture","Textura"],["pattern","Patrón tecnológico"],["animated","Animado ligero"]])}${colorField("Color principal","panelColor1",s.panelColor1)}${colorField("Color secundario","panelColor2",s.panelColor2)}${colorField("Color terciario","panelColor3",s.panelColor3)}${rangeField("Dirección","gradientAngle",s.gradientAngle,0,360,1,"°")}${selectField("Patrón","backgroundPattern",s.backgroundPattern,[["none","Ninguno"],["petals","Pétalos"],["grid","Cuadrícula"],["dots","Puntos"],["aurora","Aurora"],["soft","Luz suave"],["glass","Reflejo cristal"]])}${selectField("Movimiento","backgroundMotion",s.backgroundMotion,[["none","Sin movimiento"],["subtle","Movimiento suave"]])}${selectField("Posición","backgroundPosition",s.backgroundPosition,[["center","Centro"],["top","Arriba"],["bottom","Abajo"],["left","Izquierda"],["right","Derecha"]])}${selectField("Ajuste","backgroundSize",s.backgroundSize,[["cover","Cubrir"],["contain","Contener"],["auto","Tamaño real"]])}${selectField("Repetición","backgroundRepeat",s.backgroundRepeat,[["no-repeat","No repetir"],["repeat","Repetir"],["repeat-x","Horizontal"],["repeat-y","Vertical"]])}${rangeField("Oscurecimiento","overlay",s.overlay,0,80,1,"%")}${rangeField("Brillo","brightness",s.brightness,60,140,1,"%")}${rangeField("Saturación","saturation",s.saturation,0,180,1,"%")}${rangeField("Desenfoque interno","blur",s.blur,0,18,1,"px")}<div class="skstudio-field wide"><span>Imagen personal</span><div class="skstudio-safe"><button type="button" data-skstudio-upload>Subir y comprimir imagen</button><button type="button" data-skstudio-remove-image ${s.backgroundAssetId?"":"disabled"}>Quitar imagen</button><small>${s.backgroundAssetId?"Imagen almacenada en IndexedDB, fuera de localStorage.":"JPG, PNG o WebP. Máximo 10 MB; se comprime a WebP."}</small></div><div class="skstudio-safe"><button type="button" data-skstudio-test-background ${s.backgroundAssetId?"":"disabled"}>Probar fondo en SAKURA</button><button type="button" data-skstudio-repair-background ${s.backgroundAssetId?"":"disabled"}>Reparar fondo</button><small>${lastBackgroundVerification.ok?"✓ "+esc(lastBackgroundVerification.reason):esc(lastBackgroundVerification.reason)}</small></div></div></div>`,
+      frame:`<h3>Marco y encabezado</h3><p>Personaliza el contorno, la cabecera y los indicadores sin perder legibilidad.</p><div class="skstudio-grid cols3">${colorField("Color del marco","frameColor",s.frameColor)}${rangeField("Grosor","frameWidth",s.frameWidth,0,5,1,"px")}${rangeField("Opacidad","frameOpacity",s.frameOpacity,0,100,1,"%")}${colorField("Encabezado A","headerColor1",s.headerColor1)}${colorField("Encabezado B","headerColor2",s.headerColor2)}${colorField("Nombre","headerText",s.headerText)}${colorField("Estado y contexto","headerMuted",s.headerMuted)}${rangeField("Altura","headerHeight",s.headerHeight,72,150,1,"px")}${selectField("Alineación","headerAlign",s.headerAlign,[["left","Izquierda"],["center","Centro"],["right","Derecha"]])}${selectField("Posición de esfera","orbPosition",s.orbPosition,[["left","Izquierda"],["center","Centro"],["right","Derecha"]])}${switchField("Mostrar estado de conexión","showStatus",s.showStatus)}${switchField("Mostrar modelo activo","showModel",s.showModel)}</div>`,
+      chat:`<h3>Chat y mensajes</h3><p>Configura el fondo, las burbujas, los metadatos y la diferencia visual entre SAKURA y el usuario.</p><div class="skstudio-grid cols3">${colorField("Superficie principal","surface",hex(s.surface,"#2a2031"))}${colorField("Superficie secundaria","surface2",hex(s.surface2,"#35283e"))}${colorField("Texto principal","text",s.text)}${colorField("Texto secundario","muted",s.muted)}${colorField("Acento","accent",s.accent)}${colorField("Acento secundario","accent2",s.accent2)}${colorField("Burbuja del usuario","userBubble",s.userBubble)}${colorField("Texto del usuario","userText",s.userText)}${colorField("Burbuja de SAKURA","assistantBubble",s.assistantBubble)}${colorField("Texto de SAKURA","assistantText",s.assistantText)}${rangeField("Redondeado de burbuja","bubbleRadius",s.bubbleRadius,6,32,1,"px")}${rangeField("Ancho máximo","bubbleWidth",s.bubbleWidth,60,100,1,"%")}${rangeField("Separación","messageGap",s.messageGap,4,28,1,"px")}${switchField("Mostrar hora y metadatos","showTimes",s.showTimes)}<label class="skstudio-field wide"><span>Fondo del área de conversación</span><input type="text" data-skstudio-input="chatBg" value="${esc(s.chatBg)}" placeholder="rgba(...) o #RRGGBB"></label></div>`,
+      input:`<h3>Caja de escritura y botones</h3><p>Personaliza el compositor, los botones de voz, adjuntos, envío y limpieza.</p><div class="skstudio-grid cols3">${colorField("Fondo de escritura","inputBg",s.inputBg)}${colorField("Texto","inputText",s.inputText)}<label class="skstudio-field"><span>Borde</span><input type="text" data-skstudio-input="inputBorder" value="${esc(s.inputBorder)}"></label>${rangeField("Redondeado","inputRadius",s.inputRadius,5,30,1,"px")}${rangeField("Altura","inputHeight",s.inputHeight,42,90,1,"px")}${colorField("Color de botones principales","buttonBg",s.buttonBg)}${colorField("Texto de botones principales","buttonText",s.buttonText)}${colorField("Texto de pestañas","tabText",s.tabText)}${colorField("Texto de botones secundarios","secondaryButtonText",s.secondaryButtonText)}</div><div class="skstudio-safe"><button type="button" data-skstudio-auto-button-contrast>Corregir contraste de botones</button><small>Sincroniza pestañas, chips, Copiar, controles secundarios y botones principales con fondos legibles.</small></div>`,
+      typography:`<h3>Tipografía</h3><p>Utiliza fuentes seguras de la plataforma. Los tamaños mínimos impiden que el chat vuelva a quedar ilegible.</p><div class="skstudio-grid cols3">${selectField("Fuente general","mainFont",s.mainFont,fontOptions)}${selectField("Nombre SAKURA","nameFont",s.nameFont,fontOptions)}${selectField("Mensajes","messageFont",s.messageFont,fontOptions)}${selectField("Botones","buttonFont",s.buttonFont,fontOptions)}${rangeField("Tamaño de mensaje","fontSize",s.fontSize,13,20,1,"px")}${rangeField("Tamaño del nombre","nameSize",s.nameSize,16,34,1,"px")}${selectField("Peso","fontWeight",s.fontWeight,[[400,"Regular"],[500,"Medio"],[600,"Semibold"],[700,"Negrita"],[800,"Extra negrita"]])}${rangeField("Interlineado","lineHeight",s.lineHeight,1.3,2,.05,"")}${rangeField("Espaciado","letterSpacing",s.letterSpacing,-.2,2,.1,"px")}${selectField("Alineación de mensajes","textAlign",s.textAlign,[["left","Izquierda"],["center","Centrada"]])}${switchField("Nombre en mayúsculas","uppercaseName",s.uppercaseName)}</div>`,
+      orb:`<h3>Esfera y animaciones</h3><p>Ocho diseños tecnológicos originales. No utilizan librerías externas ni bucles de JavaScript.</p><div class="skstudio-orb-grid">${Object.entries(ORBS).map(([id,o])=>`<button type="button" class="skstudio-orb-card ${s.orbDesign===id?"active":""}" data-skstudio-orb="${id}"><span class="skstudio-orb-preview"><i class="skstudio-orb-sample" style="--orb-preview:${orbPreview(o)};--orb-color:${o.colors[0]}"></i></span><strong>${esc(o.name)}</strong><small>${esc(o.desc)}</small></button>`).join("")}</div><div class="skstudio-grid cols3" style="margin-top:14px">${colorField("Color principal","orbPrimary",s.orbPrimary)}${colorField("Color secundario","orbSecondary",s.orbSecondary)}${colorField("Color terciario","orbTertiary",s.orbTertiary)}${colorField("Resplandor","orbGlow",s.orbGlow)}${rangeField("Tamaño","orbSize",s.orbSize,38,92,1,"px")}${rangeField("Brillo","orbBrightness",s.orbBrightness,60,160,1,"%")}${rangeField("Velocidad","orbSpeed",s.orbSpeed,35,220,1,"%")}${rangeField("Partículas","orbParticles",s.orbParticles,0,100,1,"%")}${rangeField("Anillos","orbRingWidth",s.orbRingWidth,0,4,1,"px")}${selectField("Nivel de animación","motionMode",s.motionMode,[["full","Completa"],["moderate","Moderada"],["low","Bajo consumo"],["off","Sin animación"]])}${switchField("Animación activa","orbAnimation",s.orbAnimation)}${switchField("Reacción a la voz","voiceReactive",s.voiceReactive)}<div class="skstudio-safe wide"><button type="button" data-skstudio-force-motion>Activar animaciones ahora</button><small>Fuerza el modo completo incluso si Windows usa reducción de movimiento. Puedes volver a cambiarlo aquí.</small></div></div>`,
+      themes:`<h3>Temas completos</h3><p>Aplica un tema integral y después modifica cualquier detalle. El tema Sakura Japón incluye pétalos ligeros y una esfera floral tecnológica.</p><div class="skstudio-theme-grid">${Object.entries(THEMES).map(([id,t])=>`<button type="button" class="skstudio-theme ${s.theme===id?"active":""}" data-skstudio-theme="${id}"><span class="skstudio-theme-preview" style="--theme-preview:${themePreview(t)}"></span><strong>${esc(t.name)}</strong><small>Panel, chat, fuentes, esfera y controles</small></button>`).join("")}${customThemes().map(t=>`<button type="button" class="skstudio-theme" data-skstudio-custom-theme="${esc(t.id)}"><span class="skstudio-theme-preview" style="--theme-preview:${themePreview(t.style)}"></span><strong>${esc(t.name)}</strong><small>Tema personal</small></button>`).join("")}</div>`,
+      messaging:`<h3>Mensajería integrada</h3><p>Personaliza la pestaña Mensajes. La mensajería real funciona aunque Ollama o el puente local estén apagados.</p><div class="skstudio-grid cols3">${colorField("Acento de mensajería","messageAccent",s.messageAccent)}${colorField("Mensaje recibido","teamIncoming",s.teamIncoming)}${colorField("Mensaje enviado","teamOutgoing",s.teamOutgoing)}${colorField("Texto de mensajes","teamText",s.teamText)}</div>`,
+      responsive:`<h3>Responsive y accesibilidad</h3><p>Controla el comportamiento en laptop, tablet y celular, y verifica que las configuraciones sean legibles.</p><div class="skstudio-grid cols3">${selectField("Modo inicial","panelMode",s.panelMode,[["normal","Panel normal"],["compact","Compacto"],["orb","Solo esfera"]])}${selectField("Hoja móvil","mobileHeight",s.mobileHeight,[["35","35 %"],["70","70 %"],["100","100 %"]])}${switchField("Bajo consumo","lowPower",s.lowPower)}${switchField("Mostrar estado","showStatus",s.showStatus)}${switchField("Mostrar modelo","showModel",s.showModel)}${switchField("Mostrar horas","showTimes",s.showTimes)}</div><div class="skstudio-safe"><button type="button" data-skstudio-auto-contrast>Corregir contraste automáticamente</button><button type="button" data-skstudio-restore-legibility>Restaurar legibilidad</button></div>`
+    };
+    return Object.entries(sections).map(([id,html])=>`<section class="skstudio-section ${activeSection===id?"active":""}" data-skstudio-section="${id}">${html}</section>`).join("");
+  }
+
+  function markup(){
+    draft=loadDraft();const issues=legibilityIssues(draft);const canGlobal=isManager();
+    return `<div class="skstudio-shell"><div class="skstudio-toolbar"><button type="button" data-skstudio-save-draft>Guardar borrador</button><button type="button" class="primary" data-skstudio-apply>Aplicar a mi SAKURA</button><button type="button" data-skstudio-publish-global ${canGlobal?"":"disabled"}>Publicar como estilo global</button><button type="button" data-skstudio-duplicate>Duplicar tema</button><button type="button" data-skstudio-export>Exportar tema</button><label class="skstudio-file-label">Importar tema<input class="skstudio-import" id="skstudioImportFile" type="file" accept="application/json,.json"></label><button type="button" data-skstudio-reset>Restaurar apariencia</button><button type="button" data-skstudio-restore-legibility>Restaurar legibilidad</button><span class="spacer"></span><button type="button" data-skstudio-open-sakura>Abrir SAKURA</button></div><div class="skstudio-status" id="skstudioStatus">Los cambios actuales son una vista previa; todavía no modifican tu estilo guardado.</div><div class="skstudio-layout"><div class="skstudio-editor"><nav class="skstudio-section-nav">${[["general","General"],["background","Fondo"],["frame","Marco y cabecera"],["chat","Chat"],["input","Escritura"],["typography","Letras"],["orb","Esfera"],["themes","Temas"],["messaging","Mensajes"],["responsive","Responsive"]].map(([id,n])=>`<button type="button" data-skstudio-nav="${id}" class="${activeSection===id?"active":""}">${n}</button>`).join("")}</nav><div class="skstudio-warning ${issues.length?"show":""}" id="skstudioWarning">Esta combinación puede dificultar la lectura: <strong>${esc(issues.join(", ")||"sin problemas detectados")}</strong>.</div>${sectionMarkup(draft)}</div><div class="skstudio-preview-card"><div class="skstudio-device-tabs">${[["desktop","PC"],["laptop","Laptop"],["tablet","Tablet"],["mobile","Móvil"],["compact","Compacta"],["orb","Esfera"]].map(([id,n])=>`<button type="button" data-skstudio-device="${id}" class="${previewDevice===id?"active":""}">${n}</button>`).join("")}</div><div class="skstudio-preview-stage" data-device="${previewDevice}"><div id="skstudioPreviewPanel" class="skstudio-preview-panel ${previewDevice==="compact"?"compact":previewDevice==="orb"?"orb":""}" style="${previewStyle(draft)}"><header class="skstudio-preview-head"><i class="skstudio-preview-orb"></i><div><strong>${draft.uppercaseName?"SAKURA":"Sakura"}</strong><span>Lista · compañera de trabajo</span></div><div class="skstudio-preview-controls"><i>⇄</i><i>—</i><i>×</i></div></header><nav class="skstudio-preview-tabs"><b>Chat</b><b>Mensajes</b><b>Documentos</b><b>Estudio</b><b>Ajustes</b></nav><main class="skstudio-preview-chat"><div class="a">Estoy aquí para ayudarte con calma, claridad y contexto.</div><div class="u">Organiza mis pendientes de hoy.</div><div class="a">Empecemos por la tarea que vence primero y después revisamos los bloqueos.</div></main><footer class="skstudio-preview-input"><span>Escríbele a Sakura…</span><b>→</b></footer></div></div></div></div><input id="skstudioBackgroundFile" class="skstudio-import" type="file" accept="image/jpeg,image/png,image/webp"></div>`;
+  }
+
+  function refreshPreview(){
+    if(!mountedRoot)return;const panel=mountedRoot.querySelector("#skstudioPreviewPanel");if(panel){panel.setAttribute("style",previewStyle(draft));panel.className=`skstudio-preview-panel ${previewDevice==="compact"?"compact":previewDevice==="orb"?"orb":""}`;panel.querySelector(".skstudio-preview-head strong").textContent=draft.uppercaseName?"SAKURA":"Sakura"}
+    mountedRoot.querySelectorAll("[data-skstudio-value]").forEach(el=>{const k=el.dataset.skstudioValue;el.textContent=`${draft[k]}${["overlay","brightness","saturation","panelOpacity","frameOpacity","shadowStrength","glowStrength","bubbleWidth","orbBrightness","orbSpeed","orbParticles"].includes(k)?"%": ["panelRadius","frameWidth","headerHeight","bubbleRadius","messageGap","inputRadius","inputHeight","fontSize","nameSize","letterSpacing","orbSize","orbRingWidth","blur"].includes(k)?"px":k==="gradientAngle"?"°":""}`});
+    mountedRoot.querySelectorAll("[data-skstudio-theme]").forEach(b=>b.classList.toggle("active",b.dataset.skstudioTheme===draft.theme));mountedRoot.querySelectorAll("[data-skstudio-orb]").forEach(b=>b.classList.toggle("active",b.dataset.skstudioOrb===draft.orbDesign));
+    const issues=legibilityIssues(draft),warning=mountedRoot.querySelector("#skstudioWarning");if(warning){warning.classList.toggle("show",!!issues.length);warning.innerHTML=issues.length?`Esta combinación puede dificultar la lectura: <strong>${esc(issues.join(", "))}</strong>.`:""}
+  }
+
+  async function compressImage(file){
+    if(!/^image\/(jpeg|png|webp)$/i.test(file.type))throw new Error("Usa una imagen JPG, PNG o WebP.");if(file.size>10*1024*1024)throw new Error("La imagen supera 10 MB.");
+    const bitmap=await createImageBitmap(file);const max=1600,scale=Math.min(1,max/Math.max(bitmap.width,bitmap.height)),canvas=document.createElement("canvas");canvas.width=Math.max(1,Math.round(bitmap.width*scale));canvas.height=Math.max(1,Math.round(bitmap.height*scale));const ctx=canvas.getContext("2d",{alpha:false});ctx.drawImage(bitmap,0,0,canvas.width,canvas.height);bitmap.close?.();
+    let quality=.78,blob=await new Promise(resolve=>canvas.toBlob(resolve,"image/webp",quality));while(blob&&blob.size>MAX_IMAGE_BYTES&&quality>.48){quality-=.08;blob=await new Promise(resolve=>canvas.toBlob(resolve,"image/webp",quality))}if(!blob||blob.size>MAX_IMAGE_BYTES)throw new Error("La imagen sigue siendo demasiado pesada. Usa una más pequeña.");return blob;
+  }
+
+  async function publishGlobal(){
+    if(!isManager())return notify("Sin permiso","Solo Dirección puede publicar el estilo global.","warning");
+    const style=normalize(draft);saveJson(GLOBAL_FALLBACK_KEY,style);
+    try{
+      const client=window.sb || (typeof sb!=="undefined"?sb:null);if(!client?.rpc)throw new Error("Modo local");
+      const save=await client.rpc("ibm_v178_save_design_draft",{p_name:`SAKURA Global · ${new Date().toLocaleDateString("es-PE")}`,p_settings:{mode:"sakura",primary:style.accent,secondary:style.accent2,accent:style.buttonBg,background:style.panelColor1,surface:style.surface,surface2:style.surface2,text:style.text,muted:style.muted,radius:style.panelRadius,baseSize:style.fontSize,headingScale:1,navWidth:0,fontBody:style.mainFont,fontHeading:style.nameFont,density:"normal",shadow:"normal",motion:style.lowPower?"reduced":"normal"},p_module_settings:{sakura:style},p_asset_slots:{}});if(save.error)throw save.error;const id=save.data?.id||save.data;if(!id)throw new Error("No se recibió la versión guardada.");const pub=await client.rpc("ibm_v178_publish_design",{p_version_id:id});if(pub.error)throw pub.error;notify("Estilo global publicado","Será el predeterminado para quienes no tengan una personalización propia.");
+    }catch(error){notify("Estilo global guardado localmente","La sincronización global requiere el sistema de Diseño v17.8 activo. Tu estilo no se perdió.","warning")}
+  }
+
+  function duplicateTheme(){const name=prompt("Nombre del tema personalizado:",`${THEMES[draft.theme]?.name||"Mi tema"} copia`);if(!name)return;const list=customThemes();list.push({id:`custom_${Date.now()}`,name:String(name).slice(0,60),style:normalize(draft)});saveCustomThemes(list);notify("Tema duplicado","Se guardó en tu biblioteca personal.");rerender()}
+  function exportTheme(){const payload={schema:"inbestiga-sakura-theme",version:1,name:THEMES[draft.theme]?.name||"Tema SAKURA",style:{...normalize(draft),backgroundAssetId:""}};const json=JSON.stringify(payload,null,2);const blob=new Blob([json],{type:"application/json"}),url=URL.createObjectURL(blob),a=document.createElement("a");a.href=url;a.download=`sakura_tema_${Date.now()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+  async function importTheme(file){if(!file)return;if(file.size>MAX_THEME_BYTES)throw new Error("El tema supera el tamaño permitido.");const raw=await file.text();if(/<script|javascript:|expression\s*\(/i.test(raw))throw new Error("El archivo contiene contenido no permitido.");const parsed=JSON.parse(raw);if(parsed.schema!=="inbestiga-sakura-theme"||!parsed.style)throw new Error("El archivo no es un tema de SAKURA válido.");draft=normalize({...parsed.style,backgroundAssetId:""});saveJson(storageKey(DRAFT_KEY),draft);notify("Tema importado","Revisa la vista previa y aplícalo cuando estés conforme.");rerender()}
+
+  async function handleClick(event){
+    const target=event.target.closest("button,[data-skstudio-upload],.skstudio-file-label");if(!target)return false;
+    if(target.dataset.skstudioNav){activeSection=target.dataset.skstudioNav;rerender();return true}
+    if(target.dataset.skstudioTheme){const theme=THEMES[target.dataset.skstudioTheme];draft=normalize({...draft,...theme,tabText:theme.tabText||theme.muted||theme.text,secondaryButtonText:theme.secondaryButtonText||theme.text,theme:target.dataset.skstudioTheme});refreshPreview();return true}
+    if(target.dataset.skstudioCustomTheme){const found=customThemes().find(x=>x.id===target.dataset.skstudioCustomTheme);if(found){draft=normalize(found.style);refreshPreview()}return true}
+    if(target.dataset.skstudioOrb){draft=normalize({...draft,orbDesign:target.dataset.skstudioOrb,orbPrimary:ORBS[target.dataset.skstudioOrb].colors[0],orbSecondary:ORBS[target.dataset.skstudioOrb].colors[1],orbTertiary:ORBS[target.dataset.skstudioOrb].colors[2]});refreshPreview();return true}
+    if(target.dataset.skstudioDevice){previewDevice=target.dataset.skstudioDevice;rerender();return true}
+    if(target.hasAttribute("data-skstudio-upload")){mountedRoot?.querySelector("#skstudioBackgroundFile")?.click();return true}
+    if(target.hasAttribute("data-skstudio-remove-image")){const old=draft.backgroundAssetId;draft.backgroundAssetId="";if(old)await deleteAsset(old);await resolveAssetUrl(draft);refreshPreview();return true}
+    if(target.hasAttribute("data-skstudio-save-draft")){saveJson(storageKey(DRAFT_KEY),draft);notify("Borrador guardado","Todavía no se aplicó a tu SAKURA.");return true}
+    if(target.hasAttribute("data-skstudio-apply")){saveJson(storageKey(PERSONAL_KEY),draft);saveJson(storageKey(DRAFT_KEY),draft);await apply(draft,{persist:true});notify("Apariencia aplicada","Solo afecta a tu SAKURA.");return true}
+    if(target.hasAttribute("data-skstudio-publish-global")){await publishGlobal();return true}
+    if(target.hasAttribute("data-skstudio-duplicate")){duplicateTheme();return true}
+    if(target.hasAttribute("data-skstudio-export")){exportTheme();return true}
+    if(target.hasAttribute("data-skstudio-reset")){const old=draft.backgroundAssetId;draft=normalize(loadJson(GLOBAL_FALLBACK_KEY,DEFAULTS));saveJson(storageKey(DRAFT_KEY),draft);saveJson(storageKey(PERSONAL_KEY),draft);if(old&&!draft.backgroundAssetId)await deleteAsset(old);await apply(draft,{persist:true});notify("Apariencia restaurada","SAKURA volvió al estilo predeterminado.");rerender();return true}
+    if(target.hasAttribute("data-skstudio-restore-legibility")){draft=normalize({...draft,fontSize:14,nameSize:20,lineHeight:1.55,letterSpacing:0,text:"#ffffff",muted:"#c8bfce",userText:"#ffffff",assistantText:"#ffffff",inputText:"#ffffff",headerText:"#ffffff",buttonText:"#ffffff",tabText:"#ffffff",secondaryButtonText:"#ffffff",panelColor1:"#17131d",userBubble:"#a84df2",assistantBubble:"#30243a",inputBg:"#241b2b",buttonBg:"#8c4df2"});refreshPreview();notify("Legibilidad restaurada","Revisa y aplica los cambios.");return true}
+    if(target.hasAttribute("data-skstudio-auto-contrast")){draft=autoContrast(draft);refreshPreview();notify("Contraste corregido","Los textos se ajustaron para mejorar la lectura.");return true}
+    if(target.hasAttribute("data-skstudio-auto-button-contrast")){const choose=bg=>contrast("#ffffff",bg)>=contrast("#111111",bg)?"#ffffff":"#111111";draft=normalize({...draft,buttonText:choose(draft.buttonBg),tabText:choose(draft.panelColor1),secondaryButtonText:choose(draft.surface)});refreshPreview();notify("Botones sincronizados","Pestañas, chips, Copiar y botones principales ya usan colores legibles.");return true}
+    if(target.hasAttribute("data-skstudio-force-motion")){draft=normalize({...draft,motionMode:"full",orbAnimation:true,lowPower:false});saveJson(storageKey(DRAFT_KEY),draft);saveJson(storageKey(PERSONAL_KEY),draft);await apply(draft,{persist:true});window.INBESTIGA_SAKURA_LIVE_VISUALS?.setMotionMode?.("full");notify("Animaciones activadas","Anillos, escáner, pulsos y partículas están en modo completo.");rerender();return true}
+    if(target.hasAttribute("data-skstudio-test-background")){const result=await verifyBackgroundApplied(draft).catch(error=>({ok:false,reason:error.message||String(error)}));notify(result.ok?"Fondo verificado":"Fondo no visible",result.reason,result.ok?"success":"error");return true}
+    if(target.hasAttribute("data-skstudio-repair-background")){await apply(draft,{persist:true});const result=await verifyBackgroundApplied(draft).catch(error=>({ok:false,reason:error.message||String(error)}));window.INBESTIGA_SAKURA_LIVE_VISUALS?.repairBackground?.();notify(result.ok?"Fondo reparado":"No se pudo reparar",result.reason,result.ok?"success":"error");rerender();return true}
+    if(target.hasAttribute("data-skstudio-open-sakura")){window.INBESTIGA_SAKURA_LOADER?.load?.();return true}
+    return false;
+  }
+
+  function handleInput(event){const el=event.target;if(!el.matches("[data-skstudio-input]"))return false;const k=el.dataset.skstudioInput;let value=el.type==="checkbox"?el.checked:el.value;if(el.type==="range"||el.type==="number")value=Number(value);draft=normalize({...draft,[k]:value});refreshPreview();return true}
+  async function handleChange(event){
+    const el=event.target;
+    if(el.id==="skstudioBackgroundFile"&&el.files?.[0]){
+      try{
+        const blob=await compressImage(el.files[0]),old=draft.backgroundAssetId,id=await putAsset(blob);
+        const stored=await getAsset(id);if(!stored?.blob||stored.blob.size!==blob.size)throw new Error("La imagen no pudo confirmarse después de guardarla.");
+        await verifyBlobDecodes(stored.blob);
+        draft=normalize({...draft,backgroundAssetId:id,backgroundType:"image"});
+        if(old&&old!==id)await deleteAsset(old);
+        await apply(draft,{persist:true});
+        const fusionApi=window.INBESTIGA_SAKURA_ADAPTIVE_INTELLIGENCE?.fusion;
+        if(fusionApi?.analyze){try{await fusionApi.analyze();await fusionApi.applyProposal?.(0,true);draft=loadEffective()}catch(error){console.info("[SAKURA Background] La paleta automática continuará con el tema actual",error?.message||error)}}
+        const result=await verifyBackgroundApplied(draft);
+        if(!result.ok)throw new Error(result.reason);
+        notify("Fondo aplicado y verificado",`${Math.round(blob.size/1024)} KB en WebP. La fotografía ya está visible y SAKURA adaptó su interfaz.`);
+        rerender();
+      }catch(error){notify("No se pudo aplicar el fondo",error.message||String(error),"error")}
+      finally{el.value=""}
+      return true;
+    }
+    if(el.id==="skstudioImportFile"&&el.files?.[0]){try{await importTheme(el.files[0])}catch(error){notify("No se pudo importar",error.message||String(error),"error")}finally{el.value=""}return true}
+    return false;
+  }
+
+  function mount(root){mountedRoot=root;draft=loadDraft();resolveAssetUrl(draft).then(refreshPreview);if(root&&root.dataset.skstudioBound!=="1"){root.dataset.skstudioBound="1";root.addEventListener("click",handleClick);root.addEventListener("input",handleInput);root.addEventListener("change",handleChange)}refreshPreview()}
+  function rerender(){if(!mountedRoot)return;const content=mountedRoot.closest(".uve-content")||mountedRoot;content.innerHTML=markup();mount(content)}
+  function refreshUser(){draft=loadDraft();applied=loadEffective();return apply(applied)}
+  function health(){return{status:"ok",value:"SAKURA Personal Studio v17.14.1",detail:`Movimiento ${document.documentElement.dataset.sakuraMotionPolicy||"full"}; fondo ${lastBackgroundVerification.ok?"verificado":"pendiente"}; sin polling ni Realtime.`}}
+
+  document.addEventListener("visibilitychange",()=>{document.documentElement.dataset.sakuraVisible=document.hidden?"false":"true"},{passive:true});document.documentElement.dataset.sakuraVisible=document.hidden?"false":"true";
+  applied=loadEffective();draft=loadDraft();apply(applied);
+  try{window.INBESTIGA_QUALITY_CORE?.register?.(MODULE,{version:VERSION,mode:"local-personal-studio",polling:false,realtimeChannels:0,mutations:false})}catch{}
+  const api={version:VERSION,markup,mount,handleClick,handleInput,handleChange,apply,load:loadEffective,loadDraft,refreshUser,health,themes:THEMES,orbs:ORBS,verifyBackground:verifyBackgroundApplied,resolveAssetUrl,backgroundStatus:()=>({...lastBackgroundVerification})};
+  window.INBESTIGA_SAKURA_STUDIO=api;
+  window.INBESTIGA_SAKURA_APPEARANCE=api;
+})();

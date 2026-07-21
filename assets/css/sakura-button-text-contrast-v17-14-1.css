@@ -1,0 +1,52 @@
+/* INBESTIGA Marketing Cloud v17.14.1 · SAKURA Button Text Contrast & Studio Color Sync Hotfix */
+:root{
+  --sk-tab-text:var(--sk-muted,#c8bfce);
+  --sk-secondary-button-text:var(--sk-text,#ffffff);
+}
+/* Active/primary controls use the explicit primary button text configured in Personal Studio. */
+.sakura-native-panel .sk-tabs button.active,
+.sakura-native-panel .sk-send,
+.sakura-native-panel .sk-primary,
+.sakura-native-panel .sk-live-actions button:first-child,
+.sakura-native-panel .ska-actions button.sk-primary,
+.sakura-native-panel .ska-panel button.sk-primary,
+.sakura-native-panel .ska-review button.sk-primary,
+.sakura-native-panel .ska-tabs button.active{
+  color:var(--sk-button-text)!important;
+  -webkit-text-fill-color:var(--sk-button-text)!important;
+}
+/* Inactive tabs have their own editable color instead of inheriting the general panel text. */
+.sakura-native-panel .sk-tabs button,
+.sakura-native-panel .ska-tabs button:not(.active){
+  color:var(--sk-tab-text)!important;
+  -webkit-text-fill-color:var(--sk-tab-text)!important;
+}
+.sakura-native-panel .sk-tabs button.active,
+.sakura-native-panel .ska-tabs button.active{
+  color:var(--sk-button-text)!important;
+  -webkit-text-fill-color:var(--sk-button-text)!important;
+}
+/* Every secondary action family now follows one persistent Studio variable. */
+.sakura-native-panel .sk-secondary,
+.sakura-native-panel .sk-feedback button,
+.sakura-native-panel .sk-quick button,
+.sakura-native-panel .sk-message-actions button,
+.sakura-native-panel .sk-icon-btn,
+.sakura-native-panel .sk-composer-tools button,
+.sakura-native-panel .sk-live-actions button:not(:first-child),
+.sakura-native-panel .ska-actions button:not(.sk-primary),
+.sakura-native-panel .ska-panel button:not(.sk-primary),
+.sakura-native-panel .ska-review button:not(.sk-primary){
+  color:var(--sk-secondary-button-text)!important;
+  -webkit-text-fill-color:var(--sk-secondary-button-text)!important;
+}
+.sakura-native-panel .sk-tabs button:hover,
+.sakura-native-panel .sk-feedback button:hover,
+.sakura-native-panel .sk-quick button:hover,
+.sakura-native-panel .sk-message-actions button:hover,
+.sakura-native-panel .sk-secondary:hover{
+  filter:brightness(1.08)!important;
+}
+/* Studio preview must represent the real panel colors. */
+.skstudio-preview-tabs b{color:var(--preview-tab-text,#c8bfce)!important;-webkit-text-fill-color:var(--preview-tab-text,#c8bfce)!important}
+.skstudio-preview-input b{color:var(--preview-button-text,#fff)!important;-webkit-text-fill-color:var(--preview-button-text,#fff)!important}

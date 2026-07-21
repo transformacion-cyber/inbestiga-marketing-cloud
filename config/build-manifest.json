@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.14.0",
-  "build": "SAKURA ACADEMY & SCIENTIFIC CALCULATION ENGINE · LOCAL SAFE",
+  "frontend_version": "17.14.1",
+  "build": "SAKURA BUTTON TEXT CONTRAST & STUDIO COLOR SYNC HOTFIX · LOCAL SAFE",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -167,10 +167,10 @@
       "mode": "lazy-chat-messaging"
     },
     {
-      "name": "sakura-personal-studio-v17-12-13-6",
-      "path": "assets/js/sakura-personal-studio-v17-12-13-6.js",
-      "origin": "v17.13.1",
-      "mode": "personal-studio-live-background-verification"
+      "name": "sakura-personal-studio-v17-14-1",
+      "path": "assets/js/sakura-personal-studio-v17-14-1.js",
+      "origin": "v17.14.1",
+      "mode": "personal-studio-button-text-sync"
     },
     {
       "name": "sakura-personal-studio-css-v17-12-13-6",
@@ -191,10 +191,10 @@
       "mode": "adaptive-safe-controller-motion-aware"
     },
     {
-      "name": "sakura-presence-loader-v17-14-0",
+      "name": "sakura-presence-loader-v17-14-1",
       "path": "assets/js/sakura-presence-loader-v17-13-0.js",
-      "origin": "v17.14.0",
-      "mode": "lazy-permanent-entry-academy-calculation-engine"
+      "origin": "v17.14.1",
+      "mode": "lazy-permanent-entry-button-contrast-hotfix"
     },
     {
       "name": "sakura-live-motion-background-fusion-v17-13-2",
@@ -219,6 +219,12 @@
       "path": "assets/css/sakura-academy-v17-14-0.css",
       "origin": "v17.14.0",
       "mode": "academy-responsive-interface"
+    },
+    {
+      "name": "sakura-button-text-contrast-css-v17-14-1",
+      "path": "assets/css/sakura-button-text-contrast-v17-14-1.css",
+      "origin": "v17.14.1",
+      "mode": "visual-cascade-hotfix"
     }
   ],
   "styles": [
@@ -249,7 +255,8 @@
     "assets/css/sakura-personal-studio-v17-12-13-6.css",
     "assets/css/sakura-adaptive-intelligence-v17-13-0.css",
     "assets/css/sakura-live-motion-background-fusion-v17-13-2.css",
-    "assets/css/sakura-academy-v17-14-0.css"
+    "assets/css/sakura-academy-v17-14-0.css",
+    "assets/css/sakura-button-text-contrast-v17-14-1.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -280,7 +287,12 @@
     "productive_tables_untouched": true,
     "productive_rpc_untouched": true,
     "sakura_models_excluded_from_web_build": true,
-    "sakura_local_bridge_excluded_from_vercel": true
+    "sakura_local_bridge_excluded_from_vercel": true,
+    "sakura_button_text_primary_sync_v17141": true,
+    "sakura_tab_text_sync_v17141": true,
+    "sakura_secondary_button_text_sync_v17141": true,
+    "sakura_webkit_text_fill_sync_v17141": true,
+    "sakura_button_contrast_auto_fix_v17141": true
   },
   "features": {
     "campaign_workspace": true,
@@ -598,19 +610,24 @@
     "sakura_academy_no_polling": true,
     "sakura_academy_no_new_realtime": true
   },
-  "base": "v17.13.2 SAKURA Particle Motion Sync Hotfix",
-  "hotfix": "v17.14.0 adds a local supervised academic library, structured formula cards, deterministic scientific calculation, unit conversion, basic molar-mass calculation, practice mode and chat retrieval. No SQL, service_role, polling, new Realtime channels, eval or Function dynamic code.",
-  "version": "v17.14.0",
-  "name": "SAKURA ACADEMY & SCIENTIFIC CALCULATION ENGINE",
+  "base": "v17.14.0 SAKURA Academy & Scientific Calculation Engine",
+  "hotfix": "v17.14.1 fixes the real CSS cascade that prevented inactive tabs, feedback chips, Copy and secondary controls from following Personal Studio colors. Adds explicit primary, tab and secondary text variables with automatic contrast. No SQL, polling, Realtime, backend or productive-module changes.",
+  "version": "v17.14.1",
+  "name": "SAKURA BUTTON TEXT CONTRAST & STUDIO COLOR SYNC HOTFIX",
   "assets": [
     "assets/css/sakura-personal-studio-v17-12-13-6.css",
-    "assets/css/sakura-academy-v17-14-0.css",
+    "assets/css/sakura-button-text-contrast-v17-14-1.css",
+    "assets/js/sakura-personal-studio-v17-14-1.js",
     "assets/js/sakura-academy-v17-14-0.js"
   ],
   "feature_flags": {
     "sakura_academy_v17140": true,
     "sakura_scientific_calculation_engine_v17140": true,
     "sakura_supervised_knowledge_import_v17140": true,
-    "sakura_chat_academic_retrieval_v17140": true
+    "sakura_chat_academic_retrieval_v17140": true,
+    "sakura_button_text_contrast_v17141": true,
+    "sakura_tab_text_color_sync_v17141": true,
+    "sakura_secondary_button_text_color_sync_v17141": true,
+    "sakura_button_auto_contrast_v17141": true
   }
 }

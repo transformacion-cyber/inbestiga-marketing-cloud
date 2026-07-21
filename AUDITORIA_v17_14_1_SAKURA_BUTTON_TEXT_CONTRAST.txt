@@ -1,0 +1,38 @@
+AUDITORÍA DE ENTREGA — INBESTIGA MARKETING CLOUD v17.14.1
+SAKURA BUTTON TEXT CONTRAST & STUDIO COLOR SYNC HOTFIX
+
+BASE
+v17.14.0, sin mezcla de versiones anteriores.
+
+FALLO REPRODUCIDO
+La captura aportada muestra pestañas y botones secundarios con texto azul/gris oscuro sobre una fotografía y superficies violetas. La inspección de la base confirmó que esos controles usaban --sk-muted, --sk-text o variables heredadas, mientras el editor modificaba únicamente --sk-button-text.
+
+CORRECCIÓN
+- Nueva variable persistente --sk-tab-text.
+- Nueva variable persistente --sk-secondary-button-text.
+- --sk-button-text permanece para controles principales.
+- Sincronización explícita de color y -webkit-text-fill-color.
+- Cobertura de pestañas, feedback, Copiar, accesos rápidos, controles secundarios, iconos, Academia y acciones principales.
+- Controles independientes dentro de Personal Studio.
+- Corrección automática de contraste para los tres grupos.
+- Migración segura de estilos v17.14.0: pestañas heredan el texto secundario previo y botones secundarios heredan el texto general previo.
+
+PRUEBAS LOCALES
+- API de Personal Studio v17.14.1: aprobada.
+- Aplicación determinista de las tres variables CSS: aprobada.
+- Migración de preferencias antiguas: aprobada.
+- Presencia de controles en el editor: aprobada.
+- Contrato CSS y orden de carga: aprobado.
+- JavaScript: 44 archivos con sintaxis válida.
+- JSON: 97 archivos válidos antes de añadir esta documentación.
+- Service Worker: 69 recursos encontrados, 0 faltantes.
+
+PROTECCIÓN
+- 11 archivos SQL: sin cambios.
+- SAKURA_LOCAL_BRIDGE: 14 archivos sin cambios.
+- API: 1 archivo sin cambios.
+- Ningún JavaScript productivo distinto del loader de SAKURA fue modificado.
+- Sin service_role, SQL nuevo, polling, setInterval, MutationObserver, nuevos canales Realtime, eval ni Function dinámica.
+
+LÍMITE DECLARADO
+La cascada y persistencia fueron validadas de forma determinista, pero la comprobación visual definitiva sobre el dominio publicado y Auditoría Pro deben ejecutarse después del despliegue en Vercel. No se afirma certificación productiva desde esta auditoría local.

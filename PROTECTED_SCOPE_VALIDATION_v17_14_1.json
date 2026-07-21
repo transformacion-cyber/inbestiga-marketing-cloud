@@ -1,0 +1,29 @@
+{
+  "version": "v17.14.1",
+  "base": "v17.14.0",
+  "result": "pass",
+  "groups": {
+    "sql": {
+      "files": 11,
+      "unchanged": true
+    },
+    "local_bridge": {
+      "files": 14,
+      "unchanged": true
+    },
+    "api": {
+      "files": 1,
+      "unchanged": true
+    },
+    "other_existing_javascript": {
+      "unchanged": true,
+      "exception": "assets/js/sakura-presence-loader-v17-13-0.js"
+    }
+  },
+  "scoped_sakura_changes": [
+    "Nuevo assets/js/sakura-personal-studio-v17-14-1.js",
+    "Nuevo assets/css/sakura-button-text-contrast-v17-14-1.css",
+    "Actualización del loader exclusivamente para versión y carga del CSS"
+  ],
+  "explanation": "Auth, RLS, tablas, Storage, RPC, Trabajo 360, tareas, campañas, Creative Arena, Muro, mensajería, ranking, puente local, Ollama, Director Visual y Explorador Web no fueron modificados."
+}
