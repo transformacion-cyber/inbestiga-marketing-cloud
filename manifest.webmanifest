@@ -1,7 +1,7 @@
 {
   "name": "INBESTIGA Marketing Cloud",
   "short_name": "INBESTIGA",
-  "description": "Plataforma operativa con SAKURA Adaptive Intelligence y hotfix de sincronización de movimiento real de partículas, fondo inteligente, mensajería, tareas, campañas y colaboración.",
+  "description": "Plataforma operativa con SAKURA Academy, motor científico local, conocimiento supervisado, movimiento real, fondo inteligente, mensajería, tareas y campañas.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -21,5 +21,5 @@
       "purpose": "any maskable"
     }
   ],
-  "id": "inbestiga-marketing-cloud-v17-13-2"
+  "id": "inbestiga-marketing-cloud-v17-14-0"
 }

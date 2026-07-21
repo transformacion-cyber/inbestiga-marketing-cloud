@@ -1,0 +1,19 @@
+GUÍA RÁPIDA — SAKURA ACADEMY v17.14.0
+
+1. Despliega el ZIP completo en GitHub/Vercel.
+2. Confirma que la plataforma indique v17.14.0.
+3. Abre SAKURA y entra a Estudio.
+4. En SAKURA Academy abre “Subir archivos”.
+5. Importa un TXT, MD, CSV o JSON de prueba.
+6. Revisa las fichas detectadas y pulsa “Aprobar conocimiento”.
+7. Ve a Biblioteca y comprueba título, materia, fuente y fórmula.
+8. En Calcular prueba: sqrt(144)+3^2. Debe responder 21.
+9. Convierte 60 km/h a m/s. Debe responder aproximadamente 16.6667 m/s.
+10. Calcula la masa molar de H2O. Debe responder aproximadamente 18.015 g/mol.
+11. Regresa a Chat y pregunta por el conocimiento aprobado.
+12. Prueba: “calcula la fuerza con masa 5 kg y aceleración 3 m/s2”. Debe responder 15 N.
+13. Recarga la página y confirma que la biblioteca permanezca.
+14. Ejecuta Auditoría Pro y compara con 96 / 0 / 1 Work 360.
+
+IMPORTANTE
+PDF y DOCX todavía no se extraen en esta versión. No declares certificación productiva hasta completar la prueba publicada.

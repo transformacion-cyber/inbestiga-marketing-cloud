@@ -1,0 +1,28 @@
+{
+  "version": "v17.14.0",
+  "base": "v17.13.2",
+  "result": "pass",
+  "groups": {
+    "sql": {
+      "files": 12,
+      "unchanged": true
+    },
+    "local_bridge": {
+      "files": 14,
+      "unchanged": true
+    },
+    "api": {
+      "files": 1,
+      "unchanged": true
+    },
+    "productive_modules": {
+      "files": 68,
+      "unchanged": true
+    }
+  },
+  "changed_productive_sakura_files": [
+    "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "assets/js/sakura-presence-loader-v17-13-0.js"
+  ],
+  "explanation": "El workspace se modificó únicamente para consultar la API académica antes de responder y enviar conocimiento aprobado al modelo local. El loader se modificó únicamente para cargar los dos recursos nuevos y registrar v17.14.0. SQL, API, puente local y el resto de módulos productivos permanecen idénticos."
+}

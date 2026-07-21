@@ -1,0 +1,19 @@
+{
+  "version": "v17.14.0",
+  "reported_baseline": {
+    "health": 96,
+    "failures": 0,
+    "warnings": 1,
+    "known_warning": "Work 360"
+  },
+  "static_regression_checks": {
+    "new_realtime_channels": 0,
+    "polling": false,
+    "global_mutation_observer": false,
+    "sql_changes": false,
+    "service_role": false,
+    "dynamic_code": false
+  },
+  "auditoria_pro_after_vercel": "required",
+  "productive_certification": "pending"
+}

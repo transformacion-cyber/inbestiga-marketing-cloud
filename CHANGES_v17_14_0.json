@@ -1,0 +1,54 @@
+{
+  "version": "v17.14.0",
+  "base": "v17.13.2",
+  "name": "SAKURA Academy & Scientific Calculation Engine",
+  "added_features": [
+    "Academia local en IndexedDB",
+    "Importación supervisada TXT/Markdown/CSV/JSON",
+    "Extracción de fórmulas, definiciones, métodos, ejemplos y estructuras",
+    "Detección de duplicados y contradicciones por título",
+    "Aprobación humana antes de incorporar conocimiento",
+    "Integración del conocimiento aprobado con Chat y Ollama",
+    "Calculadora científica determinista",
+    "Conversión dimensional de unidades",
+    "Masa molar básica",
+    "Aplicación de fórmulas aprendidas",
+    "Práctica guiada",
+    "Exportación e importación de respaldo"
+  ],
+  "restrictions": [
+    "No SQL",
+    "No service_role",
+    "No polling",
+    "No MutationObserver global",
+    "No nuevos canales Realtime",
+    "No eval",
+    "No Function dinámica",
+    "PDF/DOCX aún no extraídos"
+  ],
+  "modified_files": [
+    "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "assets/js/sakura-presence-loader-v17-13-0.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "new_files": [
+    "AUDITORIA_v17_14_0_SAKURA_ACADEMY.txt",
+    "CHANGES_v17_14_0.json",
+    "FUNCTIONAL_TESTS_v17_14_0.json",
+    "GUIA_RAPIDA_SAKURA_ACADEMY_v17_14_0.txt",
+    "HEALTH_COMPARISON_v17_14_0.json",
+    "LEER_PRIMERO_v17_14_0.txt",
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_14_0.txt",
+    "LISTA_ARCHIVOS_NUEVOS_v17_14_0.txt",
+    "PROTECTED_SCOPE_VALIDATION_v17_14_0.json",
+    "STATIC_VALIDATION_v17_14_0.json",
+    "assets/css/sakura-academy-v17-14-0.css",
+    "assets/js/sakura-academy-v17-14-0.js",
+    "SHA256SUMS_v17_14_0.txt"
+  ],
+  "removed_files": []
+}

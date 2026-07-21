@@ -1,0 +1,37 @@
+AUDITORÍA DE ENTREGA — INBESTIGA MARKETING CLOUD v17.14.0
+SAKURA ACADEMY & SCIENTIFIC CALCULATION ENGINE
+
+BASE
+v17.13.2, sin mezcla de versiones anteriores.
+
+ARCHIVOS BASE
+- Modificados: 7
+- Nuevos funcionales antes de documentación: 2
+- Eliminados: 0
+
+RESULTADO FUNCIONAL
+- Academia personal local en IndexedDB.
+- Importación supervisada TXT, Markdown, CSV y JSON.
+- Extracción de fórmulas, definiciones, métodos, ejemplos y estructuras.
+- Revisión humana, duplicados, posibles contradicciones, aprobación y descarte.
+- Integración de fichas aprobadas con el chat básico y con el contexto enviado a Ollama.
+- Calculadora científica determinista.
+- Conversión de unidades y masa molar básica.
+- Práctica guiada y respaldo JSON.
+
+PRUEBAS
+- Pruebas matemáticas y científicas: aprobadas.
+- Simulación de IndexedDB, importación, aprobación, búsqueda y memoria de Chat: aprobada.
+- Sintaxis de los JavaScript modificados: aprobada.
+- JSON y PWA nuevos: aprobados.
+- Recursos de Service Worker: 69 encontrados, 0 faltantes.
+
+PROTECCIÓN
+- SQL: sin cambios.
+- SAKURA_LOCAL_BRIDGE: sin cambios.
+- API de Explorador Web: sin cambios.
+- Auth, RLS, tablas y RPC productivas: sin cambios.
+- Sin service_role, polling, nuevos canales Realtime, eval, Function dinámica ni MutationObserver global.
+
+LÍMITE DECLARADO
+PDF y DOCX no se extraen todavía. La validación visual real, persistencia en el origen publicado y Auditoría Pro deben ejecutarse después del despliegue en Vercel. No se afirma certificación productiva desde esta auditoría estática.

@@ -1,0 +1,62 @@
+{
+  "version": "v17.14.0",
+  "base_file_count": 391,
+  "new_file_count_before_docs": 393,
+  "modified_files": [
+    "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "assets/js/sakura-presence-loader-v17-13-0.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "added_files": [
+    "AUDITORIA_v17_14_0_SAKURA_ACADEMY.txt",
+    "CHANGES_v17_14_0.json",
+    "FUNCTIONAL_TESTS_v17_14_0.json",
+    "GUIA_RAPIDA_SAKURA_ACADEMY_v17_14_0.txt",
+    "HEALTH_COMPARISON_v17_14_0.json",
+    "LEER_PRIMERO_v17_14_0.txt",
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_14_0.txt",
+    "LISTA_ARCHIVOS_NUEVOS_v17_14_0.txt",
+    "PROTECTED_SCOPE_VALIDATION_v17_14_0.json",
+    "STATIC_VALIDATION_v17_14_0.json",
+    "assets/css/sakura-academy-v17-14-0.css",
+    "assets/js/sakura-academy-v17-14-0.js",
+    "SHA256SUMS_v17_14_0.txt"
+  ],
+  "removed_files": [],
+  "checks": {
+    "modified_javascript_syntax": "pass",
+    "new_json_valid": "pass",
+    "service_worker_references": "pass",
+    "build_manifest": "pass",
+    "manifest_webmanifest": "pass",
+    "runtime_version_alignment": "pass",
+    "loader_version_alignment": "pass",
+    "no_removed_base_files": true,
+    "no_eval_or_dynamic_function": "pass",
+    "no_global_mutation_observer": "pass",
+    "no_polling_in_academy": "pass"
+  },
+  "protected_scope": {
+    "sql": {
+      "files": 12,
+      "unchanged": true
+    },
+    "local_bridge": {
+      "files": 14,
+      "unchanged": true
+    },
+    "api": {
+      "files": 1,
+      "unchanged": true
+    },
+    "productive_modules": {
+      "files": 68,
+      "unchanged": true
+    }
+  },
+  "final_file_count": 404
+}

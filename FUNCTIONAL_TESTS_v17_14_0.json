@@ -1,0 +1,123 @@
+{
+  "version": "v17.14.0",
+  "scope": "Pruebas deterministas, almacenamiento simulado y validación estática",
+  "tests": [
+    {
+      "id": "calc-01",
+      "name": "sqrt(144)+3^2",
+      "status": "pass",
+      "expected": 21
+    },
+    {
+      "id": "calc-02",
+      "name": "Variables m=5, a=3 en m*a",
+      "status": "pass",
+      "expected": 15
+    },
+    {
+      "id": "calc-03",
+      "name": "Porcentaje 200*15%",
+      "status": "pass",
+      "expected": 30
+    },
+    {
+      "id": "calc-04",
+      "name": "Trigonometría sin(deg(30))",
+      "status": "pass",
+      "expected_approx": 0.5
+    },
+    {
+      "id": "unit-01",
+      "name": "1 km a m",
+      "status": "pass",
+      "expected": 1000
+    },
+    {
+      "id": "unit-02",
+      "name": "60 km/h a m/s",
+      "status": "pass",
+      "expected_approx": 16.6666666667
+    },
+    {
+      "id": "unit-03",
+      "name": "0 °C a K",
+      "status": "pass",
+      "expected": 273.15
+    },
+    {
+      "id": "chem-01",
+      "name": "Masa molar H2O",
+      "status": "pass",
+      "expected": 18.015
+    },
+    {
+      "id": "chem-02",
+      "name": "Paréntesis químico sin cerrar",
+      "status": "pass",
+      "expected": "error controlado"
+    },
+    {
+      "id": "chat-01",
+      "name": "calcula 2+2",
+      "status": "pass",
+      "expected": "respuesta 4"
+    },
+    {
+      "id": "chat-02",
+      "name": "fuerza con masa 5 y aceleración 3",
+      "status": "pass",
+      "expected": "15 N"
+    },
+    {
+      "id": "idb-01",
+      "name": "Sembrar fórmulas base",
+      "status": "pass",
+      "result": "9 fórmulas"
+    },
+    {
+      "id": "idb-02",
+      "name": "Importar Markdown académico",
+      "status": "pass",
+      "result": "2 fichas"
+    },
+    {
+      "id": "idb-03",
+      "name": "Aprobar documento y buscar conocimiento",
+      "status": "pass"
+    },
+    {
+      "id": "idb-04",
+      "name": "Reflejar fichas en memoria local de Chat",
+      "status": "pass"
+    },
+    {
+      "id": "security-01",
+      "name": "Ausencia de eval y Function dinámica",
+      "status": "pass"
+    },
+    {
+      "id": "security-02",
+      "name": "Ausencia de polling y MutationObserver global en Academia",
+      "status": "pass"
+    },
+    {
+      "id": "pwa-01",
+      "name": "Todos los recursos del Service Worker existen",
+      "status": "pass",
+      "resource_count": 69
+    }
+  ],
+  "browser_runtime": {
+    "status": "pending_vercel_validation",
+    "reason": "La validación visual e IndexedDB en el origen publicado debe ejecutarse después del despliegue. El contenedor no se usa para afirmar certificación productiva."
+  },
+  "productive_health": {
+    "status": "not_claimed",
+    "baseline": {
+      "health": 96,
+      "failures": 0,
+      "warnings": 1,
+      "known_warning": "Work 360"
+    }
+  }
+}

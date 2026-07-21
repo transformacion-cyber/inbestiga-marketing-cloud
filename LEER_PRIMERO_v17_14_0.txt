@@ -1,0 +1,25 @@
+INBESTIGA MARKETING CLOUD v17.14.0
+SAKURA ACADEMY & SCIENTIFIC CALCULATION ENGINE
+
+BASE AUTORIZADA
+Creada exclusivamente desde v17.13.2 SAKURA Particle Motion Sync Hotfix.
+No se eliminó ningún archivo de la base anterior.
+
+NOVEDAD PRINCIPAL
+Dentro de SAKURA → Estudio aparece SAKURA Academy, una biblioteca académica personal y supervisada. Permite importar TXT, Markdown, CSV y JSON; detectar fórmulas, definiciones, métodos, ejemplos y estructuras; revisar las fichas antes de aprobarlas; y utilizar las fichas aprobadas en el chat.
+
+MOTORES LOCALES
+- Calculadora científica sin eval ni Function dinámica.
+- Variables, potencias, porcentajes, raíces, trigonometría y logaritmos.
+- Conversión de longitud, masa, tiempo, volumen, velocidad, presión, energía y temperatura.
+- Masa molar básica para elementos químicos incluidos en el catálogo local.
+- Aplicación de fórmulas guardadas y práctica guiada.
+
+ALCANCE DE ARCHIVOS
+Esta primera versión admite TXT, MD, Markdown, CSV y JSON. PDF y DOCX no se anuncian como funcionales todavía; quedan reservados para un extractor documental posterior y controlado.
+
+SEGURIDAD
+Sin SQL nuevo, service_role, polling, MutationObserver global, canales Realtime nuevos, eval ni Function dinámica. Los archivos se tratan como contenido no confiable y nunca como instrucciones del sistema.
+
+VALIDACIÓN PENDIENTE
+Después del despliegue en Vercel debe abrirse SAKURA, entrar a Estudio, importar un archivo real, aprobarlo, consultarlo desde Chat y ejecutar Auditoría Pro. No se declara certificación productiva antes de esa prueba.

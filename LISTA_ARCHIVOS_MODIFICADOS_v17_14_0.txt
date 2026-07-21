@@ -1,0 +1,9 @@
+ARCHIVOS EXISTENTES MODIFICADOS — v17.14.0
+
+- assets/js/sakura-personal-workspace-v17-12-13-6.js
+- assets/js/sakura-presence-loader-v17-13-0.js
+- config/build-manifest.json
+- config/public-runtime-config.js
+- index.html
+- manifest.webmanifest
+- service-worker.js
