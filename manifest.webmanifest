@@ -1,7 +1,7 @@
 {
   "name": "INBESTIGA Marketing Cloud",
   "short_name": "INBESTIGA",
-  "description": "Plataforma operativa con SAKURA, Centro de Mando protegido, salud estructural renderizada, integridad de versión y sincronización Work 360 coherente.",
+  "description": "Plataforma con salud sin doble penalización, versión canónica autorreparable y sincronización Work 360 basada en cambios reales.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -21,5 +21,5 @@
       "purpose": "any maskable"
     }
   ],
-  "id": "inbestiga-marketing-cloud-v17-15-6"
+  "id": "inbestiga-marketing-cloud-v17-15-7"
 }

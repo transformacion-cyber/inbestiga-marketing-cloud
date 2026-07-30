@@ -652,7 +652,7 @@
     search:openUniversalSearch,
     history:{open:openHistory,close:closeHistory,list:loadHistory,clear:()=>{saveHistory([]);renderHistory();renderCommandCenter();}},
     askSakura,
-    health:()=>({status:"ok",value:"Centro de mando protegido",detail:"v17.15.6 evita null.id, inicialización duplicada y fallos en cascada. Conserva lectura por rol, búsqueda, aprobaciones, capacidad, historial y contexto SAKURA."})
+    health:()=>({status:"ok",value:"Centro de mando protegido",detail:"Protección activa contra null.id, inicialización duplicada y fallos en cascada. Conserva lectura por rol, búsqueda, aprobaciones, capacidad, historial y contexto SAKURA."})
   };
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, {once:true});

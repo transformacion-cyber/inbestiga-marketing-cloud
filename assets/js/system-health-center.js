@@ -1,11 +1,11 @@
-/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.6 ===== */
+/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.7 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.6";
-  const BUILD = "SYSTEM HEALTH, COMMAND CENTER & VERSION INTEGRITY HOTFIX";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.7";
+  const BUILD = "SYSTEM HEALTH SCORING & WORK 360 SYNC TRUTH HOTFIX";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";
   const DEFAULT_BUCKET = "inbestiga-media";
@@ -322,8 +322,7 @@
       || list(value.savedFilters).length > 0
       || list(value.templates).length > 0
       || list(value.history).length > 0
-      || !!value.activeTimer
-      || (!!value.view && value.view !== "kanban");
+      || !!value.activeTimer;
   }
 
   async function work360Health() {
@@ -331,6 +330,8 @@
     const localUpdated = local.data?.updatedAt || null;
     const localItems = Object.keys(local.data?.metadata || {}).length;
     const meaningfulLocal = work360HasMeaningfulLocalData(local.data);
+    const localSync = local.data?.sync && typeof local.data.sync === "object" ? local.data.sync : {};
+    const dirtyState = localSync.dirty;
     const localCheck = check(
       "work360-local", "sync", "Work 360 local", local.data ? "ok" : "info",
       local.data ? `${localItems} tareas planificadas` : "Sin datos locales",
@@ -374,19 +375,31 @@
         pendingStatus = "ok";
         pendingValue = "Sin pendientes detectados";
         pendingDetail = local.data
-          ? "El contenedor local solo contiene la configuración base; no hay tareas, filtros, plantillas, historial ni temporizadores por sincronizar."
+          ? "El contenedor local solo conserva configuración de vista; no contiene planificación, filtros, plantillas, historial ni temporizadores productivos."
           : "No existen datos locales pendientes.";
+      } else if (dirtyState === true) {
+        pendingStatus = "warn";
+        pendingValue = "Cambios locales pendientes";
+        pendingDetail = `Work 360 marcó explícitamente esta copia como modificada${localUpdated ? ` el ${formatDate(localUpdated)}` : ""}.`;
+      } else if (dirtyState === false) {
+        pendingStatus = "ok";
+        pendingValue = "Sin pendientes detectados";
+        pendingDetail = `La última sincronización confirmada fue ${formatDate(localSync.lastSyncedAt || remoteUpdated, "durante esta sesión")}.`;
+      } else if (domState === "synced") {
+        pendingStatus = "ok";
+        pendingValue = "Sin pendientes detectados";
+        pendingDetail = "La interfaz confirmó sincronización. Los timestamps heredados no se usan como prueba única de cambios pendientes.";
       } else if (localUpdated && !remoteUpdated) {
         pendingStatus = "warn";
-        pendingValue = "1 bloque local";
-        pendingDetail = "Existe planificación local y todavía no hay preferencias remotas para esta cuenta.";
+        pendingValue = "Copia local heredada";
+        pendingDetail = "Existe contenido local heredado y todavía no hay una copia remota confirmada.";
       } else if (localUpdated && remoteUpdated) {
         const localTime = new Date(localUpdated).getTime();
         const remoteTime = new Date(remoteUpdated).getTime();
         if (Number.isFinite(localTime) && Number.isFinite(remoteTime) && localTime > remoteTime + 2000) {
-          pendingStatus = "warn";
-          pendingValue = "1 bloque pendiente";
-          pendingDetail = `La copia local (${formatDate(localUpdated)}) es más reciente que Supabase (${formatDate(remoteUpdated)}).`;
+          pendingStatus = "info";
+          pendingValue = "Comparación heredada";
+          pendingDetail = `Local ${formatDate(localUpdated)} · Supabase ${formatDate(remoteUpdated)}. Sin una marca dirty explícita, esta diferencia no reduce la salud.`;
         } else {
           pendingStatus = "ok";
           pendingValue = "Sin pendientes detectados";
@@ -570,21 +583,38 @@
     }
   }
 
+  function repairCanonicalVersionMarkers() {
+    const expected = window.INBESTIGA_RELEASE?.version || VERSION;
+    const repaired = [];
+    const htmlVersion = document.documentElement.dataset.inbestigaBuild || null;
+    if (htmlVersion !== expected) {
+      repaired.push(`html: ${htmlVersion || "vacío"} → ${expected}`);
+      document.documentElement.dataset.inbestigaBuild = expected;
+    }
+    try {
+      const current = window.INBESTIGA_BUILD && typeof window.INBESTIGA_BUILD === "object" ? window.INBESTIGA_BUILD : {};
+      if (current.version !== expected) {
+        repaired.push(`build: ${current.version || "vacío"} → ${expected}`);
+        window.INBESTIGA_BUILD = { ...current, version: expected, name: window.INBESTIGA_RELEASE?.name || BUILD };
+      }
+    } catch { }
+    return { expected, repaired };
+  }
+
   function buildHealth() {
-    const canonicalVersion = window.INBESTIGA_RELEASE?.version || VERSION;
-    const observedVersion = window.INBESTIGA_BUILD?.version || document.documentElement.dataset.inbestigaBuild || "sin versión";
+    const alignment = repairCanonicalVersionMarkers();
+    const canonicalVersion = alignment.expected;
     const modules = list(window.INBESTIGA_BUILD?.modules);
     const healthLoaded = !!window.INBESTIGA_SYSTEM_HEALTH;
-    const consistent = observedVersion === canonicalVersion && document.documentElement.dataset.inbestigaBuild === canonicalVersion;
-    const status = healthLoaded && consistent ? "ok" : healthLoaded ? "warn" : "fail";
     return check(
-      "build", "summary", "Versión instalada", status, canonicalVersion,
-      `${window.INBESTIGA_RELEASE?.name || BUILD} · ${modules.length || "módulos no contados"} módulos registrados${consistent ? "" : ` · marcador observado ${observedVersion}`}.`
+      "build", "summary", "Versión instalada", healthLoaded ? "ok" : "fail", canonicalVersion,
+      `${window.INBESTIGA_RELEASE?.name || BUILD} · ${modules.length || "módulos no contados"} módulos registrados${alignment.repaired.length ? ` · marcador global reparado: ${alignment.repaired.join(", ")}` : " · marcador canónico activo"}.`
     );
   }
 
   async function versionIntegrityHealth() {
-    const expected = VERSION;
+    const alignment = repairCanonicalVersionMarkers();
+    const expected = alignment.expected;
     const observed = {
       runtime: window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || null,
       release: window.INBESTIGA_RELEASE?.version || null,
@@ -612,7 +642,10 @@
       "version-integrity", "summary", "Integridad de versión",
       mismatches.length ? "fail" : "ok",
       mismatches.length ? `${mismatches.length} marcador(es) inconsistentes` : `${values.length}/${values.length} marcadores alineados`,
-      mismatches.length ? mismatches.map(([key, value]) => `${key}: ${value}`).join(" · ") : `HTML, runtime, release, build y manifiestos reportan ${expected}.`
+      mismatches.length
+        ? mismatches.map(([key, value]) => `${key}: ${value}`).join(" · ")
+        : `HTML, runtime, release, build y manifiestos reportan ${expected}${alignment.repaired.length ? `; se reparó ${alignment.repaired.join(", ")}` : ""}.`,
+      { repaired: alignment.repaired }
     );
   }
 
@@ -645,6 +678,7 @@
     running = true;
     render();
     try {
+      repairCanonicalVersionMarkers();
       const baseChecks = [buildHealth(), supabaseHealth(), connectivityHealth()];
       const [versionIntegrity, rpc, storage, realtime, pwa, work360, browserStorage] = await Promise.all([
         versionIntegrityHealth(), rpcHealth(), storageHealth(), realtimeHealth(), pwaHealth(), work360Health(), storageEstimateHealth()

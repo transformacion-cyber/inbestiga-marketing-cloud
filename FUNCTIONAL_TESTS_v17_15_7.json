@@ -1,0 +1,25 @@
+{
+  "version": "v17.15.7",
+  "tests": [
+    {
+      "id": "canonical_marker_repair",
+      "status": "pass"
+    },
+    {
+      "id": "duplicate_version_penalty",
+      "status": "removed"
+    },
+    {
+      "id": "work360_view_false_pending",
+      "status": "fixed"
+    },
+    {
+      "id": "work360_dirty_state",
+      "status": "implemented"
+    },
+    {
+      "id": "backend_changes",
+      "status": "none"
+    }
+  ]
+}

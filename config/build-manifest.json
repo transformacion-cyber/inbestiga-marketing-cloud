@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.15.6",
-  "build": "SYSTEM HEALTH, COMMAND CENTER & VERSION INTEGRITY HOTFIX",
+  "frontend_version": "17.15.7",
+  "build": "SYSTEM HEALTH SCORING & WORK 360 SYNC TRUTH HOTFIX",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -297,6 +297,12 @@
       "path": "assets/js/release-marker-v17-15-6.js",
       "origin": "v17.15.6",
       "mode": "canonical-release-integrity"
+    },
+    {
+      "name": "release-marker-v17-15-7",
+      "path": "assets/js/release-marker-v17-15-7.js",
+      "origin": "v17.15.7",
+      "mode": "canonical-version-self-healing-and-sync-truth"
     }
   ],
   "styles": [
@@ -684,7 +690,16 @@
     "sakura_academy_no_dynamic_code": true,
     "sakura_academy_no_sql": true,
     "sakura_academy_no_polling": true,
-    "sakura_academy_no_new_realtime": true
+    "sakura_academy_no_new_realtime": true,
+    "system_health_no_duplicate_version_penalty_v17157": true,
+    "canonical_version_marker_self_healing_v17157": true,
+    "work360_explicit_dirty_state_v17157": true,
+    "work360_view_preference_not_productive_pending_v17157": true,
+    "legacy_timestamp_difference_informational_v17157": true,
+    "no_sql_v17157": true,
+    "no_polling_v17157": true,
+    "no_mutation_observer_v17157": true,
+    "no_new_realtime_channels_v17157": true
   },
   "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
   "hotfix": "v17.15.6 fixes Command Center null.id crashes, prevents duplicate/re-entrant initialization, preserves the canonical release version against lazy-module downgrades, adds rendered visual-layout health, ignores historical browser incidents in the current score, and stops Work 360 cloud hydration from creating false local pending changes. No SQL or backend changes.",
@@ -790,9 +805,10 @@
     "sakura_no_polling_v17155": true,
     "sakura_no_mutation_observer_v17155": true
   },
-  "release": "v17.15.6 improves system-health truthfulness and runtime stability while preserving Ollama, pairing, Auth, RLS, RPC, Storage, messaging, Academy and productive data.",
+  "release": "v17.15.7 corrects health scoring truthfulness, canonical version alignment and Work 360 pending-state detection without backend changes.",
   "scripts": [
     "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
-    "assets/js/release-marker-v17-15-5.js"
+    "assets/js/release-marker-v17-15-5.js",
+    "assets/js/release-marker-v17-15-7.js"
   ]
 }

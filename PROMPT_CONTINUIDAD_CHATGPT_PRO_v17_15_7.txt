@@ -1,0 +1,8 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.7
+SYSTEM HEALTH SCORING & WORK 360 SYNC TRUTH HOTFIX
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_15_7_SYSTEM_HEALTH_SCORING_WORK360_SYNC_TRUTH_FULL_PLATFORM.zip
+
+Conservar salud sin doble penalización, versión autorreparable y Work 360 con dirty/synced explícito.
+No afirmar 100/100 sin validación real en Vercel.

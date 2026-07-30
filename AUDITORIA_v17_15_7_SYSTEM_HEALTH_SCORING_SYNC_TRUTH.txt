@@ -1,0 +1,16 @@
+INBESTIGA Marketing Cloud v17.15.7
+SYSTEM HEALTH SCORING & WORK 360 SYNC TRUTH HOTFIX
+
+CAUSA
+- El marcador HTML v17.12.12 se contabilizaba dos veces.
+- Work 360 trataba una preferencia de vista y timestamps heredados como un bloque productivo pendiente.
+
+CORRECCIÓN
+- Reparación canónica al ejecutar Salud, sin polling ni MutationObserver.
+- Versión instalada deja de duplicar la penalización de Integridad de versión.
+- Work 360 usa sync.dirty explícito.
+- La vista local no cuenta como trabajo pendiente.
+- Un timestamp heredado sin dirty=true es informativo, no advertencia.
+
+SIN CAMBIOS
+Auth, RLS, RPC, Storage, SQL, Supabase, Ollama, SAKURA Academy y datos productivos.

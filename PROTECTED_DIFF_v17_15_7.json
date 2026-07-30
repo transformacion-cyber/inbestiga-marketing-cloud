@@ -1,0 +1,10 @@
+{
+  "version": "v17.15.7",
+  "auth": "sin cambios",
+  "rls": "sin cambios",
+  "rpc": "sin cambios",
+  "storage": "sin cambios",
+  "sql": "sin cambios",
+  "ollama_bridge": "sin cambios",
+  "work360_scope": "solo metadatos locales de sincronización y diagnóstico"
+}

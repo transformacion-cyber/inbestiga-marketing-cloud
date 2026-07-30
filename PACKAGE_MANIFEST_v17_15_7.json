@@ -1,0 +1,43 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.15.7",
+  "build": "SYSTEM HEALTH SCORING & WORK 360 SYNC TRUTH HOTFIX",
+  "base": "v17.15.6",
+  "generated_at": "2026-07-30T22:57:42.138717+00:00",
+  "javascript_files": 58,
+  "internal_javascript_blocks": 14,
+  "json_files": 138,
+  "html_unique_ids": 646,
+  "local_references": 77,
+  "pwa_resources": 85,
+  "modified_files": [
+    "assets/js/system-health-center.js",
+    "assets/js/unified-command-center-v17-15-0.js",
+    "assets/js/work360-advanced.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "new_files": [
+    "AUDITORIA_v17_15_7_SYSTEM_HEALTH_SCORING_SYNC_TRUTH.txt",
+    "FUNCTIONAL_TESTS_v17_15_7.json",
+    "GITHUB_RELEASE_v17_15_7.txt",
+    "PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_7.txt",
+    "PROTECTED_DIFF_v17_15_7.json",
+    "assets/js/release-marker-v17-15-7.js"
+  ],
+  "backend_changes": false,
+  "sql_changes": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "internal_javascript_syntax": "OK",
+    "json": "OK",
+    "duplicate_html_ids": "OK",
+    "local_references": "OK",
+    "pwa_resources": "OK",
+    "canonical_version_repair": "OK",
+    "work360_dirty_sync": "OK"
+  }
+}

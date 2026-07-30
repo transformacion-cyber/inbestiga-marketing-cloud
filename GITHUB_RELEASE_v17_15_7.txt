@@ -1,0 +1,9 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.7 — System Health Scoring & Work 360 Sync Truth Hotfix
+
+Corrige la caída artificial de salud eliminando la doble penalización de versión, repara el marcador canónico y reemplaza la comparación frágil de Work 360 por estado dirty/synced.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.15.7 health scoring and Work 360 sync truth hotfix"
+git push origin main

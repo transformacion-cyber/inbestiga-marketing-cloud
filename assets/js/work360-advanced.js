@@ -27,6 +27,11 @@
       history: [],
       activeTimer: null,
       updatedAt: null,
+      sync: {
+        dirty: false,
+        lastSyncedAt: null,
+        remoteUpdatedAt: null,
+      },
     };
   }
 
@@ -172,12 +177,25 @@
     next.history = Array.isArray(raw?.history) ? raw.history.slice(0, 120) : [];
     next.activeTimer = raw?.activeTimer && raw.activeTimer.taskId ? raw.activeTimer : null;
     next.updatedAt = raw?.updatedAt || null;
+    const rawSync = raw?.sync && typeof raw.sync === "object" ? raw.sync : null;
+    next.sync = rawSync ? {
+      dirty: rawSync.dirty === true,
+      lastSyncedAt: rawSync.lastSyncedAt || null,
+      remoteUpdatedAt: rawSync.remoteUpdatedAt || null,
+    } : {
+      dirty: null,
+      lastSyncedAt: null,
+      remoteUpdatedAt: null,
+    };
     return next;
   }
 
   function persistLocal(options = {}) {
     loadLocal();
-    if (options.touch !== false) data.updatedAt = new Date().toISOString();
+    if (options.touch !== false) {
+      data.updatedAt = new Date().toISOString();
+      data.sync = { ...(data.sync || {}), dirty: true };
+    }
     try {
       localStorage.setItem(storageKey(), JSON.stringify(data));
     } catch (error) {
@@ -213,6 +231,7 @@
       for (const row of metaResult.data || []) {
         data.metadata[String(row.task_id)] = { ...(data.metadata[String(row.task_id)] || {}), ...(row.metadata || {}) };
       }
+      const remoteUpdatedAt = prefsResult.data?.preferences?.updatedAt || prefsResult.data?.updated_at || null;
       if (prefsResult.data?.preferences) {
         const remote = normalizeData({ ...data, ...prefsResult.data.preferences, metadata: data.metadata });
         data.view = remote.view;
@@ -220,9 +239,14 @@
         data.templates = remote.templates;
         data.history = remote.history;
         data.activeTimer = remote.activeTimer || data.activeTimer;
-        data.updatedAt = remote.updatedAt || prefsResult.data.updated_at || data.updatedAt;
+        data.updatedAt = remote.updatedAt || remoteUpdatedAt || data.updatedAt;
       }
-      // Hidratar desde Supabase no es una edición local y no debe crear un falso pendiente.
+      data.sync = {
+        ...(data.sync || {}),
+        dirty: false,
+        lastSyncedAt: new Date().toISOString(),
+        remoteUpdatedAt,
+      };
       persistLocal({ touch: false });
       cloudState = "synced";
       renderAllAdvanced();
@@ -264,8 +288,16 @@
         activeTimer: data.activeTimer,
         updatedAt: data.updatedAt,
       };
-      const result = await prefsTable.upsert({ user_id: uid, preferences, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
+      const syncStamp = new Date().toISOString();
+      const result = await prefsTable.upsert({ user_id: uid, preferences, updated_at: syncStamp }, { onConflict: "user_id" });
       if (result.error) throw result.error;
+      data.sync = {
+        ...(data.sync || {}),
+        dirty: false,
+        lastSyncedAt: syncStamp,
+        remoteUpdatedAt: syncStamp,
+      };
+      persistLocal({ touch: false });
       cloudState = "synced";
     } catch (error) {
       cloudState = "unavailable";
