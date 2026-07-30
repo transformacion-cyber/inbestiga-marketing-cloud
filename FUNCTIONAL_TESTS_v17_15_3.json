@@ -1,0 +1,78 @@
+{
+  "version": "v17.15.3",
+  "name": "SAKURA Local Bridge Compatibility Hotfix",
+  "tests": [
+    {
+      "id": "SKB-001",
+      "name": "Native status route",
+      "status": "pass",
+      "evidence": "GET /status returned 0.9-v17.15.3 and Ollama available."
+    },
+    {
+      "id": "SKB-002",
+      "name": "Native pairing route",
+      "status": "pass",
+      "evidence": "POST /pair accepted a hyphenated six-digit code and returned X-Sakura-Token-compatible token."
+    },
+    {
+      "id": "SKB-003",
+      "name": "API pairing alias",
+      "status": "pass",
+      "evidence": "POST /api/pairing/verify returned token, session, session_token and sessionToken aliases."
+    },
+    {
+      "id": "SKB-004",
+      "name": "Model inventory",
+      "status": "pass",
+      "evidence": "Both /models and /api/models returned gemma3:4b and embeddinggemma from mock Ollama."
+    },
+    {
+      "id": "SKB-005",
+      "name": "Native streaming chat",
+      "status": "pass",
+      "evidence": "POST /chat proxied NDJSON token streaming."
+    },
+    {
+      "id": "SKB-006",
+      "name": "API JSON chat",
+      "status": "pass",
+      "evidence": "POST /api/chat proxied a non-streaming Ollama response."
+    },
+    {
+      "id": "SKB-007",
+      "name": "Model release",
+      "status": "pass",
+      "evidence": "POST /api/model/release forwarded keep_alive 0 to Ollama."
+    },
+    {
+      "id": "SKB-008",
+      "name": "Private Network Access preflight",
+      "status": "pass",
+      "evidence": "OPTIONS returned Access-Control-Allow-Private-Network: true."
+    },
+    {
+      "id": "SKB-009",
+      "name": "BridgeClient native protocol",
+      "status": "pass",
+      "evidence": "Synthetic Node harness used /status, /pair and /models and preserved native protocol."
+    },
+    {
+      "id": "SKB-010",
+      "name": "BridgeClient API fallback",
+      "status": "pass",
+      "evidence": "Synthetic Node harness converted a 404 from /status into /health, /api/pairing/verify, /api/models and /api/chat."
+    },
+    {
+      "id": "SKB-011",
+      "name": "Loopback target address space",
+      "status": "pass",
+      "evidence": "Bridge requests include targetAddressSpace loopback."
+    },
+    {
+      "id": "SKB-012",
+      "name": "Real Vercel and Windows validation",
+      "status": "pending",
+      "evidence": "Requires the user PC, Chrome local-network permission, real Ollama models and deployed Vercel origin."
+    }
+  ]
+}

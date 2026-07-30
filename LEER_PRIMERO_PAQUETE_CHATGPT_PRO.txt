@@ -1,0 +1,8 @@
+PAQUETE COMPLETO PARA CONTINUIDAD EN CHATGPT PRO
+
+1. Sube este ZIP completo al nuevo chat de ChatGPT Pro.
+2. Indica que abra y lea primero:
+   PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_3.txt
+3. No subas versiones antiguas junto con esta base.
+4. Esta carpeta contiene toda la plataforma v17.15.3, no solo un parche.
+5. Para desplegarla, reemplaza el contenido del repositorio con el contenido del ZIP, no con la carpeta contenedora.

@@ -1,0 +1,12 @@
+GITHUB RELEASE — INBESTIGA MARKETING CLOUD v17.15.3
+
+Summary recomendado:
+fix(sakura): align local bridge pairing routes and add Ollama compatibility
+
+Commit recomendado:
+git add .
+git commit -m "fix(sakura): local bridge pairing compatibility v17.15.3"
+git push origin main
+
+Descripción:
+Corrige el error “Ruta no encontrada” al emparejar SAKURA, incorpora negociación entre el protocolo nativo y el protocolo API alternativo, actualiza el puente local oficial a v0.9 y añade iniciadores Windows reparables. No modifica Auth, RLS, RPC, Storage, SQL ni datos productivos.

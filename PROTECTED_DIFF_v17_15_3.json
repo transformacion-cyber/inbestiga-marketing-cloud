@@ -1,0 +1,30 @@
+{
+  "version": "v17.15.3",
+  "base": "v17.15.2",
+  "changed_protected_files": [
+    {
+      "path": "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+      "scope": "BridgeClient only plus checkBridge normalization",
+      "reason": "Reproduced pairing route mismatch; minimum functional correction.",
+      "sha256_before": "bfcb6a012f792b288861f4faf0a4311377cd1aa40c2f5846af4dea72659db521",
+      "sha256_after": "f112f24d3491228bc071f433121000c52a35bdc0deca7a20f25c3b1324b10604",
+      "validation": "JavaScript syntax pass; protocol harness pass; no eval, dynamic Function, polling or backend changes."
+    }
+  ],
+  "unchanged_protected_scopes": [
+    "Supabase Auth",
+    "RLS",
+    "SQL",
+    "Storage",
+    "RPC",
+    "Trabajo 360",
+    "Tareas",
+    "Campañas",
+    "Creative Arena",
+    "Muro",
+    "Mensajería productiva",
+    "SAKURA Academy"
+  ],
+  "backend_changes": false,
+  "sql_changes": false
+}

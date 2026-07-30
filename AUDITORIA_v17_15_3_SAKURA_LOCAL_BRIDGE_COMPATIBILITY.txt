@@ -1,0 +1,24 @@
+AUDITORÍA TÉCNICA — INBESTIGA MARKETING CLOUD v17.15.3
+
+FALLO REPRODUCIDO
+- Interfaz productiva: POST http://127.0.0.1:8765/pair
+- Ejecutor alternativo anterior: POST http://127.0.0.1:8765/api/pairing/verify
+- Resultado observado: HTTP 404, “Ruta no encontrada”.
+
+CORRECCIÓN
+- Negociación nativa/API dentro del BridgeClient real de SAKURA.
+- Puente oficial v0.9 con ambas familias de rutas.
+- Encabezados de sesión compatibles.
+- Local Network Access y CORS para loopback.
+- Launcher Windows acumulativo y reparable.
+
+SEGURIDAD
+- Host fijo 127.0.0.1.
+- Sin service_role.
+- Sin SQL.
+- Sin comandos recibidos desde el chat.
+- Código rotatorio y origen autorizado.
+- Sin polling, MutationObserver global ni Realtime nuevo.
+
+VALIDACIÓN PRODUCTIVA
+Pendiente en Vercel con sesión real, permiso de red local del navegador y Ollama instalado.

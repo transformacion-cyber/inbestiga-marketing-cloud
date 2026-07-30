@@ -1,0 +1,28 @@
+INBESTIGA MARKETING CLOUD v17.15.3
+SAKURA LOCAL BRIDGE COMPATIBILITY HOTFIX
+
+PROBLEMA CORREGIDO
+El código era válido, pero la plataforma y el ejecutor anterior utilizaban rutas diferentes. La plataforma llamaba /pair mientras el ejecutor alternativo esperaba /api/pairing/verify.
+
+INSTALACIÓN
+1. Reemplaza el repositorio de GitHub con todo el contenido de este ZIP.
+2. Despliega en Vercel.
+3. En tu PC extrae también la carpeta SAKURA_LOCAL_BRIDGE.
+4. Ejecuta INICIAR_SAKURA_Y_OLLAMA.bat desde la raíz o desde SAKURA_LOCAL_BRIDGE.
+5. Pega el código en SAKURA > Ajustes > Motor local y pulsa Emparejar.
+6. Acepta el permiso de acceso a red local si Chrome lo solicita.
+
+IMPORTANTE
+No uses los ejecutores independientes v1.0, v1.1, v1.1.1 ni v1.1.2 anteriores. El conector autorizado para esta plataforma es SAKURA Local Bridge v0.9 incluido en este ZIP.
+
+NO SE MODIFICÓ
+- Supabase Auth o login.
+- RLS, tablas, Storage o RPC.
+- Mensajería productiva.
+- Trabajo 360, tareas, campañas o aprobaciones.
+- SAKURA Academy.
+- Credenciales públicas existentes.
+- No se agregó SQL.
+
+PRUEBA PENDIENTE
+La prueba final visual debe realizarse en el dominio Vercel real y en el PC del usuario con Ollama instalado.

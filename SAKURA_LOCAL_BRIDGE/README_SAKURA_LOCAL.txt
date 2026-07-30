@@ -1,43 +1,30 @@
-SAKURA LOCAL BRIDGE v0.7 — ADAPTIVE WORKSPACE
-========================
+SAKURA LOCAL BRIDGE v0.9 — INBESTIGA MARKETING CLOUD v17.15.3
+================================================================
 
-1. Ejecuta INSTALAR_SAKURA_LOCAL.bat una sola vez.
-2. Asegúrate de que Ollama esté abierto.
-3. Ejecuta DESCARGAR_MODELOS_SAKURA.bat si aún no tienes gemma3:4b y embeddinggemma.
-4. Ejecuta INICIAR_SAKURA_LOCAL.bat.
-5. Copia el código de seis dígitos que aparece en la ventana negra.
-6. Abre Marketing Cloud > SAKURA > Ajustes, pega el código y pulsa Emparejar.
-7. Mantén la ventana local abierta mientras conversas con Ollama.
+ESTE ES EL CONECTOR CORRECTO PARA LA PLATAFORMA.
+No uses los ejecutores v1.0, v1.1, v1.1.1 ni v1.1.2 entregados anteriormente.
+
+PRIMER USO
+1. Asegúrate de tener Python 3.10+ y Ollama instalados.
+2. Ejecuta DESCARGAR_MODELOS_SAKURA.bat para obtener gemma3:4b y embeddinggemma.
+3. Ejecuta INICIAR_SAKURA_Y_OLLAMA.bat.
+4. Copia el código mostrado.
+5. Abre Marketing Cloud > SAKURA > Ajustes.
+6. Pega el código y pulsa Emparejar.
+
+SI APARECE UN ERROR
+- Ejecuta REPARAR_Y_REINICIAR_SAKURA.bat.
+- Después ejecuta DIAGNOSTICAR_CONEXION.bat.
 
 SEGURIDAD
-- El puente escucha solo en 127.0.0.1:8765.
-- No recibe ni guarda credenciales de Supabase.
-- No ejecuta comandos enviados desde el chat.
-- Solo acepta el origen web que emparejaste y un token local.
-- La bóveda está en SAKURA_DATA y no se publica en Vercel.
+- Solo escucha en 127.0.0.1:8765.
+- No recibe credenciales de Supabase.
+- No ejecuta comandos del chat.
+- El código se renueva después de emparejar.
+- El origen web queda autorizado localmente mediante token.
+- La bóveda se conserva en SAKURA_DATA.
 
-RESPALDO
-Desde Estudio de SAKURA puedes crear respaldos. Se guardan en:
-SAKURA_DATA\respaldos
-
-
-HOTFIX WINDOWS v1
-=================
-- Los archivos BAT usan formato CRLF compatible con Windows.
-- Se detecta primero el lanzador py y luego python.
-- Se agrego VERIFICAR_REQUISITOS_SAKURA.bat.
-- Si Python no esta instalado, el instalador abre la pagina oficial.
-
-
-ACTUALIZACIÓN v17.12.13.2
-=======================
-- Mantiene la conversación y el borrador de orden al navegar entre módulos.
-- Recibe entidades reales y el borrador acumulado para comprender nombres, clientes, campañas, errores de escritura y datos agregados en varios mensajes.
-- No cambia la instalación: conserva 127.0.0.1:8765, Ollama local y el mismo emparejamiento.
-
-ACTUALIZACIÓN v17.12.13.4 · PUENTE v0.8
-======================================
-- Mejora la conversación natural y diferencia una charla de una orden sobre la plataforma.
-- Nunca debe afirmar que una acción se ejecutó: Marketing Cloud es quien valida y confirma el resultado real.
-- Conserva el mismo puerto, emparejamiento, Ollama y modelos; no necesita reinstalar Python.
-- Para aplicar el cambio, reemplaza la carpeta SAKURA_LOCAL_BRIDGE y reinicia INICIAR_SAKURA_LOCAL.bat.
+COMPATIBILIDAD v17.15.3
+- Rutas nativas: /status, /pair, /models, /chat, /intent, /analyze, /embed, /vault, /backup y /release.
+- Alias compatibles: /health, /api/pairing/verify, /api/models, /api/chat y /api/model/release.
+- Soporte CORS y Local Network Access para conexión desde Vercel.

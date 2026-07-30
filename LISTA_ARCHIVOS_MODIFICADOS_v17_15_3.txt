@@ -1,0 +1,10 @@
+index.html
+manifest.webmanifest
+service-worker.js
+config/public-runtime-config.js
+config/build-manifest.json
+assets/js/sakura-personal-workspace-v17-12-13-6.js
+SAKURA_LOCAL_BRIDGE/sakura_bridge.py
+SAKURA_LOCAL_BRIDGE/INICIAR_SAKURA_LOCAL.bat
+SAKURA_LOCAL_BRIDGE/README_SAKURA_LOCAL.txt
+LEER_PRIMERO_PAQUETE_CHATGPT_PRO.txt

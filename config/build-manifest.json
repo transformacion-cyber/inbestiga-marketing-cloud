@@ -642,10 +642,10 @@
     "sakura_academy_no_polling": true,
     "sakura_academy_no_new_realtime": true
   },
-  "base": "v17.15.1 SAKURA ACADEMY INTERACTION & SUPERVISED SELF-IMPROVEMENT HOTFIX",
-  "hotfix": "v17.15.2 adds a non-destructive interaction integrity layer that inventories control wiring, detects blocked layers, contrast and mobile issues, captures runtime errors, records reversible local preference changes, aligns caches and integrates with the existing productive lifecycle trash. No SQL, polling, MutationObserver, Realtime or protected backend changes.",
-  "version": "v17.15.2",
-  "name": "PLATFORM INTERACTION INTEGRITY & AUTOMATIC DIAGNOSTICS",
+  "base": "v17.15.2 PLATFORM INTERACTION INTEGRITY & AUTOMATIC DIAGNOSTICS",
+  "hotfix": "v17.15.3 corrects SAKURA local pairing route compatibility, adds native/API bridge protocol negotiation, Local Network Access support and a robust Windows launcher. No SQL or backend changes.",
+  "version": "v17.15.3",
+  "name": "SAKURA LOCAL BRIDGE COMPATIBILITY HOTFIX",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
     "assets/js/unified-command-center-v17-15-0.js",
@@ -657,7 +657,8 @@
     "assets/js/interaction-integrity-bootstrap-v17-15-2.js",
     "assets/css/interaction-integrity-v17-15-2.css",
     "assets/js/interaction-integrity-v17-15-2.js",
-    "assets/js/release-marker-v17-15-2.js"
+    "assets/js/release-marker-v17-15-2.js",
+    "assets/js/release-marker-v17-15-3.js"
   ],
   "feature_flags": {
     "sakura_academy_v17140": true,
@@ -709,7 +710,15 @@
     "no_polling_v17152": true,
     "no_mutation_observer_v17152": true,
     "no_new_realtime_channels_v17152": true,
-    "no_dynamic_code_v17152": true
+    "no_dynamic_code_v17152": true,
+    "sakura_bridge_native_api_protocol_negotiation_v17153": true,
+    "sakura_pairing_route_compatibility_v17153": true,
+    "sakura_loopback_target_address_space_v17153": true,
+    "sakura_private_network_access_cors_v17153": true,
+    "sakura_windows_launcher_repair_v17153": true,
+    "sakura_no_sql_v17153": true,
+    "sakura_no_new_realtime_v17153": true,
+    "sakura_no_polling_v17153": true
   },
-  "release": "v17.15.2 adds Platform Interaction Integrity & Automatic Diagnostics: safe control wiring inventory, blocked-layer and contrast checks, mobile target checks, runtime error capture, local preference undo, diagnostic trash and PWA cache repair. No SQL, polling, MutationObserver, Realtime or protected backend changes."
+  "release": "v17.15.3 fixes the reproduced SAKURA pairing failure by aligning the platform with the bundled local bridge routes and supporting the alternative API protocol. It preserves Auth, RLS, RPC, Storage, messaging and productive data."
 }

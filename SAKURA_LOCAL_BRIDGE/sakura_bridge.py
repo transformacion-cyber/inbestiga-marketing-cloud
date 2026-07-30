@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""SAKURA Local Bridge v0.6 para INBESTIGA Marketing Cloud v17.12.13.
+"""SAKURA Local Bridge v0.9 para INBESTIGA Marketing Cloud v17.15.3.
 
 Puente loopback sin dependencias externas. Solo escucha en 127.0.0.1,
 administra una bóveda local y conecta la interfaz web autorizada con Ollama.
@@ -23,7 +23,7 @@ from http.server import BaseHTTPRequestHandler, ThreadingHTTPServer
 from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
-VERSION = "0.6-native-pilot"
+VERSION = "0.9-v17.15.3"
 HOST = "127.0.0.1"
 PORT = 8765
 OLLAMA_HOST = "127.0.0.1"
@@ -31,6 +31,8 @@ OLLAMA_PORT = 11434
 ROOT = Path(__file__).resolve().parent
 DATA = ROOT / "SAKURA_DATA"
 CONFIG_FILE = DATA / "config.json"
+PAIR_CODE_FILE = DATA / "pairing_code.txt"
+ROUTE_LOG_FILE = DATA / "last_route.txt"
 MAX_BODY = 2_000_000
 MAX_CONCURRENT = 2
 SEMAPHORE = threading.BoundedSemaphore(MAX_CONCURRENT)
@@ -52,6 +54,22 @@ def ensure_data() -> None:
         (DATA / name).mkdir(parents=True, exist_ok=True)
 
 
+def normalized_pair_code(value: str) -> str:
+    return "".join(ch for ch in str(value or "") if ch.isdigit())
+
+
+def formatted_pair_code(value: str) -> str:
+    digits = normalized_pair_code(value).zfill(6)[-6:]
+    return f"{digits[:3]}-{digits[3:]}"
+
+
+def write_pair_code_file(config: dict) -> None:
+    try:
+        PAIR_CODE_FILE.write_text(formatted_pair_code(config.get("pair_code", "")), "utf-8")
+    except OSError:
+        pass
+
+
 def load_config() -> dict:
     ensure_data()
     if CONFIG_FILE.exists():
@@ -62,10 +80,12 @@ def load_config() -> dict:
     else:
         cfg = {}
     cfg.setdefault("token", secrets.token_urlsafe(32))
-    cfg.setdefault("pair_code", f"{secrets.randbelow(1_000_000):06d}")
+    code = normalized_pair_code(cfg.get("pair_code", ""))
+    cfg["pair_code"] = code if len(code) == 6 else f"{secrets.randbelow(1_000_000):06d}"
     cfg.setdefault("allowed_origins", [])
     cfg.setdefault("created_at", utc_now())
     CONFIG_FILE.write_text(json.dumps(cfg, ensure_ascii=False, indent=2), "utf-8")
+    write_pair_code_file(cfg)
     return cfg
 
 
@@ -74,6 +94,7 @@ CONFIG = load_config()
 
 def save_config() -> None:
     CONFIG_FILE.write_text(json.dumps(CONFIG, ensure_ascii=False, indent=2), "utf-8")
+    write_pair_code_file(CONFIG)
 
 
 def safe_id(value: str) -> str:
@@ -165,7 +186,7 @@ def extract_json(text: str) -> dict:
 
 class Handler(BaseHTTPRequestHandler):
     protocol_version = "HTTP/1.1"
-    server_version = "SAKURA-Local/0.6"
+    server_version = "SAKURA-Local/0.9"
 
     def log_message(self, fmt: str, *args) -> None:
         sys.stdout.write("[SAKURA] " + (fmt % args) + "\n")
@@ -176,11 +197,13 @@ class Handler(BaseHTTPRequestHandler):
 
     def _cors(self, origin: str | None = None) -> None:
         origin = origin if origin is not None else self.origin
-        if origin and (allowed_origin(origin) or self.path.startswith("/pair") or self.path.startswith("/status")):
+        if origin and (allowed_origin(origin) or self.path.startswith("/pair") or self.path.startswith("/status") or self.path.startswith("/health") or self.path.startswith("/api/pairing")):
             self.send_header("Access-Control-Allow-Origin", origin)
             self.send_header("Vary", "Origin")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type, X-Sakura-Token")
+        self.send_header("Access-Control-Allow-Headers", "Content-Type, X-Sakura-Token, X-Sakura-Session")
         self.send_header("Access-Control-Allow-Methods", "GET, POST, DELETE, OPTIONS")
+        if self.headers.get("Access-Control-Request-Private-Network", "").lower() == "true":
+            self.send_header("Access-Control-Allow-Private-Network", "true")
         self.send_header("Access-Control-Max-Age", "600")
 
     def _security(self) -> None:
@@ -212,11 +235,41 @@ class Handler(BaseHTTPRequestHandler):
         if not allowed_origin(self.origin):
             self._json(403, {"error": "Origen no emparejado con SAKURA Local."})
             return False
-        supplied = self.headers.get("X-Sakura-Token", "")
+        supplied = self.headers.get("X-Sakura-Token", "") or self.headers.get("X-Sakura-Session", "")
         if not supplied or not secrets.compare_digest(supplied, CONFIG.get("token", "")):
             self._json(401, {"error": "Token local inválido. Vuelve a emparejar SAKURA."})
             return False
         return True
+
+    def _log_unknown_route(self) -> None:
+        try:
+            ROUTE_LOG_FILE.write_text(
+                f"{self.command} {self.path}\nOrigen: {self.origin or 'sin Origin'}\n",
+                "utf-8",
+            )
+        except OSError:
+            pass
+
+    def _pair_response(self, origin: str, api_mode: bool = False) -> dict:
+        payload = {"ok": True, "token": CONFIG["token"], "origin": origin}
+        if api_mode:
+            payload.update({
+                "success": True,
+                "connected": True,
+                "paired": True,
+                "status": "connected",
+                "session": CONFIG["token"],
+                "session_token": CONFIG["token"],
+                "sessionToken": CONFIG["token"],
+                "access_token": CONFIG["token"],
+                "bridge_version": VERSION,
+            })
+        return payload
+
+    def _rotate_pair_code(self) -> str:
+        CONFIG["pair_code"] = f"{secrets.randbelow(1_000_000):06d}"
+        save_config()
+        return formatted_pair_code(CONFIG["pair_code"])
 
     def do_OPTIONS(self) -> None:
         self.send_response(204)
@@ -227,17 +280,43 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self) -> None:
         parsed = urlparse(self.path)
-        if parsed.path == "/status":
-            self._json(200, {"ok": True, "version": VERSION, "ollama": ollama_available(), "paired": allowed_origin(self.origin), "origin": self.origin or None})
+        if parsed.path in ("/status", "/health", "/api/pairing/status"):
+            status = {
+                "ok": True,
+                "version": VERSION,
+                "ollama": ollama_available(),
+                "paired": allowed_origin(self.origin),
+                "origin": self.origin or None,
+            }
+            if parsed.path == "/health":
+                status.update({
+                    "bridge": "SAKURA Local Bridge",
+                    "bridge_version": VERSION,
+                    "ollama_connected": status["ollama"],
+                    "selected_model": "gemma3:4b",
+                    "configured_model": "gemma3:4b",
+                })
+            self._json(200, status)
+            return
+        if parsed.path == "/api/pairing/admin" and not self.origin:
+            self._json(200, {
+                "ok": True,
+                "code": formatted_pair_code(CONFIG.get("pair_code", "")),
+                "bridge_version": VERSION,
+            })
             return
         if not self._authorized():
             return
-        if parsed.path == "/models":
+        if parsed.path in ("/models", "/api/models"):
             try:
                 conn, response = ollama_request("/api/tags", None, 8)
                 data = json.loads(response.read().decode("utf-8") or "{}")
                 conn.close()
-                self._json(response.status, {"ollama": response.status == 200, "models": data.get("models", [])})
+                models = data.get("models", [])
+                payload = {"ollama": response.status == 200, "models": models}
+                if parsed.path == "/api/models":
+                    payload.update({"ok": response.status == 200, "success": response.status == 200})
+                self._json(response.status, payload)
             except Exception as exc:
                 self._json(503, {"error": "Ollama no está disponible.", "detail": str(exc)})
             return
@@ -245,7 +324,8 @@ class Handler(BaseHTTPRequestHandler):
             scope = parse_qs(parsed.query).get("scope", ["all"])[0]
             self._json(200, {"entries": load_entries(scope)})
             return
-        self._json(404, {"error": "Ruta no disponible."})
+        self._log_unknown_route()
+        self._json(404, {"error": "Ruta no disponible.", "requested_path": parsed.path})
 
     def do_DELETE(self) -> None:
         parsed = urlparse(self.path)
@@ -258,24 +338,27 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_POST(self) -> None:
         parsed = urlparse(self.path)
-        if parsed.path == "/pair":
+        if parsed.path in ("/pair", "/api/pairing/verify", "/api/pair"):
             try:
                 body = self._body()
-                code = str(body.get("code", "")).strip()
+                code = normalized_pair_code(body.get("code") or body.get("pairing_code") or body.get("pairingCode") or body.get("pin"))
                 origin = self.origin or str(body.get("origin", "")).strip()
                 if not origin or not re.match(r"^https?://", origin):
                     raise ValueError("Origen inválido.")
-                if not secrets.compare_digest(code, str(CONFIG.get("pair_code", ""))):
+                if not secrets.compare_digest(code, normalized_pair_code(CONFIG.get("pair_code", ""))):
                     self._json(403, {"error": "Código de emparejamiento incorrecto."})
                     return
                 if origin not in CONFIG["allowed_origins"]:
                     CONFIG["allowed_origins"].append(origin)
                     CONFIG["allowed_origins"] = CONFIG["allowed_origins"][-12:]
-                CONFIG["pair_code"] = f"{secrets.randbelow(1_000_000):06d}"
-                save_config()
-                self._json(200, {"ok": True, "token": CONFIG["token"], "origin": origin})
+                payload = self._pair_response(origin, parsed.path != "/pair")
+                self._rotate_pair_code()
+                self._json(200, payload)
             except Exception as exc:
                 self._json(400, {"error": str(exc)})
+            return
+        if parsed.path == "/api/pairing/rotate" and not self.origin:
+            self._json(200, {"ok": True, "code": self._rotate_pair_code(), "bridge_version": VERSION})
             return
         if not self._authorized():
             return
@@ -288,7 +371,7 @@ class Handler(BaseHTTPRequestHandler):
                 self._json(200, {"ok": True, "entry": save_entry(body)})
             elif parsed.path == "/backup":
                 self._backup()
-            elif parsed.path == "/release":
+            elif parsed.path in ("/release", "/api/model/release"):
                 self._release(body)
             elif parsed.path == "/embed":
                 self._embed(body)
@@ -298,8 +381,13 @@ class Handler(BaseHTTPRequestHandler):
                 self._analyze(body)
             elif parsed.path == "/chat":
                 self._chat(body)
+            elif parsed.path == "/api/chat":
+                self._chat_json(body)
+            elif parsed.path == "/api/pairing/release":
+                self._json(200, {"ok": True, "success": True, "released": True})
             else:
-                self._json(404, {"error": "Ruta no disponible."})
+                self._log_unknown_route()
+                self._json(404, {"error": "Ruta no disponible.", "requested_path": parsed.path})
         except (BrokenPipeError, ConnectionResetError):
             pass
         except Exception as exc:
@@ -368,6 +456,28 @@ class Handler(BaseHTTPRequestHandler):
         if status!=200:self._json(status,{"error":raw.decode("utf-8","replace")});return
         obj=json.loads(raw.decode("utf-8"));self._json(200,extract_json(obj.get("message",{}).get("content","{}")))
 
+    def _chat_json(self, body: dict) -> None:
+        model = str(body.get("model") or "gemma3:4b")[:120]
+        messages = []
+        for item in body.get("messages", [])[-16:]:
+            role = item.get("role") if item.get("role") in ("system", "user", "assistant") else "user"
+            messages.append({"role": role, "content": str(item.get("content", ""))[:12000]})
+        payload = {
+            "model": model,
+            "messages": messages,
+            "stream": False,
+            "keep_alive": body.get("keep_alive", "5m"),
+            "options": body.get("options", {}),
+        }
+        conn, response = ollama_request("/api/chat", payload, 300)
+        raw = response.read(); status = response.status; conn.close()
+        if status != 200:
+            self._json(status, {"error": raw.decode("utf-8", "replace")})
+            return
+        result = json.loads(raw.decode("utf-8") or "{}")
+        result.update({"ok": True, "success": True, "bridge_model": model})
+        self._json(200, result)
+
     def _chat(self, body: dict) -> None:
         model = str(body.get("model") or "gemma3:4b")[:120]
         system = str(body.get("system") or "")[:12000]
@@ -401,9 +511,9 @@ def main() -> None:
     ensure_data()
     server = ThreadingHTTPServer((HOST, PORT), Handler)
     print("=" * 72)
-    print("SAKURA LOCAL BRIDGE v0.8 · INBESTIGA Marketing Cloud v17.12.13.4")
+    print("SAKURA LOCAL BRIDGE v0.9 · INBESTIGA Marketing Cloud v17.15.3")
     print(f"Dirección local: http://{HOST}:{PORT}")
-    print(f"Código de emparejamiento: {CONFIG['pair_code']}")
+    print(f"Código de emparejamiento: {formatted_pair_code(CONFIG['pair_code'])}")
     print("Ollama esperado en: http://127.0.0.1:11434")
     print("Este puente NO está expuesto a internet ni a la red local.")
     print("Mantén esta ventana abierta. Ctrl+C para cerrar.")

@@ -1,0 +1,21 @@
+{
+  "version": "v17.15.3",
+  "name": "SAKURA Local Bridge Compatibility Hotfix",
+  "base": "v17.15.2",
+  "reproduced_issue": "Pegar un código válido en SAKURA mostraba Ruta no encontrada porque la plataforma llamaba /pair y el ejecutor alternativo exponía /api/pairing/verify.",
+  "changes": [
+    "BridgeClient negocia automáticamente protocolo nativo y protocolo API compatible.",
+    "Conector oficial incluido actualizado a v0.9 con rutas nativas y alias API.",
+    "Soporte para X-Sakura-Token y X-Sakura-Session.",
+    "Soporte CORS Local Network Access y targetAddressSpace loopback.",
+    "Código con o sin guion aceptado y rotado después del emparejamiento.",
+    "Iniciador Windows robusto para Ollama, Python, puerto 8765 y reparación.",
+    "Release markers, runtime, manifest y caché PWA alineados en v17.15.3."
+  ],
+  "backend_changes": false,
+  "sql_changes": false,
+  "protected_change": {
+    "file": "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "reason": "Cambio mínimo indispensable en el cliente de puente para corregir el fallo reproducido."
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "version": "v17.15.3",
+  "status": "pass_with_productive_validation_pending",
+  "counts": {
+    "platform_files_before_package_manifest_and_sha": 490,
+    "javascript_files": 52,
+    "json_files_before_package_manifest": 121,
+    "html_inline_scripts": 14,
+    "html_ids": 646,
+    "unique_html_ids": 646,
+    "pwa_shell_resources": 77,
+    "sql_files": 11
+  },
+  "validation": {
+    "javascript_syntax": "pass",
+    "python_bridge_compile": "pass",
+    "json_parse": "pass",
+    "inline_javascript_syntax": "pass",
+    "duplicate_html_ids": "none",
+    "index_local_references": "all_present",
+    "pwa_shell_references": "all_present",
+    "version_alignment": {
+      "html": "v17.15.3",
+      "runtime": "v17.15.3",
+      "manifest": "v17.15.3",
+      "service_worker": "v17.15.3",
+      "release_marker": "v17.15.3"
+    },
+    "native_bridge_integration": "pass",
+    "api_bridge_compatibility": "pass",
+    "private_network_access_header": "pass",
+    "target_address_space_loopback": "pass",
+    "sql_unchanged": true,
+    "protected_backend_unchanged": true,
+    "removed_files": []
+  },
+  "changed_files": [
+    "LEER_PRIMERO_PAQUETE_CHATGPT_PRO.txt",
+    "SAKURA_LOCAL_BRIDGE/INICIAR_SAKURA_LOCAL.bat",
+    "SAKURA_LOCAL_BRIDGE/README_SAKURA_LOCAL.txt",
+    "SAKURA_LOCAL_BRIDGE/sakura_bridge.py",
+    "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "new_files": [
+    "AUDITORIA_v17_15_3_SAKURA_LOCAL_BRIDGE_COMPATIBILITY.txt",
+    "CHANGES_v17_15_3.json",
+    "DIAGNOSTICAR_SAKURA_LOCAL.bat",
+    "FUNCTIONAL_TESTS_v17_15_3.json",
+    "GITHUB_RELEASE_v17_15_3.txt",
+    "INICIAR_SAKURA_Y_OLLAMA.bat",
+    "LEER_PRIMERO_v17_15_3.txt",
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_15_3.txt",
+    "LISTA_ARCHIVOS_NUEVOS_v17_15_3.txt",
+    "PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_3.txt",
+    "PROTECTED_DIFF_v17_15_3.json",
+    "REPARAR_Y_REINICIAR_SAKURA.bat",
+    "SAKURA_LOCAL_BRIDGE/DETENER_SAKURA_LOCAL.bat",
+    "SAKURA_LOCAL_BRIDGE/DIAGNOSTICAR_CONEXION.bat",
+    "SAKURA_LOCAL_BRIDGE/GENERAR_NUEVO_CODIGO.bat",
+    "SAKURA_LOCAL_BRIDGE/INICIAR_SAKURA_Y_OLLAMA.bat",
+    "SAKURA_LOCAL_BRIDGE/REPARAR_Y_REINICIAR_SAKURA.bat",
+    "SAKURA_LOCAL_BRIDGE/START_BRIDGE.cmd",
+    "SAKURA_LOCAL_BRIDGE/scripts/Diagnostico.ps1",
+    "SAKURA_LOCAL_BRIDGE/scripts/Repair-Sakura.ps1",
+    "SAKURA_LOCAL_BRIDGE/scripts/Rotate-Code.ps1",
+    "SAKURA_LOCAL_BRIDGE/scripts/Sakura-Common.ps1",
+    "SAKURA_LOCAL_BRIDGE/scripts/Start-Sakura.ps1",
+    "SAKURA_LOCAL_BRIDGE/scripts/Stop-Sakura.ps1",
+    "STATIC_VALIDATION_v17_15_3.json",
+    "assets/js/release-marker-v17-15-3.js"
+  ],
+  "pending": [
+    "Visual validation in deployed Vercel origin",
+    "Windows launcher execution on the user PC",
+    "Real gemma3:4b and embeddinggemma response quality",
+    "Chrome Local Network Access permission prompt if shown"
+  ]
+}

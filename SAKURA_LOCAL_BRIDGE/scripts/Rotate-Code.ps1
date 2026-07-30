@@ -1,0 +1,2 @@
+﻿$ErrorActionPreference="Stop"
+try{$Result=Invoke-RestMethod -Uri "http://127.0.0.1:8765/api/pairing/rotate" -Method Post -ContentType "application/json" -Body "{}" -TimeoutSec 5;$Code=[string]$Result.code;Set-Clipboard -Value $Code;Write-Host "Nuevo código: $Code" -ForegroundColor Green;Write-Host "Copiado al portapapeles."}catch{Write-Host "SAKURA Local no está activa. Ejecuta INICIAR_SAKURA_Y_OLLAMA.bat." -ForegroundColor Red}Read-Host "Presiona ENTER para cerrar"
