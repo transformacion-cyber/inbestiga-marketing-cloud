@@ -1,0 +1,44 @@
+{
+  "version": "v17.15.5",
+  "result": "pass",
+  "tests": [
+    {
+      "name": "composer_dom_contract",
+      "result": "pass",
+      "detail": "skMic, skInput and skSend remain present in the productive workspace DOM."
+    },
+    {
+      "name": "three_column_composer_contract",
+      "result": "pass",
+      "detail": "44px / minmax(0,1fr) / 48px with explicit child placement."
+    },
+    {
+      "name": "single_scroll_owner",
+      "result": "pass",
+      "detail": "sk-body hides overflow and the active sk-view owns vertical scrolling."
+    },
+    {
+      "name": "message_alignment",
+      "result": "pass",
+      "detail": "User, assistant and system messages receive explicit flex alignment."
+    },
+    {
+      "name": "responsive_compact_composer",
+      "result": "pass",
+      "detail": "Compact container retains three columns and two footer actions."
+    },
+    {
+      "name": "no_backend_change",
+      "result": "pass",
+      "detail": "No existing productive JS or SQL file changed."
+    },
+    {
+      "name": "no_polling_or_global_observer",
+      "result": "pass",
+      "detail": "New diagnostic module contains no polling or MutationObserver."
+    }
+  ],
+  "pending": [
+    "Visual validation after Vercel deploy in the user browser at normal, compact and mobile widths."
+  ]
+}

@@ -1,0 +1,11 @@
+AUDITORIA_v17_15_5_SAKURA_CHAT_COMPOSER.txt
+CHANGES_v17_15_5.json
+FUNCTIONAL_TESTS_v17_15_5.json
+GITHUB_RELEASE_v17_15_5.txt
+LEER_PRIMERO_v17_15_5.txt
+PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_5.txt
+PROTECTED_DIFF_v17_15_5.json
+STATIC_CHAT_LAYOUT_VALIDATION_v17_15_5.json
+assets/css/sakura-chat-composer-hotfix-v17-15-5.css
+assets/js/release-marker-v17-15-5.js
+assets/js/sakura-chat-composer-hotfix-v17-15-5.js

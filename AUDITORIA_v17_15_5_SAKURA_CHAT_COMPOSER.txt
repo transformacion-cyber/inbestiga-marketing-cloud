@@ -1,0 +1,19 @@
+INBESTIGA Marketing Cloud v17.15.5
+SAKURA CHAT LAYOUT & COMPOSER HOTFIX
+
+FALLO REPRODUCIDO
+- El DOM del compositor contiene tres controles: skMic, skInput y skSend.
+- v17.15.4 declaraba grid-template-columns con solo dos columnas.
+- El textarea terminaba en una columna de 46 px y mostraba texto vertical.
+- El botón Enviar saltaba a una segunda fila.
+
+CORRECCIÓN
+- Compositor real de tres columnas.
+- Un solo scroll vertical por vista activa.
+- Conversación alineada hacia el compositor.
+- Acciones y feedback con wrapping seguro.
+- Sin cambios en chat, Ollama, emparejamiento, Auth, RLS, RPC, Storage o backend.
+
+VALIDACIÓN VISUAL PENDIENTE
+- Confirmar después de desplegar en Vercel con Ctrl + Shift + R.
+- Abrir SAKURA y comprobar ancho normal, compacto y móvil.

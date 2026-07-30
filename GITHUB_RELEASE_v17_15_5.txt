@@ -1,0 +1,9 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.5 — SAKURA Chat Layout & Composer Hotfix
+
+Corrige el compositor roto de SAKURA mediante una cuadrícula real de tres controles, elimina el textarea vertical, unifica el scroll de la conversación y mantiene visibles las acciones inferiores. Conserva Ollama, emparejamiento, Auth, RLS, RPC, Storage y datos productivos.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.15.5 SAKURA chat composer hotfix"
+git push origin main

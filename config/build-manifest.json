@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.15.4",
-  "build": "SAKURA WORKSPACE LAYOUT HOTFIX · RESPONSIVE SAFE",
+  "frontend_version": "17.15.5",
+  "build": "SAKURA CHAT LAYOUT & COMPOSER HOTFIX · SINGLE SCROLL · THREE-CONTROL COMPOSER",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -273,6 +273,24 @@
       "path": "assets/js/release-marker-v17-15-4.js",
       "origin": "v17.15.4",
       "mode": "release-marker"
+    },
+    {
+      "name": "sakura-chat-composer-hotfix-v17-15-5-css",
+      "path": "assets/css/sakura-chat-composer-hotfix-v17-15-5.css",
+      "origin": "v17.15.5",
+      "mode": "visual-chat-composer-hotfix"
+    },
+    {
+      "name": "sakura-chat-composer-hotfix-v17-15-5",
+      "path": "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
+      "origin": "v17.15.5",
+      "mode": "read-only-layout-diagnostics"
+    },
+    {
+      "name": "release-marker-v17-15-5",
+      "path": "assets/js/release-marker-v17-15-5.js",
+      "origin": "v17.15.5",
+      "mode": "release-marker"
     }
   ],
   "styles": [
@@ -307,7 +325,8 @@
     "assets/css/sakura-button-text-contrast-v17-14-1.css",
     "assets/css/unified-command-center-v17-15-0.css",
     "assets/css/interaction-integrity-v17-15-2.css",
-    "assets/css/sakura-workspace-layout-hotfix-v17-15-4.css"
+    "assets/css/sakura-workspace-layout-hotfix-v17-15-4.css",
+    "assets/css/sakura-chat-composer-hotfix-v17-15-5.css"
   ],
   "backend": {
     "schema": "marketing_app",
@@ -661,10 +680,10 @@
     "sakura_academy_no_polling": true,
     "sakura_academy_no_new_realtime": true
   },
-  "base": "v17.15.3 SAKURA LOCAL BRIDGE COMPATIBILITY HOTFIX",
-  "hotfix": "v17.15.4 corrects SAKURA workspace overlap and clipped controls by reserving space in the real main column after Apple navigation overrides, reorganizing tabs, header, messages and composer responsively. No SQL or backend changes.",
-  "version": "v17.15.4",
-  "name": "SAKURA WORKSPACE LAYOUT HOTFIX",
+  "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
+  "hotfix": "v17.15.5 corrects the reproduced SAKURA chat composer defect: the three DOM controls now use three grid columns, each active view owns one scrollbar, messages align consistently, and footer tools remain fully visible. No SQL or backend changes.",
+  "version": "v17.15.5",
+  "name": "SAKURA CHAT LAYOUT & COMPOSER HOTFIX",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
     "assets/js/unified-command-center-v17-15-0.js",
@@ -680,7 +699,10 @@
     "assets/js/release-marker-v17-15-3.js",
     "assets/css/sakura-workspace-layout-hotfix-v17-15-4.css",
     "assets/js/sakura-workspace-layout-hotfix-v17-15-4.js",
-    "assets/js/release-marker-v17-15-4.js"
+    "assets/js/release-marker-v17-15-4.js",
+    "assets/css/sakura-chat-composer-hotfix-v17-15-5.css",
+    "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
+    "assets/js/release-marker-v17-15-5.js"
   ],
   "feature_flags": {
     "sakura_academy_v17140": true,
@@ -750,7 +772,20 @@
     "sakura_no_sql_v17154": true,
     "sakura_no_new_realtime_v17154": true,
     "sakura_no_polling_v17154": true,
-    "sakura_no_mutation_observer_v17154": true
+    "sakura_no_mutation_observer_v17154": true,
+    "sakura_three_control_composer_grid_v17155": true,
+    "sakura_single_active_view_scroll_v17155": true,
+    "sakura_message_bottom_alignment_v17155": true,
+    "sakura_chat_no_vertical_textarea_v17155": true,
+    "sakura_feedback_wrap_v17155": true,
+    "sakura_no_sql_v17155": true,
+    "sakura_no_new_realtime_v17155": true,
+    "sakura_no_polling_v17155": true,
+    "sakura_no_mutation_observer_v17155": true
   },
-  "release": "v17.15.4 fixes the reproduced visual overlap and clipping with SAKURA open. It preserves Auth, RLS, RPC, Storage, Ollama pairing, messaging and productive data."
+  "release": "v17.15.5 fixes the reproduced chat and composer layout defect while preserving Ollama, pairing, Auth, RLS, RPC, Storage, messaging, Academy and productive data.",
+  "scripts": [
+    "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
+    "assets/js/release-marker-v17-15-5.js"
+  ]
 }

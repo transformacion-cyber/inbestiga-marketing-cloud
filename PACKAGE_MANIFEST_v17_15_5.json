@@ -1,0 +1,49 @@
+{
+  "version": "v17.15.5",
+  "name": "SAKURA Chat Layout & Composer Hotfix",
+  "base": "v17.15.4",
+  "file_count_before_package_manifest": 521,
+  "validation": {
+    "version": "v17.15.5",
+    "result": "pass",
+    "json_files": 133,
+    "javascript_files": 56,
+    "inline_scripts": 14,
+    "css_files": 37,
+    "html_ids_unique": 646,
+    "index_local_references": 71,
+    "pwa_shell_resources": 83,
+    "composer_dom_contract": "pass",
+    "three_column_composer": "pass",
+    "single_active_view_scroll": "pass",
+    "protected_diff": "pass",
+    "browser_visual_validation": "pending_after_vercel_deploy"
+  },
+  "changed_files": [
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "new_files": [
+    "AUDITORIA_v17_15_5_SAKURA_CHAT_COMPOSER.txt",
+    "CHANGES_v17_15_5.json",
+    "FUNCTIONAL_TESTS_v17_15_5.json",
+    "GITHUB_RELEASE_v17_15_5.txt",
+    "LEER_PRIMERO_v17_15_5.txt",
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_15_5.txt",
+    "LISTA_ARCHIVOS_NUEVOS_v17_15_5.txt",
+    "PACKAGE_MANIFEST_v17_15_5.json",
+    "PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_5.txt",
+    "PROTECTED_DIFF_v17_15_5.json",
+    "SHA256SUMS_v17_15_5.txt",
+    "STATIC_CHAT_LAYOUT_VALIDATION_v17_15_5.json",
+    "assets/css/sakura-chat-composer-hotfix-v17-15-5.css",
+    "assets/js/release-marker-v17-15-5.js",
+    "assets/js/sakura-chat-composer-hotfix-v17-15-5.js"
+  ],
+  "removed_files": [],
+  "github_summary": "fix(sakura): correct chat composer grid and scrolling v17.15.5",
+  "github_commit": "git add . && git commit -m \"fix: release v17.15.5 SAKURA chat composer hotfix\" && git push origin main"
+}

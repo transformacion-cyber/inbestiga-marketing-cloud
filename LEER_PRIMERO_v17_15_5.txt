@@ -1,0 +1,17 @@
+INBESTIGA Marketing Cloud v17.15.5
+SAKURA Chat Layout & Composer Hotfix
+
+1. Reemplaza el repositorio con este paquete completo.
+2. Despliega en Vercel.
+3. Realiza Ctrl + Shift + R.
+4. Confirma v17.15.5.
+5. Abre SAKURA y prueba el chat.
+
+Resultado esperado:
+- Micrófono, caja de escritura y Enviar en una sola fila.
+- Caja de escritura ancha y legible.
+- Sin bloque vertical de letras.
+- Un solo scroll en la conversación.
+- Detener respuesta y Borrar conversación completamente visibles.
+
+No necesitas cambiar el conector local v0.9 ni reinstalar Ollama.

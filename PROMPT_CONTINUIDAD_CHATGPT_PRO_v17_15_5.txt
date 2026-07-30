@@ -1,0 +1,8 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.5
+SAKURA CHAT LAYOUT & COMPOSER HOTFIX
+
+Continúa exclusivamente desde el ZIP completo v17.15.5. No mezcles versiones anteriores.
+
+v17.15.5 corrige un fallo visual reproducido de v17.15.4: el compositor tenía tres controles en un grid de dos columnas. La corrección usa un módulo CSS aislado cargado al final, un único scroll por vista activa, mensajes alineados y footer responsive. No modifica Ollama, Auth, RLS, RPC, Storage, mensajería, SAKURA Academy ni datos productivos.
+
+La validación visual final debe hacerse después del despliegue real en Vercel.

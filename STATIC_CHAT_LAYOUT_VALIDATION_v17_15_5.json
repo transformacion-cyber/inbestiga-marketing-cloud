@@ -1,0 +1,48 @@
+{
+  "version": "v17.15.5",
+  "result": "pass",
+  "errors": [],
+  "json_files": 133,
+  "javascript_files": 56,
+  "inline_scripts": 14,
+  "css_files": 37,
+  "html_ids_unique": 646,
+  "index_local_references": 71,
+  "pwa_shell_resources": 83,
+  "layout_checks": {
+    "composer_dom_has_mic_input_send": true,
+    "three_column_grid": true,
+    "explicit_mic_column_1": true,
+    "explicit_input_column_2": true,
+    "explicit_send_column_3": true,
+    "active_view_single_scroll": true,
+    "body_scroll_disabled": true,
+    "no_polling_new_js": true,
+    "no_mutation_observer_new_js": true
+  },
+  "changed_base_files": [
+    "index.html",
+    "service-worker.js",
+    "manifest.webmanifest",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js"
+  ],
+  "new_files": [
+    "AUDITORIA_v17_15_5_SAKURA_CHAT_COMPOSER.txt",
+    "CHANGES_v17_15_5.json",
+    "FUNCTIONAL_TESTS_v17_15_5.json",
+    "GITHUB_RELEASE_v17_15_5.txt",
+    "LEER_PRIMERO_v17_15_5.txt",
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_15_5.txt",
+    "LISTA_ARCHIVOS_NUEVOS_v17_15_5.txt",
+    "PACKAGE_MANIFEST_v17_15_5.json",
+    "PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_5.txt",
+    "PROTECTED_DIFF_v17_15_5.json",
+    "SHA256SUMS_v17_15_5.txt",
+    "STATIC_CHAT_LAYOUT_VALIDATION_v17_15_5.json",
+    "assets/css/sakura-chat-composer-hotfix-v17-15-5.css",
+    "assets/js/release-marker-v17-15-5.js",
+    "assets/js/sakura-chat-composer-hotfix-v17-15-5.js"
+  ],
+  "browser_visual_validation": "pending_after_vercel_deploy (headless browser access blocked by environment policy)"
+}

@@ -1,0 +1,21 @@
+{
+  "base": "v17.15.4",
+  "version": "v17.15.5",
+  "result": "pass",
+  "allowed_changed_files": [
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "changed_base_files": [
+    "index.html",
+    "service-worker.js",
+    "manifest.webmanifest",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js"
+  ],
+  "protected_productive_modules_changed": false,
+  "note": "No existing productive JS, Auth, RLS, RPC, Storage, Ollama, messaging or Academy files were modified."
+}

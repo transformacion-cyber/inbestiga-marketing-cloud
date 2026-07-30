@@ -1,0 +1,21 @@
+{
+  "version": "v17.15.5",
+  "name": "SAKURA Chat Layout & Composer Hotfix",
+  "base": "v17.15.4",
+  "problem_reproduced": [
+    "The composer DOM contains microphone, textarea and send button, but v17.15.4 declared only two grid columns.",
+    "The textarea collapsed into a narrow vertical strip and the send button moved to a second row.",
+    "The active chat view inherited nested scrolling and the message column felt visually disconnected."
+  ],
+  "changes": [
+    "Three-column composer: 44px / flexible input / 48px.",
+    "Explicit placement for microphone, textarea and send button.",
+    "One vertical scrollbar owned by the active view.",
+    "Messages aligned as a conversation column close to the composer.",
+    "Feedback and message actions wrap without clipping.",
+    "Responsive compact and mobile composer remains one horizontal row."
+  ],
+  "backend_changes": false,
+  "sql_new": false,
+  "protected_modules_modified": false
+}
