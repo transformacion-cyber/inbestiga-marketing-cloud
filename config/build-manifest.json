@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.15.7",
-  "build": "SYSTEM HEALTH SCORING & WORK 360 SYNC TRUTH HOTFIX",
+  "frontend_version": "17.15.8",
+  "build": "CANONICAL RELEASE MARKER & VERSION HEALTH TRUTH HOTFIX",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -303,6 +303,12 @@
       "path": "assets/js/release-marker-v17-15-7.js",
       "origin": "v17.15.7",
       "mode": "canonical-version-self-healing-and-sync-truth"
+    },
+    {
+      "name": "release-marker-v17-15-8",
+      "path": "assets/js/release-marker-v17-15-8.js",
+      "origin": "v17.15.8",
+      "mode": "single-final-canonical-release-marker"
     }
   ],
   "styles": [
@@ -699,7 +705,15 @@
     "no_sql_v17157": true,
     "no_polling_v17157": true,
     "no_mutation_observer_v17157": true,
-    "no_new_realtime_channels_v17157": true
+    "no_new_realtime_channels_v17157": true,
+    "single_final_canonical_release_marker_v17158": true,
+    "blocking_v17156_marker_removed_from_index_v17158": true,
+    "transitional_v17157_marker_removed_from_index_v17158": true,
+    "normalized_version_comparison_v17158": true,
+    "no_sql_v17158": true,
+    "no_backend_changes_v17158": true,
+    "no_polling_v17158": true,
+    "no_mutation_observer_v17158": true
   },
   "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
   "hotfix": "v17.15.6 fixes Command Center null.id crashes, prevents duplicate/re-entrant initialization, preserves the canonical release version against lazy-module downgrades, adds rendered visual-layout health, ignores historical browser incidents in the current score, and stops Work 360 cloud hydration from creating false local pending changes. No SQL or backend changes.",
@@ -805,10 +819,10 @@
     "sakura_no_polling_v17155": true,
     "sakura_no_mutation_observer_v17155": true
   },
-  "release": "v17.15.7 corrects health scoring truthfulness, canonical version alignment and Work 360 pending-state detection without backend changes.",
+  "release": "v17.15.8 removes the obsolete non-configurable v17.15.6 marker from the load path and normalizes all health version comparisons.",
   "scripts": [
     "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
     "assets/js/release-marker-v17-15-5.js",
-    "assets/js/release-marker-v17-15-7.js"
+    "assets/js/release-marker-v17-15-8.js"
   ]
 }

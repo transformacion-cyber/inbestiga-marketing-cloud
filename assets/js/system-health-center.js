@@ -1,11 +1,11 @@
-/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.7 ===== */
+/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.8 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.7";
-  const BUILD = "SYSTEM HEALTH SCORING & WORK 360 SYNC TRUTH HOTFIX";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.8";
+  const BUILD = "CANONICAL RELEASE MARKER & VERSION HEALTH TRUTH HOTFIX";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";
   const DEFAULT_BUCKET = "inbestiga-media";
@@ -583,8 +583,13 @@
     }
   }
 
+  function normalizeVersion(value) {
+    const match = String(value || "").trim().match(/(\d+)\.(\d+)\.(\d+)/);
+    return match ? `v${match[1]}.${match[2]}.${match[3]}` : "";
+  }
+
   function repairCanonicalVersionMarkers() {
-    const expected = window.INBESTIGA_RELEASE?.version || VERSION;
+    const expected = normalizeVersion(window.INBESTIGA_RELEASE?.version) || normalizeVersion(VERSION);
     const repaired = [];
     const htmlVersion = document.documentElement.dataset.inbestigaBuild || null;
     if (htmlVersion !== expected) {
@@ -614,7 +619,7 @@
 
   async function versionIntegrityHealth() {
     const alignment = repairCanonicalVersionMarkers();
-    const expected = alignment.expected;
+    const expected = normalizeVersion(alignment.expected);
     const observed = {
       runtime: window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || null,
       release: window.INBESTIGA_RELEASE?.version || null,
@@ -636,7 +641,9 @@
         observed.pwa_manifest = match ? `v${match[1]}.${match[2]}.${match[3]}` : null;
       }
     } catch { /* La PWA se valida también en su comprobación dedicada. */ }
-    const values = Object.entries(observed).filter(([, value]) => value);
+    const values = Object.entries(observed)
+      .map(([key, value]) => [key, normalizeVersion(value)])
+      .filter(([, value]) => value);
     const mismatches = values.filter(([, value]) => value !== expected);
     return check(
       "version-integrity", "summary", "Integridad de versión",

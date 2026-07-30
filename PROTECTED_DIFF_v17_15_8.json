@@ -1,0 +1,16 @@
+{
+  "version": "v17.15.8",
+  "auth": "sin cambios",
+  "rls": "sin cambios",
+  "rpc": "sin cambios",
+  "storage": "sin cambios",
+  "sql": "sin cambios",
+  "ollama": "sin cambios",
+  "productive_data": "sin cambios",
+  "scope": [
+    "index load order",
+    "canonical release marker",
+    "health version normalization",
+    "runtime and PWA metadata"
+  ]
+}

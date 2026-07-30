@@ -1,0 +1,21 @@
+INBESTIGA Marketing Cloud v17.15.8
+CANONICAL RELEASE MARKER & VERSION HEALTH TRUTH HOTFIX
+
+CAUSA CONFIRMADA
+release-marker-v17-15-6.js definía window.INBESTIGA_RELEASE como una propiedad
+no configurable antes de que se cargara v17.15.7.
+
+EFECTO
+El diagnóstico esperaba ocultamente v17.15.6, mientras runtime y PWA mostraban
+v17.15.7. Por eso dos valores visualmente correctos aparecían como inconsistentes.
+
+CORRECCIÓN
+- v17.15.6 deja de cargarse en index.
+- v17.15.7 deja de cargarse como marcador transitorio.
+- v17.15.8 es el único marcador final que define INBESTIGA_RELEASE.
+- Los marcadores históricos v17.15.2–v17.15.5 se conservan para trazabilidad,
+  pero solo actualizan el historial de build y no bloquean el release.
+- Salud normaliza prefijos, espacios y formato antes de comparar.
+
+SIN CAMBIOS
+Auth, RLS, RPC, Storage, SQL, Supabase, Ollama, Academy y datos productivos.

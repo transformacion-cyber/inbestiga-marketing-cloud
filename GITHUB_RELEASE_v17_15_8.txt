@@ -1,0 +1,10 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.8 — Canonical Release Marker & Version Health Truth Hotfix
+
+Elimina el marcador no configurable v17.15.6 del arranque, deja v17.15.8 como
+único release canónico final y normaliza las comparaciones del Centro de Salud.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.15.8 canonical version marker health hotfix"
+git push origin main
