@@ -1,0 +1,15 @@
+{
+  "version": "v17.15.9",
+  "auth": "sin cambios",
+  "rls": "sin cambios",
+  "rpc": "sin cambios",
+  "storage": "sin cambios",
+  "sql": "sin cambios",
+  "ollama": "sin cambios",
+  "productive_data": "sin cambios",
+  "scope": [
+    "config/build-manifest.json version fields",
+    "canonical frontend version markers",
+    "PWA cache version"
+  ]
+}

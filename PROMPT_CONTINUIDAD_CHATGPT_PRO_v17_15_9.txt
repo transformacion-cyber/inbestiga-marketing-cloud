@@ -1,0 +1,11 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.9
+BUILD MANIFEST VERSION ALIGNMENT HOTFIX
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_15_9_BUILD_MANIFEST_VERSION_ALIGNMENT_FULL_PLATFORM.zip
+
+Conservar config/build-manifest.json con:
+version = v17.15.9
+frontend_version = 17.15.9
+
+No degradar estos campos en versiones posteriores.

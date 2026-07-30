@@ -1,0 +1,16 @@
+ARCHIVOS MODIFICADOS
+assets/js/system-health-center.js
+config/build-manifest.json
+config/public-runtime-config.js
+index.html
+manifest.webmanifest
+service-worker.js
+
+ARCHIVOS NUEVOS
+AUDITORIA_v17_15_9_BUILD_MANIFEST_ALIGNMENT.txt
+FUNCTIONAL_TESTS_v17_15_9.json
+GITHUB_RELEASE_v17_15_9.txt
+PACKAGE_MANIFEST_v17_15_9.json
+PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_9.txt
+PROTECTED_DIFF_v17_15_9.json
+assets/js/release-marker-v17-15-9.js

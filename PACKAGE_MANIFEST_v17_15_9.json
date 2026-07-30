@@ -1,0 +1,44 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.15.9",
+  "build": "BUILD MANIFEST VERSION ALIGNMENT HOTFIX",
+  "base": "v17.15.8",
+  "generated_at": "2026-07-30T23:29:37.138030+00:00",
+  "files_count": 554,
+  "javascript_files": 60,
+  "internal_javascript_blocks": 14,
+  "json_files": 144,
+  "html_unique_ids": 646,
+  "pwa_resources": 83,
+  "previous_build_manifest_version": "v17.15.6",
+  "current_build_manifest_version": "v17.15.9",
+  "modified_files": [
+    "assets/js/system-health-center.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "new_files": [
+    "AUDITORIA_v17_15_9_BUILD_MANIFEST_ALIGNMENT.txt",
+    "FUNCTIONAL_TESTS_v17_15_9.json",
+    "GITHUB_RELEASE_v17_15_9.txt",
+    "PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_9.txt",
+    "PROTECTED_DIFF_v17_15_9.json",
+    "assets/js/release-marker-v17-15-9.js"
+  ],
+  "backend_changes": false,
+  "sql_changes": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "internal_javascript_syntax": "OK",
+    "json": "OK",
+    "duplicate_html_ids": "OK",
+    "local_references": "OK",
+    "pwa_resources": "OK",
+    "build_manifest_version": "OK",
+    "frontend_version_alignment": "OK",
+    "no_backend_changes": "OK"
+  }
+}

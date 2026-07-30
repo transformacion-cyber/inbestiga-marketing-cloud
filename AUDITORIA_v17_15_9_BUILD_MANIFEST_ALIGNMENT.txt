@@ -1,0 +1,24 @@
+INBESTIGA Marketing Cloud v17.15.9
+BUILD MANIFEST VERSION ALIGNMENT HOTFIX
+
+HALLAZGO CONFIRMADO
+La captura de producción mostró:
+- HTML: v17.15.9
+- PWA: v17.15.9
+- build_manifest: v17.15.6
+
+La causa exacta estaba en config/build-manifest.json:
+version = v17.15.6
+
+CORRECCIÓN
+- version = v17.15.9
+- frontend_version = 17.15.9
+- HTML, runtime, release marker, manifest PWA y Service Worker alineados.
+- El Centro de Salud seguirá leyendo config/build-manifest.json con cache no-store.
+- No se cambió Supabase, Auth, RLS, RPC, Storage, SQL, Ollama ni datos productivos.
+
+VALIDACIÓN REAL PENDIENTE
+1. Desplegar en Vercel.
+2. Ctrl + Shift + R.
+3. Abrir Salud.
+4. Pulsar Comprobar ahora.

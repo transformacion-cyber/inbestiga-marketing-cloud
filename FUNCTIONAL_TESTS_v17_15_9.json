@@ -1,0 +1,29 @@
+{
+  "version": "v17.15.9",
+  "tests": [
+    {
+      "id": "build_manifest_version",
+      "expected": "v17.15.9",
+      "actual": "v17.15.9",
+      "status": "pass"
+    },
+    {
+      "id": "build_manifest_frontend_version",
+      "expected": "17.15.9",
+      "actual": "17.15.9",
+      "status": "pass"
+    },
+    {
+      "id": "runtime_version_alignment",
+      "status": "pass"
+    },
+    {
+      "id": "pwa_version_alignment",
+      "status": "pass"
+    },
+    {
+      "id": "backend_changes",
+      "status": "none"
+    }
+  ]
+}

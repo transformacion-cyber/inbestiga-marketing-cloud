@@ -1,0 +1,10 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.9 — Build Manifest Version Alignment Hotfix
+
+Corrige el último falso fallo del Centro de Salud alineando el campo version de
+config/build-manifest.json con HTML, runtime, release marker, PWA y Service Worker.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.15.9 build manifest version alignment hotfix"
+git push origin main
