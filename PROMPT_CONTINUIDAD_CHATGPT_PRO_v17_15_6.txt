@@ -1,0 +1,20 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.6
+SYSTEM HEALTH, COMMAND CENTER & VERSION INTEGRITY HOTFIX
+
+Continúa exclusivamente desde:
+INBESTIGA_MARKETING_CLOUD_v17_15_6_SYSTEM_HEALTH_COMMAND_CENTER_VERSION_INTEGRITY_FULL_PLATFORM.zip
+
+Base creada exclusivamente desde v17.15.5. Conserva todas las funciones acumulativas.
+
+Implementado:
+- corrección null.id del Centro de Mando;
+- protección contra inicialización/render reentrante;
+- versión canónica protegida contra degradaciones de módulos lazy;
+- integridad de versión en Salud;
+- comprobación visual estructural con SAKURA abierta;
+- incidentes históricos separados de los errores de la sesión actual;
+- corrección del falso pendiente Work 360 causado por hidratación remota.
+
+No modificar Auth, RLS, RPC, Storage, tablas productivas, credenciales, Ollama, puente local ni mensajería sin necesidad reproducida. Sin SQL nuevo.
+
+Validación productiva pendiente: desplegar en Vercel, Ctrl+Shift+R, abrir SAKURA, ejecutar Salud, comprobar v17.15.6, cero errores actuales, integridad alineada y composición visual renderizada.

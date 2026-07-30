@@ -175,9 +175,9 @@
     return next;
   }
 
-  function persistLocal() {
+  function persistLocal(options = {}) {
     loadLocal();
-    data.updatedAt = new Date().toISOString();
+    if (options.touch !== false) data.updatedAt = new Date().toISOString();
     try {
       localStorage.setItem(storageKey(), JSON.stringify(data));
     } catch (error) {
@@ -206,7 +206,7 @@
       if (!metaTable || !prefsTable) throw new Error("Tablas opcionales no disponibles");
       const [metaResult, prefsResult] = await Promise.all([
         metaTable.select("task_id,metadata").eq("user_id", uid),
-        prefsTable.select("preferences").eq("user_id", uid).maybeSingle(),
+        prefsTable.select("preferences,updated_at").eq("user_id", uid).maybeSingle(),
       ]);
       if (metaResult.error) throw metaResult.error;
       if (prefsResult.error) throw prefsResult.error;
@@ -220,8 +220,10 @@
         data.templates = remote.templates;
         data.history = remote.history;
         data.activeTimer = remote.activeTimer || data.activeTimer;
+        data.updatedAt = remote.updatedAt || prefsResult.data.updated_at || data.updatedAt;
       }
-      persistLocal();
+      // Hidratar desde Supabase no es una edición local y no debe crear un falso pendiente.
+      persistLocal({ touch: false });
       cloudState = "synced";
       renderAllAdvanced();
     } catch (error) {

@@ -1,0 +1,9 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.6 — SYSTEM HEALTH, COMMAND CENTER & VERSION INTEGRITY HOTFIX
+
+Corrige el error null.id y la inicialización reentrante del Centro de Mando, sincroniza de forma canónica todos los marcadores de versión, incorpora salud visual basada en el DOM renderizado, separa incidencias históricas de errores actuales y evita falsos pendientes de Work 360 durante la hidratación desde Supabase.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.15.6 system health and command center integrity hotfix"
+git push origin main

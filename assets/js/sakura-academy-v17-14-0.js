@@ -536,7 +536,7 @@
 
   function registerBuild(){
     try{window.INBESTIGA_QUALITY_CORE?.register?.(MODULE,{version:VERSION,mode:"local-academy-calculation-engine",polling:false,realtimeChannels:0,mutations:false,dynamicCode:false})}catch{}
-    const build=window.INBESTIGA_BUILD||{};window.INBESTIGA_BUILD={...build,version:VERSION,name:"SAKURA ACADEMY & SCIENTIFIC CALCULATION ENGINE",modules:[...new Set([...(Array.isArray(build.modules)?build.modules:[]),MODULE])]};root.dataset.inbestigaBuild=VERSION;
+    const build=window.INBESTIGA_BUILD||{};window.INBESTIGA_BUILD={...build,version:VERSION,name:"SAKURA ACADEMY & SCIENTIFIC CALCULATION ENGINE",modules:[...new Set([...(Array.isArray(build.modules)?build.modules:[]),MODULE])]};root.dataset.inbestigaBuild=window.INBESTIGA_RELEASE?.version||VERSION;
   }
   function health(){const stats=libraryStats();return{status:"ok",value:"SAKURA Academy",detail:`${stats.formulas} fórmulas, ${stats.approved} fichas aprobadas, motor matemático y unidades local; sin SQL, polling, Realtime, eval ni Function dinámica.`}}
 

@@ -1,0 +1,90 @@
+{
+  "version": "v17.15.6",
+  "generated_at": "2026-07-30T22:43:44.418829+00:00",
+  "tests": [
+    {
+      "id": "js-syntax",
+      "status": "ok",
+      "detail": "57 archivos JavaScript"
+    },
+    {
+      "id": "inline-js-syntax",
+      "status": "ok",
+      "detail": "14 bloques internos"
+    },
+    {
+      "id": "json-valid",
+      "status": "ok",
+      "detail": "133 JSON"
+    },
+    {
+      "id": "html-ids",
+      "status": "ok",
+      "detail": "646 IDs únicos"
+    },
+    {
+      "id": "local-references",
+      "status": "ok",
+      "detail": "72 referencias"
+    },
+    {
+      "id": "pwa-shell",
+      "status": "ok",
+      "detail": "84 recursos"
+    },
+    {
+      "id": "command-center-null",
+      "status": "ok",
+      "detail": "Modelo probado con asignados y ejecutores null"
+    },
+    {
+      "id": "canonical-version-lock",
+      "status": "ok",
+      "detail": "Intento de degradación v17.14.0 bloqueado"
+    },
+    {
+      "id": "sql-protection",
+      "status": "ok",
+      "detail": "11 SQL conservados"
+    },
+    {
+      "id": "null_safe_entity_id",
+      "status": "ok",
+      "detail": "null safe entity id"
+    },
+    {
+      "id": "command_reentrancy_guard",
+      "status": "ok",
+      "detail": "command reentrancy guard"
+    },
+    {
+      "id": "work360_hydration_no_touch",
+      "status": "ok",
+      "detail": "work360 hydration no touch"
+    },
+    {
+      "id": "visual_layout_health",
+      "status": "ok",
+      "detail": "visual layout health"
+    },
+    {
+      "id": "version_integrity_health",
+      "status": "ok",
+      "detail": "version integrity health"
+    },
+    {
+      "id": "historical_errors_not_scored",
+      "status": "ok",
+      "detail": "historical errors not scored"
+    },
+    {
+      "id": "no_new_setinterval",
+      "status": "ok",
+      "detail": "no new setinterval"
+    }
+  ],
+  "browser_validation": {
+    "status": "pending",
+    "detail": "El entorno de construcción bloqueó navegación headless a localhost/file. Validación visual final pendiente en Vercel con SAKURA abierta."
+  }
+}

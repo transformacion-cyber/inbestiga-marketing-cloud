@@ -7,9 +7,13 @@
   const MODULE = "unified-command-center-v17-15-0";
   const PALETTE_PREFIX = "ib15:";
   const HISTORY_LIMIT = 60;
+  let initialized = false;
+  let rendering = false;
+  let renderQueued = false;
   const q = (selector, root = document) => root.querySelector(selector);
   const qa = (selector, root = document) => Array.from(root.querySelectorAll(selector));
-  const rows = value => Array.isArray(value) ? value : [];
+  const rows = value => Array.isArray(value) ? value.filter(item => item !== null && item !== undefined) : [];
+  const entityId = value => value && typeof value === "object" ? (value.id ?? value.task_id ?? value.member_id ?? "") : value;
   const same = (a, b) => String(a ?? "") === String(b ?? "");
   const data = () => typeof state !== "undefined" && state ? state : (window.state || {});
   const me = () => typeof member !== "undefined" && member ? member : (window.member || {});
@@ -67,7 +71,12 @@
     return "member";
   };
   const manager = () => role() !== "member";
-  const taskAssignees = task => [...new Set([task?.assigned_to, ...rows(task?.assignee_ids), ...rows(task?.executor_ids), ...rows(task?.executors)].map(value => typeof value === "object" ? value.id : value).filter(Boolean))];
+  const taskAssignees = task => [...new Set([
+    task?.assigned_to,
+    ...rows(task?.assignee_ids),
+    ...rows(task?.executor_ids),
+    ...rows(task?.executors)
+  ].map(entityId).filter(Boolean))];
   const belongsToMe = task => taskAssignees(task).some(id => same(id, me().id));
   const taskHours = task => {
     const hours = Number(task?.estimated_hours ?? task?.hours_estimated ?? task?.planned_hours ?? 0);
@@ -84,7 +93,7 @@
   };
   const dependencyIds = task => {
     const raw = [task?.depends_on_task_id, task?.dependency_task_id, task?.blocked_by_task_id, task?.dependency_id, ...rows(task?.dependency_ids), ...rows(task?.depends_on), ...rows(task?.blocked_by)];
-    return [...new Set(raw.map(value => typeof value === "object" ? (value.id || value.task_id) : value).filter(Boolean).map(String))];
+    return [...new Set(raw.map(entityId).filter(Boolean).map(String))];
   };
   const taskById = id => rows(data().tasks).find(task => same(task.id, id));
   const blocked = task => dependencyIds(task).some(id => { const dependency = taskById(id); return dependency && !done(dependency); });
@@ -587,13 +596,25 @@
   }
 
   function renderAllEnhancements() {
-    try { renderCommandCenter(); } catch (error) { console.warn(`[${MODULE}] home`, error); }
-    if (q("#approvals.active")) enhanceApprovals();
-    if (q("#workload.active")) enhanceWorkload();
-    if (q("#notifications.active")) enhanceNotifications();
-    installPalette();
-    refreshPalette();
-    patchSakura();
+    if (rendering) {
+      renderQueued = true;
+      return;
+    }
+    rendering = true;
+    try {
+      try { renderCommandCenter(); } catch (error) { console.warn(`[${MODULE}] home`, error); }
+      try { if (q("#approvals.active")) enhanceApprovals(); } catch (error) { console.warn(`[${MODULE}] approvals`, error); }
+      try { if (q("#workload.active")) enhanceWorkload(); } catch (error) { console.warn(`[${MODULE}] workload`, error); }
+      try { if (q("#notifications.active")) enhanceNotifications(); } catch (error) { console.warn(`[${MODULE}] notifications`, error); }
+      try { installPalette(); refreshPalette(); } catch (error) { console.warn(`[${MODULE}] palette`, error); }
+      try { patchSakura(); } catch (error) { console.warn(`[${MODULE}] sakura`, error); }
+    } finally {
+      rendering = false;
+      if (renderQueued) {
+        renderQueued = false;
+        requestAnimationFrame(renderAllEnhancements);
+      }
+    }
   }
 
   function registerBuild() {
@@ -602,16 +623,22 @@
     window.INBESTIGA_BUILD = {...build, version:VERSION, name:"UNIFIED COMMAND CENTER & INTELLIGENT OPERATIONS", modules:[...new Set([...(Array.isArray(build.modules)?build.modules:[]), MODULE])]};
     document.documentElement.dataset.inbestigaBuild = VERSION;
     document.documentElement.dataset.ib15DesignSystem = "unified";
-    window.dispatchEvent(new CustomEvent("inbestiga:operational-context", {detail:operationalContext()}));
+    try {
+      window.dispatchEvent(new CustomEvent("inbestiga:operational-context", {detail:operationalContext()}));
+    } catch (error) {
+      console.warn(`[${MODULE}] operational context deferred`, error);
+    }
   }
 
   function init() {
+    if (initialized) return;
+    initialized = true;
     installWrappers();
     installPalette();
     bindDelegation();
     ensureHistoryDrawer();
-    renderAllEnhancements();
     registerBuild();
+    renderAllEnhancements();
     window.addEventListener("pageshow", () => requestAnimationFrame(renderAllEnhancements), {passive:true});
     window.addEventListener("inbestiga:realtime-event", () => requestAnimationFrame(renderAllEnhancements), {passive:true});
     window.addEventListener("inbestiga:lifecycle-updated", () => requestAnimationFrame(renderAllEnhancements), {passive:true});
@@ -625,7 +652,7 @@
     search:openUniversalSearch,
     history:{open:openHistory,close:closeHistory,list:loadHistory,clear:()=>{saveHistory([]);renderHistory();renderCommandCenter();}},
     askSakura,
-    health:()=>({status:"ok",value:"Centro de mando v17.15.0",detail:"Lectura local por rol, buscador universal, aprobaciones, capacidad, historial y contexto SAKURA. Sin polling, MutationObserver, SQL ni canales Realtime nuevos."})
+    health:()=>({status:"ok",value:"Centro de mando protegido",detail:"v17.15.6 evita null.id, inicialización duplicada y fallos en cascada. Conserva lectura por rol, búsqueda, aprobaciones, capacidad, historial y contexto SAKURA."})
   };
 
   if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", init, {once:true});

@@ -1,11 +1,11 @@
-/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.12.13.6 ===== */
+/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.6 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.12.13.6";
-  const BUILD = "TASK OPERATIONS, CATALOGS & PERFORMANCE RANKING · SYSTEM HEALTH";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.6";
+  const BUILD = "SYSTEM HEALTH, COMMAND CENTER & VERSION INTEGRITY HOTFIX";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";
   const DEFAULT_BUCKET = "inbestiga-media";
@@ -426,18 +426,34 @@
   function runtimeHealth() {
     const reportErrors = list(window.INBESTIGA_QUALITY_CORE?.last?.()?.errors);
     const storedErrors = list(readJson("inbestiga:v14:runtime-errors", []));
-    const errors = [...reportErrors, ...storedErrors]
+    const sessionStart = Number(performance?.timeOrigin) || Date.now();
+    const normalized = [...reportErrors, ...storedErrors]
       .filter(Boolean)
-      .slice(-20)
       .map((item) => ({
         at: item.at || item.created_at || item.timestamp || null,
         type: safeMessage(item.type || item.kind || "runtime"),
         message: safeMessage(item.message || item.reason || item.error || JSON.stringify(item)),
         source: safeMessage(item.source || item.filename || "")
       }));
+    const unique = [...new Map(normalized.map((item) => [`${item.at}|${item.message}|${item.source}`, item])).values()];
+    const errors = unique.filter((item) => {
+      const time = new Date(item.at || 0).getTime();
+      return Number.isFinite(time) && time >= sessionStart - 1000;
+    }).slice(-20);
+    const historical = Math.max(0, unique.length - errors.length);
     return {
-      check: check("runtime-errors", "incidents", "Errores recientes", errors.length ? "warn" : "ok", errors.length ? `${errors.length} registrados` : "Sin errores", errors.length ? "El monitor local conserva eventos de esta sesión o de la anterior." : "No se encontraron errores persistidos por Platform Quality Core."),
-      errors
+      check: check(
+        "runtime-errors", "incidents", "Errores de esta sesión",
+        errors.length ? "warn" : "ok",
+        errors.length ? `${errors.length} registrados` : "Sin errores actuales",
+        errors.length
+          ? "Se detectaron eventos después de cargar esta versión."
+          : historical
+            ? `${historical} evento(s) de sesiones anteriores se conservaron como historial y no reducen la salud actual.`
+            : "No se encontraron errores durante la sesión actual."
+      ),
+      errors,
+      historical_count: historical
     };
   }
 
@@ -469,20 +485,135 @@
   function designStudioHealth() {
     try {
       const result = window.INBESTIGA_DESIGN_STUDIO?.health?.();
-      if (!result) return check("design-studio", "sync", "Diseño y apariencia", "info", "Módulo no confirmado", "El editor visual todavía no reportó estado.");
+      if (!result) return check("design-studio", "sync", "Editor de diseño", "info", "Módulo no confirmado", "El editor visual todavía no reportó estado.");
       const status = ["ok", "warn", "fail", "info"].includes(result.status) ? result.status : "info";
-      return check("design-studio", "sync", "Diseño y apariencia", status, result.value || "Disponible", result.detail || "Capa visual controlada y reversible.");
+      return check(
+        "design-studio", "sync", "Editor de diseño", status,
+        status === "ok" ? "Editor operativo" : (result.value || "Disponible"),
+        `${result.detail || "Capa visual controlada y reversible."}${result.value ? ` · Reporte interno: ${result.value}` : ""}`
+      );
     } catch (error) {
-      return check("design-studio", "sync", "Diseño y apariencia", "warn", "No comprobado", error?.message || error);
+      return check("design-studio", "sync", "Editor de diseño", "warn", "No comprobado", error?.message || error);
+    }
+  }
+
+  function visibleElement(node) {
+    if (!node || !(node instanceof Element)) return false;
+    const style = getComputedStyle(node);
+    const rect = node.getBoundingClientRect();
+    return style.display !== "none" && style.visibility !== "hidden" && Number(style.opacity || 1) > 0 && rect.width > 0 && rect.height > 0;
+  }
+
+  function visualLayoutHealth() {
+    try {
+      const panel = document.getElementById("sakuraNativePanel");
+      const pageOverflow = document.documentElement.scrollWidth > window.innerWidth + 4;
+      if (!visibleElement(panel)) {
+        return check(
+          "visual-layout", "sync", "Composición visual renderizada",
+          pageOverflow ? "warn" : "info",
+          pageOverflow ? "Desbordamiento horizontal" : "SAKURA cerrada",
+          pageOverflow ? "La página excede el ancho de la ventana aunque SAKURA no está visible." : "Abre SAKURA y vuelve a ejecutar la salud para comprobar recortes, scrolls y compositor en el DOM real."
+        );
+      }
+
+      const panelRect = panel.getBoundingClientRect();
+      const activeView = panel.querySelector(".sk-view.active");
+      const messages = panel.querySelector("#skMessages");
+      const composer = panel.querySelector(".sk-composer");
+      const input = panel.querySelector("#skInput");
+      const mic = panel.querySelector("#skMic");
+      const send = panel.querySelector("#skSend");
+      const targets = [
+        ...panel.querySelectorAll(".sk-head-actions button, .sk-tabs button, .sk-composer-tools button"),
+        composer, input, mic, send
+      ].filter(visibleElement);
+
+      const clipped = targets.filter((node) => {
+        const rect = node.getBoundingClientRect();
+        return rect.left < panelRect.left - 2 || rect.right > panelRect.right + 2 || rect.top < panelRect.top - 2 || rect.bottom > panelRect.bottom + 2;
+      });
+      const inputRect = input?.getBoundingClientRect?.();
+      const inputBroken = !!inputRect && (inputRect.width < 110 || inputRect.height > Math.max(120, inputRect.width * 1.5));
+      const scrollOwners = [activeView, messages, panel.querySelector(".sk-body")].filter(visibleElement).filter((node) => {
+        const overflow = getComputedStyle(node).overflowY;
+        return node.scrollHeight > node.clientHeight + 4 && ["auto", "scroll"].includes(overflow);
+      });
+      const duplicateScroll = scrollOwners.length > 1;
+      const workspace = document.querySelector(
+        "#appScreen .section.active > .panel, #appScreen .section.active > .card, #home .mz-home-hero, #home .v11-role-brief, #appScreen .section.active > :not(.hidden)"
+      );
+      const workspaceRect = visibleElement(workspace) ? workspace.getBoundingClientRect() : null;
+      const dock = panel.dataset.dock || "left";
+      const overlap = window.innerWidth >= 1100 && !!workspaceRect && (
+        (dock === "left" && workspaceRect.left < panelRect.right - 3 && workspaceRect.right > panelRect.left) ||
+        (dock === "right" && workspaceRect.right > panelRect.left + 3 && workspaceRect.left < panelRect.right)
+      );
+
+      const issues = [];
+      if (clipped.length) issues.push(`${clipped.length} control(es) recortados`);
+      if (inputBroken) issues.push("caja de escritura comprimida");
+      if (duplicateScroll) issues.push(`${scrollOwners.length} scrolls verticales simultáneos`);
+      if (overlap) issues.push("SAKURA superpuesta al espacio de trabajo");
+      if (pageOverflow) issues.push("desbordamiento horizontal de la página");
+
+      const severe = clipped.length > 0 || inputBroken;
+      const status = severe ? "fail" : issues.length ? "warn" : "ok";
+      const score = Math.max(0, 100 - clipped.length * 12 - (inputBroken ? 30 : 0) - (duplicateScroll ? 15 : 0) - (overlap ? 25 : 0) - (pageOverflow ? 15 : 0));
+      return check(
+        "visual-layout", "sync", "Composición visual renderizada", status,
+        issues.length ? `${score}/100 · ${issues.length} problema(s)` : "100/100 · sin recortes",
+        issues.length ? issues.join(" · ") : "SAKURA, pestañas, conversación y compositor están dentro de sus límites y usan un único scroll principal."
+      );
+    } catch (error) {
+      return check("visual-layout", "sync", "Composición visual renderizada", "warn", "No comprobada", error?.message || error);
     }
   }
 
   function buildHealth() {
-    const runtimeVersion = window.INBESTIGA_BUILD?.version || document.documentElement.dataset.inbestigaBuild || "sin versión";
+    const canonicalVersion = window.INBESTIGA_RELEASE?.version || VERSION;
+    const observedVersion = window.INBESTIGA_BUILD?.version || document.documentElement.dataset.inbestigaBuild || "sin versión";
     const modules = list(window.INBESTIGA_BUILD?.modules);
     const healthLoaded = !!window.INBESTIGA_SYSTEM_HEALTH;
-    const status = healthLoaded ? "ok" : "fail";
-    return check("build", "summary", "Versión instalada", status, runtimeVersion, `${window.INBESTIGA_BUILD?.name || BUILD} · ${modules.length || "módulos no contados"} módulos registrados.`);
+    const consistent = observedVersion === canonicalVersion && document.documentElement.dataset.inbestigaBuild === canonicalVersion;
+    const status = healthLoaded && consistent ? "ok" : healthLoaded ? "warn" : "fail";
+    return check(
+      "build", "summary", "Versión instalada", status, canonicalVersion,
+      `${window.INBESTIGA_RELEASE?.name || BUILD} · ${modules.length || "módulos no contados"} módulos registrados${consistent ? "" : ` · marcador observado ${observedVersion}`}.`
+    );
+  }
+
+  async function versionIntegrityHealth() {
+    const expected = VERSION;
+    const observed = {
+      runtime: window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || null,
+      release: window.INBESTIGA_RELEASE?.version || null,
+      build: window.INBESTIGA_BUILD?.version || null,
+      html: document.documentElement.dataset.inbestigaBuild || null
+    };
+    try {
+      const [buildManifestResponse, manifestResponse] = await Promise.all([
+        fetch("config/build-manifest.json", { cache: "no-store" }),
+        fetch("manifest.webmanifest", { cache: "no-store" })
+      ]);
+      if (buildManifestResponse.ok) {
+        const manifest = await buildManifestResponse.json();
+        observed.build_manifest = manifest.version || (manifest.frontend_version ? `v${manifest.frontend_version}` : null);
+      }
+      if (manifestResponse.ok) {
+        const webmanifest = await manifestResponse.json();
+        const match = String(webmanifest.id || "").match(/v(\d+)-(\d+)-(\d+)/i);
+        observed.pwa_manifest = match ? `v${match[1]}.${match[2]}.${match[3]}` : null;
+      }
+    } catch { /* La PWA se valida también en su comprobación dedicada. */ }
+    const values = Object.entries(observed).filter(([, value]) => value);
+    const mismatches = values.filter(([, value]) => value !== expected);
+    return check(
+      "version-integrity", "summary", "Integridad de versión",
+      mismatches.length ? "fail" : "ok",
+      mismatches.length ? `${mismatches.length} marcador(es) inconsistentes` : `${values.length}/${values.length} marcadores alineados`,
+      mismatches.length ? mismatches.map(([key, value]) => `${key}: ${value}`).join(" · ") : `HTML, runtime, release, build y manifiestos reportan ${expected}.`
+    );
   }
 
   function connectivityHealth() {
@@ -502,7 +633,7 @@
     const fails = checks.filter((item) => item.status === "fail").length;
     const warnings = checks.filter((item) => item.status === "warn").length;
     if (fails) return { status: "fail", title: "Requiere atención", message: `${fails} falla${fails === 1 ? "" : "s"} y ${warnings} advertencia${warnings === 1 ? "" : "s"} detectadas.` };
-    if (warnings) return { status: "warn", title: "Operativo con advertencias", message: `${warnings} comprobación${warnings === 1 ? "" : "es"} necesita${warnings === 1 ? "" : "n"} validación o configuración.` };
+    if (warnings) return { status: "warn", title: "Operativo con advertencias", message: `${warnings} ${warnings === 1 ? "comprobación" : "comprobaciones"} ${warnings === 1 ? "necesita" : "necesitan"} validación o configuración.` };
     return { status: "ok", title: "Operación estable", message: "No se detectaron fallas en esta lectura automática." };
   }
 
@@ -515,14 +646,16 @@
     render();
     try {
       const baseChecks = [buildHealth(), supabaseHealth(), connectivityHealth()];
-      const [rpc, storage, realtime, pwa, work360, browserStorage] = await Promise.all([
-        rpcHealth(), storageHealth(), realtimeHealth(), pwaHealth(), work360Health(), storageEstimateHealth()
+      const [versionIntegrity, rpc, storage, realtime, pwa, work360, browserStorage] = await Promise.all([
+        versionIntegrityHealth(), rpcHealth(), storageHealth(), realtimeHealth(), pwaHealth(), work360Health(), storageEstimateHealth()
       ]);
       const runtime = runtimeHealth();
       const lifecycle = lifecycleHealth();
       const designStudio = designStudioHealth();
+      const visualLayout = visualLayoutHealth();
       const checks = [
         ...baseChecks,
+        versionIntegrity,
         rpc.manifest,
         rpc.openapi,
         storage,
@@ -533,6 +666,7 @@
         work360.pending,
         lifecycle,
         designStudio,
+        visualLayout,
         browserStorage,
         runtime.check
       ];
@@ -560,11 +694,13 @@
         },
         work360,
         incidents: runtime.errors,
+        historical_incidents_ignored: runtime.historical_count || 0,
         limitations: [
           "Las pruebas automáticas son de lectura y no certifican RLS de escritura.",
           "Realtime entre dos usuarios, carga real de archivos y persistencia cruzada requieren pruebas manuales.",
           "La introspección OpenAPI restringida no sustituye la ejecución controlada de las 45 RPC por rol.",
-          "SQL_OPCIONAL_v16_1.sql, SQL_OPCIONAL_v17_0.sql, SQL_OPCIONAL_v17_5_1.sql, SQL_OPCIONAL_v17_7.sql y SQL_OPCIONAL_v17_8.sql no se ejecutan automáticamente."
+          "SQL_OPCIONAL_v16_1.sql, SQL_OPCIONAL_v17_0.sql, SQL_OPCIONAL_v17_5_1.sql, SQL_OPCIONAL_v17_7.sql y SQL_OPCIONAL_v17_8.sql no se ejecutan automáticamente.",
+          "La composición visual se certifica con SAKURA abierta; si está cerrada, la comprobación queda informativa."
         ]
       };
       writeJson(STORE_KEY, lastReport);

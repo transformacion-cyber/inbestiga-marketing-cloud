@@ -1,0 +1,34 @@
+{
+  "version": "v17.15.6",
+  "base": "v17.15.5",
+  "generated_at": "2026-07-30T22:43:44.418829+00:00",
+  "sql_changed": [],
+  "auth_rls_rpc_storage_changes": [],
+  "intentional_protected_change": {
+    "file": "assets/js/work360-advanced.js",
+    "reason": "Corregir falso pendiente: la hidratación remota ya no altera updatedAt como si fuera una edición local.",
+    "scope": "3 cambios mínimos: persistLocal touch opcional, lectura updated_at y persistencia sin touch."
+  },
+  "changed_files": [
+    "index.html",
+    "service-worker.js",
+    "manifest.webmanifest",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "assets/js/work360-advanced.js",
+    "assets/js/sakura-live-motion-background-fusion-v17-13-2.js",
+    "assets/js/sakura-adaptive-intelligence-v17-13-0.js",
+    "assets/js/sakura-academy-v17-14-0.js",
+    "assets/js/unified-command-center-v17-15-0.js",
+    "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "assets/js/system-health-center.js"
+  ],
+  "new_files": [
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_15_6.txt",
+    "AUDITORIA_v17_15_6_SYSTEM_HEALTH_COMMAND_CENTER.txt",
+    "PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_6.txt",
+    "GITHUB_RELEASE_v17_15_6.txt",
+    "assets/js/release-marker-v17-15-6.js"
+  ],
+  "removed_files": []
+}

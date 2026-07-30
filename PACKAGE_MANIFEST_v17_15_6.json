@@ -1,0 +1,52 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.15.6",
+  "build": "SYSTEM HEALTH, COMMAND CENTER & VERSION INTEGRITY HOTFIX",
+  "generated_at": "2026-07-30T22:43:44.418829+00:00",
+  "base": "v17.15.5",
+  "file_count": 531,
+  "changed_files": [
+    "assets/js/sakura-academy-v17-14-0.js",
+    "assets/js/sakura-adaptive-intelligence-v17-13-0.js",
+    "assets/js/sakura-live-motion-background-fusion-v17-13-2.js",
+    "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "assets/js/system-health-center.js",
+    "assets/js/unified-command-center-v17-15-0.js",
+    "assets/js/work360-advanced.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "new_files": [
+    "AUDITORIA_v17_15_6_SYSTEM_HEALTH_COMMAND_CENTER.txt",
+    "FUNCTIONAL_TESTS_v17_15_6.json",
+    "GITHUB_RELEASE_v17_15_6.txt",
+    "LISTA_ARCHIVOS_MODIFICADOS_v17_15_6.txt",
+    "PACKAGE_MANIFEST_v17_15_6.json",
+    "PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_6.txt",
+    "PROTECTED_DIFF_v17_15_6.json",
+    "SHA256SUMS_v17_15_6.txt",
+    "assets/js/release-marker-v17-15-6.js"
+  ],
+  "removed_files": [],
+  "validation": {
+    "javascript_files": 57,
+    "javascript_failures": 0,
+    "inline_javascript_blocks": 14,
+    "inline_failures": 0,
+    "json_files": 136,
+    "json_failures": 0,
+    "html_ids": 646,
+    "duplicate_ids": 0,
+    "local_references": 72,
+    "missing_local_references": 0,
+    "pwa_resources": 84,
+    "missing_pwa_resources": 0,
+    "command_center_null_test": "ok",
+    "version_lock_test": "ok",
+    "sql_changed": 0,
+    "browser_visual": "pending_on_vercel"
+  }
+}

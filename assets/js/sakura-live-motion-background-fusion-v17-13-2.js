@@ -360,7 +360,7 @@
     try { window.INBESTIGA_QUALITY_CORE?.register?.(MODULE, { version: VERSION, mode: "particle-motion-sync-hotfix", polling: false, realtimeChannels: 0, mutations: false }); } catch {}
     const build = window.INBESTIGA_BUILD || {};
     window.INBESTIGA_BUILD = { ...build, version: VERSION, name: "SAKURA PARTICLE MOTION SYNC HOTFIX", modules: [...new Set([...(Array.isArray(build.modules) ? build.modules : []), MODULE])] };
-    root.dataset.inbestigaBuild = VERSION;
+    root.dataset.inbestigaBuild = window.INBESTIGA_RELEASE?.version || VERSION;
   }
 
   function attach() {

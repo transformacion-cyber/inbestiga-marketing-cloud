@@ -1,0 +1,16 @@
+INBESTIGA Marketing Cloud v17.15.6
+SYSTEM HEALTH, COMMAND CENTER & VERSION INTEGRITY HOTFIX
+
+CORRECCIONES
+- Se corrigió el TypeError null.id del Centro de Mando mediante normalización segura de entidades y listas.
+- Se añadió protección contra inicialización y renderizado reentrante.
+- El contexto operativo ya no interrumpe la plataforma si los datos aún están cargando.
+- Se creó un marcador canónico que impide que módulos lazy antiguos degraden la versión global.
+- Salud valida HTML, runtime público, release, build y manifiestos.
+- Salud visual ahora mide el DOM renderizado con SAKURA abierta: recortes, caja comprimida, scrolls simultáneos, superposición y overflow horizontal.
+- Los errores de sesiones anteriores se conservan como historial, pero no reducen la puntuación actual.
+- Work 360 ya no cambia updatedAt al hidratar datos desde Supabase, evitando falsos pendientes.
+
+NO MODIFICADO
+- Auth, RLS, RPC, Storage, tablas, credenciales, mensajería productiva, Ollama, puente local y SAKURA Academy.
+- Sin SQL nuevo.

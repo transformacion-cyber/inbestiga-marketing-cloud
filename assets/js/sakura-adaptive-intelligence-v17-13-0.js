@@ -610,7 +610,7 @@
   }
   function registerBuild(){
     try{window.INBESTIGA_QUALITY_CORE?.register?.(MODULE,{version:VERSION,mode:"adaptive-safe-controller",polling:false,realtimeChannels:0,mutations:false,webProvider:"server-only"})}catch(_){}
-    const build=window.INBESTIGA_BUILD||{};window.INBESTIGA_BUILD={...build,version:VERSION,name:"SAKURA LIVE MOTION & INTELLIGENT BACKGROUND FUSION",modules:[...new Set([...(rows(build.modules)),MODULE])]};document.documentElement.dataset.inbestigaBuild=VERSION;
+    const build=window.INBESTIGA_BUILD||{};window.INBESTIGA_BUILD={...build,version:VERSION,name:"SAKURA LIVE MOTION & INTELLIGENT BACKGROUND FUSION",modules:[...new Set([...(rows(build.modules)),MODULE])]};document.documentElement.dataset.inbestigaBuild=window.INBESTIGA_RELEASE?.version||VERSION;
   }
   function health(){return{status:"ok",value:"SAKURA Adaptive Intelligence",detail:"Zona segura, layouts por módulo, 8 núcleos multicapa, fusión de imagen, memoria supervisada, Director Visual por tokens y Explorador Web controlado; sin consultas repetitivas, observadores globales ni canales de sincronización nuevos."}}
 
