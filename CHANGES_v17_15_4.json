@@ -1,0 +1,19 @@
+{
+  "version": "v17.15.4",
+  "name": "SAKURA WORKSPACE LAYOUT HOTFIX",
+  "base": "v17.15.3",
+  "changes": [
+    "Corrige la anulación del espacio de SAKURA causada por la navegación Apple.",
+    "Reserva el ancho de SAKURA en la columna principal real en escritorio.",
+    "Coloca SAKURA debajo de la navegación superior global.",
+    "Reorganiza la cabecera para mantener visibles todos los controles.",
+    "Convierte las pestañas en una cuadrícula responsive sin barra horizontal.",
+    "Impide que burbujas, fichas, listas y formularios excedan el panel.",
+    "Mantiene completa la caja de escritura y reorganiza sus herramientas.",
+    "Usa superposición controlada en tablet y hoja inferior segura en móvil.",
+    "Ajusta la escala de la portada cuando SAKURA está acoplada."
+  ],
+  "backend_changes": false,
+  "sql_changes": false,
+  "protected_modules_changed": false
+}

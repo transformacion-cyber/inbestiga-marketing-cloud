@@ -1,0 +1,66 @@
+{
+  "version": "v17.15.4",
+  "base": "v17.15.3",
+  "changed_protected_files": [],
+  "protected_file_checks": [
+    {
+      "path": "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+      "sha256_before": "f112f24d3491228bc071f433121000c52a35bdc0deca7a20f25c3b1324b10604",
+      "sha256_after": "f112f24d3491228bc071f433121000c52a35bdc0deca7a20f25c3b1324b10604",
+      "unchanged": true
+    },
+    {
+      "path": "assets/js/sakura-academy-v17-15-1.js",
+      "sha256_before": "19d7280d89d986b19aa5cddebb3d4ff8244383bdd38207c84327cb904068d0ff",
+      "sha256_after": "19d7280d89d986b19aa5cddebb3d4ff8244383bdd38207c84327cb904068d0ff",
+      "unchanged": true
+    },
+    {
+      "path": "assets/js/work360-advanced.js",
+      "sha256_before": "edaa6ec0397a4775dbe8ff78f16aa002b2565343f58b3a077d47848cea8e05aa",
+      "sha256_after": "edaa6ec0397a4775dbe8ff78f16aa002b2565343f58b3a077d47848cea8e05aa",
+      "unchanged": true
+    },
+    {
+      "path": "assets/js/collaboration-campaign-os.js",
+      "sha256_before": "72a68041f62300510a5bd939dc56f222a991ed737ea1367480e85dd52fcf2452",
+      "sha256_after": "72a68041f62300510a5bd939dc56f222a991ed737ea1367480e85dd52fcf2452",
+      "unchanged": true
+    },
+    {
+      "path": "assets/js/collaborative-workspace-v17-9-2.js",
+      "sha256_before": "62b8816e809e8aa3f7d9402905101df9f60b6542c62388f177e6f0dbd7797737",
+      "sha256_after": "62b8816e809e8aa3f7d9402905101df9f60b6542c62388f177e6f0dbd7797737",
+      "unchanged": true
+    },
+    {
+      "path": "api/sakura-web.js",
+      "sha256_before": "22e1292a91e044913881ca45dfd765933652f5e73c8b2ff5991ce7aea611da93",
+      "sha256_after": "22e1292a91e044913881ca45dfd765933652f5e73c8b2ff5991ce7aea611da93",
+      "unchanged": true
+    }
+  ],
+  "index_change_scope": [
+    "version metadata",
+    "late visual CSS declaration",
+    "read-only layout diagnostic module",
+    "release marker"
+  ],
+  "unchanged_protected_scopes": [
+    "Supabase Auth",
+    "RLS",
+    "SQL",
+    "Storage",
+    "RPC",
+    "Trabajo 360",
+    "Tareas",
+    "Campañas",
+    "Creative Arena",
+    "Muro",
+    "Mensajería productiva",
+    "SAKURA Academy",
+    "Ollama pairing protocol"
+  ],
+  "backend_changes": false,
+  "sql_changes": false
+}

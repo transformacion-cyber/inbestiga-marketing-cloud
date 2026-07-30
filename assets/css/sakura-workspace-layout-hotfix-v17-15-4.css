@@ -1,0 +1,344 @@
+/* INBESTIGA Marketing Cloud v17.15.4 · SAKURA Workspace Layout Hotfix
+   Corrige la reserva real de espacio, los controles cortados y el responsive.
+   No modifica Auth, Supabase, RLS, RPC, Storage ni acciones productivas. */
+
+:root{
+  --sk-workspace-gap:18px;
+  --sk-global-nav-height:44px;
+}
+
+/*
+ * La navegación Apple fuerza width:100% y padding-left:0 sobre #appScreen y .main.
+ * La reserva se aplica al contenido principal, no al contenedor completo.
+ */
+#appScreen.sakura-workspace-docked-left,
+#appScreen.sakura-workspace-docked-right{
+  padding-left:0!important;
+  padding-right:0!important;
+}
+
+@media (min-width:1280px){
+  body:not(.ca-arena-mode):not(.mz-presentation-mode) #appScreen.sakura-workspace-docked-left > .main{
+    padding-left:calc(var(--sk-dock-width) + var(--sk-workspace-gap))!important;
+    padding-right:0!important;
+  }
+  body:not(.ca-arena-mode):not(.mz-presentation-mode) #appScreen.sakura-workspace-docked-right > .main{
+    padding-right:calc(var(--sk-dock-width) + var(--sk-workspace-gap))!important;
+    padding-left:0!important;
+  }
+
+  /* Mantiene la respiración editorial después de reservar el panel. */
+  body.v472-topnav-on #appScreen.sakura-workspace-docked-left > .main > .section,
+  body.v473-topnav-on #appScreen.sakura-workspace-docked-left > .main > .section,
+  body.v472-topnav-on #appScreen.sakura-workspace-docked-right > .main > .section,
+  body.v473-topnav-on #appScreen.sakura-workspace-docked-right > .main > .section{
+    min-width:0!important;
+    max-width:100%!important;
+  }
+
+  /* El inicio adapta su escala a la columna útil, no al viewport completo. */
+  #appScreen.sakura-workspace-docked-left #home.mz-home .mz-cover,
+  #appScreen.sakura-workspace-docked-right #home.mz-home .mz-cover{
+    grid-template-columns:1fr!important;
+    min-height:560px!important;
+    padding:clamp(32px,3.2vw,50px)!important;
+  }
+  #appScreen.sakura-workspace-docked-left #home.mz-home .mz-cover h1,
+  #appScreen.sakura-workspace-docked-right #home.mz-home .mz-cover h1{
+    max-width:760px!important;
+    font-size:clamp(46px,4.5vw,72px)!important;
+    line-height:.94!important;
+  }
+  #appScreen.sakura-workspace-docked-left #home.mz-home .mz-profile-card,
+  #appScreen.sakura-workspace-docked-right #home.mz-home .mz-profile-card{
+    max-width:620px!important;
+  }
+  #appScreen.sakura-workspace-docked-left #home.ib-home .ib-home-hero,
+  #appScreen.sakura-workspace-docked-right #home.ib-home .ib-home-hero{
+    grid-template-columns:1fr!important;
+  }
+  #appScreen.sakura-workspace-docked-left #home.ib-home .ib-home-hero h1,
+  #appScreen.sakura-workspace-docked-right #home.ib-home .ib-home-hero h1{
+    font-size:clamp(42px,4.2vw,64px)!important;
+  }
+}
+
+/* SAKURA queda debajo de la navegación global y nunca la tapa. */
+body.v472-topnav-on .sakura-native-panel,
+body.v473-topnav-on .sakura-native-panel{
+  top:max(calc(var(--sk-global-nav-height) + 10px),env(safe-area-inset-top))!important;
+  bottom:max(10px,env(safe-area-inset-bottom))!important;
+}
+
+/* Si la barra Apple aún no está activa, el acoplamiento izquierdo respeta la barra lateral clásica. */
+@media (min-width:1280px){
+  body:not(.v472-topnav-on):not(.v473-topnav-on) #sakuraNativePanel[data-dock="left"]{
+    left:292px!important;
+  }
+}
+
+/* El panel es una caja dimensional independiente y predecible. */
+#sakuraNativePanel{
+  box-sizing:border-box!important;
+  container-type:inline-size;
+  contain:layout paint;
+  min-width:min(390px,calc(100vw - 24px))!important;
+  max-width:min(620px,calc(100vw - 24px))!important;
+  overflow:hidden!important;
+}
+#sakuraNativePanel,
+#sakuraNativePanel *{
+  min-width:0;
+  max-width:100%;
+  box-sizing:border-box;
+}
+
+/* Cabecera estable: identidad flexible y acciones siempre visibles. */
+#sakuraNativePanel .sk-header{
+  display:grid!important;
+  grid-template-columns:auto minmax(0,1fr) auto!important;
+  align-items:center!important;
+  gap:12px!important;
+  padding:13px 14px!important;
+}
+#sakuraNativePanel .sk-presence{grid-column:1;grid-row:1}
+#sakuraNativePanel .sk-headcopy{grid-column:2;grid-row:1;overflow:hidden}
+#sakuraNativePanel .sk-headcopy h2{
+  margin:0!important;
+  font-size:clamp(18px,5.2cqi,25px)!important;
+  line-height:1!important;
+  letter-spacing:.08em!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+#sakuraNativePanel .sk-headcopy p{
+  max-width:100%!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+#sakuraNativePanel .sk-statusline{
+  max-width:100%!important;
+  flex-wrap:wrap!important;
+  overflow:hidden!important;
+}
+#sakuraNativePanel .sk-state-chip{
+  max-width:min(155px,100%)!important;
+}
+#sakuraNativePanel .sk-head-actions{
+  grid-column:3;
+  grid-row:1;
+  display:grid!important;
+  grid-auto-flow:column!important;
+  grid-auto-columns:38px!important;
+  justify-content:end!important;
+  gap:6px!important;
+  margin:0!important;
+}
+#sakuraNativePanel .sk-icon-btn{
+  width:38px!important;
+  height:38px!important;
+  min-width:38px!important;
+  max-width:38px!important;
+  padding:0!important;
+  overflow:hidden!important;
+}
+
+/* Navegación sin scrollbar ni pestañas escondidas. */
+#sakuraNativePanel .sk-tabs{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:7px!important;
+  width:100%!important;
+  padding:9px 10px!important;
+  overflow:visible!important;
+  scrollbar-width:none!important;
+}
+#sakuraNativePanel .sk-tabs::-webkit-scrollbar{display:none!important}
+#sakuraNativePanel .sk-tabs button{
+  width:100%!important;
+  min-height:38px!important;
+  padding:8px 6px!important;
+  border-radius:999px!important;
+  font-size:10.5px!important;
+  line-height:1.15!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  overflow:visible!important;
+}
+
+/* Área central: solo scroll vertical y contenido siempre dentro del panel. */
+#sakuraNativePanel .sk-body{
+  width:100%!important;
+  min-height:0!important;
+  overflow-x:hidden!important;
+  overflow-y:auto!important;
+  overscroll-behavior:contain!important;
+  padding:12px!important;
+}
+#sakuraNativePanel .sk-view,
+#sakuraNativePanel .sk-view.active,
+#sakuraNativePanel .sk-messages,
+#sakuraNativePanel .sk-section,
+#sakuraNativePanel .sk-action-card,
+#sakuraNativePanel .sk-context,
+#sakuraNativePanel .sk-list,
+#sakuraNativePanel .sk-list-item,
+#sakuraNativePanel .ska-shell,
+#sakuraNativePanel .ska-panel{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+}
+#sakuraNativePanel .sk-message{
+  width:fit-content!important;
+  max-width:min(92%,100%)!important;
+  overflow-wrap:anywhere!important;
+  word-break:break-word!important;
+}
+#sakuraNativePanel .sk-message.user{justify-self:end!important}
+#sakuraNativePanel .sk-message.assistant{justify-self:start!important}
+#sakuraNativePanel .sk-quick,
+#sakuraNativePanel .sk-feedback,
+#sakuraNativePanel .sk-action-actions,
+#sakuraNativePanel .sk-list-actions{
+  display:flex!important;
+  flex-wrap:wrap!important;
+  overflow:visible!important;
+}
+#sakuraNativePanel .sk-quick button,
+#sakuraNativePanel .sk-feedback button,
+#sakuraNativePanel .sk-action-actions button,
+#sakuraNativePanel .sk-list-actions button{
+  max-width:100%!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  overflow:visible!important;
+}
+#sakuraNativePanel .sk-grid2,
+#sakuraNativePanel .sk-action-grid{
+  min-width:0!important;
+}
+
+/* Compositor completo: entrada flexible y herramientas sin cortes. */
+#sakuraNativePanel .sk-composer{
+  width:100%!important;
+  min-width:0!important;
+  padding:11px 12px 12px!important;
+  overflow:hidden!important;
+}
+#sakuraNativePanel .sk-composer-row{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) 46px!important;
+  align-items:end!important;
+  gap:8px!important;
+}
+#sakuraNativePanel .sk-input{
+  width:100%!important;
+  min-width:0!important;
+  max-width:100%!important;
+}
+#sakuraNativePanel .sk-send{
+  width:46px!important;
+  min-width:46px!important;
+  max-width:46px!important;
+}
+#sakuraNativePanel .sk-composer-tools{
+  display:grid!important;
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  gap:8px!important;
+  align-items:stretch!important;
+  margin-top:8px!important;
+}
+#sakuraNativePanel .sk-composer-tools button{
+  width:100%!important;
+  min-height:34px!important;
+  padding:7px 9px!important;
+  white-space:normal!important;
+  overflow-wrap:anywhere!important;
+  overflow:visible!important;
+  text-align:center!important;
+}
+
+/* Panel estrecho: cabecera en dos niveles y tres pestañas por fila. */
+@container (max-width:470px){
+  #sakuraNativePanel .sk-header{
+    grid-template-columns:auto minmax(0,1fr)!important;
+    grid-template-areas:"presence copy" "actions actions"!important;
+    row-gap:10px!important;
+  }
+  #sakuraNativePanel .sk-presence{grid-area:presence!important}
+  #sakuraNativePanel .sk-headcopy{grid-area:copy!important}
+  #sakuraNativePanel .sk-head-actions{
+    grid-area:actions!important;
+    width:100%!important;
+    grid-auto-columns:40px!important;
+    justify-content:end!important;
+  }
+  #sakuraNativePanel .sk-tabs{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+}
+
+/* Tablet: SAKURA se superpone de forma controlada; no comprime el sistema. */
+@media (max-width:1279px){
+  #appScreen.sakura-workspace-docked-left > .main,
+  #appScreen.sakura-workspace-docked-right > .main{
+    padding-left:0!important;
+    padding-right:0!important;
+  }
+  #sakuraNativePanel{
+    width:min(480px,calc(100vw - 24px))!important;
+  }
+}
+
+/* Móvil: hoja inferior completa, zonas seguras y controles legibles. */
+@media (max-width:720px){
+  body.v472-topnav-on .sakura-native-panel,
+  body.v473-topnav-on .sakura-native-panel,
+  #sakuraNativePanel{
+    left:8px!important;
+    right:8px!important;
+    top:auto!important;
+    bottom:max(8px,env(safe-area-inset-bottom))!important;
+    width:auto!important;
+    min-width:0!important;
+    max-width:none!important;
+    height:min(86dvh,820px)!important;
+    border-radius:24px!important;
+  }
+  #sakuraNativePanel .sk-header{
+    grid-template-columns:auto minmax(0,1fr)!important;
+    grid-template-areas:"presence copy" "actions actions"!important;
+  }
+  #sakuraNativePanel .sk-presence{grid-area:presence!important}
+  #sakuraNativePanel .sk-headcopy{grid-area:copy!important}
+  #sakuraNativePanel .sk-head-actions{
+    grid-area:actions!important;
+    width:100%!important;
+    justify-content:end!important;
+  }
+  #sakuraNativePanel .sk-tabs{
+    grid-template-columns:repeat(3,minmax(0,1fr))!important;
+  }
+  #sakuraNativePanel .sk-tabs button{
+    min-height:40px!important;
+    font-size:11px!important;
+  }
+  #sakuraNativePanel .sk-composer-tools{
+    grid-template-columns:1fr!important;
+  }
+}
+
+@media (max-width:390px){
+  #sakuraNativePanel .sk-tabs{
+    grid-template-columns:repeat(2,minmax(0,1fr))!important;
+  }
+}
+
+@media (prefers-reduced-motion:reduce){
+  #sakuraNativePanel,
+  #appScreen > .main{
+    transition:none!important;
+  }
+}

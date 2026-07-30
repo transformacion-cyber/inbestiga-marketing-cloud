@@ -1,0 +1,14 @@
+{
+  "version": "v17.15.4",
+  "result": "pass",
+  "json_files": 126,
+  "javascript_files": 54,
+  "inline_scripts": 14,
+  "css_files": 36,
+  "html_ids_unique": 646,
+  "index_local_references": 68,
+  "pwa_shell_resources": 80,
+  "static_layout_validation": "pass",
+  "protected_diff": "pass",
+  "browser_visual_validation": "pending_after_vercel_deploy"
+}

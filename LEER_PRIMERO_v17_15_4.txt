@@ -1,0 +1,21 @@
+INBESTIGA Marketing Cloud v17.15.4
+SAKURA WORKSPACE LAYOUT HOTFIX
+
+INSTALACIÓN
+1. Reemplaza el contenido del repositorio con este paquete completo.
+2. Haz commit y push a main.
+3. Espera el despliegue de Vercel.
+4. En el navegador usa Ctrl + Shift + R.
+5. Confirma visualmente v17.15.4.
+6. Abre SAKURA y prueba ambos lados.
+
+NO ES NECESARIO
+- Cambiar el ejecutor local v0.9.
+- Volver a emparejar Ollama, salvo que la sesión haya vencido.
+- Ejecutar SQL.
+
+RESULTADO ESPERADO
+- SAKURA no cubre la portada ni las tarjetas.
+- Todos los controles de la cabecera están visibles.
+- Las pestañas aparecen en filas limpias, sin scrollbar horizontal.
+- Burbuja de usuario, caja de escritura y botones inferiores no se cortan.

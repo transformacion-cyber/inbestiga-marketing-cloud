@@ -1,0 +1,29 @@
+INBESTIGA Marketing Cloud v17.15.4
+SAKURA WORKSPACE LAYOUT HOTFIX
+
+FALLO REPRODUCIDO
+- SAKURA se abría acoplada, pero la navegación Apple anulaba con !important el padding de reserva.
+- El contenido principal quedaba debajo del panel.
+- Cabecera, pestañas, burbujas y herramientas inferiores podían quedar cortadas.
+- La navegación de SAKURA mostraba una barra horizontal nativa.
+
+CORRECCIÓN
+- La reserva se aplica a #appScreen > .main después de la cascada Apple.
+- SAKURA queda debajo de la barra superior.
+- Las pestañas usan una cuadrícula responsive.
+- La cabecera usa grid y cambia a dos niveles en paneles estrechos.
+- Mensajes, secciones, formularios y compositor respetan min-width:0 y el ancho disponible.
+- Escritorio >=1280 usa acoplamiento real; tablet usa superposición controlada; móvil usa hoja inferior.
+
+SEGURIDAD
+- Sin SQL.
+- Sin cambios en Supabase Auth, RLS, RPC o Storage.
+- Sin cambios en Ollama o el protocolo de emparejamiento.
+- Sin polling, setInterval, MutationObserver ni Realtime nuevos.
+- Sin acciones productivas automáticas.
+
+VALIDACIÓN PENDIENTE EN VERCEL
+- Recarga forzada Ctrl + Shift + R.
+- Abrir SAKURA a izquierda y derecha en 1720x895, 1440x900, 1280x800, 1024x768 y 390x844.
+- Comprobar Chat, Mensajes, Documentos, Estudio, Ajustes y Director.
+- Confirmar que no exista scroll horizontal en el panel ni contenido cubierto.

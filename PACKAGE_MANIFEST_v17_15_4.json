@@ -1,0 +1,44 @@
+{
+  "version": "v17.15.4",
+  "name": "SAKURA Workspace Layout Hotfix",
+  "base": "v17.15.3",
+  "file_count_before_package_manifest": 506,
+  "validation": {
+    "version": "v17.15.4",
+    "result": "pass",
+    "json_files": 126,
+    "javascript_files": 54,
+    "inline_scripts": 14,
+    "css_files": 36,
+    "html_ids_unique": 646,
+    "index_local_references": 68,
+    "pwa_shell_resources": 80,
+    "static_layout_validation": "pass",
+    "protected_diff": "pass",
+    "browser_visual_validation": "pending_after_vercel_deploy"
+  },
+  "changed_files": [
+    "index.html",
+    "service-worker.js",
+    "manifest.webmanifest",
+    "config/public-runtime-config.js",
+    "config/build-manifest.json"
+  ],
+  "new_files": [
+    "assets/css/sakura-workspace-layout-hotfix-v17-15-4.css",
+    "assets/js/sakura-workspace-layout-hotfix-v17-15-4.js",
+    "assets/js/release-marker-v17-15-4.js",
+    "CHANGES_v17_15_4.json",
+    "AUDITORIA_v17_15_4_SAKURA_WORKSPACE_LAYOUT.txt",
+    "FUNCTIONAL_TESTS_v17_15_4.json",
+    "STATIC_LAYOUT_VALIDATION_v17_15_4.json",
+    "STATIC_VALIDATION_v17_15_4.json",
+    "PROTECTED_DIFF_v17_15_4.json",
+    "LEER_PRIMERO_v17_15_4.txt",
+    "GITHUB_RELEASE_v17_15_4.txt",
+    "PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_4.txt"
+  ],
+  "removed_files": [],
+  "github_summary": "fix(sakura): correct workspace overlap and clipped controls v17.15.4",
+  "github_commit": "git add . && git commit -m \"fix: release v17.15.4 SAKURA workspace layout hotfix\" && git push origin main"
+}

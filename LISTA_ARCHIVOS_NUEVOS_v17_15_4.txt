@@ -1,0 +1,15 @@
+assets/css/sakura-workspace-layout-hotfix-v17-15-4.css
+assets/js/sakura-workspace-layout-hotfix-v17-15-4.js
+assets/js/release-marker-v17-15-4.js
+CHANGES_v17_15_4.json
+AUDITORIA_v17_15_4_SAKURA_WORKSPACE_LAYOUT.txt
+FUNCTIONAL_TESTS_v17_15_4.json
+LISTA_ARCHIVOS_MODIFICADOS_v17_15_4.txt
+LISTA_ARCHIVOS_NUEVOS_v17_15_4.txt
+LEER_PRIMERO_v17_15_4.txt
+GITHUB_RELEASE_v17_15_4.txt
+PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_4.txt
+
+STATIC_LAYOUT_VALIDATION_v17_15_4.json
+PROTECTED_DIFF_v17_15_4.json
+PACKAGE_MANIFEST_v17_15_4.json

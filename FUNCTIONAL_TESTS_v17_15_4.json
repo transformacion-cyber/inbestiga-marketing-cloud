@@ -1,0 +1,14 @@
+{
+  "version": "v17.15.4",
+  "tests": [
+    {"id":"layout-source-order","result":"pass","detail":"El hotfix CSS se carga después de las reglas inline de navegación Apple."},
+    {"id":"desktop-main-reservation","result":"pass","detail":"La columna .main reserva --sk-dock-width en escritorio."},
+    {"id":"tablet-overlay","result":"pass","detail":"No se comprime el contenido por debajo de 1280 px."},
+    {"id":"tabs-grid","result":"pass","detail":"Las pestañas no dependen de desplazamiento horizontal."},
+    {"id":"composer-grid","result":"pass","detail":"Entrada, envío y herramientas permanecen dentro del panel."},
+    {"id":"no-polling","result":"pass","detail":"El nuevo módulo no usa setInterval ni polling."},
+    {"id":"no-mutation-observer","result":"pass","detail":"El nuevo módulo no usa MutationObserver."},
+    {"id":"backend-protection","result":"pass","detail":"Sin SQL ni cambios en Auth, RLS, RPC o Storage."}
+  ],
+  "browser_visual_validation":"pending_after_vercel_deploy"
+}

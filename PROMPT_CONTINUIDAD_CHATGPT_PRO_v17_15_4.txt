@@ -1,0 +1,28 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.4
+SAKURA WORKSPACE LAYOUT HOTFIX
+
+Continúa exclusivamente desde el paquete completo:
+INBESTIGA_MARKETING_CLOUD_v17_15_4_SAKURA_WORKSPACE_LAYOUT_HOTFIX_FULL_PLATFORM.zip
+
+Base creada exclusivamente desde v17.15.3.
+
+v17.15.4 corrige el fallo visual reproducido con SAKURA abierta:
+- La navegación Apple anulaba el espacio reservado y el contenido quedaba debajo del panel.
+- SAKURA mostraba controles, pestañas, burbujas y herramientas cortadas.
+
+Implementación:
+- Nuevo CSS final de alta prioridad que reserva el panel en #appScreen > .main.
+- Cabecera responsive con todos los controles visibles.
+- Pestañas en cuadrícula sin scrollbar horizontal.
+- Mensajes y formularios contenidos dentro del ancho.
+- Compositor completo.
+- Acoplamiento real en escritorio >=1280, superposición en tablet y hoja inferior en móvil.
+- Ajuste de la portada al ancho útil.
+- Diagnóstico local de solapamiento y overflow, sin polling.
+
+No se modificaron Auth, RLS, RPC, Storage, tablas, mensajería productiva, Trabajo 360, Campañas, SAKURA Academy ni el protocolo de Ollama.
+No hay SQL nuevo.
+
+Siguiente versión:
+- v17.15.5 solo para un fallo concreto reproducido de esta entrega.
+- v17.16.0 para el siguiente bloque funcional grande autorizado.

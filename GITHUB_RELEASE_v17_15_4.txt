@@ -1,0 +1,9 @@
+Summary:
+INBESTIGA Marketing Cloud v17.15.4 — SAKURA Workspace Layout Hotfix
+
+Corrige la superposición y los controles cortados de SAKURA mediante una reserva real de espacio en la columna principal, navegación interna responsive y adaptación segura para escritorio, tablet y móvil. Conserva Ollama, Auth, RLS, RPC, Storage y los módulos productivos.
+
+Commit:
+git add .
+git commit -m "fix: release v17.15.4 SAKURA workspace layout hotfix"
+git push origin main

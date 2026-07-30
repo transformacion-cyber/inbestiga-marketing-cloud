@@ -1,0 +1,18 @@
+{
+  "version": "v17.15.4",
+  "type": "static_css_cascade_and_structure",
+  "result": "pass",
+  "checks": {
+    "css_parses": true,
+    "hotfix_loaded_after_apple_refinement": true,
+    "main_column_left_reservation": true,
+    "main_column_right_reservation": true,
+    "tabs_use_grid": true,
+    "tabs_no_horizontal_scroll": true,
+    "composer_safe_grid": true,
+    "mobile_safe_sheet": true,
+    "no_polling": true,
+    "no_mutation_observer": true
+  },
+  "browser_visual_validation": "pending_after_vercel_deploy"
+}
