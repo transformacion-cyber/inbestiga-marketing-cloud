@@ -1,0 +1,20 @@
+LEER PRIMERO · INBESTIGA MARKETING CLOUD v17.16.4
+
+ORDEN CORRECTO PARA EL LANZAMIENTO OFICIAL
+
+1. Haz un respaldo del proyecto Supabase antes de borrar datos.
+2. Ejecuta SQL_00_VERIFICAR_ANTES_LIMPIEZA_v17_16_4.sql.
+3. Revisa que usuarios, áreas, roles y permisos indiquen CONSERVAR.
+4. Ejecuta SQL_01_LIMPIEZA_OFICIAL_v17_16_4.sql.
+5. Ejecuta SQL_02_VERIFICAR_DESPUES_LIMPIEZA_v17_16_4.sql.
+6. Sigue GUIA_03_VACIAR_STORAGE_v17_16_4.txt para borrar archivos de prueba.
+7. Sube el contenido del ZIP a GitHub y espera Vercel.
+8. Cada usuario debe abrir la plataforma y pulsar Ctrl + Shift + R una vez.
+
+RESULTADO
+- Las cuentas y permisos continúan funcionando.
+- Todos entran con tareas, mensajes, campañas y solicitudes en cero.
+- Los historiales locales de prueba se eliminan una sola vez.
+- La apariencia aprobada de cada usuario se conserva.
+
+NO EJECUTES EL SQL DE LIMPIEZA DOS VECES SIN NECESIDAD.

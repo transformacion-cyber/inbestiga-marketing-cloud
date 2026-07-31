@@ -1,0 +1,11 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.16.4 — Official Clean Start · Zero Operational Data
+
+Entrega la base oficial limpia para el inicio de todo el equipo. Conserva
+usuarios, Auth, áreas, roles, permisos y configuración, y reinicia tareas,
+solicitudes, campañas, mensajes, archivos vinculados, reportes y actividad.
+
+COMMIT
+git add .
+git commit -m "chore: release v17.16.4 official clean start"
+git push origin main

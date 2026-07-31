@@ -1,0 +1,40 @@
+INBESTIGA MARKETING CLOUD v17.16.4
+PASO 03 · VACIAR ARCHIVOS DE PRUEBA EN SUPABASE STORAGE
+
+IMPORTANTE
+No elimines registros directamente desde storage.objects mediante SQL.
+Eso puede dejar archivos físicos huérfanos. Vacía cada bucket desde la
+interfaz de Supabase Storage o mediante la Storage API.
+
+BUCKETS OPERATIVOS A REVISAR
+1. inbestiga-requests
+   - Audios, imágenes, videos y documentos de Solicitudes 360.
+   - Para un inicio completamente limpio, vacíalo entero.
+
+2. inbestiga-work-files
+   - Archivos y entregables vinculados a Trabajo 360.
+   - Vacíalo si todo lo existente corresponde a pruebas.
+
+3. creative-arena-assets
+   - Imágenes subidas a pizarras y salas creativas.
+   - Vacíalo si son pruebas.
+
+4. inbestiga-media
+   - Puede contener archivos de trabajo y también recursos visuales.
+   - Revisa antes de vaciarlo. Conserva logos o fondos oficiales que sí usarán.
+
+NO ES NECESARIO VACIAR
+- Archivos estáticos incluidos en GitHub/Vercel.
+- Temas aprobados de SAKURA.
+- Recursos oficiales que deban mantenerse para el lanzamiento.
+
+PASOS EN SUPABASE
+1. Abre Supabase.
+2. Entra a Storage.
+3. Abre el bucket.
+4. Selecciona los archivos o carpetas de prueba.
+5. Pulsa Delete.
+6. Confirma la eliminación.
+7. Repite con cada bucket operativo.
+
+Después abre Marketing Cloud y pulsa Ctrl + Shift + R.

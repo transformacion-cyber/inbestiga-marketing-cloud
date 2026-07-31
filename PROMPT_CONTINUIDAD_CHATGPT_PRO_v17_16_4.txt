@@ -1,0 +1,9 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.16.4
+OFFICIAL CLEAN START · ZERO OPERATIONAL DATA
+
+Base autorizada después del lanzamiento oficial:
+INBESTIGA_MARKETING_CLOUD_v17_16_4_OFFICIAL_CLEAN_START_FULL_PLATFORM.zip
+
+Conservar todas las funciones confirmadas de v17.16.3. La limpieza oficial
+solo elimina datos operativos; no modifica Auth, usuarios, áreas, cargos, RLS,
+RPC, Storage buckets ni configuración estructural.

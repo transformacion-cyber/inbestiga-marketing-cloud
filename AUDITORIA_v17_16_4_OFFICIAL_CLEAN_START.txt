@@ -1,0 +1,23 @@
+INBESTIGA Marketing Cloud v17.16.4
+OFFICIAL CLEAN START · ZERO OPERATIONAL DATA
+
+OBJETIVO
+Entregar la plataforma para el inicio oficial de todo el equipo sin registros
+operativos de prueba, conservando usuarios, cargos, áreas, permisos, Auth y
+configuración aprobada.
+
+ALCANCE
+- SQL 00: muestra exactamente qué tablas se conservarán y cuáles se limpiarán.
+- SQL 01: elimina datos operativos y reinicia contadores de desempeño.
+- SQL 02: verifica que las tablas operativas estén en cero.
+- Módulo web: limpia una sola vez borradores, historiales, conversaciones de
+  prueba y notificaciones vistas de cada navegador.
+- Se conservan sesión, configuración Supabase, apariencia aprobada, posición
+  del orbe, privacidad y reglas de automatización.
+
+STORAGE
+Los archivos físicos no se eliminan por SQL. Se incluye una guía separada para
+vaciarlos correctamente desde Supabase Storage/API.
+
+SEGURIDAD SQL
+La limpieza no utiliza TRUNCATE CASCADE: si aparece una dependencia no contemplada, el proceso se detiene antes de afectar una tabla conservada.

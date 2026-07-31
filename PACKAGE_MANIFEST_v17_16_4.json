@@ -1,0 +1,50 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.16.4",
+  "build": "OFFICIAL CLEAN START · ZERO OPERATIONAL DATA",
+  "base": "v17.16.3",
+  "generated_at": "2026-07-31T21:58:08.018724+00:00",
+  "files_count": 644,
+  "javascript_files": 83,
+  "json_files": 161,
+  "preserves": [
+    "auth.users",
+    "marketing_app.members",
+    "areas",
+    "roles",
+    "role_permissions",
+    "settings",
+    "system_versions",
+    "approved UI configuration"
+  ],
+  "resets": [
+    "tasks",
+    "campaigns",
+    "clients",
+    "briefs",
+    "editorial",
+    "wall",
+    "comments",
+    "reactions",
+    "messages",
+    "notifications",
+    "assets metadata",
+    "reports",
+    "incidents",
+    "requests360",
+    "operational audits",
+    "local drafts and test conversations"
+  ],
+  "validation": {
+    "javascript_syntax": "OK",
+    "json": "OK",
+    "local_references": "OK",
+    "html_unique_ids": "OK",
+    "auth_preservation": "OK",
+    "member_preservation": "OK",
+    "operational_dynamic_cleanup": "OK",
+    "storage_not_deleted_by_sql": "OK",
+    "one_time_browser_cleanup": "OK",
+    "version_alignment": "OK"
+  }
+}
