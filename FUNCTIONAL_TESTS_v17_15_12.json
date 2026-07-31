@@ -1,0 +1,37 @@
+{
+  "version": "v17.15.12",
+  "tests": [
+    {
+      "id": "initial_login_screen_orb_hidden",
+      "status": "pass"
+    },
+    {
+      "id": "show_app_screen_reveals_orb",
+      "status": "pass"
+    },
+    {
+      "id": "pageshow_restores_orb",
+      "status": "pass"
+    },
+    {
+      "id": "window_focus_restores_orb",
+      "status": "pass"
+    },
+    {
+      "id": "silent_presence_remains_hidden",
+      "status": "pass"
+    },
+    {
+      "id": "no_polling",
+      "status": "pass"
+    },
+    {
+      "id": "no_mutation_observer",
+      "status": "pass"
+    },
+    {
+      "id": "backend_changes",
+      "status": "none"
+    }
+  ]
+}

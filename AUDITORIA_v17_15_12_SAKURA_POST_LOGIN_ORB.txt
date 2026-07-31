@@ -1,0 +1,20 @@
+INBESTIGA Marketing Cloud v17.15.12
+SAKURA POST-LOGIN AMBIENT ORB VISIBILITY HOTFIX
+
+CAUSA
+La inteligencia afectiva evaluaba la visibilidad del orbe cuando la pantalla
+de acceso todavía estaba activa. El botón flotante quedaba con el atributo
+hidden. Al iniciar sesión, la barra superior se mostraba correctamente, pero
+no se ejecutaba una nueva sincronización del orbe.
+
+CORRECCIÓN
+- Sincronización inmediata al ejecutar show("appScreen").
+- Recuperación en pageshow, focus y visibilitychange.
+- Eventos de sesión lista y sesión terminada.
+- Tres verificaciones breves ligadas a la transición, sin polling continuo.
+- Respeto del modo de presencia silenciosa.
+- El orbe se agrega al body y elimina hidden al entrar a la plataforma.
+- El saludo ambiental se ejecuta después de confirmar que el usuario ya está dentro.
+
+SIN CAMBIOS
+Auth, RLS, RPC, Storage, SQL, Supabase, Ollama y datos productivos.

@@ -1,0 +1,12 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.12
+SAKURA POST-LOGIN AMBIENT ORB VISIBILITY HOTFIX
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_15_12_SAKURA_POST_LOGIN_AMBIENT_ORB_FULL_PLATFORM.zip
+
+Conservar:
+- Orbe flotante visible después del login.
+- Sincronización con show("appScreen"), pageshow, focus y visibilitychange.
+- Modo silencioso por usuario.
+- Inteligencia afectiva y tarjetas de tareas v17.15.11.
+- Sin polling, MutationObserver, Auth/RLS/RPC/SQL nuevos.

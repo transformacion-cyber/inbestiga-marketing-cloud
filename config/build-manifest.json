@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.15.11",
-  "build": "SAKURA AMBIENT PRESENCE, AFFECTIVE INTELLIGENCE & TASK DEEP LINKS",
+  "frontend_version": "17.15.12",
+  "build": "SAKURA POST-LOGIN AMBIENT ORB VISIBILITY HOTFIX",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -332,6 +332,18 @@
       "name": "release-marker-v17-15-11",
       "path": "assets/js/release-marker-v17-15-11.js",
       "origin": "v17.15.11",
+      "mode": "canonical-release"
+    },
+    {
+      "name": "sakura-post-login-orb-visibility-v17-15-12",
+      "path": "assets/js/sakura-post-login-orb-visibility-v17-15-12.js",
+      "origin": "v17.15.12",
+      "mode": "post-login-ambient-orb-visibility"
+    },
+    {
+      "name": "release-marker-v17-15-12",
+      "path": "assets/js/release-marker-v17-15-12.js",
+      "origin": "v17.15.12",
       "mode": "canonical-release"
     }
   ],
@@ -763,12 +775,19 @@
     "no_sql_v171511": true,
     "no_backend_changes_v171511": true,
     "no_polling_v171511": true,
-    "no_mutation_observer_v171511": true
+    "no_mutation_observer_v171511": true,
+    "sakura_post_login_orb_visibility_v171512": true,
+    "sakura_session_transition_visibility_sync_v171512": true,
+    "sakura_focus_pageshow_visibility_recovery_v171512": true,
+    "no_polling_v171512": true,
+    "no_mutation_observer_v171512": true,
+    "no_backend_changes_v171512": true,
+    "no_sql_v171512": true
   },
   "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
   "hotfix": "v17.15.6 fixes Command Center null.id crashes, prevents duplicate/re-entrant initialization, preserves the canonical release version against lazy-module downgrades, adds rendered visual-layout health, ignores historical browser incidents in the current score, and stops Work 360 cloud hydration from creating false local pending changes. No SQL or backend changes.",
-  "version": "v17.15.11",
-  "name": "INBESTIGA Marketing Cloud v17.15.11",
+  "version": "v17.15.12",
+  "name": "INBESTIGA Marketing Cloud v17.15.12",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
     "assets/js/unified-command-center-v17-15-0.js",
@@ -869,11 +888,12 @@
     "sakura_no_polling_v17155": true,
     "sakura_no_mutation_observer_v17155": true
   },
-  "release": "v17.15.11 adds ambient SAKURA presence, healthy affective states, exact task cards and safe deep-link navigation.",
+  "release": "Restores the floating SAKURA ambient orb immediately after login and on every authenticated screen transition.",
   "scripts": [
     "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
     "assets/js/release-marker-v17-15-5.js",
     "assets/js/sakura-affective-task-intelligence-v17-15-11.js",
-    "assets/js/release-marker-v17-15-11.js"
+    "assets/js/sakura-post-login-orb-visibility-v17-15-12.js",
+    "assets/js/release-marker-v17-15-12.js"
   ]
 }

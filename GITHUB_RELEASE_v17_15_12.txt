@@ -1,0 +1,11 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.12 — Sakura Post-Login Ambient Orb Visibility Hotfix
+
+Corrige el orbe flotante de SAKURA que permanecía oculto después del inicio de
+sesión. Ahora se activa al mostrar la plataforma y se recupera al volver a la
+pestaña, enfocar la ventana o restaurar la sesión.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.15.12 SAKURA post-login ambient orb visibility"
+git push origin main

@@ -156,9 +156,34 @@
   }
   function syncVisibility(){
     const launcher=document.getElementById("sakuraNativeLauncher");
-    if(launcher)launcher.hidden=!appVisible();
+    if(!launcher)return false;
+    const visible=appVisible(),silent=preferences().presenceMode==="silent";
+    launcher.hidden=!visible||silent;
+    if(visible&&!silent){
+      launcher.removeAttribute("hidden");
+      launcher.style.removeProperty("display");
+      launcher.setAttribute("aria-hidden","false");
+    }else{
+      launcher.setAttribute("aria-hidden","true");
+    }
+    return visible&&!silent;
   }
   function installHooks(){
+    const originalShow=window.show;
+    if(typeof originalShow==="function"&&!originalShow.__sakuraAmbientWrapped){
+      const wrappedShow=function(screen,...args){
+        const result=originalShow.call(this,screen,...args);
+        requestAnimationFrame(()=>{
+          const visible=syncVisibility();
+          refresh();
+          if(screen==="appScreen"&&visible)setTimeout(()=>showGreeting(false),500);
+        });
+        return result;
+      };
+      wrappedShow.__sakuraAmbientWrapped=true;
+      wrappedShow.__sakuraAmbientBase=originalShow;
+      window.show=wrappedShow;
+    }
     const wrap=name=>{
       const base=window[name];
       if(typeof base!=="function"||base.__sakuraAffectiveWrapped)return;
@@ -185,14 +210,19 @@
       window.navTo=wrapped;
     }
     ["inbestiga:task-created","inbestiga:task-updated","inbestiga:task-completed","inbestiga:task-delivered"].forEach(name=>window.addEventListener(name,()=>set("celebration",{reason:"avance registrado",duration:2600,semanticState:true}),{passive:true}));
-    window.addEventListener("pageshow",()=>{syncVisibility();refresh()},{passive:true});
-    document.addEventListener("visibilitychange",()=>{if(!document.hidden){syncVisibility();refresh()}},{passive:true});
+    window.addEventListener("pageshow",()=>{const visible=syncVisibility();refresh();if(visible)setTimeout(()=>showGreeting(false),400)},{passive:true});
+    window.addEventListener("focus",()=>{syncVisibility();refresh()},{passive:true});
+    window.addEventListener("inbestiga:session-ready",()=>{const visible=syncVisibility();refresh();if(visible)setTimeout(()=>showGreeting(false),350)},{passive:true});
+    window.addEventListener("inbestiga:session-ended",()=>syncVisibility(),{passive:true});
+    document.addEventListener("visibilitychange",()=>{if(!document.hidden){const visible=syncVisibility();refresh();if(visible)setTimeout(()=>showGreeting(false),400)}},{passive:true});
   }
   function init(){
+    installHooks();
     syncVisibility();
     refresh();
-    installHooks();
-    setTimeout(()=>{syncVisibility();refresh();showGreeting(false)},1100);
+    requestAnimationFrame(()=>syncVisibility());
+    setTimeout(()=>{const visible=syncVisibility();refresh();if(visible)showGreeting(false)},350);
+    setTimeout(()=>{const visible=syncVisibility();refresh();if(visible)showGreeting(false)},1200);
     try{window.INBESTIGA_QUALITY_CORE?.register?.(MODULE,{version:VERSION,mode:"ambient-affective-task-awareness",polling:false,realtimeChannels:0,mutationObservers:0,backendChanges:false})}catch{}
   }
   window.INBESTIGA_SAKURA_AFFECTIVE=Object.freeze({
