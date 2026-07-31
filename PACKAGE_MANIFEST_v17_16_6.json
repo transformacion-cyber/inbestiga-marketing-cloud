@@ -1,0 +1,32 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.16.6",
+  "build": "SAKURA MESSAGING · WHATSAPP-STYLE PRODUCTIVE CHAT V1",
+  "base": "v17.16.5",
+  "generated_at": "2026-07-31T23:17:26.036878+00:00",
+  "files_count": 658,
+  "javascript_files": 86,
+  "json_files": 163,
+  "backend_changes": false,
+  "sql_changes": false,
+  "message_rpc": "ibm_v33_send_message",
+  "validation": {
+    "javascript_syntax": "OK",
+    "json": "OK",
+    "local_references": "OK",
+    "html_unique_ids": "OK",
+    "whatsapp_style_layout": "OK",
+    "conversation_filters": "OK",
+    "search_and_thread_search": "OK",
+    "drafts_per_conversation": "OK",
+    "reply_quote": "OK",
+    "copy_and_local_star": "OK",
+    "local_pin_archive_mute": "OK",
+    "presence_and_read_checks": "OK",
+    "message_to_task": "OK",
+    "existing_rpc_preserved": "OK",
+    "no_polling": "OK",
+    "no_mutation_observer": "OK",
+    "version_alignment": "OK"
+  }
+}

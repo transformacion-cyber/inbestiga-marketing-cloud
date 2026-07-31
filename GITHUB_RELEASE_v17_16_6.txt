@@ -1,0 +1,12 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.16.6 — Sakura Messaging · Whatsapp-Style Productive Chat V1
+
+Implementa la primera versión de Mensajes de SAKURA con una experiencia
+inspirada en WhatsApp Web: bandeja, filtros, búsqueda, presencia, burbujas,
+checks, respuesta citada, borradores, emojis, fijados, archivados, silenciados,
+destacados, creación de tareas y asistencia de escritura con SAKURA.
+
+COMMIT
+git add .
+git commit -m "feat: release v17.16.6 SAKURA WhatsApp-style productive messaging V1"
+git push origin main

@@ -1,0 +1,44 @@
+INBESTIGA Marketing Cloud v17.16.6
+SAKURA MESSAGING · WHATSAPP-STYLE PRODUCTIVE CHAT V1
+
+ALCANCE
+Primera versión de la mensajería estilo WhatsApp dentro de la pestaña
+Mensajes de SAKURA.
+
+FUNCIONES IMPLEMENTADAS
+- Diseño de dos columnas similar a WhatsApp Web.
+- Lista de conversaciones con avatar, último mensaje, hora y no leídos.
+- Filtros Todos, No leídos, Fijados y Archivados.
+- Búsqueda de contactos y contenido reciente.
+- Búsqueda dentro de la conversación.
+- Cabecera con cargo, presencia y última actividad.
+- Burbujas entrantes y salientes.
+- Separadores Hoy, Ayer y fecha.
+- Estado enviado y leído con checks.
+- Mensaje urgente.
+- Responder citando un mensaje.
+- Copiar mensajes.
+- Destacar mensajes localmente.
+- Fijar, archivar y silenciar conversaciones por usuario y navegador.
+- Borrador independiente por conversación.
+- Selector de emojis.
+- Enviar con Enter y salto de línea con Shift + Enter.
+- Reescritura con SAKURA: cálido, breve y corrección.
+- Crear una tarea real desde un mensaje.
+- Apertura del módulo Mensajes para usar el flujo seguro de adjuntos.
+- Diseño responsive para celular.
+
+DATOS Y SEGURIDAD
+- Los mensajes siguen usando ibm_v33_send_message.
+- Realtime sigue siendo el canal productivo existente.
+- No se crearon tablas, RPC, RLS ni buckets.
+- Fijados, archivados, silenciados, destacados y borradores son preferencias
+  locales por usuario; no modifican el contenido del mensaje en Supabase.
+
+NO IMPLEMENTADO EN ESTA PRIMERA VERSIÓN
+- Reacciones sincronizadas entre usuarios.
+- Editar o eliminar mensajes.
+- Grupos.
+- Llamadas o videollamadas.
+- Audio y archivos dentro del panel SAKURA.
+Estas funciones necesitan soporte productivo adicional y no se simularon.

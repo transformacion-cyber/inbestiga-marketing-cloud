@@ -1,9 +1,9 @@
-/* INBESTIGA Marketing Cloud v17.12.13.6 · SAKURA Personal Studio, Adaptive Panel & Team Messaging */
+/* INBESTIGA Marketing Cloud v17.16.6 · SAKURA WhatsApp-style productive messaging V1 */
 (() => {
   "use strict";
   if (window.INBESTIGA_SAKURA_NATIVE) return;
-  const VERSION = "v17.12.13.6";
-  const MODULE = "sakura-personal-workspace-v17-12-13-6";
+  const VERSION = "v17.16.6";
+  const MODULE = "sakura-personal-workspace-v17-16-6";
   const flags = window.INBESTIGA_SAKURA_LOADER?.flags || {};
   const BRIDGE_BASE = String(flags.bridgeUrl || "http://127.0.0.1:8765").replace(/\/$/, "");
   const TOKEN_KEY = "inbestiga_sakura_bridge_token_v1";
@@ -47,7 +47,7 @@
     commandDraft:null,lastInterpretation:[],aliases:{},
     preferences:{voice:false,voiceName:"",voiceRate:.96,voicePitch:1.04,tone:"warm",replyLength:"balanced",mode:"assistant",dockSide:"right",dockWidth:500,understandTypos:true,minimalQuestions:true,presenceMode:"balanced",emotionalIntensity:"balanced",ambientGreetings:true},
     learning:[], proposals:[], shared:{available:null,error:""},
-    teamMessages:{partnerId:"",query:"",sending:false,rewriting:false,lastRenderedAt:0}
+    teamMessages:{partnerId:"",query:"",filter:"all",threadQuery:"",searchOpen:false,sending:false,rewriting:false,lastRenderedAt:0,replyTo:null,emojiOpen:false}
   };
 
   function userStorageSuffix(){return String(me()?.id||me()?.auth_user_id||"guest").replace(/[^a-zA-Z0-9_-]/g,"").slice(0,80)||"guest"}
@@ -300,10 +300,198 @@
   function messagesWith(partnerId){return rows(data().messages).filter(m=>(same(m.sender_id,partnerId)&&same(m.recipient_id,me().id))||(same(m.sender_id,me().id)&&same(m.recipient_id,partnerId))).sort((a,b)=>new Date(a.created_at)-new Date(b.created_at))}
   function lastMessageWith(partnerId){return messagesWith(partnerId).at(-1)||null}
   function unreadWith(partnerId){return messagesWith(partnerId).filter(m=>same(m.recipient_id,me().id)&&!m.read_at).length}
-  function renderTeamMessages(){const host=document.getElementById("skViewMessages");if(!host)return;const query=normalize(app.teamMessages.query),partners=teamPartners().filter(p=>!query||normalize(p.full_name||p.name||"").includes(query));if(!app.teamMessages.partnerId||!partners.some(p=>same(p.id,app.teamMessages.partnerId)))app.teamMessages.partnerId=partners[0]?.id||teamPartners()[0]?.id||"";const partner=rows(data().members).find(m=>same(m.id,app.teamMessages.partnerId)),thread=partner?messagesWith(partner.id):[];host.innerHTML=`<div class="sk-section"><h3>Mensajes del equipo</h3><p>Esta pestaña pertenece a Marketing Cloud y funciona aunque Ollama o el puente local estén apagados.</p></div><div class="sk-team-messages"><section class="sk-team-sidebar"><div class="sk-team-search"><input id="skTeamSearch" value="${escHtml(app.teamMessages.query)}" placeholder="Buscar miembro…"></div><div class="sk-team-list">${partners.map(p=>{const last=lastMessageWith(p.id),unread=unreadWith(p.id);return`<button type="button" class="sk-team-person ${same(p.id,app.teamMessages.partnerId)?"active":""}" data-sk-team-partner="${escHtml(p.id)}"><span class="sk-team-avatar" style="background:${escHtml(p.profile_color||'#6e26f6')}">${p.avatar_data_url?`<img src="${escHtml(p.avatar_data_url)}" alt="">`:escHtml(teamInitials(p.full_name))}</span><span><strong>${escHtml(p.full_name||p.name||"Miembro")}</strong><small>${escHtml(last?.text_content||"Sin mensajes todavía").slice(0,58)}</small></span>${unread?`<i class="sk-team-unread">${unread}</i>`:""}</button>`}).join("")||'<div class="sk-team-empty">No hay miembros disponibles.</div>'}</div></section><section class="sk-team-thread">${partner?`<header class="sk-team-head"><div><strong>${escHtml(partner.full_name||partner.name)}</strong><small style="display:block;color:var(--sk-muted);margin-top:3px">Conversación real del equipo</small></div><button type="button" class="sk-secondary" id="skOpenFullMessages">Abrir en Mensajes</button></header><div class="sk-team-body" id="skTeamBody">${thread.map(m=>`<div class="sk-team-bubble ${same(m.sender_id,me().id)?"out":"in"}">${m.is_urgent?'<strong style="display:block;margin-bottom:4px">Urgente</strong>':''}${escHtml(m.text_content||"")}<time>${new Date(m.created_at).toLocaleString("es-PE")}${m.read_at?" · leído":""}</time></div>`).join("")||'<div class="sk-team-empty">Todavía no hay mensajes. Escribe el primero.</div>'}</div><footer class="sk-team-compose"><textarea id="skTeamDraft" placeholder="Escribe un mensaje para ${escHtml(partner.full_name||partner.name)}…"></textarea><div class="sk-team-compose-actions"><button type="button" class="sk-secondary" id="skTeamWarm" ${app.bridge.ollama?"":"disabled"}>Más cálido</button><button type="button" class="sk-secondary" id="skTeamShort" ${app.bridge.ollama?"":"disabled"}>Más breve</button><button type="button" class="sk-secondary" id="skTeamCorrect" ${app.bridge.ollama?"":"disabled"}>Corregir</button><button type="button" class="sk-secondary" id="skTeamAttach">Adjuntar desde Mensajes</button><span class="spacer"></span><label style="display:flex;align-items:center;gap:6px;font-size:10px"><input id="skTeamUrgent" type="checkbox"> Urgente</label><button type="button" class="sk-primary" id="skTeamSend">Enviar</button></div></footer>`:'<div class="sk-team-empty">Selecciona a un miembro para abrir la conversación.</div>'}</section></div>`;
-    host.querySelectorAll("[data-sk-team-partner]").forEach(b=>b.onclick=()=>{app.teamMessages.partnerId=b.dataset.skTeamPartner;renderTeamMessages()});const search=host.querySelector("#skTeamSearch");if(search)search.oninput=()=>{app.teamMessages.query=search.value;renderTeamMessages()};host.querySelector("#skOpenFullMessages")?.addEventListener("click",()=>{window.navTo?.("messages");try{document.getElementById("msgTo").value=app.teamMessages.partnerId;window.renderMessages?.(app.teamMessages.partnerId)}catch(_){}});host.querySelector("#skTeamAttach")?.addEventListener("click",()=>{toast("Los adjuntos se gestionan en el módulo Mensajes para reutilizar su flujo seguro.");window.navTo?.("messages")});host.querySelector("#skTeamSend")?.addEventListener("click",sendTeamMessage);host.querySelector("#skTeamWarm")?.addEventListener("click",()=>rewriteTeamDraft("más cálido"));host.querySelector("#skTeamShort")?.addEventListener("click",()=>rewriteTeamDraft("más breve"));host.querySelector("#skTeamCorrect")?.addEventListener("click",()=>rewriteTeamDraft("corrige la ortografía y claridad"));const body=host.querySelector("#skTeamBody");if(body)body.scrollTop=body.scrollHeight;app.teamMessages.lastRenderedAt=Date.now()}
-  async function rewriteTeamDraft(mode){const input=document.getElementById("skTeamDraft"),text=String(input?.value||"").trim();if(!text)return toast("Escribe primero el mensaje que deseas mejorar.");if(!app.bridge.ollama)return toast("Ollama está apagado. Puedes enviar el mensaje sin utilizar SAKURA.");if(app.teamMessages.rewriting)return;app.teamMessages.rewriting=true;try{let full="";await bridge.chat({model:app.bridge.chatModel,messages:[{role:"system",content:"Reescribe mensajes laborales en español natural. Devuelve únicamente el mensaje final, sin explicar."},{role:"user",content:`Haz este mensaje ${mode}: ${text}`}],context:compactContext(),knowledge:[],keep_alive:"2m"},{onToken:t=>{full+=t}});if(full.trim())input.value=full.trim()}catch(error){toast(friendlyError(error))}finally{app.teamMessages.rewriting=false}}
-  async function sendTeamMessage(){const partnerId=app.teamMessages.partnerId,input=document.getElementById("skTeamDraft"),text=String(input?.value||"").trim(),urgent=!!document.getElementById("skTeamUrgent")?.checked;if(!partnerId)return toast("Selecciona un miembro.");if(!text)return toast("Escribe un mensaje.");if(app.teamMessages.sending)return;const partner=rows(data().members).find(m=>same(m.id,partnerId));let confirmed=true;try{if(typeof window.premiumConfirmModal==="function")confirmed=await window.premiumConfirmModal({title:`Enviar mensaje a ${partner?.full_name||"este miembro"}`,subtitle:"Este mensaje saldrá de tu perfil real.",preview:`<div class="modal-preview">${escHtml(text)}</div>`,confirmLabel:"Enviar",cancelLabel:"Cancelar"})}catch(_){confirmed=confirm(`Este mensaje será enviado a ${partner?.full_name||"el miembro"}. ¿Continuar?`)}if(!confirmed)return;app.teamMessages.sending=true;const btn=document.getElementById("skTeamSend");if(btn){btn.disabled=true;btn.textContent="Enviando…"}try{const client=sbClient();if(!client?.rpc)throw new Error("Supabase no está disponible.");const {error}=await client.rpc("ibm_v33_send_message",{p_recipient_id:partnerId,p_text_content:text,p_is_urgent:urgent});if(error)throw error;input.value="";const optimistic={id:uid("msgteam"),sender_id:me().id,recipient_id:partnerId,text_content:text,is_urgent:urgent,created_at:new Date().toISOString(),read_at:null,__sakuraOptimistic:true};if(!Array.isArray(data().messages))data().messages=[];data().messages.push(optimistic);renderTeamMessages();toast("Mensaje enviado.");setTimeout(()=>window.safeSync?.("sakura_team_message"),250)}catch(error){toast(`No se pudo enviar: ${friendlyError(error)}`)}finally{app.teamMessages.sending=false;if(btn){btn.disabled=false;btn.textContent="Enviar"}}}
+
+  const TEAM_UI_KEY="inbestiga_sakura_team_messaging_v1";
+  const TEAM_EMOJIS=["😀","😂","😊","😍","🥳","🤔","👏","👍","🔥","💯","🙏","🚀","🎯","💡","📌","📎","📅","✅","⚠️","❤️","💜","👀","🤝","✍️","🎉","📣","📈","📝","⭐","💪"];
+  function teamUiKey(){return`${TEAM_UI_KEY}:${me()?.id||"anonymous"}`}
+  function teamUiLoad(){try{const raw=JSON.parse(localStorage.getItem(teamUiKey())||"{}");return{pinned:rows(raw.pinned).map(String),archived:rows(raw.archived).map(String),muted:rows(raw.muted).map(String),starred:rows(raw.starred).map(String),drafts:raw.drafts&&typeof raw.drafts==="object"?raw.drafts:{}}}catch(_){return{pinned:[],archived:[],muted:[],starred:[],drafts:{}}}}
+  function teamUiSave(value){try{localStorage.setItem(teamUiKey(),JSON.stringify(value))}catch(_){}}
+  function teamUiHas(kind,id){return teamUiLoad()[kind]?.includes(String(id))}
+  function teamUiToggle(kind,id){const prefs=teamUiLoad(),key=String(id),set=new Set(rows(prefs[kind]).map(String));set.has(key)?set.delete(key):set.add(key);prefs[kind]=[...set];teamUiSave(prefs);return set.has(key)}
+  function teamDraft(partnerId){return String(teamUiLoad().drafts?.[String(partnerId)]||"")}
+  function saveTeamDraft(partnerId,value){const prefs=teamUiLoad();prefs.drafts={...(prefs.drafts||{}),[String(partnerId)]:String(value||"").slice(0,12000)};teamUiSave(prefs)}
+  function clearTeamDraft(partnerId){const prefs=teamUiLoad();if(prefs.drafts)delete prefs.drafts[String(partnerId)];teamUiSave(prefs)}
+  function teamPresence(partnerId){const record=rows(data().live_presence).find(item=>same(item.member_id,partnerId)),stamp=record?new Date(record.updated_at||record.last_seen_at||0).getTime():0,online=!!stamp&&Date.now()-stamp<90000;return{record,online,stamp}}
+  function teamTime(value){const date=new Date(value);return Number.isNaN(date.getTime())?"":date.toLocaleTimeString("es-PE",{hour:"2-digit",minute:"2-digit"})}
+  function teamDateKey(value){const date=new Date(value),pad=n=>String(n).padStart(2,"0");return`${date.getFullYear()}-${pad(date.getMonth()+1)}-${pad(date.getDate())}`}
+  function teamDateLabel(value){const date=new Date(value),today=new Date(),yesterday=new Date(Date.now()-86400000);if(teamDateKey(date)===teamDateKey(today))return"Hoy";if(teamDateKey(date)===teamDateKey(yesterday))return"Ayer";return date.toLocaleDateString("es-PE",{weekday:"long",day:"numeric",month:"long"})}
+  function teamLastSeen(partnerId){const p=teamPresence(partnerId);if(p.online)return p.record?.current_section?`En línea · ${p.record.current_section}`:"En línea";if(!p.stamp)return"Sin actividad reciente";return`Última actividad ${new Date(p.stamp).toLocaleString("es-PE",{day:"2-digit",month:"short",hour:"2-digit",minute:"2-digit"})}`}
+  function teamSafeLinks(value){const escaped=escHtml(String(value||""));return escaped.replace(/(https?:\/\/[^\s<]+)/gi,url=>`<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`).replace(/\n/g,"<br>")}
+  function teamParsedText(value){
+    const text=String(value||""),match=text.match(/^↪ ([^:\n]{1,80}): ([^\n]{1,180})\n\n([\s\S]*)$/);
+    if(!match)return{quote:null,body:text};
+    return{quote:{name:match[1],text:match[2]},body:match[3]};
+  }
+  function teamPreview(value){const parsed=teamParsedText(value),text=String(parsed.body||value||"").replace(/\s+/g," ").trim();return text||"Mensaje"}
+  function teamStatusMarkup(message){if(!same(message.sender_id,me().id))return"";return message.read_at?'<span class="sk-wa-checks read" title="Leído">✓✓</span>':'<span class="sk-wa-checks" title="Enviado">✓</span>'}
+  function teamMessageMarkup(message){
+    const mine=same(message.sender_id,me().id),parsed=teamParsedText(message.text_content),starred=teamUiHas("starred",message.id);
+    return`<article class="sk-wa-message-row ${mine?"out":"in"}" data-sk-wa-message="${escHtml(message.id)}">
+      <div class="sk-wa-bubble">
+        <div class="sk-wa-message-actions">
+          <button type="button" data-sk-wa-action="reply" title="Responder">↩</button>
+          <button type="button" data-sk-wa-action="copy" title="Copiar">⧉</button>
+          <button type="button" data-sk-wa-action="star" title="${starred?"Quitar destacado":"Destacar"}">${starred?"★":"☆"}</button>
+          <button type="button" data-sk-wa-action="task" title="Crear tarea">✓</button>
+        </div>
+        ${message.is_urgent?'<div class="sk-wa-urgent">⚠ Urgente</div>':""}
+        ${parsed.quote?`<div class="sk-wa-quote"><strong>${escHtml(parsed.quote.name)}</strong><span>${escHtml(parsed.quote.text)}</span></div>`:""}
+        <div class="sk-wa-message-text">${teamSafeLinks(parsed.body)}</div>
+        <div class="sk-wa-message-meta">${starred?'<span class="sk-wa-star">★</span>':""}<time>${teamTime(message.created_at)}</time>${teamStatusMarkup(message)}</div>
+      </div>
+    </article>`;
+  }
+  function teamThreadMarkup(thread){
+    if(!thread.length)return'<div class="sk-wa-empty-thread"><span>💬</span><strong>Comienza la conversación</strong><p>Los mensajes se enviarán mediante la mensajería real de Marketing Cloud.</p></div>';
+    let lastDay="";
+    return thread.map(message=>{const key=teamDateKey(message.created_at),separator=key!==lastDay?`<div class="sk-wa-day"><span>${escHtml(teamDateLabel(message.created_at))}</span></div>`:"";lastDay=key;return separator+teamMessageMarkup(message)}).join("");
+  }
+  function teamPartnerRows(){
+    const prefs=teamUiLoad(),query=normalize(app.teamMessages.query),filter=app.teamMessages.filter||"all";
+    return teamPartners().map(partner=>{
+      const thread=messagesWith(partner.id),last=thread.at(-1)||null,unread=unreadWith(partner.id),lastStamp=last?new Date(last.created_at).getTime():0;
+      return{partner,thread,last,unread,lastStamp,pinned:prefs.pinned.includes(String(partner.id)),archived:prefs.archived.includes(String(partner.id)),muted:prefs.muted.includes(String(partner.id))}
+    }).filter(row=>{
+      const haystack=normalize(`${row.partner.full_name||row.partner.name||""} ${row.partner.position||""} ${teamPreview(row.last?.text_content||"")}`);
+      if(query&&!haystack.includes(query))return false;
+      if(filter==="unread"&&!row.unread)return false;
+      if(filter==="pinned"&&!row.pinned)return false;
+      if(filter==="archived")return row.archived;
+      return !row.archived;
+    }).sort((a,b)=>Number(b.pinned)-Number(a.pinned)||b.lastStamp-a.lastStamp||String(a.partner.full_name||"").localeCompare(String(b.partner.full_name||""),"es"));
+  }
+  function teamConversationMarkup(row){
+    const p=row.partner,presence=teamPresence(p.id),active=same(p.id,app.teamMessages.partnerId),draft=teamDraft(p.id),preview=draft?`Borrador: ${draft}`:teamPreview(row.last?.text_content||"Sin mensajes todavía");
+    return`<button type="button" class="sk-wa-conversation ${active?"active":""} ${row.unread?"unread":""}" data-sk-team-partner="${escHtml(p.id)}">
+      <span class="sk-wa-avatar" style="background:${escHtml(p.profile_color||"#6e26f6")}">${p.avatar_data_url?`<img src="${escHtml(p.avatar_data_url)}" alt="">`:escHtml(teamInitials(p.full_name||p.name))}${presence.online?'<i></i>':""}</span>
+      <span class="sk-wa-conversation-copy">
+        <span class="sk-wa-conversation-top"><strong>${escHtml(p.full_name||p.name||"Miembro")}</strong><time>${row.last?teamTime(row.last.created_at):""}</time></span>
+        <span class="sk-wa-conversation-bottom"><small class="${draft?"draft":""}">${escHtml(preview).slice(0,72)}</small><b>${row.pinned?"⌖":""}${row.muted?"⌁":""}</b>${row.unread?`<em>${row.unread}</em>`:""}</span>
+      </span>
+    </button>`;
+  }
+  function teamReply(messageId){
+    const message=messagesWith(app.teamMessages.partnerId).find(item=>same(item.id,messageId));if(!message)return;
+    app.teamMessages.replyTo={id:message.id,name:same(message.sender_id,me().id)?"Tú":personName(message.sender_id),text:teamPreview(message.text_content).slice(0,150)};
+    renderTeamMessages();setTimeout(()=>document.getElementById("skTeamDraft")?.focus(),0);
+  }
+  async function teamCopy(messageId){
+    const message=messagesWith(app.teamMessages.partnerId).find(item=>same(item.id,messageId));if(!message)return;
+    try{await navigator.clipboard.writeText(teamParsedText(message.text_content).body||message.text_content);toast("Mensaje copiado.")}catch(_){toast("No se pudo copiar el mensaje.")}
+  }
+  function teamToggleStar(messageId){teamUiToggle("starred",messageId);renderTeamMessages()}
+  function teamToggleConversation(kind,partnerId,labelOn,labelOff){
+    const enabled=teamUiToggle(kind,partnerId);toast(enabled?labelOn:labelOff);
+    if(kind==="archived"&&enabled){app.teamMessages.partnerId="";renderTeamMessages()}else renderTeamMessages();
+  }
+  async function teamMarkAllRead(){
+    try{const client=sbClient();if(!client?.rpc)throw new Error("Supabase no está disponible.");const{error}=await client.rpc("ibm_v33_mark_all_messages_read");if(error)throw error;toast("Mensajes marcados como leídos.");await window.safeSync?.("sakura_mark_messages_read")}catch(error){toast(`No se pudo marcar leído: ${friendlyError(error)}`)}
+  }
+  function teamMessageToTask(messageId){
+    const message=messagesWith(app.teamMessages.partnerId).find(item=>same(item.id,messageId)),partner=rows(data().members).find(item=>same(item.id,app.teamMessages.partnerId));if(!message)return;
+    const source=teamParsedText(message.text_content).body||message.text_content,title=`Seguimiento · ${String(source).replace(/\s+/g," ").trim().slice(0,70)}`;
+    if(typeof window.openPremiumModal!=="function"){navigator.clipboard?.writeText?.(source);window.v66QuickTaskModal?.();toast("Mensaje copiado. Completa la nueva tarea.");return}
+    const members=rows(data().members).filter(item=>item.status!=="inactive");
+    const body=`<div class="v66-form-grid"><label class="full">Título<input id="skWaTaskTitle" value="${escHtml(title)}"></label><label>Responsable<select id="skWaTaskAssignee">${members.map(item=>`<option value="${escHtml(item.id)}" ${same(item.id,me().id)?"selected":""}>${escHtml(item.full_name||item.name)}</option>`).join("")}</select></label><label>Fecha de entrega<input id="skWaTaskDue" type="date"></label><label>Prioridad<select id="skWaTaskPriority"><option value="media">Media</option><option value="alta">Alta</option><option value="urgente">Urgente</option><option value="baja">Baja</option></select></label><label class="full">Descripción<textarea id="skWaTaskDescription" rows="6">${escHtml(`Mensaje de ${same(message.sender_id,me().id)?"mí":partner?.full_name||"un miembro"}:\n\n${source}\n\nConversación: ${partner?.full_name||"Equipo"}`)}</textarea></label></div>`;
+    window.openPremiumModal({title:"Crear tarea desde el mensaje",subtitle:"El mensaje quedará incluido en la descripción.",body,actions:[{label:"Cancelar",value:null,className:"ghost"},{label:"Crear tarea",className:"primary",loadingLabel:"Creando…",onClick:async()=>{
+      const assigned=document.getElementById("skWaTaskAssignee")?.value||me().id,assignee=members.find(item=>same(item.id,assigned)),client=sbClient();if(!client?.rpc)throw new Error("Supabase no está disponible.");
+      const taskTitle=String(document.getElementById("skWaTaskTitle")?.value||"").trim();if(!taskTitle)throw new Error("Escribe un título.");
+      const{error}=await client.rpc("ibm_v30_create_task",{p_title:taskTitle,p_description:String(document.getElementById("skWaTaskDescription")?.value||""),p_assigned_to:assigned||null,p_client_id:null,p_area_id:assignee?.area_id||me()?.area_id||null,p_campaign_id:null,p_due_date:document.getElementById("skWaTaskDue")?.value||null,p_due_time:null,p_priority:document.getElementById("skWaTaskPriority")?.value||"media",p_impact:3,p_checklist:[]});if(error)throw error;
+      await window.loadAll?.();window.renderTasks?.();toast("Tarea creada desde el mensaje.");return true
+    }}]});
+  }
+  function renderTeamMessages(){
+    const host=document.getElementById("skViewMessages");if(!host)return;
+    const compact=window.matchMedia?.("(max-width:720px)")?.matches;
+    const partnerRows=teamPartnerRows();
+    if(app.teamMessages.partnerId&&!teamPartners().some(item=>same(item.id,app.teamMessages.partnerId)))app.teamMessages.partnerId="";
+    if(!app.teamMessages.partnerId&&!compact)app.teamMessages.partnerId=partnerRows[0]?.partner?.id||teamPartners()[0]?.id||"";
+    const partner=rows(data().members).find(item=>same(item.id,app.teamMessages.partnerId));
+    const allThread=partner?messagesWith(partner.id):[];
+    const threadQuery=normalize(app.teamMessages.threadQuery);
+    const thread=threadQuery?allThread.filter(message=>normalize(message.text_content||"").includes(threadQuery)):allThread;
+    const prefs=teamUiLoad(),archivedCount=prefs.archived.length,pinned=partner?prefs.pinned.includes(String(partner.id)):false,muted=partner?prefs.muted.includes(String(partner.id)):false,reply=app.teamMessages.replyTo,draft=partner?teamDraft(partner.id):"";
+    host.innerHTML=`<div class="sk-wa-intro"><div><span>MENSAJERÍA PRODUCTIVA</span><h3>Mensajes</h3><p>Conversaciones reales del equipo con una experiencia clara y familiar.</p></div><button type="button" id="skWaMarkRead">Marcar todo leído</button></div>
+      <div class="sk-wa-shell ${partner?"has-chat":""}">
+        <aside class="sk-wa-sidebar">
+          <header class="sk-wa-sidebar-head"><div><strong>Conversaciones</strong><small>${teamPartners().length} contactos</small></div><button type="button" id="skWaOpenAll" title="Abrir módulo Mensajes">↗</button></header>
+          <div class="sk-wa-search"><span>⌕</span><input id="skTeamSearch" value="${escHtml(app.teamMessages.query)}" placeholder="Buscar o iniciar un chat"></div>
+          <div class="sk-wa-filters">
+            ${[["all","Todos"],["unread","No leídos"],["pinned","Fijados"],["archived",`Archivados${archivedCount?` ${archivedCount}`:""}`]].map(([id,label])=>`<button type="button" class="${app.teamMessages.filter===id?"active":""}" data-sk-wa-filter="${id}">${label}</button>`).join("")}
+          </div>
+          <div class="sk-wa-list">${partnerRows.map(teamConversationMarkup).join("")||'<div class="sk-wa-empty-list">No hay conversaciones en este filtro.</div>'}</div>
+        </aside>
+        <section class="sk-wa-thread">
+          ${partner?`<header class="sk-wa-thread-head">
+            <button type="button" class="sk-wa-back" id="skWaBack" aria-label="Volver">‹</button>
+            <span class="sk-wa-avatar large" style="background:${escHtml(partner.profile_color||"#6e26f6")}">${partner.avatar_data_url?`<img src="${escHtml(partner.avatar_data_url)}" alt="">`:escHtml(teamInitials(partner.full_name||partner.name))}${teamPresence(partner.id).online?'<i></i>':""}</span>
+            <div class="sk-wa-contact"><strong>${escHtml(partner.full_name||partner.name)}</strong><small>${escHtml(partner.position||partner.role_code||teamLastSeen(partner.id))}</small><em>${escHtml(teamLastSeen(partner.id))}</em></div>
+            <div class="sk-wa-head-actions">
+              <button type="button" id="skWaSearchThread" class="${app.teamMessages.searchOpen?"active":""}" title="Buscar en el chat">⌕</button>
+              <button type="button" id="skWaPin" class="${pinned?"active":""}" title="${pinned?"Desfijar":"Fijar"}">⌖</button>
+              <button type="button" id="skWaMute" class="${muted?"active":""}" title="${muted?"Activar notificaciones":"Silenciar"}">⌁</button>
+              <button type="button" id="skWaArchive" title="Archivar">▣</button>
+              <button type="button" id="skOpenFullMessages" title="Abrir Mensajes completo">⋮</button>
+            </div>
+          </header>
+          ${app.teamMessages.searchOpen?`<div class="sk-wa-thread-search"><input id="skWaThreadQuery" value="${escHtml(app.teamMessages.threadQuery)}" placeholder="Buscar dentro de esta conversación"><button type="button" id="skWaCloseSearch">×</button></div>`:""}
+          <div class="sk-wa-body" id="skTeamBody">${teamThreadMarkup(thread)}</div>
+          <footer class="sk-wa-composer">
+            ${reply?`<div class="sk-wa-reply-bar"><div><strong>Respondiendo a ${escHtml(reply.name)}</strong><span>${escHtml(reply.text)}</span></div><button type="button" id="skWaCancelReply">×</button></div>`:""}
+            <div class="sk-wa-sakura-tools"><span><b>✦</b> SAKURA</span><button type="button" id="skTeamWarm" ${app.bridge.ollama?"":"disabled"}>Más cálido</button><button type="button" id="skTeamShort" ${app.bridge.ollama?"":"disabled"}>Más breve</button><button type="button" id="skTeamCorrect" ${app.bridge.ollama?"":"disabled"}>Corregir</button><small>${app.bridge.ollama?"Asistencia local disponible":"Modo básico · puedes enviar normalmente"}</small></div>
+            <div class="sk-wa-compose-row">
+              <div class="sk-wa-emoji-wrap"><button type="button" id="skWaEmoji" title="Emoji">☺</button>${app.teamMessages.emojiOpen?`<div class="sk-wa-emoji-panel">${TEAM_EMOJIS.map(emoji=>`<button type="button" data-sk-wa-emoji="${emoji}">${emoji}</button>`).join("")}</div>`:""}</div>
+              <button type="button" id="skTeamAttach" title="Adjuntar desde Mensajes">⌕</button>
+              <textarea id="skTeamDraft" rows="1" placeholder="Escribe un mensaje" aria-label="Mensaje">${escHtml(draft)}</textarea>
+              <label class="sk-wa-urgent-toggle" title="Marcar como urgente"><input id="skTeamUrgent" type="checkbox"><span>!</span></label>
+              <button type="button" class="sk-wa-send" id="skTeamSend" aria-label="Enviar"><span>➤</span></button>
+            </div>
+            <div class="sk-wa-compose-hint">Enter para enviar · Shift + Enter para nueva línea · los adjuntos se abren en Mensajes</div>
+          </footer>`:`<div class="sk-wa-no-chat"><span>✦</span><h3>SAKURA Mensajes</h3><p>Selecciona una conversación para comenzar.</p></div>`}
+        </section>
+      </div>`;
+    host.querySelectorAll("[data-sk-team-partner]").forEach(button=>button.onclick=()=>{app.teamMessages.partnerId=button.dataset.skTeamPartner;app.teamMessages.replyTo=null;app.teamMessages.threadQuery="";app.teamMessages.searchOpen=false;renderTeamMessages()});
+    host.querySelectorAll("[data-sk-wa-filter]").forEach(button=>button.onclick=()=>{app.teamMessages.filter=button.dataset.skWaFilter;app.teamMessages.partnerId="";renderTeamMessages()});
+    const search=host.querySelector("#skTeamSearch");if(search)search.oninput=()=>{app.teamMessages.query=search.value;const position=search.selectionStart;renderTeamMessages();setTimeout(()=>{const next=document.getElementById("skTeamSearch");if(next){next.focus();next.setSelectionRange(position,position)}},0)};
+    host.querySelector("#skWaMarkRead")?.addEventListener("click",teamMarkAllRead);
+    host.querySelector("#skWaOpenAll")?.addEventListener("click",()=>window.navTo?.("messages"));
+    host.querySelector("#skWaBack")?.addEventListener("click",()=>{app.teamMessages.partnerId="";renderTeamMessages()});
+    host.querySelector("#skOpenFullMessages")?.addEventListener("click",()=>{window.navTo?.("messages");try{document.getElementById("msgTo").value=app.teamMessages.partnerId;window.renderMessages?.(app.teamMessages.partnerId)}catch(_){}});
+    host.querySelector("#skWaPin")?.addEventListener("click",()=>teamToggleConversation("pinned",partner.id,"Conversación fijada.","Conversación desfijada."));
+    host.querySelector("#skWaMute")?.addEventListener("click",()=>teamToggleConversation("muted",partner.id,"Conversación silenciada.","Notificaciones activadas."));
+    host.querySelector("#skWaArchive")?.addEventListener("click",()=>teamToggleConversation("archived",partner.id,"Conversación archivada.","Conversación restaurada."));
+    host.querySelector("#skWaSearchThread")?.addEventListener("click",()=>{app.teamMessages.searchOpen=!app.teamMessages.searchOpen;if(!app.teamMessages.searchOpen)app.teamMessages.threadQuery="";renderTeamMessages()});
+    host.querySelector("#skWaCloseSearch")?.addEventListener("click",()=>{app.teamMessages.searchOpen=false;app.teamMessages.threadQuery="";renderTeamMessages()});
+    const threadSearch=host.querySelector("#skWaThreadQuery");if(threadSearch)threadSearch.oninput=()=>{app.teamMessages.threadQuery=threadSearch.value;const position=threadSearch.selectionStart;renderTeamMessages();setTimeout(()=>{const next=document.getElementById("skWaThreadQuery");if(next){next.focus();next.setSelectionRange(position,position)}},0)};
+    host.querySelectorAll("[data-sk-wa-message]").forEach(row=>row.querySelectorAll("[data-sk-wa-action]").forEach(button=>button.onclick=()=>{const id=row.dataset.skWaMessage,action=button.dataset.skWaAction;if(action==="reply")teamReply(id);if(action==="copy")teamCopy(id);if(action==="star")teamToggleStar(id);if(action==="task")teamMessageToTask(id)}));
+    host.querySelector("#skWaCancelReply")?.addEventListener("click",()=>{app.teamMessages.replyTo=null;renderTeamMessages()});
+    host.querySelector("#skWaEmoji")?.addEventListener("click",()=>{app.teamMessages.emojiOpen=!app.teamMessages.emojiOpen;renderTeamMessages();setTimeout(()=>document.getElementById("skTeamDraft")?.focus(),0)});
+    host.querySelectorAll("[data-sk-wa-emoji]").forEach(button=>button.onclick=()=>{const input=document.getElementById("skTeamDraft"),emoji=button.dataset.skWaEmoji;if(input){const start=input.selectionStart??input.value.length,end=input.selectionEnd??input.value.length;input.value=input.value.slice(0,start)+emoji+input.value.slice(end);saveTeamDraft(partner.id,input.value)}app.teamMessages.emojiOpen=false;renderTeamMessages();setTimeout(()=>document.getElementById("skTeamDraft")?.focus(),0)});
+    host.querySelector("#skTeamAttach")?.addEventListener("click",()=>{toast("Abriré Mensajes para usar el flujo seguro de archivos.");window.navTo?.("messages")});
+    host.querySelector("#skTeamSend")?.addEventListener("click",sendTeamMessage);
+    host.querySelector("#skTeamWarm")?.addEventListener("click",()=>rewriteTeamDraft("más cálido"));
+    host.querySelector("#skTeamShort")?.addEventListener("click",()=>rewriteTeamDraft("más breve"));
+    host.querySelector("#skTeamCorrect")?.addEventListener("click",()=>rewriteTeamDraft("corrige la ortografía y claridad"));
+    const input=host.querySelector("#skTeamDraft");if(input){const resize=()=>{input.style.height="auto";input.style.height=`${Math.min(120,Math.max(42,input.scrollHeight))}px`};resize();input.oninput=()=>{saveTeamDraft(partner.id,input.value);resize()};input.onkeydown=event=>{if(event.key==="Enter"&&!event.shiftKey){event.preventDefault();sendTeamMessage()}}}
+    const body=host.querySelector("#skTeamBody");if(body&&!threadQuery)body.scrollTop=body.scrollHeight;
+    app.teamMessages.lastRenderedAt=Date.now();
+  }
+  async function rewriteTeamDraft(mode){
+    const input=document.getElementById("skTeamDraft"),text=String(input?.value||"").trim();if(!text)return toast("Escribe primero el mensaje que deseas mejorar.");if(!app.bridge.ollama)return toast("Ollama está apagado. Puedes enviar el mensaje sin utilizar SAKURA.");if(app.teamMessages.rewriting)return;app.teamMessages.rewriting=true;
+    try{let full="";await bridge.chat({model:app.bridge.chatModel,messages:[{role:"system",content:"Reescribe mensajes laborales en español natural. Devuelve únicamente el mensaje final, sin explicar."},{role:"user",content:`Haz este mensaje ${mode}: ${text}`}],context:compactContext(),knowledge:[],keep_alive:"2m"},{onToken:token=>{full+=token}});if(full.trim()){input.value=full.trim();saveTeamDraft(app.teamMessages.partnerId,input.value);input.dispatchEvent(new Event("input"))}}catch(error){toast(friendlyError(error))}finally{app.teamMessages.rewriting=false}
+  }
+  async function sendTeamMessage(){
+    const partnerId=app.teamMessages.partnerId,input=document.getElementById("skTeamDraft"),plain=String(input?.value||"").trim(),urgent=!!document.getElementById("skTeamUrgent")?.checked;if(!partnerId)return toast("Selecciona un miembro.");if(!plain)return toast("Escribe un mensaje.");if(app.teamMessages.sending)return;
+    const reply=app.teamMessages.replyTo,text=reply?`↪ ${reply.name}: ${reply.text}\n\n${plain}`:plain;
+    app.teamMessages.sending=true;const button=document.getElementById("skTeamSend");if(button){button.disabled=true;button.classList.add("sending")}
+    try{
+      const client=sbClient();if(!client?.rpc)throw new Error("Supabase no está disponible.");const{error}=await client.rpc("ibm_v33_send_message",{p_recipient_id:partnerId,p_text_content:text,p_is_urgent:urgent});if(error)throw error;
+      clearTeamDraft(partnerId);app.teamMessages.replyTo=null;app.teamMessages.emojiOpen=false;
+      const optimistic={id:uid("msgteam"),sender_id:me().id,recipient_id:partnerId,text_content:text,is_urgent:urgent,created_at:new Date().toISOString(),read_at:null,__sakuraOptimistic:true};if(!Array.isArray(data().messages))data().messages=[];data().messages.push(optimistic);
+      renderTeamMessages();setTimeout(()=>window.safeSync?.("sakura_team_message"),250);
+    }catch(error){toast(`No se pudo enviar: ${friendlyError(error)}`)}finally{app.teamMessages.sending=false;if(button){button.disabled=false;button.classList.remove("sending")}}
+  }
+
 
   function renderSettings(){const host=document.getElementById("skViewSettings");if(!host)return;const voices=speechSynthesis?.getVoices?.()||[];host.innerHTML=`<div class="sk-section"><h3>Motor local</h3><div class="sk-health-row"><span><i class="sk-dot ${app.bridge.connected?"":"off"}"></i>Conector local</span><strong>${app.bridge.connected?"Disponible":"Desconectado"}</strong></div><div class="sk-health-row"><span><i class="sk-dot ${app.bridge.ollama?"":"warn"}"></i>Ollama</span><strong>${app.bridge.ollama?"Activo":"Modo básico"}</strong></div><div class="sk-field"><label>Código de emparejamiento</label><input id="skPairCode" placeholder="Código mostrado al iniciar SAKURA Local"></div><div class="sk-action-actions"><button id="skCheckBridge" class="sk-secondary">Comprobar</button><button id="skPairBridge" class="sk-primary">Emparejar</button><button id="skReleaseModel" class="sk-secondary">Liberar modelo</button></div><div class="sk-grid2"><div class="sk-field"><label>Modelo conversacional</label><select id="skChatModel">${modelOptions(app.bridge.chatModel)}</select></div><div class="sk-field"><label>Modelo semántico</label><select id="skEmbedModel">${modelOptions(app.bridge.embedModel)}</select></div></div><p class="sk-note">El conector escucha solo en 127.0.0.1. No recibe credenciales de Supabase ni ejecuta comandos del sistema.</p></div><div class="sk-section"><h3>Panel y apariencia</h3><div class="sk-grid2"><div class="sk-field"><label>Modo del panel</label><select id="skPanelMode"><option value="normal">Normal</option><option value="compact">Compacto</option><option value="orb">Solo esfera</option></select></div><div class="sk-field"><label>Altura en móvil</label><select id="skMobileHeight"><option value="35">35 %</option><option value="70">70 %</option><option value="100">Pantalla completa</option></select></div></div><div class="sk-action-actions"><button id="skOpenPersonalStudio" class="sk-secondary">Personalizar en Diseño</button></div></div><div class="sk-section"><h3>Voz de SAKURA</h3><div class="sk-field"><label>Voz</label><select id="skVoiceName"><option value="">Automática</option>${voices.filter(v=>/^es/i.test(v.lang)).map(v=>`<option value="${escHtml(v.name)}" ${v.name===app.preferences.voiceName?"selected":""}>${escHtml(v.name)} · ${escHtml(v.lang)}</option>`).join("")}</select></div><div class="sk-grid2"><div class="sk-field"><label>Estilo</label><select id="skVoiceTone"><option value="warm">Cálida</option><option value="calm">Serena</option><option value="close">Cercana</option><option value="executive">Ejecutiva</option></select></div><div class="sk-field"><label>Longitud</label><select id="skReplyLength"><option value="short">Breve</option><option value="balanced">Equilibrada</option><option value="long">Detallada</option></select></div></div><div class="sk-action-actions"><button id="skToggleVoice" class="${app.preferences.voice?"sk-primary":"sk-secondary"}">${app.preferences.voice?"Voz activada":"Activar voz"}</button><button id="skTestVoice" class="sk-secondary">Escuchar prueba</button></div></div>`;host.insertAdjacentHTML("beforeend",`<div class="sk-section"><h3>Presencia emocional</h3><p>SAKURA expresa estados de comunicación saludables mediante color, movimiento y tono. No diagnostica emociones ni afirma sentir como una persona.</p><div class="sk-affective-settings-grid"><div class="sk-field"><label>Presencia</label><select id="skPresenceMode"><option value="high">Alta</option><option value="balanced">Equilibrada</option><option value="silent">Silenciosa</option></select></div><div class="sk-field"><label>Intensidad emocional</label><select id="skEmotionalIntensity"><option value="low">Sutil</option><option value="balanced">Equilibrada</option><option value="expressive">Expresiva</option></select></div></div><div class="sk-action-actions"><button id="skToggleAmbientGreeting" class="${app.preferences.ambientGreetings!==false?"sk-primary":"sk-secondary"}">${app.preferences.ambientGreetings!==false?"Saludos activados":"Activar saludos"}</button><button id="skShowAmbientGreeting" class="sk-secondary">Probar presencia</button></div><div class="sk-affective-state-list"><span>Serenidad</span><span>Enfoque</span><span>Curiosidad</span><span>Empatía</span><span>Alegría</span><span>Gratitud</span><span>Esperanza</span><span>Cautela</span><span>Alivio</span><span>Celebración</span></div></div>`);document.getElementById("skCheckBridge").onclick=()=>checkBridge(true);document.getElementById("skPairBridge").onclick=pairBridge;document.getElementById("skReleaseModel").onclick=releaseModel;document.getElementById("skChatModel").onchange=e=>{app.bridge.chatModel=e.target.value};document.getElementById("skEmbedModel").onchange=e=>{app.bridge.embedModel=e.target.value};document.getElementById("skVoiceName").onchange=e=>{app.preferences.voiceName=e.target.value;savePrefs()};document.getElementById("skVoiceTone").value=app.preferences.tone;document.getElementById("skVoiceTone").onchange=e=>{app.preferences.tone=e.target.value;savePrefs()};document.getElementById("skReplyLength").value=app.preferences.replyLength;document.getElementById("skReplyLength").onchange=e=>{app.preferences.replyLength=e.target.value;savePrefs()};document.getElementById("skToggleVoice").onclick=()=>{app.preferences.voice=!app.preferences.voice;savePrefs();renderSettings()};document.getElementById("skTestVoice").onclick=()=>speak("Hola. Soy Sakura. Te acompañaré con calma, claridad y una voz bastante menos aterradora.",true);const currentStyle=window.INBESTIGA_SAKURA_STUDIO?.load?.()||{};const panelMode=document.getElementById("skPanelMode"),mobileHeight=document.getElementById("skMobileHeight");if(panelMode){panelMode.value=currentStyle.panelMode||"normal";panelMode.onchange=()=>{const style={...currentStyle,panelMode:panelMode.value};window.INBESTIGA_SAKURA_STUDIO?.apply?.(style);document.getElementById("sakuraNativePanel").dataset.panelMode=panelMode.value}}if(mobileHeight){mobileHeight.value=currentStyle.mobileHeight||"70";mobileHeight.onchange=()=>{document.getElementById("sakuraNativePanel").dataset.mobileHeight=mobileHeight.value}}const presenceMode=document.getElementById("skPresenceMode"),emotionalIntensity=document.getElementById("skEmotionalIntensity");if(presenceMode){presenceMode.value=app.preferences.presenceMode||"balanced";presenceMode.onchange=e=>{app.preferences.presenceMode=e.target.value;savePrefs();window.INBESTIGA_SAKURA_AFFECTIVE?.refresh?.()}}if(emotionalIntensity){emotionalIntensity.value=app.preferences.emotionalIntensity||"balanced";emotionalIntensity.onchange=e=>{app.preferences.emotionalIntensity=e.target.value;savePrefs();window.INBESTIGA_SAKURA_AFFECTIVE?.refresh?.()}}const ambientButton=document.getElementById("skToggleAmbientGreeting");if(ambientButton)ambientButton.onclick=()=>{app.preferences.ambientGreetings=app.preferences.ambientGreetings===false;savePrefs();renderSettings()};const ambientTest=document.getElementById("skShowAmbientGreeting");if(ambientTest)ambientTest.onclick=()=>window.INBESTIGA_SAKURA_AFFECTIVE?.showGreeting?.(true);document.getElementById("skOpenPersonalStudio").onclick=()=>{window.INBESTIGA_UNIFIED_VISUAL_EDITOR?.open?.("sakura")||window.navTo?.("designStudio")}}
   function modelOptions(selected){const models=app.bridge.models.length?app.bridge.models:[{name:"gemma3:4b"},{name:"embeddinggemma"}];return models.map(m=>`<option value="${escHtml(m.name||m.model)}" ${(m.name||m.model)===selected?"selected":""}>${escHtml(m.name||m.model)}</option>`).join("")}

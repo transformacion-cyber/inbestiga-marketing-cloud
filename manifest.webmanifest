@@ -1,7 +1,7 @@
 {
   "name": "INBESTIGA Marketing Cloud",
   "short_name": "INBESTIGA",
-  "description": "INBESTIGA Marketing Cloud con Creative Arena Apple Studio y colección de temas creativos.",
+  "description": "INBESTIGA Marketing Cloud con mensajería productiva estilo WhatsApp dentro de SAKURA.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -21,5 +21,5 @@
       "purpose": "any maskable"
     }
   ],
-  "id": "inbestiga-marketing-cloud-v17-16-5"
+  "id": "inbestiga-marketing-cloud-v17-16-6"
 }

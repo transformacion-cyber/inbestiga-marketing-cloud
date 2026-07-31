@@ -1,0 +1,14 @@
+GUÍA RÁPIDA — SAKURA MENSAJES v17.16.6
+
+1. Abre SAKURA.
+2. Entra en Mensajes.
+3. Busca o selecciona a un miembro.
+4. Escribe y pulsa Enter o el botón Enviar.
+5. Usa Shift + Enter para crear una nueva línea.
+6. Pasa el cursor sobre un mensaje para responder, copiar, destacar o crear tarea.
+7. Usa el encabezado para fijar, silenciar, archivar o buscar.
+8. El botón de clip abre Mensajes, donde se mantiene el flujo seguro de archivos.
+
+IMPORTANTE
+Los mensajes reales se envían con ibm_v33_send_message.
+Las preferencias de interfaz se guardan por usuario en el navegador.

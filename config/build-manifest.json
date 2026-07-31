@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.16.5",
-  "build": "CREATIVE ARENA · APPLE STUDIO & MAGIC THEME COLLECTION",
+  "frontend_version": "17.16.6",
+  "build": "SAKURA MESSAGING · WHATSAPP-STYLE PRODUCTIVE CHAT V1",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -488,6 +488,24 @@
       "name": "release-marker-v17-16-5",
       "path": "assets/js/release-marker-v17-16-5.js",
       "origin": "v17.16.5",
+      "mode": "canonical-release"
+    },
+    {
+      "name": "sakura-personal-workspace-v17-16-6",
+      "path": "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+      "origin": "v17.16.6",
+      "mode": "productive-messaging"
+    },
+    {
+      "name": "sakura-messaging-whatsapp-v17-16-6",
+      "path": "assets/css/sakura-messaging-whatsapp-v17-16-6.css",
+      "origin": "v17.16.6",
+      "mode": "appearance-and-supported-chat-actions"
+    },
+    {
+      "name": "release-marker-v17-16-6",
+      "path": "assets/js/release-marker-v17-16-6.js",
+      "origin": "v17.16.6",
       "mode": "canonical-release"
     }
   ],
@@ -990,11 +1008,28 @@
     "creative_arena_appearance_only_v17165": true,
     "official_clean_start_loader_restored_v17165": true,
     "no_backend_changes_v17165": true,
-    "no_sql_changes_v17165": true
+    "no_sql_changes_v17165": true,
+    "sakura_whatsapp_style_layout_v17166": true,
+    "sakura_conversation_filters_v17166": true,
+    "sakura_conversation_search_v17166": true,
+    "sakura_thread_search_v17166": true,
+    "sakura_local_pin_archive_mute_v17166": true,
+    "sakura_per_chat_drafts_v17166": true,
+    "sakura_reply_quote_v17166": true,
+    "sakura_copy_star_message_v17166": true,
+    "sakura_message_to_task_v17166": true,
+    "sakura_enter_to_send_v17166": true,
+    "sakura_emoji_panel_v17166": true,
+    "sakura_read_checks_v17166": true,
+    "sakura_presence_header_v17166": true,
+    "sakura_ollama_rewrite_preserved_v17166": true,
+    "existing_message_rpc_preserved_v17166": true,
+    "no_backend_changes_v17166": true,
+    "no_sql_changes_v17166": true
   },
   "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
   "hotfix": "v17.15.6 fixes Command Center null.id crashes, prevents duplicate/re-entrant initialization, preserves the canonical release version against lazy-module downgrades, adds rendered visual-layout health, ignores historical browser incidents in the current score, and stops Work 360 cloud hydration from creating false local pending changes. No SQL or backend changes.",
-  "version": "v17.16.5",
+  "version": "v17.16.6",
   "name": "INBESTIGA Marketing Cloud v17.16.0",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
@@ -1096,7 +1131,7 @@
     "sakura_no_polling_v17155": true,
     "sakura_no_mutation_observer_v17155": true
   },
-  "release": "Sets Apple Studio as the default Creative Arena interface, preserves the legacy Mythic/Dota appearance and adds seven inspiring visual themes.",
+  "release": "Redesigns SAKURA team messaging with a WhatsApp-inspired productive chat while preserving the existing ibm_v33_send_message RPC and Realtime flow.",
   "scripts": [
     "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
     "assets/js/release-marker-v17-15-5.js",
@@ -1109,6 +1144,7 @@
     "assets/js/requests360-task-resources-v17-16-3.js",
     "assets/js/official-clean-start-v17-16-4.js",
     "assets/js/creative-arena-interface-themes-v17-16-5.js",
-    "assets/js/release-marker-v17-16-5.js"
+    "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "assets/js/release-marker-v17-16-6.js"
   ]
 }

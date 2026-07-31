@@ -1,0 +1,17 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.16.6
+SAKURA MESSAGING · WHATSAPP-STYLE PRODUCTIVE CHAT V1
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_16_6_SAKURA_WHATSAPP_STYLE_MESSAGING_V1_FULL_PLATFORM.zip
+
+Conservar:
+- ibm_v33_send_message como única RPC de envío.
+- Realtime productivo existente.
+- Diseño WhatsApp-style dentro de SAKURA Mensajes.
+- Preferencias locales por usuario para fijados, archivados, silenciados,
+  destacados y borradores.
+- Respuesta citada compatible con mensajes de texto.
+- Crear tarea real desde un mensaje mediante ibm_v30_create_task.
+- Adjuntos continúan abriendo el módulo Mensajes.
+- No afirmar reacciones, edición, eliminación, grupos, llamadas o E2EE
+  mientras no exista soporte real.
