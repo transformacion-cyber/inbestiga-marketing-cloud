@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="es" data-portal-version="v17.16.0">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#6e26f6">
+  <meta name="description" content="Portal sencillo para enviar requerimientos al equipo de Marketing de INBESTIGA.">
+  <title>Solicitudes 360 · INBESTIGA</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="../assets/icons/icon-192.png">
+  <link rel="apple-touch-icon" href="../assets/icons/icon-192.png">
+  <link rel="stylesheet" href="assets/solicitudes-360.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script>if(!window.supabase){document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>')}</script>
+  <script src="../config/public-runtime-config.js"></script>
+</head>
+<body>
+  <div class="rq-bg" aria-hidden="true"><i></i><i></i><i></i></div>
+  <header class="rq-topbar">
+    <a class="rq-brand" href="./" aria-label="Solicitudes 360"><span>iB</span><div><strong>Solicitudes 360</strong><small>INBESTIGA</small></div></a>
+    <div class="rq-top-actions">
+      <button id="rqHistoryBtn" class="rq-ghost" type="button">Mis solicitudes</button>
+      <button id="rqInstallBtn" class="rq-primary rq-install hidden" type="button">Instalar app</button>
+    </div>
+  </header>
+
+  <main class="rq-main">
+    <section class="rq-hero">
+      <span class="rq-kicker">PORTAL INTERÁREAS</span>
+      <h1>Cuéntanos qué necesitas.</h1>
+      <p>Escribe tu nombre, selecciona tu área y explica el requerimiento. Puedes adjuntar imágenes, documentos, audio, video y enlaces de referencia.</p>
+      <div class="rq-trust"><span>Sin cuenta</span><span>Sin códigos</span><span>Desde celular o PC</span></div>
+    </section>
+
+    <section class="rq-card" id="rqFormCard">
+      <div class="rq-progress" aria-label="Progreso"><i class="active"></i><i></i><i></i></div>
+      <form id="rqForm" novalidate>
+        <input id="rqWebsite" class="rq-honeypot" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+        <div class="rq-section">
+          <div class="rq-section-head"><span>01</span><div><h2>Quién solicita</h2><p>Solo necesitamos identificarte y saber de qué área vienes.</p></div></div>
+          <div class="rq-grid two">
+            <label>Nombre completo<input id="rqName" name="name" autocomplete="name" maxlength="120" placeholder="Ej. Mariana López Ramos" required></label>
+            <label>Área<select id="rqArea" name="area" required><option value="">Selecciona tu área</option><option>Operaciones</option><option>Ventas</option><option>Recursos Humanos</option><option>Administración</option><option>Finanzas</option><option>Investigación</option><option>Comercial</option><option>Dirección</option><option>Atención al Cliente</option><option>Otra área</option></select></label>
+          </div>
+          <label class="rq-remember"><input id="rqRemember" type="checkbox" checked><span>Recordar mi nombre y área en este dispositivo</span></label>
+        </div>
+
+        <div class="rq-section">
+          <div class="rq-section-head"><span>02</span><div><h2>Qué necesitas</h2><p>Describe el objetivo con tus propias palabras.</p></div></div>
+          <div class="rq-grid two">
+            <label>Tipo de requerimiento<select id="rqType" required><option value="">Selecciona una opción</option><option>Diseño gráfico</option><option>Video o edición audiovisual</option><option>Publicación en redes</option><option>Campaña publicitaria</option><option>Presentación</option><option>Material impreso</option><option>Fotografía o cobertura</option><option>Comunicación interna</option><option>Página, formulario o sistema</option><option>Otro requerimiento especial</option></select></label>
+            <label>Fecha en que lo necesitas<input id="rqNeededBy" type="date"></label>
+          </div>
+          <label>Título breve<input id="rqTitle" maxlength="180" placeholder="Ej. Diseño para convocatoria de investigadores" required></label>
+          <label>Explicación escrita<textarea id="rqDescription" maxlength="7000" rows="7" placeholder="Cuéntanos el objetivo, el público, el texto que debe aparecer, dónde se publicará y cualquier detalle importante." required></textarea><small id="rqCharCount">0 / 7000</small></label>
+          <div class="rq-grid two">
+            <label>Urgencia<select id="rqUrgency"><option value="normal">Normal</option><option value="alta">Alta</option><option value="urgente">Urgente</option></select></label>
+            <label>Contacto opcional<input id="rqContact" maxlength="160" placeholder="Correo o teléfono, solo si deseas"></label>
+          </div>
+        </div>
+
+        <div class="rq-section">
+          <div class="rq-section-head"><span>03</span><div><h2>Explícalo y adjunta referencias</h2><p>Puedes hablar, subir archivos o pegar enlaces.</p></div></div>
+
+          <div id="rqMicCard" class="rq-mic-card">
+            <div class="rq-mic-visual"><span class="rq-mic-icon">●</span><div id="rqWave" class="rq-wave" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+            <div class="rq-mic-copy"><strong id="rqMicTitle">Buscando micrófono…</strong><span id="rqMicDetail">Este dispositivo puede permitirte explicar el requerimiento hablando.</span><div id="rqMicTimer" class="rq-timer">00:00</div></div>
+            <div class="rq-mic-actions">
+              <button id="rqRecordBtn" type="button" class="rq-primary">Grabar explicación</button>
+              <button id="rqPauseBtn" type="button" class="rq-ghost hidden">Pausar</button>
+              <button id="rqStopBtn" type="button" class="rq-danger hidden">Finalizar</button>
+              <button id="rqDeleteAudioBtn" type="button" class="rq-ghost hidden">Eliminar audio</button>
+            </div>
+            <audio id="rqAudioPreview" controls class="hidden"></audio>
+            <p class="rq-privacy">La grabación solo comienza cuando pulsas el botón y aceptas el permiso del navegador.</p>
+          </div>
+
+          <div class="rq-upload-zone" id="rqDropZone">
+            <input id="rqFiles" type="file" multiple accept="image/*,audio/*,video/*,.pdf,.doc,.docx,.ppt,.pptx,.xls,.xlsx,.txt,.zip">
+            <div><strong>Arrastra archivos aquí</strong><span>o elige una opción</span></div>
+            <div class="rq-upload-actions">
+              <button type="button" data-rq-picker="general">Adjuntar archivos</button>
+              <button type="button" data-rq-picker="photo">Tomar foto</button>
+              <button type="button" data-rq-picker="video">Grabar video</button>
+            </div>
+            <small>Máximo 50 MB por archivo y 120 MB por solicitud.</small>
+          </div>
+          <input id="rqPhoto" class="hidden" type="file" accept="image/*" capture="environment">
+          <input id="rqVideo" class="hidden" type="file" accept="video/*" capture="environment">
+          <div id="rqFileList" class="rq-file-list"></div>
+
+          <div class="rq-links">
+            <div class="rq-links-head"><div><strong>Enlaces de referencia</strong><span>Canva, Drive, redes sociales, páginas web u otros.</span></div><button id="rqAddLinkBtn" type="button" class="rq-ghost">Agregar enlace</button></div>
+            <div id="rqLinkList"></div>
+          </div>
+        </div>
+
+        <div id="rqError" class="rq-message error hidden" role="alert"></div>
+        <div class="rq-submit-row">
+          <div><strong>Revisa antes de enviar</strong><span>Marketing recibirá tu texto, audio, archivos y enlaces en Solicitudes 360.</span></div>
+          <button id="rqSubmitBtn" class="rq-submit" type="submit">Enviar requerimiento</button>
+        </div>
+        <div id="rqUploadProgress" class="rq-upload-progress hidden"><span id="rqProgressText">Preparando envío…</span><div><i id="rqProgressBar"></i></div></div>
+      </form>
+    </section>
+
+    <section id="rqSuccess" class="rq-card rq-success hidden" aria-live="polite">
+      <div class="rq-success-icon">✓</div>
+      <span class="rq-kicker">SOLICITUD RECIBIDA</span>
+      <h2>Marketing ya recibió tu requerimiento.</h2>
+      <p id="rqSuccessText"></p>
+      <div class="rq-success-actions"><button id="rqNewRequestBtn" class="rq-primary" type="button">Enviar otra solicitud</button><button id="rqSuccessHistoryBtn" class="rq-ghost" type="button">Ver mis solicitudes</button></div>
+    </section>
+  </main>
+
+  <div id="rqHistory" class="rq-modal" aria-hidden="true">
+    <div class="rq-modal-panel"><button id="rqHistoryClose" class="rq-modal-close" aria-label="Cerrar">×</button><span class="rq-kicker">ESTE DISPOSITIVO</span><h2>Mis solicitudes</h2><p>Se muestran las solicitudes enviadas desde este navegador.</p><div id="rqHistoryList" class="rq-history-list"></div></div>
+  </div>
+
+  <footer class="rq-footer"><span>INBESTIGA · Solicitudes 360</span><small>La plataforma principal y los datos internos de Marketing permanecen privados.</small></footer>
+  <script src="assets/solicitudes-360.js"></script>
+</body>
+</html>

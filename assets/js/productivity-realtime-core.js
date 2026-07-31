@@ -959,7 +959,7 @@
 
   function registerServiceWorker() {
     if (!("serviceWorker" in navigator) || location.protocol === "file:") return;
-    const version = "v17.15.15";
+    const version = "v17.16.0";
     const reloadKey = `inbestiga:pwa-controller-reload:${version}`;
     const expectedScope = `${location.origin}/`;
     const activate = registration => {
@@ -1000,7 +1000,7 @@
         window.dispatchEvent(new CustomEvent("inbestiga:pwa-ready"));
         window.INBESTIGA_SAKURA_STATIC_ORB?.settle?.();
       } catch (error) {
-        console.info("[v17.15.15] service worker opcional", error?.message || error);
+        console.info("[v17.16.0] service worker opcional", error?.message || error);
       }
     })();
   }

@@ -1,0 +1,13 @@
+ALCANCE IMPLEMENTADO
+- Portal externo separado de Marketing Cloud.
+- Sin autenticación y sin códigos visibles.
+- Captura automática de disponibilidad de micrófono; la grabación siempre requiere clic y permiso del navegador.
+- Grabación, pausa, reproducción, eliminación y regrabación de audio.
+- Adjuntos multimedia y enlaces.
+- PWA instalable en móvil y escritorio.
+- Bandeja interna con métricas, filtros, detalle, archivos, audio, estados, responsable, notas y conversión asistida a tarea.
+- Realtime para nuevas solicitudes.
+- Consultas de Solicitudes 360 desde SAKURA incluso sin Ollama.
+
+LIMITACIÓN HONESTA
+La conexión productiva requiere ejecutar una vez el SQL incluido. La validación estática no sustituye la prueba real de permisos de micrófono, Storage y RLS en el dominio desplegado.

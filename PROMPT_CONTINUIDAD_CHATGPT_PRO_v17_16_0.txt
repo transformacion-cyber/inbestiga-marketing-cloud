@@ -1,0 +1,3 @@
+BASE AUTORIZADA: INBESTIGA_MARKETING_CLOUD_v17_16_0_SOLICITUDES_360_PORTAL_INTERAREAS_FULL_PLATFORM.zip
+Versión v17.16.0.
+Conservar acumulativamente el portal /solicitudes/, captura de micrófono, archivos y enlaces, PWA, tablas/RPC/RLS del SQL requerido, módulo interno Solicitudes 360, realtime y consultas de SAKURA. No exponer service_role ni permitir lectura pública de solicitudes o archivos.

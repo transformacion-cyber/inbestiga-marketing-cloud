@@ -1,0 +1,30 @@
+INBESTIGA Marketing Cloud v17.16.0
+SOLICITUDES 360 · PORTAL INTERÁREAS, CAPTURA MULTIMEDIA & SAKURA REQUEST ASSISTANT
+
+INSTALACIÓN
+1. Subir todo el contenido del ZIP a GitHub/Vercel.
+2. Abrir Supabase > SQL Editor.
+3. Ejecutar completo: SQL_REQUERIDO_v17_16_0_SOLICITUDES_360.sql
+4. Abrir /solicitudes/ para probar el portal público.
+5. Entrar a Marketing Cloud > Solicitudes 360 para comprobar la bandeja.
+
+PORTAL PÚBLICO
+- No requiere cuenta, código ni contraseña.
+- Solicita nombre completo, área y requerimiento.
+- Detecta compatibilidad con micrófono y permite grabar después del permiso del usuario.
+- Admite imágenes, audio, video, PDF, Word, PowerPoint, Excel, texto, ZIP y enlaces.
+- Puede instalarse como PWA en celular o computadora.
+
+SEGURIDAD
+- La persona externa no puede leer Marketing Cloud ni las solicitudes de otras personas.
+- Los archivos se guardan en un bucket privado.
+- No existe service_role en el navegador.
+- La carga pública solo funciona con un token temporal no adivinable y se cierra al finalizar.
+- Incluye límites por dispositivo, honeypot y validación de tamaño.
+
+SAKURA
+Pruebas sugeridas:
+- ¿Qué requerimientos llegaron hoy?
+- Muéstrame las solicitudes nuevas.
+- Resume el requerimiento de Recursos Humanos.
+- Abre el requerimiento REQ-...

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-inbestiga-build="v17.15.15">
+<html lang="es" data-inbestiga-build="v17.16.0">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-<title>INBESTIGA Marketing Cloud · v17.15.15 SAKURA FLOATING DRAGGABLE ORB PRESENCE SYSTEM</title>
+<title>INBESTIGA Marketing Cloud · v17.16.0 SOLICITUDES 360 · PORTAL INTERÁREAS, CAPTURA MULTIMEDIA & SAKURA REQUEST ASSISTANT</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>if(!window.supabase){document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>')}</script>
 <script src="config/public-runtime-config.js" data-inbestiga-module="managed-public-runtime-config"></script>
@@ -3628,6 +3628,7 @@ body.v12-palette-open{overflow:hidden}
 <link rel="stylesheet" href="assets/css/sakura-affective-task-intelligence-v17-15-11.css" data-inbestiga-module="sakura-affective-task-intelligence-v17-15-11">
 <link rel="stylesheet" href="assets/css/sakura-static-orb-mount-v17-15-14.css" data-inbestiga-module="sakura-static-orb-mount-v17-15-14">
 <link rel="stylesheet" href="assets/css/sakura-floating-orb-presence-v17-15-15.css" data-inbestiga-module="sakura-floating-orb-presence-v17-15-15">
+<link rel="stylesheet" href="assets/css/requests360-internal-v17-16-0.css" data-inbestiga-module="requests360-internal-v17-16-0">
 <link rel="stylesheet" href="assets/css/sakura-personal-studio-v17-12-13-6.css" data-inbestiga-module="sakura-personal-studio-v17-12-13-6" data-sakura-css="personal-studio">
 <link rel="stylesheet" href="assets/css/sakura-adaptive-intelligence-v17-13-0.css" data-inbestiga-module="sakura-adaptive-intelligence-v17-13-1" data-sakura-css="adaptive-intelligence">
 <link rel="stylesheet" href="assets/css/sakura-live-motion-background-fusion-v17-13-1.css" data-inbestiga-module="sakura-live-motion-background-fusion-v17-13-1" data-sakura-css="live-motion-background-fusion">
@@ -3713,6 +3714,7 @@ body.v12-palette-open{overflow:hidden}
         <button class="nav-leaf" data-section="workIntel">Trabajo 360</button>
         <button class="nav-leaf" data-section="schedulePro">Horario Pro</button>
         <button class="nav-leaf" data-section="tasks">Tareas</button>
+        <button class="nav-leaf" data-section="requests360">Solicitudes 360 <span class="req360-badge" id="req360NavBadge" style="display:none">0</span></button>
         <button class="nav-leaf supervisor-only" data-section="approvals">Aprobaciones</button>
         <button class="nav-leaf supervisor-only" data-section="workload">Carga del equipo</button>
       </div>
@@ -4385,6 +4387,18 @@ body.v12-palette-open{overflow:hidden}
             <div id="workLinksList" style="margin-top:12px"></div>
           </div>
         </div>
+      </div>
+    </section>
+
+
+    <section id="requests360" class="section">
+      <div class="req360-shell">
+        <header class="req360-hero">
+          <div class="req360-hero-row"><div><span class="req360-kicker">SOLICITUDES 360</span><h2>Requerimientos de todas las áreas.</h2><p>Las demás áreas envían sus necesidades desde un portal simple, sin entrar a Marketing Cloud. Aquí puedes revisar texto, audio, archivos, enlaces, fechas y convertir una solicitud en tarea.</p></div><a class="req360-link" href="solicitudes/" target="_blank" rel="noopener">Abrir portal público ↗</a></div>
+        </header>
+        <div class="req360-metrics"><article class="req360-metric"><span>Nuevas</span><strong id="req360MetricNew">0</strong></article><article class="req360-metric"><span>En evaluación</span><strong id="req360MetricReview">0</strong></article><article class="req360-metric"><span>En producción</span><strong id="req360MetricProduction">0</strong></article><article class="req360-metric"><span>Urgentes</span><strong id="req360MetricUrgent">0</strong></article><article class="req360-metric"><span>Entregadas</span><strong id="req360MetricDone">0</strong></article></div>
+        <div class="req360-toolbar"><label>Buscar<input id="req360Search" placeholder="Nombre, área, título o referencia"></label><label>Estado<select id="req360Status"><option value="">Todos</option><option value="new">Nuevos</option><option value="reviewing">En evaluación</option><option value="needs_info">Falta información</option><option value="accepted">Aprobados</option><option value="in_production">En producción</option><option value="in_review">En revisión</option><option value="delivered">Entregados</option><option value="completed">Finalizados</option><option value="rejected">No procede</option></select></label><label>Área<select id="req360Area"><option value="">Todas las áreas</option></select></label><label>Tipo<select id="req360Type"><option value="">Todos los tipos</option></select></label><button id="req360Refresh" type="button">Actualizar</button></div>
+        <div id="req360List" class="req360-list"><div class="req360-empty">Cargando requerimientos…</div></div>
       </div>
     </section>
 
@@ -5125,7 +5139,7 @@ function v412OpenTask(id){
 function v412BindTaskBoard(){const board=$("taskKanban");if(board&&board.dataset.v412Bound!=="1"){board.dataset.v412Bound="1";board.addEventListener("click",e=>{const card=e.target.closest("[data-task-id]");if(card)v412OpenTask(card.dataset.taskId)})}const fields={v412TaskSearch:"search",v412TaskAssignee:"assignee",v412TaskPriority:"priority",v412TaskScope:"scope"};Object.entries(fields).forEach(([id,key])=>{const el=$(id);if(!el||el.dataset.v412Bound==="1")return;el.dataset.v412Bound="1";const event=el.tagName==="INPUT"?"input":"change";el.addEventListener(event,()=>{v412TaskView[key]=el.value;renderTasks()})});const clear=$("v412ClearTaskFilters");if(clear&&clear.dataset.v412Bound!=="1"){clear.dataset.v412Bound="1";clear.addEventListener("click",()=>{Object.assign(v412TaskView,{search:"",assignee:"",priority:"",scope:"all"});["v412TaskSearch","v412TaskAssignee","v412TaskPriority"].forEach(id=>{if($(id))$(id).value=""});if($("v412TaskScope"))$("v412TaskScope").value="all";renderTasks()})}}
 function v412RenderSchedule(){renderSchedulePro();renderV3591();renderV3592();renderV3593();renderV3594();if(typeof window.v412PolishOperational==="function")window.v412PolishOperational()}
 function v412RenderCreative(){if(window.CreativeArenaClean&&typeof window.CreativeArenaClean.init==="function")return window.CreativeArenaClean.init();const root=document.getElementById("creativeArenaCleanRoot");if(root)root.innerHTML="<div class=\"panel\"><h3>Creative Arena</h3><p class=\"small\">El modulo creativo no pudo iniciar.</p></div>"}
-function v412RenderSection(id){const map={home:()=>renderHome(),myday:()=>renderMyDay(),tasks:()=>renderTasks(),campaigns:()=>renderCampaigns(),editorial:()=>renderEditorial(),calendarOps:()=>v416RenderCalendar(),wall:()=>renderWall(),messages:()=>{renderMessages();renderConversationList()},profile:()=>renderProfile(),team:()=>renderTeam(),reports:()=>renderReports(),search:()=>renderSearch(),notifications:()=>renderNotifications(),approvals:()=>renderApprovals(),workload:()=>renderWorkload(),schedulePro:()=>v412RenderSchedule(),workIntel:()=>renderV356(),creativeRoomsClean:()=>v412RenderCreative(),hub:()=>renderHub(),assets:()=>renderAssets(),templates:()=>renderTemplates(),incidents:()=>renderIncidents(),admin:()=>renderAdmin(),control:()=>renderControl(),performance:()=>renderPerformance(),automations:()=>v416RenderAutomations(),governance:()=>v417RenderGovernance(),auditpro:()=>renderAuditPro(),permissions:()=>renderPermissions(),memberProfile:()=>renderMemberProfile(),socialTrash:()=>renderSocialTrash(),live:()=>{renderPresence();renderLiveFeed()}};const fn=map[id];if(fn)v412SafeRender(id,id,fn)}
+function v412RenderSection(id){const map={home:()=>renderHome(),myday:()=>renderMyDay(),tasks:()=>renderTasks(),requests360:()=>window.INBESTIGA_REQUESTS_360?.render?.(),campaigns:()=>renderCampaigns(),editorial:()=>renderEditorial(),calendarOps:()=>v416RenderCalendar(),wall:()=>renderWall(),messages:()=>{renderMessages();renderConversationList()},profile:()=>renderProfile(),team:()=>renderTeam(),reports:()=>renderReports(),search:()=>renderSearch(),notifications:()=>renderNotifications(),approvals:()=>renderApprovals(),workload:()=>renderWorkload(),schedulePro:()=>v412RenderSchedule(),workIntel:()=>renderV356(),creativeRoomsClean:()=>v412RenderCreative(),hub:()=>renderHub(),assets:()=>renderAssets(),templates:()=>renderTemplates(),incidents:()=>renderIncidents(),admin:()=>renderAdmin(),control:()=>renderControl(),performance:()=>renderPerformance(),automations:()=>v416RenderAutomations(),governance:()=>v417RenderGovernance(),auditpro:()=>renderAuditPro(),permissions:()=>renderPermissions(),memberProfile:()=>renderMemberProfile(),socialTrash:()=>renderSocialTrash(),live:()=>{renderPresence();renderLiveFeed()}};const fn=map[id];if(fn)v412SafeRender(id,id,fn)}
 window.addEventListener("online",()=>{v412ConnectionUI();premiumToast("Conexión restablecida","Ya puedes seguir trabajando.","success")});
 window.addEventListener("offline",()=>{v412ConnectionUI();premiumToast("Sin conexión","Tus datos siguen visibles, pero no se guardarán cambios hasta recuperar internet.","warning")});
 
@@ -7116,7 +7130,7 @@ function navTo(id){
   document.body.classList.toggle("ca-arena-mode",arenaMode);
   document.body.classList.toggle("ib-home-mode",id==="home");
   if(arenaMode)window.scrollTo(0,0);
-  const titles={home:"Inicio",myday:"Mi día",search:"Buscador",notifications:"Notificaciones",schedulePro:"Horario Pro",workIntel:"Trabajo 360",tasks:"Tareas",approvals:"Aprobaciones",workload:"Carga del equipo",campaigns:"Campañas / Briefs",editorial:"Editorial",calendarOps:"Calendario operativo",creativeRoomsClean:"Salas creativas",hub:"Creative Hub",assets:"Archivos",wall:"Muro",messages:"Mensajes",profile:"Mi espacio",templates:"Plantillas",incidents:"Incidencias",team:"Equipo",live:"En vivo",control:"Control gerencial",performance:"Rendimiento técnico",reports:"Reportes Pro",automations:"Automatizaciones",governance:"Seguridad y gobernanza",auditpro:"Auditoría Pro",permissions:"Permisos",admin:"Administración",memberProfile:"Muro del miembro",socialTrash:"Mi basurero",settings:"Conexión"};
+  const titles={home:"Inicio",myday:"Mi día",search:"Buscador",notifications:"Notificaciones",schedulePro:"Horario Pro",workIntel:"Trabajo 360",tasks:"Tareas",requests360:"Solicitudes 360",approvals:"Aprobaciones",workload:"Carga del equipo",campaigns:"Campañas / Briefs",editorial:"Editorial",calendarOps:"Calendario operativo",creativeRoomsClean:"Salas creativas",hub:"Creative Hub",assets:"Archivos",wall:"Muro",messages:"Mensajes",profile:"Mi espacio",templates:"Plantillas",incidents:"Incidencias",team:"Equipo",live:"En vivo",control:"Control gerencial",performance:"Rendimiento técnico",reports:"Reportes Pro",automations:"Automatizaciones",governance:"Seguridad y gobernanza",auditpro:"Auditoría Pro",permissions:"Permisos",admin:"Administración",memberProfile:"Muro del miembro",socialTrash:"Mi basurero",settings:"Conexión"};
   if($("pageTitle"))$("pageTitle").textContent=titles[id]||id;
   if(typeof window.v412EnhanceSections==="function")window.v412EnhanceSections();
   v412RenderSection(id);
@@ -9702,6 +9716,7 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <script src="assets/js/sakura-affective-task-intelligence-v17-15-11.js" data-inbestiga-module="sakura-affective-task-intelligence-v17-15-11"></script>
 <script src="assets/js/sakura-post-login-orb-visibility-v17-15-12.js" data-inbestiga-module="sakura-post-login-orb-visibility-v17-15-12"></script>
 <script src="assets/js/sakura-floating-orb-presence-v17-15-15.js" data-inbestiga-module="sakura-floating-orb-presence-v17-15-15"></script>
+<script src="assets/js/requests360-internal-v17-16-0.js" data-inbestiga-module="requests360-internal-v17-16-0"></script>
 <script src="assets/js/sakura-live-motion-background-fusion-v17-13-1.js" data-inbestiga-module="sakura-live-motion-background-fusion-v17-13-1"></script>
 <script src="assets/js/unified-command-center-v17-15-0.js" data-inbestiga-module="unified-command-center-v17-15-0"></script>
 <script src="assets/js/interaction-integrity-v17-15-2.js" data-inbestiga-module="interaction-integrity-v17-15-2"></script>
@@ -9713,6 +9728,6 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <link rel="stylesheet" href="assets/css/sakura-chat-composer-hotfix-v17-15-5.css" data-inbestiga-module="sakura-chat-composer-hotfix-v17-15-5">
 <script src="assets/js/sakura-chat-composer-hotfix-v17-15-5.js" data-inbestiga-module="sakura-chat-composer-hotfix-v17-15-5"></script>
 <script src="assets/js/release-marker-v17-15-5.js" data-inbestiga-module="release-marker-v17-15-5"></script>
-<script src="assets/js/release-marker-v17-15-15.js" data-inbestiga-module="release-marker-v17-15-15"></script>
+<script src="assets/js/release-marker-v17-16-0.js" data-inbestiga-module="release-marker-v17-16-0"></script>
 </body>
 </html>

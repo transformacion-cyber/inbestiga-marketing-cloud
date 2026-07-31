@@ -1,0 +1,24 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.16.0",
+  "build": "SOLICITUDES 360 · PORTAL INTERÁREAS, CAPTURA MULTIMEDIA & SAKURA REQUEST ASSISTANT",
+  "base": "v17.15.15",
+  "generated_at": "2026-07-31T20:38:21.009797+00:00",
+  "files_count": 613,
+  "javascript_files": 75,
+  "json_files": 157,
+  "backend_installation": "required_once",
+  "sql_file": "SQL_REQUERIDO_v17_16_0_SOLICITUDES_360.sql",
+  "portal_path": "/solicitudes/",
+  "alternate_path": "/requerimientos",
+  "validation": {
+    "javascript_syntax": "OK",
+    "json": "OK",
+    "local_references": "OK",
+    "portal_microphone": "OK",
+    "portal_pwa": "OK",
+    "internal_dashboard": "OK",
+    "sakura_requests_intents": "OK",
+    "no_service_role_in_browser": "OK"
+  }
+}

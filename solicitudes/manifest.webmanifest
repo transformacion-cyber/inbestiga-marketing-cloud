@@ -1,0 +1,25 @@
+{
+  "name": "Solicitudes 360 · INBESTIGA",
+  "short_name": "Solicitudes 360",
+  "description": "Portal interáreas para enviar requerimientos de texto, audio, archivos y enlaces al equipo de Marketing.",
+  "id": "inbestiga-solicitudes-360-v17-16-0",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#f8f5ff",
+  "theme_color": "#6e26f6",
+  "icons": [
+    {
+      "src": "../assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "../assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
