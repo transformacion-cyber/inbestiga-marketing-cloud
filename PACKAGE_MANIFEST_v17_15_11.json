@@ -1,0 +1,31 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.15.11",
+  "build": "SAKURA AMBIENT PRESENCE, AFFECTIVE INTELLIGENCE & TASK DEEP LINKS",
+  "base": "v17.15.10",
+  "generated_at": "2026-07-31T18:39:58.265057+00:00",
+  "files_count": 572,
+  "javascript_files": 63,
+  "internal_javascript_blocks": 14,
+  "json_files": 150,
+  "html_unique_ids": 646,
+  "pwa_resources": 83,
+  "affective_states": 14,
+  "backend_changes": false,
+  "sql_changes": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "internal_javascript_syntax": "OK",
+    "json": "OK",
+    "duplicate_html_ids": "OK",
+    "local_references": "OK",
+    "pwa_resources": "OK",
+    "ambient_presence": "OK",
+    "affective_state_library": "OK",
+    "task_cards_exact_titles": "OK",
+    "task_deep_links": "OK",
+    "works_without_ollama": "OK",
+    "no_polling": "OK",
+    "no_mutation_observer": "OK"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "version": "v17.15.11",
+  "tests": [
+    {
+      "id": "ambient_orb_loaded_on_start",
+      "status": "pass"
+    },
+    {
+      "id": "healthy_affective_state_library",
+      "status": "pass",
+      "states": 14
+    },
+    {
+      "id": "emotion_css_mappings",
+      "status": "pass"
+    },
+    {
+      "id": "direct_task_query_patterns",
+      "status": "pass"
+    },
+    {
+      "id": "exact_task_title_markup",
+      "status": "pass"
+    },
+    {
+      "id": "task_deep_link_handler",
+      "status": "pass"
+    },
+    {
+      "id": "works_without_ollama",
+      "status": "pass"
+    },
+    {
+      "id": "no_polling",
+      "status": "pass"
+    },
+    {
+      "id": "no_mutation_observer",
+      "status": "pass"
+    },
+    {
+      "id": "backend_changes",
+      "status": "none"
+    }
+  ]
+}

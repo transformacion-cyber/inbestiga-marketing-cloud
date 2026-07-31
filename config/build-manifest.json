@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.15.10",
-  "build": "SAKURA CONVERSATION CONTEXT SANITIZATION HOTFIX",
+  "frontend_version": "17.15.11",
+  "build": "SAKURA AMBIENT PRESENCE, AFFECTIVE INTELLIGENCE & TASK DEEP LINKS",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -321,6 +321,18 @@
       "path": "assets/js/release-marker-v17-15-10.js",
       "origin": "v17.15.10",
       "mode": "sakura-conversation-context-sanitization"
+    },
+    {
+      "name": "sakura-affective-task-intelligence-v17-15-11",
+      "path": "assets/js/sakura-affective-task-intelligence-v17-15-11.js",
+      "origin": "v17.15.11",
+      "mode": "ambient-affective-task-awareness"
+    },
+    {
+      "name": "release-marker-v17-15-11",
+      "path": "assets/js/release-marker-v17-15-11.js",
+      "origin": "v17.15.11",
+      "mode": "canonical-release"
     }
   ],
   "styles": [
@@ -739,12 +751,24 @@
     "sakura_obsolete_model_error_output_guard_v171510": true,
     "sakura_clean_context_for_ollama_v171510": true,
     "no_sql_v171510": true,
-    "no_backend_changes_v171510": true
+    "no_backend_changes_v171510": true,
+    "sakura_ambient_orb_on_platform_start_v171511": true,
+    "sakura_healthy_affective_states_v171511": true,
+    "sakura_emotion_color_transitions_v171511": true,
+    "sakura_contextual_greetings_v171511": true,
+    "sakura_exact_task_cards_v171511": true,
+    "sakura_task_deep_links_v171511": true,
+    "sakura_task_intelligence_without_ollama_v171511": true,
+    "sakura_affective_preferences_v171511": true,
+    "no_sql_v171511": true,
+    "no_backend_changes_v171511": true,
+    "no_polling_v171511": true,
+    "no_mutation_observer_v171511": true
   },
   "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
   "hotfix": "v17.15.6 fixes Command Center null.id crashes, prevents duplicate/re-entrant initialization, preserves the canonical release version against lazy-module downgrades, adds rendered visual-layout health, ignores historical browser incidents in the current score, and stops Work 360 cloud hydration from creating false local pending changes. No SQL or backend changes.",
-  "version": "v17.15.10",
-  "name": "INBESTIGA Marketing Cloud v17.15.10",
+  "version": "v17.15.11",
+  "name": "INBESTIGA Marketing Cloud v17.15.11",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
     "assets/js/unified-command-center-v17-15-0.js",
@@ -845,10 +869,11 @@
     "sakura_no_polling_v17155": true,
     "sakura_no_mutation_observer_v17155": true
   },
-  "release": "v17.15.10 removes obsolete local-model installation errors from SAKURA conversation history, summaries and learning context.",
+  "release": "v17.15.11 adds ambient SAKURA presence, healthy affective states, exact task cards and safe deep-link navigation.",
   "scripts": [
     "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
     "assets/js/release-marker-v17-15-5.js",
-    "assets/js/release-marker-v17-15-10.js"
+    "assets/js/sakura-affective-task-intelligence-v17-15-11.js",
+    "assets/js/release-marker-v17-15-11.js"
   ]
 }

@@ -1,0 +1,11 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.11 — Sakura Ambient Presence, Affective Intelligence & Task Deep Links
+
+Convierte a SAKURA en una presencia ambiental desde el inicio, incorpora
+estados afectivos saludables con cambios de color, saludos contextuales
+moderados y tarjetas reales de tareas con nombres exactos y botón Abrir tarea.
+
+COMMIT
+git add .
+git commit -m "feat: release v17.15.11 SAKURA ambient affective task intelligence"
+git push origin main

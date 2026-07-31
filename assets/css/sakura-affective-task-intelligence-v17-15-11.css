@@ -1,0 +1,121 @@
+/* INBESTIGA v17.15.11 · SAKURA Ambient Presence & Affective Intelligence */
+:root{
+  --sk-affect-1:#8f63ff;
+  --sk-affect-2:#73d4ff;
+  --sk-affect-3:#f5b2dc;
+  --sk-affect-glow:rgba(143,99,255,.52);
+  --sk-affect-speed:6.5s;
+}
+#sakuraNativeLauncher,
+#sakuraNativePanel,
+#skPresence{
+  --sk-affect-1:#8f63ff;
+  --sk-affect-2:#73d4ff;
+  --sk-affect-3:#f5b2dc;
+  --sk-affect-glow:rgba(143,99,255,.52);
+  --sk-affect-speed:6.5s;
+}
+#sakuraNativeLauncher .sakura-native-launcher-orb,
+#sakuraNativePanel .sk-presence{
+  background:
+    radial-gradient(circle at 33% 27%,#fff 0 7%,var(--sk-affect-3) 10%,var(--sk-affect-2) 31%,var(--sk-affect-1) 63%,#160920 100%)!important;
+  box-shadow:
+    0 0 0 5px color-mix(in srgb,var(--sk-affect-1) 17%,transparent),
+    0 0 34px var(--sk-affect-glow),
+    0 0 58px color-mix(in srgb,var(--sk-affect-3) 24%,transparent)!important;
+  transition:background .7s ease,box-shadow .7s ease,filter .7s ease,transform .4s ease;
+}
+#sakuraNativeLauncher .sakura-native-launcher-orb::before,
+#sakuraNativeLauncher .sakura-native-launcher-orb::after,
+#sakuraNativePanel .sk-presence::before,
+#sakuraNativePanel .sk-presence::after{
+  border-color:color-mix(in srgb,var(--sk-affect-2) 62%,transparent)!important;
+  animation-duration:var(--sk-affect-speed)!important;
+}
+#sakuraNativeLauncher[data-sk-emotion="serenity"],
+#sakuraNativePanel[data-sk-emotion="serenity"]{--sk-affect-1:#7b6cff;--sk-affect-2:#7ed8ff;--sk-affect-3:#d8c5ff;--sk-affect-glow:rgba(111,112,255,.46);--sk-affect-speed:8s}
+#sakuraNativeLauncher[data-sk-emotion="attentive"],
+#sakuraNativePanel[data-sk-emotion="attentive"]{--sk-affect-1:#5477ff;--sk-affect-2:#55d6ff;--sk-affect-3:#d8f4ff;--sk-affect-glow:rgba(64,155,255,.5);--sk-affect-speed:6s}
+#sakuraNativeLauncher[data-sk-emotion="focus"],
+#sakuraNativePanel[data-sk-emotion="focus"]{--sk-affect-1:#4d4ce8;--sk-affect-2:#a8b6ff;--sk-affect-3:#ffffff;--sk-affect-glow:rgba(71,70,226,.5);--sk-affect-speed:7.5s}
+#sakuraNativeLauncher[data-sk-emotion="curiosity"],
+#sakuraNativePanel[data-sk-emotion="curiosity"]{--sk-affect-1:#7a3eff;--sk-affect-2:#3fa9ff;--sk-affect-3:#d7baff;--sk-affect-glow:rgba(122,62,255,.56);--sk-affect-speed:4.8s}
+#sakuraNativeLauncher[data-sk-emotion="empathy"],
+#sakuraNativePanel[data-sk-emotion="empathy"]{--sk-affect-1:#a84fca;--sk-affect-2:#d989e8;--sk-affect-3:#ffc2da;--sk-affect-glow:rgba(214,105,190,.48);--sk-affect-speed:8.5s}
+#sakuraNativeLauncher[data-sk-emotion="joy"],
+#sakuraNativePanel[data-sk-emotion="joy"]{--sk-affect-1:#e04bb4;--sk-affect-2:#ff9ecb;--sk-affect-3:#ffd66f;--sk-affect-glow:rgba(242,82,181,.56);--sk-affect-speed:4.3s}
+#sakuraNativeLauncher[data-sk-emotion="celebration"],
+#sakuraNativePanel[data-sk-emotion="celebration"]{--sk-affect-1:#d83ab3;--sk-affect-2:#ffbc45;--sk-affect-3:#fff2a6;--sk-affect-glow:rgba(255,181,54,.6);--sk-affect-speed:3.4s}
+#sakuraNativeLauncher[data-sk-emotion="gratitude"],
+#sakuraNativePanel[data-sk-emotion="gratitude"]{--sk-affect-1:#c85e9d;--sk-affect-2:#ffad86;--sk-affect-3:#ffe1a6;--sk-affect-glow:rgba(239,139,105,.5);--sk-affect-speed:6.8s}
+#sakuraNativeLauncher[data-sk-emotion="hope"],
+#sakuraNativePanel[data-sk-emotion="hope"]{--sk-affect-1:#36a5a7;--sk-affect-2:#6fe3d5;--sk-affect-3:#ffb7da;--sk-affect-glow:rgba(65,191,186,.5);--sk-affect-speed:6s}
+#sakuraNativeLauncher[data-sk-emotion="relief"],
+#sakuraNativePanel[data-sk-emotion="relief"]{--sk-affect-1:#49a887;--sk-affect-2:#89e1bb;--sk-affect-3:#d8c8ff;--sk-affect-glow:rgba(76,181,142,.48);--sk-affect-speed:8s}
+#sakuraNativeLauncher[data-sk-emotion="caution"],
+#sakuraNativePanel[data-sk-emotion="caution"]{--sk-affect-1:#9d5f31;--sk-affect-2:#f3a942;--sk-affect-3:#ffe3a0;--sk-affect-glow:rgba(235,157,56,.48);--sk-affect-speed:7s}
+#sakuraNativeLauncher[data-sk-emotion="concern"],
+#sakuraNativePanel[data-sk-emotion="concern"]{--sk-affect-1:#b64d61;--sk-affect-2:#ef815f;--sk-affect-3:#ffd08f;--sk-affect-glow:rgba(221,88,87,.48);--sk-affect-speed:6.5s}
+#sakuraNativeLauncher[data-sk-emotion="firmness"],
+#sakuraNativePanel[data-sk-emotion="firmness"]{--sk-affect-1:#772e55;--sk-affect-2:#914bd6;--sk-affect-3:#dca7ff;--sk-affect-glow:rgba(127,54,135,.5);--sk-affect-speed:7.2s}
+#sakuraNativeLauncher[data-sk-emotion="rest"],
+#sakuraNativePanel[data-sk-emotion="rest"]{--sk-affect-1:#33235f;--sk-affect-2:#4f6aa4;--sk-affect-3:#8c91c6;--sk-affect-glow:rgba(57,50,111,.38);--sk-affect-speed:11s}
+#sakuraNativeLauncher[data-sk-emotion="offline"],
+#sakuraNativePanel[data-sk-emotion="offline"]{--sk-affect-1:#51495a;--sk-affect-2:#7d7485;--sk-affect-3:#b7afb9;--sk-affect-glow:rgba(73,64,80,.3);--sk-affect-speed:12s;filter:saturate(.68)}
+#sakuraNativeLauncher[data-sk-emotion="thinking"] .sakura-native-launcher-orb,
+#sakuraNativePanel[data-sk-emotion="thinking"] .sk-presence{transform:scale(1.035)}
+#sakuraNativeLauncher[data-sk-emotion="speaking"] .sakura-native-launcher-orb,
+#sakuraNativePanel[data-sk-emotion="speaking"] .sk-presence{animation:skAffectSpeak .7s ease-in-out infinite alternate}
+#sakuraNativeLauncher[data-sk-emotion="celebration"] .sakura-native-launcher-orb,
+#sakuraNativePanel[data-sk-emotion="celebration"] .sk-presence{animation:skAffectCelebrate 1.4s ease-in-out 3}
+@keyframes skAffectSpeak{to{transform:scale(1.075);filter:brightness(1.14)}}
+@keyframes skAffectCelebrate{0%,100%{transform:scale(1)}50%{transform:scale(1.12) rotate(4deg)}}
+
+.sk-ambient-greeting{
+  position:fixed;right:22px;bottom:92px;z-index:2147481999;width:min(330px,calc(100vw - 28px));
+  padding:14px 15px;border-radius:20px;border:1px solid rgba(255,255,255,.42);
+  color:#fff;background:linear-gradient(145deg,rgba(35,18,49,.96),rgba(57,24,70,.94));
+  box-shadow:0 22px 64px rgba(33,11,50,.34);backdrop-filter:blur(18px);
+  opacity:0;transform:translateY(12px) scale(.98);pointer-events:none;
+  transition:opacity .25s ease,transform .25s ease;font-family:Inter,system-ui,sans-serif
+}
+.sk-ambient-greeting.show{opacity:1;transform:none;pointer-events:auto}
+.sk-ambient-greeting strong{display:block;font-size:13px;margin-bottom:5px}
+.sk-ambient-greeting p{margin:0;color:#e7dced;font-size:11px;line-height:1.5}
+.sk-ambient-greeting-actions{display:flex;gap:7px;margin-top:11px}
+.sk-ambient-greeting button{border:1px solid rgba(255,255,255,.24);border-radius:999px;padding:7px 10px;background:rgba(255,255,255,.12);color:#fff;font:inherit;font-size:10px;font-weight:800;cursor:pointer}
+.sk-ambient-greeting button.primary{background:linear-gradient(135deg,#8b4cff,#d950b8);border-color:transparent}
+.sk-ambient-greeting[data-side="left"]{right:auto;left:22px}
+
+.sk-task-digest{display:grid;gap:10px}
+.sk-task-digest-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.sk-task-digest-head h4{margin:0;font-size:14px}
+.sk-task-digest-head p{margin:4px 0 0;font-size:10px;color:var(--sk-muted,#8b7797)}
+.sk-task-count{min-width:30px;height:30px;border-radius:999px;display:grid;place-items:center;background:linear-gradient(135deg,#7540e9,#b34de0);color:#fff;font-size:11px;font-weight:900}
+.sk-task-card{border:1px solid color-mix(in srgb,var(--sk-line,#bda7ca) 75%,transparent);border-radius:17px;padding:11px;background:rgba(255,255,255,.7);box-shadow:0 8px 22px rgba(70,35,89,.08)}
+.sk-task-card[data-risk="overdue"]{border-color:rgba(216,79,90,.36);background:linear-gradient(145deg,rgba(255,245,246,.92),rgba(255,231,233,.65))}
+.sk-task-card[data-risk="today"]{border-color:rgba(224,145,45,.34);background:linear-gradient(145deg,rgba(255,250,239,.94),rgba(255,241,211,.62))}
+.sk-task-card[data-risk="review"]{border-color:rgba(116,86,226,.3);background:linear-gradient(145deg,rgba(250,247,255,.95),rgba(232,226,255,.67))}
+.sk-task-card-title{font-size:11px;font-weight:900;line-height:1.35;color:var(--sk-text,#2b1b33);word-break:break-word}
+.sk-task-card-meta{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.sk-task-card-meta span{border-radius:999px;padding:4px 7px;background:rgba(100,71,121,.08);font-size:8px;font-weight:800;color:#6d5e76}
+.sk-task-card-actions{display:flex;gap:7px;margin-top:9px}
+.sk-task-card-actions button{border:0;border-radius:12px;padding:8px 10px;font-size:9px;font-weight:900;cursor:pointer}
+.sk-task-card-actions .primary{background:linear-gradient(135deg,#7740ed,#a950e3);color:#fff}
+.sk-task-card-actions .secondary{background:rgba(255,255,255,.72);border:1px solid var(--sk-line,#c6b2d1);color:#675570}
+.sk-task-empty{padding:17px;border:1px dashed var(--sk-line,#c6b2d1);border-radius:16px;text-align:center;font-size:10px;color:#786982}
+
+.sk-affective-settings-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.sk-affective-state-list{display:flex;gap:5px;flex-wrap:wrap;margin-top:8px}
+.sk-affective-state-list span{font-size:8px;border-radius:999px;padding:4px 7px;background:rgba(117,74,160,.08);color:#745f82}
+
+@media(max-width:720px){
+  .sk-ambient-greeting{right:12px;bottom:80px}
+  .sk-ambient-greeting[data-side="left"]{left:12px}
+  .sk-affective-settings-grid{grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce){
+  #sakuraNativeLauncher .sakura-native-launcher-orb,
+  #sakuraNativePanel .sk-presence{animation:none!important;transition:none!important}
+  .sk-ambient-greeting{transition:none}
+}

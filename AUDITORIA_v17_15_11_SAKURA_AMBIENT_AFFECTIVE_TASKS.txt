@@ -1,0 +1,23 @@
+INBESTIGA Marketing Cloud v17.15.11
+SAKURA AMBIENT PRESENCE, AFFECTIVE INTELLIGENCE & TASK DEEP LINKS
+
+IMPLEMENTADO
+- Orbe visible desde el inicio de la plataforma.
+- Biblioteca curada de estados afectivos saludables y regulados:
+  serenidad, atención, enfoque, curiosidad, empatía, alegría, celebración,
+  gratitud, esperanza, alivio, cautela, preocupación funcional, firmeza y reposo.
+- Colores, brillo y movimiento vinculados al estado.
+- Saludo contextual moderado una vez por día y por usuario.
+- Preferencias: presencia alta/equilibrada/silenciosa, intensidad sutil/equilibrada/expresiva y saludos.
+- Consultas “qué tareas tengo”, “mi día”, “qué tengo hoy” y “qué hago primero”.
+- Tarjetas con el nombre exacto de cada tarea.
+- Botón Abrir tarea: navega a Tareas, minimiza SAKURA, abre y resalta el registro.
+- Funciona con datos reales de Trabajo 360 incluso sin Ollama.
+
+LÍMITES ÉTICOS
+SAKURA expresa estados de comunicación simulados; no afirma consciencia,
+no diagnostica emociones del usuario y no utiliza celos, dependencia,
+culpa, posesividad ni manipulación.
+
+SIN CAMBIOS
+Auth, RLS, RPC, Storage, SQL, Supabase, Ollama y tablas productivas.

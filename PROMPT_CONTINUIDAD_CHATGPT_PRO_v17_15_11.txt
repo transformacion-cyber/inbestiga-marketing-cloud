@@ -1,0 +1,14 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.11
+SAKURA AMBIENT PRESENCE, AFFECTIVE INTELLIGENCE & TASK DEEP LINKS
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_15_11_SAKURA_AMBIENT_AFFECTIVE_TASK_INTELLIGENCE_FULL_PLATFORM.zip
+
+Conservar:
+- Orbe ambiental desde el inicio.
+- Estados afectivos saludables y no manipulativos.
+- Tarjetas con nombres exactos de tareas.
+- Deep links por task_id.
+- Funcionamiento básico sin Ollama.
+- Preferencias emocionales por usuario.
+- Sin Auth/RLS/RPC/SQL nuevos.

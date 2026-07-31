@@ -1,0 +1,16 @@
+{
+  "version": "v17.15.11",
+  "auth": "sin cambios",
+  "rls": "sin cambios",
+  "rpc": "sin cambios",
+  "storage": "sin cambios",
+  "sql": "sin cambios",
+  "ollama_bridge": "sin cambios",
+  "productive_tables": "sin cambios",
+  "scope": [
+    "SAKURA frontend task presentation",
+    "ambient orb and affective UI",
+    "frontend deep-link navigation",
+    "per-user local preferences"
+  ]
+}
