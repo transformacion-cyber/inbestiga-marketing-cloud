@@ -40,5 +40,7 @@
   ],
   "removed_files": [],
   "github_summary": "fix(sakura): correct workspace overlap and clipped controls v17.15.4",
-  "github_commit": "git add . && git commit -m \"fix: release v17.15.4 SAKURA workspace layout hotfix\" && git push origin main"
+  "github_commit": "git add . && git commit -m \"fix: release v17.15.4 SAKURA workspace layout hotfix\" && git push origin main",
+  "frontend_version": "17.15.15",
+  "build": "SAKURA FLOATING DRAGGABLE ORB PRESENCE SYSTEM"
 }

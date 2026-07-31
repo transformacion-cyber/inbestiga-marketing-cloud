@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.15.14",
-  "build": "STATIC SAKURA ORB MOUNT & RESILIENT PWA CONTROL HOTFIX",
+  "frontend_version": "17.15.15",
+  "build": "SAKURA FLOATING DRAGGABLE ORB PRESENCE SYSTEM",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -369,6 +369,24 @@
       "path": "assets/js/release-marker-v17-15-14.js",
       "origin": "v17.15.14",
       "mode": "canonical-release"
+    },
+    {
+      "name": "sakura-floating-orb-presence-v17-15-15-css",
+      "path": "assets/css/sakura-floating-orb-presence-v17-15-15.css",
+      "origin": "v17.15.15",
+      "mode": "productive"
+    },
+    {
+      "name": "sakura-floating-orb-presence-v17-15-15",
+      "path": "assets/js/sakura-floating-orb-presence-v17-15-15.js",
+      "origin": "v17.15.15",
+      "mode": "productive"
+    },
+    {
+      "name": "release-marker-v17-15-15",
+      "path": "assets/js/release-marker-v17-15-15.js",
+      "origin": "v17.15.15",
+      "mode": "read-only"
     }
   ],
   "styles": [

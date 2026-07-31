@@ -1,11 +1,11 @@
-/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.14 ===== */
+/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.15 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.14";
-  const BUILD = "STATIC SAKURA ORB MOUNT & RESILIENT PWA CONTROL HOTFIX";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.15";
+  const BUILD = "SAKURA FLOATING DRAGGABLE ORB PRESENCE SYSTEM";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";
   const DEFAULT_BUCKET = "inbestiga-media";

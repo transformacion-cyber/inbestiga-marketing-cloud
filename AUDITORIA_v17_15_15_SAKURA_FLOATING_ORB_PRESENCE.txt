@@ -1,0 +1,17 @@
+INBESTIGA Marketing Cloud v17.15.15
+Hotfix / mejora visual-productiva: SAKURA Floating Draggable Orb Presence System
+
+Cambios principales:
+- SAKURA deja de mostrarse como cápsula/botón y pasa a un orbe flotante libre.
+- El orbe ahora puede arrastrarse y reubicarse sobre la plataforma.
+- La posición se guarda localmente y se restaura al volver a entrar.
+- Al abrir SAKURA desde el orbe, el panel se muestra; al cerrarlo, permanece solo el orbe flotando.
+- Se ocultó el botón SAKURA del top nav para priorizar la presencia viva del orbe.
+- Se añadieron capas visuales mágicas y tecnológicas: aura, anillos, cometa, partículas y glifos.
+- Se mantiene compatibilidad con el sistema afectivo: el color del orbe sigue respondiendo al estado emocional de SAKURA.
+- Se alinearon marcadores de versión a v17.15.15 y se actualizó la PWA shell.
+
+Notas de uso:
+- Arrastrar el orbe con mouse o touch.
+- Doble clic sobre el orbe para restablecer la posición.
+- El texto contextual aparece como tooltip al pasar el cursor o enfocar el orbe.
