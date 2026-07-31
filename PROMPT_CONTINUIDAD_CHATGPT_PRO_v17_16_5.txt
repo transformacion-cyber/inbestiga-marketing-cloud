@@ -1,0 +1,15 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.16.5
+CREATIVE ARENA · APPLE STUDIO & MAGIC THEME COLLECTION
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_16_5_CREATIVE_ARENA_APPLE_MAGIC_THEMES_FULL_PLATFORM.zip
+
+Conservar:
+- Apple Studio como tema de interfaz predeterminado.
+- Mítica / Dota como tema alternativo que recupera la apariencia anterior.
+- Colección de nueve temas de interfaz.
+- Selector dentro de Apariencia y temas.
+- Preferencia guardada por usuario.
+- Herramientas compactas en temas nuevos.
+- Cero modificaciones operativas de Creative Arena.
+- Módulo Official Clean Start v17.16.4 cargado correctamente.

@@ -1,0 +1,352 @@
+/* INBESTIGA v17.16.5 · Creative Arena Apple & Magic Interface Themes */
+#creativeArenaCleanRoot{
+  --caui-accent:#0071e3;
+  --caui-accent-soft:#78b8ff;
+  --caui-bg:#f3f4f7;
+  --caui-bg2:#ffffff;
+  --caui-panel:rgba(255,255,255,.82);
+  --caui-panel2:rgba(248,249,252,.88);
+  --caui-text:#1d1d1f;
+  --caui-muted:#6e6e73;
+  --caui-line:rgba(29,29,31,.10);
+  --caui-line-strong:rgba(29,29,31,.16);
+  --caui-shadow:0 24px 70px rgba(40,44,58,.11),0 8px 24px rgba(40,44,58,.06);
+  --caui-board:
+    radial-gradient(circle at 18% 6%,rgba(87,168,255,.13),transparent 27%),
+    radial-gradient(circle at 86% 18%,rgba(173,110,255,.11),transparent 26%),
+    linear-gradient(180deg,#fafbfe,#f1f3f8);
+}
+#creativeArenaCleanRoot[data-ca-interface-theme="apple-studio"]{
+  --caui-accent:#0071e3;--caui-accent-soft:#85c2ff;--caui-bg:#f2f3f7;--caui-bg2:#ffffff;
+  --caui-panel:rgba(255,255,255,.84);--caui-panel2:rgba(248,249,252,.90);--caui-text:#1d1d1f;--caui-muted:#6e6e73;
+  --caui-board:radial-gradient(circle at 15% 6%,rgba(87,168,255,.14),transparent 26%),radial-gradient(circle at 86% 14%,rgba(166,118,255,.12),transparent 25%),linear-gradient(180deg,#fbfcff,#f0f2f7);
+}
+#creativeArenaCleanRoot[data-ca-interface-theme="aurora-bloom"]{
+  --caui-accent:#7c5cff;--caui-accent-soft:#ff8fd0;--caui-bg:#f4f0ff;--caui-bg2:#fff9fd;
+  --caui-panel:rgba(255,255,255,.78);--caui-panel2:rgba(250,245,255,.87);--caui-text:#2c2137;--caui-muted:#796b84;
+  --caui-board:radial-gradient(circle at 12% 12%,rgba(97,204,255,.26),transparent 27%),radial-gradient(circle at 82% 10%,rgba(255,111,194,.24),transparent 28%),radial-gradient(circle at 56% 88%,rgba(126,92,255,.15),transparent 32%),linear-gradient(145deg,#f8f4ff,#fff9fc);
+}
+#creativeArenaCleanRoot[data-ca-interface-theme="sakura-dream"]{
+  --caui-accent:#d94892;--caui-accent-soft:#ffafcf;--caui-bg:#fff3f8;--caui-bg2:#fffdfd;
+  --caui-panel:rgba(255,255,255,.82);--caui-panel2:rgba(255,246,251,.90);--caui-text:#39232e;--caui-muted:#856b77;
+  --caui-board:radial-gradient(circle at 18% 10%,rgba(255,154,197,.24),transparent 25%),radial-gradient(circle at 86% 16%,rgba(206,146,255,.18),transparent 24%),linear-gradient(155deg,#fffafd,#fff1f7);
+}
+#creativeArenaCleanRoot[data-ca-interface-theme="prism-lab"]{
+  --caui-accent:#5358ff;--caui-accent-soft:#45d7ff;--caui-bg:#f2f7ff;--caui-bg2:#ffffff;
+  --caui-panel:rgba(255,255,255,.76);--caui-panel2:rgba(245,249,255,.88);--caui-text:#1f2641;--caui-muted:#6a7189;
+  --caui-board:conic-gradient(from 230deg at 82% 0%,rgba(255,114,202,.14),rgba(75,214,255,.13),rgba(92,91,255,.13),rgba(255,114,202,.14)),linear-gradient(180deg,#fbfdff,#eff5ff);
+}
+#creativeArenaCleanRoot[data-ca-interface-theme="emerald-spell"]{
+  --caui-accent:#168b68;--caui-accent-soft:#62d4ad;--caui-bg:#eef9f4;--caui-bg2:#fbfffd;
+  --caui-panel:rgba(251,255,253,.80);--caui-panel2:rgba(241,251,247,.90);--caui-text:#18382e;--caui-muted:#668278;
+  --caui-board:radial-gradient(circle at 12% 12%,rgba(57,199,148,.20),transparent 26%),radial-gradient(circle at 84% 20%,rgba(116,220,184,.20),transparent 26%),linear-gradient(155deg,#f5fff9,#eaf8f2);
+}
+#creativeArenaCleanRoot[data-ca-interface-theme="solar-forge"]{
+  --caui-accent:#d47b16;--caui-accent-soft:#ffc766;--caui-bg:#fff7e9;--caui-bg2:#fffdf8;
+  --caui-panel:rgba(255,253,247,.82);--caui-panel2:rgba(255,247,229,.90);--caui-text:#3d2c18;--caui-muted:#8b765c;
+  --caui-board:radial-gradient(circle at 12% 8%,rgba(255,190,72,.22),transparent 26%),radial-gradient(circle at 86% 18%,rgba(255,125,65,.15),transparent 25%),linear-gradient(155deg,#fffdf8,#fff3dd);
+}
+#creativeArenaCleanRoot[data-ca-interface-theme="nebula-atelier"]{
+  --caui-accent:#a878ff;--caui-accent-soft:#73dfff;--caui-bg:#0b0c18;--caui-bg2:#171329;
+  --caui-panel:rgba(25,20,44,.84);--caui-panel2:rgba(14,17,32,.90);--caui-text:#f6f1ff;--caui-muted:#b1a8c6;
+  --caui-line:rgba(255,255,255,.11);--caui-line-strong:rgba(255,255,255,.18);
+  --caui-shadow:0 25px 74px rgba(0,0,0,.38);
+  --caui-board:radial-gradient(circle at 12% 10%,rgba(114,207,255,.19),transparent 24%),radial-gradient(circle at 82% 15%,rgba(171,104,255,.24),transparent 26%),radial-gradient(circle at 55% 90%,rgba(255,92,185,.10),transparent 30%),linear-gradient(180deg,#101224,#090b15);
+}
+#creativeArenaCleanRoot[data-ca-interface-theme="midnight-ink"]{
+  --caui-accent:#589cff;--caui-accent-soft:#9bc6ff;--caui-bg:#101216;--caui-bg2:#191c22;
+  --caui-panel:rgba(27,30,37,.90);--caui-panel2:rgba(20,23,29,.94);--caui-text:#f5f7fb;--caui-muted:#9da5b2;
+  --caui-line:rgba(255,255,255,.09);--caui-line-strong:rgba(255,255,255,.15);
+  --caui-shadow:0 25px 70px rgba(0,0,0,.36);
+  --caui-board:radial-gradient(circle at 78% 8%,rgba(80,150,255,.18),transparent 25%),linear-gradient(180deg,#151922,#0d1016);
+}
+
+/* Themes except the legacy mythic interface use the new compact studio system. */
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]){
+  --ca-accent:var(--caui-accent)!important;
+  --ca-accent-soft:var(--caui-accent-soft)!important;
+  --ca-bg:var(--caui-bg)!important;
+  --ca-bg-2:var(--caui-bg2)!important;
+  --ca-panel:var(--caui-panel)!important;
+  --ca-panel-2:var(--caui-panel2)!important;
+  --ca-line:var(--caui-line)!important;
+  --ca-line-strong:var(--caui-line-strong)!important;
+  --ca-text:var(--caui-text)!important;
+  --ca-muted:var(--caui-muted)!important;
+  --ca-shadow:var(--caui-shadow)!important;
+  color:var(--caui-text)!important;
+  background:linear-gradient(180deg,var(--caui-bg),var(--caui-bg2))!important;
+  font-family:-apple-system,BlinkMacSystemFont,"SF Pro Display","SF Pro Text","Helvetica Neue",Inter,Arial,sans-serif!important;
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-shell{
+  padding:10px!important;gap:9px!important;background:transparent!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-topbar{
+  grid-template-columns:minmax(190px,.65fr) minmax(340px,1.15fr) auto!important;
+  gap:10px!important;padding:9px 12px!important;border-radius:18px!important;
+  border:1px solid rgba(255,255,255,.78)!important;
+  background:var(--caui-panel)!important;
+  box-shadow:var(--caui-shadow)!important;
+  backdrop-filter:blur(24px) saturate(145%)!important;
+  -webkit-backdrop-filter:blur(24px) saturate(145%)!important;
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-mark{
+  width:36px!important;height:36px!important;border-radius:12px!important;font-size:17px!important;
+  color:#fff!important;background:linear-gradient(145deg,var(--caui-accent),var(--caui-accent-soft))!important;
+  clip-path:none!important;box-shadow:0 10px 24px color-mix(in srgb,var(--caui-accent) 24%,transparent)!important;
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-brand strong,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-meta strong,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-meta strong,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-box h3,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-board-title,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-layer-meta strong,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-comment strong{
+  color:var(--caui-text)!important;text-shadow:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-brand span,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-meta label,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-kicker,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-subtitle,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-note,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-meta small,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-layer-meta small,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-comment small,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-section-help{
+  color:var(--caui-muted)!important;text-shadow:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-mode-tabs,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-inspector-tabs{
+  padding:3px!important;border:1px solid var(--caui-line)!important;border-radius:12px!important;
+  background:color-mix(in srgb,var(--caui-panel2) 92%,transparent)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-mode-tabs button,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-inspector-tabs button{
+  color:var(--caui-muted)!important;background:transparent!important;border:0!important;
+  border-radius:9px!important;padding:7px 9px!important;font-size:8px!important;font-weight:750!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-mode-tabs button.active,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-inspector-tabs button.active{
+  color:var(--caui-text)!important;background:var(--caui-bg2)!important;
+  box-shadow:0 4px 12px rgba(40,44,58,.08)!important;border:1px solid var(--caui-line)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-top-actions{
+  gap:5px!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-top-actions .ca-icon-btn,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-btn{
+  min-height:32px!important;height:auto!important;padding:0 10px!important;border-radius:10px!important;
+  border:1px solid var(--caui-line)!important;background:var(--caui-panel2)!important;color:var(--caui-text)!important;
+  font-size:8px!important;font-weight:750!important;box-shadow:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-btn.primary{
+  color:#fff!important;background:linear-gradient(180deg,color-mix(in srgb,var(--caui-accent) 88%,white 8%),var(--caui-accent))!important;
+  border-color:transparent!important;box-shadow:0 8px 18px color-mix(in srgb,var(--caui-accent) 24%,transparent)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-search,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) input,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) textarea,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) select{
+  color:var(--caui-text)!important;background:var(--caui-bg2)!important;border:1px solid var(--caui-line)!important;
+  border-radius:11px!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.55)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme="nebula-atelier"] input,
+#creativeArenaCleanRoot[data-ca-interface-theme="nebula-atelier"] textarea,
+#creativeArenaCleanRoot[data-ca-interface-theme="nebula-atelier"] select,
+#creativeArenaCleanRoot[data-ca-interface-theme="midnight-ink"] input,
+#creativeArenaCleanRoot[data-ca-interface-theme="midnight-ink"] textarea,
+#creativeArenaCleanRoot[data-ca-interface-theme="midnight-ink"] select{
+  color:var(--caui-text)!important;background:rgba(255,255,255,.06)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-layout{
+  grid-template-columns:220px minmax(0,1fr) 276px!important;gap:9px!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-left,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-right,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-main{
+  border:1px solid rgba(255,255,255,.78)!important;background:var(--caui-panel)!important;
+  box-shadow:var(--caui-shadow)!important;backdrop-filter:blur(22px) saturate(140%)!important;
+  -webkit-backdrop-filter:blur(22px) saturate(140%)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-left,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-right{
+  padding:7px!important;scrollbar-color:color-mix(in srgb,var(--caui-accent) 30%,transparent) transparent!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-panel{
+  margin-bottom:6px!important;border-radius:13px!important;border:1px solid var(--caui-line)!important;
+  background:color-mix(in srgb,var(--caui-panel2) 94%,transparent)!important;box-shadow:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-panel summary{
+  padding:8px 10px!important;color:var(--caui-text)!important;font-size:8px!important;letter-spacing:.11em!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-panel-body{padding:8px!important}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-stack{
+  grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:6px!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool{
+  min-height:48px!important;padding:6px!important;border-radius:12px!important;
+  border:1px solid var(--caui-line)!important;background:var(--caui-bg2)!important;color:var(--caui-text)!important;
+  box-shadow:none!important;text-align:left!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool:hover{
+  transform:translateY(-1px)!important;border-color:color-mix(in srgb,var(--caui-accent) 34%,var(--caui-line))!important;
+  box-shadow:0 7px 18px rgba(38,43,57,.08)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool.active{
+  background:color-mix(in srgb,var(--caui-accent) 9%,var(--caui-bg2))!important;
+  border-color:color-mix(in srgb,var(--caui-accent) 40%,transparent)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-card{
+  grid-template-columns:30px minmax(0,1fr)!important;gap:7px!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-core{
+  width:30px!important;height:30px!important;border-radius:9px!important;clip-path:none!important;
+  color:var(--caui-accent)!important;background:color-mix(in srgb,var(--caui-accent) 10%,var(--caui-bg2))!important;
+  border:1px solid color-mix(in srgb,var(--caui-accent) 18%,var(--caui-line))!important;box-shadow:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-core::before,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-core::after,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-dock-rune::before,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-dock-rune::after{
+  display:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-glyph svg{
+  width:17px!important;height:17px!important;stroke-width:2.3!important;filter:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-meta strong{
+  font-size:9px!important;line-height:1.1!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-meta small{
+  font-size:7px!important;margin-top:1px!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-key{display:none!important}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-main{
+  padding:10px!important;gap:8px!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-board-title{
+  font-size:24px!important;font-weight:720!important;letter-spacing:-.035em!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-overview{
+  gap:6px!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-stat{
+  padding:8px 9px!important;border-radius:12px!important;border:1px solid var(--caui-line)!important;
+  background:var(--caui-panel2)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-stat span{color:var(--caui-muted)!important;font-size:7px!important}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-stat strong{color:var(--caui-text)!important;font-size:13px!important}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-board-wrap{
+  border-radius:17px!important;border:1px solid var(--caui-line)!important;
+  background:var(--caui-board)!important;box-shadow:inset 0 1px 0 rgba(255,255,255,.62)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-board-wrap::before{
+  opacity:.36!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-canvas-controls{
+  padding:3px!important;border-radius:11px!important;background:var(--caui-panel)!important;border:1px solid var(--caui-line)!important;
+  box-shadow:0 8px 20px rgba(40,44,58,.08)!important;backdrop-filter:blur(16px)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-canvas-controls button{
+  min-width:29px!important;height:29px!important;color:var(--caui-text)!important;background:transparent!important;
+  border:0!important;border-radius:8px!important;font-size:9px!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-chip{
+  padding:6px 8px!important;background:var(--caui-panel)!important;color:var(--caui-text)!important;
+  border:1px solid var(--caui-line)!important;box-shadow:0 6px 16px rgba(40,44,58,.07)!important;font-size:7px!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-box,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-layer-row,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-comment{
+  background:var(--caui-panel2)!important;border:1px solid var(--caui-line)!important;box-shadow:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-bottom-dock{
+  gap:4px!important;padding:5px!important;border-radius:15px!important;background:var(--caui-panel)!important;
+  border:1px solid var(--caui-line)!important;box-shadow:0 10px 28px rgba(40,44,58,.10)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-dock-btn{
+  min-width:49px!important;padding:4px 5px!important;border-radius:10px!important;color:var(--caui-text)!important;
+  background:transparent!important;border:1px solid transparent!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-dock-btn.active{
+  background:color-mix(in srgb,var(--caui-accent) 9%,var(--caui-bg2))!important;
+  border-color:color-mix(in srgb,var(--caui-accent) 25%,transparent)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-dock-rune{
+  width:27px!important;height:27px!important;border-radius:8px!important;clip-path:none!important;
+  background:color-mix(in srgb,var(--caui-accent) 10%,var(--caui-bg2))!important;
+  color:var(--caui-accent)!important;border:1px solid color-mix(in srgb,var(--caui-accent) 18%,var(--caui-line))!important;
+  box-shadow:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-dock-glyph svg{
+  width:15px!important;height:15px!important;stroke-width:2.3!important;filter:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-dock-btn small{
+  color:var(--caui-muted)!important;font-size:7px!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-game-hud{
+  gap:6px!important;padding:6px!important;border-radius:16px!important;background:var(--caui-panel)!important;
+  border:1px solid rgba(255,255,255,.78)!important;box-shadow:var(--caui-shadow)!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-minimap,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-hero-card,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-power-bar,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-inventory-bar,
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-shop-command{
+  background:var(--caui-panel2)!important;border:1px solid var(--caui-line)!important;box-shadow:none!important
+}
+#creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-online-pill{
+  color:#17784b!important;background:rgba(52,199,89,.10)!important;border-color:rgba(52,199,89,.18)!important
+}
+
+/* Interface theme studio */
+#creativeArenaCleanRoot .ca-interface-theme-studio{
+  margin:0 0 14px;padding:13px;border-radius:17px;border:1px solid var(--caui-line,var(--ca-line));
+  background:linear-gradient(145deg,color-mix(in srgb,var(--caui-panel2,#15151a) 94%,transparent),color-mix(in srgb,var(--caui-panel,#101015) 92%,transparent));
+}
+#creativeArenaCleanRoot .ca-interface-theme-head{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:11px}
+#creativeArenaCleanRoot .ca-interface-theme-head span{font-size:7px;font-weight:900;letter-spacing:.16em;color:var(--caui-accent,var(--ca-accent));text-transform:uppercase}
+#creativeArenaCleanRoot .ca-interface-theme-head h4{margin:3px 0 2px;font-size:14px;color:var(--caui-text,var(--ca-text))}
+#creativeArenaCleanRoot .ca-interface-theme-head p{margin:0;font-size:8px;line-height:1.45;color:var(--caui-muted,var(--ca-muted))}
+#creativeArenaCleanRoot .ca-interface-theme-badge{padding:6px 8px;border-radius:999px;background:color-mix(in srgb,var(--caui-accent,var(--ca-accent)) 10%,transparent);font-size:7px;font-weight:900;color:var(--caui-accent,var(--ca-accent));white-space:nowrap}
+#creativeArenaCleanRoot .ca-interface-theme-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px}
+#creativeArenaCleanRoot .ca-interface-theme-card{
+  min-height:84px;padding:8px;border-radius:13px;border:1px solid var(--caui-line,var(--ca-line));
+  display:grid;grid-template-rows:32px auto auto;gap:3px;text-align:left;cursor:pointer;
+  background:var(--theme-bg,#fff);color:var(--theme-text,#1d1d1f);box-shadow:none;overflow:hidden;position:relative
+}
+#creativeArenaCleanRoot .ca-interface-theme-card:hover{transform:translateY(-1px);box-shadow:0 8px 20px rgba(35,39,52,.09)}
+#creativeArenaCleanRoot .ca-interface-theme-card.active{border-color:var(--theme-accent)!important;box-shadow:0 0 0 2px color-mix(in srgb,var(--theme-accent) 28%,transparent)!important}
+#creativeArenaCleanRoot .ca-interface-theme-preview{display:grid;grid-template-columns:28% 1fr 24%;gap:3px;padding:4px;border-radius:8px;background:var(--theme-canvas)}
+#creativeArenaCleanRoot .ca-interface-theme-preview i{display:block;border-radius:4px;background:var(--theme-panel)}
+#creativeArenaCleanRoot .ca-interface-theme-preview i:nth-child(2){background:linear-gradient(145deg,var(--theme-accent),var(--theme-soft))}
+#creativeArenaCleanRoot .ca-interface-theme-card strong{font-size:9px;color:var(--theme-text);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#creativeArenaCleanRoot .ca-interface-theme-card small{font-size:7px;color:var(--theme-muted);line-height:1.25}
+#creativeArenaCleanRoot .ca-board-palette-label{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:4px 0 8px}
+#creativeArenaCleanRoot .ca-board-palette-label strong{font-size:9px;color:var(--caui-text,var(--ca-text))}
+#creativeArenaCleanRoot .ca-board-palette-label span{font-size:7px;color:var(--caui-muted,var(--ca-muted))}
+#creativeArenaCleanRoot[data-ca-interface-theme="mythic-arena"] .ca-interface-theme-studio{
+  --caui-line:rgba(255,255,255,.10);--caui-panel:#11151c;--caui-panel2:#171319;--caui-text:#fff;--caui-muted:#aeb4c0;--caui-accent:#ef9c41
+}
+
+/* Keep the exact legacy visual language available. */
+#creativeArenaCleanRoot[data-ca-interface-theme="mythic-arena"]{font-family:Inter,system-ui,sans-serif!important}
+#creativeArenaCleanRoot[data-ca-interface-theme="mythic-arena"] .ca-interface-theme-card{font-family:Inter,system-ui,sans-serif!important}
+
+@media(max-width:1380px){
+  #creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-layout{grid-template-columns:200px minmax(0,1fr) 258px!important}
+}
+@media(max-width:1180px){
+  #creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-layout{grid-template-columns:minmax(0,1fr)!important}
+}
+@media(max-width:760px){
+  #creativeArenaCleanRoot .ca-interface-theme-grid{grid-template-columns:1fr 1fr}
+  #creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-topbar{grid-template-columns:1fr auto!important}
+  #creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-stack{grid-template-columns:repeat(3,minmax(0,1fr))!important}
+}
+@media(max-width:480px){
+  #creativeArenaCleanRoot .ca-interface-theme-grid{grid-template-columns:1fr}
+  #creativeArenaCleanRoot[data-ca-interface-theme]:not([data-ca-interface-theme="mythic-arena"]) .ca-tool-stack{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+}
+@media(prefers-reduced-motion:reduce){
+  #creativeArenaCleanRoot .ca-interface-theme-card{transition:none!important}
+}

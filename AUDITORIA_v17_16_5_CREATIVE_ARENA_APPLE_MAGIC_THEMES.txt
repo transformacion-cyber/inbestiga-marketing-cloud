@@ -1,0 +1,46 @@
+INBESTIGA Marketing Cloud v17.16.5
+CREATIVE ARENA · APPLE STUDIO & MAGIC THEME COLLECTION
+
+ALCANCE
+Esta versión modifica exclusivamente la apariencia de Creative Arena.
+
+APARIENCIA PREDETERMINADA
+- Apple Studio.
+- Fondo claro y limpio.
+- Paneles Liquid Glass.
+- Herramientas más pequeñas y organizadas.
+- Iconos compactos.
+- Inspector y barra superior simplificados.
+- Mejor jerarquía visual.
+
+TEMAS DE INTERFAZ
+1. Apple Studio
+2. Mítica / Dota
+3. Aurora Bloom
+4. Sakura Dream
+5. Prism Lab
+6. Emerald Spell
+7. Solar Forge
+8. Nebula Atelier
+9. Midnight Ink
+
+PERSISTENCIA
+El tema se guarda localmente por usuario utilizando el identificador visible
+de la sesión. El cambio de un usuario no afecta a los demás.
+
+TEMA MÍTICO
+La interfaz original se conserva como Mítica / Dota. Al elegirla se recupera
+la dirección visual anterior con runas, panel oscuro y HUD épico.
+
+SIN CAMBIOS
+- Herramientas y atajos.
+- Tablero y objetos.
+- Guardado local y sincronización.
+- Realtime y colaboración.
+- Konva.
+- Carga de imágenes.
+- Comentarios.
+- Capas.
+- Inspector.
+- Permisos.
+- Auth, RLS, RPC, Storage, SQL y Supabase.

@@ -1,0 +1,29 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.16.5",
+  "build": "CREATIVE ARENA · APPLE STUDIO & MAGIC THEME COLLECTION",
+  "base": "v17.16.4",
+  "generated_at": "2026-07-31T22:19:43.771459+00:00",
+  "files_count": 651,
+  "javascript_files": 85,
+  "json_files": 162,
+  "theme_count": 9,
+  "backend_changes": false,
+  "sql_changes": false,
+  "functional_changes_to_creative_arena": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "json": "OK",
+    "local_references": "OK",
+    "html_unique_ids": "OK",
+    "apple_default": "OK",
+    "legacy_mythic_available": "OK",
+    "magic_themes": "OK",
+    "compact_tools": "OK",
+    "per_user_persistence": "OK",
+    "no_polling": "OK",
+    "no_mutation_observer": "OK",
+    "official_clean_loader": "OK",
+    "version_alignment": "OK"
+  }
+}

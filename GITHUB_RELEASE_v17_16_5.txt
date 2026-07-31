@@ -1,0 +1,11 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.16.5 — Creative Arena · Apple Studio & Magic Theme Collection
+
+Establece Apple Studio como apariencia predeterminada de Creative Arena,
+con herramientas compactas y ordenadas. Conserva la interfaz Mítica / Dota
+y añade siete temas visuales creativos y mágicos guardados por usuario.
+
+COMMIT
+git add .
+git commit -m "feat: release v17.16.5 Creative Arena Apple Studio and magic themes"
+git push origin main

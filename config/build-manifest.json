@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.16.4",
-  "build": "OFFICIAL CLEAN START · ZERO OPERATIONAL DATA",
+  "frontend_version": "17.16.5",
+  "build": "CREATIVE ARENA · APPLE STUDIO & MAGIC THEME COLLECTION",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -470,6 +470,24 @@
       "name": "release-marker-v17-16-4",
       "path": "assets/js/release-marker-v17-16-4.js",
       "origin": "v17.16.4",
+      "mode": "canonical-release"
+    },
+    {
+      "name": "creative-arena-interface-themes-v17-16-5",
+      "path": "assets/js/creative-arena-interface-themes-v17-16-5.js",
+      "origin": "v17.16.5",
+      "mode": "appearance-only"
+    },
+    {
+      "name": "creative-arena-interface-themes-v17-16-5-css",
+      "path": "assets/css/creative-arena-interface-themes-v17-16-5.css",
+      "origin": "v17.16.5",
+      "mode": "appearance-only"
+    },
+    {
+      "name": "release-marker-v17-16-5",
+      "path": "assets/js/release-marker-v17-16-5.js",
+      "origin": "v17.16.5",
       "mode": "canonical-release"
     }
   ],
@@ -963,11 +981,20 @@
     "one_time_local_history_cleanup_v17164": true,
     "preserve_approved_appearance_v17164": true,
     "storage_cleanup_via_api_or_dashboard_v17164": true,
-    "no_schema_changes_v17164": true
+    "no_schema_changes_v17164": true,
+    "creative_arena_apple_default_v17165": true,
+    "creative_arena_legacy_mythic_theme_v17165": true,
+    "creative_arena_magic_theme_collection_v17165": true,
+    "creative_arena_compact_tools_v17165": true,
+    "creative_arena_per_user_interface_theme_v17165": true,
+    "creative_arena_appearance_only_v17165": true,
+    "official_clean_start_loader_restored_v17165": true,
+    "no_backend_changes_v17165": true,
+    "no_sql_changes_v17165": true
   },
   "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
   "hotfix": "v17.15.6 fixes Command Center null.id crashes, prevents duplicate/re-entrant initialization, preserves the canonical release version against lazy-module downgrades, adds rendered visual-layout health, ignores historical browser incidents in the current score, and stops Work 360 cloud hydration from creating false local pending changes. No SQL or backend changes.",
-  "version": "v17.16.4",
+  "version": "v17.16.5",
   "name": "INBESTIGA Marketing Cloud v17.16.0",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
@@ -1069,7 +1096,7 @@
     "sakura_no_polling_v17155": true,
     "sakura_no_mutation_observer_v17155": true
   },
-  "release": "Official clean-start package that preserves accounts and configuration while resetting operational data and local test history.",
+  "release": "Sets Apple Studio as the default Creative Arena interface, preserves the legacy Mythic/Dota appearance and adds seven inspiring visual themes.",
   "scripts": [
     "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
     "assets/js/release-marker-v17-15-5.js",
@@ -1081,6 +1108,7 @@
     "assets/js/requests360-internal-v17-16-3.js",
     "assets/js/requests360-task-resources-v17-16-3.js",
     "assets/js/official-clean-start-v17-16-4.js",
-    "assets/js/release-marker-v17-16-4.js"
+    "assets/js/creative-arena-interface-themes-v17-16-5.js",
+    "assets/js/release-marker-v17-16-5.js"
   ]
 }

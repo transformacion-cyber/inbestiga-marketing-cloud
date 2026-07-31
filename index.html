@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-inbestiga-build="v17.16.4">
+<html lang="es" data-inbestiga-build="v17.16.5">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -10,11 +10,10 @@
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-<title>INBESTIGA Marketing Cloud · v17.16.4 OFFICIAL CLEAN START · ZERO OPERATIONAL DATA</title>
+<title>INBESTIGA Marketing Cloud · v17.16.5 CREATIVE ARENA · APPLE STUDIO & MAGIC THEME COLLECTION</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>if(!window.supabase){document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>')}</script>
 <script src="config/public-runtime-config.js" data-inbestiga-module="managed-public-runtime-config"></script>
-<script src="assets/js/official-clean-start-v17-16-4.js" data-inbestiga-module="official-clean-start-v17-16-4"></script>
 <script src="assets/js/interaction-integrity-bootstrap-v17-15-2.js" data-inbestiga-module="interaction-integrity-bootstrap-v17-15-2"></script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -3639,6 +3638,7 @@ body.v12-palette-open{overflow:hidden}
 <link rel="stylesheet" href="assets/css/unified-command-center-v17-15-0.css" data-inbestiga-module="unified-command-center-v17-15-0">
 <link rel="stylesheet" href="assets/css/interaction-integrity-v17-15-2.css" data-inbestiga-module="interaction-integrity-v17-15-2">
 <link rel="stylesheet" href="assets/css/operational-command-center-v17-12-12.css" data-inbestiga-module="operational-command-center-v17-12-12">
+<link rel="stylesheet" href="assets/css/creative-arena-interface-themes-v17-16-5.css" data-inbestiga-module="creative-arena-interface-themes-v17-16-5">
 </head>
 <body>
 <button
@@ -9226,7 +9226,7 @@ try{v417Bind()}catch(e){console.warn('[v4.17] No se pudo iniciar Security & Gove
   async function init(){
     root=$("creativeArenaCleanRoot");if(!root)return;
     if(initialized&&stage){syncViewport();const s=stageSize();stage.size(s);stage.batchDraw();return}
-    userId=await resolveUser();await loadData();destroyStage();shell();renderParticipants();renderThemeCards();shapesRender();applyPrefs();renderLoadout();renderShopLoadout();renderShopCatalog();bind();bindViewport();syncViewport();try{if(document.fonts?.ready)await document.fonts.ready;await ensureKonva();initStage();render();recoverCamera();viewSet("props");setTool("select");initialized=true;connectRealtime();syncViewport();requestAnimationFrame(()=>requestAnimationFrame(()=>{syncViewport();if(stage)fit(false)}));toast("Creative Arena lista")}catch(e){root.innerHTML='<div class="ca-shell"><div class="ca-box"><h3>Creative Arena</h3><p class="ca-note">No se pudo cargar el motor grafico. Revisa la conexion a internet o el CDN de Konva.</p></div></div>';console.error(e)}}
+    userId=await resolveUser();await loadData();destroyStage();shell();renderParticipants();renderThemeCards();shapesRender();applyPrefs();window.INBESTIGA_CREATIVE_ARENA_THEMES?.mount?.();renderLoadout();renderShopLoadout();renderShopCatalog();bind();bindViewport();syncViewport();try{if(document.fonts?.ready)await document.fonts.ready;await ensureKonva();initStage();render();recoverCamera();viewSet("props");setTool("select");initialized=true;connectRealtime();syncViewport();requestAnimationFrame(()=>requestAnimationFrame(()=>{syncViewport();if(stage)fit(false)}));toast("Creative Arena lista")}catch(e){root.innerHTML='<div class="ca-shell"><div class="ca-box"><h3>Creative Arena</h3><p class="ca-note">No se pudo cargar el motor grafico. Revisa la conexion a internet o el CDN de Konva.</p></div></div>';console.error(e)}}
   function destroyStage(){if(resizeObserver){resizeObserver.disconnect();resizeObserver=null}if(stage){try{stage.destroy()}catch(e){}stage=null}initialized=false}
   function destroy(){disconnectRealtime();destroyStage();if(root)root.innerHTML=""}
   async function openBoard(key){const next=String(key||"").trim();if(!next)return init();if(next===BOARD_KEY&&initialized)return init();disconnectRealtime();destroyStage();BOARD_KEY=next;try{localStorage.setItem("inbestiga_ca_current_board",BOARD_KEY)}catch(e){}board=null;prefs=null;presenceMembers=[];if(root)root.innerHTML="";return init()}
@@ -9732,6 +9732,8 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <link rel="stylesheet" href="assets/css/sakura-chat-composer-hotfix-v17-15-5.css" data-inbestiga-module="sakura-chat-composer-hotfix-v17-15-5">
 <script src="assets/js/sakura-chat-composer-hotfix-v17-15-5.js" data-inbestiga-module="sakura-chat-composer-hotfix-v17-15-5"></script>
 <script src="assets/js/release-marker-v17-15-5.js" data-inbestiga-module="release-marker-v17-15-5"></script>
-<script src="assets/js/release-marker-v17-16-4.js" data-inbestiga-module="release-marker-v17-16-4"></script>
+<script src="assets/js/official-clean-start-v17-16-4.js" data-inbestiga-module="official-clean-start-v17-16-4"></script>
+<script src="assets/js/creative-arena-interface-themes-v17-16-5.js" data-inbestiga-module="creative-arena-interface-themes-v17-16-5"></script>
+<script src="assets/js/release-marker-v17-16-5.js" data-inbestiga-module="release-marker-v17-16-5"></script>
 </body>
 </html>

@@ -1,11 +1,11 @@
-/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.16.4 ===== */
+/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.16.5 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.16.4";
-  const BUILD = "OFFICIAL CLEAN START · ZERO OPERATIONAL DATA";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.16.5";
+  const BUILD = "CREATIVE ARENA · APPLE STUDIO & MAGIC THEME COLLECTION";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";
   const DEFAULT_BUCKET = "inbestiga-media";
