@@ -1,0 +1,14 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.16.2
+SOLICITUDES 360 · CUSTOM AREA & REALTIME REQUEST NOTIFICATIONS
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_16_2_SOLICITUDES_360_CUSTOM_AREA_REALTIME_NOTIFICATIONS_FULL_PLATFORM.zip
+
+Conservar:
+- Campo rqAreaOther cuando rqArea = Otra área.
+- requester_area recibe el nombre exacto escrito.
+- Realtime maneja INSERT no-draft y UPDATE draft -> new.
+- Burbuja con solicitante, área, título y apertura directa.
+- Recuperación event-driven al volver a la pestaña, sin polling.
+- Botón Comprobar recepción de solo lectura.
+- Sin cambios SQL, RLS, RPC, Storage ni Auth.

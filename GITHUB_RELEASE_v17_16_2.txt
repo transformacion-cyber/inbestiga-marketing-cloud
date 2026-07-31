@@ -1,0 +1,12 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.16.2 — Solicitudes 360 · Custom Area & Realtime Request Notifications
+
+Añade un campo dinámico para escribir el área exacta cuando se selecciona
+“Otra área” y corrige la recepción en tiempo real de solicitudes finalizadas.
+La plataforma muestra una burbuja inmediata con solicitante, área y pedido,
+permite abrir el requerimiento y recupera avisos perdidos al volver a la pestaña.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.16.2 Solicitudes 360 custom area and realtime notifications"
+git push origin main

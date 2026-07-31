@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-portal-version="v17.16.1">
+<html lang="es" data-portal-version="v17.16.2">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -10,10 +10,10 @@
   <link rel="manifest" href="/solicitudes/manifest.webmanifest">
   <link rel="icon" href="/assets/icons/icon-192.png">
   <link rel="apple-touch-icon" href="/assets/icons/icon-192.png">
-  <link rel="stylesheet" href="/solicitudes/assets/solicitudes-360.css?v=17.16.1">
+  <link rel="stylesheet" href="/solicitudes/assets/solicitudes-360.css?v=17.16.2">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script>if(!window.supabase){document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>')}</script>
-  <script src="/config/public-runtime-config.js?v=17.16.1"></script>
+  <script src="/config/public-runtime-config.js?v=17.16.2"></script>
 </head>
 <body>
   <div class="rq-ambient" aria-hidden="true">
@@ -129,6 +129,15 @@
               </div>
             </label>
           </div>
+
+          <label class="rq-field rq-area-other hidden" id="rqAreaOtherField">
+            <span>Escribe tu área exacta</span>
+            <div class="rq-control">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20V8l8-4 8 4v12M8 20v-5h8v5M8 10h.01M12 10h.01M16 10h.01"/></svg>
+              <input id="rqAreaOther" maxlength="120" placeholder="Ej. Logística, Legal, Calidad o Sistemas">
+            </div>
+            <small class="rq-field-hint">Escríbela tal como se conoce dentro de INBESTIGA.</small>
+          </label>
 
           <label class="rq-remember">
             <input id="rqRemember" type="checkbox" checked>
@@ -356,6 +365,6 @@
     <small>Simple, privado y conectado con Marketing.</small>
   </footer>
 
-  <script src="/solicitudes/assets/solicitudes-360.js?v=17.16.1"></script>
+  <script src="/solicitudes/assets/solicitudes-360.js?v=17.16.2"></script>
 </body>
 </html>

@@ -1,5 +1,5 @@
-/* Solicitudes 360 v17.16.1 */
-const CACHE="inbestiga-solicitudes-360-v17-16-1";
+/* Solicitudes 360 v17.16.2 */
+const CACHE="inbestiga-solicitudes-360-v17-16-2";
 const PREFIX="inbestiga-solicitudes-360-";
 const SHELL=[
   "/solicitudes/",

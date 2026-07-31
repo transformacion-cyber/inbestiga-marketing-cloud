@@ -1,0 +1,31 @@
+INBESTIGA Marketing Cloud v17.16.2
+SOLICITUDES 360 · CUSTOM AREA & REALTIME REQUEST NOTIFICATIONS
+
+REVISIÓN DEL FLUJO REAL
+- El portal crea primero un registro con estado draft mediante ibm_public_request_begin.
+- Después carga archivos al bucket privado inbestiga-requests.
+- Finalmente ibm_public_request_finalize cambia el registro de draft a new.
+- La bandeja interna consulta todos los registros distintos de draft.
+
+DEFECTO ENCONTRADO
+El canal Realtime ignoraba correctamente el INSERT en estado draft, pero cuando
+la finalización emitía UPDATE a estado new solo actualizaba solicitudes ya
+existentes en memoria. Como el draft nunca se había añadido, la nueva solicitud
+no se insertaba en la bandeja ni disparaba la notificación hasta recargar.
+
+CORRECCIÓN
+- El UPDATE draft -> new ahora inserta la solicitud si todavía no existe.
+- Burbuja inmediata con nombre, área, título y tipo solicitado.
+- Botón para abrir directamente el requerimiento.
+- Cola de notificaciones y deduplicación por usuario.
+- Recuperación de requerimientos recibidos mientras la pestaña estaba inactiva.
+- Indicador de recepción y botón read-only Comprobar recepción.
+- SAKURA cambia a estado atenta y recibe el evento inbestiga:request-created.
+
+PORTAL
+- Al seleccionar Otra área aparece un campo obligatorio para escribir el área exacta.
+- El valor exacto se guarda como requester_area sin modificar tablas ni SQL.
+
+VALIDACIÓN PRODUCTIVA PENDIENTE
+El código y el flujo se validaron estáticamente. La prueba completa de producción
+requiere desplegar y enviar una solicitud de prueba desde /solicitudes/.

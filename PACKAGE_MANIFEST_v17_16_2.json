@@ -1,0 +1,25 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.16.2",
+  "build": "SOLICITUDES 360 · CUSTOM AREA & REALTIME REQUEST NOTIFICATIONS",
+  "base": "v17.16.1",
+  "generated_at": "2026-07-31T21:14:50.839694+00:00",
+  "files_count": 625,
+  "javascript_files": 78,
+  "json_files": 159,
+  "sql_changes": false,
+  "backend_changes": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "json": "OK",
+    "portal_unique_ids": "OK",
+    "custom_area_field": "OK",
+    "custom_area_submission": "OK",
+    "draft_to_new_realtime_fix": "OK",
+    "notification_bubble": "OK",
+    "missed_notification_recovery": "OK",
+    "read_only_reception_check": "OK",
+    "pwa_alignment": "OK",
+    "no_polling": "OK"
+  }
+}
