@@ -1,0 +1,42 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.15.10",
+  "build": "SAKURA CONVERSATION CONTEXT SANITIZATION HOTFIX",
+  "base": "v17.15.9",
+  "generated_at": "2026-07-31T17:54:17.458791+00:00",
+  "files_count": 562,
+  "javascript_files": 61,
+  "internal_javascript_blocks": 14,
+  "json_files": 147,
+  "html_unique_ids": 646,
+  "pwa_resources": 83,
+  "modified_files": [
+    "assets/js/sakura-personal-workspace-v17-12-13-6.js",
+    "assets/js/system-health-center.js",
+    "config/build-manifest.json",
+    "config/public-runtime-config.js",
+    "index.html",
+    "manifest.webmanifest",
+    "service-worker.js"
+  ],
+  "new_files": [
+    "AUDITORIA_v17_15_10_SAKURA_CONTEXT_SANITIZATION.txt",
+    "FUNCTIONAL_TESTS_v17_15_10.json",
+    "GITHUB_RELEASE_v17_15_10.txt",
+    "PROMPT_CONTINUIDAD_CHATGPT_PRO_v17_15_10.txt",
+    "PROTECTED_DIFF_v17_15_10.json",
+    "assets/js/release-marker-v17-15-10.js"
+  ],
+  "backend_changes": false,
+  "sql_changes": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "internal_javascript_syntax": "OK",
+    "json": "OK",
+    "duplicate_html_ids": "OK",
+    "local_references": "OK",
+    "pwa_resources": "OK",
+    "conversation_sanitizer": "OK",
+    "synthetic_obsolete_error_filter": "OK"
+  }
+}

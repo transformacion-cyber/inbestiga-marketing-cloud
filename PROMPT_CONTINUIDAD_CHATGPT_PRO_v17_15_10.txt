@@ -1,0 +1,8 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.10
+SAKURA CONVERSATION CONTEXT SANITIZATION HOTFIX
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_15_10_SAKURA_CONVERSATION_CONTEXT_SANITIZATION_FULL_PLATFORM.zip
+
+Conservar la limpieza de mensajes técnicos obsoletos antes de guardar,
+resumir o enviar el historial a Ollama.

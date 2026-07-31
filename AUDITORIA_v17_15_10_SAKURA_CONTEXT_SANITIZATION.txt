@@ -1,0 +1,23 @@
+INBESTIGA Marketing Cloud v17.15.10
+SAKURA CONVERSATION CONTEXT SANITIZATION HOTFIX
+
+CAUSA CONFIRMADA
+La conexión local y gemma3:4b estaban activos. Sin embargo, el historial local
+de la conversación conservaba respuestas antiguas que pedían ejecutar
+PREPARAR_MODELO_SAKURA.bat o crear sakura-local.
+
+La plataforma enviaba esos mensajes antiguos nuevamente a Ollama como parte del
+historial. El modelo los repetía aunque ya no fueran válidos.
+
+CORRECCIÓN
+- Limpieza automática de mensajes técnicos obsoletos al cargar la conversación.
+- Esos mensajes ya no se guardan ni se envían a Ollama.
+- Tampoco se incluyen en el resumen ni en el conocimiento relevante.
+- El prompt de personalidad prohíbe repetir esas instrucciones antiguas.
+- Si Ollama llegara a devolver una frase obsoleta, SAKURA la reemplaza por una
+  explicación limpia y sanea el contexto.
+- Sin cambios en Auth, RLS, RPC, Storage, SQL, Supabase u Ollama.
+
+ACCIÓN INMEDIATA
+En la versión anterior puede pulsarse Borrar conversación una vez.
+En v17.15.10 la limpieza se realiza automáticamente al recargar.

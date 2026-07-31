@@ -1,0 +1,33 @@
+{
+  "version": "v17.15.10",
+  "tests": [
+    {
+      "id": "obsolete_prepare_script_pattern",
+      "status": "pass"
+    },
+    {
+      "id": "conversation_load_sanitization",
+      "status": "pass"
+    },
+    {
+      "id": "conversation_save_sanitization",
+      "status": "pass"
+    },
+    {
+      "id": "ollama_payload_sanitization",
+      "status": "pass"
+    },
+    {
+      "id": "learning_context_sanitization",
+      "status": "pass"
+    },
+    {
+      "id": "stream_output_guard",
+      "status": "pass"
+    },
+    {
+      "id": "backend_changes",
+      "status": "none"
+    }
+  ]
+}

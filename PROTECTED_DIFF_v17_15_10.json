@@ -1,0 +1,15 @@
+{
+  "version": "v17.15.10",
+  "auth": "sin cambios",
+  "rls": "sin cambios",
+  "rpc": "sin cambios",
+  "storage": "sin cambios",
+  "sql": "sin cambios",
+  "ollama": "sin cambios",
+  "productive_data": "sin cambios",
+  "scope": [
+    "SAKURA local conversation history",
+    "SAKURA Ollama prompt context",
+    "frontend version metadata"
+  ]
+}

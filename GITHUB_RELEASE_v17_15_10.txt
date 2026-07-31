@@ -1,0 +1,11 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.10 — Sakura Conversation Context Sanitization Hotfix
+
+Elimina automáticamente del historial de SAKURA los errores técnicos antiguos
+que pedían ejecutar PREPARAR_MODELO_SAKURA.bat, evita enviarlos a Ollama y
+protege las respuestas contra la repetición de instrucciones obsoletas.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.15.10 SAKURA conversation context sanitization hotfix"
+git push origin main
