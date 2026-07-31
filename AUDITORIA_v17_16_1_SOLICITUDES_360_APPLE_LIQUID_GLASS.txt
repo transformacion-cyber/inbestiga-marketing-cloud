@@ -1,0 +1,25 @@
+INBESTIGA Marketing Cloud v17.16.1
+SOLICITUDES 360 · APPLE LIQUID GLASS PORTAL UX HOTFIX
+
+PROBLEMA OBSERVADO
+El portal se abría mediante /requerimientos, pero utilizaba rutas relativas
+como assets/solicitudes-360.css. El navegador resolvía esa referencia como
+/assets/solicitudes-360.css y el archivo no existía allí. Por eso se mostraba
+HTML sin estilos y todos los elementos con apariencia básica.
+
+CORRECCIÓN
+- CSS, JavaScript, manifiesto, iconos y configuración usan rutas absolutas.
+- /requerimientos y /solicitudes redirigen a /solicitudes/.
+- Rediseño completo Apple / Liquid Glass.
+- Tipografía del sistema, sin depender de Google Fonts.
+- Barra superior translúcida.
+- Hero editorial, tarjetas de cristal y jerarquía clara.
+- Campos grandes, accesibles y adaptativos.
+- Micrófono, audio, adjuntos y enlaces rediseñados.
+- Botón de envío claro y optimizado para móvil.
+- PWA independiente con limpieza segura: ya no elimina cachés de Marketing Cloud.
+
+SIN CAMBIOS
+- SQL, tablas, RLS, RPC, Storage y lógica productiva.
+- Datos de Solicitudes 360.
+- Captura de audio, archivos, fotos, videos y enlaces.

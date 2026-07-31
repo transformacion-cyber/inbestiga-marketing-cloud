@@ -1,0 +1,13 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.16.1
+SOLICITUDES 360 · APPLE LIQUID GLASS PORTAL UX HOTFIX
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_16_1_SOLICITUDES_360_APPLE_LIQUID_GLASS_FULL_PLATFORM.zip
+
+Conservar:
+- Portal canónico en /solicitudes/.
+- Redirección /requerimientos → /solicitudes/.
+- Rutas absolutas para CSS, JS, manifiesto, configuración e iconos.
+- Diseño Apple Liquid Glass y tipografía del sistema.
+- PWA independiente que solo elimina cachés con prefijo de Solicitudes 360.
+- Toda la lógica productiva y SQL de v17.16.0.

@@ -1,0 +1,25 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.16.1",
+  "build": "SOLICITUDES 360 · APPLE LIQUID GLASS PORTAL UX HOTFIX",
+  "base": "v17.16.0",
+  "generated_at": "2026-07-31T20:57:20.797608+00:00",
+  "files_count": 618,
+  "javascript_files": 76,
+  "json_files": 158,
+  "portal_html_ids": 44,
+  "sql_changes": false,
+  "backend_changes": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "json": "OK",
+    "portal_unique_ids": "OK",
+    "productive_form_ids": "OK",
+    "absolute_asset_paths": "OK",
+    "canonical_redirects": "OK",
+    "apple_liquid_glass_css": "OK",
+    "system_font_stack": "OK",
+    "portal_pwa_cache_isolation": "OK",
+    "main_version_alignment": "OK"
+  }
+}

@@ -60,16 +60,46 @@
           "value": "camera=(self), microphone=(self)"
         }
       ]
+    },
+    {
+      "source": "/solicitudes/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/solicitudes/assets/solicitudes-360.css",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    },
+    {
+      "source": "/solicitudes/assets/solicitudes-360.js",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
     }
   ],
-  "rewrites": [
+  "rewrites": [],
+  "redirects": [
     {
       "source": "/requerimientos",
-      "destination": "/solicitudes/index.html"
+      "destination": "/solicitudes/",
+      "permanent": false
     },
     {
       "source": "/solicitudes",
-      "destination": "/solicitudes/index.html"
+      "destination": "/solicitudes/",
+      "permanent": false
     }
   ]
 }

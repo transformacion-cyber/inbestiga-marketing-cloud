@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.16.0",
-  "build": "SOLICITUDES 360 · PORTAL INTERÁREAS, CAPTURA MULTIMEDIA & SAKURA REQUEST ASSISTANT",
+  "frontend_version": "17.16.1",
+  "build": "SOLICITUDES 360 · APPLE LIQUID GLASS PORTAL UX HOTFIX",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -410,6 +410,18 @@
       "name": "release-marker-v17-16-0",
       "path": "assets/js/release-marker-v17-16-0.js",
       "origin": "v17.16.0",
+      "mode": "canonical-release"
+    },
+    {
+      "name": "requests360-public-apple-liquid-glass-v17-16-1",
+      "path": "solicitudes/assets/solicitudes-360.css",
+      "origin": "v17.16.1",
+      "mode": "public-portal-ux"
+    },
+    {
+      "name": "release-marker-v17-16-1",
+      "path": "assets/js/release-marker-v17-16-1.js",
+      "origin": "v17.16.1",
       "mode": "canonical-release"
     }
   ],
@@ -877,11 +889,17 @@
     "solicitudes360_sakura_assistant": true,
     "solicitudes360_realtime": true,
     "solicitudes360_backend_required": true,
-    "no_service_role_in_browser": true
+    "no_service_role_in_browser": true,
+    "requests360_absolute_asset_paths_v17161": true,
+    "requests360_apple_liquid_glass_v17161": true,
+    "requests360_canonical_redirect_v17161": true,
+    "requests360_safe_pwa_cache_cleanup_v17161": true,
+    "requests360_system_font_stack_v17161": true,
+    "no_database_changes_v17161": true
   },
   "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
   "hotfix": "v17.15.6 fixes Command Center null.id crashes, prevents duplicate/re-entrant initialization, preserves the canonical release version against lazy-module downgrades, adds rendered visual-layout health, ignores historical browser incidents in the current score, and stops Work 360 cloud hydration from creating false local pending changes. No SQL or backend changes.",
-  "version": "v17.16.0",
+  "version": "v17.16.1",
   "name": "INBESTIGA Marketing Cloud v17.16.0",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
@@ -983,7 +1001,7 @@
     "sakura_no_polling_v17155": true,
     "sakura_no_mutation_observer_v17155": true
   },
-  "release": "Portal interáreas sin cuentas, captura de voz y archivos, bandeja interna Solicitudes 360 e integración con SAKURA.",
+  "release": "Corrects public portal asset routing and redesigns Solicitudes 360 with an Apple-inspired Liquid Glass interface.",
   "scripts": [
     "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
     "assets/js/release-marker-v17-15-5.js",

@@ -1,0 +1,11 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.16.1 — Solicitudes 360 · Apple Liquid Glass Portal Ux Hotfix
+
+Corrige la carga visual del portal cuando se abre desde /requerimientos y
+rediseña Solicitudes 360 con una experiencia Apple Liquid Glass, responsive,
+intuitiva y optimizada para celular, tablet y PC.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.16.1 Solicitudes 360 Apple Liquid Glass portal UX"
+git push origin main
