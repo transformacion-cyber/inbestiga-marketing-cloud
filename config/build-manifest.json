@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.16.2",
-  "build": "SOLICITUDES 360 · CUSTOM AREA & REALTIME REQUEST NOTIFICATIONS",
+  "frontend_version": "17.16.3",
+  "build": "SOLICITUDES 360 · AUDIO RECOVERY & COMPLETE TASK HANDOFF",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -440,6 +440,24 @@
       "name": "release-marker-v17-16-2",
       "path": "assets/js/release-marker-v17-16-2.js",
       "origin": "v17.16.2",
+      "mode": "canonical-release"
+    },
+    {
+      "name": "requests360-internal-v17-16-3",
+      "path": "assets/js/requests360-internal-v17-16-3.js",
+      "origin": "v17.16.3",
+      "mode": "productive"
+    },
+    {
+      "name": "requests360-task-resources-v17-16-3",
+      "path": "assets/js/requests360-task-resources-v17-16-3.js",
+      "origin": "v17.16.3",
+      "mode": "productive"
+    },
+    {
+      "name": "release-marker-v17-16-3",
+      "path": "assets/js/release-marker-v17-16-3.js",
+      "origin": "v17.16.3",
       "mode": "canonical-release"
     }
   ],
@@ -919,11 +937,18 @@
     "requests360_notification_bubble_v17162": true,
     "requests360_missed_request_recovery_v17162": true,
     "requests360_read_only_reception_check_v17162": true,
-    "no_sql_changes_v17162": true
+    "no_sql_changes_v17162": true,
+    "requests360_audio_on_demand_v17163": true,
+    "requests360_audio_player_v17163": true,
+    "requests360_direct_task_creation_v17163": true,
+    "requests360_assignee_from_panel_v17163": true,
+    "requests360_complete_resource_handoff_v17163": true,
+    "requests360_task_detail_resources_v17163": true,
+    "no_sql_required_v17163": true
   },
   "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
   "hotfix": "v17.15.6 fixes Command Center null.id crashes, prevents duplicate/re-entrant initialization, preserves the canonical release version against lazy-module downgrades, adds rendered visual-layout health, ignores historical browser incidents in the current score, and stops Work 360 cloud hydration from creating false local pending changes. No SQL or backend changes.",
-  "version": "v17.16.2",
+  "version": "v17.16.3",
   "name": "INBESTIGA Marketing Cloud v17.16.0",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
@@ -1025,7 +1050,7 @@
     "sakura_no_polling_v17155": true,
     "sakura_no_mutation_observer_v17155": true
   },
-  "release": "Adds exact custom area capture and reliable real-time request notifications for draft-to-new submissions.",
+  "release": "Loads request attachments on demand, restores recorded audio playback, creates tasks directly from the request drawer and links every original resource.",
   "scripts": [
     "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
     "assets/js/release-marker-v17-15-5.js",
@@ -1034,7 +1059,8 @@
     "assets/js/sakura-authenticated-orb-mount-v17-15-13.js",
     "assets/js/sakura-static-orb-mount-v17-15-14.js",
     "assets/js/release-marker-v17-15-14.js",
-    "assets/js/requests360-internal-v17-16-2.js",
-    "assets/js/release-marker-v17-16-2.js"
+    "assets/js/requests360-internal-v17-16-3.js",
+    "assets/js/requests360-task-resources-v17-16-3.js",
+    "assets/js/release-marker-v17-16-3.js"
   ]
 }

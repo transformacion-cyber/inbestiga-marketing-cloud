@@ -1,0 +1,15 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.16.3
+SOLICITUDES 360 · AUDIO RECOVERY & COMPLETE TASK HANDOFF
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_16_3_SOLICITUDES_360_AUDIO_TASK_HANDOFF_FULL_PLATFORM.zip
+
+Conservar:
+- Consulta de adjuntos al abrir cada requerimiento.
+- Reproductor de audio con URL firmada.
+- Creación real de tareas desde el drawer de Solicitudes 360.
+- Responsable, fecha, prioridad y título definidos en el mismo panel.
+- Vínculo por interarea_requests.converted_task_id.
+- Audios, documentos y enlaces visibles dentro del detalle de la tarea.
+- No duplicar archivos ni usar enlaces firmados como referencias permanentes.
+- Sin SQL adicional.

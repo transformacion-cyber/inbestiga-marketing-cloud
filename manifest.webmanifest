@@ -1,7 +1,7 @@
 {
   "name": "INBESTIGA Marketing Cloud",
   "short_name": "INBESTIGA",
-  "description": "INBESTIGA Marketing Cloud con áreas personalizadas y notificaciones inmediatas de Solicitudes 360.",
+  "description": "Marketing Cloud con audio recuperado y transferencia completa de Solicitudes 360 a Trabajo 360.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -21,5 +21,5 @@
       "purpose": "any maskable"
     }
   ],
-  "id": "inbestiga-marketing-cloud-v17-16-2"
+  "id": "inbestiga-marketing-cloud-v17-16-3"
 }

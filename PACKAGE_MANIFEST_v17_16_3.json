@@ -1,0 +1,26 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.16.3",
+  "build": "SOLICITUDES 360 · AUDIO RECOVERY & COMPLETE TASK HANDOFF",
+  "base": "v17.16.2",
+  "generated_at": "2026-07-31T21:35:45.146286+00:00",
+  "files_count": 633,
+  "javascript_files": 81,
+  "json_files": 160,
+  "sql_required": false,
+  "backend_changes": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "json": "OK",
+    "local_references": "OK",
+    "html_unique_ids": "OK",
+    "audio_on_demand_query": "OK",
+    "audio_mime_extension_detection": "OK",
+    "audio_player_markup": "OK",
+    "direct_task_creation": "OK",
+    "created_task_verification": "OK",
+    "converted_task_link": "OK",
+    "task_resource_inheritance": "OK",
+    "version_alignment": "OK"
+  }
+}

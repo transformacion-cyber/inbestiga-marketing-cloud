@@ -1,0 +1,11 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.16.3 — Solicitudes 360 · Audio Recovery & Complete Task Handoff
+
+Recupera el audio consultando los adjuntos al abrir cada solicitud y permite
+crear la tarea real desde el mismo panel, asignar responsable y transferir
+todos los audios, documentos, imágenes y enlaces al detalle de Trabajo 360.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.16.3 Solicitudes 360 audio and complete task handoff"
+git push origin main

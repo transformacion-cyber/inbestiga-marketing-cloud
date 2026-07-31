@@ -1,0 +1,60 @@
+/* INBESTIGA v17.16.3 · Solicitudes 360 audio and task handoff */
+.req360-audio-box{background:linear-gradient(145deg,#f7f1ff,#eef8ff);border-color:rgba(110,38,246,.14)}
+.req360-audio-list{display:grid;gap:10px}
+.req360-file.req360-file-audio{grid-template-columns:48px minmax(0,1fr) auto;background:linear-gradient(145deg,#fff,#f6f0ff);border:1px solid rgba(110,38,246,.12);padding:12px}
+.req360-file-copy small{display:block;color:#b33d55;font-size:8px;margin-top:3px}
+.req360-file-audio .req360-file-icon{background:linear-gradient(145deg,#7047eb,#bf54d9);color:#fff;box-shadow:0 8px 20px rgba(110,38,246,.20)}
+.req360-file-audio .req360-audio{grid-column:1/-1;height:38px;margin:2px 0 0}
+.req360-documents-box{background:rgba(255,255,255,.90)}
+.req360-documents-box .req360-files{grid-template-columns:repeat(2,minmax(0,1fr))}
+.req360-task-handoff{margin-top:18px;padding:19px;border-radius:22px;background:linear-gradient(145deg,#21152b,#4d235b 55%,#6823d7);color:#fff;box-shadow:0 18px 44px rgba(50,24,65,.18)}
+.req360-task-handoff-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px}
+.req360-task-handoff-head span:first-child{font-size:8px;font-weight:900;letter-spacing:.16em;color:#d8bfff}
+.req360-task-handoff h3{font-size:16px;margin:5px 0 4px}
+.req360-task-handoff p{font-size:9px;line-height:1.5;color:#d9cde0;margin:0}
+.req360-handoff-count{display:grid;place-items:center;min-width:72px;min-height:32px;padding:0 10px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.15);font-size:8px;font-weight:850}
+.req360-task-grid{display:grid;grid-template-columns:1.2fr .8fr .7fr;gap:9px;margin-top:15px}
+.req360-task-grid label{display:grid;gap:6px;font-size:8px;font-weight:800;color:#d9cde0}
+.req360-task-grid label.full{grid-column:1/-1}
+.req360-task-grid input,.req360-task-grid select{height:42px;border:1px solid rgba(255,255,255,.16);border-radius:12px;padding:0 11px;background:rgba(255,255,255,.11);color:#fff;font:inherit;font-size:10px;outline:0}
+.req360-task-grid select option{color:#2f2037;background:#fff}
+.req360-task-grid input:focus,.req360-task-grid select:focus{border-color:rgba(255,255,255,.52);box-shadow:0 0 0 3px rgba(255,255,255,.08)}
+.req360-handoff-summary{display:flex;justify-content:space-between;gap:12px;margin-top:12px;padding:10px 12px;border-radius:13px;background:rgba(255,255,255,.08);font-size:8px;color:#d9cde0}
+.req360-handoff-summary strong{color:#fff}
+.req360-create-task{width:100%;margin-top:11px;border:0;border-radius:13px;padding:12px 14px;background:linear-gradient(135deg,#fff,#eadfff);color:#4e2363;font:inherit;font-size:10px;font-weight:900;cursor:pointer;box-shadow:0 10px 25px rgba(18,8,27,.18)}
+.req360-create-task:disabled{opacity:.55;cursor:wait}
+.req360-linked-task{display:flex;align-items:center;justify-content:space-between;gap:14px;margin-top:15px;padding:13px;border-radius:15px;background:rgba(255,255,255,.10);border:1px solid rgba(255,255,255,.14)}
+.req360-linked-task>div{display:grid;gap:3px}
+.req360-linked-task strong{font-size:11px}
+.req360-linked-task span{font-size:8px;color:#d9cde0}
+.req360-linked-task button{border:0;border-radius:999px;padding:9px 12px;background:#fff;color:#572470;font:inherit;font-size:8px;font-weight:900;cursor:pointer}
+
+.req360-task-source{border-color:rgba(110,38,246,.17)!important;background:linear-gradient(145deg,#fff,#faf6ff)}
+.req360-task-source-meta{padding:12px 14px;border-radius:15px;background:#f7f2fb;margin-bottom:11px}
+.req360-task-source-meta strong{font-size:11px}
+.req360-task-source-meta span{display:block;margin-top:2px;font-size:8px;color:#806f89}
+.req360-task-source-meta p{white-space:pre-wrap;margin:8px 0 0;font-size:9px;line-height:1.55;color:#5d4c66}
+.req360-task-resource-list{display:grid;gap:8px}
+.req360-task-resource{display:grid;grid-template-columns:42px minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px;border-radius:14px;background:#f7f4f9;border:1px solid rgba(97,65,114,.09)}
+.req360-task-resource-icon{width:42px;height:42px;border-radius:12px;display:grid;place-items:center;background:#eadfff;color:#6e26f6;font-size:8px;font-weight:900}
+.req360-task-resource>div{display:grid;gap:2px;min-width:0}
+.req360-task-resource strong{font-size:9px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.req360-task-resource small{font-size:7px;color:#84768c}
+.req360-task-resource em{font-size:7px;color:#b13e56;font-style:normal}
+.req360-task-resource>a{font-size:8px;font-weight:850;color:#6e26f6;text-decoration:none}
+.req360-task-resource.audio{background:linear-gradient(145deg,#f5efff,#eef8ff)}
+.req360-task-resource.audio .req360-task-resource-icon{background:linear-gradient(145deg,#7047eb,#b34ed2);color:#fff}
+.req360-task-resource audio{grid-column:1/-1;width:100%;height:38px}
+.req360-task-link-list{display:grid;gap:7px;margin-top:10px}
+.req360-task-link-list a{display:grid;grid-template-columns:auto minmax(0,1fr) auto;align-items:center;gap:10px;padding:10px 12px;border-radius:13px;background:#f3f0f6;color:#493852;text-decoration:none}
+.req360-task-link-list a span{font-size:7px;font-weight:900;color:#7b4fc3}
+.req360-task-link-list a strong{font-size:8px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.req360-task-link-list a b{font-size:8px;color:#6e26f6}
+@media(max-width:720px){
+  .req360-documents-box .req360-files{grid-template-columns:1fr}
+  .req360-task-handoff-head,.req360-handoff-summary,.req360-linked-task{display:grid}
+  .req360-task-grid{grid-template-columns:1fr}
+  .req360-task-grid label.full{grid-column:auto}
+  .req360-file.req360-file-audio{grid-template-columns:42px minmax(0,1fr)}
+  .req360-file.req360-file-audio>a{grid-column:2}
+}

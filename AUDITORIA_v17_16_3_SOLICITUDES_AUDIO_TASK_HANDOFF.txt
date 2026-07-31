@@ -1,0 +1,32 @@
+INBESTIGA Marketing Cloud v17.16.3
+SOLICITUDES 360 · AUDIO RECOVERY & COMPLETE TASK HANDOFF
+
+PROBLEMA 1 · AUDIO AUSENTE
+La plataforma cargaba los adjuntos al abrir la bandeja. Cuando una solicitud
+recién finalizada llegaba por Realtime, el requerimiento aparecía antes de que
+sus adjuntos fueran consultados nuevamente. Al abrirlo desde la notificación,
+la memoria local podía indicar cero archivos y ocultar la grabación.
+
+CORRECCIÓN
+- El detalle consulta interarea_request_attachments cada vez que se abre.
+- La clasificación de audio usa kind, MIME y extensión.
+- Se genera una URL firmada por archivo y se muestra cualquier error real.
+- El audio aparece en una sección propia con reproductor y botón Abrir.
+- Documentos, imágenes y videos quedan en un bloque separado.
+
+PROBLEMA 2 · SOLO PREPARABA LA TAREA
+El botón anterior trasladaba texto al formulario general, pero no creaba la
+tarea ni mantenía un vínculo verificable con la solicitud.
+
+CORRECCIÓN
+- Responsable, fecha, prioridad y título se definen dentro del requerimiento.
+- El botón crea la tarea real mediante ibm_v30_create_task.
+- Verifica que la tarea exista antes de marcar la solicitud.
+- Guarda converted_task_id, responsable, prioridad y estado en producción.
+- El detalle de la tarea muestra todos los audios, documentos y enlaces
+  originales de la solicitud mediante el vínculo seguro.
+- No se duplican archivos ni se generan enlaces permanentes inseguros.
+
+SQL
+No requiere SQL adicional: reutiliza converted_task_id y los permisos
+instalados con SQL_REQUERIDO_v17_16_0_SOLICITUDES_360.sql.
