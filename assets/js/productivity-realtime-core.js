@@ -959,11 +959,37 @@
 
   function registerServiceWorker() {
     if (!("serviceWorker" in navigator) || location.protocol === "file:") return;
+    const reloadKey = "inbestiga:pwa-controller-reload:v17.15.13";
+    const activateWaiting = registration => {
+      try { registration?.waiting?.postMessage?.({ type: "SKIP_WAITING" }); } catch { /* optional */ }
+    };
+    const onControllerChange = () => {
+      window.dispatchEvent(new CustomEvent("inbestiga:pwa-ready"));
+      try {
+        if (sessionStorage.getItem(reloadKey) !== "1") {
+          sessionStorage.setItem(reloadKey, "1");
+          location.reload();
+        }
+      } catch { location.reload(); }
+    };
+    navigator.serviceWorker.addEventListener("controllerchange", onControllerChange, { once: true });
     navigator.serviceWorker
-      .register("service-worker.js?v=17.12.11", { updateViaCache: "none" })
-      .then((registration) => registration.update().catch(() => null))
-      .catch((error) =>
-        console.info("[v17.12.11] service worker opcional", error?.message || error),
+      .register("service-worker.js?v=17.15.13", { updateViaCache: "none" })
+      .then(async registration => {
+        activateWaiting(registration);
+        registration.addEventListener("updatefound", () => {
+          const worker = registration.installing;
+          worker?.addEventListener("statechange", () => {
+            if (worker.state === "installed") activateWaiting(registration);
+          });
+        });
+        await registration.update().catch(() => null);
+        activateWaiting(registration);
+        await navigator.serviceWorker.ready.catch(() => null);
+        window.dispatchEvent(new CustomEvent("inbestiga:pwa-ready"));
+      })
+      .catch(error =>
+        console.info("[v17.15.13] service worker opcional", error?.message || error),
       );
   }
 

@@ -1,0 +1,49 @@
+{
+  "version": "v17.15.13",
+  "tests": [
+    {
+      "id": "enter_app_direct_orb_mount",
+      "status": "pass"
+    },
+    {
+      "id": "authenticated_orb_module",
+      "status": "pass"
+    },
+    {
+      "id": "session_ready_event",
+      "status": "pass"
+    },
+    {
+      "id": "service_worker_versioned_registration",
+      "status": "pass"
+    },
+    {
+      "id": "skip_waiting_message",
+      "status": "pass"
+    },
+    {
+      "id": "clients_claim",
+      "status": "pass"
+    },
+    {
+      "id": "controller_change_reload_once",
+      "status": "pass"
+    },
+    {
+      "id": "pwa_health_activation_wait",
+      "status": "pass"
+    },
+    {
+      "id": "no_polling",
+      "status": "pass"
+    },
+    {
+      "id": "no_mutation_observer",
+      "status": "pass"
+    },
+    {
+      "id": "backend_changes",
+      "status": "none"
+    }
+  ]
+}

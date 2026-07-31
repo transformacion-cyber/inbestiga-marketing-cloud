@@ -1,0 +1,11 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.13 — Sakura Authenticated Orb Mount & Pwa Activation Hotfix
+
+Monta el orbe ambiental directamente al finalizar enterApp(), recupera su
+visibilidad en sesiones autenticadas y completa automáticamente la activación
+PWA para eliminar la advertencia de recarga pendiente.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.15.13 SAKURA authenticated orb and PWA activation"
+git push origin main

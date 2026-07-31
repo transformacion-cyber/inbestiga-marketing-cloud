@@ -1,0 +1,13 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.13
+SAKURA AUTHENTICATED ORB MOUNT & PWA ACTIVATION HOTFIX
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_15_13_SAKURA_AUTHENTICATED_ORB_PWA_ACTIVATION_FULL_PLATFORM.zip
+
+Conservar:
+- Montaje directo del orbe dentro de enterApp().
+- Evento inbestiga:session-ready.
+- Activación PWA con SKIP_WAITING, clients.claim y controllerchange.
+- Una sola recarga automática por versión.
+- Estados afectivos y tarjetas de tareas de v17.15.11.
+- Sin Auth/RLS/RPC/SQL nuevos.

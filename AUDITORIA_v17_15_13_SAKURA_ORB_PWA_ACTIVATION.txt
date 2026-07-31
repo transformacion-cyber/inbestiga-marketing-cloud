@@ -1,0 +1,26 @@
+INBESTIGA Marketing Cloud v17.15.13
+SAKURA AUTHENTICATED ORB MOUNT & PWA ACTIVATION HOTFIX
+
+DIAGNÓSTICO
+La captura de producción confirmó:
+- Barra superior de SAKURA disponible.
+- Orbe flotante ausente.
+- Centro de Salud en 97/100.
+- Única advertencia: PWA con caché v17-15-13 y página sin controlador.
+
+CAUSAS
+1. El orbe dependía de observadores indirectos del cambio de pantalla.
+2. La transición real ocurre dentro de enterApp(), por lo que debía montarse allí.
+3. El Service Worker conservaba una URL de registro histórica y la página podía
+   permanecer sin controlador durante la primera carga.
+
+CORRECCIÓN
+- Montaje directo del orbe inmediatamente después de show("appScreen").
+- Módulo autenticado de recuperación en cuatro momentos ligados a la transición.
+- Registro del Service Worker con v17.15.13.
+- Mensaje SKIP_WAITING, clients.claim y una sola recarga al cambiar controlador.
+- Centro de Salud espera brevemente la activación antes de calificar PWA.
+- Sin polling continuo ni MutationObserver.
+
+SIN CAMBIOS
+Auth, RLS, RPC, Storage, SQL, Supabase, Ollama y datos productivos.

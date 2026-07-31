@@ -1,0 +1,29 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.15.13",
+  "build": "SAKURA AUTHENTICATED ORB MOUNT & PWA ACTIVATION HOTFIX",
+  "base": "v17.15.12",
+  "generated_at": "2026-07-31T19:05:28.900292+00:00",
+  "files_count": 586,
+  "javascript_files": 67,
+  "internal_javascript_blocks": 14,
+  "json_files": 154,
+  "html_unique_ids": 646,
+  "pwa_resources": 83,
+  "backend_changes": false,
+  "sql_changes": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "internal_javascript_syntax": "OK",
+    "json": "OK",
+    "duplicate_html_ids": "OK",
+    "local_references": "OK",
+    "pwa_resources": "OK",
+    "enter_app_direct_mount": "OK",
+    "authenticated_orb_recovery": "OK",
+    "service_worker_activation": "OK",
+    "health_activation_wait": "OK",
+    "no_polling": "OK",
+    "no_mutation_observer": "OK"
+  }
+}

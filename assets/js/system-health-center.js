@@ -1,11 +1,11 @@
-/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.12 ===== */
+/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.13 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.12";
-  const BUILD = "SAKURA POST-LOGIN AMBIENT ORB VISIBILITY HOTFIX";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.13";
+  const BUILD = "SAKURA AUTHENTICATED ORB MOUNT & PWA ACTIVATION HOTFIX";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";
   const DEFAULT_BUCKET = "inbestiga-media";
@@ -280,7 +280,17 @@
     if (!supported) return check("pwa", "services", "PWA", "warn", "No compatible", "Este navegador no admite Service Worker.");
     if (!secure) return check("pwa", "services", "PWA", "warn", "Requiere HTTPS", "Service Worker solo funciona con HTTPS o localhost.");
     try {
-      const registration = await navigator.serviceWorker.getRegistration();
+      let registration = await navigator.serviceWorker.getRegistration();
+      if (registration && !navigator.serviceWorker.controller) {
+        try {
+          registration.waiting?.postMessage?.({ type: "SKIP_WAITING" });
+          await Promise.race([
+            navigator.serviceWorker.ready,
+            new Promise(resolve => setTimeout(resolve, 1600))
+          ]);
+          registration = await navigator.serviceWorker.getRegistration();
+        } catch { /* activación aún en curso */ }
+      }
       let cacheName = "";
       try {
         const names = typeof caches !== "undefined" ? await caches.keys() : [];

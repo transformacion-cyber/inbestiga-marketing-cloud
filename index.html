@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-inbestiga-build="v17.15.12">
+<html lang="es" data-inbestiga-build="v17.15.13">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-<title>INBESTIGA Marketing Cloud · v17.15.12 SAKURA POST-LOGIN AMBIENT ORB VISIBILITY HOTFIX</title>
+<title>INBESTIGA Marketing Cloud · v17.15.13 SAKURA AUTHENTICATED ORB MOUNT & PWA ACTIVATION HOTFIX</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>if(!window.supabase){document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>')}</script>
 <script src="config/public-runtime-config.js" data-inbestiga-module="managed-public-runtime-config"></script>
@@ -5106,6 +5106,15 @@ async function enterApp(){
     v412SetBoot("Cargando INBESTIGA","Miembros, tareas y preferencias listos.",38,"Datos cargados");
     $("userPill").textContent=`${member.full_name} · ${member.role_code}`;
     show("appScreen");
+    window.dispatchEvent(new CustomEvent("inbestiga:session-ready",{detail:{memberId:member.id||null}}));
+    window.INBESTIGA_SAKURA_LOADER?.attach?.();
+    window.INBESTIGA_SAKURA_POST_LOGIN_ORB?.reveal?.();
+    window.INBESTIGA_SAKURA_AFFECTIVE?.syncVisibility?.();
+    requestAnimationFrame(()=>{
+      window.INBESTIGA_SAKURA_LOADER?.attach?.();
+      window.INBESTIGA_SAKURA_AUTHENTICATED_ORB?.mount?.();
+    });
+    setTimeout(()=>window.INBESTIGA_SAKURA_AUTHENTICATED_ORB?.mount?.(),220);
     v414PerfStart("renderAll");
     await renderAll();
     v414PerfEnd("renderAll");
@@ -5120,6 +5129,7 @@ async function enterApp(){
   }catch(err){
     console.error("No se pudo abrir INBESTIGA",err);
     show("loginScreen");
+    window.dispatchEvent(new CustomEvent("inbestiga:session-ended"));
     $("loginMsg").textContent="Login correcto, pero ocurrió un error al cargar la interfaz: "+v412Message(err);
     v412SetBoot("No pudimos completar la carga",v412Message(err),100,"Revisión necesaria",true);
   }
@@ -9637,6 +9647,7 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <script src="assets/js/navigation-operational-ux-v17-12-10.js" data-inbestiga-module="navigation-operational-ux-v17-12-10"></script>
 <script src="assets/js/operational-command-center-v17-12-12.js" data-inbestiga-module="operational-command-center-v17-12-12"></script>
 <script src="assets/js/sakura-presence-loader-v17-13-0.js" data-inbestiga-module="sakura-presence-loader-v17-14-1"></script>
+<script src="assets/js/sakura-authenticated-orb-mount-v17-15-13.js" data-inbestiga-module="sakura-authenticated-orb-mount-v17-15-13"></script>
 <script src="assets/js/sakura-affective-task-intelligence-v17-15-11.js" data-inbestiga-module="sakura-affective-task-intelligence-v17-15-11"></script>
 <script src="assets/js/sakura-post-login-orb-visibility-v17-15-12.js" data-inbestiga-module="sakura-post-login-orb-visibility-v17-15-12"></script>
 <script src="assets/js/sakura-live-motion-background-fusion-v17-13-1.js" data-inbestiga-module="sakura-live-motion-background-fusion-v17-13-1"></script>
@@ -9650,6 +9661,6 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <link rel="stylesheet" href="assets/css/sakura-chat-composer-hotfix-v17-15-5.css" data-inbestiga-module="sakura-chat-composer-hotfix-v17-15-5">
 <script src="assets/js/sakura-chat-composer-hotfix-v17-15-5.js" data-inbestiga-module="sakura-chat-composer-hotfix-v17-15-5"></script>
 <script src="assets/js/release-marker-v17-15-5.js" data-inbestiga-module="release-marker-v17-15-5"></script>
-<script src="assets/js/release-marker-v17-15-12.js" data-inbestiga-module="release-marker-v17-15-12"></script>
+<script src="assets/js/release-marker-v17-15-13.js" data-inbestiga-module="release-marker-v17-15-13"></script>
 </body>
 </html>
