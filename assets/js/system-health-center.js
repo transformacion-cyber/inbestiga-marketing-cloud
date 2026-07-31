@@ -1,11 +1,11 @@
-/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.13 ===== */
+/* ===== RUNTIME-AWARE SYSTEM HEALTH CENTER · v17.15.14 ===== */
 (function () {
   "use strict";
 
   if (window.INBESTIGA_SYSTEM_HEALTH) return;
 
-  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.13";
-  const BUILD = "SAKURA AUTHENTICATED ORB MOUNT & PWA ACTIVATION HOTFIX";
+  const VERSION = window.INBESTIGA_PUBLIC_RUNTIME_CONFIG?.version || document.documentElement.dataset.inbestigaBuild || "v17.15.14";
+  const BUILD = "STATIC SAKURA ORB MOUNT & RESILIENT PWA CONTROL HOTFIX";
   const STORE_KEY = "inbestiga:v171:system-health";
   const RPC_MANIFEST_URL = "config/rpc-manifest.json";
   const DEFAULT_BUCKET = "inbestiga-media";
@@ -299,11 +299,14 @@
       } catch { /* CacheStorage puede estar restringido */ }
       const expectedCacheName = `inbestiga-${String(VERSION).replaceAll(".", "-")}-shell`;
       const expectedCache = cacheName === expectedCacheName;
-      const ready = !!registration && manifest && expectedCache && !!navigator.serviceWorker.controller;
+      const active = registration?.active?.state === "activated";
+      const rootScope = registration?.scope === `${location.origin}/`;
+      const controlled = !!navigator.serviceWorker.controller;
+      const ready = !!registration && manifest && expectedCache && active && rootScope;
       return check(
         "pwa", "services", "PWA", ready ? "ok" : "warn",
-        ready ? `Shell ${VERSION} activa` : registration ? "Actualización pendiente" : "Registro pendiente",
-        `${manifest ? "manifest presente" : "manifest ausente"}${cacheName ? ` · caché ${cacheName}` : " · caché no confirmada"}${navigator.serviceWorker.controller ? " · página controlada" : " · recarga pendiente"}`
+        ready ? `Shell ${VERSION} activa` : registration ? "Activación incompleta" : "Registro pendiente",
+        `${manifest ? "manifest presente" : "manifest ausente"}${cacheName ? ` · caché ${cacheName}` : " · caché no confirmada"}${active ? " · worker activo" : " · worker no activo"}${rootScope ? " · alcance raíz" : " · alcance por corregir"}${controlled ? " · página controlada" : " · control en próxima navegación"}`
       );
     } catch (error) {
       return check("pwa", "services", "PWA", "warn", "No certificada", error?.message || error);

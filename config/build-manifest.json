@@ -1,7 +1,7 @@
 {
   "product": "INBESTIGA Marketing Cloud",
-  "frontend_version": "17.15.13",
-  "build": "SAKURA AUTHENTICATED ORB MOUNT & PWA ACTIVATION HOTFIX",
+  "frontend_version": "17.15.14",
+  "build": "STATIC SAKURA ORB MOUNT & RESILIENT PWA CONTROL HOTFIX",
   "entrypoint": "index.html",
   "modules": [
     {
@@ -356,6 +356,18 @@
       "name": "release-marker-v17-15-13",
       "path": "assets/js/release-marker-v17-15-13.js",
       "origin": "v17.15.13",
+      "mode": "canonical-release"
+    },
+    {
+      "name": "sakura-static-orb-mount-v17-15-14",
+      "path": "assets/js/sakura-static-orb-mount-v17-15-14.js",
+      "origin": "v17.15.14",
+      "mode": "static-authenticated-orb"
+    },
+    {
+      "name": "release-marker-v17-15-14",
+      "path": "assets/js/release-marker-v17-15-14.js",
+      "origin": "v17.15.14",
       "mode": "canonical-release"
     }
   ],
@@ -804,12 +816,23 @@
     "no_polling_v171513": true,
     "no_mutation_observer_v171513": true,
     "no_backend_changes_v171513": true,
-    "no_sql_v171513": true
+    "no_sql_v171513": true,
+    "sakura_static_html_orb_v171514": true,
+    "sakura_authenticated_html_state_v171514": true,
+    "sakura_no_hidden_attribute_conflict_v171514": true,
+    "pwa_absolute_root_scope_v171514": true,
+    "pwa_resilient_per_file_cache_v171514": true,
+    "pwa_worker_active_health_v171514": true,
+    "vercel_service_worker_allowed_root_v171514": true,
+    "no_polling_v171514": true,
+    "no_mutation_observer_v171514": true,
+    "no_backend_changes_v171514": true,
+    "no_sql_v171514": true
   },
   "base": "v17.15.4 SAKURA WORKSPACE LAYOUT HOTFIX",
   "hotfix": "v17.15.6 fixes Command Center null.id crashes, prevents duplicate/re-entrant initialization, preserves the canonical release version against lazy-module downgrades, adds rendered visual-layout health, ignores historical browser incidents in the current score, and stops Work 360 cloud hydration from creating false local pending changes. No SQL or backend changes.",
-  "version": "v17.15.13",
-  "name": "INBESTIGA Marketing Cloud v17.15.13",
+  "version": "v17.15.14",
+  "name": "INBESTIGA Marketing Cloud v17.15.14",
   "assets": [
     "assets/css/unified-command-center-v17-15-0.css",
     "assets/js/unified-command-center-v17-15-0.js",
@@ -910,13 +933,14 @@
     "sakura_no_polling_v17155": true,
     "sakura_no_mutation_observer_v17155": true
   },
-  "release": "Mounts the ambient SAKURA orb directly inside authenticated enterApp() and completes Service Worker activation deterministically.",
+  "release": "Embeds the SAKURA orb physically in index.html and makes PWA installation resilient to optional shell resource failures.",
   "scripts": [
     "assets/js/sakura-chat-composer-hotfix-v17-15-5.js",
     "assets/js/release-marker-v17-15-5.js",
     "assets/js/sakura-affective-task-intelligence-v17-15-11.js",
     "assets/js/sakura-post-login-orb-visibility-v17-15-12.js",
     "assets/js/sakura-authenticated-orb-mount-v17-15-13.js",
-    "assets/js/release-marker-v17-15-13.js"
+    "assets/js/sakura-static-orb-mount-v17-15-14.js",
+    "assets/js/release-marker-v17-15-14.js"
   ]
 }

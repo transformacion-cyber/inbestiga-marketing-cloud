@@ -18,15 +18,20 @@
     const launcher=document.getElementById("sakuraNativeLauncher");
     if(!launcher)return false;
     const silent=preferences().presenceMode==="silent";
-    launcher.hidden=silent;
+    launcher.hidden=false;
+    launcher.dataset.skSessionReady="true";
+    launcher.dataset.skUserHidden=silent?"true":"false";
     if(!silent){
-      launcher.removeAttribute("hidden");
       launcher.style.setProperty("display","flex","important");
-      launcher.style.removeProperty("visibility");
-      launcher.style.removeProperty("opacity");
+      launcher.style.setProperty("visibility","visible","important");
+      launcher.style.setProperty("opacity","1","important");
+      launcher.style.setProperty("pointer-events","auto","important");
       launcher.setAttribute("aria-hidden","false");
       launcher.dataset.skAuthenticated="true";
       launcher.dataset.skAmbientReady="true";
+    }else{
+      launcher.style.setProperty("display","none","important");
+      launcher.style.setProperty("pointer-events","none","important");
     }
     window.INBESTIGA_SAKURA_POST_LOGIN_ORB?.reveal?.();
     window.INBESTIGA_SAKURA_AFFECTIVE?.syncVisibility?.();

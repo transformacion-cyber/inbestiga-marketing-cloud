@@ -158,13 +158,18 @@
     const launcher=document.getElementById("sakuraNativeLauncher");
     if(!launcher)return false;
     const visible=appVisible(),silent=preferences().presenceMode==="silent";
-    launcher.hidden=!visible||silent;
+    launcher.hidden=false;
+    launcher.dataset.skSessionReady=visible?"true":"false";
+    launcher.dataset.skUserHidden=silent?"true":"false";
+    launcher.setAttribute("aria-hidden",visible&&!silent?"false":"true");
     if(visible&&!silent){
-      launcher.removeAttribute("hidden");
-      launcher.style.removeProperty("display");
-      launcher.setAttribute("aria-hidden","false");
+      launcher.style.setProperty("display","flex","important");
+      launcher.style.setProperty("visibility","visible","important");
+      launcher.style.setProperty("opacity","1","important");
+      launcher.style.setProperty("pointer-events","auto","important");
     }else{
-      launcher.setAttribute("aria-hidden","true");
+      launcher.style.setProperty("display","none","important");
+      launcher.style.setProperty("pointer-events","none","important");
     }
     return visible&&!silent;
   }

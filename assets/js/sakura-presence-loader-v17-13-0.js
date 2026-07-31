@@ -45,7 +45,28 @@
     })().catch(error=>{notifyError(error);throw error}).finally(()=>{loading=null});
     return loading
   }
-  function createLauncher(){ensureLauncherStyle();let button=document.getElementById("sakuraNativeLauncher");if(!button){button=document.createElement("button");button.id="sakuraNativeLauncher";button.className="sakura-native-launcher-shell";button.type="button";button.setAttribute("aria-label","Abrir SAKURA");button.dataset.skEmotion="serenity";button.innerHTML='<span class="sakura-native-launcher-orb" aria-hidden="true"><i></i></span><span class="sakura-native-launcher-copy"><strong>SAKURA</strong><small>Serenidad · estoy aquí</small></span>';button.addEventListener("click",()=>loadWorkspace().catch(notifyError))}if(button.parentElement!==document.body)document.body.appendChild(button);button.hidden=flags.enabled===false}
+  function createLauncher(){
+    ensureLauncherStyle();
+    let button=document.getElementById("sakuraNativeLauncher");
+    if(!button){
+      button=document.createElement("button");
+      button.id="sakuraNativeLauncher";
+      button.className="sakura-native-launcher-shell";
+      button.type="button";
+      button.setAttribute("aria-label","Abrir SAKURA");
+      button.dataset.skEmotion="serenity";
+      button.dataset.skStaticOrb="runtime-fallback";
+      button.innerHTML='<span class="sakura-native-launcher-orb" aria-hidden="true"><i></i></span><span class="sakura-native-launcher-copy"><strong>SAKURA</strong><small>Serenidad · estoy aquí</small></span>';
+    }
+    if(button.parentElement!==document.body)document.body.appendChild(button);
+    if(button.dataset.skLoaderBound!=="true"){
+      button.dataset.skLoaderBound="true";
+      button.addEventListener("click",()=>loadWorkspace().catch(notifyError));
+    }
+    button.hidden=false;
+    button.dataset.skUserHidden=flags.enabled===false?"true":(button.dataset.skUserHidden||"false");
+    window.INBESTIGA_SAKURA_STATIC_ORB?.mount?.();
+  }
   function injectTopNavigationButton(){const right=document.querySelector("#v472AppleTopNav .v472-right");if(!right||document.getElementById("sakuraTopNavButton"))return false;const button=document.createElement("button");button.id="sakuraTopNavButton";button.type="button";button.setAttribute("aria-label","Abrir SAKURA");button.innerHTML='<span class="sk-top-orb" aria-hidden="true"></span><span>SAKURA</span>';button.addEventListener("click",()=>loadWorkspace().catch(notifyError));const create=document.getElementById("v171210QuickCreateButton");if(create?.parentElement===right)right.insertBefore(button,create);else right.insertBefore(button,right.firstChild);return true}
   function ensurePresence(){if(flags.enabled===false)return;createLauncher();injectTopNavigationButton()}
   function registerBuild(){try{window.INBESTIGA_QUALITY_CORE?.register?.(MODULE,{version:VERSION,mode:"permanent-lazy-adaptive-intelligence",polling:false,realtimeChannels:0})}catch(_){}const build=window.INBESTIGA_BUILD||{};window.INBESTIGA_BUILD={...build,version:VERSION,name:"SAKURA BUTTON TEXT CONTRAST & STUDIO COLOR SYNC HOTFIX",modules:[...new Set([...(Array.isArray(build.modules)?build.modules:[]),MODULE]) ]};document.documentElement.dataset.inbestigaBuild=VERSION}

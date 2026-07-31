@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="es" data-inbestiga-build="v17.15.13">
+<html lang="es" data-inbestiga-build="v17.15.14">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
@@ -10,7 +10,7 @@
 <meta name="referrer" content="no-referrer">
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="apple-touch-icon" href="assets/icons/icon-192.png">
-<title>INBESTIGA Marketing Cloud · v17.15.13 SAKURA AUTHENTICATED ORB MOUNT & PWA ACTIVATION HOTFIX</title>
+<title>INBESTIGA Marketing Cloud · v17.15.14 STATIC SAKURA ORB MOUNT & RESILIENT PWA CONTROL HOTFIX</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <script>if(!window.supabase){document.write('<script src="https://unpkg.com/@supabase/supabase-js@2"><\/script>')}</script>
 <script src="config/public-runtime-config.js" data-inbestiga-module="managed-public-runtime-config"></script>
@@ -3626,6 +3626,7 @@ body.v12-palette-open{overflow:hidden}
 <link rel="stylesheet" href="assets/css/navigation-apple-flat-v17-12-13-4.css" data-inbestiga-module="navigation-apple-flat-v17-12-13-4">
 <link rel="stylesheet" href="assets/css/sakura-personal-workspace-base-v17-12-13-6.css" data-inbestiga-module="sakura-personal-workspace-base-v17-12-13-6" data-sakura-native-css="1" data-sakura-css="base">
 <link rel="stylesheet" href="assets/css/sakura-affective-task-intelligence-v17-15-11.css" data-inbestiga-module="sakura-affective-task-intelligence-v17-15-11">
+<link rel="stylesheet" href="assets/css/sakura-static-orb-mount-v17-15-14.css" data-inbestiga-module="sakura-static-orb-mount-v17-15-14">
 <link rel="stylesheet" href="assets/css/sakura-personal-studio-v17-12-13-6.css" data-inbestiga-module="sakura-personal-studio-v17-12-13-6" data-sakura-css="personal-studio">
 <link rel="stylesheet" href="assets/css/sakura-adaptive-intelligence-v17-13-0.css" data-inbestiga-module="sakura-adaptive-intelligence-v17-13-1" data-sakura-css="adaptive-intelligence">
 <link rel="stylesheet" href="assets/css/sakura-live-motion-background-fusion-v17-13-1.css" data-inbestiga-module="sakura-live-motion-background-fusion-v17-13-1" data-sakura-css="live-motion-background-fusion">
@@ -3635,6 +3636,25 @@ body.v12-palette-open{overflow:hidden}
 <link rel="stylesheet" href="assets/css/operational-command-center-v17-12-12.css" data-inbestiga-module="operational-command-center-v17-12-12">
 </head>
 <body>
+<button
+  id="sakuraNativeLauncher"
+  class="sakura-native-launcher-shell"
+  type="button"
+  aria-label="Abrir SAKURA"
+  aria-hidden="true"
+  data-sk-static-orb="v17.15.14"
+  data-sk-emotion="serenity"
+  data-sk-session-ready="false"
+  data-sk-user-hidden="false"
+  style="display:none"
+>
+  <span class="sakura-native-launcher-orb" aria-hidden="true"><i></i></span>
+  <span class="sakura-native-launcher-copy">
+    <strong>SAKURA</strong>
+    <small>Serenidad · estoy aquí</small>
+  </span>
+</button>
+
 
 <div id="v412BootOverlay" class="v412-boot hidden" aria-live="polite" aria-busy="true">
   <div class="v412-boot-card">
@@ -5034,7 +5054,24 @@ const today=()=>v121LocalDateKey();
 function toast(title,body=""){premiumToast(title,body,"info")}
 function setBox(id,text,type="ok"){const b=$(id);if(!b)return;b.className="status-box "+type;b.textContent=text}
 function hideBox(id){const b=$(id);if(!b)return;b.className="status-box";b.textContent=""}
-function show(screen){["setupScreen","loginScreen","appScreen"].forEach(id=>$(id)?.classList.add("hidden"));$(screen)?.classList.remove("hidden")}
+function show(screen){
+  ["setupScreen","loginScreen","appScreen"].forEach(id=>$(id)?.classList.add("hidden"));
+  $(screen)?.classList.remove("hidden");
+  const sessionReady=screen==="appScreen";
+  document.documentElement.dataset.inbestigaSession=sessionReady?"ready":"public";
+  const orb=document.getElementById("sakuraNativeLauncher");
+  if(orb){
+    orb.hidden=false;
+    orb.dataset.skSessionReady=sessionReady?"true":"false";
+    orb.setAttribute("aria-hidden",sessionReady?"false":"true");
+    if(sessionReady){
+      orb.style.removeProperty("display");
+      requestAnimationFrame(()=>window.INBESTIGA_SAKURA_STATIC_ORB?.mount?.());
+    }else{
+      orb.style.setProperty("display","none","important");
+    }
+  }
+}
 function createClient(){syncManagedRuntimeConfig();const c=cfg();if(!c.url||!c.key||!window.supabase?.createClient)return null;return window.supabase.createClient(c.url,c.key,{auth:{persistSession:true,autoRefreshToken:true,detectSessionInUrl:true},global:{headers:{"X-Client-Info":"inbestiga-marketing-cloud/17.12.13.4"}}})}
 function by(arr,id){return (arr||[]).find(x=>x.id===id)||{}}
 function nameOf(arr,id,key="name"){return by(arr,id)[key]||""}
@@ -5118,6 +5155,10 @@ async function enterApp(){
     v414PerfStart("renderAll");
     await renderAll();
     v414PerfEnd("renderAll");
+    window.INBESTIGA_SAKURA_STATIC_ORB?.mount?.();
+    window.INBESTIGA_SAKURA_LOADER?.attach?.();
+    window.INBESTIGA_SAKURA_AFFECTIVE?.syncVisibility?.();
+    window.dispatchEvent(new CustomEvent("inbestiga:authenticated-ui-ready",{detail:{memberId:member.id||null}}));
     v412SetBoot("Activando colaboración","Preparando navegación y actualizaciones en tiempo real.",82,"Interfaz preparada");
     v412StartRealtime();
     const start=(state.user_preferences&&state.user_preferences.default_section)||"home";
@@ -9647,6 +9688,7 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <script src="assets/js/navigation-operational-ux-v17-12-10.js" data-inbestiga-module="navigation-operational-ux-v17-12-10"></script>
 <script src="assets/js/operational-command-center-v17-12-12.js" data-inbestiga-module="operational-command-center-v17-12-12"></script>
 <script src="assets/js/sakura-presence-loader-v17-13-0.js" data-inbestiga-module="sakura-presence-loader-v17-14-1"></script>
+<script src="assets/js/sakura-static-orb-mount-v17-15-14.js" data-inbestiga-module="sakura-static-orb-mount-v17-15-14"></script>
 <script src="assets/js/sakura-authenticated-orb-mount-v17-15-13.js" data-inbestiga-module="sakura-authenticated-orb-mount-v17-15-13"></script>
 <script src="assets/js/sakura-affective-task-intelligence-v17-15-11.js" data-inbestiga-module="sakura-affective-task-intelligence-v17-15-11"></script>
 <script src="assets/js/sakura-post-login-orb-visibility-v17-15-12.js" data-inbestiga-module="sakura-post-login-orb-visibility-v17-15-12"></script>
@@ -9661,6 +9703,6 @@ renderHome=function(){v11BaseRenderHome();v11RenderRoleBrief();v11EnhanceCampaig
 <link rel="stylesheet" href="assets/css/sakura-chat-composer-hotfix-v17-15-5.css" data-inbestiga-module="sakura-chat-composer-hotfix-v17-15-5">
 <script src="assets/js/sakura-chat-composer-hotfix-v17-15-5.js" data-inbestiga-module="sakura-chat-composer-hotfix-v17-15-5"></script>
 <script src="assets/js/release-marker-v17-15-5.js" data-inbestiga-module="release-marker-v17-15-5"></script>
-<script src="assets/js/release-marker-v17-15-13.js" data-inbestiga-module="release-marker-v17-15-13"></script>
+<script src="assets/js/release-marker-v17-15-14.js" data-inbestiga-module="release-marker-v17-15-14"></script>
 </body>
 </html>

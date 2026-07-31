@@ -1,0 +1,49 @@
+{
+  "version": "v17.15.14",
+  "tests": [
+    {
+      "id": "static_orb_exists_in_html",
+      "status": "pass"
+    },
+    {
+      "id": "single_sakura_launcher_id",
+      "status": "pass"
+    },
+    {
+      "id": "authenticated_html_session_state",
+      "status": "pass"
+    },
+    {
+      "id": "hidden_attribute_conflict_removed",
+      "status": "pass"
+    },
+    {
+      "id": "orb_loader_adopts_existing_button",
+      "status": "pass"
+    },
+    {
+      "id": "pwa_absolute_root_scope",
+      "status": "pass"
+    },
+    {
+      "id": "pwa_per_file_resilient_cache",
+      "status": "pass"
+    },
+    {
+      "id": "vercel_worker_allowed_root",
+      "status": "pass"
+    },
+    {
+      "id": "no_polling",
+      "status": "pass"
+    },
+    {
+      "id": "no_mutation_observer",
+      "status": "pass"
+    },
+    {
+      "id": "backend_changes",
+      "status": "none"
+    }
+  ]
+}

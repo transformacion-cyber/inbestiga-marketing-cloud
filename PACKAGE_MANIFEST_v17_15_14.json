@@ -1,0 +1,31 @@
+{
+  "product": "INBESTIGA Marketing Cloud",
+  "version": "v17.15.14",
+  "build": "STATIC SAKURA ORB MOUNT & RESILIENT PWA CONTROL HOTFIX",
+  "base": "v17.15.13",
+  "generated_at": "2026-07-31T19:16:38.314120+00:00",
+  "files_count": 594,
+  "javascript_files": 69,
+  "internal_javascript_blocks": 14,
+  "json_files": 156,
+  "html_unique_ids": 647,
+  "pwa_resources": 83,
+  "backend_changes": false,
+  "sql_changes": false,
+  "validation": {
+    "javascript_syntax": "OK",
+    "internal_javascript_syntax": "OK",
+    "json": "OK",
+    "duplicate_html_ids": "OK",
+    "single_static_orb": "OK",
+    "local_references": "OK",
+    "pwa_resources": "OK",
+    "static_authenticated_visibility": "OK",
+    "loader_adopts_static_orb": "OK",
+    "pwa_root_scope": "OK",
+    "pwa_resilient_cache": "OK",
+    "vercel_worker_headers": "OK",
+    "no_polling": "OK",
+    "no_mutation_observer": "OK"
+  }
+}

@@ -17,14 +17,19 @@
     const launcher=document.getElementById("sakuraNativeLauncher");
     if(!launcher)return false;
     const shouldShow=appVisible()&&!silent();
-    launcher.hidden=!shouldShow;
+    launcher.hidden=false;
+    launcher.dataset.skSessionReady=shouldShow?"true":"false";
+    launcher.dataset.skUserHidden=silent()?"true":"false";
     if(shouldShow){
-      launcher.removeAttribute("hidden");
-      launcher.style.removeProperty("display");
-      launcher.style.removeProperty("visibility");
+      launcher.style.setProperty("display","flex","important");
+      launcher.style.setProperty("visibility","visible","important");
+      launcher.style.setProperty("opacity","1","important");
+      launcher.style.setProperty("pointer-events","auto","important");
       launcher.setAttribute("aria-hidden","false");
       launcher.dataset.skAmbientReady="true";
     }else{
+      launcher.style.setProperty("display","none","important");
+      launcher.style.setProperty("pointer-events","none","important");
       launcher.setAttribute("aria-hidden","true");
     }
     window.INBESTIGA_SAKURA_AFFECTIVE?.syncVisibility?.();

@@ -1,0 +1,22 @@
+INBESTIGA Marketing Cloud v17.15.14
+STATIC SAKURA ORB MOUNT & RESILIENT PWA CONTROL HOTFIX
+
+DIAGNÓSTICO DEL JSON REAL
+- v17.15.13 instalada.
+- 6/6 marcadores alineados.
+- Sin errores actuales.
+- Única advertencia: caché PWA creada sin controlador de página.
+- Orbe ausente aunque el botón superior de SAKURA estaba disponible.
+
+CORRECCIÓN
+- Orbe físico en index.html.
+- Visibilidad por estado de sesión en el elemento html.
+- Eliminación del conflicto hidden/display.
+- Loader adopta el botón existente.
+- Service Worker en scope raíz.
+- Cacheo individual resiliente.
+- Service-Worker-Allowed: /.
+- Salud PWA basada en worker activo, alcance raíz y caché actual.
+
+SIN CAMBIOS
+Auth, RLS, RPC, SQL, Supabase, Storage, Ollama y datos productivos.

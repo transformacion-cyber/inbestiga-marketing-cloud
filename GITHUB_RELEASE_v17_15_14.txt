@@ -1,0 +1,10 @@
+SUMMARY
+INBESTIGA Marketing Cloud v17.15.14 — Static Sakura Orb Mount & Resilient Pwa Control Hotfix
+
+Sustituye el orbe dinámico por un orbe físico dentro de index.html, elimina
+conflictos de visibilidad y hace resiliente la instalación PWA.
+
+COMMIT
+git add .
+git commit -m "fix: release v17.15.14 static SAKURA orb and resilient PWA control"
+git push origin main

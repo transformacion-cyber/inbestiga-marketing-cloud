@@ -1,0 +1,13 @@
+PROMPT DE CONTINUIDAD — INBESTIGA MARKETING CLOUD v17.15.14
+STATIC SAKURA ORB MOUNT & RESILIENT PWA CONTROL HOTFIX
+
+Base autorizada:
+INBESTIGA_MARKETING_CLOUD_v17_15_14_STATIC_SAKURA_ORB_RESILIENT_PWA_FULL_PLATFORM.zip
+
+Conservar:
+- Un solo #sakuraNativeLauncher físico en index.html.
+- Estado html[data-inbestiga-session].
+- CSS de visibilidad determinista.
+- Loader que adopta el botón existente.
+- Service Worker en scope raíz con cacheo individual resiliente.
+- Sin polling, MutationObserver, Auth/RLS/RPC/SQL nuevos.

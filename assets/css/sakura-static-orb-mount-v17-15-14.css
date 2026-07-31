@@ -1,0 +1,38 @@
+/* INBESTIGA v17.15.14 · Static authenticated SAKURA orb */
+#sakuraNativeLauncher{
+  position:fixed!important;
+  right:22px!important;
+  bottom:max(22px,env(safe-area-inset-bottom))!important;
+  z-index:2147483600!important;
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+  transform:translateY(8px) scale(.98);
+}
+html[data-inbestiga-session="ready"]
+#sakuraNativeLauncher[data-sk-session-ready="true"]:not([data-sk-user-hidden="true"]){
+  display:flex!important;
+  visibility:visible!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  transform:none!important;
+}
+html[data-inbestiga-session="public"] #sakuraNativeLauncher,
+#sakuraNativeLauncher[data-sk-user-hidden="true"]{
+  display:none!important;
+  visibility:hidden!important;
+  opacity:0!important;
+  pointer-events:none!important;
+}
+#sakuraNativeLauncher[data-sk-static-orb="v17.15.14"]{
+  isolation:isolate;
+  min-width:66px;
+  min-height:58px;
+}
+@media(max-width:720px){
+  #sakuraNativeLauncher{
+    right:12px!important;
+    bottom:max(12px,env(safe-area-inset-bottom))!important;
+  }
+}

@@ -959,38 +959,50 @@
 
   function registerServiceWorker() {
     if (!("serviceWorker" in navigator) || location.protocol === "file:") return;
-    const reloadKey = "inbestiga:pwa-controller-reload:v17.15.13";
-    const activateWaiting = registration => {
+    const version = "v17.15.14";
+    const reloadKey = `inbestiga:pwa-controller-reload:${version}`;
+    const expectedScope = `${location.origin}/`;
+    const activate = registration => {
       try { registration?.waiting?.postMessage?.({ type: "SKIP_WAITING" }); } catch { /* optional */ }
     };
-    const onControllerChange = () => {
+    const reloadOnce = () => {
       window.dispatchEvent(new CustomEvent("inbestiga:pwa-ready"));
       try {
         if (sessionStorage.getItem(reloadKey) !== "1") {
           sessionStorage.setItem(reloadKey, "1");
-          location.reload();
+          location.replace(location.href);
         }
       } catch { location.reload(); }
     };
-    navigator.serviceWorker.addEventListener("controllerchange", onControllerChange, { once: true });
-    navigator.serviceWorker
-      .register("service-worker.js?v=17.15.13", { updateViaCache: "none" })
-      .then(async registration => {
-        activateWaiting(registration);
+    navigator.serviceWorker.addEventListener("controllerchange", reloadOnce, { once: true });
+    (async () => {
+      try {
+        const registrations = await navigator.serviceWorker.getRegistrations();
+        await Promise.all(
+          registrations
+            .filter(registration => registration.scope !== expectedScope)
+            .map(registration => registration.unregister().catch(() => false))
+        );
+        const registration = await navigator.serviceWorker.register(
+          `/service-worker.js?v=${version}`,
+          { scope: "/", updateViaCache: "none" }
+        );
+        activate(registration);
         registration.addEventListener("updatefound", () => {
           const worker = registration.installing;
           worker?.addEventListener("statechange", () => {
-            if (worker.state === "installed") activateWaiting(registration);
+            if (worker.state === "installed") activate(registration);
           });
         });
         await registration.update().catch(() => null);
-        activateWaiting(registration);
+        activate(registration);
         await navigator.serviceWorker.ready.catch(() => null);
         window.dispatchEvent(new CustomEvent("inbestiga:pwa-ready"));
-      })
-      .catch(error =>
-        console.info("[v17.15.13] service worker opcional", error?.message || error),
-      );
+        window.INBESTIGA_SAKURA_STATIC_ORB?.settle?.();
+      } catch (error) {
+        console.info("[v17.15.14] service worker opcional", error?.message || error);
+      }
+    })();
   }
 
   function refresh() {
